@@ -1,0 +1,422 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does it cost to rent a security trailer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Security trailer rentals start at $999 for the first day and $499 for additional days. Weekly rentals average $3,500-4,000, and monthly rentals range from $8,000-10,000 with volume discounts available."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can you deliver a security trailer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer same-day delivery for urgent requests and can deploy emergency units within 2 hours. Standard delivery is next business day. We provide 24/7 emergency response throughout the Puget Sound region."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What areas do you serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We serve all of Pierce, King, Thurston, and Kitsap counties including Tacoma, Seattle, Olympia, Federal Way, Puyallup, Lakewood, Kent, Auburn, and surrounding areas. Free delivery within 30 miles of Tacoma."
+      }
+    }
+  ]
+});
+---
+
+<Layout 
+  title="Frequently Asked Questions | CCTV Trailer Security Solutions"
+  description="Common questions about mobile surveillance trailer rentals, pricing, setup, coverage areas, and security features. Get answers from the experts at CCTV Trailer."
+  keywords="security trailer FAQ, surveillance rental questions, CCTV trailer information, mobile security help"
+  schema={schema}>
+  
+  <header class="bg-gray-900 text-white">
+    <nav class="container mx-auto px-4 py-4">
+      <div class="flex justify-between items-center">
+        <a href="/" class="flex items-center">
+          <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-12" />
+        </a>
+        <div class="flex gap-6">
+          <a href="/" class="hover:text-gray-300">Home</a>
+          <a href="/services" class="hover:text-gray-300">Services</a>
+          <a href="/technical-specifications" class="hover:text-gray-300">Tech Specs</a>
+          <a href="/pricing" class="hover:text-gray-300">Pricing</a>
+          <a href="/about" class="hover:text-gray-300">About</a>
+          <a href="/blog" class="hover:text-gray-300">Blog</a>
+          <a href="/faq" class="hover:text-gray-300">FAQ</a>
+          <a href="/contact" class="hover:text-gray-300">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="py-16">
+      <div class="container mx-auto px-4 max-w-4xl">
+          <h1 class="text-4xl font-bold text-center mb-12">Frequently Asked Questions</h1>
+          <p class="text-xl text-center text-gray-600 mb-12">Everything you need to know about mobile surveillance trailer rentals</p>
+      </div>
+    </div>
+      <div class="container mx-auto px-4 max-w-4xl">
+        
+        <!-- Pricing Questions -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold mb-6">Pricing & Costs</h2>
+          
+          <div class="space-y-4">
+            <details class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <summary class="font-semibold text-lg cursor-pointer">How much does it cost to rent a security trailer?</summary>
+              <div class="mt-4 text-gray-600">
+                <p>Our pricing structure is simple and transparent:</p>
+                <ul class="list-disc pl-6 mt-2 space-y-1">
+                  <li>First day: $999</li>
+                  <li>Additional days: $499/day</li>
+                  <li>Weekly rate: $3,500-4,000 (10% discount)</li>
+                  <li>Monthly rate: $8,000-10,000 (20% discount)</li>
+                  <li>3+ months: Custom pricing with 25-30% discount</li>
+                </ul>
+                <p class="mt-2">Free delivery within 30 miles of Tacoma.</p>
+              </div>
+            </details>
+
+            <details class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <summary class="font-semibold text-lg cursor-pointer">Are there any hidden fees?</summary>
+              <div class="mt-4 text-gray-600">
+                <p>No hidden fees! Our quoted price includes:</p>
+                <ul class="list-disc pl-6 mt-2 space-y-1">
+                  <li>Professional delivery and setup</li>
+                  <li>Equipment orientation and training</li>
+                  <li>24/7 technical support</li>
+                  <li>Maintenance during rental</li>
+                  <li>Pickup at end of rental</li>
+                </ul>
+                <p class="mt-2">Additional fees only apply for rush delivery ($150-300), extended delivery areas ($50-100), or optional live monitoring services.</p>
+              </div>
+            </details>
+
+            <details class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <summary class="font-semibold text-lg cursor-pointer">Do you offer discounts for long-term rentals?</summary>
+              <div class="mt-4 text-gray-600">
+                <p>Yes! The longer you rent, the more you save:</p>
+                <ul class="list-disc pl-6 mt-2 space-y-1">
+                  <li>1 week: 10% discount</li>
+                  <li>1 month: 20% discount</li>
+                  <li>2 months: 25% discount</li>
+                  <li>3+ months: 30% discount (negotiable)</li>
+                  <li>Multiple units: Additional 5-10% off</li>
+                </ul>
+                <p class="mt-2">We also offer corporate accounts and contract pricing for regular customers.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <!-- Setup & Delivery -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold mb-6 ">Setup & Delivery</h2>
+          
+          <div class="space-y-4">
+            <details class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <summary class="font-semibold text-lg cursor-pointer">How quickly can you deliver a security trailer?</summary>
+              <div class="mt-4 text-gray-600">
+                <p>We offer flexible delivery options:</p>
+                <ul class="list-disc pl-6 mt-2 space-y-1">
+                  <li><strong>Standard:</strong> Next business day (no extra charge)</li>
+                  <li><strong>Same-day:</strong> Available for +$150</li>
+                  <li><strong>Emergency:</strong> 2-hour response for +$300</li>
+                  <li><strong>24/7:</strong> Emergency deployment available</li>
+                </ul>
+                <p class="mt-2">In Tacoma, we can often deliver within 30 minutes for urgent situations.</p>
+              </div>
+            </details>
+
+            <details class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <summary class="font-semibold text-lg cursor-pointer">How long does setup take?</summary>
+              <div class="mt-4 text-gray-600">
+                <p>Setup is remarkably quick:</p>
+                <ul class="list-disc pl-6 mt-2 space-y-1">
+                  <li>Positioning trailer: 5-10 minutes</li>
+                  <li>System activation: 5-10 minutes</li>
+                  <li>Basic orientation: 10-15 minutes</li>
+                  <li><strong>Total time:</strong> 20-35 minutes</li>
+                </ul>
+                <p class="mt-2">Our trailers are pre-configured and ready to operate immediately upon delivery. No complex installation or wiring required!</p>
+              </div>
+            </details>
+
+            <details class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <summary class="font-semibold text-lg cursor-pointer">What areas do you serve?</summary>
+              <div class="mt-4 text-gray-600">
+                <p>We serve the entire Puget Sound region:</p>
+                <ul class="list-disc pl-6 mt-2 space-y-1">
+                  <li><strong>Pierce County:</strong> Tacoma, Puyallup, Lakewood, Federal Way</li>
+                  <li><strong>King County:</strong> Seattle, Kent, Auburn, Renton, Bellevue</li>
+                  <li><strong>Thurston County:</strong> Olympia, Lacey, Tumwater</li>
+                  <li><strong>Kitsap County:</strong> Bremerton, Port Orchard, Silverdale</li>
+                </ul>
+                <p class="mt-2">Free delivery within 30 miles of Tacoma. Small delivery fee for extended areas.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <!-- Technical & Features -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold mb-6 ">Technical Features & Capabilities</h2>
+          
+          <div class="space-y-4">
+            <details class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <summary class="font-semibold text-lg cursor-pointer">What technology is included in the trailers?</summary>
+              <div class="mt-4 text-gray-600">
+                <p>Our trailers feature advanced surveillance technology:</p>
+                <ul class="list-disc pl-6 mt-2 space-y-1">
+                  <li>HD cameras with night vision</li>
+                  <li>360-degree coverage capability</li>
+                  <li>Motion detection and alerts</li>
+                  <li>24/7 recording with storage</li>
+                  <li>Weather-resistant equipment</li>
+                  <li>Solar power options available</li>
+                  <li>Remote viewing capability</li>
+                </ul>
+                <p class="mt-2">All equipment is commercial-grade and designed for Pacific Northwest weather conditions.</p>
+              </div>
+            </details>
+
+            <details class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <summary class="font-semibold text-lg cursor-pointer">Do the trailers require power hookups?</summary>
+              <div class="mt-4 text-gray-600">
+                <p>Our trailers offer flexible power options:</p>
+                <ul class="list-disc pl-6 mt-2 space-y-1">
+                  <li>Solar-powered units available (no hookup needed)</li>
+                  <li>Battery backup for continuous operation</li>
+                  <li>Generator included for extended autonomous operation</li>
+                  <li>Standard 110V outlet connection option</li>
+                  <li>Generator-compatible for remote locations</li>
+                </ul>
+                <p class="mt-2">Most clients use our solar-powered units with included generator backup for complete independence from site power.</p>
+              </div>
+            </details>
+
+            <details class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <summary class="font-semibold text-lg cursor-pointer">Can I monitor the cameras remotely?</summary>
+              <div class="mt-4 text-gray-600">
+                <p>Yes! Remote monitoring options include:</p>
+                <ul class="list-disc pl-6 mt-2 space-y-1">
+                  <li>Secure web portal access</li>
+                  <li>Mobile app for iOS/Android</li>
+                  <li>Real-time alerts for motion detection</li>
+                  <li>Download or stream recorded footage</li>
+                  <li>Multiple user access available</li>
+                </ul>
+                <p class="mt-2">We provide training on the remote viewing system and 24/7 technical support.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <!-- Use Cases -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold mb-6 ">Use Cases & Applications</h2>
+          
+          <div class="space-y-4">
+            <details class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <summary class="font-semibold text-lg cursor-pointer">What types of sites use security trailers?</summary>
+              <div class="mt-4 text-gray-600">
+                <p>Security trailers are versatile and used by:</p>
+                <ul class="list-disc pl-6 mt-2 space-y-1">
+                  <li><strong>Construction Sites:</strong> Prevent theft of materials and equipment</li>
+                  <li><strong>Special Events:</strong> Festivals, concerts, fairs</li>
+                  <li><strong>Retail/Parking:</strong> After-hours lot security</li>
+                  <li><strong>Industrial:</strong> Warehouses, ports, storage yards</li>
+                  <li><strong>Government:</strong> Military bases, public works</li>
+                  <li><strong>Emergency:</strong> Disaster response, temporary security</li>
+                </ul>
+                <p class="mt-2">Any location needing temporary or mobile surveillance can benefit.</p>
+              </div>
+            </details>
+
+            <details class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <summary class="font-semibold text-lg cursor-pointer">How effective are trailers at preventing theft?</summary>
+              <div class="mt-4 text-gray-600">
+                <p>Extremely effective! Studies and our experience show:</p>
+                <ul class="list-disc pl-6 mt-2 space-y-1">
+                  <li>95% reduction in theft incidents</li>
+                  <li>Visible deterrent stops crimes before they happen</li>
+                  <li>Clear video evidence for prosecution</li>
+                  <li>Insurance claims support with footage</li>
+                  <li>Reduced vandalism and trespassing</li>
+                </ul>
+                <p class="mt-2">Most sites report zero incidents while our trailers are deployed.</p>
+              </div>
+            </details>
+
+            <details class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <summary class="font-semibold text-lg cursor-pointer">Can trailers be moved during the rental?</summary>
+              <div class="mt-4 text-gray-600">
+                <p>Yes! Mobility is a key advantage:</p>
+                <ul class="list-disc pl-6 mt-2 space-y-1">
+                  <li>Relocate as project phases change</li>
+                  <li>Move between multiple sites</li>
+                  <li>Tow-capable up to 70 mph</li>
+                  <li>We can relocate for you (service fee applies)</li>
+                  <li>Easy to reposition on-site</li>
+                </ul>
+                <p class="mt-2">This flexibility makes trailers ideal for dynamic security needs.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <!-- Comparison -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold mb-6 ">Comparison & Alternatives</h2>
+          
+          <div class="space-y-4">
+            <details class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <summary class="font-semibold text-lg cursor-pointer">How do trailers compare to security guards?</summary>
+              <div class="mt-4 text-gray-600">
+                <p>Trailers offer several advantages over guards:</p>
+                <table class="w-full mt-2 text-sm">
+                  <thead>
+                    <tr class="border-b">
+                      <th class="text-left py-2">Factor</th>
+                      <th class="text-left py-2">Trailer</th>
+                      <th class="text-left py-2">Guards</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b">
+                      <td class="py-2">Cost/month</td>
+                      <td>$8,000-10,000</td>
+                      <td>$15,000-20,000+</td>
+                    </tr>
+                    <tr class="border-b">
+                      <td class="py-2">Coverage</td>
+                      <td>24/7/365</td>
+                      <td>Shift-based</td>
+                    </tr>
+                    <tr class="border-b">
+                      <td class="py-2">Recording</td>
+                      <td>Always</td>
+                      <td>No</td>
+                    </tr>
+                    <tr class="border-b">
+                      <td class="py-2">Weather</td>
+                      <td>Unaffected</td>
+                      <td>Limited</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+
+            <details class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <summary class="font-semibold text-lg cursor-pointer">Why choose mobile trailers over fixed cameras?</summary>
+              <div class="mt-4 text-gray-600">
+                <p>Mobile trailers provide unique benefits:</p>
+                <ul class="list-disc pl-6 mt-2 space-y-1">
+                  <li><strong>No installation:</strong> Fixed cameras need expensive wiring/mounting</li>
+                  <li><strong>Immediate:</strong> Deploy today vs. weeks for installation</li>
+                  <li><strong>Flexible:</strong> Move as needed, remove when done</li>
+                  <li><strong>No permits:</strong> Fixed cameras often require permits</li>
+                  <li><strong>Complete system:</strong> Power, recording, transmission included</li>
+                  <li><strong>Visible deterrent:</strong> Trailers are imposing and obvious</li>
+                </ul>
+                <p class="mt-2">Perfect for temporary needs without permanent infrastructure changes.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <!-- Rental Process -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold mb-6 ">Rental Process & Terms</h2>
+          
+          <div class="space-y-4">
+            <details class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <summary class="font-semibold text-lg cursor-pointer">What's the rental process?</summary>
+              <div class="mt-4 text-gray-600">
+                <p>Renting is simple and fast:</p>
+                <ol class="list-decimal pl-6 mt-2 space-y-1">
+                  <li>Call or request quote online</li>
+                  <li>Discuss your security needs</li>
+                  <li>Receive instant pricing</li>
+                  <li>Schedule delivery date/time</li>
+                  <li>Sign simple rental agreement</li>
+                  <li>Trailer delivered and set up</li>
+                  <li>Brief training provided</li>
+                  <li>24/7 support during rental</li>
+                </ol>
+                <p class="mt-2">Most customers go from initial call to deployment in 24 hours.</p>
+              </div>
+            </details>
+
+            <details class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <summary class="font-semibold text-lg cursor-pointer">What's the minimum rental period?</summary>
+              <div class="mt-4 text-gray-600">
+                <p>We offer flexible rental terms:</p>
+                <ul class="list-disc pl-6 mt-2 space-y-1">
+                  <li>Minimum rental: 1 day</li>
+                  <li>Most common: 1-4 weeks</li>
+                  <li>Long-term: Several months</li>
+                  <li>Extensions: Easy to arrange</li>
+                  <li>Early termination: No penalties</li>
+                </ul>
+                <p class="mt-2">We recommend at least 3 days for best value, but accommodate any timeline.</p>
+              </div>
+            </details>
+
+            <details class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <summary class="font-semibold text-lg cursor-pointer">Do you require a deposit or contract?</summary>
+              <div class="mt-4 text-gray-600">
+                <p>Our terms are straightforward:</p>
+                <ul class="list-disc pl-6 mt-2 space-y-1">
+                  <li>Simple one-page rental agreement</li>
+                  <li>First day's rental paid upfront</li>
+                  <li>No security deposit required</li>
+                  <li>NET 30 terms for established businesses</li>
+                  <li>Credit cards and checks accepted</li>
+                  <li>Insurance certificate available</li>
+                </ul>
+                <p class="mt-2">We make it easy to get the security you need without complicated contracts.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="bg-blue-50 rounded-lg p-8 text-center">
+          <h2 class="text-2xl font-bold mb-4">Still Have Questions?</h2>
+          <p class="mb-6">Our security experts are ready to help you find the perfect solution</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:2536832288" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
+              📞 Call (253) 683-2288
+            </a>
+            <a href="/contact" class="bg-white hover:bg-gray-50 text-blue-600 border-2 border-blue-600 font-bold py-3 px-8 rounded-lg inline-block">
+              Send Message
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col items-center">
+        <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-16 mb-4" />
+        <p class="mb-2">© 2024 CCTV Trailer - Locally Owned in Tacoma, WA</p>
+        <p>Email: info@cctvtrailer.com | Phone: (253) 683-2288</p>
+      </div>
+    </div>
+  </footer>
+</Layout>

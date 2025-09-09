@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About">
+  <header class="bg-gray-900 text-white">
+    <nav class="container mx-auto px-4 py-4">
+      <div class="flex justify-between items-center">
+        <a href="/" class="flex items-center">
+          <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-12" />
+        </a>
+        <div class="flex gap-6">
+          <a href="/" class="hover:text-gray-300">Home</a>
+          <a href="/services" class="hover:text-gray-300">Services</a>
+          <a href="/technical-specifications" class="hover:text-gray-300">Tech Specs</a>
+          <a href="/pricing" class="hover:text-gray-300">Pricing</a>
+          <a href="/about" class="hover:text-gray-300">About</a>
+          <a href="/blog" class="hover:text-gray-300">Blog</a>
+          <a href="/faq" class="hover:text-gray-300">FAQ</a>
+          <a href="/contact" class="hover:text-gray-300">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="py-16">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <h1 class="text-4xl font-bold text-center mb-12">About CCTV Trailer</h1>
+        
+        <div class="prose max-w-none">
+          <p class="text-lg mb-6">
+            CCTV Trailer is a locally owned business based in Tacoma, Washington, specializing in mobile surveillance solutions for the Pacific Northwest region. With over 20 years of experience in CCTV systems, we understand the unique security challenges faced by businesses and organizations in our area.
+          </p>
+
+          <h2 class="text-2xl font-semibold mt-8 mb-4">Our Mission</h2>
+          <p class="mb-6">
+            To provide reliable, professional mobile security solutions that protect your valuable assets when you can't be there. We deliver peace of mind through advanced surveillance technology that's easy to deploy and built to withstand Pacific Northwest conditions.
+          </p>
+
+          <h2 class="text-2xl font-semibold mt-8 mb-4">Service Area</h2>
+          <p class="mb-6">
+            We proudly serve the Greater Seattle area including Pierce, King, Thurston, and Kitsap counties. Our primary service areas include:
+          </p>
+          <ul class="list-disc pl-6 mb-6 grid md:grid-cols-2 gap-2">
+            <li>Tacoma</li>
+            <li>Seattle</li>
+            <li>Olympia</li>
+            <li>Federal Way</li>
+            <li>Puyallup</li>
+            <li>Lakewood</li>
+            <li>Auburn</li>
+            <li>Kent</li>
+            <li>Renton</li>
+            <li>Gig Harbor</li>
+            <li>Bremerton</li>
+            <li>Joint Base Lewis-McChord</li>
+          </ul>
+
+          <h2 class="text-2xl font-semibold mt-8 mb-4">Why Choose Us</h2>
+          <ul class="list-disc pl-6 mb-6">
+            <li>Locally owned and operated</li>
+            <li>20+ years of CCTV expertise</li>
+            <li>Trailers built for Northwest weather</li>
+            <li>Quick response and delivery</li>
+            <li>Competitive rental rates</li>
+            <li>Professional, reliable service</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col items-center">
+        <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-16 mb-4" />
+        <p class="mb-2">© 2024 CCTV Trailer - Locally Owned in Tacoma, WA</p>
+        <p>Email: info@cctvtrailer.com | Phone: (253) 683-2288</p>
+      </div>
+    </div>
+  </footer>
+</Layout>

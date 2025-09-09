@@ -1,0 +1,318 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How Much Does It Cost to Rent a Security Trailer?",
+  "datePublished": "2024-01-15",
+  "dateModified": "2024-01-15",
+  "author": {
+    "@type": "Organization",
+    "name": "CCTV Trailer"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CCTV Trailer",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.cctvtrailer.com/images/cctv-logo.svg"
+    }
+  },
+  "description": "Complete pricing guide for mobile surveillance trailer rentals. Learn about daily, weekly, and monthly rates, plus factors that affect pricing."
+});
+---
+
+<Layout 
+  title="How Much Does It Cost to Rent a Security Trailer? | 2024 Pricing Guide"
+  description="Detailed cost breakdown for security trailer rentals. Daily rates from $499-999, weekly and monthly discounts available. Free delivery in Tacoma area."
+  keywords="security trailer rental cost, mobile surveillance pricing, CCTV trailer rates, construction camera rental prices"
+  schema={schema}>
+  
+  <header class="bg-gray-900 text-white">
+    <nav class="container mx-auto px-4 py-4">
+      <div class="flex justify-between items-center">
+        <a href="/" class="flex items-center">
+          <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-12" />
+        </a>
+        <div class="flex gap-6">
+          <a href="/" class="hover:text-gray-300">Home</a>
+          <a href="/services" class="hover:text-gray-300">Services</a>
+          <a href="/technical-specifications" class="hover:text-gray-300">Tech Specs</a>
+          <a href="/pricing" class="hover:text-gray-300">Pricing</a>
+          <a href="/about" class="hover:text-gray-300">About</a>
+          <a href="/blog" class="hover:text-gray-300">Blog</a>
+          <a href="/faq" class="hover:text-gray-300">FAQ</a>
+          <a href="/contact" class="hover:text-gray-300">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Blog', href: '/blog' },
+      { label: 'Security Trailer Rental Cost' }
+    ]} />
+    
+    <article class="py-16">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <!-- Article Header -->
+        <header class="mb-8">
+          <div class="text-sm text-gray-500 mb-4">
+            <a href="/blog" class="hover:text-blue-600">← Back to Blog</a>
+          </div>
+          <h1 class="text-4xl font-bold mb-4">How Much Does It Cost to Rent a Security Trailer?</h1>
+          <div class="flex items-center gap-4 text-gray-600">
+            <time datetime="2024-01-15">January 15, 2024</time>
+            <span>•</span>
+            <span>5 min read</span>
+            <span>•</span>
+            <span>By CCTV Trailer Team</span>
+          </div>
+        </header>
+
+        <!-- Featured Image -->
+        <div class="relative h-96 -mx-4 md:mx-0 mb-8 rounded-none md:rounded-lg overflow-hidden">
+          <img 
+            src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&h=600&fit=crop" 
+            alt="Mobile security trailer with pricing information" 
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+        </div>
+
+        <!-- Article Content -->
+        <div class="prose max-w-none">
+          <p class="text-xl leading-relaxed mb-6">
+            If you're considering mobile surveillance for your construction site, event, or property, understanding the cost structure is essential for budgeting. This comprehensive guide breaks down security trailer rental pricing and the factors that influence costs.
+          </p>
+
+          <h2 class="text-2xl font-bold mt-8 mb-4">Quick Answer: Basic Pricing Structure</h2>
+          <div class="bg-blue-50 border-l-4 border-blue-600 p-6 mb-6">
+            <ul class="space-y-2">
+              <li><strong>Daily Rental:</strong> $999 for the first day, $499 for additional days</li>
+              <li><strong>Weekly Rental:</strong> Approximately $3,500-4,000 (with discount)</li>
+              <li><strong>Monthly Rental:</strong> $8,000-10,000 (with volume discount)</li>
+              <li><strong>Long-term (3+ months):</strong> Custom pricing available</li>
+            </ul>
+          </div>
+
+          <h2 class="text-2xl font-bold mt-8 mb-4">Factors That Affect Security Trailer Rental Costs</h2>
+          
+          <h3 class="text-xl font-semibold mt-6 mb-3">1. Rental Duration</h3>
+          <p class="mb-4">
+            The length of your rental significantly impacts the daily rate. While single-day rentals start at $999, the daily rate drops considerably for longer commitments:
+          </p>
+          <ul class="list-disc pl-6 mb-6 space-y-2">
+            <li>1-3 days: Standard daily rates apply</li>
+            <li>1 week: 10% discount on total</li>
+            <li>1 month: 20% discount on total</li>
+            <li>3+ months: 25-30% discount (negotiable)</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold mt-6 mb-3">2. Number of Units</h3>
+          <p class="mb-4">
+            Multiple trailer rentals often qualify for volume discounts:
+          </p>
+          <ul class="list-disc pl-6 mb-6 space-y-2">
+            <li>2 trailers: 5% discount on second unit</li>
+            <li>3 trailers: 10% discount on additional units</li>
+            <li>4+ trailers: Custom fleet pricing</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold mt-6 mb-3">3. Delivery Location</h3>
+          <p class="mb-4">
+            Distance from the rental company affects delivery costs:
+          </p>
+          <ul class="list-disc pl-6 mb-6 space-y-2">
+            <li>Within 30 miles: Free delivery (Tacoma, Lakewood, Puyallup)</li>
+            <li>30-50 miles: $50-100 delivery fee (Seattle, Olympia)</li>
+            <li>50+ miles: $2 per mile beyond 50 miles</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold mt-6 mb-3">4. Urgency of Deployment</h3>
+          <ul class="list-disc pl-6 mb-6 space-y-2">
+            <li>Standard (next day): No additional cost</li>
+            <li>Same-day delivery: +$150</li>
+            <li>Emergency 2-hour response: +$300</li>
+            <li>Weekend/holiday delivery: +$200</li>
+          </ul>
+
+          <h2 class="text-2xl font-bold mt-8 mb-4">What's Included in the Rental Price?</h2>
+          <p class="mb-4">
+            Understanding what's included helps you evaluate the true value:
+          </p>
+          
+          <div class="bg-green-50 rounded-lg p-6 mb-6">
+            <h4 class="font-bold mb-3">Standard Rental Includes:</h4>
+            <ul class="space-y-2">
+              <li>✓ Professional delivery and setup</li>
+              <li>✓ Advanced surveillance equipment</li>
+              <li>✓ Solar power system (where applicable)</li>
+              <li>✓ Initial orientation and training</li>
+              <li>✓ 24/7 technical support</li>
+              <li>✓ Equipment maintenance</li>
+              <li>✓ Pickup at end of rental</li>
+            </ul>
+          </div>
+
+          <h2 class="text-2xl font-bold mt-8 mb-4">Cost Comparison: Mobile Trailer vs. Alternatives</h2>
+          
+          <div class="overflow-x-auto mb-6">
+            <table class="w-full border-collapse border border-gray-300">
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="border border-gray-300 px-4 py-2 text-left">Security Option</th>
+                  <th class="border border-gray-300 px-4 py-2">Monthly Cost</th>
+                  <th class="border border-gray-300 px-4 py-2">Setup Time</th>
+                  <th class="border border-gray-300 px-4 py-2">Flexibility</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-2">Mobile Security Trailer</td>
+                  <td class="border border-gray-300 px-4 py-2 text-center">$8,000-10,000</td>
+                  <td class="border border-gray-300 px-4 py-2 text-center">Minutes</td>
+                  <td class="border border-gray-300 px-4 py-2 text-center">High</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border border-gray-300 px-4 py-2">Security Guards (2 shifts)</td>
+                  <td class="border border-gray-300 px-4 py-2 text-center">$15,000-20,000</td>
+                  <td class="border border-gray-300 px-4 py-2 text-center">1-2 weeks</td>
+                  <td class="border border-gray-300 px-4 py-2 text-center">Medium</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-2">Fixed Camera Installation</td>
+                  <td class="border border-gray-300 px-4 py-2 text-center">$500-1,000*</td>
+                  <td class="border border-gray-300 px-4 py-2 text-center">2-4 weeks</td>
+                  <td class="border border-gray-300 px-4 py-2 text-center">Low</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="text-sm text-gray-600 mt-2">*Plus $5,000-15,000 installation cost</p>
+          </div>
+
+          <h2 class="text-2xl font-bold mt-8 mb-4">Industry-Specific Pricing Considerations</h2>
+          
+          <h3 class="text-xl font-semibold mt-6 mb-3">Construction Sites</h3>
+          <p class="mb-4">
+            Construction projects often need long-term rentals, making them eligible for the best rates. A 6-month construction project might pay as little as $200-250 per day with long-term discounts.
+          </p>
+
+          <h3 class="text-xl font-semibold mt-6 mb-3">Special Events</h3>
+          <p class="mb-4">
+            Events typically need short-term rentals (1-3 days). While the daily rate is higher, the total cost remains manageable. A 3-day festival would cost approximately $2,000-2,500.
+          </p>
+
+          <h3 class="text-xl font-semibold mt-6 mb-3">Emergency Response</h3>
+          <p class="mb-4">
+            Emergency situations may incur rush fees but provide immediate security. Emergency deployment with same-day setup typically adds $300-500 to the base rate.
+          </p>
+
+          <h2 class="text-2xl font-bold mt-8 mb-4">Hidden Costs to Watch For (We Don't Have These!)</h2>
+          <p class="mb-4">
+            Some companies add hidden fees. At CCTV Trailer, we believe in transparent pricing, but here's what to watch for with other providers:
+          </p>
+          <ul class="list-disc pl-6 mb-6 space-y-2">
+            <li>Setup and takedown fees</li>
+            <li>Mileage charges for maintenance visits</li>
+            <li>Data storage or monitoring fees</li>
+            <li>Damage waiver insurance</li>
+            <li>Early termination penalties</li>
+          </ul>
+
+          <h2 class="text-2xl font-bold mt-8 mb-4">How to Get the Best Value</h2>
+          
+          <div class="bg-yellow-50 border-l-4 border-yellow-600 p-6 mb-6">
+            <h4 class="font-bold mb-3">Money-Saving Tips:</h4>
+            <ol class="list-decimal pl-6 space-y-2">
+              <li>Book longer rentals for better daily rates</li>
+              <li>Bundle multiple units for volume discounts</li>
+              <li>Plan ahead to avoid rush delivery fees</li>
+              <li>Consider off-season rentals (winter months)</li>
+              <li>Ask about contract or corporate rates</li>
+            </ol>
+          </div>
+
+          <h2 class="text-2xl font-bold mt-8 mb-4">ROI: Is It Worth the Cost?</h2>
+          <p class="mb-4">
+            Consider the value proposition:
+          </p>
+          <ul class="list-disc pl-6 mb-6 space-y-2">
+            <li><strong>Theft Prevention:</strong> Average construction site theft loss: $30,000-50,000</li>
+            <li><strong>Insurance Savings:</strong> Many insurers offer 10-20% discounts with security</li>
+            <li><strong>Productivity:</strong> Workers feel safer and more productive</li>
+            <li><strong>Liability Protection:</strong> Video evidence for incidents</li>
+          </ul>
+
+          <div class="bg-blue-100 rounded-lg p-6 mb-6">
+            <p class="font-semibold">
+              Example ROI: A $10,000/month security trailer rental that prevents one major theft incident ($30,000) pays for itself in a single event.
+            </p>
+          </div>
+
+          <h2 class="text-2xl font-bold mt-8 mb-4">Frequently Asked Questions About Pricing</h2>
+          
+          <div class="space-y-4 mb-8">
+            <div>
+              <h4 class="font-semibold mb-2">Q: Is there a minimum rental period?</h4>
+              <p>A: Yes, we have a 1-day minimum rental period. However, most clients find that 3+ days provides better value.</p>
+            </div>
+            
+            <div>
+              <h4 class="font-semibold mb-2">Q: Do prices include setup and removal?</h4>
+              <p>A: Yes, our prices include professional delivery, setup, and pickup within our standard service area.</p>
+            </div>
+            
+            <div>
+              <h4 class="font-semibold mb-2">Q: Are there additional fees for monitoring services?</h4>
+              <p>A: Our trailers provide 24/7 recording capability. Live monitoring services are available for an additional fee.</p>
+            </div>
+            
+            <div>
+              <h4 class="font-semibold mb-2">Q: Can I extend my rental period?</h4>
+              <p>A: Yes, extensions are easy. We'll apply appropriate discounts based on your total rental duration.</p>
+            </div>
+          </div>
+
+          <h2 class="text-2xl font-bold mt-8 mb-4">Get Your Custom Quote</h2>
+          <p class="mb-6">
+            Every security situation is unique. While this guide provides general pricing, we recommend getting a custom quote for your specific needs.
+          </p>
+          
+          <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg p-8 text-center">
+            <h3 class="text-2xl font-bold mb-4">Ready to Secure Your Site?</h3>
+            <p class="mb-6">Get a detailed quote in minutes - no obligations</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/pricing" class="bg-white text-blue-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block">
+                Use Pricing Calculator
+              </a>
+              <a href="tel:2536832288" class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-3 px-8 rounded-lg inline-block">
+                Call (253) 683-2288
+              </a>
+            </div>
+          </div>
+
+          <div class="mt-8 p-6 bg-gray-50 rounded-lg">
+            <p class="text-sm text-gray-600">
+              <strong>Disclaimer:</strong> Prices mentioned in this article are estimates based on standard rates as of January 2024. Actual pricing may vary based on location, availability, and specific requirements. Contact us for current pricing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col items-center">
+        <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-16 mb-4" />
+        <p class="mb-2">© 2024 CCTV Trailer - Locally Owned in Tacoma, WA</p>
+        <p>Email: info@cctvtrailer.com | Phone: (253) 683-2288</p>
+      </div>
+    </div>
+  </footer>
+</Layout>

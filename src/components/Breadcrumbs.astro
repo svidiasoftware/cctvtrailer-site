@@ -1,0 +1,49 @@
+---
+export interface Props {
+  items: Array<{
+    label: string;
+    href?: string;
+  }>;
+}
+
+const { items } = Astro.props;
+
+// Generate breadcrumb schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.label,
+    ...(item.href && { "item": `https://www.cctvtrailer.com${item.href}` })
+  }))
+};
+---
+
+<nav aria-label="Breadcrumb" class="bg-gray-50 py-3 px-4 mb-6">
+  <ol class="flex items-center space-x-2 text-sm container mx-auto">
+    {items.map((item, index) => (
+      <>
+        {index > 0 && (
+          <li class="text-gray-400">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+            </svg>
+          </li>
+        )}
+        <li class={index === items.length - 1 ? "text-gray-700 font-semibold" : ""}>
+          {item.href ? (
+            <a href={item.href} class="text-blue-600 hover:text-blue-800 hover:underline">
+              {item.label}
+            </a>
+          ) : (
+            <span class="text-gray-700">{item.label}</span>
+          )}
+        </li>
+      </>
+    ))}
+  </ol>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />

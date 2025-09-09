@@ -1,0 +1,67 @@
+// Google Analytics and Search Console Configuration
+// Replace these with your actual IDs when you receive them from Google
+
+export const analyticsConfig = {
+  // Google Analytics 4 Measurement ID
+  // Get this from: https://analytics.google.com/
+  // Format: G-XXXXXXXXXX
+  googleAnalyticsId: 'G-XXXXXXXXXX',
+  
+  // Google Tag Manager Container ID (optional, if you prefer GTM)
+  // Get this from: https://tagmanager.google.com/
+  // Format: GTM-XXXXXXX
+  googleTagManagerId: 'GTM-XXXXXXX',
+  
+  // Google Search Console Verification Code
+  // Get this from: https://search.google.com/search-console
+  // Use the HTML tag method and copy the content value
+  searchConsoleVerification: 'YOUR_VERIFICATION_CODE_HERE',
+  
+  // Additional tracking settings
+  settings: {
+    // Enable enhanced measurement (recommended)
+    enhancedMeasurement: true,
+    
+    // Enable debug mode in development
+    debugMode: import.meta.env.DEV,
+    
+    // Custom dimensions (if needed)
+    customDimensions: {
+      // Example: 'dimension1': 'user_type'
+    },
+    
+    // Conversion events to track
+    conversionEvents: [
+      'form_submission',
+      'phone_click',
+      'quote_request',
+      'contact_form',
+      'pricing_calculator_use'
+    ]
+  }
+};
+
+// Helper function to track custom events
+export function trackEvent(eventName, parameters = {}) {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', eventName, parameters);
+  }
+}
+
+// Helper function to track conversions
+export function trackConversion(conversionType, value = null) {
+  if (typeof window !== 'undefined' && window.gtag) {
+    const params = {
+      send_to: analyticsConfig.googleAnalyticsId,
+      event_category: 'conversion',
+      event_label: conversionType
+    };
+    
+    if (value) {
+      params.value = value;
+      params.currency = 'USD';
+    }
+    
+    window.gtag('event', 'conversion', params);
+  }
+}

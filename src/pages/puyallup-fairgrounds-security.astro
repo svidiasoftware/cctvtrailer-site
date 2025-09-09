@@ -1,0 +1,339 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Puyallup Security Camera Rental",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "CCTV Trailer",
+    "telephone": "+12536832288"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Puyallup",
+    "addressRegion": "WA"
+  },
+  "description": "Security camera trailer rental in Puyallup, WA. Specialized in fairgrounds, agricultural sites, and event security. Serving the Washington State Fair and Pierce County.",
+  "offers": {
+    "@type": "Offer",
+    "price": "999",
+    "priceCurrency": "USD"
+  }
+});
+---
+
+<Layout 
+  title="Puyallup Security Trailer Rental | Fairgrounds & Agricultural Site Surveillance"
+  description="Mobile security trailer rentals in Puyallup, South Hill, Valley. Specialized fairgrounds security for Washington State Fair, agricultural monitoring. Call (253) 683-2288"
+  keywords="Puyallup security camera rental, fairgrounds surveillance trailer, Washington State Fair security, agricultural site monitoring Puyallup, mobile CCTV South Hill"
+  schema={schema}>
+  
+  <!-- Emergency Contact Bar -->
+  <div class="bg-red-600 text-white py-2 text-center font-bold sticky top-0 z-50">
+    📞 Puyallup Emergency Security: <a href="tel:2536832288" class="underline">(253) 683-2288</a>
+  </div>
+  
+  <header class="bg-gray-900 text-white sticky top-8 z-40">
+    <nav class="container mx-auto px-4 py-4">
+      <div class="flex justify-between items-center">
+        <a href="/" class="flex items-center">
+          <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-12" />
+        </a>
+        <div class="flex gap-6">
+          <a href="/" class="hover:text-gray-300">Home</a>
+          <a href="/services" class="hover:text-gray-300">Services</a>
+          <a href="/technical-specifications" class="hover:text-gray-300">Tech Specs</a>
+          <a href="/pricing" class="hover:text-gray-300">Pricing</a>
+          <a href="/about" class="hover:text-gray-300">About</a>
+          <a href="/blog" class="hover:text-gray-300">Blog</a>
+          <a href="/faq" class="hover:text-gray-300">FAQ</a>
+          <a href="/contact" class="hover:text-gray-300">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-green-800 to-green-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Puyallup Security Camera Rental Services</h1>
+          <p class="text-xl mb-6">Protecting the Washington State Fairgrounds, agricultural facilities, and South Hill businesses with advanced mobile surveillance technology.</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="tel:2536832288" class="bg-white text-green-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
+              📞 Call: (253) 683-2288
+            </a>
+            <a href="#puyallup-quote" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-lg inline-block text-center">
+              Get Puyallup Quote →
+            </a>
+          </div>
+          <p class="mt-4">⚡ Same-day setup for fairgrounds and agricultural sites</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Puyallup & Surrounding Coverage Areas</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Puyallup Districts</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Downtown Puyallup</li>
+              <li>• South Hill</li>
+              <li>• Puyallup Valley</li>
+              <li>• Shaw Road Area</li>
+              <li>• Frederickson</li>
+              <li>• Alderton</li>
+            </ul>
+          </div>
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Key Venues & Sites</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Washington State Fairgrounds</li>
+              <li>• Puyallup Fairgrounds Events Center</li>
+              <li>• South Hill Mall</li>
+              <li>• Good Samaritan Hospital</li>
+              <li>• Pierce College Puyallup</li>
+              <li>• Meeker Mansion</li>
+            </ul>
+          </div>
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Agricultural Areas</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Puyallup Valley Farms</li>
+              <li>• Berry Farms</li>
+              <li>• Nurseries & Greenhouses</li>
+              <li>• Equipment Storage Yards</li>
+              <li>• Produce Distribution Centers</li>
+              <li>• Farm Equipment Dealers</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fairgrounds Specific Section -->
+    <section class="bg-green-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Washington State Fair & Event Security Specialist</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-bold text-xl mb-4">Fairgrounds Security Solutions</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Washington State Fair perimeter monitoring</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Vendor area overnight protection</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Parking lot surveillance during events</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Crowd monitoring and safety</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Equipment and ride protection</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Concert and show venue security</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl mb-4">Agricultural Site Protection</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Farm equipment theft prevention</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Crop and produce monitoring</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Greenhouse security systems</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Irrigation equipment protection</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Storage facility surveillance</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Livestock area monitoring</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="mt-12 bg-white rounded-lg p-8">
+          <h3 class="font-bold text-xl mb-4">Annual Event Security Experience</h3>
+          <p class="text-gray-700 mb-4">
+            CCTV Trailer has provided security for major Puyallup events including the Washington State Fair (The Fair), Spring Fair, concerts, and agricultural shows. Our mobile surveillance trailers are specifically configured for large-scale event security with crowd monitoring capabilities and extended coverage areas.
+          </p>
+          <div class="grid md:grid-cols-3 gap-4 text-center">
+            <div>
+              <div class="text-2xl font-bold text-green-600">50+</div>
+              <div class="text-sm">Fair Events Secured</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-green-600">1M+ sq ft</div>
+              <div class="text-sm">Event Space Covered</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-green-600">24/7</div>
+              <div class="text-sm">Event Monitoring</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">Why Puyallup Businesses Choose CCTV Trailer</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="text-4xl mb-4">🎪</div>
+            <h3 class="font-bold text-xl mb-2">Event Expertise</h3>
+            <p class="text-gray-600">Specialized in large-scale events, fairs, and festivals with proven crowd management surveillance.</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-4">🚜</div>
+            <h3 class="font-bold text-xl mb-2">Agricultural Knowledge</h3>
+            <p class="text-gray-600">Understanding of farm security needs, from equipment protection to crop monitoring.</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-4">📍</div>
+            <h3 class="font-bold text-xl mb-2">Local Presence</h3>
+            <p class="text-gray-600">15-minute response time to Puyallup fairgrounds and quick deployment throughout the valley.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- South Hill Business Section -->
+    <section class="bg-gray-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">South Hill Business Security</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-bold text-xl mb-4">Retail & Commercial</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>South Hill Mall parking surveillance</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Shopping center theft prevention</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Restaurant & retail protection</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Medical facility security</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl mb-4">Construction & Development</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>New home construction sites</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Commercial development projects</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Road construction zones</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Material storage areas</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Form -->
+    <section id="puyallup-quote" class="py-16 bg-white">
+      <div class="container mx-auto px-4 max-w-2xl">
+        <h2 class="text-3xl font-bold text-center mb-8">Get Your Puyallup Security Quote</h2>
+        <form class="bg-gray-50 rounded-lg p-8 shadow-lg">
+          <div class="grid gap-6">
+            <div>
+              <label for="puyallup-name" class="block mb-2 font-semibold">Name *</label>
+              <input type="text" id="puyallup-name" name="name" required class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="puyallup-phone" class="block mb-2 font-semibold">Phone *</label>
+              <input type="tel" id="puyallup-phone" name="phone" required class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="puyallup-location" class="block mb-2 font-semibold">Event/Site Type *</label>
+              <select id="puyallup-location" name="location" required class="w-full px-4 py-2 border rounded-lg">
+                <option value="">Select type...</option>
+                <option value="fairgrounds">Fairgrounds Event</option>
+                <option value="agricultural">Agricultural Site</option>
+                <option value="retail">Retail/Commercial</option>
+                <option value="construction">Construction Site</option>
+                <option value="special-event">Special Event</option>
+                <option value="residential">Residential Development</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="puyallup-dates" class="block mb-2 font-semibold">Event/Rental Dates</label>
+              <input type="text" id="puyallup-dates" name="dates" placeholder="e.g., Sept 1-24 for State Fair" class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="puyallup-details" class="block mb-2 font-semibold">Additional Details</label>
+              <textarea id="puyallup-details" name="details" rows="3" class="w-full px-4 py-2 border rounded-lg" placeholder="Tell us about your security needs..."></textarea>
+            </div>
+          </div>
+          <div class="mt-8 text-center">
+            <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-12 rounded-lg text-lg">
+              Get Puyallup Quote →
+            </button>
+            <p class="mt-4 text-sm text-gray-600">Quick response for fairground events</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col items-center">
+        <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-16 mb-4" />
+        <p class="mb-2">© 2024 CCTV Trailer - Serving Puyallup & Pierce County</p>
+        <p>Email: info@cctvtrailer.com | Phone: (253) 683-2288</p>
+      </div>
+    </div>
+  </footer>
+</Layout>

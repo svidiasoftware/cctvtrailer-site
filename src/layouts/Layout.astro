@@ -1,0 +1,72 @@
+---
+import '../styles/global.css'
+import Analytics from '../components/Analytics.astro';
+
+export interface Props {
+  title: string;
+  description?: string;
+  keywords?: string;
+  schema?: string;
+  canonicalURL?: string;
+}
+
+const { 
+  title, 
+  description = "Mobile surveillance trailer rentals throughout Tacoma and the Puget Sound region. Advanced video technology for construction sites, events, and temporary security needs.",
+  keywords = "mobile surveillance trailer rental, CCTV trailer rental Tacoma, construction site security rental, portable security camera trailer, mobile security trailer Seattle",
+  schema,
+  canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://www.cctvtrailer.com').href
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/images/cctv-trailer-hero.png" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content="/images/cctv-trailer-hero.png" />
+    
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="cctv-trailer-tacoma-2024-verification" />
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CCTV2024TRL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CCTV2024TRL');
+    </script>
+    
+    {schema && <script type="application/ld+json" set:html={schema} />}
+  </head>
+  <body class="min-h-screen bg-white">
+    <slot />
+    
+    <!-- Analytics Tracking Component -->
+    <Analytics />
+    
+    <!-- Google Tag Manager (noscript) fallback -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-CCTV2024"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+  </body>
+</html>

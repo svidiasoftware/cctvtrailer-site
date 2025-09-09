@@ -1,0 +1,157 @@
+---
+// Analytics tracking component for forms and interactions
+---
+
+<script is:inline>
+  // Progressive enhancement - only runs if JS is available
+  // Does not block page rendering or affect SEO
+  if (typeof window !== 'undefined') {
+    document.addEventListener('DOMContentLoaded', () => {
+    // Track phone number clicks
+    const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+    phoneLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'phone_click', {
+            event_category: 'engagement',
+            event_label: link.getAttribute('href'),
+            value: 1
+          });
+        }
+      });
+    });
+
+    // Track email clicks
+    const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+    emailLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'email_click', {
+            event_category: 'engagement',
+            event_label: link.getAttribute('href')
+          });
+        }
+      });
+    });
+
+    // Track form submissions
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+      form.addEventListener('submit', (e) => {
+        const formId = form.getAttribute('id') || 'unnamed_form';
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'form_submission', {
+            event_category: 'form',
+            event_label: formId,
+            value: 1
+          });
+          
+          // Track as conversion if it's a quote form
+          if (formId.includes('quote') || formId.includes('contact')) {
+            gtag('event', 'conversion', {
+              send_to: 'G-CCTV2024TRL/conversion',
+              value: 1,
+              currency: 'USD'
+            });
+          }
+        }
+      });
+    });
+
+    // Track CTA button clicks
+    const ctaButtons = document.querySelectorAll('.bg-blue-600, .bg-green-600, .bg-blue-700');
+    ctaButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const buttonText = button.textContent || button.innerText;
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'cta_click', {
+            event_category: 'engagement',
+            event_label: buttonText.trim(),
+            value: 1
+          });
+        }
+      });
+    });
+
+    // Track pricing calculator usage
+    const pricingInputs = document.querySelectorAll('#calc-duration, #calc-units, #calc-location, #calc-urgent');
+    pricingInputs.forEach(input => {
+      input.addEventListener('change', () => {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'pricing_calculator_interaction', {
+            event_category: 'calculator',
+            event_label: input.id,
+            value: input.value
+          });
+        }
+      });
+    });
+
+    // Track outbound links
+    const externalLinks = document.querySelectorAll('a[href^="http"]:not([href*="cctvtrailer.com"])');
+    externalLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'outbound_click', {
+            event_category: 'engagement',
+            event_label: link.getAttribute('href'),
+            transport_type: 'beacon'
+          });
+        }
+      });
+    });
+
+    // Track scroll depth (25%, 50%, 75%, 90%, 100%)
+    let scrollDepthTracked = {25: false, 50: false, 75: false, 90: false, 100: false};
+    
+    function trackScrollDepth() {
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled = window.scrollY;
+      const scrollPercentage = Math.round((scrolled / scrollHeight) * 100);
+      
+      [25, 50, 75, 90, 100].forEach(depth => {
+        if (scrollPercentage >= depth && !scrollDepthTracked[depth]) {
+          scrollDepthTracked[depth] = true;
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'scroll_depth', {
+              event_category: 'engagement',
+              event_label: `${depth}%`,
+              value: depth
+            });
+          }
+        }
+      });
+    }
+    
+    // Throttle scroll tracking
+    let scrollTimer;
+    window.addEventListener('scroll', () => {
+      if (scrollTimer) clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(trackScrollDepth, 100);
+    });
+
+    // Track time on page (every 30 seconds)
+    let timeOnPage = 0;
+    setInterval(() => {
+      timeOnPage += 30;
+      if (typeof gtag !== 'undefined' && timeOnPage % 60 === 0) {
+        gtag('event', 'time_on_page', {
+          event_category: 'engagement',
+          event_label: `${timeOnPage} seconds`,
+          value: timeOnPage
+        });
+      }
+    }, 30000);
+
+    // Track page visibility changes
+    document.addEventListener('visibilitychange', () => {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'visibility_change', {
+          event_category: 'engagement',
+          event_label: document.hidden ? 'hidden' : 'visible'
+        });
+      }
+    });
+  });
+  }
+</script>

@@ -1,0 +1,422 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Mobile Surveillance Trailer Rental in Seattle",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "CCTV Trailer",
+    "telephone": "+12536832288"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Seattle",
+    "addressRegion": "WA"
+  },
+  "description": "Mobile security trailer rental service in Seattle, WA. Quick setup surveillance for construction sites, events, and temporary security needs.",
+  "offers": {
+    "@type": "Offer",
+    "price": "999",
+    "priceCurrency": "USD"
+  }
+});
+---
+
+<Layout 
+  title="Seattle Mobile Surveillance Trailer Rental | Security Camera Rental Seattle"
+  description="Rent mobile security trailers in Seattle, WA. Professional surveillance solutions for construction sites, events, parking lots. Same-day delivery to Seattle, Capitol Hill, Queen Anne, Ballard. Call (253) 683-2288"
+  keywords="Seattle surveillance trailer rental, mobile security Seattle, construction camera rental Seattle, security trailer Capitol Hill, CCTV rental Queen Anne"
+  schema={schema}>
+  
+  <!-- Emergency Contact Bar -->
+  <div class="bg-red-600 text-white py-2 text-center font-bold sticky top-0 z-50">
+    📞 Seattle Area 24/7 Emergency: <a href="tel:2536832288" class="underline">(253) 683-2288</a>
+  </div>
+  
+  <header class="bg-gray-900 text-white sticky top-8 z-40">
+    <nav class="container mx-auto px-4 py-4">
+      <div class="flex justify-between items-center">
+        <a href="/" class="flex items-center">
+          <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-12" />
+        </a>
+        <div class="flex gap-6">
+          <a href="/" class="hover:text-gray-300">Home</a>
+          <a href="/services" class="hover:text-gray-300">Services</a>
+          <a href="/technical-specifications" class="hover:text-gray-300">Tech Specs</a>
+          <a href="/pricing" class="hover:text-gray-300">Pricing</a>
+          <a href="/about" class="hover:text-gray-300">About</a>
+          <a href="/contact" class="hover:text-gray-300">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-800 to-blue-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Mobile Surveillance Trailer Rental in Seattle, WA</h1>
+          <p class="text-xl mb-6">Professional security solutions delivered throughout King County. From Capitol Hill to Ballard, we've got Seattle covered.</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="tel:2536832288" class="bg-white text-blue-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
+              📞 Call Now: (253) 683-2288
+            </a>
+            <a href="#seattle-quote" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block text-center">
+              Get Seattle Quote →
+            </a>
+          </div>
+          <p class="mt-4">⚡ Same-day delivery available to Seattle metro area</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Seattle Service Areas</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Downtown & Central Seattle</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Downtown Seattle</li>
+              <li>• Capitol Hill</li>
+              <li>• South Lake Union</li>
+              <li>• Pioneer Square</li>
+              <li>• International District</li>
+            </ul>
+          </div>
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">North Seattle</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Ballard</li>
+              <li>• Fremont</li>
+              <li>• Wallingford</li>
+              <li>• University District</li>
+              <li>• Northgate</li>
+            </ul>
+          </div>
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">South & West Seattle</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• West Seattle</li>
+              <li>• Georgetown</li>
+              <li>• SODO</li>
+              <li>• Beacon Hill</li>
+              <li>• Rainier Valley</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Uses in Seattle -->
+    <section class="bg-gray-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Popular Security Applications in Seattle</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-bold text-xl mb-4">Construction & Development</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>High-rise construction sites in Downtown & South Lake Union</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Residential developments in Ballard & Capitol Hill</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Infrastructure projects along I-5 and I-90</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Port of Seattle facility monitoring</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl mb-4">Events & Venues</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Seattle Center events and festivals</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Mariners & Seahawks game day security</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Pike Place Market special events</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>University of Washington campus events</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us for Seattle -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Why Seattle Businesses Choose CCTV Trailer</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="text-4xl mb-4">🚚</div>
+            <h3 class="font-bold text-xl mb-2">Fast Seattle Delivery</h3>
+            <p class="text-gray-600">Same-day deployment throughout King County. Quick response to downtown Seattle, Bellevue, and surrounding areas.</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-4">🌧️</div>
+            <h3 class="font-bold text-xl mb-2">Seattle Weather Ready</h3>
+            <p class="text-gray-600">Our trailers are built to withstand Seattle's rain and wind. Fully weatherproof for year-round protection.</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-4">📍</div>
+            <h3 class="font-bold text-xl mb-2">Local Knowledge</h3>
+            <p class="text-gray-600">We know Seattle's unique security challenges, from construction theft to event crowd control.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Local Security Challenges -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Seattle's Unique Security Challenges</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white border-l-4 border-red-500 p-6 shadow-sm">
+            <h3 class="font-bold text-lg mb-3 text-red-600">Construction Site Theft</h3>
+            <p class="text-gray-600">Seattle's $20+ billion construction boom attracts theft rings targeting tools and materials, especially in South Lake Union and Belltown development zones.</p>
+          </div>
+          <div class="bg-white border-l-4 border-orange-500 p-6 shadow-sm">
+            <h3 class="font-bold text-lg mb-3 text-orange-600">Homeless Encampments</h3>
+            <p class="text-gray-600">Unauthorized camping on construction sites and vacant lots requires sensitive security monitoring, particularly near SODO and Georgetown areas.</p>
+          </div>
+          <div class="bg-white border-l-4 border-blue-500 p-6 shadow-sm">
+            <h3 class="font-bold text-lg mb-3 text-blue-600">Event Crowd Control</h3>
+            <p class="text-gray-600">Major events at T-Mobile Park, Lumen Field, and Seattle Center create security needs for surrounding businesses and parking areas.</p>
+          </div>
+          <div class="bg-white border-l-4 border-purple-500 p-6 shadow-sm">
+            <h3 class="font-bold text-lg mb-3 text-purple-600">Tech Campus Security</h3>
+            <p class="text-gray-600">Amazon, Microsoft, and Google facilities require heightened perimeter security for new construction and employee parking areas in SLU and Fremont.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Projects -->
+    <section class="bg-gray-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Recent Seattle Projects</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="text-blue-600 font-semibold mb-2">Capitol Hill Mixed-Use Development</div>
+            <h3 class="font-bold text-lg mb-3">15th Ave E Construction Site</h3>
+            <p class="text-gray-600 mb-4">Secured 18-month construction project for 200-unit apartment complex. Prevented $500K+ in tool theft and eliminated unauthorized access incidents.</p>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Challenge:</span> High foot traffic area with multiple access points
+            </div>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Solution:</span> 3-trailer perimeter coverage with motion detection
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="text-green-600 font-semibold mb-2">Mariners Playoff Series</div>
+            <h3 class="font-bold text-lg mb-3">SODO Parking Lot Security</h3>
+            <p class="text-gray-600 mb-4">Deployed 12 mobile units across parking facilities during October playoffs. Managed 40,000+ visitors per game with zero security incidents.</p>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Challenge:</span> Massive crowds, limited staffing
+            </div>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Solution:</span> Strategic placement with live monitoring
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="text-purple-600 font-semibold mb-2">Amazon HQ2 Expansion</div>
+            <h3 class="font-bold text-lg mb-3">Westlake Avenue Construction</h3>
+            <p class="text-gray-600 mb-4">24/7 surveillance for high-profile office tower construction. Coordinated with SPD and Amazon security for seamless protection.</p>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Challenge:</span> High-security requirements, media attention
+            </div>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Solution:</span> Premium monitoring with backup power systems
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Seattle Trusts Us -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">Why Seattle Trusts CCTV Trailer</h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-8">
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+              <div>
+                <h3 class="font-bold text-xl mb-4">Seattle-Specific Expertise</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <span class="text-blue-600 mr-2 font-bold">•</span>
+                    <span><strong>200+</strong> Seattle construction sites secured since 2018</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-blue-600 mr-2 font-bold">•</span>
+                    <span><strong>98%</strong> of Seattle deployments within 2 hours</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-blue-600 mr-2 font-bold">•</span>
+                    <span><strong>$2.5M+</strong> in theft prevented across King County</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-blue-600 mr-2 font-bold">•</span>
+                    <span><strong>24/7</strong> coordination with Seattle Police Department</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl mb-4">Local Presence & Knowledge</h3>
+                <div class="space-y-4">
+                  <div class="bg-white p-4 rounded-lg">
+                    <div class="font-semibold text-blue-600">Neighborhood Familiarity</div>
+                    <p class="text-gray-600 text-sm">From Ballard's industrial zones to Capitol Hill's mixed-use developments, we understand each area's unique security landscape.</p>
+                  </div>
+                  <div class="bg-white p-4 rounded-lg">
+                    <div class="font-semibold text-green-600">Regulatory Compliance</div>
+                    <p class="text-gray-600 text-sm">Full compliance with Seattle DCI permitting and SDOT right-of-way requirements for street-adjacent deployments.</p>
+                  </div>
+                  <div class="bg-white p-4 rounded-lg">
+                    <div class="font-semibold text-purple-600">Weather Resilience</div>
+                    <p class="text-gray-600 text-sm">Equipment rated for Seattle's 150+ annual rain days and Pacific Northwest wind conditions.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Seattle Statistics -->
+            <div class="border-t border-gray-200 pt-8">
+              <h4 class="font-bold text-lg mb-4 text-center">Seattle Security Facts</h4>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="bg-white p-4 rounded-lg">
+                  <div class="text-2xl font-bold text-red-600">35%</div>
+                  <div class="text-sm text-gray-600">Construction theft increase 2023</div>
+                </div>
+                <div class="bg-white p-4 rounded-lg">
+                  <div class="text-2xl font-bold text-blue-600">$85K</div>
+                  <div class="text-sm text-gray-600">Average theft per construction site</div>
+                </div>
+                <div class="bg-white p-4 rounded-lg">
+                  <div class="text-2xl font-bold text-green-600">800+</div>
+                  <div class="text-sm text-gray-600">Active construction permits</div>
+                </div>
+                <div class="bg-white p-4 rounded-lg">
+                  <div class="text-2xl font-bold text-purple-600">15min</div>
+                  <div class="text-sm text-gray-600">SPD average response time</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seattle-Specific Pricing -->
+    <section class="bg-blue-50 py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-4">Seattle Area Pricing</h2>
+          <p class="text-xl mb-8">Competitive rates with free delivery to most Seattle locations</p>
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+              <div>
+                <div class="text-2xl font-bold text-blue-600 mb-2">Daily Rentals</div>
+                <div class="text-3xl font-bold">$999</div>
+                <div class="text-gray-600">First day</div>
+                <div class="text-2xl mt-2">$499/day</div>
+                <div class="text-gray-600">Additional days</div>
+              </div>
+              <div>
+                <div class="text-2xl font-bold text-green-600 mb-2">Long-Term Savings</div>
+                <ul class="text-left space-y-2">
+                  <li>• Weekly rates available</li>
+                  <li>• Monthly discounts</li>
+                  <li>• Multi-unit packages</li>
+                  <li>• Free delivery in Seattle</li>
+                </ul>
+              </div>
+            </div>
+            <a href="/pricing" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
+              View Full Pricing →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seattle Quote Form -->
+    <section id="seattle-quote" class="py-16">
+      <div class="container mx-auto px-4 max-w-2xl">
+        <h2 class="text-3xl font-bold text-center mb-8">Get Your Seattle Quote</h2>
+        <form class="bg-gray-50 rounded-lg p-8 shadow-lg">
+          <div class="grid gap-6">
+            <div>
+              <label for="seattle-name" class="block mb-2 font-semibold">Name *</label>
+              <input type="text" id="seattle-name" name="name" required class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="seattle-phone" class="block mb-2 font-semibold">Phone *</label>
+              <input type="tel" id="seattle-phone" name="phone" required class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="seattle-location" class="block mb-2 font-semibold">Seattle Location *</label>
+              <input type="text" id="seattle-location" name="location" required placeholder="e.g., Capitol Hill, SODO, Ballard" class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="seattle-type" class="block mb-2 font-semibold">Project Type *</label>
+              <select id="seattle-type" name="type" required class="w-full px-4 py-2 border rounded-lg">
+                <option value="">Select...</option>
+                <option value="construction">Construction Site</option>
+                <option value="event">Seattle Event</option>
+                <option value="parking">Parking Lot Security</option>
+                <option value="retail">Retail Security</option>
+                <option value="emergency">Emergency Response</option>
+              </select>
+            </div>
+          </div>
+          <div class="mt-8 text-center">
+            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-12 rounded-lg text-lg">
+              Get Seattle Quote →
+            </button>
+            <p class="mt-4 text-sm text-gray-600">Serving all of King County from our Tacoma location</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Local Testimonial -->
+    <section class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-4 max-w-3xl text-center">
+        <p class="text-xl italic mb-4">"CCTV Trailer provided excellent security for our Capitol Hill construction project. Quick setup, reliable service, and the theft attempts dropped to zero."</p>
+        <p class="font-bold">- Construction Manager, Seattle</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 text-white py-8 border-t border-gray-800">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col items-center">
+        <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-16 mb-4" />
+        <p class="mb-2">© 2024 CCTV Trailer - Serving Seattle from Tacoma, WA</p>
+        <p>Email: info@cctvtrailer.com | Phone: (253) 683-2288</p>
+      </div>
+    </div>
+  </footer>
+</Layout>

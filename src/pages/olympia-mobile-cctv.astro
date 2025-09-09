@@ -1,0 +1,266 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Mobile CCTV Rental in Olympia",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "CCTV Trailer",
+    "telephone": "+12536832288"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Olympia",
+    "addressRegion": "WA"
+  },
+  "description": "Mobile CCTV trailer rental service in Olympia, WA. Serving state government facilities, construction sites, and special events in the capital region.",
+  "offers": {
+    "@type": "Offer",
+    "price": "999",
+    "priceCurrency": "USD"
+  }
+});
+---
+
+<Layout 
+  title="Olympia Mobile CCTV Rental | Security Trailer Rental Thurston County"
+  description="Mobile CCTV trailer rentals in Olympia, Lacey, Tumwater. Serving state capitol, government facilities, construction sites. Same-day delivery. Call (253) 683-2288"
+  keywords="Olympia CCTV rental, mobile security Olympia, surveillance trailer Thurston County, security camera rental Lacey, Tumwater security trailer"
+  schema={schema}>
+  
+  <!-- Emergency Contact Bar -->
+  <div class="bg-red-600 text-white py-2 text-center font-bold sticky top-0 z-50">
+    📞 Olympia Area Quick Response: <a href="tel:2536832288" class="underline">(253) 683-2288</a>
+  </div>
+  
+  <header class="bg-gray-900 text-white sticky top-8 z-40">
+    <nav class="container mx-auto px-4 py-4">
+      <div class="flex justify-between items-center">
+        <a href="/" class="flex items-center">
+          <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-12" />
+        </a>
+        <div class="flex gap-6">
+          <a href="/" class="hover:text-gray-300">Home</a>
+          <a href="/services" class="hover:text-gray-300">Services</a>
+          <a href="/technical-specifications" class="hover:text-gray-300">Tech Specs</a>
+          <a href="/pricing" class="hover:text-gray-300">Pricing</a>
+          <a href="/about" class="hover:text-gray-300">About</a>
+          <a href="/contact" class="hover:text-gray-300">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-emerald-800 to-emerald-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Mobile CCTV Rental in Olympia, WA</h1>
+          <p class="text-xl mb-6">Protecting Washington's capital city with advanced mobile surveillance. From government facilities to special events, we secure Thurston County 24/7.</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="tel:2536832288" class="bg-white text-emerald-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
+              📞 Call Now: (253) 683-2288
+            </a>
+            <a href="#olympia-quote" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-lg inline-block text-center">
+              Get Olympia Quote →
+            </a>
+          </div>
+          <p class="mt-4">⚡ Rapid deployment to Capitol Campus and throughout Thurston County</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Olympia & Thurston County Coverage</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Olympia Areas</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• State Capitol Campus</li>
+              <li>• Downtown Olympia</li>
+              <li>• West Olympia</li>
+              <li>• South Capitol</li>
+              <li>• Evergreen State College</li>
+              <li>• Port of Olympia</li>
+            </ul>
+          </div>
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Surrounding Cities</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Lacey</li>
+              <li>• Tumwater</li>
+              <li>• Yelm</li>
+              <li>• Tenino</li>
+              <li>• Rochester</li>
+              <li>• Rainier</li>
+            </ul>
+          </div>
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Special Facilities</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• State Government Buildings</li>
+              <li>• Saint Martin's University</li>
+              <li>• Providence St. Peter Hospital</li>
+              <li>• Thurston County Fairgrounds</li>
+              <li>• Brewery District</li>
+              <li>• Heritage Park</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Olympia-Specific Applications -->
+    <section class="bg-gray-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Security Solutions for Olympia</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-bold text-xl mb-4">Government & Public Sector</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>State Capitol Campus security during sessions</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Government construction project monitoring</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Public works and infrastructure protection</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Legislative event security support</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl mb-4">Events & Community</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Olympia Harbor Days security</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Lakefair Festival surveillance</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Procession of the Species parade</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Farmers Market weekend security</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="mt-12 bg-blue-100 rounded-lg p-8">
+          <h3 class="font-bold text-xl mb-4">Capitol Campus Specialist</h3>
+          <p class="text-gray-700 mb-4">
+            We understand the unique security requirements of government facilities. Our mobile CCTV trailers are approved for state property deployment and meet all compliance requirements for sensitive locations.
+          </p>
+          <ul class="grid md:grid-cols-2 gap-4">
+            <li>• Background-checked operators</li>
+            <li>• Secure data handling protocols</li>
+            <li>• Government contract ready</li>
+            <li>• Rapid emergency response</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Why Olympia Chooses CCTV Trailer</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="text-4xl mb-4">🏛️</div>
+            <h3 class="font-bold text-xl mb-2">Government Approved</h3>
+            <p class="text-gray-600">Trusted by state agencies and approved for sensitive government facilities throughout the capitol region.</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-4">⚡</div>
+            <h3 class="font-bold text-xl mb-2">45-Minute Response</h3>
+            <p class="text-gray-600">Quick deployment from Tacoma to Olympia. Emergency response available for urgent security needs.</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-4">🌲</div>
+            <h3 class="font-bold text-xl mb-2">Pacific NW Ready</h3>
+            <p class="text-gray-600">Equipment built to handle Olympia's rainy climate. Fully weatherproof year-round operation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Form -->
+    <section id="olympia-quote" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-2xl">
+        <h2 class="text-3xl font-bold text-center mb-8">Get Your Olympia Security Quote</h2>
+        <form class="bg-white rounded-lg p-8 shadow-lg">
+          <div class="grid gap-6">
+            <div>
+              <label for="olympia-name" class="block mb-2 font-semibold">Name *</label>
+              <input type="text" id="olympia-name" name="name" required class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="olympia-phone" class="block mb-2 font-semibold">Phone *</label>
+              <input type="tel" id="olympia-phone" name="phone" required class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="olympia-location" class="block mb-2 font-semibold">Olympia Area Location *</label>
+              <select id="olympia-location" name="location" required class="w-full px-4 py-2 border rounded-lg">
+                <option value="">Select area...</option>
+                <option value="capitol-campus">Capitol Campus</option>
+                <option value="downtown">Downtown Olympia</option>
+                <option value="west-olympia">West Olympia</option>
+                <option value="lacey">Lacey</option>
+                <option value="tumwater">Tumwater</option>
+                <option value="yelm">Yelm</option>
+                <option value="port">Port of Olympia</option>
+                <option value="other">Other Thurston County</option>
+              </select>
+            </div>
+            <div>
+              <label for="olympia-type" class="block mb-2 font-semibold">Security Need *</label>
+              <select id="olympia-type" name="type" required class="w-full px-4 py-2 border rounded-lg">
+                <option value="">Select type...</option>
+                <option value="government">Government Facility</option>
+                <option value="construction">Construction Site</option>
+                <option value="event">Special Event</option>
+                <option value="commercial">Commercial Property</option>
+                <option value="emergency">Emergency Response</option>
+              </select>
+            </div>
+          </div>
+          <div class="mt-8 text-center">
+            <button type="submit" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-12 rounded-lg text-lg">
+              Get Olympia Quote →
+            </button>
+            <p class="mt-4 text-sm text-gray-600">Serving all of Thurston County from nearby Tacoma</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col items-center">
+        <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-16 mb-4" />
+        <p class="mb-2">© 2024 CCTV Trailer - Serving Olympia & Thurston County</p>
+        <p>Email: info@cctvtrailer.com | Phone: (253) 683-2288</p>
+      </div>
+    </div>
+  </footer>
+</Layout>

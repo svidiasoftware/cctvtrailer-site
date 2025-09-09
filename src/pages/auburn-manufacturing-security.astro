@@ -1,0 +1,333 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Auburn Security Camera Rental",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "CCTV Trailer",
+    "telephone": "+12536832288"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Auburn",
+    "addressRegion": "WA"
+  },
+  "description": "Security camera trailer rental in Auburn, WA. Specialized in manufacturing facilities, logistics centers, and distribution warehouses. Serving the Green River Valley industrial corridor.",
+  "offers": {
+    "@type": "Offer",
+    "price": "999",
+    "priceCurrency": "USD"
+  }
+});
+---
+
+<Layout 
+  title="Auburn Security Trailer Rental | Manufacturing & Logistics Surveillance"
+  description="Mobile security trailer rentals in Auburn, Algona, Pacific. Manufacturing facility protection, logistics center monitoring, warehouse security. Call (253) 683-2288"
+  keywords="Auburn security camera rental, manufacturing surveillance Auburn WA, logistics center security, warehouse monitoring Auburn, mobile CCTV Green River Valley"
+  schema={schema}>
+  
+  <!-- Emergency Contact Bar -->
+  <div class="bg-red-600 text-white py-2 text-center font-bold sticky top-0 z-50">
+    📞 Auburn Industrial Security: <a href="tel:2536832288" class="underline">(253) 683-2288</a>
+  </div>
+  
+  <header class="bg-gray-900 text-white sticky top-8 z-40">
+    <nav class="container mx-auto px-4 py-4">
+      <div class="flex justify-between items-center">
+        <a href="/" class="flex items-center">
+          <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-12" />
+        </a>
+        <div class="flex gap-6">
+          <a href="/" class="hover:text-gray-300">Home</a>
+          <a href="/services" class="hover:text-gray-300">Services</a>
+          <a href="/technical-specifications" class="hover:text-gray-300">Tech Specs</a>
+          <a href="/pricing" class="hover:text-gray-300">Pricing</a>
+          <a href="/about" class="hover:text-gray-300">About</a>
+          <a href="/blog" class="hover:text-gray-300">Blog</a>
+          <a href="/faq" class="hover:text-gray-300">FAQ</a>
+          <a href="/contact" class="hover:text-gray-300">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-orange-800 to-orange-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Auburn Manufacturing & Logistics Security</h1>
+          <p class="text-xl mb-6">Protecting Auburn's industrial corridor with advanced mobile surveillance. Specialized solutions for manufacturing plants, distribution centers, and logistics operations.</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="tel:2536832288" class="bg-white text-orange-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
+              📞 Call: (253) 683-2288
+            </a>
+            <a href="#auburn-quote" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg inline-block text-center">
+              Get Auburn Quote →
+            </a>
+          </div>
+          <p class="mt-4">⚡ Rapid deployment to Green River Valley industrial sites</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Auburn & Industrial Coverage Areas</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Auburn Districts</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Downtown Auburn</li>
+              <li>• Auburn North (GSA)</li>
+              <li>• Lea Hill</li>
+              <li>• Lakeland Hills</li>
+              <li>• West Auburn</li>
+              <li>• Algona</li>
+              <li>• Pacific</li>
+            </ul>
+          </div>
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Industrial Zones</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Green River Valley</li>
+              <li>• Auburn Industrial Park</li>
+              <li>• Boeing facilities</li>
+              <li>• Emerald Downs area</li>
+              <li>• SuperMall vicinity</li>
+              <li>• Highway 167 corridor</li>
+              <li>• Valley Freeway sites</li>
+            </ul>
+          </div>
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Major Employers</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Boeing Auburn Plant</li>
+              <li>• Safeway Distribution</li>
+              <li>• Amazon Fulfillment</li>
+              <li>• FedEx Ground</li>
+              <li>• UPS Facilities</li>
+              <li>• Steel & Metal Fabricators</li>
+              <li>• Food Processing Plants</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manufacturing & Logistics Focus -->
+    <section class="bg-orange-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Industrial Security Solutions for Auburn</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-bold text-xl mb-4">Manufacturing Facility Protection</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Production floor monitoring</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Raw material storage security</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Finished goods warehouse protection</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Equipment theft prevention</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Shift change monitoring</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Weekend/holiday surveillance</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl mb-4">Logistics & Distribution Security</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Loading dock surveillance</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Truck yard monitoring</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Cross-dock operation security</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Container storage protection</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Fleet vehicle security</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Perimeter breach detection</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="mt-12 bg-white rounded-lg p-8">
+          <h3 class="font-bold text-xl mb-4">Auburn Industrial Corridor Specialist</h3>
+          <p class="text-gray-700 mb-4">
+            With extensive experience securing Auburn's manufacturing and logistics facilities, CCTV Trailer understands the unique challenges of industrial security. Our mobile surveillance trailers are configured for large-area coverage, with infrared capabilities for 24/7 monitoring of loading docks, storage yards, and production facilities.
+          </p>
+          <div class="grid md:grid-cols-3 gap-4 text-center">
+            <div>
+              <div class="text-2xl font-bold text-orange-600">100+</div>
+              <div class="text-sm">Industrial Sites Protected</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-orange-600">5M+ sq ft</div>
+              <div class="text-sm">Warehouse Space Secured</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-orange-600">85%</div>
+              <div class="text-sm">Theft Reduction Rate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Boeing & Aerospace Security -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Aerospace & High-Tech Security</h2>
+        <div class="bg-gray-50 rounded-lg p-8">
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="font-bold text-xl mb-4">Boeing & Aerospace Support</h3>
+              <p class="text-gray-700 mb-4">
+                Providing supplemental security for aerospace manufacturers and their suppliers throughout Auburn. Our surveillance systems meet strict security requirements for sensitive manufacturing operations.
+              </p>
+              <ul class="space-y-2">
+                <li>• Supplier facility protection</li>
+                <li>• Parts warehouse security</li>
+                <li>• Parking lot surveillance</li>
+                <li>• Contractor yard monitoring</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-bold text-xl mb-4">Technology & Innovation Centers</h3>
+              <p class="text-gray-700 mb-4">
+                Protecting Auburn's growing tech sector with advanced surveillance solutions for R&D facilities, data centers, and innovation hubs.
+              </p>
+              <ul class="space-y-2">
+                <li>• Research facility security</li>
+                <li>• Prototype protection</li>
+                <li>• Clean room monitoring</li>
+                <li>• Intellectual property defense</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="bg-gray-100 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">Why Auburn Industries Trust CCTV Trailer</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="text-4xl mb-4">🏭</div>
+            <h3 class="font-bold text-xl mb-2">Industrial Expertise</h3>
+            <p class="text-gray-600">Deep understanding of manufacturing and logistics security requirements with proven solutions.</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-4">📦</div>
+            <h3 class="font-bold text-xl mb-2">Large Area Coverage</h3>
+            <p class="text-gray-600">Surveillance systems designed for expansive warehouse and yard monitoring.</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-4">🚛</div>
+            <h3 class="font-bold text-xl mb-2">24/7 Reliability</h3>
+            <p class="text-gray-600">Continuous monitoring for round-the-clock operations and shift changes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Form -->
+    <section id="auburn-quote" class="py-16 bg-white">
+      <div class="container mx-auto px-4 max-w-2xl">
+        <h2 class="text-3xl font-bold text-center mb-8">Get Your Auburn Industrial Security Quote</h2>
+        <form class="bg-gray-50 rounded-lg p-8 shadow-lg">
+          <div class="grid gap-6">
+            <div>
+              <label for="auburn-name" class="block mb-2 font-semibold">Name *</label>
+              <input type="text" id="auburn-name" name="name" required class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="auburn-phone" class="block mb-2 font-semibold">Phone *</label>
+              <input type="tel" id="auburn-phone" name="phone" required class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="auburn-facility" class="block mb-2 font-semibold">Facility Type *</label>
+              <select id="auburn-facility" name="facility" required class="w-full px-4 py-2 border rounded-lg">
+                <option value="">Select type...</option>
+                <option value="manufacturing">Manufacturing Plant</option>
+                <option value="warehouse">Warehouse/Distribution</option>
+                <option value="logistics">Logistics Center</option>
+                <option value="aerospace">Aerospace/Defense</option>
+                <option value="technology">Technology/R&D</option>
+                <option value="construction">Construction Site</option>
+                <option value="retail">Retail/Commercial</option>
+                <option value="other">Other Industrial</option>
+              </select>
+            </div>
+            <div>
+              <label for="auburn-size" class="block mb-2 font-semibold">Facility Size</label>
+              <select id="auburn-size" name="size" class="w-full px-4 py-2 border rounded-lg">
+                <option value="">Select size...</option>
+                <option value="small">Under 25,000 sq ft</option>
+                <option value="medium">25,000 - 100,000 sq ft</option>
+                <option value="large">100,000 - 500,000 sq ft</option>
+                <option value="xlarge">Over 500,000 sq ft</option>
+              </select>
+            </div>
+            <div>
+              <label for="auburn-details" class="block mb-2 font-semibold">Security Requirements</label>
+              <textarea id="auburn-details" name="details" rows="3" class="w-full px-4 py-2 border rounded-lg" placeholder="Describe your specific security needs..."></textarea>
+            </div>
+          </div>
+          <div class="mt-8 text-center">
+            <button type="submit" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-12 rounded-lg text-lg">
+              Get Auburn Quote →
+            </button>
+            <p class="mt-4 text-sm text-gray-600">Specialized in industrial security solutions</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col items-center">
+        <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-16 mb-4" />
+        <p class="mb-2">© 2024 CCTV Trailer - Serving Auburn's Industrial Corridor</p>
+        <p>Email: info@cctvtrailer.com | Phone: (253) 683-2288</p>
+      </div>
+    </div>
+  </footer>
+</Layout>

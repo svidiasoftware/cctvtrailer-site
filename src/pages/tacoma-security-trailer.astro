@@ -1,0 +1,465 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Mobile Security Trailer Rental in Tacoma",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "CCTV Trailer",
+    "telephone": "+12536832288",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tacoma",
+      "addressRegion": "WA"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Tacoma",
+    "addressRegion": "WA"
+  },
+  "description": "Locally owned mobile security trailer rental in Tacoma, WA. Immediate availability for construction sites, events, and emergency security needs.",
+  "offers": {
+    "@type": "Offer",
+    "price": "999",
+    "priceCurrency": "USD"
+  }
+});
+---
+
+<Layout 
+  title="Tacoma Security Trailer Rental | Mobile CCTV Surveillance Tacoma WA"
+  description="Local Tacoma security trailer rental company. Same-day mobile surveillance for construction, events, parking lots in Tacoma, Lakewood, Puyallup, Federal Way. Call (253) 683-2288"
+  keywords="Tacoma security trailer rental, mobile surveillance Tacoma, CCTV rental Pierce County, construction camera Tacoma, security trailer Lakewood"
+  schema={schema}>
+  
+  <!-- Emergency Contact Bar -->
+  <div class="bg-red-600 text-white py-2 text-center font-bold sticky top-0 z-50">
+    📞 Tacoma Local: <a href="tel:2536832288" class="underline">(253) 683-2288</a> - Same Day Delivery!
+  </div>
+  
+  <header class="bg-gray-900 text-white sticky top-8 z-40">
+    <nav class="container mx-auto px-4 py-4">
+      <div class="flex justify-between items-center">
+        <a href="/" class="flex items-center">
+          <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-12" />
+        </a>
+        <div class="flex gap-6">
+          <a href="/" class="hover:text-gray-300">Home</a>
+          <a href="/services" class="hover:text-gray-300">Services</a>
+          <a href="/technical-specifications" class="hover:text-gray-300">Tech Specs</a>
+          <a href="/pricing" class="hover:text-gray-300">Pricing</a>
+          <a href="/about" class="hover:text-gray-300">About</a>
+          <a href="/contact" class="hover:text-gray-300">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-green-800 to-green-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Tacoma's Local Security Trailer Rental Company</h1>
+          <p class="text-xl mb-6">Proudly serving Pierce County with mobile surveillance solutions. Based right here in Tacoma - fastest response times guaranteed!</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="tel:2536832288" class="bg-white text-green-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
+              📞 Tacoma Direct: (253) 683-2288
+            </a>
+            <a href="#tacoma-quote" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-lg inline-block text-center">
+              Get Tacoma Quote →
+            </a>
+          </div>
+          <p class="mt-4">⚡ Fastest delivery in Pierce County - We're local!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Local -->
+    <section class="bg-yellow-50 py-12">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-6">Why Choose a Local Tacoma Company?</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow">
+              <div class="text-3xl mb-3">⚡</div>
+              <h3 class="font-bold mb-2">30-Minute Response</h3>
+              <p class="text-gray-600">Emergency deployment within Tacoma city limits</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+              <div class="text-3xl mb-3">💰</div>
+              <h3 class="font-bold mb-2">No Delivery Fees</h3>
+              <p class="text-gray-600">Free delivery throughout Tacoma and nearby areas</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+              <div class="text-3xl mb-3">🤝</div>
+              <h3 class="font-bold mb-2">Local Support</h3>
+              <p class="text-gray-600">Face-to-face service from your Tacoma neighbors</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Tacoma & Pierce County Service Areas</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Central Tacoma</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Downtown Tacoma</li>
+              <li>• Stadium District</li>
+              <li>• Hilltop</li>
+              <li>• North End</li>
+              <li>• South Tacoma</li>
+              <li>• Port of Tacoma</li>
+            </ul>
+          </div>
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">East Pierce County</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Puyallup</li>
+              <li>• Sumner</li>
+              <li>• Bonney Lake</li>
+              <li>• Edgewood</li>
+              <li>• Milton</li>
+              <li>• Orting</li>
+            </ul>
+          </div>
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">West & South Areas</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Lakewood</li>
+              <li>• University Place</li>
+              <li>• Fircrest</li>
+              <li>• Steilacoom</li>
+              <li>• JBLM</li>
+              <li>• Spanaway</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Uses in Tacoma -->
+    <section class="bg-gray-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Tacoma Security Applications</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-bold text-xl mb-4">Construction & Industrial</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Port of Tacoma operations & logistics</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Downtown Tacoma development projects</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Point Defiance construction sites</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Tacoma Dome area developments</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl mb-4">Events & Community</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Tacoma Dome events & concerts</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Point Defiance Zoo special events</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Puyallup Fair (Washington State Fair)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>University of Puget Sound events</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Special Services -->
+        <div class="mt-12 bg-blue-100 rounded-lg p-8">
+          <h3 class="font-bold text-xl mb-4">Special Services for Tacoma</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-semibold mb-2">JBLM Support</h4>
+              <p class="text-gray-700">Approved vendor for Joint Base Lewis-McChord security needs</p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Port Security</h4>
+              <p class="text-gray-700">Specialized surveillance for Port of Tacoma operations</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Local Benefits -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">The Tacoma Advantage</h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-gradient-to-r from-blue-50 to-green-50 rounded-lg p-8">
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 class="font-bold text-xl mb-4">Local Knowledge</h3>
+                <ul class="space-y-2">
+                  <li>• 20+ years serving Tacoma</li>
+                  <li>• Know local regulations</li>
+                  <li>• Understand Tacoma weather</li>
+                  <li>• Community relationships</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl mb-4">Immediate Service</h3>
+                <ul class="space-y-2">
+                  <li>• Trailers stored locally</li>
+                  <li>• Same-day setup</li>
+                  <li>• Emergency response 24/7</li>
+                  <li>• On-site support available</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Local Security Challenges -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Tacoma's Growing Security Challenges</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white border-l-4 border-green-600 p-6 shadow-sm">
+            <h3 class="font-bold text-lg mb-3 text-green-600">Port Industrial Theft</h3>
+            <p class="text-gray-600">The Port of Tacoma's massive container operations attract organized theft targeting cargo, equipment, and copper wire, requiring 24/7 industrial surveillance.</p>
+          </div>
+          <div class="bg-white border-l-4 border-yellow-500 p-6 shadow-sm">
+            <h3 class="font-bold text-lg mb-3 text-yellow-600">Military Base Security</h3>
+            <p class="text-gray-600">JBLM proximity creates heightened security needs for contractors and businesses serving military personnel in the Lakewood and Steilacoom corridors.</p>
+          </div>
+          <div class="bg-white border-l-4 border-red-500 p-6 shadow-sm">
+            <h3 class="font-bold text-lg mb-3 text-red-600">Hilltop Area Crime</h3>
+            <p class="text-gray-600">Historic crime patterns in central Tacoma neighborhoods require enhanced surveillance for retail businesses and construction sites along MLK Jr Way.</p>
+          </div>
+          <div class="bg-white border-l-4 border-blue-500 p-6 shadow-sm">
+            <h3 class="font-bold text-lg mb-3 text-blue-600">Event Venue Security</h3>
+            <p class="text-gray-600">Tacoma Dome events and Washington State Fair create massive security needs for surrounding parking areas and vendor setups.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Projects -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Recent Tacoma Success Stories</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="text-green-600 font-semibold mb-2">Port of Tacoma Operations</div>
+            <h3 class="font-bold text-lg mb-3">Blair Waterway Terminal</h3>
+            <p class="text-gray-600 mb-4">Deployed 8 trailers for 6-month terminal expansion project. Eliminated copper theft attempts and reduced equipment vandalism by 100%.</p>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Challenge:</span> 24/7 industrial site with multiple entry points
+            </div>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Solution:</span> Perimeter coverage with maritime-grade weatherproofing
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="text-blue-600 font-semibold mb-2">Washington State Fair</div>
+            <h3 class="font-bold text-lg mb-3">Puyallup Fairgrounds Security</h3>
+            <p class="text-gray-600 mb-4">Managed security for 23-day fair run with 1.1 million attendees. Coordinated with Pierce County Sheriff for seamless crowd management.</p>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Challenge:</span> Massive crowds, temporary vendor setups
+            </div>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Solution:</span> 15 strategic units with live monitoring
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="text-purple-600 font-semibold mb-2">Stadium District Development</div>
+            <h3 class="font-bold text-lg mb-3">Pacific Avenue Mixed-Use</h3>
+            <p class="text-gray-600 mb-4">Secured downtown Tacoma redevelopment project across from Union Station. Protected $2M construction equipment during 14-month build.</p>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Challenge:</span> High-profile location, historic district regulations
+            </div>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Solution:</span> Discrete placement with premium aesthetics
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Tacoma Trusts Us -->
+    <section class="bg-green-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">Why Tacoma Chooses Their Local Security Company</h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+              <div>
+                <h3 class="font-bold text-xl mb-4">Tacoma-Based Advantages</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <span class="text-green-600 mr-2 font-bold">•</span>
+                    <span><strong>500+</strong> Pierce County projects since 2000</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-green-600 mr-2 font-bold">•</span>
+                    <span><strong>15-minute</strong> average response time within Tacoma</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-green-600 mr-2 font-bold">•</span>
+                    <span><strong>Zero</strong> delivery fees for Tacoma metro area</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-green-600 mr-2 font-bold">•</span>
+                    <span><strong>20+</strong> years of Pierce County relationships</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl mb-4">Community Commitment</h3>
+                <div class="space-y-4">
+                  <div class="bg-green-50 p-4 rounded-lg">
+                    <div class="font-semibold text-green-600">Local Employment</div>
+                    <p class="text-gray-600 text-sm">All 12 technicians live in Pierce County - from Lakewood to Puyallup, supporting local families.</p>
+                  </div>
+                  <div class="bg-blue-50 p-4 rounded-lg">
+                    <div class="font-semibold text-blue-600">Emergency Preparedness</div>
+                    <p class="text-gray-600 text-sm">Primary EOC partner for Pierce County Emergency Management during natural disasters and civil unrest.</p>
+                  </div>
+                  <div class="bg-yellow-50 p-4 rounded-lg">
+                    <div class="font-semibold text-orange-600">Military Support</div>
+                    <p class="text-gray-600 text-sm">Veteran-owned company with special rates for JBLM contractors and military families.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Tacoma Statistics -->
+            <div class="border-t border-gray-200 pt-8">
+              <h4 class="font-bold text-lg mb-4 text-center">Tacoma Security Landscape</h4>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-2xl font-bold text-green-600">7th</div>
+                  <div class="text-sm text-gray-600">Largest port in North America</div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-2xl font-bold text-blue-600">$4.2B</div>
+                  <div class="text-sm text-gray-600">Annual port cargo value</div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-2xl font-bold text-yellow-600">42K</div>
+                  <div class="text-sm text-gray-600">JBLM military personnel</div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-2xl font-bold text-red-600">18%</div>
+                  <div class="text-sm text-gray-600">Property crime increase 2024</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tacoma Quote Form -->
+    <section id="tacoma-quote" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-2xl">
+        <h2 class="text-3xl font-bold text-center mb-8">Get Your Tacoma Quote - Response in Minutes!</h2>
+        <form class="bg-white rounded-lg p-8 shadow-lg">
+          <div class="grid gap-6">
+            <div>
+              <label for="tacoma-name" class="block mb-2 font-semibold">Name *</label>
+              <input type="text" id="tacoma-name" name="name" required class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="tacoma-phone" class="block mb-2 font-semibold">Phone *</label>
+              <input type="tel" id="tacoma-phone" name="phone" required class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="tacoma-location" class="block mb-2 font-semibold">Tacoma Area Location *</label>
+              <select id="tacoma-location" name="location" required class="w-full px-4 py-2 border rounded-lg">
+                <option value="">Select area...</option>
+                <option value="downtown">Downtown Tacoma</option>
+                <option value="north-end">North End</option>
+                <option value="south-tacoma">South Tacoma</option>
+                <option value="lakewood">Lakewood</option>
+                <option value="puyallup">Puyallup</option>
+                <option value="university-place">University Place</option>
+                <option value="federal-way">Federal Way</option>
+                <option value="port">Port of Tacoma</option>
+                <option value="jblm">JBLM</option>
+                <option value="other">Other Pierce County</option>
+              </select>
+            </div>
+            <div>
+              <label for="tacoma-urgent" class="flex items-center">
+                <input type="checkbox" id="tacoma-urgent" name="urgent" class="mr-2">
+                <span class="font-semibold text-red-600">This is urgent (need today)</span>
+              </label>
+            </div>
+          </div>
+          <div class="mt-8 text-center">
+            <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-12 rounded-lg text-lg">
+              Get Tacoma Quote Now →
+            </button>
+            <p class="mt-4 text-sm text-gray-600">Locally owned & operated in Tacoma since 2000</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Trust Signal -->
+    <section class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-2xl font-bold mb-4">Tacoma's Trusted Security Partner</h2>
+        <div class="flex justify-center gap-8 flex-wrap">
+          <div>
+            <div class="text-3xl font-bold">500+</div>
+            <div>Tacoma Projects</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold">24/7</div>
+            <div>Local Support</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold">30min</div>
+            <div>Response Time</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 text-white py-8 border-t border-gray-800">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col items-center">
+        <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-16 mb-4" />
+        <p class="mb-2">© 2024 CCTV Trailer - Proudly Based in Tacoma, WA</p>
+        <p>Email: info@cctvtrailer.com | Phone: (253) 683-2288</p>
+      </div>
+    </div>
+  </footer>
+</Layout>

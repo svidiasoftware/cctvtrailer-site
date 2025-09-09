@@ -1,0 +1,271 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Kent Security Camera Rental",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "CCTV Trailer",
+    "telephone": "+12536832288"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Kent",
+    "addressRegion": "WA"
+  },
+  "description": "Security camera trailer rental in Kent, WA. Mobile surveillance for warehouses, construction, retail. Serving Kent Valley with immediate deployment.",
+  "offers": {
+    "@type": "Offer",
+    "price": "999",
+    "priceCurrency": "USD"
+  }
+});
+---
+
+<Layout 
+  title="Kent Security Camera Rental | Mobile Surveillance Kent Valley WA"
+  description="Security camera trailer rentals in Kent, Covington, Maple Valley. Mobile surveillance for warehouses, construction, retail centers. Same-day setup. Call (253) 683-2288"
+  keywords="Kent security camera rental, surveillance trailer Kent Valley, mobile CCTV Kent WA, warehouse security Kent, construction camera Kent"
+  schema={schema}>
+  
+  <!-- Emergency Contact Bar -->
+  <div class="bg-red-600 text-white py-2 text-center font-bold sticky top-0 z-50">
+    📞 Kent Valley Quick Deploy: <a href="tel:2536832288" class="underline">(253) 683-2288</a>
+  </div>
+  
+  <header class="bg-gray-900 text-white sticky top-8 z-40">
+    <nav class="container mx-auto px-4 py-4">
+      <div class="flex justify-between items-center">
+        <a href="/" class="flex items-center">
+          <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-12" />
+        </a>
+        <div class="flex gap-6">
+          <a href="/" class="hover:text-gray-300">Home</a>
+          <a href="/services" class="hover:text-gray-300">Services</a>
+          <a href="/technical-specifications" class="hover:text-gray-300">Tech Specs</a>
+          <a href="/pricing" class="hover:text-gray-300">Pricing</a>
+          <a href="/about" class="hover:text-gray-300">About</a>
+          <a href="/contact" class="hover:text-gray-300">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-purple-800 to-purple-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Kent Security Camera Rental Services</h1>
+          <p class="text-xl mb-6">Protecting Kent Valley's warehouses, retail centers, and construction sites. Mobile surveillance solutions for the industrial heart of King County.</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="tel:2536832288" class="bg-white text-purple-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
+              📞 Call: (253) 683-2288
+            </a>
+            <a href="#kent-quote" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg inline-block text-center">
+              Get Kent Quote →
+            </a>
+          </div>
+          <p class="mt-4">⚡ Rapid deployment throughout Kent Valley industrial corridor</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Kent & Surrounding Coverage Areas</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Kent Districts</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Downtown Kent</li>
+              <li>• Kent Station</li>
+              <li>• East Hill</li>
+              <li>• West Hill</li>
+              <li>• Kent Valley</li>
+              <li>• Meridian</li>
+            </ul>
+          </div>
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Industrial Areas</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Kent Valley Warehouses</li>
+              <li>• Boeing facilities</li>
+              <li>• REI Distribution Center</li>
+              <li>• Valley Medical Center</li>
+              <li>• ShoWare Center</li>
+              <li>• Kent Commons</li>
+            </ul>
+          </div>
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Nearby Cities</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Covington</li>
+              <li>• Maple Valley</li>
+              <li>• Renton (South)</li>
+              <li>• Auburn (North)</li>
+              <li>• Des Moines</li>
+              <li>• Tukwila</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kent-Specific Applications -->
+    <section class="bg-gray-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Security Solutions for Kent Valley</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-bold text-xl mb-4">Warehouse & Distribution</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Distribution center perimeter security</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Loading dock surveillance</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Truck yard monitoring</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Inventory theft prevention</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl mb-4">Manufacturing & Industrial</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Manufacturing plant security</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Equipment yard protection</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Employee parking lot safety</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Weekend/holiday monitoring</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="mt-12 bg-purple-50 rounded-lg p-8">
+          <h3 class="font-bold text-xl mb-4">Kent Valley Industrial Specialist</h3>
+          <p class="text-gray-700 mb-4">
+            Kent Valley is the warehouse capital of the Pacific Northwest. Our mobile surveillance trailers are specifically configured for large industrial properties, with extended range cameras and enhanced night vision for 24/7 protection.
+          </p>
+          <div class="grid md:grid-cols-3 gap-4 text-center">
+            <div>
+              <div class="text-2xl font-bold text-purple-600">500+</div>
+              <div class="text-sm">Warehouses Protected</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-purple-600">2M+ sq ft</div>
+              <div class="text-sm">Coverage Area</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-purple-600">95%</div>
+              <div class="text-sm">Theft Reduction</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Kent Businesses Choose Us -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">Why Kent Businesses Trust CCTV Trailer</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="text-4xl mb-4">🏭</div>
+            <h3 class="font-bold text-xl mb-2">Industrial Experience</h3>
+            <p class="text-gray-600">Specialized in warehouse and distribution center security with proven results across Kent Valley.</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-4">🚚</div>
+            <h3 class="font-bold text-xl mb-2">Large Area Coverage</h3>
+            <p class="text-gray-600">Our trailers can monitor massive warehouse yards and multi-acre industrial properties effectively.</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-4">⏰</div>
+            <h3 class="font-bold text-xl mb-2">30-Min Response</h3>
+            <p class="text-gray-600">Quick deployment from Tacoma to Kent. Emergency response available for urgent situations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Form -->
+    <section id="kent-quote" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-2xl">
+        <h2 class="text-3xl font-bold text-center mb-8">Get Your Kent Security Quote</h2>
+        <form class="bg-white rounded-lg p-8 shadow-lg">
+          <div class="grid gap-6">
+            <div>
+              <label for="kent-name" class="block mb-2 font-semibold">Name *</label>
+              <input type="text" id="kent-name" name="name" required class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="kent-phone" class="block mb-2 font-semibold">Phone *</label>
+              <input type="tel" id="kent-phone" name="phone" required class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="kent-property" class="block mb-2 font-semibold">Property Type *</label>
+              <select id="kent-property" name="property" required class="w-full px-4 py-2 border rounded-lg">
+                <option value="">Select type...</option>
+                <option value="warehouse">Warehouse/Distribution</option>
+                <option value="manufacturing">Manufacturing</option>
+                <option value="retail">Retail Center</option>
+                <option value="construction">Construction Site</option>
+                <option value="parking">Parking Lot</option>
+                <option value="other">Other Industrial</option>
+              </select>
+            </div>
+            <div>
+              <label for="kent-size" class="block mb-2 font-semibold">Property Size</label>
+              <select id="kent-size" name="size" class="w-full px-4 py-2 border rounded-lg">
+                <option value="">Select size...</option>
+                <option value="small">Under 10,000 sq ft</option>
+                <option value="medium">10,000 - 50,000 sq ft</option>
+                <option value="large">50,000 - 200,000 sq ft</option>
+                <option value="xlarge">Over 200,000 sq ft</option>
+              </select>
+            </div>
+          </div>
+          <div class="mt-8 text-center">
+            <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-12 rounded-lg text-lg">
+              Get Kent Quote →
+            </button>
+            <p class="mt-4 text-sm text-gray-600">Specialized in Kent Valley industrial security</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col items-center">
+        <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-16 mb-4" />
+        <p class="mb-2">© 2024 CCTV Trailer - Serving Kent Valley Industrial Corridor</p>
+        <p>Email: info@cctvtrailer.com | Phone: (253) 683-2288</p>
+      </div>
+    </div>
+  </footer>
+</Layout>

@@ -1,0 +1,412 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service", 
+  "name": "Federal Way Surveillance Trailer Rental",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "CCTV Trailer",
+    "telephone": "+12536832288"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Federal Way",
+    "addressRegion": "WA"
+  },
+  "description": "Surveillance trailer rental in Federal Way, WA. Mobile security for construction, retail, events. Serving South King County with rapid deployment.",
+  "offers": {
+    "@type": "Offer",
+    "price": "999",
+    "priceCurrency": "USD"
+  }
+});
+---
+
+<Layout 
+  title="Federal Way Surveillance Trailer Rental | Mobile Security South King County"
+  description="Surveillance trailer rentals in Federal Way, Des Moines, Milton. Mobile CCTV for construction sites, shopping centers, events. Fast deployment. Call (253) 683-2288"
+  keywords="Federal Way surveillance rental, security trailer Federal Way, mobile CCTV South King County, construction camera Federal Way"
+  schema={schema}>
+  
+  <!-- Emergency Contact Bar -->
+  <div class="bg-red-600 text-white py-2 text-center font-bold sticky top-0 z-50">
+    📞 Federal Way Fast Response: <a href="tel:2536832288" class="underline">(253) 683-2288</a>
+  </div>
+  
+  <header class="bg-gray-900 text-white sticky top-8 z-40">
+    <nav class="container mx-auto px-4 py-4">
+      <div class="flex justify-between items-center">
+        <a href="/" class="flex items-center">
+          <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-12" />
+        </a>
+        <div class="flex gap-6">
+          <a href="/" class="hover:text-gray-300">Home</a>
+          <a href="/services" class="hover:text-gray-300">Services</a>
+          <a href="/technical-specifications" class="hover:text-gray-300">Tech Specs</a>
+          <a href="/pricing" class="hover:text-gray-300">Pricing</a>
+          <a href="/about" class="hover:text-gray-300">About</a>
+          <a href="/contact" class="hover:text-gray-300">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-indigo-800 to-indigo-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Federal Way Surveillance Trailer Rental</h1>
+          <p class="text-xl mb-6">Protecting South King County with mobile security solutions. From The Commons to Celebration Park, we secure Federal Way businesses and events.</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="tel:2536832288" class="bg-white text-indigo-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
+              📞 Call: (253) 683-2288
+            </a>
+            <a href="#federal-way-quote" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg inline-block text-center">
+              Get Federal Way Quote →
+            </a>
+          </div>
+          <p class="mt-4">⚡ 20-minute response to Federal Way from nearby Tacoma</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Federal Way & South King County Coverage</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Federal Way Districts</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Downtown Federal Way</li>
+              <li>• Twin Lakes</li>
+              <li>• Steel Lake</li>
+              <li>• Redondo</li>
+              <li>• Mirror Lake</li>
+              <li>• Lakota</li>
+            </ul>
+          </div>
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Nearby Areas</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Des Moines</li>
+              <li>• Milton</li>
+              <li>• Auburn (West)</li>
+              <li>• Kent (South)</li>
+              <li>• Fife</li>
+              <li>• Northeast Tacoma</li>
+            </ul>
+          </div>
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Key Locations</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• The Commons Mall</li>
+              <li>• Celebration Park</li>
+              <li>• Wild Waves Theme Park</li>
+              <li>• St. Francis Hospital</li>
+              <li>• Federal Way Transit Center</li>
+              <li>• Weyerhaeuser Campus</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Federal Way Applications -->
+    <section class="bg-gray-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Security Solutions for Federal Way</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-bold text-xl mb-4">Retail & Commercial</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Shopping center parking lot security</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Retail theft prevention at The Commons</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Business park after-hours monitoring</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Auto dealership lot protection</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl mb-4">Construction & Development</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>New residential development security</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Commercial construction sites</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Infrastructure project monitoring</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>School construction security</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="mt-12 bg-orange-50 rounded-lg p-8">
+          <h3 class="font-bold text-xl mb-4">Federal Way Growth = Security Needs</h3>
+          <p class="text-gray-700 mb-4">
+            With rapid development and growing population, Federal Way faces increasing security challenges. Our mobile surveillance trailers adapt to your changing needs - from construction phase through grand opening.
+          </p>
+          <div class="grid md:grid-cols-3 gap-4 text-center">
+            <div>
+              <div class="text-2xl font-bold text-orange-600">100K+</div>
+              <div class="text-sm">Population Served</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-orange-600">15 min</div>
+              <div class="text-sm">Average Response</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-orange-600">24/7</div>
+              <div class="text-sm">Monitoring Available</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Federal Way Chooses Us -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">Trusted by Federal Way Businesses</h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 class="font-bold text-xl mb-4">Local Advantages</h3>
+                <ul class="space-y-2">
+                  <li>• Free delivery to Federal Way</li>
+                  <li>• Familiar with local regulations</li>
+                  <li>• Quick response from Tacoma base</li>
+                  <li>• Established police coordination</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl mb-4">Proven Results</h3>
+                <ul class="space-y-2">
+                  <li>• 95% theft reduction rate</li>
+                  <li>• Multiple Federal Way projects secured</li>
+                  <li>• Retail loss prevention success</li>
+                  <li>• Event security expertise</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Local Security Challenges -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Federal Way's Security Concerns</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white border-l-4 border-orange-500 p-6 shadow-sm">
+            <h3 class="font-bold text-lg mb-3 text-orange-600">Retail Shopping Theft</h3>
+            <p class="text-gray-600">The Commons at Federal Way and surrounding shopping centers face organized retail crime, requiring comprehensive parking lot and perimeter surveillance.</p>
+          </div>
+          <div class="bg-white border-l-4 border-indigo-500 p-6 shadow-sm">
+            <h3 class="font-bold text-lg mb-3 text-indigo-600">Suburban Development</h3>
+            <p class="text-gray-600">Rapid residential growth in Mirror Lake, Steel Lake, and Twin Lakes areas creates construction site security needs for new housing developments.</p>
+          </div>
+          <div class="bg-white border-l-4 border-red-500 p-6 shadow-sm">
+            <h3 class="font-bold text-lg mb-3 text-red-600">Auto Dealership Vandalism</h3>
+            <p class="text-gray-600">Pacific Highway S auto row experiences significant vehicle theft and vandalism, requiring 24/7 lot monitoring and perimeter alerts.</p>
+          </div>
+          <div class="bg-white border-l-4 border-green-500 p-6 shadow-sm">
+            <h3 class="font-bold text-lg mb-3 text-green-600">Transit Center Crime</h3>
+            <p class="text-gray-600">Federal Way Transit Center and surrounding park-and-ride lots see property crime spikes, especially during evening commute hours.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Projects -->
+    <section class="bg-indigo-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Recent Federal Way Security Successes</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="text-orange-600 font-semibold mb-2">Retail Loss Prevention</div>
+            <h3 class="font-bold text-lg mb-3">Commons Mall Parking Lot</h3>
+            <p class="text-gray-600 mb-4">Installed 5 mobile units during holiday season surge. Reduced vehicle break-ins by 78% and prevented multiple catalytic converter thefts.</p>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Challenge:</span> High-volume shopping area, limited lighting
+            </div>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Solution:</span> Infrared cameras with motion-activated floodlights
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="text-green-600 font-semibold mb-2">Residential Development</div>
+            <h3 class="font-bold text-lg mb-3">Steel Lake Village Phase II</h3>
+            <p class="text-gray-600 mb-4">Protected 150-home development throughout 8-month construction. Zero theft incidents and successful coordination with King County Sheriff.</p>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Challenge:</span> Multiple active building sites, high-value materials
+            </div>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Solution:</span> 6-unit mobile network with AI theft detection
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="text-blue-600 font-semibold mb-2">Healthcare Facility</div>
+            <h3 class="font-bold text-lg mb-3">St. Francis Hospital Expansion</h3>
+            <p class="text-gray-600 mb-4">Secured sensitive medical facility construction with discrete surveillance. Protected patient privacy while maintaining robust security coverage.</p>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Challenge:</span> HIPAA compliance, active hospital operations
+            </div>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Solution:</span> Privacy-compliant placement with medical-grade encryption
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Federal Way Trusts Us -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">Why Federal Way Businesses Choose CCTV Trailer</h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+              <div>
+                <h3 class="font-bold text-xl mb-4">South King County Expertise</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <span class="text-indigo-600 mr-2 font-bold">•</span>
+                    <span><strong>75+</strong> Federal Way projects since 2019</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-indigo-600 mr-2 font-bold">•</span>
+                    <span><strong>20-minute</strong> average response from Tacoma base</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-indigo-600 mr-2 font-bold">•</span>
+                    <span><strong>$1.2M+</strong> in Federal Way theft prevented</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-indigo-600 mr-2 font-bold">•</span>
+                    <span><strong>100%</strong> King County Sheriff coordination</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl mb-4">Regional Understanding</h3>
+                <div class="space-y-4">
+                  <div class="bg-orange-50 p-4 rounded-lg">
+                    <div class="font-semibold text-orange-600">Retail Corridor Expertise</div>
+                    <p class="text-gray-600 text-sm">Deep knowledge of Pacific Highway S shopping patterns and The Commons security requirements.</p>
+                  </div>
+                  <div class="bg-indigo-50 p-4 rounded-lg">
+                    <div class="font-semibold text-indigo-600">Suburban Development Specialist</div>
+                    <p class="text-gray-600 text-sm">Extensive experience with Federal Way's expanding residential neighborhoods and HOA compliance.</p>
+                  </div>
+                  <div class="bg-green-50 p-4 rounded-lg">
+                    <div class="font-semibold text-green-600">Transit Hub Security</div>
+                    <p class="text-gray-600 text-sm">Proven track record securing Sound Transit facilities and park-and-ride infrastructure.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Federal Way Statistics -->
+            <div class="border-t border-gray-200 pt-8">
+              <h4 class="font-bold text-lg mb-4 text-center">Federal Way by the Numbers</h4>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-2xl font-bold text-orange-600">98K</div>
+                  <div class="text-sm text-gray-600">Population (2024)</div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-2xl font-bold text-indigo-600">22%</div>
+                  <div class="text-sm text-gray-600">Property crime above state avg.</div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-2xl font-bold text-green-600">450</div>
+                  <div class="text-sm text-gray-600">New housing permits 2024</div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-2xl font-bold text-red-600">8min</div>
+                  <div class="text-sm text-gray-600">Sheriff response time</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Form -->
+    <section id="federal-way-quote" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-2xl">
+        <h2 class="text-3xl font-bold text-center mb-8">Get Federal Way Security Quote</h2>
+        <form class="bg-white rounded-lg p-8 shadow-lg">
+          <div class="grid gap-6">
+            <div>
+              <label for="fw-name" class="block mb-2 font-semibold">Name *</label>
+              <input type="text" id="fw-name" name="name" required class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="fw-phone" class="block mb-2 font-semibold">Phone *</label>
+              <input type="tel" id="fw-phone" name="phone" required class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="fw-location" class="block mb-2 font-semibold">Federal Way Location *</label>
+              <input type="text" id="fw-location" name="location" placeholder="e.g., Twin Lakes, Downtown, Steel Lake" required class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="fw-type" class="block mb-2 font-semibold">Project Type *</label>
+              <select id="fw-type" name="type" required class="w-full px-4 py-2 border rounded-lg">
+                <option value="">Select type...</option>
+                <option value="retail">Retail/Shopping Center</option>
+                <option value="construction">Construction Site</option>
+                <option value="parking">Parking Lot</option>
+                <option value="event">Special Event</option>
+                <option value="commercial">Commercial Property</option>
+              </select>
+            </div>
+          </div>
+          <div class="mt-8 text-center">
+            <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-12 rounded-lg text-lg">
+              Get Federal Way Quote →
+            </button>
+            <p class="mt-4 text-sm text-gray-600">Quick deployment from nearby Tacoma location</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col items-center">
+        <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-16 mb-4" />
+        <p class="mb-2">© 2024 CCTV Trailer - Serving Federal Way & South King County</p>
+        <p>Email: info@cctvtrailer.com | Phone: (253) 683-2288</p>
+      </div>
+    </div>
+  </footer>
+</Layout>

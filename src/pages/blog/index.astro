@@ -1,0 +1,135 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const blogPosts = [
+  {
+    slug: 'how-much-cost-rent-security-trailer',
+    title: 'How Much Does It Cost to Rent a Security Trailer?',
+    excerpt: 'Complete pricing guide for mobile surveillance trailer rentals. Learn about daily, weekly, and monthly rates, plus factors that affect pricing.',
+    date: '2025-01-15',
+    readTime: '5 min read',
+    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=400&fit=crop',
+    imageAlt: 'Security pricing calculator and surveillance trailer'
+  },
+  {
+    slug: 'advanced-video-surveillance-technology-svidia',
+    title: 'Advanced Video Surveillance Technology: S-VIDIA System Explained',
+    excerpt: 'Deep dive into S-VIDIA\'s cutting-edge surveillance technology. Learn how AI-powered video analytics, intelligent detection, and cloud integration revolutionize mobile security.',
+    date: '2025-01-12',
+    readTime: '10 min read',
+    image: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=800&h=400&fit=crop',
+    imageAlt: 'Security camera surveillance system with multiple monitors'
+  },
+  {
+    slug: 'construction-site-security-mobile-vs-fixed',
+    title: 'Construction Site Security: Mobile vs Fixed Cameras',
+    excerpt: 'Comprehensive comparison of mobile surveillance trailers versus fixed security cameras for construction sites. Discover which solution is best for your project.',
+    date: '2025-01-10',
+    readTime: '7 min read',
+    image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=400&fit=crop',
+    imageAlt: 'Construction site with security cameras and mobile surveillance trailer'
+  },
+  {
+    slug: 'preventing-theft-construction-sites',
+    title: 'Preventing Theft at Construction Sites: Complete Guide',
+    excerpt: 'Learn proven strategies to prevent theft and vandalism at construction sites. Includes statistics, prevention methods, and security best practices.',
+    date: '2025-01-05',
+    readTime: '8 min read',
+    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&h=400&fit=crop',
+    imageAlt: 'Construction site security measures and theft prevention'
+  }
+];
+---
+
+<Layout 
+  title="Security & Surveillance Blog | CCTV Trailer Insights"
+  description="Expert insights on mobile surveillance, construction site security, and theft prevention. Learn from 20+ years of security experience in the Pacific Northwest."
+  keywords="security blog, surveillance tips, construction site security, mobile CCTV guide, theft prevention">
+  
+  <header class="bg-gray-900 text-white">
+    <nav class="container mx-auto px-4 py-4">
+      <div class="flex justify-between items-center">
+        <a href="/" class="flex items-center">
+          <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-12" />
+        </a>
+        <div class="flex gap-6">
+          <a href="/" class="hover:text-gray-300">Home</a>
+          <a href="/services" class="hover:text-gray-300">Services</a>
+          <a href="/technical-specifications" class="hover:text-gray-300">Tech Specs</a>
+          <a href="/pricing" class="hover:text-gray-300">Pricing</a>
+          <a href="/about" class="hover:text-gray-300">About</a>
+          <a href="/blog" class="hover:text-gray-300">Blog</a>
+          <a href="/faq" class="hover:text-gray-300">FAQ</a>
+          <a href="/contact" class="hover:text-gray-300">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Blog Hero -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h1 class="text-4xl font-bold text-center mb-4">Security Insights & Resources</h1>
+        <p class="text-xl text-center text-gray-600 mb-12">Expert advice on mobile surveillance and construction site security</p>
+      </div>
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="space-y-8">
+          {blogPosts.map(post => (
+            <article class="bg-white border rounded-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <a href={`/blog/${post.slug}`} class="block">
+                <div class="relative h-64 overflow-hidden bg-gray-100">
+                  <img 
+                    src={post.image} 
+                    alt={post.imageAlt}
+                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  <div class="absolute top-4 right-4 bg-black bg-opacity-60 text-white px-3 py-1 rounded-full text-sm">
+                    {post.readTime}
+                  </div>
+                </div>
+              </a>
+              <div class="p-8">
+                <div class="flex items-start justify-between mb-4">
+                  <div class="text-sm text-gray-500">
+                    <time datetime={post.date}>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+                  </div>
+                </div>
+                <h2 class="text-2xl font-bold mb-3">
+                  <a href={`/blog/${post.slug}`} class="hover:text-blue-600 transition-colors">
+                    {post.title}
+                  </a>
+                </h2>
+                <p class="text-gray-600 mb-4">{post.excerpt}</p>
+                <a href={`/blog/${post.slug}`} class="text-blue-600 font-semibold hover:text-blue-700 inline-flex items-center group">
+                  Read More 
+                  <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <!-- CTA Section -->
+        <div class="mt-16 bg-gray-100 rounded-lg p-8 text-center">
+          <h2 class="text-2xl font-bold mb-4">Need Security for Your Project?</h2>
+          <p class="mb-6">Get expert advice and a free quote for your security needs</p>
+          <a href="/contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
+            Get Your Free Quote
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col items-center">
+        <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-16 mb-4" />
+        <p class="mb-2">© 2024 CCTV Trailer - Locally Owned in Tacoma, WA</p>
+        <p>Email: info@cctvtrailer.com | Phone: (253) 683-2288</p>
+      </div>
+    </div>
+  </footer>
+</Layout>

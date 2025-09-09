@@ -1,0 +1,325 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Lakewood Security Camera Rental",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "CCTV Trailer",
+    "telephone": "+12536832288"
+  },
+  "areaServed": {
+    "@type": "City", 
+    "name": "Lakewood",
+    "addressRegion": "WA"
+  },
+  "description": "Security camera trailer rental in Lakewood, WA. Serving JBLM contractors, retail centers, and Lakewood Town Center. Military-grade surveillance solutions.",
+  "offers": {
+    "@type": "Offer",
+    "price": "999",
+    "priceCurrency": "USD"
+  }
+});
+---
+
+<Layout 
+  title="Lakewood Security Trailer Rental | JBLM Area & Retail Surveillance"
+  description="Mobile security trailer rentals in Lakewood, Tillicum, DuPont. JBLM contractor support, retail center protection, Town Center security. Call (253) 683-2288"
+  keywords="Lakewood security camera rental, JBLM area surveillance, Lakewood Town Center security, retail surveillance Lakewood WA, mobile CCTV Tillicum"
+  schema={schema}>
+  
+  <!-- Emergency Contact Bar -->
+  <div class="bg-red-600 text-white py-2 text-center font-bold sticky top-0 z-50">
+    📞 Lakewood/JBLM Security: <a href="tel:2536832288" class="underline">(253) 683-2288</a>
+  </div>
+  
+  <header class="bg-gray-900 text-white sticky top-8 z-40">
+    <nav class="container mx-auto px-4 py-4">
+      <div class="flex justify-between items-center">
+        <a href="/" class="flex items-center">
+          <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-12" />
+        </a>
+        <div class="flex gap-6">
+          <a href="/" class="hover:text-gray-300">Home</a>
+          <a href="/services" class="hover:text-gray-300">Services</a>
+          <a href="/technical-specifications" class="hover:text-gray-300">Tech Specs</a>
+          <a href="/pricing" class="hover:text-gray-300">Pricing</a>
+          <a href="/about" class="hover:text-gray-300">About</a>
+          <a href="/blog" class="hover:text-gray-300">Blog</a>
+          <a href="/faq" class="hover:text-gray-300">FAQ</a>
+          <a href="/contact" class="hover:text-gray-300">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-indigo-800 to-indigo-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Lakewood Security Solutions Near JBLM</h1>
+          <p class="text-xl mb-6">Protecting Lakewood businesses, retail centers, and military contractor facilities with advanced mobile surveillance. Trusted by JBLM-area contractors and Lakewood Town Center.</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="tel:2536832288" class="bg-white text-indigo-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
+              📞 Call: (253) 683-2288
+            </a>
+            <a href="#lakewood-quote" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg inline-block text-center">
+              Get Lakewood Quote →
+            </a>
+          </div>
+          <p class="mt-4">⚡ Quick response to JBLM gates and Lakewood commercial districts</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Lakewood & JBLM Coverage Areas</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Lakewood Districts</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Lakewood Town Center</li>
+              <li>• Tillicum</li>
+              <li>• American Lake</li>
+              <li>• Springbrook</li>
+              <li>• Lake City</li>
+              <li>• Woodbrook</li>
+              <li>• Oakbrook</li>
+            </ul>
+          </div>
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">JBLM Gates & Areas</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Main Gate (I-5)</li>
+              <li>• Liberty Gate</li>
+              <li>• DuPont Gate</li>
+              <li>• Madigan Gate</li>
+              <li>• JBLM Contractor Facilities</li>
+              <li>• North Fort Lewis</li>
+              <li>• McChord Field vicinity</li>
+            </ul>
+          </div>
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Commercial Centers</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Lakewood Towne Center</li>
+              <li>• Lakewood Colonial Plaza</li>
+              <li>• Lakewood Mall area</li>
+              <li>• Pacific Highway retail</li>
+              <li>• Bridgeport Way businesses</li>
+              <li>• Motor Avenue dealers</li>
+              <li>• South Tacoma Way</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JBLM & Military Focus -->
+    <section class="bg-indigo-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">JBLM Contractor & Military Support Security</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-bold text-xl mb-4">Military Contractor Facilities</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Defense contractor yard security</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Equipment staging area monitoring</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Sensitive material protection</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Contractor parking surveillance</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Supply depot security</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Off-base housing protection</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl mb-4">Military-Grade Features</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Infrared night vision technology</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Tamper-proof recording systems</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Encrypted data transmission</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Weather-resistant design</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Extended battery backup</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Remote monitoring capability</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="mt-12 bg-white rounded-lg p-8">
+          <h3 class="font-bold text-xl mb-4">Trusted by Military Community</h3>
+          <p class="text-gray-700 mb-4">
+            CCTV Trailer has extensive experience working with military contractors, veterans' organizations, and businesses serving the JBLM community. We understand the unique security requirements of defense-related operations and provide surveillance solutions that meet strict security standards.
+          </p>
+          <div class="grid md:grid-cols-3 gap-4 text-center">
+            <div>
+              <div class="text-2xl font-bold text-indigo-600">50+</div>
+              <div class="text-sm">Military Contractors Served</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-indigo-600">24/7</div>
+              <div class="text-sm">Gate Area Coverage</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-indigo-600">100%</div>
+              <div class="text-sm">Veteran Owned Support</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Retail & Commercial Security -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Lakewood Retail & Commercial Security</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-bold text-xl mb-4">Lakewood Towne Center</h3>
+            <p class="text-gray-700 mb-4">
+              Comprehensive security solutions for Lakewood's premier shopping and entertainment district. Protect retail stores, restaurants, and entertainment venues with mobile surveillance.
+            </p>
+            <ul class="space-y-2">
+              <li>• Retail store protection</li>
+              <li>• Restaurant parking security</li>
+              <li>• Event venue monitoring</li>
+              <li>• Holiday shopping surveillance</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl mb-4">Auto Dealerships & Motor Avenue</h3>
+            <p class="text-gray-700 mb-4">
+              Specialized security for Lakewood's auto row and dealerships along Motor Avenue. Prevent vehicle theft and vandalism with 24/7 surveillance.
+            </p>
+            <ul class="space-y-2">
+              <li>• Dealership lot monitoring</li>
+              <li>• Service center security</li>
+              <li>• Parts warehouse protection</li>
+              <li>• Test drive route coverage</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="bg-gray-100 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">Why Lakewood Businesses Choose CCTV Trailer</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="text-4xl mb-4">🎖️</div>
+            <h3 class="font-bold text-xl mb-2">Military Experience</h3>
+            <p class="text-gray-600">Understanding of military security standards and contractor requirements near JBLM.</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-4">🛍️</div>
+            <h3 class="font-bold text-xl mb-2">Retail Expertise</h3>
+            <p class="text-gray-600">Proven success protecting Lakewood's retail centers and commercial districts.</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-4">⚡</div>
+            <h3 class="font-bold text-xl mb-2">Rapid Response</h3>
+            <p class="text-gray-600">20-minute deployment to Lakewood from our Tacoma headquarters.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Form -->
+    <section id="lakewood-quote" class="py-16 bg-white">
+      <div class="container mx-auto px-4 max-w-2xl">
+        <h2 class="text-3xl font-bold text-center mb-8">Get Your Lakewood Security Quote</h2>
+        <form class="bg-gray-50 rounded-lg p-8 shadow-lg">
+          <div class="grid gap-6">
+            <div>
+              <label for="lakewood-name" class="block mb-2 font-semibold">Name *</label>
+              <input type="text" id="lakewood-name" name="name" required class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="lakewood-phone" class="block mb-2 font-semibold">Phone *</label>
+              <input type="tel" id="lakewood-phone" name="phone" required class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="lakewood-type" class="block mb-2 font-semibold">Business Type *</label>
+              <select id="lakewood-type" name="type" required class="w-full px-4 py-2 border rounded-lg">
+                <option value="">Select type...</option>
+                <option value="military-contractor">Military Contractor</option>
+                <option value="retail">Retail/Shopping Center</option>
+                <option value="auto-dealer">Auto Dealership</option>
+                <option value="restaurant">Restaurant/Entertainment</option>
+                <option value="construction">Construction Site</option>
+                <option value="residential">Residential Complex</option>
+                <option value="commercial">Commercial Property</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="lakewood-location" class="block mb-2 font-semibold">Location/Area</label>
+              <input type="text" id="lakewood-location" name="location" placeholder="e.g., Near JBLM Main Gate, Towne Center" class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="lakewood-details" class="block mb-2 font-semibold">Security Requirements</label>
+              <textarea id="lakewood-details" name="details" rows="3" class="w-full px-4 py-2 border rounded-lg" placeholder="Describe your security needs..."></textarea>
+            </div>
+          </div>
+          <div class="mt-8 text-center">
+            <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-12 rounded-lg text-lg">
+              Get Lakewood Quote →
+            </button>
+            <p class="mt-4 text-sm text-gray-600">Military contractor discounts available</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col items-center">
+        <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-16 mb-4" />
+        <p class="mb-2">© 2024 CCTV Trailer - Serving Lakewood & JBLM Area</p>
+        <p>Email: info@cctvtrailer.com | Phone: (253) 683-2288</p>
+      </div>
+    </div>
+  </footer>
+</Layout>

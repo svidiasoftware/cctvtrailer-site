@@ -1,0 +1,365 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service", 
+  "name": "Bremerton Security Camera Rental",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "CCTV Trailer",
+    "telephone": "+12536832288"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Bremerton",
+    "addressRegion": "WA"
+  },
+  "description": "Security camera trailer rental in Bremerton, WA. Specialized in naval base contractor support, shipyard security, and waterfront protection. Serving Kitsap County.",
+  "offers": {
+    "@type": "Offer",
+    "price": "999",
+    "priceCurrency": "USD"
+  }
+});
+---
+
+<Layout 
+  title="Bremerton Security Trailer Rental | Naval Base & Shipyard Surveillance"
+  description="Mobile security trailer rentals in Bremerton, Silverdale, Port Orchard. Naval shipyard security, waterfront monitoring, contractor support. Call (253) 683-2288"
+  keywords="Bremerton security camera rental, naval base surveillance, Puget Sound Naval Shipyard security, waterfront monitoring Bremerton, mobile CCTV Kitsap County"
+  schema={schema}>
+  
+  <!-- Emergency Contact Bar -->
+  <div class="bg-red-600 text-white py-2 text-center font-bold sticky top-0 z-50">
+    📞 Bremerton/Naval Base Security: <a href="tel:2536832288" class="underline">(253) 683-2288</a>
+  </div>
+  
+  <header class="bg-gray-900 text-white sticky top-8 z-40">
+    <nav class="container mx-auto px-4 py-4">
+      <div class="flex justify-between items-center">
+        <a href="/" class="flex items-center">
+          <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-12" />
+        </a>
+        <div class="flex gap-6">
+          <a href="/" class="hover:text-gray-300">Home</a>
+          <a href="/services" class="hover:text-gray-300">Services</a>
+          <a href="/technical-specifications" class="hover:text-gray-300">Tech Specs</a>
+          <a href="/pricing" class="hover:text-gray-300">Pricing</a>
+          <a href="/about" class="hover:text-gray-300">About</a>
+          <a href="/blog" class="hover:text-gray-300">Blog</a>
+          <a href="/faq" class="hover:text-gray-300">FAQ</a>
+          <a href="/contact" class="hover:text-gray-300">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-900 to-blue-950 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Bremerton Naval Base & Shipyard Security</h1>
+          <p class="text-xl mb-6">Protecting Bremerton's naval contractors, shipyard facilities, and waterfront businesses with military-grade mobile surveillance. Trusted by defense contractors throughout Kitsap County.</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="tel:2536832288" class="bg-white text-blue-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
+              📞 Call: (253) 683-2288
+            </a>
+            <a href="#bremerton-quote" class="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-8 rounded-lg inline-block text-center">
+              Get Bremerton Quote →
+            </a>
+          </div>
+          <p class="mt-4">⚡ Rapid deployment to naval base gates and shipyard facilities</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Bremerton & Kitsap Coverage Areas</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Bremerton Districts</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Downtown Bremerton</li>
+              <li>• Charleston</li>
+              <li>• Manette</li>
+              <li>• East Bremerton</li>
+              <li>• West Bremerton</li>
+              <li>• Navy Yard City</li>
+              <li>• Rocky Point</li>
+            </ul>
+          </div>
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Naval & Maritime</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Puget Sound Naval Shipyard</li>
+              <li>• Naval Base Kitsap gates</li>
+              <li>• Sinclair Inlet waterfront</li>
+              <li>• Port Washington Narrows</li>
+              <li>• Bremerton Marina</li>
+              <li>• Port of Bremerton</li>
+              <li>• Ferry terminal area</li>
+            </ul>
+          </div>
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Nearby Coverage</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Silverdale</li>
+              <li>• Port Orchard</li>
+              <li>• Gorst</li>
+              <li>• Naval Base Kitsap-Bangor</li>
+              <li>• Keyport</li>
+              <li>• Poulsbo</li>
+              <li>• Bainbridge Island (ferry)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Naval & Shipyard Focus -->
+    <section class="bg-blue-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Naval Shipyard & Defense Contractor Security</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-bold text-xl mb-4">Shipyard Support Services</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Contractor yard surveillance</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Equipment staging area security</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Materials storage protection</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Dry dock area monitoring</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Pier and wharf surveillance</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Worker parking lot security</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl mb-4">Defense Contractor Security</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Classified material areas</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>ITAR compliance support</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Secure facility perimeters</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>24/7 tamper-proof recording</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Chain of custody documentation</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Incident response recording</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="mt-12 bg-white rounded-lg p-8">
+          <h3 class="font-bold text-xl mb-4">Puget Sound Naval Shipyard Expertise</h3>
+          <p class="text-gray-700 mb-4">
+            CCTV Trailer has extensive experience providing security solutions for naval contractors and shipyard support facilities. Our surveillance systems meet stringent security requirements for defense-related operations, with encrypted recording and tamper-proof technology trusted by military contractors throughout the Puget Sound region.
+          </p>
+          <div class="grid md:grid-cols-3 gap-4 text-center">
+            <div>
+              <div class="text-2xl font-bold text-blue-600">75+</div>
+              <div class="text-sm">Naval Contractors Served</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-blue-600">10+ Years</div>
+              <div class="text-sm">Shipyard Area Experience</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-blue-600">ITAR</div>
+              <div class="text-sm">Compliant Systems</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Waterfront & Marina Security -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Waterfront & Marina Security Solutions</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-bold text-xl mb-4">Marina & Port Protection</h3>
+            <p class="text-gray-700 mb-4">
+              Comprehensive security for Bremerton's waterfront facilities, marinas, and port operations. Protect vessels, equipment, and waterfront property.
+            </p>
+            <ul class="space-y-2">
+              <li>• Boat slip monitoring</li>
+              <li>• Fuel dock surveillance</li>
+              <li>• Marina parking security</li>
+              <li>• Yacht club protection</li>
+              <li>• Commercial vessel monitoring</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl mb-4">Ferry Terminal & Transit</h3>
+            <p class="text-gray-700 mb-4">
+              Security solutions for Bremerton's ferry terminal and transit facilities. Monitor passenger areas, parking, and terminal operations.
+            </p>
+            <ul class="space-y-2">
+              <li>• Terminal area surveillance</li>
+              <li>• Park & ride security</li>
+              <li>• Loading zone monitoring</li>
+              <li>• Overnight parking protection</li>
+              <li>• Transit center coverage</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Downtown & Commercial -->
+    <section class="bg-gray-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Downtown Bremerton Business Security</h2>
+        <div class="bg-white rounded-lg p-8">
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="font-bold text-xl mb-4">Downtown Revitalization Support</h3>
+              <p class="text-gray-700 mb-4">
+                Supporting Bremerton's downtown revitalization with security solutions for businesses, construction projects, and special events.
+              </p>
+              <ul class="space-y-2">
+                <li>• Harborside development security</li>
+                <li>• Restaurant & retail protection</li>
+                <li>• Construction site monitoring</li>
+                <li>• Special event surveillance</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-bold text-xl mb-4">Healthcare & Education</h3>
+              <p class="text-gray-700 mb-4">
+                Protecting Bremerton's healthcare facilities and educational institutions with mobile surveillance solutions.
+              </p>
+              <ul class="space-y-2">
+                <li>• Harrison Medical Center area</li>
+                <li>• Olympic College campus</li>
+                <li>• Medical office buildings</li>
+                <li>• School construction projects</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">Why Bremerton Chooses CCTV Trailer</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="text-4xl mb-4">⚓</div>
+            <h3 class="font-bold text-xl mb-2">Naval Experience</h3>
+            <p class="text-gray-600">Deep understanding of naval base and shipyard security requirements with proven contractor support.</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-4">🌊</div>
+            <h3 class="font-bold text-xl mb-2">Waterfront Expertise</h3>
+            <p class="text-gray-600">Specialized in maritime and waterfront security with weather-resistant equipment.</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-4">🚢</div>
+            <h3 class="font-bold text-xl mb-2">Ferry Service</h3>
+            <p class="text-gray-600">Quick deployment via ferry routes with flexible scheduling for Kitsap County projects.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Form -->
+    <section id="bremerton-quote" class="py-16 bg-white">
+      <div class="container mx-auto px-4 max-w-2xl">
+        <h2 class="text-3xl font-bold text-center mb-8">Get Your Bremerton Security Quote</h2>
+        <form class="bg-gray-50 rounded-lg p-8 shadow-lg">
+          <div class="grid gap-6">
+            <div>
+              <label for="bremerton-name" class="block mb-2 font-semibold">Name *</label>
+              <input type="text" id="bremerton-name" name="name" required class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="bremerton-phone" class="block mb-2 font-semibold">Phone *</label>
+              <input type="tel" id="bremerton-phone" name="phone" required class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="bremerton-type" class="block mb-2 font-semibold">Facility Type *</label>
+              <select id="bremerton-type" name="type" required class="w-full px-4 py-2 border rounded-lg">
+                <option value="">Select type...</option>
+                <option value="naval-contractor">Naval/Defense Contractor</option>
+                <option value="shipyard">Shipyard Support</option>
+                <option value="marina">Marina/Waterfront</option>
+                <option value="downtown">Downtown Business</option>
+                <option value="construction">Construction Site</option>
+                <option value="healthcare">Healthcare Facility</option>
+                <option value="retail">Retail/Commercial</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="bremerton-clearance" class="block mb-2 font-semibold">Security Clearance Required?</label>
+              <select id="bremerton-clearance" name="clearance" class="w-full px-4 py-2 border rounded-lg">
+                <option value="no">No</option>
+                <option value="yes">Yes - Specify in details</option>
+              </select>
+            </div>
+            <div>
+              <label for="bremerton-details" class="block mb-2 font-semibold">Security Requirements</label>
+              <textarea id="bremerton-details" name="details" rows="3" class="w-full px-4 py-2 border rounded-lg" placeholder="Describe your security needs, including any special requirements..."></textarea>
+            </div>
+          </div>
+          <div class="mt-8 text-center">
+            <button type="submit" class="bg-blue-900 hover:bg-blue-950 text-white font-bold py-3 px-12 rounded-lg text-lg">
+              Get Bremerton Quote →
+            </button>
+            <p class="mt-4 text-sm text-gray-600">Naval contractor discounts available</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col items-center">
+        <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-16 mb-4" />
+        <p class="mb-2">© 2024 CCTV Trailer - Serving Bremerton & Kitsap County</p>
+        <p>Email: info@cctvtrailer.com | Phone: (253) 683-2288</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
