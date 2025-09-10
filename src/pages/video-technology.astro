@@ -2,311 +2,546 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "headline": "S-VIDIA Video Technology for Mobile Surveillance",
-  "description": "Advanced S-VIDIA video compression technology designed specifically for mobile security surveillance. Features military-grade encryption, FDC compression, and intelligent motion detection.",
+  "description": "CCTVTrailer is the only local surveillance trailer company using monitoring software specifically developed with mobile security in mind",
   "author": {
     "@type": "Organization",
-    "name": "CCTV Trailer",
-    "url": "https://www.cctvtrailer.com"
+    "name": "CCTV Trailer"
   },
   "publisher": {
     "@type": "Organization",
     "name": "CCTV Trailer",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.cctvtrailer.com/logo.png"
+      "url": "https://www.cctvtrailer.com/images/cctv-logo.svg"
     }
   },
-  "datePublished": "2024-01-01",
-  "dateModified": new Date().toISOString(),
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://www.cctvtrailer.com/video-technology"
-  },
-  "keywords": "S-VIDIA, video compression, mobile surveillance, FDC compression, military-grade encryption, security cameras, remote monitoring",
-  "articleSection": "Technology",
   "about": {
     "@type": "Thing",
-    "name": "Video Surveillance Technology",
-    "description": "Advanced video compression and encryption technology for mobile security surveillance systems"
+    "name": "S-VIDIA Video Compression Technology",
+    "description": "Flexible Delta Compression (FDC) video technology designed specifically for security footage"
   }
 });
 ---
 
 <Layout 
   title="Video Technology and Mobile Surveillance | CCTV Trailers"
-  description="CCTVTrailer uses S-VIDIA technology with military-grade encryption and FDC compression for superior mobile surveillance. Learn about our advanced video security platform."
-  keywords="S-VIDIA technology, video surveillance, mobile security, FDC compression, military encryption, remote monitoring, CCTV technology"
+  description="CCTVTrailer is the only local surveillance trailer company using monitoring software specifically developed with mobile security in mind. Advanced S-VIDIA technology with military-grade encryption."
+  keywords="S-VIDIA technology, mobile surveillance technology, video compression security, flexible delta compression, surveillance trailer technology, CCTV video technology"
   schema={schema}>
+  
   <Header currentPath="/video-technology" />
 
   <main>
-    <!-- Hero Section -->
-    <section class="py-16">
-      <div class="container mx-auto px-4 text-center">
-          <h1 class="text-4xl font-bold text-center mb-12">Video Technology</h1>
-          <p class="text-lg mb-6">
-            CCTVTrailer is the only local surveillance trailer company using monitoring software 
-            specifically developed with mobile security in mind.
+    <!-- Hero Section with Background -->
+    <div class="hero-trailers">
+      <div class="hero-overlay">
+        <img src="/images/tacoma-dome-bg-hero.jpg" alt="CCTV Mobile Surveillance Trailer" class="max-w-full h-auto rounded-lg shadow-xl" />
+      </div>
+      <div class="hero-content">
+        <div class="hero-text-wrapper">
+          <h1 class="hero-heading">VIDEO TECHNOLOGY</h1>
+          <p class="hero-paragraph">
+            CCTVTrailer is the only local surveillance trailer company using monitoring software specifically developed with mobile security in mind.
           </p>
+        </div>
       </div>
-    </section>
+    </div>
 
-    <!-- What is S-VIDIA Section -->
-    <section class="py-16 bg-white">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-bold mb-8 text-center text-gray-900">WHAT IS S-VIDIA?</h2>
-          
-          <div class="space-y-6 text-gray-700">
-            <p class="text-lg leading-relaxed">
-              The S-VIDIA system captures the highest picture quality possible while minimizing 
-              valuable resource consumption. Conventional video security systems use multimedia 
-              video compression such as H.264, which reduces picture quality and accuracy to save space.
+    <!-- S-VIDIA Section -->
+    <div class="section-whats-vidia">
+      <div class="svidia-wrapper">
+        <div class="container-image-text">
+          <div class="square-image-div svidia-image-block"></div>
+          <div class="column-content-container">
+            <h2 class="heading-2">WHAT IS S-VIDIA?</h2>
+            <p class="body-text">
+              The S-VIDIA system captures the highest picture quality possible while minimizing valuable resource consumption. Conventional video security systems use multimedia video compression such as H.264, which reduces picture quality and accuracy to save space.
             </p>
-            
-            <p class="text-lg leading-relaxed">
-              S-VIDIA uses Flexible Delta Compressions (FDC), a video compression method designed 
-              specifically for security footage. FDC separates moving objects from the static 
-              background to save the most important movement at higher quality and frequency than 
-              the static background. This method allows for greater control over quality, resolution, 
-              and recording sensitivity.
+            <p class="body-text">
+              S-VIDIA uses Flexible Delta Compressions (FDC), a video compression method designed specifically for security footage. FDC separates moving objects from the static background to save the most important movement at higher quality and frequency than the static background. This method allows for greater control over quality, resolution, and recording sensitivity.
             </p>
-            
-            <!-- Key Features Grid -->
-            <div class="grid md:grid-cols-3 gap-6 mt-12">
-              <div class="bg-gray-50 rounded-lg p-6">
-                <div class="text-blue-600 mb-4">
-                  <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                </div>
-                <h3 class="font-semibold text-lg mb-2">4K Resolution</h3>
-                <p class="text-gray-600">Cameras can record in stunning 4K resolution for maximum clarity</p>
-              </div>
-              
-              <div class="bg-gray-50 rounded-lg p-6">
-                <div class="text-blue-600 mb-4">
-                  <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                          d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                  </svg>
-                </div>
-                <h3 class="font-semibold text-lg mb-2">Efficient Storage</h3>
-                <p class="text-gray-600">Noise isolation reduces file size by ~50% while eliminating idle footage</p>
-              </div>
-              
-              <div class="bg-gray-50 rounded-lg p-6">
-                <div class="text-blue-600 mb-4">
-                  <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                  </svg>
-                </div>
-                <h3 class="font-semibold text-lg mb-2">Smart Detection</h3>
-                <p class="text-gray-600">FDC technology intelligently separates moving objects from static backgrounds</p>
-              </div>
-            </div>
           </div>
-          
-          <!-- Learn More Link -->
-          <div class="text-center mt-10">
-            <a href="https://svidia.com/" target="_blank" rel="noopener noreferrer" 
-               class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold">
-              Learn More About S-VIDIA Technology
-              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-              </svg>
-            </a>
+        </div>
+
+        <div class="container-image-text reverse">
+          <div class="square-image-block svidia-100"></div>
+          <div class="column-content-container">
+            <h2 class="heading-2">SECURE STREAMING</h2>
+            <p class="body-text">
+              When a user connects to an S-VIDIA server, video is automatically encrypted using military-grade 256-bit encryption, ensuring the data is tamper-free.
+            </p>
+            <p class="body-text">
+              The S-VIDIA system also employs random interval changes within the decryption key, which increases security.
+            </p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- Secure Streaming Section -->
-    <section class="py-16 bg-gray-50">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-bold mb-8 text-center text-gray-900">SECURE STREAMING</h2>
-          
-          <div class="bg-white rounded-lg shadow-lg p-8">
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0">
-                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
-                  <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                          d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="flex-grow">
-                <h3 class="text-xl font-semibold mb-4 text-gray-900">Military-Grade Encryption</h3>
-                <p class="text-gray-700 mb-4">
-                  When a user connects to an S-VIDIA server, video is automatically encrypted using 
-                  military-grade 256-bit encryption, ensuring the data is tamper-free.
-                </p>
-                <p class="text-gray-700">
-                  The S-VIDIA system also employs random interval changes within the decryption key, 
-                  which increases security.
-                </p>
-                
-                <!-- Security Features List -->
-                <div class="mt-6 space-y-3">
-                  <div class="flex items-center">
-                    <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                    </svg>
-                    <span class="text-gray-600">256-bit military-grade encryption</span>
-                  </div>
-                  <div class="flex items-center">
-                    <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                    </svg>
-                    <span class="text-gray-600">Random interval key changes</span>
-                  </div>
-                  <div class="flex items-center">
-                    <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                    </svg>
-                    <span class="text-gray-600">Tamper-free data transmission</span>
-                  </div>
-                </div>
-              </div>
+    <!-- Three Features Section -->
+    <div class="section-three-divs">
+      <div class="streaming-wrapper">
+        <div class="features-container">
+          <div class="feature-item">
+            <div class="features-image compression"></div>
+            <div class="features-content">
+              <h3 class="heading-3">FLEXIBLE DELTA COMPRESSION</h3>
+              <p class="body-black">
+                S-VIDIA's Flexible Delta Compression (FDC) feature allows data to be analyzed before it's compressed, eliminating idle footage and prioritizing captured movement.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="features-image noise"></div>
+            <div class="features-content">
+              <h3 class="heading-3">NOISE ISOLATION PROCESS</h3>
+              <p class="body-black">
+                The Flexible Delta Compression method's built-in noise isolation process (NIP) isolates and removes irrelevant video pixel motion, which reduces file size by about 50%.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="features-image internal"></div>
+            <div class="features-content">
+              <h3 class="heading-3">INTERNAL FILE STORAGE</h3>
+              <p class="body-black">
+                S-VIDIA monitoring software allows each high-definition camera to record in 4K resolution without taking up hours of storage space.
+              </p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- The Video Technology Section -->
-    <section class="py-16 bg-white">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-bold mb-8 text-center text-gray-900">THE VIDEO TECHNOLOGY</h2>
-          
-          <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-8">
-            <p class="text-lg text-gray-700 leading-relaxed mb-8">
-              The next-generation S-VIDIA video-based security platform utilizes an unparalleled 
-              video compression method that allows for greater quality control.
-            </p>
-            
-            <!-- Technology Benefits -->
-            <div class="grid md:grid-cols-2 gap-6">
-              <div class="bg-white rounded-lg p-6">
-                <h3 class="font-semibold text-lg mb-3 flex items-center">
-                  <svg class="w-6 h-6 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                          d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                  </svg>
-                  Resource Optimization
-                </h3>
-                <p class="text-gray-600">
-                  Minimizes valuable resource consumption while maintaining the highest picture quality possible
-                </p>
-              </div>
-              
-              <div class="bg-white rounded-lg p-6">
-                <h3 class="font-semibold text-lg mb-3 flex items-center">
-                  <svg class="w-6 h-6 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                  </svg>
-                  Quality Control
-                </h3>
-                <p class="text-gray-600">
-                  Greater control over quality, resolution, and recording sensitivity compared to conventional systems
-                </p>
-              </div>
-              
-              <div class="bg-white rounded-lg p-6">
-                <h3 class="font-semibold text-lg mb-3 flex items-center">
-                  <svg class="w-6 h-6 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                  Intelligent Recording
-                </h3>
-                <p class="text-gray-600">
-                  Eliminates idle footage while capturing crucial movement at higher quality and frequency
-                </p>
-              </div>
-              
-              <div class="bg-white rounded-lg p-6">
-                <h3 class="font-semibold text-lg mb-3 flex items-center">
-                  <svg class="w-6 h-6 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                          d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-                  </svg>
-                  Mobile-First Design
-                </h3>
-                <p class="text-gray-600">
-                  Specifically developed with mobile security surveillance requirements in mind
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Call to Action Section -->
-    <section class="py-20 bg-gradient-to-b from-blue-600 to-blue-700">
-      <div class="container mx-auto px-4">
-        <div class="max-w-3xl mx-auto text-center">
-          <h2 class="text-3xl font-bold text-white mb-6">Ready to Experience Advanced Video Technology?</h2>
-          <p class="text-xl text-blue-100 mb-8">
-            Ready to sleep better knowing your remote property and assets are safe and sound? 
-            Our knowledgeable team is ready to discuss your mobile security trailer needs.
+    <!-- Video Technology Section -->
+    <div class="section-videotec-svidia">
+      <div class="svidia-wrapper-dark">
+        <div class="content-container-copy">
+          <h2 class="heading-2 white center">THE VIDEO TECHNOLOGY</h2>
+          <p class="body-white centered">
+            The next-generation S-VIDIA video-based security platform utilizes an unparalleled video compression method that allows for greater quality control.
           </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/contact" 
-               class="bg-white text-blue-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-lg inline-block transition duration-300">
-              Contact Us Today
-            </a>
-            <a href="/technical-specifications" 
-               class="bg-blue-500 text-white hover:bg-blue-400 font-bold py-4 px-8 rounded-lg inline-block transition duration-300">
-              View Technical Specs
-            </a>
-          </div>
+          <a href="https://svidia.com/" target="_blank" rel="noopener noreferrer" class="red-button">
+            Learn More
+          </a>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- Additional Resources Section -->
-    <section class="py-16 bg-gray-50">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-2xl font-bold mb-8 text-center text-gray-900">Learn More About Our Technology</h2>
-          
-          <div class="grid md:grid-cols-3 gap-6">
-            <a href="/services" class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-6 block">
-              <h3 class="font-semibold text-lg mb-2">Our Services</h3>
-              <p class="text-gray-600">Explore our mobile surveillance trailer rental options</p>
-            </a>
-            
-            <a href="/faq" class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-6 block">
-              <h3 class="font-semibold text-lg mb-2">FAQs</h3>
-              <p class="text-gray-600">Get answers to common questions about our technology</p>
-            </a>
-            
-            <a href="/pricing" class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-6 block">
-              <h3 class="font-semibold text-lg mb-2">Pricing</h3>
-              <p class="text-gray-600">View our competitive rental rates and packages</p>
-            </a>
+    <!-- Contact Section -->
+    <div class="section-wrapper-contact">
+      <div class="content-container-contact">
+        <div class="content-wrapper-contact">
+          <div class="left-side-contact">
+            <h2 class="heading-1 space">
+              contact us<br>
+              <span class="text-span-yellow">today</span>
+            </h2>
+            <p class="body-black-copy">
+              Ready to sleep better knowing your remote property and assets are safe and sound? Our knowledgeable team is ready to discuss your mobile security trailer needs.
+            </p>
+            <a href="/contact" class="clear-outline-button">CONTACT US</a>
           </div>
+          <div class="contact-image"></div>
         </div>
       </div>
-    </section>
+    </div>
   </main>
 
   <Footer />
+
+  <style>
+    /* Hero Section Styles */
+    .hero-trailers {
+      position: relative;
+      height: 800px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background-image: url('/images/video-tech-bg-hero.svg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 1200px;
+      width: 100%;
+      padding: 0 32px;
+      margin: 0 auto;
+    }
+
+    .hero-text-wrapper {
+      max-width: 400px;
+    }
+
+    .hero-heading {
+      font-size: 56px;
+      font-weight: 600;
+      color: white;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .hero-paragraph {
+      font-size: 19.2px;
+      color: white;
+      line-height: 1.5;
+    }
+
+    /* S-VIDIA Section */
+    .section-whats-vidia {
+      padding: 64px 32px 128px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .svidia-wrapper {
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .container-image-text {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      margin-bottom: 120px;
+    }
+
+    .container-image-text.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .square-image-div {
+      width: 542px;
+      height: 600px;
+      background-image: url('/images/svidia-image1.png');
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+
+    .square-image-block {
+      width: 542px;
+      height: 600px;
+      background-image: url('/images/svidia-image2.png');
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+
+    .column-content-container {
+      flex: 1;
+    }
+
+    .heading-2 {
+      font-size: 40px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      color: #141414;
+    }
+
+    .body-text {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #666;
+      margin-bottom: 16px;
+    }
+
+    /* Three Features Section */
+    .section-three-divs {
+      background-color: #ebebeb;
+      padding: 32px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 749px;
+    }
+
+    .streaming-wrapper {
+      max-width: 1200px;
+      width: 100%;
+      padding: 0 32px;
+    }
+
+    .features-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      padding: 80px 0;
+    }
+
+    .feature-item {
+      text-align: center;
+    }
+
+    .features-image {
+      width: 100%;
+      height: 300px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      margin-bottom: 24px;
+    }
+
+    .features-image.compression {
+      background-image: url('/images/compression-feature.png');
+    }
+
+    .features-image.noise {
+      background-image: url('/images/noise-feature.png');
+    }
+
+    .features-image.internal {
+      background-image: url('/images/internal-feature.png');
+    }
+
+    .heading-3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #141414;
+    }
+
+    .body-black {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #666;
+    }
+
+    /* Video Technology Section */
+    .section-videotec-svidia {
+      background-color: #141414;
+      background-image: url('/images/dots-pattern.svg');
+      background-repeat: repeat;
+      background-attachment: fixed;
+      background-size: 15px;
+      background-position: center;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .svidia-wrapper-dark {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 80px 32px;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .heading-2.white {
+      color: white;
+    }
+
+    .heading-2.center {
+      text-align: center;
+    }
+
+    .body-white {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #fff;
+      margin-bottom: 32px;
+      max-width: 600px;
+    }
+
+    .body-white.centered {
+      text-align: center;
+    }
+
+    .red-button {
+      display: inline-block;
+      background-color: #dc2626;
+      color: white;
+      padding: 12px 32px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      transition: background-color 0.3s;
+      background-image: url('/images/arrow-icon.svg');
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      background-size: 16px;
+      padding-right: 48px;
+    }
+
+    .red-button:hover {
+      background-color: #b91c1c;
+    }
+
+    /* Contact Section */
+    .section-wrapper-contact {
+      background-color: #ebebeb;
+      background-image: url('/images/contact-bg.svg');
+      background-repeat: no-repeat;
+      background-position: 50% 101%;
+      background-size: 105%;
+      padding: 80px 0 0;
+      min-height: 792px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .content-container-contact {
+      max-width: 1200px;
+      width: 100%;
+      padding: 0 32px;
+    }
+
+    .content-wrapper-contact {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      padding: 80px 0;
+    }
+
+    .left-side-contact {
+      flex: 1;
+    }
+
+    .heading-1 {
+      font-size: 56px;
+      font-weight: 600;
+      line-height: 1.1;
+      color: #141414;
+      margin-bottom: 24px;
+    }
+
+    .text-span-yellow {
+      color: #fbbf24;
+    }
+
+    .body-black-copy {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #666;
+      margin-bottom: 32px;
+      max-width: 450px;
+    }
+
+    .clear-outline-button {
+      display: inline-block;
+      background-color: transparent;
+      color: #141414;
+      border: 2px solid #141414;
+      padding: 12px 32px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      transition: all 0.3s;
+      background-image: url('/images/red-arrow.svg');
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      background-size: 16px;
+      padding-right: 48px;
+    }
+
+    .clear-outline-button:hover {
+      background-color: #141414;
+      color: white;
+    }
+
+    .contact-image {
+      width: 452px;
+      height: 600px;
+      background-image: url('/images/contact-image.jpg');
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 991px) {
+      .hero-heading {
+        font-size: 42px;
+      }
+
+      .container-image-text,
+      .container-image-text.reverse {
+        flex-direction: column;
+      }
+
+      .square-image-div,
+      .square-image-block {
+        width: 100%;
+        height: 400px;
+      }
+
+      .features-container {
+        grid-template-columns: 1fr;
+      }
+
+      .content-wrapper-contact {
+        flex-direction: column;
+      }
+
+      .contact-image {
+        width: 100%;
+        height: 400px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .hero-heading {
+        font-size: 32px;
+      }
+
+      .hero-paragraph {
+        font-size: 16px;
+      }
+
+      .heading-2 {
+        font-size: 32px;
+      }
+
+      .heading-1 {
+        font-size: 40px;
+      }
+    }
+  </style>
 </Layout>

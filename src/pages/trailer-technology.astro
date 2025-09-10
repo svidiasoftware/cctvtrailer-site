@@ -1,0 +1,798 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Mobile Security Trailers",
+  "description": "Professional mobile security trailers with advanced video surveillance technology for the Pacific Northwest",
+  "manufacturer": {
+    "@type": "Organization",
+    "name": "CCTV Trailer"
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "CCTV Trailer"
+    }
+  }
+});
+---
+
+<Layout 
+  title="Trailer and Video Systems Pacific Northwest | CCTV Trailers"
+  description="Our mobile security trailers are sturdy enough to withstand the Pacific Northwest climate and equipped with the most advanced video and surveillance technology to capture every detail."
+  keywords="mobile security trailers, CCTV trailer systems, surveillance trailer technology, Pacific Northwest security, video surveillance systems"
+  schema={schema}>
+  
+  <Header currentPath="/trailer-technology" />
+
+  <main>
+    <!-- Hero Section -->
+    <div class="hero-trailer">
+      <!-- <video 
+        autoplay 
+        loop 
+        muted 
+        playsinline
+        poster="/images/video-poster.jpg"
+        class="hero-video"
+      >
+        <source src="https://cdn.prod.website-files.com/6282a76b49c61b744b40e1c8/6288132450f59f21064dc57a_CCTV%20Trailer_3-transcode.mp4" type="video/mp4">
+        <source src="https://cdn.prod.website-files.com/6282a76b49c61b744b40e1c8/6288132450f59f21064dc57a_CCTV%20Trailer_3-transcode.webm" type="video/webm">
+      </video> -->
+      <div class="hero-overlay">
+        <img src="/images/tacoma-dome-bg-hero3.jpg" alt="CCTV Mobile Surveillance Trailer" class="w-full h-auto rounded-lg shadow-xl" />
+      </div>
+      <div class="hero-content">
+        <div class="hero-text-wrapper">
+          <h1 class="hero-heading">THE TRAILERS</h1>
+          <p class="hero-paragraph">
+            Our mobile security trailers are sturdy enough to withstand the Pacific Northwest climate and equipped with the most advanced video and surveillance technology to capture every detail.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trailer Features Section -->
+    <div class="section-trailer-features">
+      <div class="features-wrapper">
+        <div class="features-left">
+          <div class="feature-block">
+            <h2 class="feature-heading">cameras</h2>
+            <p class="feature-text">
+              Each mobile security trailer supports S-VIDIA-enabled single zone, infrared PTZ (pan, tilt, and zoom), and 360-degree cameras configured for your specific surveillance needs.
+            </p>
+          </div>
+          
+          <div class="feature-block">
+            <h3 class="feature-heading">SOLAR PANELS</h3>
+            <p class="feature-text">
+              Solar panels conserve energy and keep your surveillance cameras charged up on sunny days. Each trailer unit also features a backup gas generator and the option to plug into an onsite power supply, ensuring your cameras stay powered up no matter the forecast.
+            </p>
+          </div>
+
+          <div class="feature-block">
+            <h3 class="feature-heading">INSIDE SPECS</h3>
+            <p class="feature-text">
+              Each unit comes equipped with a remotely-accessible internal onboard computer and S-VIDIA-enabled server. An intelligent battery management system also guarantees automatic rollover between the solar-powered and generator-backed power supply.
+            </p>
+          </div>
+        </div>
+
+        <div class="trailer-image-container">
+          <div class="trailer-image"></div>
+        </div>
+
+        <div class="features-right">
+          <div class="feature-block">
+            <h3 class="feature-heading">ADJUSTABLE MAST</h3>
+            <p class="feature-text">
+              CCTVTrailer units come fitted with an electric or hydraulic mast that holds up to four cameras and can adjust for 360-degree coverage. Mast heights vary depending on your needs and can be fitted with additional cameras.
+            </p>
+          </div>
+
+          <div class="feature-block">
+            <h3 class="feature-heading">TRAILER</h3>
+            <p class="feature-text">
+              CCTVTrailer units are constructed with reinforced steel and are easily transportable, making them more versatile than your average mobile security trailer. Each unit also features a hitch lock, wheel locks, and an optional boot for additional security.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About the Trailers Section -->
+    <!-- <div class="about-trailers-section">
+      <div class="about-wrapper">
+        <div class="about-content">
+          <h2 class="about-heading">
+            about<br>
+            <span class="highlight">the TRAILERs</span>
+          </h2>
+        </div>
+        
+        <div class="about-image">
+          <img src="/images/trailer-main.jpg" alt="Mobile Surveillance trailer" class="trailer-photo" />
+        </div>
+
+        <div class="video-tech-box">
+          <div class="svidia-logo-small"></div>
+          <h3 class="video-tech-heading">THE VIDEO TECHNOLOGY</h3>
+          <p class="video-tech-text">
+            The next-generation S-VIDIA video-based security platform utilizes an unparalleled video compression method that allows for greater quality control.
+          </p>
+          <a href="https://svidia.com/" target="_blank" rel="noopener noreferrer" class="learn-more-button">
+            Learn more
+          </a>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Audio & Remote Section -->
+    <div class="section-audio-remote">
+      <div class="section-header">
+          <h2 class="section-title">the TRAILERs</h2>
+          <p class="section-subtitle">
+            Learn more about the technology and capabilities.
+          </p>
+        </div>
+
+      <div class="container-image-text reverse">
+          <div class="remote-image"></div>
+          <div class="content-container">
+            <h3 class="section-heading">THE VIDEO TECHNOLOGY</h3>
+            <p class="section-text video-tech-text">
+              The next-generation S-VIDIA video-based security platform utilizes an unparalleled video compression method that allows for greater quality control.
+            </p>
+            <div>
+              <a href="https://svidia.com/" target="_blank" rel="noopener noreferrer" class="learn-more-button">
+                Learn more
+              </a>
+            </div>
+          </div>
+        </div>
+      
+      <div class="audio-remote-wrapper">
+        <div class="container-image-text">
+          <div class="audio-image"></div>
+          <div class="content-container">
+            <h3 class="section-heading">AUDIO CAPABILITIES</h3>
+            <p class="section-text">
+              Optional PA speaker systems can be triggered manually or automatically via onboard sensors, and emit loud verbal warnings to scare off intruders.
+            </p>
+          </div>
+        </div>
+
+        <div class="container-image-text reverse">
+          <div class="remote-image"></div>
+          <div class="content-container">
+            <h3 class="section-heading">REMOTE TRANSMITTING</h3>
+            <p class="section-text">
+              Each CCTVTrailer unit operates as an independent mobile CCTV station capable of recording and transmitting live video footage across 4G/5G mobile networks, Wi-Fi, and Starlink satellites.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features and Benefits Section -->
+    <div class="features-benefits-section">
+      <div class="features-benefits-wrapper">
+        <div class="section-header">
+          <h2 class="section-title">FEATURES AND BENEFITS</h2>
+          <p class="section-subtitle">
+            Learn more about the features making CCTVTrailer the best local mobile surveillance trailer provider.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-card-image generator"></div>
+            <div class="feature-card-content">
+              <h3 class="feature-card-title">Backup Generator</h3>
+              <p class="feature-card-text">
+                CCTVTrailer units are equipped with an intelligent battery management system and backup generator, providing a seamless transition between power sources mid-recording.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card-image computer"></div>
+            <div class="feature-card-content">
+              <h3 class="feature-card-title">ONBOARD COMPUTER</h3>
+              <p class="feature-card-text">
+                An internal onboard computer ensures users can securely access footage via local Wi-Fi or remote 4G/5G transmission from any location.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card-image storage"></div>
+            <div class="feature-card-content">
+              <h3 class="feature-card-title">VIDEO STORAGE</h3>
+              <p class="feature-card-text">
+                Video storage systems save up to two weeks of footage before looping over and deleting when more space is needed. Recordings can also be backed up automatically on an external storage device.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card-image radar"></div>
+            <div class="feature-card-content">
+              <h3 class="feature-card-title">RADAR</h3>
+              <p class="feature-card-text">
+                Optional radar displays added to base model trailers pick up movement up to more than 400 feet away and better distinguish between people and cars.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card-image floodlights"></div>
+            <div class="feature-card-content">
+              <h3 class="feature-card-title">FLOODLIGHTS</h3>
+              <p class="feature-card-text">
+                Optional floodlights added to base model trailers automatically turn on at dusk, extending sight lines and visibility after sunset.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card-image license"></div>
+            <div class="feature-card-content">
+              <h3 class="feature-card-title">LICENSE PLATE READER</h3>
+              <p class="feature-card-text">
+                Optional license plate reader cameras ensure your mobile surveillance unit collects the details that can be used as evidence
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="section-wrapper-contact">
+      <div class="content-container-contact">
+        <div class="content-wrapper-contact">
+          <div class="left-side-contact">
+            <h2 class="heading-1 space">
+              contact us<br>
+              <span class="text-span-yellow">today</span>
+            </h2>
+            <p class="body-black-copy">
+              Ready to sleep better knowing your remote property and assets are safe and sound? Our knowledgeable team is ready to discuss your mobile security trailer needs.
+            </p>
+            <a href="/contact" class="clear-outline-button">CONTACT US</a>
+          </div>
+          <div class="contact-image"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+
+  <style>
+    /* Hero Section */
+    .hero-trailer {
+      position: relative;
+      height: 560px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background-image: url('/images/video-tech-bg-hero.svg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      background-image: url('/images/path-decoration.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 1200px;
+      width: 100%;
+      padding: 0 32px;
+      margin: 0 auto;
+    }
+
+    .hero-text-wrapper {
+      max-width: 600px;
+    }
+
+    .hero-heading {
+      font-size: 56px;
+      font-weight: 600;
+      color: white;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .hero-paragraph {
+      font-size: 19.2px;
+      color: white;
+      line-height: 1.5;
+    }
+
+    /* Trailer Features Section */
+    .section-trailer-features {
+      padding: 80px 32px;
+      background-color: #fff;
+    }
+
+    .features-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .features-left,
+    .features-right {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .feature-block {
+      text-align: left;
+    }
+
+    .feature-heading-main {
+      font-size: 40px;
+      font-weight: 600;
+      color: #141414;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .feature-heading {
+      font-size: 24px;
+      font-weight: 600;
+      color: #141414;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .feature-text {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #666;
+    }
+
+    .trailer-image-container {
+      position: relative;
+      width: 400px;
+      height: 600px;
+    }
+
+    .trailer-image {
+      width: 100%;
+      height: 100%;
+      background-image: url('/images/trailer-cutout.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    /* About Trailers Section */
+    .about-trailers-section {
+      padding: 80px 32px;
+      background-color: #f8f8f8;
+    }
+
+    .about-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-heading {
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 1.2;
+      color: #141414;
+      text-transform: uppercase;
+    }
+
+    .about-heading .highlight {
+      color: #141414;
+    }
+
+    .about-image {
+      text-align: center;
+    }
+
+    .trailer-photo {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .video-tech-box {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .svidia-logo-small {
+      width: 80px;
+      height: 80px;
+      background-image: url('/images/svidia-logo.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-bottom: 20px;
+    }
+
+    .video-tech-heading {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #141414;
+    }
+
+    .video-tech-text {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .learn-more-button {
+      display: inline-block;
+      padding: 10px 24px;
+      background-color: transparent;
+      border: 2px solid #141414;
+      color: #141414;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 4px;
+      transition: all 0.3s;
+      background-image: url('/images/red-arrow.svg');
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 14px;
+      padding-right: 40px;
+    }
+
+    .learn-more-button:hover {
+      background-color: #141414;
+      color: white;
+    }
+
+    /* Audio & Remote Section */
+    .section-audio-remote {
+      padding: 80px 32px;
+      background-color: #fff;
+    }
+
+    .audio-remote-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .container-image-text {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      margin-bottom: 80px;
+    }
+
+    .container-image-text.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .audio-image {
+      width: 500px;
+      height: 400px;
+      background-image: url('/images/audio-capabilities.jpg');
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+
+    .remote-image {
+      width: 500px;
+      height: 400px;
+      background-image: url('/images/remote-transmitting.jpg');
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+
+    .content-container {
+      flex: 1;
+    }
+
+    .section-heading {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #141414;
+      text-transform: uppercase;
+    }
+
+    .section-text {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #666;
+    }
+
+    /* Features and Benefits Section */
+    .features-benefits-section {
+      padding: 80px 32px;
+      background-color: #f8f8f8;
+    }
+
+    .features-benefits-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title {
+      font-size: 40px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #141414;
+      text-transform: uppercase;
+    }
+
+    .section-subtitle {
+      font-size: 18px;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .feature-card {
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-card-image {
+      width: 100%;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .feature-card-image.generator {
+      background-image: url('/images/backup-generator.jpg');
+    }
+
+    .feature-card-image.computer {
+      background-image: url('/images/onboard-computer.jpg');
+    }
+
+    .feature-card-image.storage {
+      background-image: url('/images/video-storage.jpg');
+    }
+
+    .feature-card-image.radar {
+      background-image: url('/images/radar-feature.jpg');
+    }
+
+    .feature-card-image.floodlights {
+      background-image: url('/images/floodlights.jpeg');
+    }
+
+    .feature-card-image.license {
+      background-image: url('/images/license-plate.jpg');
+    }
+
+    .feature-card-content {
+      padding: 24px;
+    }
+
+    .feature-card-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #141414;
+      text-transform: uppercase;
+    }
+
+    .feature-card-text {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #666;
+    }
+
+    /* Contact Section */
+    .section-wrapper-contact {
+      background-color: #ebebeb;
+      background-image: url('/images/contact-bg.svg');
+      background-repeat: no-repeat;
+      background-position: 50% 101%;
+      background-size: 105%;
+      padding: 80px 0 0;
+      min-height: 792px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .content-container-contact {
+      max-width: 1200px;
+      width: 100%;
+      padding: 0 32px;
+    }
+
+    .content-wrapper-contact {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      padding: 80px 0;
+    }
+
+    .left-side-contact {
+      flex: 1;
+    }
+
+    .heading-1 {
+      font-size: 56px;
+      font-weight: 600;
+      line-height: 1.1;
+      color: #141414;
+      margin-bottom: 24px;
+    }
+
+    .text-span-yellow {
+      color: #fbbf24;
+    }
+
+    .body-black-copy {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #666;
+      margin-bottom: 32px;
+      max-width: 450px;
+    }
+
+    .clear-outline-button {
+      display: inline-block;
+      background-color: transparent;
+      color: #141414;
+      border: 2px solid #141414;
+      padding: 12px 32px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      transition: all 0.3s;
+      background-image: url('/images/red-arrow.svg');
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      background-size: 16px;
+      padding-right: 48px;
+    }
+
+    .clear-outline-button:hover {
+      background-color: #141414;
+      color: white;
+    }
+
+    .contact-image {
+      width: 452px;
+      height: 600px;
+      background-image: url('/images/contact-image.jpg');
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 991px) {
+      .hero-heading {
+        font-size: 42px;
+      }
+
+      .features-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .trailer-image-container {
+        margin: 40px auto;
+      }
+
+      .about-wrapper {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .container-image-text,
+      .container-image-text.reverse {
+        flex-direction: column;
+      }
+
+      .audio-image,
+      .remote-image {
+        width: 100%;
+      }
+
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .content-wrapper-contact {
+        flex-direction: column;
+      }
+
+      .contact-image {
+        width: 100%;
+        height: 400px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .hero-heading {
+        font-size: 32px;
+      }
+
+      .hero-paragraph {
+        font-size: 16px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .heading-1 {
+        font-size: 40px;
+      }
+    }
+  </style>
+</Layout>
