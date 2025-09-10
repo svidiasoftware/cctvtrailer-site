@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import CTASection from '../components/CTASection.astro';
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
@@ -113,7 +114,7 @@ const schema = JSON.stringify({
     <!-- Hero Section -->
     <section class="hero-trailer">
       <div class="hero-overlay">
-        <img src="/images/tacoma-dome-bg-hero.jpg" alt="CCTV Mobile Surveillance Services" class="w-full h-auto rounded-lg shadow-xl" />
+        <img src="/images/tacoma-dome-bg-hero3.jpg" alt="CCTV Mobile Surveillance Services" class="w-full h-auto rounded-lg shadow-xl" />
       </div>
       <div class="hero-content">
         <div class="hero-text-wrapper">
@@ -121,6 +122,11 @@ const schema = JSON.stringify({
           <p class="hero-paragraph">
             Professional mobile surveillance trailer services for construction sites, events, and temporary security needs with 24/7 monitoring throughout Tacoma and Seattle.
           </p>
+          <div class="hero-buttons">
+            <a href="tel:2536832288" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
+              📞 Call (253) 683-2288
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -292,25 +298,7 @@ const schema = JSON.stringify({
     </section>
 
     <!-- CTA Section -->
-    <section class="bg-gray-900 text-white py-16">
-      <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold mb-4">Ready to Secure Your Site?</h2>
-        <p class="text-xl mb-8 text-gray-300">
-          Get a custom quote for your security needs in minutes
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="tel:2536832288" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
-            📞 Call (253) 683-2288
-          </a>
-          <a href="/contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
-            Get Free Quote →
-          </a>
-        </div>
-        <p class="mt-6 text-gray-400">
-          ✓ Same Day Delivery ✓ No Long-Term Contracts Required ✓ 24/7 Support
-        </p>
-      </div>
-    </section>
+    <CTASection />
     
     <!-- Technical Specs Link -->
     <section class="py-16 bg-white">

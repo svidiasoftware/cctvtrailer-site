@@ -65,6 +65,14 @@
       line-height: 1.5;
     }
 
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 10px;
+      justify-content: left;
+      flex-wrap: wrap;
+    }
+
     /* Trailer Features Section */
     .section-trailer-features {
       padding: 80px 32px;
@@ -439,6 +447,20 @@
       color: #666;
     }
 
+    /* CTA Section */
+    .section-wrapper-cta {
+      background-color: #1a202c;
+      background-image: url('/images/dots-pattern.svg');
+      background-repeat: repeat;
+      background-attachment: fixed;
+      background-size: 15px;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+
     /* Contact Section */
     .section-wrapper-contact {
       background-color: #ebebeb;
@@ -585,67 +607,6 @@
       }
     }
 
-    /* Hero Section Styles */
-    /* .hero-trailers {
-      position: relative;
-      height: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      background-image: url('/images/video-tech-bg-hero.svg');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .hero-video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 1;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 2;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 3;
-      max-width: 1200px;
-      width: 100%;
-      padding: 0 32px;
-      margin: 0 auto;
-    }
-
-    .hero-text-wrapper {
-      max-width: 400px;
-    }
-
-    .hero-heading {
-      font-size: 56px;
-      font-weight: 600;
-      color: white;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      line-height: 1.2;
-    }
-
-    .hero-paragraph {
-      font-size: 19.2px;
-      color: white;
-      line-height: 1.5;
-    }
-
     /* S-VIDIA Section */
     .section-whats-vidia {
       padding: 64px 32px 4px;
@@ -768,3 +729,5 @@
       line-height: 1.6;
       color: #666;
     }
+
+

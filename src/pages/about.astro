@@ -2,58 +2,384 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import CTASection from '../components/CTASection.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "CCTV Trailer",
+  "description": "Locally owned mobile surveillance trailer rental company serving Tacoma and the Pacific Northwest since 2003",
+  "url": "https://www.cctvtrailer.com/about",
+  "telephone": "(253) 683-2288",
+  "email": "info@cctvtrailer.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Tacoma",
+    "addressRegion": "WA",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Tacoma"},
+    {"@type": "City", "name": "Seattle"},
+    {"@type": "City", "name": "Olympia"},
+    {"@type": "City", "name": "Federal Way"},
+    {"@type": "City", "name": "Kent"},
+    {"@type": "City", "name": "Auburn"},
+    {"@type": "City", "name": "Puyallup"},
+    {"@type": "City", "name": "Lakewood"}
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "CCTV Trailer Team"
+  },
+  "foundingDate": "2003",
+  "numberOfEmployees": {
+    "@type": "QuantitativeValue",
+    "value": 10
+  }
+});
 ---
 
-<Layout title="About">
-  <Header currentPath="/about" />
+<Layout 
+  title="About CCTV Trailer | Mobile Security Solutions Tacoma"
+  description="Learn about CCTV Trailer - locally owned mobile surveillance company serving Tacoma and the Pacific Northwest. 20+ years of security expertise, professional service, and weather-resistant trailers."
+  keywords="about CCTV Trailer, mobile surveillance company Tacoma, security trailer rental company, local security business Washington, surveillance trailer service area"
+  schema={schema}>
+  <Header showEmergencyBar={true} currentPath="/about" />
 
   <main>
-    <section class="py-16">
-      <div class="container mx-auto px-4 max-w-4xl">
-        <h1 class="text-4xl font-bold text-center mb-12">About CCTV Trailer</h1>
-        
-        <div class="prose max-w-none">
-          <p class="text-lg mb-6">
-            CCTV Trailer is a locally owned business based in Tacoma, Washington, specializing in mobile surveillance solutions for the Pacific Northwest region. With over 20 years of experience in CCTV systems, we understand the unique security challenges faced by businesses and organizations in our area.
+    <!-- Hero Section -->
+    <section class="hero-trailer">
+      <div class="hero-overlay">
+        <img src="/images/tacoma-dome-bg-hero.jpg" alt="About CCTV Trailer" class="w-full h-auto rounded-lg shadow-xl" />
+      </div>
+      <div class="hero-content">
+        <div class="hero-text-wrapper">
+          <h1 class="hero-heading">About CCTV Trailer</h1>
+          <p class="hero-paragraph">
+            Your trusted local partner for mobile surveillance solutions in the Pacific Northwest
           </p>
-
-          <h2 class="text-2xl font-semibold mt-8 mb-4">Our Mission</h2>
-          <p class="mb-6">
-            To provide reliable, professional mobile security solutions that protect your valuable assets when you can't be there. We deliver peace of mind through advanced surveillance technology that's easy to deploy and built to withstand Pacific Northwest conditions.
-          </p>
-
-          <h2 class="text-2xl font-semibold mt-8 mb-4">Service Area</h2>
-          <p class="mb-6">
-            We proudly serve the Greater Seattle area including Pierce, King, Thurston, and Kitsap counties. Our primary service areas include:
-          </p>
-          <ul class="list-disc pl-6 mb-6 grid md:grid-cols-2 gap-2">
-            <li>Tacoma</li>
-            <li>Seattle</li>
-            <li>Olympia</li>
-            <li>Federal Way</li>
-            <li>Puyallup</li>
-            <li>Lakewood</li>
-            <li>Auburn</li>
-            <li>Kent</li>
-            <li>Renton</li>
-            <li>Gig Harbor</li>
-            <li>Bremerton</li>
-            <li>Joint Base Lewis-McChord</li>
-          </ul>
-
-          <h2 class="text-2xl font-semibold mt-8 mb-4">Why Choose Us</h2>
-          <ul class="list-disc pl-6 mb-6">
-            <li>Locally owned and operated</li>
-            <li>20+ years of CCTV expertise</li>
-            <li>Trailers built for Northwest weather</li>
-            <li>Quick response and delivery</li>
-            <li>Competitive rental rates</li>
-            <li>Professional, reliable service</li>
-          </ul>
         </div>
       </div>
     </section>
+
+    <!-- Company Overview Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">Locally Owned, Locally Trusted</h2>
+            <p class="text-xl text-gray-600">
+              Serving the Pacific Northwest with pride since 2003
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-r from-blue-50 to-gray-50 rounded-lg p-8 mb-12">
+            <p class="text-lg text-gray-700 leading-relaxed">
+              CCTV Trailer is a locally owned business based in Tacoma, Washington, specializing in mobile surveillance solutions for the Pacific Northwest region. With over 20 years of experience in CCTV systems, we understand the unique security challenges faced by businesses and organizations in our area.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <div class="text-center">
+              <div class="bg-blue-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                <span class="text-3xl font-bold text-blue-600">20+</span>
+              </div>
+              <h3 class="font-semibold text-lg mb-2">Years Experience</h3>
+              <p class="text-gray-600">Trusted security expertise since 2003</p>
+            </div>
+            <div class="text-center">
+              <div class="bg-green-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                <span class="text-3xl font-bold text-green-600">24/7</span>
+              </div>
+              <h3 class="font-semibold text-lg mb-2">Always Available</h3>
+              <p class="text-gray-600">Emergency response any time</p>
+            </div>
+            <div class="text-center">
+              <div class="bg-purple-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                <span class="text-3xl font-bold text-purple-600">100%</span>
+              </div>
+              <h3 class="font-semibold text-lg mb-2">Local Business</h3>
+              <p class="text-gray-600">Proudly serving our community</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Values Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-12">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+              <div class="flex items-center mb-4">
+                <span class="text-3xl mr-3">🎯</span>
+                <h2 class="text-2xl font-bold">Our Mission</h2>
+              </div>
+              <p class="text-gray-700 leading-relaxed">
+                To provide reliable, professional mobile security solutions that protect your valuable assets when you can't be there. We deliver peace of mind through advanced surveillance technology that's easy to deploy and built to withstand Pacific Northwest conditions.
+              </p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-8">
+              <div class="flex items-center mb-4">
+                <span class="text-3xl mr-3">⭐</span>
+                <h2 class="text-2xl font-bold">Our Values</h2>
+              </div>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="text-blue-600 mr-2 mt-1">✓</span>
+                  <span class="text-gray-700">Integrity in every interaction</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-600 mr-2 mt-1">✓</span>
+                  <span class="text-gray-700">Quick response when you need us</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-600 mr-2 mt-1">✓</span>
+                  <span class="text-gray-700">Professional service, every time</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-blue-600 mr-2 mt-1">✓</span>
+                  <span class="text-gray-700">Community-focused approach</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Area Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-4">Service Area</h2>
+          <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+            We proudly serve the Greater Seattle area including Pierce, King, Thurston, and Kitsap counties with rapid deployment and professional service.
+          </p>
+
+          <div class="bg-gray-50 rounded-lg p-8">
+            <h3 class="font-semibold text-lg mb-6 text-center">Primary Service Areas</h3>
+            <div class="grid md:grid-cols-4 gap-4">
+              <div class="bg-white rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+                <span class="text-blue-600 font-semibold">Tacoma</span>
+              </div>
+              <div class="bg-white rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+                <span class="text-blue-600 font-semibold">Seattle</span>
+              </div>
+              <div class="bg-white rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+                <span class="text-blue-600 font-semibold">Olympia</span>
+              </div>
+              <div class="bg-white rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+                <span class="text-blue-600 font-semibold">Federal Way</span>
+              </div>
+              <div class="bg-white rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+                <span class="text-blue-600 font-semibold">Puyallup</span>
+              </div>
+              <div class="bg-white rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+                <span class="text-blue-600 font-semibold">Lakewood</span>
+              </div>
+              <div class="bg-white rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+                <span class="text-blue-600 font-semibold">Auburn</span>
+              </div>
+              <div class="bg-white rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+                <span class="text-blue-600 font-semibold">Kent</span>
+              </div>
+              <div class="bg-white rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+                <span class="text-blue-600 font-semibold">Renton</span>
+              </div>
+              <div class="bg-white rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+                <span class="text-blue-600 font-semibold">Gig Harbor</span>
+              </div>
+              <div class="bg-white rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+                <span class="text-blue-600 font-semibold">Bremerton</span>
+              </div>
+              <div class="bg-white rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+                <span class="text-blue-600 font-semibold">JBLM</span>
+              </div>
+            </div>
+            <p class="text-center text-gray-600 mt-6 text-sm">
+              Extended delivery available throughout Washington State
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-16 bg-gradient-to-br from-blue-50 to-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">Why Choose CCTV Trailer?</h2>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div class="flex items-start">
+                <span class="text-2xl mr-3 text-blue-600">🏆</span>
+                <div>
+                  <h3 class="font-semibold mb-2">Locally Owned & Operated</h3>
+                  <p class="text-gray-600">We're your neighbors, invested in our community's safety</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div class="flex items-start">
+                <span class="text-2xl mr-3 text-green-600">⚡</span>
+                <div>
+                  <h3 class="font-semibold mb-2">Quick Response Time</h3>
+                  <p class="text-gray-600">Same-day delivery and setup when you need it most</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div class="flex items-start">
+                <span class="text-2xl mr-3 text-purple-600">🛡️</span>
+                <div>
+                  <h3 class="font-semibold mb-2">20+ Years Expertise</h3>
+                  <p class="text-gray-600">Decades of CCTV and security system experience</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div class="flex items-start">
+                <span class="text-2xl mr-3 text-orange-600">🌧️</span>
+                <div>
+                  <h3 class="font-semibold mb-2">Northwest Weather Ready</h3>
+                  <p class="text-gray-600">Trailers built to withstand our unique climate</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div class="flex items-start">
+                <span class="text-2xl mr-3 text-red-600">💰</span>
+                <div>
+                  <h3 class="font-semibold mb-2">Competitive Rates</h3>
+                  <p class="text-gray-600">Fair pricing with no hidden fees or surprises</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div class="flex items-start">
+                <span class="text-2xl mr-3 text-indigo-600">🤝</span>
+                <div>
+                  <h3 class="font-semibold mb-2">Professional Service</h3>
+                  <p class="text-gray-600">Reliable, courteous service you can count on</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-4">Meet Our Team</h2>
+          <p class="text-xl text-gray-600 mb-12">
+            Dedicated professionals committed to your security
+          </p>
+          
+          <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg p-8 shadow-xl">
+            <p class="text-lg mb-6 leading-relaxed">
+              Our team consists of security professionals, technical experts, and customer service specialists who work together to deliver the best mobile surveillance solutions in the Pacific Northwest.
+            </p>
+            <p class="text-lg mb-8">
+              Every member of our team is committed to providing you with exceptional service and support, 24/7.
+            </p>
+            <a href="/contact" class="bg-white text-blue-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block transition-colors">
+              Get to Know Us Better →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <CTASection 
+      title="Ready to Work With a Team You Can Trust?"
+      description="Experience the difference of working with a local, professional security partner"
+      quoteText="View Our Services"
+      quoteLink="/services"
+    />
   </main>
 
   <Footer />
+
+  <!-- <style>
+    /* Hero Section Styles - matching index.astro */
+    .hero-trailer {
+      position: relative;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(to right, #1f2937, #111827);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.3;
+      z-index: 1;
+    }
+
+    .hero-overlay img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      width: 100%;
+      padding: 80px 32px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-heading {
+      font-size: 3.5rem;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .hero-paragraph {
+      font-size: 1.5rem;
+      color: #e5e7eb;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .hero-heading {
+        font-size: 2.5rem;
+      }
+      
+      .hero-paragraph {
+        font-size: 1.125rem;
+      }
+      
+      .hero-content {
+        padding: 60px 20px;
+      }
+    }
+  </style> -->
 </Layout>

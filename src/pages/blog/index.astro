@@ -2,6 +2,9 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import CTASection from '../../components/CTASection.astro';
+
+
 const blogPosts = [
   {
     slug: 'how-much-cost-rent-security-trailer',
@@ -47,19 +50,51 @@ const blogPosts = [
   description="Expert insights on mobile surveillance, construction site security, and theft prevention. Learn from 20+ years of security experience in the Pacific Northwest."
   keywords="security blog, surveillance tips, construction site security, mobile CCTV guide, theft prevention">
   
-  <Header currentPath="/blog" />
+  <Header currentPath="/blog" showEmergencyBar={true} />
 
   <main>
-    <!-- Blog Hero -->
-    <section class="py-16">
-      <div class="container mx-auto px-4">
-        <h1 class="text-4xl font-bold text-center mb-4">Security Insights & Resources</h1>
-        <p class="text-xl text-center text-gray-600 mb-12">Expert advice on mobile surveillance and construction site security</p>
+    <!-- Hero Section -->
+    <section class="hero-trailer">
+      <div class="hero-overlay">
+        <img src="/images/tacoma-dome-bg-hero.jpg" alt="CCTV Trailer Blog" class="w-full h-auto rounded-lg shadow-xl" />
       </div>
-      <div class="container mx-auto px-4 max-w-4xl">
-        <div class="space-y-8">
+      <div class="hero-content">
+        <div class="hero-text-wrapper">
+          <h1 class="hero-heading">Security Insights & Resources</h1>
+          <p class="hero-paragraph">
+            Expert advice on mobile surveillance and construction site security from 20+ years of experience
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <!-- Featured Categories -->
+        <!-- <div class="grid md:grid-cols-4 gap-4 mb-12">
+          <div class="bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow cursor-pointer">
+            <span class="text-2xl mb-2 block">💰</span>
+            <h3 class="font-semibold">Pricing Guides</h3>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow cursor-pointer">
+            <span class="text-2xl mb-2 block">🏗️</span>
+            <h3 class="font-semibold">Construction Security</h3>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow cursor-pointer">
+            <span class="text-2xl mb-2 block">🎥</span>
+            <h3 class="font-semibold">Technology</h3>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow cursor-pointer">
+            <span class="text-2xl mb-2 block">🛡️</span>
+            <h3 class="font-semibold">Theft Prevention</h3>
+          </div>
+        </div> -->
+
+        <!-- Blog Posts Grid -->
+        <div class="grid md:grid-cols-2 gap-8">
           {blogPosts.map(post => (
-            <article class="bg-white border rounded-lg overflow-hidden hover:shadow-xl transition-shadow">
+            <article class="bg-white border-2 border-gray-200 rounded-lg overflow-hidden hover:shadow-2xl hover:border-blue-500 transition-all transform hover:-translate-y-1">
               <a href={`/blog/${post.slug}`} class="block">
                 <div class="relative h-64 overflow-hidden bg-gray-100">
                   <img 
@@ -73,13 +108,13 @@ const blogPosts = [
                   </div>
                 </div>
               </a>
-              <div class="p-8">
+              <div class="p-6">
                 <div class="flex items-start justify-between mb-4">
                   <div class="text-sm text-gray-500">
                     <time datetime={post.date}>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
                   </div>
                 </div>
-                <h2 class="text-2xl font-bold mb-3">
+                <h2 class="text-xl font-bold mb-3">
                   <a href={`/blog/${post.slug}`} class="hover:text-blue-600 transition-colors">
                     {post.title}
                   </a>
@@ -93,18 +128,91 @@ const blogPosts = [
             </article>
           ))}
         </div>
-
-        <!-- CTA Section -->
-        <div class="mt-16 bg-gray-100 rounded-lg p-8 text-center">
-          <h2 class="text-2xl font-bold mb-4">Need Security for Your Project?</h2>
-          <p class="mb-6">Get expert advice and a free quote for your security needs</p>
-          <a href="/contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
-            Get Your Free Quote
-          </a>
-        </div>
       </div>
     </section>
+
+    <!-- CTA Section -->
+    <CTASection 
+      title="Need Security for Your Project?"
+      description="Don't wait for an incident. Get professional mobile surveillance deployed at your site within 24 hours."
+      features={["✓ Same Day Delivery", "✓ No Long-Term Contracts", "✓ 24/7 Support"]}
+    />
+
   </main>
 
   <Footer />
+
+  <!-- <style>
+    /* Hero Section Styles - matching index.astro */
+    .hero-trailer {
+      position: relative;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(to right, #1f2937, #111827);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.3;
+      z-index: 1;
+    }
+
+    .hero-overlay img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      width: 100%;
+      padding: 80px 32px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-heading {
+      font-size: 3rem;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .hero-paragraph {
+      font-size: 1.25rem;
+      color: #e5e7eb;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Blog Card Hover Effects */
+    article:hover img {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .hero-heading {
+        font-size: 2rem;
+      }
+      
+      .hero-paragraph {
+        font-size: 1rem;
+      }
+      
+      .hero-content {
+        padding: 60px 20px;
+      }
+    }
+  </style> -->
 </Layout>

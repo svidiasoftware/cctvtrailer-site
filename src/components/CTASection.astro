@@ -1,0 +1,56 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  showPhone?: boolean;
+  showQuote?: boolean;
+  phoneText?: string;
+  quoteText?: string;
+  phoneNumber?: string;
+  quoteLink?: string;
+  features?: string[];
+  className?: string;
+  bgColor?: string;
+}
+
+const {
+  title = "Ready to Secure Your Site?",
+  description = "Get a custom quote for your security needs in minutes",
+  showPhone = true,
+  showQuote = true,
+  phoneText = "📞 Call (253) 683-2288",
+  quoteText = "Get Free Quote →",
+  phoneNumber = "2536832288",
+  quoteLink = "/contact",
+  features = ["✓ Same Day Delivery", "✓ No Long-Term Contracts Required", "✓ 24/7 Support"],
+  className = "",
+  bgColor = "bg-gray-900"
+} = Astro.props;
+---
+
+<section class={`${bgColor} text-white py-16 ${className}`}>
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold mb-4">{title}</h2>
+    <p class="text-xl mb-8 text-gray-300">
+      {description}
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      {showPhone && (
+        <a href={`tel:${phoneNumber}`} class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block transition-colors">
+          {phoneText}
+        </a>
+      )}
+      {showQuote && (
+        <a href={quoteLink} class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block transition-colors">
+          {quoteText}
+        </a>
+      )}
+    </div>
+    {features && features.length > 0 && (
+      <p class="mt-6 text-gray-400">
+        {features.join(" ")}
+      </p>
+    )}
+  </div>
+</section>
+<section class="py-8"></section>
