@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -151,24 +152,7 @@ const schema = JSON.stringify({
   keywords="security trailer FAQ, surveillance rental questions, CCTV trailer information, mobile security help"
   schema={schema}>
   
-  <header class="bg-gray-900 text-white">
-    <nav class="container mx-auto px-4 py-4">
-      <div class="flex justify-between items-center">
-        <a href="/" class="flex items-center">
-          <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-12" />
-        </a>
-        <div class="flex gap-6">
-          <a href="/" class="hover:text-gray-300">Home</a>
-          <a href="/services" class="hover:text-gray-300">Services</a>
-          <a href="/pricing" class="hover:text-gray-300">Pricing</a>
-          <a href="/about" class="hover:text-gray-300">About</a>
-          <a href="/faq" class="hover:text-gray-300">FAQ</a>
-          <a href="/blog" class="hover:text-gray-300">Blog</a>
-          <a href="/contact" class="hover:text-gray-300">Contact</a>
-        </div>
-      </div>
-    </nav>
-  </header>
+  <Header currentPath="/faq" />
 
   <main>
     <section class="py-16">
@@ -521,13 +505,5 @@ const schema = JSON.stringify({
     </section>
   </main>
 
-  <footer class="bg-gray-900 text-white py-8">
-    <div class="container mx-auto px-4">
-      <div class="flex flex-col items-center">
-        <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-16 mb-4" />
-        <p class="mb-2">© 2024 CCTV Trailer - Locally Owned in Tacoma, WA</p>
-        <p>Email: info@cctvtrailer.com | Phone: (253) 683-2288</p>
-      </div>
-    </div>
-  </footer>
+  <Footer />
 </Layout>

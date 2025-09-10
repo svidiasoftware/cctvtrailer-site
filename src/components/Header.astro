@@ -1,0 +1,41 @@
+---
+export interface Props {
+  showEmergencyBar?: boolean;
+  currentPath?: string;
+}
+
+const { showEmergencyBar = false, currentPath = '' } = Astro.props;
+
+// Function to check if a link is active
+const isActive = (href: string) => {
+  if (href === '/') {
+    return currentPath === '/' || currentPath === '';
+  }
+  return currentPath.startsWith(href);
+};
+---
+
+{showEmergencyBar && (
+  <div class="bg-red-600 text-white py-2 text-center font-bold sticky top-0 z-50">
+    📞 Emergency Rental Available 24/7: <a href="tel:2536832288" class="underline">(253) 683-2288</a>
+  </div>
+)}
+
+<header class={`bg-gray-900 text-white ${showEmergencyBar ? 'sticky top-8 z-40' : ''}`}>
+  <nav class="container mx-auto px-4 py-4">
+    <div class="flex justify-between items-center">
+      <a href="/" class="flex items-center">
+        <img src="/images/cctv-logo.svg" alt="CCTV Trailer" class="h-12" />
+      </a>
+      <div class="flex gap-6">
+        <a href="/" class={`hover:text-gray-300 ${isActive('/') && currentPath === '/' ? 'text-blue-400' : ''}`}>Home</a>
+        <a href="/services" class={`hover:text-gray-300 ${isActive('/services') ? 'text-blue-400' : ''}`}>Services</a>
+        <a href="/pricing" class={`hover:text-gray-300 ${isActive('/pricing') ? 'text-blue-400' : ''}`}>Pricing</a>
+        <a href="/about" class={`hover:text-gray-300 ${isActive('/about') ? 'text-blue-400' : ''}`}>About</a>
+        <a href="/faq" class={`hover:text-gray-300 ${isActive('/faq') ? 'text-blue-400' : ''}`}>FAQ</a>
+        <a href="/blog" class={`hover:text-gray-300 ${isActive('/blog') ? 'text-blue-400' : ''}`}>Blog</a>
+        <a href="/contact" class={`hover:text-gray-300 ${isActive('/contact') ? 'text-blue-400' : ''}`}>Contact</a>
+      </div>
+    </div>
+  </nav>
+</header>
