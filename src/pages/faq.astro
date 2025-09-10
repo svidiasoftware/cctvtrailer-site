@@ -15,10 +15,34 @@ const schema = JSON.stringify({
     },
     {
       "@type": "Question",
+      "name": "Are there any hidden fees?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No hidden fees! Our quoted price includes professional delivery and setup, equipment orientation and training, 24/7 technical support, maintenance during rental, and pickup at end of rental. Additional fees only apply for rush delivery ($150-300), extended delivery areas ($50-100), or optional live monitoring services."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer discounts for long-term rentals?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! The longer you rent, the more you save: 1 week gets 10% discount, 1 month gets 20% discount, 2 months gets 25% discount, 3+ months gets 30% discount. Multiple units receive an additional 5-10% off. We also offer corporate accounts and contract pricing for regular customers."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "How quickly can you deliver a security trailer?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We offer same-day delivery for urgent requests and can deploy emergency units within 2 hours. Standard delivery is next business day. We provide 24/7 emergency response throughout the Puget Sound region."
+        "text": "We offer flexible delivery options: Standard next business day (no extra charge), same-day available for +$150, emergency 2-hour response for +$300, and 24/7 emergency deployment. In Tacoma, we can often deliver within 30 minutes for urgent situations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does setup take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Setup is remarkably quick, taking only 20-35 minutes total: positioning trailer (5-10 minutes), system activation (5-10 minutes), and basic orientation (10-15 minutes). Our trailers are pre-configured and ready to operate immediately upon delivery with no complex installation or wiring required."
       }
     },
     {
@@ -26,7 +50,95 @@ const schema = JSON.stringify({
       "name": "What areas do you serve?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We serve all of Pierce, King, Thurston, and Kitsap counties including Tacoma, Seattle, Olympia, Federal Way, Puyallup, Lakewood, Kent, Auburn, and surrounding areas. Free delivery within 30 miles of Tacoma."
+        "text": "We serve the entire Puget Sound region including Pierce County (Tacoma, Puyallup, Lakewood, Federal Way), King County (Seattle, Kent, Auburn, Renton, Bellevue), Thurston County (Olympia, Lacey, Tumwater), and Kitsap County (Bremerton, Port Orchard, Silverdale). Free delivery within 30 miles of Tacoma."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What technology is included in the trailers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our trailers feature HD cameras with night vision, 360-degree coverage capability, motion detection and alerts, 24/7 recording with storage, weather-resistant equipment, solar power options, and remote viewing capability. All equipment is commercial-grade and designed for Pacific Northwest weather conditions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do the trailers require power hookups?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our trailers offer flexible power options including solar-powered units (no hookup needed), battery backup for continuous operation, included generator for extended autonomous operation, standard 110V outlet connection option, and generator-compatibility for remote locations. Most clients use our solar-powered units with generator backup."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I monitor the cameras remotely?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! Remote monitoring options include secure web portal access, mobile app for iOS/Android, real-time alerts for motion detection, ability to download or stream recorded footage, and multiple user access. We provide training on the remote viewing system and 24/7 technical support."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What types of sites use security trailers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Security trailers are used by construction sites to prevent theft of materials and equipment, special events like festivals and concerts, retail/parking for after-hours lot security, industrial sites including warehouses and storage yards, government facilities, and emergency/disaster response situations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How effective are trailers at preventing theft?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Extremely effective! Studies show 95% reduction in theft incidents. The visible deterrent stops crimes before they happen, provides clear video evidence for prosecution, supports insurance claims with footage, and reduces vandalism and trespassing. Most sites report zero incidents while our trailers are deployed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can trailers be moved during the rental?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! Mobility is a key advantage. You can relocate as project phases change, move between multiple sites, tow at speeds up to 70 mph, or have us relocate for you (service fee applies). This flexibility makes trailers ideal for dynamic security needs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do trailers compare to security guards?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trailers offer several advantages over guards: lower cost ($8,000-10,000/month vs $15,000-20,000+ for guards), true 24/7/365 coverage vs shift-based, continuous recording capability, and unaffected by weather conditions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why choose mobile trailers over fixed cameras?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mobile trailers provide unique benefits: no expensive installation or wiring, immediate deployment vs weeks for installation, flexibility to move as needed, no permits required, complete system with power/recording/transmission included, and visible deterrent effect. Perfect for temporary needs without permanent infrastructure changes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the rental process?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Renting is simple and fast: 1) Call or request quote online, 2) Discuss your security needs, 3) Receive instant pricing, 4) Schedule delivery, 5) Sign simple rental agreement, 6) Trailer delivered and set up, 7) Brief training provided, 8) 24/7 support during rental. Most customers go from initial call to deployment in 24 hours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the minimum rental period?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer flexible rental terms with a minimum rental of 1 day. Most common rentals are 1-4 weeks, with long-term rentals of several months available. Extensions are easy to arrange and there are no penalties for early termination. We recommend at least 3 days for best value."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you require a deposit or contract?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our terms are straightforward: simple one-page rental agreement, first day's rental paid upfront, no security deposit required, NET 30 terms for established businesses, credit cards and checks accepted, and insurance certificate available. We make it easy to get the security you need without complicated contracts."
       }
     }
   ]
@@ -48,11 +160,10 @@ const schema = JSON.stringify({
         <div class="flex gap-6">
           <a href="/" class="hover:text-gray-300">Home</a>
           <a href="/services" class="hover:text-gray-300">Services</a>
-          <a href="/technical-specifications" class="hover:text-gray-300">Tech Specs</a>
           <a href="/pricing" class="hover:text-gray-300">Pricing</a>
           <a href="/about" class="hover:text-gray-300">About</a>
-          <a href="/blog" class="hover:text-gray-300">Blog</a>
           <a href="/faq" class="hover:text-gray-300">FAQ</a>
+          <a href="/blog" class="hover:text-gray-300">Blog</a>
           <a href="/contact" class="hover:text-gray-300">Contact</a>
         </div>
       </div>

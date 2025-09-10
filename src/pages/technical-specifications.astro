@@ -5,7 +5,7 @@ const techSpecsSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "CCTV Mobile Security Trailer",
-  "description": "Advanced mobile surveillance trailer with solar power, infrared PTZ cameras, and S-VIDIA technology for construction sites and events",
+  "description": "Advanced mobile surveillance trailer with solar power, infrared PTZ cameras, and S-VIDIA technology. Weatherproof construction designed for Pacific Northwest climate with 360-degree coverage capability.",
   "brand": {
     "@type": "Brand",
     "name": "CCTV Trailer"
@@ -17,9 +17,77 @@ const techSpecsSchema = {
       "@type": "PostalAddress",
       "addressLocality": "Tacoma",
       "addressRegion": "WA",
+      "addressCountry": "US",
       "postalCode": "98401"
     }
-  }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "127"
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "USD",
+    "lowPrice": "499",
+    "highPrice": "999",
+    "offerCount": "4",
+    "availability": "https://schema.org/InStock"
+  },
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Camera System",
+      "value": "Up to 4 cameras (PTZ, Fixed, 360-degree) with infrared night vision"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Power Options",
+      "value": "Solar panels, battery backup, gas generator, shore power connection"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Connectivity",
+      "value": "4G/5G, Wi-Fi, Starlink transmission options"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Storage Capacity",
+      "value": "2 weeks continuous recording with automatic looping"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Construction",
+      "value": "Reinforced steel, weatherproof, vandal-resistant"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Mast Height",
+      "value": "Adjustable electric/hydraulic mast"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Security Features",
+      "value": "Hitch lock, wheel locks, optional security boot"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Platform",
+      "value": "S-VIDIA video security platform with remote access"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Optional Features",
+      "value": "PA speakers, radar detection (400+ ft), LED floodlights, license plate reader"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Towing Capability",
+      "value": "Tow-capable up to 70 mph"
+    }
+  ],
+  "category": "Security Equipment",
+  "keywords": "mobile surveillance trailer, security camera trailer, construction site security, S-VIDIA technology, solar powered surveillance"
 };
 ---
 
@@ -37,11 +105,10 @@ const techSpecsSchema = {
         <div class="flex gap-6">
           <a href="/" class="hover:text-gray-300">Home</a>
           <a href="/services" class="hover:text-gray-300">Services</a>
-          <a href="/technical-specifications" class="hover:text-gray-300">Tech Specs</a>
           <a href="/pricing" class="hover:text-gray-300">Pricing</a>
           <a href="/about" class="hover:text-gray-300">About</a>
-          <a href="/blog" class="hover:text-gray-300">Blog</a>
           <a href="/faq" class="hover:text-gray-300">FAQ</a>
+          <a href="/blog" class="hover:text-gray-300">Blog</a>
           <a href="/contact" class="hover:text-gray-300">Contact</a>
         </div>
       </div>

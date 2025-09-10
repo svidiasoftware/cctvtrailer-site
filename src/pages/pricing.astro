@@ -1,12 +1,94 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Security Trailer Rental",
+  "description": "Professional mobile surveillance trailer rentals with advanced S-VIDIA video technology for construction sites, events, and temporary security needs",
+  "brand": {
+    "@type": "Brand",
+    "name": "CCTV Trailer"
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Daily Security Trailer Rental - First Day",
+      "price": "999",
+      "priceCurrency": "USD",
+      "priceValidUntil": "2024-12-31",
+      "availability": "https://schema.org/InStock",
+      "unitCode": "DAY",
+      "description": "First day rental rate for mobile surveillance trailer"
+    },
+    {
+      "@type": "Offer",
+      "name": "Daily Security Trailer Rental - Additional Days",
+      "price": "499",
+      "priceCurrency": "USD",
+      "priceValidUntil": "2024-12-31",
+      "availability": "https://schema.org/InStock",
+      "unitCode": "DAY",
+      "description": "Additional day rental rate for mobile surveillance trailer"
+    },
+    {
+      "@type": "AggregateOffer",
+      "name": "Weekly Security Trailer Rental",
+      "lowPrice": "3500",
+      "highPrice": "4000",
+      "priceCurrency": "USD",
+      "priceValidUntil": "2024-12-31",
+      "availability": "https://schema.org/InStock",
+      "description": "Weekly rental rates with 10% discount"
+    },
+    {
+      "@type": "AggregateOffer",
+      "name": "Monthly Security Trailer Rental",
+      "lowPrice": "8000",
+      "highPrice": "10000",
+      "priceCurrency": "USD",
+      "priceValidUntil": "2024-12-31",
+      "availability": "https://schema.org/InStock",
+      "description": "Monthly rental rates with 20% discount"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "127"
+  },
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "CCTV Trailer",
+    "telephone": "(253) 683-2288",
+    "email": "info@cctvtrailer.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tacoma",
+      "addressRegion": "WA",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 47.2529,
+          "longitude": -122.4443
+        },
+        "geoRadius": "30 miles"
+      }
+    ]
+  }
+});
 ---
 
 <Layout 
   title="Security Trailer Rental Pricing"
   description="Transparent pricing for mobile surveillance trailer rentals. Starting at $499/day with weekly and monthly discounts. Free setup, 24/7 monitoring, and no hidden fees."
-  keywords="security trailer rental cost, mobile surveillance pricing, CCTV trailer rental rates, security camera trailer prices, construction site security cost, temporary surveillance pricing">
+  keywords="security trailer rental cost, mobile surveillance pricing, CCTV trailer rental rates, security camera trailer prices, construction site security cost, temporary surveillance pricing"
+  schema={schema}>
   <header class="bg-gray-900 text-white">
     <nav class="container mx-auto px-4 py-4">
       <div class="flex justify-between items-center">
@@ -16,11 +98,10 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
         <div class="flex gap-6">
           <a href="/" class="hover:text-gray-300">Home</a>
           <a href="/services" class="hover:text-gray-300">Services</a>
-          <a href="/technical-specifications" class="hover:text-gray-300">Tech Specs</a>
           <a href="/pricing" class="hover:text-gray-300">Pricing</a>
           <a href="/about" class="hover:text-gray-300">About</a>
-          <a href="/blog" class="hover:text-gray-300">Blog</a>
           <a href="/faq" class="hover:text-gray-300">FAQ</a>
+          <a href="/blog" class="hover:text-gray-300">Blog</a>
           <a href="/contact" class="hover:text-gray-300">Contact</a>
         </div>
       </div>

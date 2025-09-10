@@ -1,12 +1,111 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Mobile Surveillance Trailer Rental Services",
+  "description": "Professional mobile surveillance trailer services for construction sites, events, and temporary security needs with 24/7 monitoring and rapid deployment",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "CCTV Trailer",
+    "telephone": "(253) 683-2288",
+    "email": "info@cctvtrailer.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tacoma",
+      "addressRegion": "WA",
+      "addressCountry": "US"
+    }
+  },
+  "serviceType": ["Security Services", "Surveillance Services", "Equipment Rental"],
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Tacoma"
+    },
+    {
+      "@type": "City",
+      "name": "Seattle"
+    },
+    {
+      "@type": "City",
+      "name": "Olympia"
+    },
+    {
+      "@type": "City",
+      "name": "Federal Way"
+    },
+    {
+      "@type": "City",
+      "name": "Puyallup"
+    },
+    {
+      "@type": "City",
+      "name": "Lakewood"
+    },
+    {
+      "@type": "City",
+      "name": "Kent"
+    },
+    {
+      "@type": "City",
+      "name": "Auburn"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Mobile Surveillance Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Short-Term Security Trailer Rental",
+          "description": "Ideal for weekend events, festivals, construction site security, emergency response situations, and special events monitoring"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Long-Term Security Trailer Rental",
+          "description": "Perfect for ongoing construction projects, seasonal business security, property development sites, and extended facility monitoring"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "24/7 Remote Monitoring",
+          "description": "Continuous surveillance with real-time alerts and remote viewing capabilities"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Emergency Deployment",
+          "description": "Rapid response deployment within 2 hours for urgent security needs"
+        }
+      }
+    ]
+  },
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "https://www.cctvtrailer.com/contact",
+    "servicePhone": "(253) 683-2288",
+    "availableLanguage": ["English"]
+  }
+});
 ---
 
 <Layout 
   title="Mobile Surveillance Trailer Services | CCTV Rental Tacoma"
   description="Professional mobile surveillance trailer services for construction sites, events, and temporary security needs. 24/7 monitoring, rapid deployment, and advanced S-VIDIA technology throughout Tacoma and Seattle."
-  keywords="mobile surveillance services, security trailer rental services, construction site security, event security services, temporary CCTV rental, Tacoma security services">
+  keywords="mobile surveillance services, security trailer rental services, construction site security, event security services, temporary CCTV rental, Tacoma security services"
+  schema={schema}>
   <header class="bg-gray-900 text-white">
     <nav class="container mx-auto px-4 py-4">
       <div class="flex justify-between items-center">
@@ -16,11 +115,10 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
         <div class="flex gap-6">
           <a href="/" class="hover:text-gray-300">Home</a>
           <a href="/services" class="hover:text-gray-300">Services</a>
-          <a href="/technical-specifications" class="hover:text-gray-300">Tech Specs</a>
           <a href="/pricing" class="hover:text-gray-300">Pricing</a>
           <a href="/about" class="hover:text-gray-300">About</a>
-          <a href="/blog" class="hover:text-gray-300">Blog</a>
           <a href="/faq" class="hover:text-gray-300">FAQ</a>
+          <a href="/blog" class="hover:text-gray-300">Blog</a>
           <a href="/contact" class="hover:text-gray-300">Contact</a>
         </div>
       </div>
@@ -66,6 +164,13 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
             <div>• No guards required</div>
             <div>• Mobile deployment anywhere</div>
           </div>
+        </div>
+        
+        <div class="mt-12 text-center">
+          <p class="text-gray-700 mb-6">Want to learn more about our trailer specifications and capabilities?</p>
+          <a href="/technical-specifications" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
+            View Technical Specifications →
+          </a>
         </div>
       </div>
     </section>
