@@ -42,7 +42,18 @@ const schema = JSON.stringify({
   <Header showEmergencyBar={true} currentPath="/" />
 
   <main>
-    <section class="relative bg-gradient-to-r from-gray-800 to-gray-900 text-white py-5 overflow-hidden">
+    <!-- <section class="relative bg-gradient-to-r from-gray-800 to-gray-900 text-white py-5 overflow-hidden"> -->
+    <section class="hero-trailer">
+      <div class="hero-overlay">
+        <img src="/images/tacoma-dome-bg-hero.jpg" alt="CCTV Mobile Surveillance Trailer" class="w-full h-auto rounded-lg shadow-xl" />
+      </div>
+      <div class="hero-content">
+        <div class="hero-text-wrapper">
+          <h1 class="hero-heading">Mobile Surveillance Trailer Rental - Setup in Minutes</h1>
+          <p class="hero-paragraph">
+            Professional security trailer rentals for construction sites, events, and temporary surveillance needs in Tacoma, Seattle, and the Puget Sound region.          </p>
+        </div>
+      </div>
       <div class="container mx-auto px-4">
         <div class="grid md:grid-cols-2 gap-8 items-center">
           <div>
@@ -92,7 +103,8 @@ const schema = JSON.stringify({
           From construction sites to special events, our mobile surveillance trailers provide customized security solutions for every industry's unique challenges.
         </p>
         
-        <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6"> -->
+        <div class="features-grid">
           <!-- Construction -->
           <div class="rounded-lg shadow-lg hover:shadow-xl transition-shadow overflow-hidden relative h-64">
             <img src="/images/industries/construction.png" alt="Construction site with equipment and materials requiring security monitoring" class="w-full h-full object-cover" loading="lazy" />
