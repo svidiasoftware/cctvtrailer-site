@@ -1,0 +1,338 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTASection from '../components/CTASection.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import Analytics from '../components/Analytics.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Construction Site Security Trailer Rental",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "CCTV Trailer",
+    "telephone": "+12536832288",
+    "email": "info@cctvtrailer.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tacoma",
+      "addressRegion": "WA",
+      "addressCountry": "US"
+    }
+  },
+  "description": "Professional construction site surveillance trailer rental. Mobile security solutions for jobsites, construction projects, and development sites. 24/7 monitoring and rapid deployment.",
+  "areaServed": [
+    {"@type": "State", "name": "Washington"},
+    {"@type": "City", "name": "Tacoma"},
+    {"@type": "City", "name": "Seattle"},
+    {"@type": "City", "name": "Olympia"}
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "999",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "price": "999",
+      "priceCurrency": "USD",
+      "unitText": "WEEK"
+    }
+  }
+});
+---
+
+<Layout 
+  title="Construction Site Security Trailer Rental | Mobile Surveillance for Jobsites"
+  description="Construction site surveillance trailer rental with 24/7 monitoring. Protect equipment, materials & jobsites from theft. Same-day deployment. Call (253) 683-2288"
+  keywords="construction site surveillance trailer, construction site security trailer rental, jobsite security trailers, mobile security for construction sites, construction site monitoring trailers, portable cameras for construction sites, construction security rental service, jobsite surveillance rental"
+  schema={schema}>
+  
+  <Header showEmergencyBar={true} currentPath="/construction-security" />
+  <Analytics />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-orange-800 to-orange-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Construction Site Security Trailer Rental</h1>
+          <p class="text-xl mb-6">Protect Your Jobsite, Equipment & Materials with 24/7 Mobile Surveillance</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="tel:2536832288" class="bg-white text-orange-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
+              📞 Emergency: (253) 683-2288
+            </a>
+            <a href="#construction-quote" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-lg inline-block text-center">
+              Get Jobsite Quote →
+            </a>
+          </div>
+          <p class="mt-4 text-yellow-300">⚡ Same-day deployment available for active construction sites</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Construction Challenges Section -->
+    <section class="bg-gray-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Construction Site Security Challenges We Solve</h2>
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="text-4xl mb-4">🚧</div>
+            <h3 class="text-xl font-bold mb-3">Equipment Theft</h3>
+            <p class="text-gray-600">$1 billion in construction equipment is stolen annually. Our trailers provide 24/7 deterrence and real-time alerts.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="text-4xl mb-4">📦</div>
+            <h3 class="text-xl font-bold mb-3">Material Loss</h3>
+            <p class="text-gray-600">Copper, lumber, and tools disappear from unsecured sites. Mobile surveillance stops theft before it happens.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="text-4xl mb-4">⚖️</div>
+            <h3 class="text-xl font-bold mb-3">Liability Protection</h3>
+            <p class="text-gray-600">Document site conditions, accidents, and unauthorized access for insurance and legal protection.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Construction-Specific Features -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Built for Construction Sites</h2>
+        <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Jobsite-Ready Features</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>
+                  <strong>Rugged Construction:</strong> Weather-resistant trailers built to withstand harsh jobsite conditions
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>
+                  <strong>360° Coverage:</strong> Multiple PTZ cameras monitor entire construction perimeter
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>
+                  <strong>License Plate Recognition:</strong> Track all vehicles entering and leaving your jobsite
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>
+                  <strong>Motion-Activated Lighting:</strong> LED floodlights illuminate intruders automatically
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>
+                  <strong>Two-Way Audio:</strong> Warn off trespassers with live voice intervention
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>
+                  <strong>Solar + Generator Power:</strong> Continuous operation even on sites without utilities
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Construction Project Benefits</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">📊</span>
+                <div>
+                  <strong>Progress Documentation:</strong> Time-lapse recording for project documentation and marketing
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">💰</span>
+                <div>
+                  <strong>Insurance Discounts:</strong> Many insurers offer reduced premiums with active surveillance
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">🚚</span>
+                <div>
+                  <strong>Delivery Verification:</strong> Confirm material deliveries and track inventory
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">👷</span>
+                <div>
+                  <strong>Safety Compliance:</strong> Monitor PPE usage and safety protocol adherence
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">📱</span>
+                <div>
+                  <strong>Remote Management:</strong> Check your site from anywhere via mobile app
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">🎯</span>
+                <div>
+                  <strong>Scalable Solution:</strong> Add or relocate trailers as your project grows
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROI Calculator Section -->
+    <section class="bg-blue-50 py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-8">Construction Site Security ROI</h2>
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 class="text-xl font-bold mb-4">Average Losses Without Security</h3>
+                <ul class="space-y-2 text-gray-700">
+                  <li>Equipment theft: <span class="font-bold text-red-600">$15,000+</span></li>
+                  <li>Material theft: <span class="font-bold text-red-600">$8,000+</span></li>
+                  <li>Vandalism repairs: <span class="font-bold text-red-600">$5,000+</span></li>
+                  <li>Project delays: <span class="font-bold text-red-600">$10,000+</span></li>
+                  <li class="pt-2 border-t font-bold">Total Risk: <span class="text-red-600">$38,000+</span></li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-4">Your Investment in Security</h3>
+                <ul class="space-y-2 text-gray-700">
+                  <li>Weekly rental: <span class="font-bold text-green-600">$999</span></li>
+                  <li>3-month project: <span class="font-bold text-green-600">$11,988</span></li>
+                  <li>Setup/removal: <span class="font-bold text-green-600">FREE</span></li>
+                  <li>24/7 monitoring: <span class="font-bold text-green-600">Included</span></li>
+                  <li class="pt-2 border-t font-bold">Protection Cost: <span class="text-green-600">$11,988</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-8 p-4 bg-green-100 rounded-lg text-center">
+              <p class="text-2xl font-bold text-green-800">Potential Savings: $26,000+</p>
+              <p class="text-gray-700 mt-2">Plus insurance discounts and avoided project delays</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Construction Security Success Stories</h2>
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Commercial Development - Tacoma</h3>
+            <p class="text-gray-600 mb-4">$2M development project protected for 6 months. Zero theft incidents, compared to 3 attempted break-ins at neighboring sites.</p>
+            <p class="text-green-600 font-bold">Result: $45,000 in prevented losses</p>
+          </div>
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Residential Construction - Federal Way</h3>
+            <p class="text-gray-600 mb-4">18-home subdivision secured during framing phase. Prevented copper and lumber theft that plagued previous projects.</p>
+            <p class="text-green-600 font-bold">Result: 15% insurance premium reduction</p>
+          </div>
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Highway Project - I-5 Corridor</h3>
+            <p class="text-gray-600 mb-4">DOT project with high-value equipment. 24/7 monitoring prevented equipment theft and documented safety compliance.</p>
+            <p class="text-green-600 font-bold">Result: Zero equipment loss over 12 months</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="bg-gray-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8">Construction Projects We Protect</h2>
+        <div class="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div class="text-center">
+            <div class="text-3xl mb-2">🏢</div>
+            <h3 class="font-bold">Commercial Construction</h3>
+            <p class="text-sm text-gray-600">Office buildings, retail centers, warehouses</p>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl mb-2">🏘️</div>
+            <h3 class="font-bold">Residential Development</h3>
+            <p class="text-sm text-gray-600">Subdivisions, apartments, condos</p>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl mb-2">🛣️</div>
+            <h3 class="font-bold">Infrastructure Projects</h3>
+            <p class="text-sm text-gray-600">Roads, bridges, utilities</p>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl mb-2">🏭</div>
+            <h3 class="font-bold">Industrial Sites</h3>
+            <p class="text-sm text-gray-600">Factories, plants, facilities</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Form Section -->
+    <section id="construction-quote" class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-2xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-8">Get Your Construction Site Quote</h2>
+          <QuoteForm 
+            formTitle="Construction Project Security Quote"
+            buttonText="Get Construction Quote →"
+            responseTime="* We'll respond within 1 hour with your construction site security plan"
+            formId="construction-quote-form"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="bg-gray-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Construction Site Security FAQs</h2>
+        <div class="max-w-3xl mx-auto space-y-6">
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="font-bold text-lg mb-3">How quickly can you deploy to an active construction site?</h3>
+            <p class="text-gray-600">We offer same-day deployment for urgent construction security needs within our service area. Standard deployment is within 24-48 hours.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="font-bold text-lg mb-3">Do the trailers work on sites without power?</h3>
+            <p class="text-gray-600">Yes! Our trailers are completely self-sufficient with solar panels and backup generators. Perfect for new construction sites without utilities.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="font-bold text-lg mb-3">Can we move the trailer as our project progresses?</h3>
+            <p class="text-gray-600">Absolutely. We offer free relocation services within your jobsite. As your project evolves, we'll reposition the trailer for optimal coverage.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="font-bold text-lg mb-3">What happens if equipment is stolen despite surveillance?</h3>
+            <p class="text-gray-600">While our system prevents most theft, we provide HD video evidence for police reports and insurance claims if an incident occurs.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="font-bold text-lg mb-3">Do you offer multi-site discounts for large contractors?</h3>
+            <p class="text-gray-600">Yes, we offer volume discounts for contractors securing multiple sites or long-term projects. Contact us for custom pricing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <CTASection 
+      title="Protect Your Construction Site Today"
+      description="Don't wait until theft occurs. Secure your jobsite now with professional mobile surveillance."
+      phoneText="📞 24/7 Hotline: (253) 683-2288"
+      quoteText="Start Protecting Your Site →"
+      quoteLink="#construction-quote"
+      features={["✓ Same-day deployment available", "✓ No long-term contracts", "✓ Insurance discounts available"]}
+      bgColor="bg-orange-900"
+    />
+
+  </main>
+
+  <Footer />
+</Layout>

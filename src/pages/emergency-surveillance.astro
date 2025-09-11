@@ -1,0 +1,443 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTASection from '../components/CTASection.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import Analytics from '../components/Analytics.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Emergency Surveillance Trailer Rental",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "CCTV Trailer",
+    "telephone": "+12536832288",
+    "email": "info@cctvtrailer.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tacoma",
+      "addressRegion": "WA",
+      "addressCountry": "US"
+    }
+  },
+  "description": "24/7 emergency surveillance trailer deployment for urgent security needs. Rapid response mobile monitoring for disasters, incidents, and temporary security requirements.",
+  "areaServed": [
+    {"@type": "State", "name": "Washington"},
+    {"@type": "City", "name": "Tacoma"},
+    {"@type": "City", "name": "Seattle"},
+    {"@type": "City", "name": "Olympia"},
+    {"@type": "City", "name": "Federal Way"}
+  ],
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceType": "Emergency Response",
+    "availableLanguage": "English",
+    "servicePhone": "+12536832288"
+  },
+  "hoursAvailable": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  }
+});
+---
+
+<Layout 
+  title="Emergency Surveillance Trailers | 24/7 Rapid Deployment Security"
+  description="Emergency surveillance trailer rental with same-day deployment. Temporary security camera trailers for disasters, incidents & urgent needs. Call (253) 683-2288 NOW"
+  keywords="emergency surveillance trailers, temporary security camera trailers, temporary security trailer rental, rapid deployment surveillance, urgent security monitoring, disaster response surveillance"
+  schema={schema}>
+  
+  <Header showEmergencyBar={true} currentPath="/emergency-surveillance" />
+  <Analytics />
+
+  <main>
+    <!-- Urgent Hero Section -->
+    <section class="bg-gradient-to-r from-red-700 to-red-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl">
+          <div class="bg-yellow-400 text-black font-bold px-4 py-2 rounded inline-block mb-4">
+            ⚡ IMMEDIATE DEPLOYMENT AVAILABLE ⚡
+          </div>
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Emergency Surveillance Trailers</h1>
+          <p class="text-2xl mb-6 font-semibold">24/7 Rapid Response • Same-Day Setup • No Long-Term Contracts</p>
+          <div class="bg-white/10 border-2 border-white rounded-lg p-6 mb-6">
+            <p class="text-xl mb-4">📞 24/7 EMERGENCY HOTLINE:</p>
+            <a href="tel:2536832288" class="text-4xl font-bold hover:underline">(253) 683-2288</a>
+            <p class="mt-2">Immediate response • Deployment within hours</p>
+          </div>
+          <div class="grid md:grid-cols-3 gap-4 text-center">
+            <div class="bg-white/20 rounded p-4">
+              <div class="text-3xl mb-2">⏱️</div>
+              <p class="font-bold">2-4 Hour Response</p>
+              <p class="text-sm">Within service area</p>
+            </div>
+            <div class="bg-white/20 rounded p-4">
+              <div class="text-3xl mb-2">📅</div>
+              <p class="font-bold">No Contracts</p>
+              <p class="text-sm">Day-to-day rentals OK</p>
+            </div>
+            <div class="bg-white/20 rounded p-4">
+              <div class="text-3xl mb-2">🚚</div>
+              <p class="font-bold">We Deploy</p>
+              <p class="text-sm">Full setup included</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Emergency Situations -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-4">Emergency Situations We Respond To</h2>
+        <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">When crisis strikes, we're ready. Our emergency response team deploys surveillance trailers for:</p>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div class="bg-red-50 border-2 border-red-200 rounded-lg p-6">
+            <div class="text-3xl mb-3">🔥</div>
+            <h3 class="font-bold text-lg mb-2">Fire & Disaster Response</h3>
+            <ul class="text-sm text-gray-700 space-y-1">
+              <li>• Monitor evacuation zones</li>
+              <li>• Protect damaged properties</li>
+              <li>• Prevent looting</li>
+              <li>• Document for insurance</li>
+            </ul>
+          </div>
+          
+          <div class="bg-red-50 border-2 border-red-200 rounded-lg p-6">
+            <div class="text-3xl mb-3">🚨</div>
+            <h3 class="font-bold text-lg mb-2">Crime Scene Security</h3>
+            <ul class="text-sm text-gray-700 space-y-1">
+              <li>• Secure active investigations</li>
+              <li>• Monitor evidence areas</li>
+              <li>• Protect crime scenes</li>
+              <li>• Support law enforcement</li>
+            </ul>
+          </div>
+          
+          <div class="bg-red-50 border-2 border-red-200 rounded-lg p-6">
+            <div class="text-3xl mb-3">🏚️</div>
+            <h3 class="font-bold text-lg mb-2">Vandalism & Break-ins</h3>
+            <ul class="text-sm text-gray-700 space-y-1">
+              <li>• Immediate deterrence</li>
+              <li>• Prevent repeat incidents</li>
+              <li>• Gather evidence</li>
+              <li>• 24/7 monitoring</li>
+            </ul>
+          </div>
+          
+          <div class="bg-red-50 border-2 border-red-200 rounded-lg p-6">
+            <div class="text-3xl mb-3">⚠️</div>
+            <h3 class="font-bold text-lg mb-2">Accident Sites</h3>
+            <ul class="text-sm text-gray-700 space-y-1">
+              <li>• Industrial accidents</li>
+              <li>• Construction incidents</li>
+              <li>• Traffic collision scenes</li>
+              <li>• Investigation support</li>
+            </ul>
+          </div>
+          
+          <div class="bg-red-50 border-2 border-red-200 rounded-lg p-6">
+            <div class="text-3xl mb-3">💨</div>
+            <h3 class="font-bold text-lg mb-2">Storm Damage</h3>
+            <ul class="text-sm text-gray-700 space-y-1">
+              <li>• Protect exposed property</li>
+              <li>• Monitor repairs</li>
+              <li>• Prevent theft</li>
+              <li>• Insurance documentation</li>
+            </ul>
+          </div>
+          
+          <div class="bg-red-50 border-2 border-red-200 rounded-lg p-6">
+            <div class="text-3xl mb-3">🏗️</div>
+            <h3 class="font-bold text-lg mb-2">Equipment Failure</h3>
+            <ul class="text-sm text-gray-700 space-y-1">
+              <li>• Replace failed systems</li>
+              <li>• Temporary coverage</li>
+              <li>• Bridge security gaps</li>
+              <li>• Maintain protection</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Response Timeline -->
+    <section class="bg-gray-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Our Emergency Response Process</h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="space-y-8">
+            <div class="flex items-start">
+              <div class="bg-red-600 text-white font-bold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">1</div>
+              <div class="ml-6">
+                <h3 class="text-xl font-bold mb-2">Your Call (0-5 minutes)</h3>
+                <p>Call our 24/7 emergency hotline. Describe your situation and location. We'll assess your needs immediately.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-red-600 text-white font-bold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">2</div>
+              <div class="ml-6">
+                <h3 class="text-xl font-bold mb-2">Rapid Dispatch (5-30 minutes)</h3>
+                <p>Our team prepares equipment and dispatches the nearest available trailer to your location.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-red-600 text-white font-bold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">3</div>
+              <div class="ml-6">
+                <h3 class="text-xl font-bold mb-2">On-Site Arrival (2-4 hours)</h3>
+                <p>Professional technicians arrive with fully equipped surveillance trailer ready for immediate deployment.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-red-600 text-white font-bold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">4</div>
+              <div class="ml-6">
+                <h3 class="text-xl font-bold mb-2">System Activation (30 minutes)</h3>
+                <p>Complete setup, positioning, and activation. Live monitoring begins immediately.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-12 bg-red-600 rounded-lg p-6 text-center">
+            <p class="text-2xl font-bold mb-2">Total Time: 2.5 - 4.5 Hours</p>
+            <p>From your call to full protection</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Emergency Response Matters -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Why Immediate Security Response Matters</h2>
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div class="bg-white border-2 border-gray-200 rounded-lg p-8">
+            <h3 class="text-2xl font-bold mb-6 text-red-700">Without Rapid Security</h3>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-red-600 mr-3">✗</span>
+                <div>Secondary crimes often occur within 24-48 hours</div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-600 mr-3">✗</span>
+                <div>Evidence can be destroyed or contaminated</div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-600 mr-3">✗</span>
+                <div>Insurance claims may be disputed</div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-600 mr-3">✗</span>
+                <div>Property damage compounds</div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-600 mr-3">✗</span>
+                <div>Liability exposure increases</div>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-green-50 border-2 border-green-200 rounded-lg p-8">
+            <h3 class="text-2xl font-bold mb-6 text-green-700">With Our Emergency Response</h3>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>Immediate deterrence stops further incidents</div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>HD video evidence preserved for authorities</div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>Insurance documentation secured</div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>24/7 monitoring prevents escalation</div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>Peace of mind during crisis</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Emergency Features -->
+    <section class="bg-red-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Emergency-Ready Features</h2>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+            <div class="text-4xl mb-4">🔋</div>
+            <h3 class="font-bold text-lg mb-2">Self-Powered</h3>
+            <p class="text-gray-600">Solar + generator backup operates without external power for weeks</p>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+            <div class="text-4xl mb-4">📡</div>
+            <h3 class="font-bold text-lg mb-2">Cellular Connected</h3>
+            <p class="text-gray-600">4G LTE connectivity works anywhere with cell service</p>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+            <div class="text-4xl mb-4">🌧️</div>
+            <h3 class="font-bold text-lg mb-2">All-Weather</h3>
+            <p class="text-gray-600">Operates in rain, snow, wind, and extreme temperatures</p>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+            <div class="text-4xl mb-4">👁️</div>
+            <h3 class="font-bold text-lg mb-2">Night Vision</h3>
+            <p class="text-gray-600">Infrared cameras provide clear footage in total darkness</p>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+            <div class="text-4xl mb-4">🔊</div>
+            <h3 class="font-bold text-lg mb-2">Voice Warning</h3>
+            <p class="text-gray-600">Audio for immediate intervention</p>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+            <div class="text-4xl mb-4">💾</div>
+            <h3 class="font-bold text-lg mb-2">30-Day Storage</h3>
+            <p class="text-gray-600">Continuous encrypted recording with instant access</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-4">Emergency Rental Pricing</h2>
+        <p class="text-center text-gray-600 mb-12">No contracts required • Cancel anytime • Billing starts upon deployment</p>
+        
+        <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden">
+          <div class="bg-red-600 text-white p-6">
+            <h3 class="text-2xl font-bold text-center">Emergency Deployment Rates</h3>
+          </div>
+          <div class="p-8">
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="font-bold text-lg mb-4">Short-Term Emergency</h4>
+                <ul class="space-y-3">
+                  <li class="flex justify-between pb-2 border-b">
+                    <span>First 24 hours:</span>
+                    <span class="font-bold">$999</span>
+                  </li>
+                  <li class="flex justify-between pb-2 border-b">
+                    <span>Daily rate (2-7 days):</span>
+                    <span class="font-bold">$499/day</span>
+                  </li>
+                  <li class="flex justify-between pb-2 border-b">
+                    <span>Weekly rate:</span>
+                    <span class="font-bold">$1,999</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg mb-4">Extended Emergency</h4>
+                <ul class="space-y-3">
+                  <li class="flex justify-between pb-2 border-b">
+                    <span>2 weeks:</span>
+                    <span class="font-bold">$3,499</span>
+                  </li>
+                  <li class="flex justify-between pb-2 border-b">
+                    <span>Monthly:</span>
+                    <span class="font-bold">$5,999</span>
+                  </li>
+                  <li class="flex justify-between pb-2 border-b">
+                    <span>Rush deployment fee:</span>
+                    <span class="font-bold text-green-600">WAIVED</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-8 p-4 bg-yellow-50 border-2 border-yellow-300 rounded-lg">
+              <p class="text-center font-bold text-lg">🚨 All emergency deployments include:</p>
+              <p class="text-center text-gray-700 mt-2">Free setup • Free removal • 24/7 support • Live monitoring option</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Emergency Contact Form -->
+    <section id="emergency-contact" class="bg-red-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-2xl mx-auto">
+          <div class="bg-white text-gray-900 rounded-lg shadow-2xl p-8">
+            <h2 class="text-3xl font-bold text-center mb-2 text-red-700">Need Emergency Security NOW?</h2>
+            <p class="text-center text-gray-600 mb-6">Call immediately or fill out this urgent request form</p>
+            
+            <div class="bg-red-100 border-2 border-red-300 rounded-lg p-6 mb-6">
+              <p class="text-center text-xl font-bold text-red-700 mb-2">🚨 FASTEST RESPONSE 🚨</p>
+              <p class="text-center text-3xl font-bold"><a href="tel:2536832288" class="text-red-700 hover:underline">(253) 683-2288</a></p>
+              <p class="text-center text-gray-600 mt-2">24/7 Emergency Hotline • Immediate Response</p>
+            </div>
+            
+            <QuoteForm 
+              formTitle="Emergency Deployment Request"
+              showTitle={true}
+              buttonText="REQUEST EMERGENCY DEPLOYMENT →"
+              responseTime="* URGENT: We monitor this form 24/7 and will respond immediately"
+              formId="emergency-deployment-form"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Trusted Emergency Response Partner</h2>
+        <div class="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto text-center">
+          <div>
+            <div class="text-4xl font-bold text-red-600 mb-2">100+</div>
+            <p class="text-gray-600">Emergency Deployments</p>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-red-600 mb-2">2.5hr</div>
+            <p class="text-gray-600">Average Response Time</p>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-red-600 mb-2">24/7</div>
+            <p class="text-gray-600">Always Available</p>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-red-600 mb-2">100%</div>
+            <p class="text-gray-600">Deployment Success</p>
+          </div>
+        </div>
+        
+        <div class="mt-12 max-w-3xl mx-auto">
+          <div class="bg-gray-100 rounded-lg p-6">
+            <p class="text-center text-gray-700 italic">"When our warehouse was broken into on a Friday night, CCTV Trailer had surveillance up and running by midnight. The thieves came back Saturday but fled when they saw the trailer. Saved us thousands in additional losses."</p>
+            <p class="text-center font-bold mt-4">- Mike R., Tacoma Business Owner</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <CTASection 
+      title="Don't Wait - Secure Your Property NOW"
+      description="Every minute counts in an emergency. Get immediate surveillance protection."
+      phoneText="🚨 CALL NOW: (253) 683-2288"
+      quoteText="Request Emergency Deployment →"
+      quoteLink="#emergency-contact"
+      features={["✓ Deploying NOW throughout Puget Sound", "✓ No contracts or commitments", "✓ Insurance claim assistance"]}
+      bgColor="bg-red-800"
+    />
+
+  </main>
+
+  <Footer />
+</Layout>
