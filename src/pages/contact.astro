@@ -43,7 +43,7 @@ const schema = JSON.stringify({
     <!-- Hero Section -->
     <section class="hero-trailer">
       <div class="hero-overlay">
-        <img src="/images/tacoma-dome-bg-hero2.jpg" alt="Contact CCTV Trailer" class="w-full h-auto rounded-lg shadow-xl" />
+        <img src="/images/tacoma-dome-bg-hero2.jpg" alt="Contact CCTV Trailer" />
       </div>
       <div class="hero-content">
         <div class="hero-text-wrapper">
@@ -145,7 +145,17 @@ const schema = JSON.stringify({
           
           <div class="bg-white rounded-lg shadow-lg p-8">
             <h2 class="text-2xl font-bold mb-6 text-gray-800">Request a Quote</h2>
-            <form class="space-y-4">
+            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+              <!-- Web3Forms Configuration -->
+              <input type="hidden" name="access_key" value="99665c86-0758-4373-a387-bd42f36f9989">
+              <input type="hidden" name="subject" value="New Contact Form Submission - CCTV Trailer">
+              <input type="hidden" name="from_name" value="CCTV Trailer Website">
+              <!-- <input type="hidden" name="redirect" value="https://www.cctvtrailer.com/contact-success"> -->
+              <input type="hidden" name="redirect" value="https://cctvtrailer-site.vercel.app/contact-success">
+              
+              <!-- Honeypot Spam Protection -->
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+              
               <div>
                 <label for="name" class="block mb-2 font-medium text-gray-700">Name *</label>
                 <input type="text" id="name" name="name" class="w-full border-2 border-gray-300 rounded-lg px-4 py-2 focus:border-blue-500 focus:outline-none transition-colors" required>
@@ -275,87 +285,5 @@ const schema = JSON.stringify({
   </main>
 
   <Footer />
-
-  <!-- <style>
-    /* Hero Section Styles - matching index.astro */
-    .hero-trailer {
-      position: relative;
-      min-height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      background: linear-gradient(to right, #1f2937, #111827);
-    }
-
-    .hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0.3;
-      z-index: 1;
-    }
-
-    .hero-overlay img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 1200px;
-      width: 100%;
-      padding: 80px 32px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .hero-heading {
-      font-size: 3rem;
-      font-weight: bold;
-      color: white;
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-    }
-
-    .hero-paragraph {
-      font-size: 1.25rem;
-      color: #e5e7eb;
-      line-height: 1.6;
-      max-width: 800px;
-      margin: 0 auto 2rem;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    /* Form Focus Effects */
-    input:focus, 
-    select:focus, 
-    textarea:focus {
-      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-    }
-
-    @media (max-width: 768px) {
-      .hero-heading {
-        font-size: 2rem;
-      }
-      
-      .hero-paragraph {
-        font-size: 1rem;
-      }
-      
-      .hero-content {
-        padding: 60px 20px;
-      }
-    }
-  </style> -->
+  
 </Layout>

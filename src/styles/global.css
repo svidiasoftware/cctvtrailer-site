@@ -8,7 +8,6 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      /* background-image: url('/images/video-tech-bg-hero.svg'); */
       background-size: cover;
       background-position: center;
     }
@@ -30,7 +29,6 @@
       width: 100%;
       height: 100%;
       background: rgba(0, 0, 0, 0.2);
-      /* background-image: url('/images/path-decoration.png'); */
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;

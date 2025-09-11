@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Message Sent Successfully | CCTV Trailer"
+  description="Thank you for contacting CCTV Trailer. We'll respond to your inquiry within 1 hour during business hours."
+  keywords="contact success, message sent, CCTV trailer">
+  <Header currentPath="/contact" showEmergencyBar={true} />
+
+  <main>
+    <!-- Success Message Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-2xl text-center">
+        <div class="bg-white rounded-lg shadow-xl p-12">
+          <!-- Success Icon -->
+          <div class="bg-green-100 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6">
+            <svg class="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          
+          <h1 class="text-3xl font-bold text-gray-800 mb-4">Message Sent Successfully!</h1>
+          
+          <p class="text-lg text-gray-600 mb-8">
+            Thank you for contacting CCTV Trailer. We've received your inquiry and will respond within 1 hour during business hours.
+          </p>
+          
+          <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-8 text-left">
+            <p class="font-semibold text-blue-800 mb-2">What happens next?</p>
+            <ul class="text-sm text-blue-700 space-y-1">
+              <li>• You'll receive a confirmation email shortly</li>
+              <li>• Our team will review your requirements</li>
+              <li>• We'll contact you within 1 hour (business hours)</li>
+              <li>• For urgent needs, call us at <a href="tel:2536832288" class="font-bold underline">(253) 683-2288</a></li>
+            </ul>
+          </div>
+          
+          <div class="space-y-4">
+            <a href="/" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block transition-colors">
+              Return to Home
+            </a>
+            
+            <div class="mt-4">
+              <a href="/services" class="text-blue-600 hover:text-blue-700 font-semibold mr-6">View Our Services</a>
+              <a href="/pricing" class="text-blue-600 hover:text-blue-700 font-semibold">Check Pricing</a>
+            </div>
+          </div>
+          
+          <!-- Emergency Contact -->
+          <div class="mt-8 pt-8 border-t border-gray-200">
+            <p class="text-sm text-gray-600 mb-2">Need immediate assistance?</p>
+            <a href="tel:2536832288" class="text-2xl font-bold text-green-600 hover:text-green-700">
+              📞 (253) 683-2288
+            </a>
+            <p class="text-xs text-gray-500 mt-2">24/7 Emergency Response Available</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
