@@ -4,19 +4,21 @@ export interface Props {
   showTitle?: boolean;
   buttonText?: string;
   responseTime?: string;
+  formId?: string;
 }
 
 const { 
   formTitle = "Request a Quote", 
   showTitle = true,
   buttonText = "Send Message →",
-  responseTime = "* Required fields. We'll respond within 1 hour during business hours."
+  responseTime = "* Required fields. We'll respond within 1 hour during business hours.",
+  formId = "quote-form"
 } = Astro.props;
 ---
 
 <div class="bg-white rounded-lg shadow-lg p-8">
   {showTitle && <h2 class="text-2xl font-bold mb-6 text-gray-800">{formTitle}</h2>}
-  <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+  <form id={formId} action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
     <!-- Web3Forms Configuration -->
     <input type="hidden" name="access_key" value="99665c86-0758-4373-a387-bd42f36f9989">
     <input type="hidden" name="subject" value="New Contact Form Submission - CCTV Trailer">

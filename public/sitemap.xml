@@ -51,6 +51,27 @@
     <priority>0.7</priority>
   </url>
   
+  <url>
+    <loc>https://www.cctvtrailer.com/privacy-policy</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.cctvtrailer.com/trailer-technology</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.cctvtrailer.com/video-technology</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
   <!-- Location Pages - High Priority for Local SEO -->
   <url>
     <loc>https://www.cctvtrailer.com/tacoma-security-trailer</loc>

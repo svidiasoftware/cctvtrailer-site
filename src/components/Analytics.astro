@@ -6,57 +6,103 @@
   // Progressive enhancement - only runs if JS is available
   // Does not block page rendering or affect SEO
   if (typeof window !== 'undefined') {
-    document.addEventListener('DOMContentLoaded', () => {
-    // Track phone number clicks
-    const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
-    phoneLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'phone_click', {
-            event_category: 'engagement',
-            event_label: link.getAttribute('href'),
-            value: 1
-          });
+    // Function to initialize analytics when gtag is ready
+    function initializeAnalytics() {
+      // Debug logging in development
+      const isDev = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      
+      function log(message, data) {
+        if (isDev) {
+          console.log(`[Analytics] ${message}`, data || '');
         }
-      });
-    });
-
-    // Track email clicks
-    const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
-    emailLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'email_click', {
-            event_category: 'engagement',
-            event_label: link.getAttribute('href')
-          });
-        }
-      });
-    });
-
-    // Track form submissions
-    const forms = document.querySelectorAll('form');
-    forms.forEach(form => {
-      form.addEventListener('submit', (e) => {
-        const formId = form.getAttribute('id') || 'unnamed_form';
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'form_submission', {
-            event_category: 'form',
-            event_label: formId,
-            value: 1
-          });
+      }
+      
+      log('Initializing analytics tracking');
+      
+      // Track phone number clicks
+      const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+      log(`Found ${phoneLinks.length} phone links`);
+      
+      phoneLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          const phoneNumber = link.getAttribute('href');
+          log('Phone click detected', phoneNumber);
           
-          // Track as conversion if it's a quote form
-          if (formId.includes('quote') || formId.includes('contact')) {
-            gtag('event', 'conversion', {
-              send_to: 'G-VBNN5TGJ7D/conversion',
-              value: 1,
-              currency: 'USD'
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'phone_click', {
+              event_category: 'engagement',
+              event_label: phoneNumber,
+              value: 1
             });
+            log('Phone click event sent to GA', phoneNumber);
+          } else {
+            log('Warning: gtag not available for phone click tracking');
           }
-        }
+        });
       });
-    });
+
+      // Track email clicks
+      const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+      log(`Found ${emailLinks.length} email links`);
+      
+      emailLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          const email = link.getAttribute('href');
+          log('Email click detected', email);
+          
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'email_click', {
+              event_category: 'engagement',
+              event_label: email
+            });
+            log('Email click event sent to GA', email);
+          } else {
+            log('Warning: gtag not available for email click tracking');
+          }
+        });
+      });
+
+      // Track form submissions
+      const forms = document.querySelectorAll('form');
+      log(`Found ${forms.length} forms`);
+      
+      forms.forEach(form => {
+        form.addEventListener('submit', (e) => {
+          const formId = form.getAttribute('id') || 'unnamed_form';
+          log('Form submission detected', formId);
+          
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'form_submission', {
+              event_category: 'form',
+              event_label: formId,
+              value: 1
+            });
+            log('Form submission event sent to GA', formId);
+            
+            // Track as quote_request if it's a quote form
+            if (formId.includes('quote')) {
+              gtag('event', 'quote_request', {
+                event_category: 'conversion',
+                event_label: formId,
+                value: 1
+              });
+              log('Quote request event sent to GA', formId);
+            }
+            
+            // Track as conversion if it's a quote or contact form
+            if (formId.includes('quote') || formId.includes('contact')) {
+              gtag('event', 'conversion', {
+                send_to: 'G-VBNN5TGJ7D/conversion',
+                value: 1,
+                currency: 'USD'
+              });
+              log('Conversion event sent to GA', formId);
+            }
+          } else {
+            log('Warning: gtag not available for form tracking');
+          }
+        });
+      });
 
     // Track CTA button clicks
     const ctaButtons = document.querySelectorAll('.bg-blue-600, .bg-green-600, .bg-blue-700');
@@ -143,15 +189,36 @@
       }
     }, 30000);
 
-    // Track page visibility changes
-    document.addEventListener('visibilitychange', () => {
+      // Track page visibility changes
+      document.addEventListener('visibilitychange', () => {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'visibility_change', {
+            event_category: 'engagement',
+            event_label: document.hidden ? 'hidden' : 'visible'
+          });
+        }
+      });
+      
+      log('Analytics initialization complete');
+    }
+    
+    // Wait for gtag to be available before initializing
+    function waitForGtag() {
       if (typeof gtag !== 'undefined') {
-        gtag('event', 'visibility_change', {
-          event_category: 'engagement',
-          event_label: document.hidden ? 'hidden' : 'visible'
-        });
+        // gtag is ready, initialize analytics
+        initializeAnalytics();
+      } else {
+        // Check again in 100ms
+        setTimeout(waitForGtag, 100);
       }
-    });
-  });
+    }
+    
+    // Start when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', waitForGtag);
+    } else {
+      // DOM is already loaded
+      waitForGtag();
+    }
   }
 </script>
