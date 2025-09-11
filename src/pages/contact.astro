@@ -150,9 +150,11 @@ const schema = JSON.stringify({
               <input type="hidden" name="access_key" value="99665c86-0758-4373-a387-bd42f36f9989">
               <input type="hidden" name="subject" value="New Contact Form Submission - CCTV Trailer">
               <input type="hidden" name="from_name" value="CCTV Trailer Website">
-              <!-- <input type="hidden" name="redirect" value="https://www.cctvtrailer.com/contact-success"> -->
-              <input type="hidden" name="redirect" value="https://cctvtrailer-site.vercel.app/contact-success">
-              
+              <input type="hidden" name="redirect" value="https://www.cctvtrailer.com/contact-success">
+              <!-- <input type="hidden" name="redirect" value="https://cctvtrailer-site.vercel.app/contact-success"> -->
+              <!-- <div class="h-captcha" data-captcha="true"></div> -->
+              <!-- <script src="https://web3forms.com/client/script.js" async defer></script> -->
+
               <!-- Honeypot Spam Protection -->
               <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
               
@@ -168,7 +170,14 @@ const schema = JSON.stringify({
               
               <div>
                 <label for="phone" class="block mb-2 font-medium text-gray-700">Phone</label>
-                <input type="tel" id="phone" name="phone" class="w-full border-2 border-gray-300 rounded-lg px-4 py-2 focus:border-blue-500 focus:outline-none transition-colors">
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone" 
+                  pattern="^(\+?1[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$"
+                  title="Please enter a valid US phone number (e.g., 253-683-2288, (253) 683-2288, or 2536832288)"
+                  placeholder="(253) 683-2288"
+                  class="w-full border-2 border-gray-300 rounded-lg px-4 py-2 focus:border-blue-500 focus:outline-none transition-colors">
               </div>
 
               <div>

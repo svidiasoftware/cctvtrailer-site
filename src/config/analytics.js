@@ -5,7 +5,7 @@ export const analyticsConfig = {
   // Google Analytics 4 Measurement ID
   // Get this from: https://analytics.google.com/
   // Format: G-XXXXXXXXXX
-  googleAnalyticsId: 'G-XXXXXXXXXX',
+  googleAnalyticsId: 'G-VBNN5TGJ7D',
   
   // Google Tag Manager Container ID (optional, if you prefer GTM)
   // Get this from: https://tagmanager.google.com/
