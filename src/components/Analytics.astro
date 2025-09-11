@@ -30,9 +30,8 @@
           
           if (typeof gtag !== 'undefined') {
             gtag('event', 'phone_click', {
-              event_category: 'engagement',
-              event_label: phoneNumber,
-              value: 1
+              phone_number: phoneNumber,
+              engagement_type: 'phone_call'
             });
             log('Phone click event sent to GA', phoneNumber);
           } else {
@@ -52,8 +51,8 @@
           
           if (typeof gtag !== 'undefined') {
             gtag('event', 'email_click', {
-              event_category: 'engagement',
-              event_label: email
+              email_address: email,
+              engagement_type: 'email'
             });
             log('Email click event sent to GA', email);
           } else {
@@ -73,18 +72,16 @@
           
           if (typeof gtag !== 'undefined') {
             gtag('event', 'form_submission', {
-              event_category: 'form',
-              event_label: formId,
-              value: 1
+              form_id: formId,
+              form_type: formId.includes('quote') ? 'quote' : (formId.includes('contact') ? 'contact' : 'other')
             });
             log('Form submission event sent to GA', formId);
             
             // Track as quote_request if it's a quote form
             if (formId.includes('quote')) {
               gtag('event', 'quote_request', {
-                event_category: 'conversion',
-                event_label: formId,
-                value: 1
+                form_id: formId,
+                request_type: 'quote'
               });
               log('Quote request event sent to GA', formId);
             }
@@ -92,9 +89,8 @@
             // Track as conversion if it's a quote or contact form
             if (formId.includes('quote') || formId.includes('contact')) {
               gtag('event', 'conversion', {
-                send_to: 'G-VBNN5TGJ7D/conversion',
-                value: 1,
-                currency: 'USD'
+                conversion_type: formId.includes('quote') ? 'quote_form' : 'contact_form',
+                form_id: formId
               });
               log('Conversion event sent to GA', formId);
             }
