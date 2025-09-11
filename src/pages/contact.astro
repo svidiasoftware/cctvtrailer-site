@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTASection from '../components/CTASection.astro';
+import QuoteForm from '../components/QuoteForm.astro';
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
@@ -143,76 +144,7 @@ const schema = JSON.stringify({
             </div>
           </div>
           
-          <div class="bg-white rounded-lg shadow-lg p-8">
-            <h2 class="text-2xl font-bold mb-6 text-gray-800">Request a Quote</h2>
-            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
-              <!-- Web3Forms Configuration -->
-              <input type="hidden" name="access_key" value="99665c86-0758-4373-a387-bd42f36f9989">
-              <input type="hidden" name="subject" value="New Contact Form Submission - CCTV Trailer">
-              <input type="hidden" name="from_name" value="CCTV Trailer Website">
-              <input type="hidden" name="redirect" value="https://www.cctvtrailer.com/contact-success">
-              <!-- <input type="hidden" name="redirect" value="https://cctvtrailer-site.vercel.app/contact-success"> -->
-              <!-- <div class="h-captcha" data-captcha="true"></div> -->
-              <!-- <script src="https://web3forms.com/client/script.js" async defer></script> -->
-
-              <!-- Honeypot Spam Protection -->
-              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-              
-              <div>
-                <label for="name" class="block mb-2 font-medium text-gray-700">Name *</label>
-                <input type="text" id="name" name="name" class="w-full border-2 border-gray-300 rounded-lg px-4 py-2 focus:border-blue-500 focus:outline-none transition-colors" required>
-              </div>
-              
-              <div>
-                <label for="email" class="block mb-2 font-medium text-gray-700">Email *</label>
-                <input type="email" id="email" name="email" class="w-full border-2 border-gray-300 rounded-lg px-4 py-2 focus:border-blue-500 focus:outline-none transition-colors" required>
-              </div>
-              
-              <div>
-                <label for="phone" class="block mb-2 font-medium text-gray-700">Phone</label>
-                <input 
-                  type="tel" 
-                  id="phone" 
-                  name="phone" 
-                  pattern="^(\+?1[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$"
-                  title="Please enter a valid US phone number (e.g., 253-683-2288, (253) 683-2288, or 2536832288)"
-                  placeholder="(253) 683-2288"
-                  class="w-full border-2 border-gray-300 rounded-lg px-4 py-2 focus:border-blue-500 focus:outline-none transition-colors">
-              </div>
-
-              <div>
-                <label for="location" class="block mb-2 font-medium text-gray-700">Project Location</label>
-                <input type="text" id="location" name="location" class="w-full border-2 border-gray-300 rounded-lg px-4 py-2 focus:border-blue-500 focus:outline-none transition-colors" placeholder="e.g., Tacoma, Seattle, Federal Way">
-              </div>
-
-              <div>
-                <label for="duration" class="block mb-2 font-medium text-gray-700">Rental Duration</label>
-                <select id="duration" name="duration" class="w-full border-2 border-gray-300 rounded-lg px-4 py-2 focus:border-blue-500 focus:outline-none transition-colors">
-                  <option value="">Select duration...</option>
-                  <option value="1-3 days">1-3 Days</option>
-                  <option value="1 week">1 Week</option>
-                  <option value="2 weeks">2 Weeks</option>
-                  <option value="1 month">1 Month</option>
-                  <option value="2-3 months">2-3 Months</option>
-                  <option value="3+ months">3+ Months</option>
-                  <option value="not sure">Not Sure</option>
-                </select>
-              </div>
-              
-              <div>
-                <label for="message" class="block mb-2 font-medium text-gray-700">Message *</label>
-                <textarea id="message" name="message" rows="4" class="w-full border-2 border-gray-300 rounded-lg px-4 py-2 focus:border-blue-500 focus:outline-none transition-colors" placeholder="Tell us about your security needs..." required></textarea>
-              </div>
-              
-              <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors shadow-lg">
-                Send Message →
-              </button>
-              
-              <p class="text-sm text-gray-600 text-center mt-4">
-                * Required fields. We'll respond within 1 hour during business hours.
-              </p>
-            </form>
-          </div>
+          <QuoteForm />
         </div>
         
         <!-- Response Time Section -->
