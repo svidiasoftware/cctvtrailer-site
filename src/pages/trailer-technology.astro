@@ -5,6 +5,24 @@ import Footer from '../components/Footer.astro';
 import CTASection from '../components/CTASection.astro';
 
 
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.cctvtrailer.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Trailer Technology"
+    }
+  ]
+});
+
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Product",
@@ -29,7 +47,7 @@ const schema = JSON.stringify({
 <Layout 
   title="Trailer and Video Systems Pacific Northwest | CCTV Trailers"
   description="Our mobile security trailers are sturdy enough to withstand the Pacific Northwest climate and equipped with the most advanced video and surveillance technology to capture every detail."
-  schema={schema}>
+  schema={[breadcrumbSchema, schema]}>
   
   <Header currentPath="/trailer-technology" />
 

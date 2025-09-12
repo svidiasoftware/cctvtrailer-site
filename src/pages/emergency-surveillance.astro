@@ -6,6 +6,30 @@ import CTASection from '../components/CTASection.astro';
 import QuoteForm from '../components/QuoteForm.astro';
 import Analytics from '../components/Analytics.astro';
 
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.cctvtrailer.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://www.cctvtrailer.com/services/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Emergency Surveillance"
+    }
+  ]
+});
+
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Service",
@@ -48,7 +72,7 @@ const schema = JSON.stringify({
 <Layout 
   title="Emergency Surveillance Trailers | 24/7 Rapid Deployment Security"
   description="Emergency surveillance trailer rental with same-day deployment. Temporary security camera trailers for disasters, incidents & urgent needs. Call (253) 683-2288 NOW"
-  schema={schema}>
+  schema={[breadcrumbSchema, schema]}>
   
   <Header showEmergencyBar={true} currentPath="/emergency-surveillance" />
   <Analytics />

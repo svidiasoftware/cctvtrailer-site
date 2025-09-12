@@ -4,30 +4,79 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.cctvtrailer.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.cctvtrailer.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "How Much Does It Cost to Rent a Security Trailer?"
+    }
+  ]
+});
+
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "How Much Does It Cost to Rent a Security Trailer?",
+  "alternativeHeadline": "2024 Security Trailer Rental Pricing Guide",
   "datePublished": "2024-01-15",
   "dateModified": "2024-01-15",
   "author": {
     "@type": "Organization",
-    "name": "CCTV Trailer"
+    "name": "CCTV Trailer",
+    "url": "https://www.cctvtrailer.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "CCTV Trailer",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.cctvtrailer.com/images/cctv-logo.svg"
-    }
+      "url": "https://www.cctvtrailer.com/images/cctv-logo.svg",
+      "width": 600,
+      "height": 60
+    },
+    "url": "https://www.cctvtrailer.com"
   },
-  "description": "Complete pricing guide for mobile surveillance trailer rentals. Learn about daily, weekly, and monthly rates, plus factors that affect pricing."
+  "description": "Complete pricing guide for mobile surveillance trailer rentals. Learn about daily, weekly, and monthly rates, plus factors that affect pricing.",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&h=600&fit=crop",
+    "width": 1200,
+    "height": 600
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.cctvtrailer.com/blog/how-much-cost-rent-security-trailer"
+  },
+  "articleSection": "Pricing & Costs",
+  "keywords": "security trailer rental cost, surveillance trailer pricing, mobile security rental, CCTV trailer rates, security rental prices",
+  "wordCount": 2500,
+  "url": "https://www.cctvtrailer.com/blog/how-much-cost-rent-security-trailer",
+  "isAccessibleForFree": true,
+  "inLanguage": "en-US"
 });
+
+const schemas = [breadcrumbSchema, schema];
 ---
 
 <Layout 
   title="How Much Does It Cost to Rent a Security Trailer? | 2024 Pricing Guide"
+  description="Complete 2024 pricing guide for security trailer rentals. Daily rates from $650, weekly from $3,500, monthly from $7,000. Learn what affects pricing and how to save money."
+  schema={schemas}
   description="Detailed cost breakdown for security trailer rentals. Daily rates from $499-999, weekly and monthly discounts available. Free delivery in Tacoma area."
   schema={schema}>
   

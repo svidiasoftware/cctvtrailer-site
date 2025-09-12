@@ -43,11 +43,40 @@ const blogPosts = [
     imageAlt: 'Construction site security measures and theft prevention'
   }
 ];
+
+const blogSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "CCTV Trailer Security Blog",
+  "description": "Expert insights on mobile surveillance, construction site security, and theft prevention from CCTV Trailer",
+  "url": "https://www.cctvtrailer.com/blog",
+  "publisher": {
+    "@type": "Organization",
+    "name": "CCTV Trailer",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.cctvtrailer.com/images/cctv-logo.svg"
+    }
+  },
+  "blogPost": blogPosts.map(post => ({
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "description": post.excerpt,
+    "datePublished": post.date,
+    "url": `https://www.cctvtrailer.com/blog/${post.slug}`,
+    "image": post.image,
+    "author": {
+      "@type": "Organization",
+      "name": "CCTV Trailer"
+    }
+  }))
+});
 ---
 
 <Layout 
   title="Security & Surveillance Blog | CCTV Trailer Insights"
   description="Expert insights on mobile surveillance, construction site security, and theft prevention. Learn from 20+ years of security experience in the Pacific Northwest."
+  schema={blogSchema}>
   
   <Header currentPath="/blog" showEmergencyBar={true} />
 

@@ -1,6 +1,31 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';import Footer from '../components/Footer.astro';
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.cctvtrailer.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Locations",
+      "item": "https://www.cctvtrailer.com/services/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Puyallup Security"
+    }
+  ]
+});
+
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Service",
@@ -27,7 +52,7 @@ const schema = JSON.stringify({
 <Layout 
   title="Puyallup Security Trailer Rental | Fairgrounds & Agricultural Site Surveillance"
   description="Mobile security trailer rentals in Puyallup, South Hill, Valley. Specialized fairgrounds security for Washington State Fair, agricultural monitoring. Call (253) 683-2288"
-  schema={schema}>
+  schema={[breadcrumbSchema, schema]}>
   
   <!-- Emergency Contact Bar -->
   <div class="bg-red-600 text-white py-2 text-center font-bold sticky top-0 z-50">

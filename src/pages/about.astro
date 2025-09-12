@@ -4,6 +4,24 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTASection from '../components/CTASection.astro';
 
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.cctvtrailer.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "About"
+    }
+  ]
+});
+
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -43,7 +61,7 @@ const schema = JSON.stringify({
 <Layout 
   title="About CCTV Trailer | Mobile Security Solutions Tacoma"
   description="Learn about CCTV Trailer - locally owned mobile surveillance company serving Tacoma and the Pacific Northwest. 20+ years of security expertise, professional service, and weather-resistant trailers."
-  schema={schema}>
+  schema={[breadcrumbSchema, schema]}>
   <Header showEmergencyBar={true} currentPath="/about" />
 
   <main>

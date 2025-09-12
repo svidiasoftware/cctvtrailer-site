@@ -6,6 +6,30 @@ import CTASection from '../components/CTASection.astro';
 import QuoteForm from '../components/QuoteForm.astro';
 import Analytics from '../components/Analytics.astro';
 
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.cctvtrailer.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://www.cctvtrailer.com/services/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Event Security"
+    }
+  ]
+});
+
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Service",
@@ -47,7 +71,7 @@ const schema = JSON.stringify({
 <Layout 
   title="Event Surveillance Trailer Rental | Festival & Concert Security Trailers"
   description="Event surveillance trailer rental for festivals, concerts, fairs & outdoor events. Mobile monitoring, crowd control & rapid deployment. Call (253) 683-2288"
-  schema={schema}>
+  schema={[breadcrumbSchema, schema]}>
   
   <Header showEmergencyBar={true} currentPath="/event-security" />
   <Analytics />
@@ -196,7 +220,7 @@ const schema = JSON.stringify({
             <div class="bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
               <span class="text-3xl">🔊</span>
             </div>
-            <h3 class="font-bold text-lg mb-3">Two-Way Audio</h3>
+            <h3 class="font-bold text-lg mb-3">Audio</h3>
             <p class="text-gray-600">Make announcements or communicate with security teams across the venue</p>
           </div>
           <div class="text-center">
@@ -217,7 +241,7 @@ const schema = JSON.stringify({
             <div class="bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
               <span class="text-3xl">🔋</span>
             </div>
-            <h3 class="font-bold text-lg mb-3">72-Hour Battery</h3>
+            <h3 class="font-bold text-lg mb-3">120-Hour Battery</h3>
             <p class="text-gray-600">Continuous operation for multi-day festivals without external power</p>
           </div>
           <div class="text-center">
@@ -239,7 +263,7 @@ const schema = JSON.stringify({
           <div class="grid md:grid-cols-3 gap-6">
             <div class="bg-white rounded-lg shadow-lg p-6">
               <h3 class="text-xl font-bold mb-4 text-purple-800">Single Day Events</h3>
-              <p class="text-3xl font-bold mb-4">$399<span class="text-lg font-normal">/day</span></p>
+              <p class="text-3xl font-bold mb-4">$999<span class="text-lg font-normal">/day</span></p>
               <ul class="space-y-2 text-gray-600">
                 <li>✓ Perfect for one-day festivals</li>
                 <li>✓ Setup morning of event</li>
@@ -250,7 +274,7 @@ const schema = JSON.stringify({
             <div class="bg-purple-100 rounded-lg shadow-lg p-6 border-2 border-purple-600">
               <div class="bg-purple-600 text-white text-sm font-bold px-2 py-1 rounded inline-block mb-2">MOST POPULAR</div>
               <h3 class="text-xl font-bold mb-4 text-purple-800">Weekend Events</h3>
-              <p class="text-3xl font-bold mb-4">$999<span class="text-lg font-normal">/3 days</span></p>
+              <p class="text-3xl font-bold mb-4">$1999<span class="text-lg font-normal">/3 days</span></p>
               <ul class="space-y-2 text-gray-600">
                 <li>✓ Friday through Sunday</li>
                 <li>✓ Setup Thursday PM</li>
@@ -260,7 +284,7 @@ const schema = JSON.stringify({
             </div>
             <div class="bg-white rounded-lg shadow-lg p-6">
               <h3 class="text-xl font-bold mb-4 text-purple-800">Multi-Day Festivals</h3>
-              <p class="text-3xl font-bold mb-4">$2,499<span class="text-lg font-normal">/week</span></p>
+              <p class="text-3xl font-bold mb-4">$3,499<span class="text-lg font-normal">/week</span></p>
               <ul class="space-y-2 text-gray-600">
                 <li>✓ 7-day coverage</li>
                 <li>✓ Multiple camera angles</li>
