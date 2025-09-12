@@ -41,20 +41,24 @@ export const analyticsConfig = {
   }
 };
 
-// Helper function to track custom events
+// Helper function to track custom events (GTM version)
 export function trackEvent(eventName, parameters = {}) {
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', eventName, parameters);
+  if (typeof window !== 'undefined' && window.dataLayer) {
+    window.dataLayer.push({
+      'event': eventName,
+      ...parameters
+    });
   }
 }
 
-// Helper function to track conversions
+// Helper function to track conversions (GTM version)
 export function trackConversion(conversionType, value = null) {
-  if (typeof window !== 'undefined' && window.gtag) {
+  if (typeof window !== 'undefined' && window.dataLayer) {
     const params = {
-      send_to: analyticsConfig.googleAnalyticsId,
-      event_category: 'conversion',
-      event_label: conversionType
+      'event': 'conversion',
+      'conversion_type': conversionType,
+      'event_category': 'conversion',
+      'event_label': conversionType
     };
     
     if (value) {
@@ -62,6 +66,6 @@ export function trackConversion(conversionType, value = null) {
       params.currency = 'USD';
     }
     
-    window.gtag('event', 'conversion', params);
+    window.dataLayer.push(params);
   }
 }

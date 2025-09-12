@@ -29,14 +29,15 @@
           const phoneNumber = link.getAttribute('href');
           log('Phone click detected', phoneNumber);
           
-          if (typeof gtag !== 'undefined') {
-            gtag('event', 'phone_click', {
-              phone_number: phoneNumber,
-              engagement_type: 'phone_call'
+          if (typeof window.dataLayer !== 'undefined') {
+            window.dataLayer.push({
+              'event': 'phone_click',
+              'phone_number': phoneNumber,
+              'engagement_type': 'phone_call'
             });
-            log('Phone click event sent to GA', phoneNumber);
+            log('Phone click event sent to GTM', phoneNumber);
           } else {
-            log('Warning: gtag not available for phone click tracking');
+            log('Warning: dataLayer not available for phone click tracking');
           }
         });
       });
@@ -50,14 +51,15 @@
           const email = link.getAttribute('href');
           log('Email click detected', email);
           
-          if (typeof gtag !== 'undefined') {
-            gtag('event', 'email_click', {
-              email_address: email,
-              engagement_type: 'email'
+          if (typeof window.dataLayer !== 'undefined') {
+            window.dataLayer.push({
+              'event': 'email_click',
+              'email_address': email,
+              'engagement_type': 'email'
             });
-            log('Email click event sent to GA', email);
+            log('Email click event sent to GTM', email);
           } else {
-            log('Warning: gtag not available for email click tracking');
+            log('Warning: dataLayer not available for email click tracking');
           }
         });
       });
@@ -71,32 +73,35 @@
           const formId = form.getAttribute('id') || 'unnamed_form';
           log('Form submission detected', formId);
           
-          if (typeof gtag !== 'undefined') {
-            gtag('event', 'form_submission', {
-              form_id: formId,
-              form_type: formId.includes('quote') ? 'quote' : (formId.includes('contact') ? 'contact' : 'other')
+          if (typeof window.dataLayer !== 'undefined') {
+            window.dataLayer.push({
+              'event': 'form_submission',
+              'form_id': formId,
+              'form_type': formId.includes('quote') ? 'quote' : (formId.includes('contact') ? 'contact' : 'other')
             });
-            log('Form submission event sent to GA', formId);
+            log('Form submission event sent to GTM', formId);
             
             // Track as quote_request if it's a quote form
             if (formId.includes('quote')) {
-              gtag('event', 'quote_request', {
-                form_id: formId,
-                request_type: 'quote'
+              window.dataLayer.push({
+                'event': 'quote_request',
+                'form_id': formId,
+                'request_type': 'quote'
               });
-              log('Quote request event sent to GA', formId);
+              log('Quote request event sent to GTM', formId);
             }
             
             // Track as conversion if it's a quote or contact form
             if (formId.includes('quote') || formId.includes('contact')) {
-              gtag('event', 'conversion', {
-                conversion_type: formId.includes('quote') ? 'quote_form' : 'contact_form',
-                form_id: formId
+              window.dataLayer.push({
+                'event': 'conversion',
+                'conversion_type': formId.includes('quote') ? 'quote_form' : 'contact_form',
+                'form_id': formId
               });
-              log('Conversion event sent to GA', formId);
+              log('Conversion event sent to GTM', formId);
             }
           } else {
-            log('Warning: gtag not available for form tracking');
+            log('Warning: dataLayer not available for form tracking');
           }
         });
       });
@@ -106,11 +111,12 @@
     ctaButtons.forEach(button => {
       button.addEventListener('click', () => {
         const buttonText = button.textContent || button.innerText;
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'cta_click', {
-            event_category: 'engagement',
-            event_label: buttonText.trim(),
-            value: 1
+        if (typeof window.dataLayer !== 'undefined') {
+          window.dataLayer.push({
+            'event': 'cta_click',
+            'event_category': 'engagement',
+            'event_label': buttonText.trim(),
+            'value': 1
           });
         }
       });
@@ -120,11 +126,12 @@
     const pricingInputs = document.querySelectorAll('#calc-duration, #calc-units, #calc-location, #calc-urgent');
     pricingInputs.forEach(input => {
       input.addEventListener('change', () => {
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'pricing_calculator_interaction', {
-            event_category: 'calculator',
-            event_label: input.id,
-            value: input.value
+        if (typeof window.dataLayer !== 'undefined') {
+          window.dataLayer.push({
+            'event': 'pricing_calculator_interaction',
+            'event_category': 'calculator',
+            'event_label': input.id,
+            'value': input.value
           });
         }
       });
@@ -134,11 +141,12 @@
     const externalLinks = document.querySelectorAll('a[href^="http"]:not([href*="cctvtrailer.com"])');
     externalLinks.forEach(link => {
       link.addEventListener('click', () => {
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'outbound_click', {
-            event_category: 'engagement',
-            event_label: link.getAttribute('href'),
-            transport_type: 'beacon'
+        if (typeof window.dataLayer !== 'undefined') {
+          window.dataLayer.push({
+            'event': 'outbound_click',
+            'event_category': 'engagement',
+            'event_label': link.getAttribute('href'),
+            'transport_type': 'beacon'
           });
         }
       });
@@ -155,11 +163,12 @@
       [25, 50, 75, 90, 100].forEach(depth => {
         if (scrollPercentage >= depth && !scrollDepthTracked[depth]) {
           scrollDepthTracked[depth] = true;
-          if (typeof gtag !== 'undefined') {
-            gtag('event', 'scroll_depth', {
-              event_category: 'engagement',
-              event_label: `${depth}%`,
-              value: depth
+          if (typeof window.dataLayer !== 'undefined') {
+            window.dataLayer.push({
+              'event': 'scroll_depth',
+              'event_category': 'engagement',
+              'event_label': `${depth}%`,
+              'value': depth
             });
           }
         }
@@ -177,21 +186,23 @@
     let timeOnPage = 0;
     setInterval(() => {
       timeOnPage += 30;
-      if (typeof gtag !== 'undefined' && timeOnPage % 60 === 0) {
-        gtag('event', 'time_on_page', {
-          event_category: 'engagement',
-          event_label: `${timeOnPage} seconds`,
-          value: timeOnPage
+      if (typeof window.dataLayer !== 'undefined' && timeOnPage % 60 === 0) {
+        window.dataLayer.push({
+          'event': 'time_on_page',
+          'event_category': 'engagement',
+          'event_label': `${timeOnPage} seconds`,
+          'value': timeOnPage
         });
       }
     }, 30000);
 
       // Track page visibility changes
       document.addEventListener('visibilitychange', () => {
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'visibility_change', {
-            event_category: 'engagement',
-            event_label: document.hidden ? 'hidden' : 'visible'
+        if (typeof window.dataLayer !== 'undefined') {
+          window.dataLayer.push({
+            'event': 'visibility_change',
+            'event_category': 'engagement',
+            'event_label': document.hidden ? 'hidden' : 'visible'
           });
         }
       });
@@ -199,23 +210,23 @@
       log('Analytics initialization complete');
     }
     
-    // Wait for gtag to be available before initializing
-    function waitForGtag() {
-      if (typeof gtag !== 'undefined') {
-        // gtag is ready, initialize analytics
+    // Wait for dataLayer to be available before initializing
+    function waitForDataLayer() {
+      if (typeof window.dataLayer !== 'undefined') {
+        // dataLayer is ready, initialize analytics
         initializeAnalytics();
       } else {
         // Check again in 100ms
-        setTimeout(waitForGtag, 100);
+        setTimeout(waitForDataLayer, 100);
       }
     }
     
     // Start when DOM is ready
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', waitForGtag);
+      document.addEventListener('DOMContentLoaded', waitForDataLayer);
     } else {
       // DOM is already loaded
-      waitForGtag();
+      waitForDataLayer();
     }
   }
 </script>
