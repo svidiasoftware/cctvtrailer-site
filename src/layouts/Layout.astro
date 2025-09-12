@@ -5,7 +5,6 @@ import Analytics from '../components/Analytics.astro';
 export interface Props {
   title: string;
   description?: string;
-  keywords?: string;
   schema?: string;
   canonicalURL?: string;
 }
@@ -13,10 +12,13 @@ export interface Props {
 const { 
   title, 
   description = "Mobile surveillance trailer rentals throughout Tacoma and the Puget Sound region. Advanced video technology for construction sites, events, and temporary security needs.",
-  keywords = "mobile surveillance trailer rental, CCTV trailer rental Tacoma, construction site security rental, portable security camera trailer, mobile security trailer Seattle",
   schema,
   canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://www.cctvtrailer.com').href
 } = Astro.props;
+
+// Generate absolute URL for social media images
+const siteURL = Astro.site || 'https://www.cctvtrailer.com';
+const ogImageURL = new URL('/images/cctv-trailer-hero.png', siteURL).href;
 ---
 
 <!DOCTYPE html>
@@ -24,7 +26,6 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
-    <meta name="keywords" content={keywords} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalURL} />
@@ -35,13 +36,23 @@ const {
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/images/cctv-trailer-hero.png" />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="CCTV Trailer - Mobile Surveillance Solutions" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content="CCTV Trailer" />
+    <meta property="og:locale" content="en_US" />
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content="/images/cctv-trailer-hero.png" />
+    <meta property="twitter:image" content={ogImageURL} />
+    <meta property="twitter:image:alt" content="CCTV Trailer - Mobile Surveillance Solutions" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:site" content="@cctvtrailer" />
+    <meta property="twitter:creator" content="@cctvtrailer" />
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VBNN5TGJ7D"></script>
