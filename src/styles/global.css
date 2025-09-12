@@ -892,15 +892,15 @@
     }
 
     .features-image.compression {
-      background-image: url('/images/compression-feature.png');
+      background-image: url('/images/compression-feature.jpg');
     }
 
     .features-image.noise {
-      background-image: url('/images/noise-feature.png');
+      background-image: url('/images/noise-feature.jpg');
     }
 
     .features-image.internal {
-      background-image: url('/images/internal-feature.png');
+      background-image: url('/images/onboard-computer.jpg');
     }
 
     .heading-3 {
