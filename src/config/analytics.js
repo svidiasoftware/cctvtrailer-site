@@ -10,7 +10,7 @@ export const analyticsConfig = {
   // Google Tag Manager Container ID (optional, if you prefer GTM)
   // Get this from: https://tagmanager.google.com/
   // Format: GTM-XXXXXXX
-  googleTagManagerId: 'GTM-XXXXXXX',
+  googleTagManagerId: 'GTM-5FPMNFLV',
   
   // Google Search Console Verification Code
   // Get this from: https://search.google.com/search-console
