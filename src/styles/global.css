@@ -818,9 +818,9 @@
     }
 
     .square-image-div {
-      width: 542px;
-      height: 400px;
-      background-image: url('/images/svidia-image1.png');
+      width: 600px;
+      height: 600px;
+      background-image: url('/images/svidia-image1.jpg');
       background-size: cover;
       background-position: center;
       border-radius: 12px;
@@ -828,9 +828,9 @@
     }
 
     .square-image-block {
-      width: 542px;
+      width: 642px;
       height: 400px;
-      background-image: url('/images/secure-streaming-abstract2.jpg');
+      background-image: url('/images/secure-streaming.jpg');
       background-size: cover;
       background-position: center;
       border-radius: 12px;

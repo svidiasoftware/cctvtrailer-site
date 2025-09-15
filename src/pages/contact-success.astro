@@ -2,12 +2,15 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
 ---
 
 <Layout 
   title="Message Sent Successfully | CCTV Trailer"
-  description="Thank you for contacting CCTV Trailer. We'll respond to your inquiry within 1 hour during business hours."
+  description="Thank you for contacting CCTV Trailer. We'll respond to your inquiry within 1 hour during business hours.">
+  
   <Header currentPath="/contact" showEmergencyBar={true} />
+  <Analytics /> 
 
   <main>
     <!-- Success Message Section -->

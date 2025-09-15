@@ -1,65 +1,39 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
 
-const breadcrumbSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.cctvtrailer.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Locations",
-      "item": "https://www.cctvtrailer.com/services/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Lakewood Security"
-    }
+// Schema data for the construction security service
+const serviceSchemaData = {
+  serviceName: "Lakewood Security Camera Rental",
+  description: "Security camera trailer rental in Lakewood, WA. Serving JBLM contractors, retail centers, and Lakewood Town Center. Military-grade surveillance solutions.",
+  price: "7999",
+  priceUnit: "MONTH" as const,
+  areaServed: [
+    { type: "City" as const, name: "Lakewood" },
   ]
-});
+};
 
-const schema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Lakewood Security Camera Rental",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "CCTV Trailer",
-    "telephone": "+12536832288"
-  },
-  "areaServed": {
-    "@type": "City", 
-    "name": "Lakewood",
-    "addressRegion": "WA"
-  },
-  "description": "Security camera trailer rental in Lakewood, WA. Serving JBLM contractors, retail centers, and Lakewood Town Center. Military-grade surveillance solutions.",
-  "offers": {
-    "@type": "Offer",
-    "price": "999",
-    "priceCurrency": "USD"
-  }
-});
+// Breadcrumb data
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Locations", url: "/about" },
+  { name: "Lakewood Security" }
+];
 ---
 
 <Layout 
   title="Lakewood Security Trailer Rental | JBLM Area & Retail Surveillance"
-  description="Mobile security trailer rentals in Lakewood, Tillicum, DuPont. JBLM contractor support, retail center protection, Town Center security. Call (253) 683-2288"
-  schema={[breadcrumbSchema, schema]}>
-  
-  <!-- Emergency Contact Bar -->
-  <div class="bg-red-600 text-white py-2 text-center font-bold sticky top-0 z-50">
-    📞 Lakewood/JBLM Security: <a href="tel:2536832288" class="underline">(253) 683-2288</a>
-  </div>
-  
-  <Header currentPath="/lakewood-jblm-security" />
+  description="Mobile security trailer rentals in Lakewood, Tillicum, DuPont. JBLM contractor support, retail center protection, Town Center security. Call (253) 683-2288">
+
+  <!-- Structured Data Schemas -->
+  <ServiceSchema {...serviceSchemaData} />
+  <BreadcrumbSchema items={breadcrumbItems} /> 
+
+  <Header showEmergencyBar={true} currentPath="/lakewood-jblm-security" />
+  <Analytics /> 
 
   <main>
     <!-- Hero Section -->

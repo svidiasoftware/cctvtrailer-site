@@ -1,65 +1,39 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
 
-const breadcrumbSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.cctvtrailer.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Locations",
-      "item": "https://www.cctvtrailer.com/services/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Olympia Security"
-    }
+// Schema data for the construction security service
+const serviceSchemaData = {
+  serviceName: "Mobile CCTV Rental in Olympia",
+  description: "Mobile CCTV trailer rental service in Olympia, WA. Serving state government facilities, construction sites, and special events in the capital region.",
+  price: "7999",
+  priceUnit: "MONTH" as const,
+  areaServed: [
+    { type: "City" as const, name: "Olympia" },
   ]
-});
+};
 
-const schema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Mobile CCTV Rental in Olympia",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "CCTV Trailer",
-    "telephone": "+12536832288"
-  },
-  "areaServed": {
-    "@type": "City",
-    "name": "Olympia",
-    "addressRegion": "WA"
-  },
-  "description": "Mobile CCTV trailer rental service in Olympia, WA. Serving state government facilities, construction sites, and special events in the capital region.",
-  "offers": {
-    "@type": "Offer",
-    "price": "999",
-    "priceCurrency": "USD"
-  }
-});
+// Breadcrumb data
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Locations", url: "/about" },
+  { name: "Olympia Security" }
+];
 ---
 
 <Layout 
   title="Olympia Mobile CCTV Rental | Security Trailer Rental Thurston County"
-  description="Mobile CCTV trailer rentals in Olympia, Lacey, Tumwater. Serving state capitol, government facilities, construction sites. Same-day delivery. Call (253) 683-2288"
-  schema={[breadcrumbSchema, schema]}>
+  description="Mobile CCTV trailer rentals in Olympia, Lacey, Tumwater. Serving state capitol, government facilities, construction sites. Same-day delivery. Call (253) 683-2288">
   
-  <!-- Emergency Contact Bar -->
-  <div class="bg-red-600 text-white py-2 text-center font-bold sticky top-0 z-50">
-    📞 Olympia Area Quick Response: <a href="tel:2536832288" class="underline">(253) 683-2288</a>
-  </div>
-  
-  <Header currentPath="/olympia-mobile-cctv" />
+  <!-- Structured Data Schemas -->
+  <ServiceSchema {...serviceSchemaData} />
+  <BreadcrumbSchema items={breadcrumbItems} /> 
+
+  <Header showEmergencyBar={true} currentPath="/olympia-mobile-cctv" />
+  <Analytics /> 
 
   <main>
     <!-- Hero Section -->

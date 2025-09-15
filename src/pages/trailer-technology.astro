@@ -3,53 +3,47 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTASection from '../components/CTASection.astro';
+import Analytics from '../components/Analytics.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
 
-
-const breadcrumbSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.cctvtrailer.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Trailer Technology"
-    }
+// Schema data for the construction security service
+const serviceSchemaData = {
+  serviceName: "Mobile Security Trailers Weekly Rentals",
+  description: "Professional mobile security trailers with advanced video surveillance technology for the Pacific Northwest",
+  price: "3499",
+  highPrice: "4000",
+  priceUnit: "WEEK" as const,
+  areaServed: [
+    { type: "State" as const, name: "Washington" },
+    { type: "City" as const, name: "Tacoma" },
+    { type: "City" as const, name: "Seattle" },
+    { type: "City" as const, name: "Olympia" },
+    { type: "City" as const, name: "Lakewood" },
+    { type: "City" as const, name: "Auburn" },
+    { type: "City" as const, name: "Federal Way" },
+    { type: "City" as const, name: "Fife" },
+    { type: "City" as const, name: "Bony Lake" },
+    { type: "City" as const, name: "Puyallup" }
   ]
-});
+};
 
-const schema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Mobile Security Trailers",
-  "description": "Professional mobile security trailers with advanced video surveillance technology for the Pacific Northwest",
-  "manufacturer": {
-    "@type": "Organization",
-    "name": "CCTV Trailer"
-  },
-  "offers": {
-    "@type": "AggregateOffer",
-    "priceCurrency": "USD",
-    "availability": "https://schema.org/InStock",
-    "seller": {
-      "@type": "Organization",
-      "name": "CCTV Trailer"
-    }
-  }
-});
+// Breadcrumb data
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Trailer Technology" }
+];
 ---
 
 <Layout 
   title="Trailer and Video Systems Pacific Northwest | CCTV Trailers"
-  description="Our mobile security trailers are sturdy enough to withstand the Pacific Northwest climate and equipped with the most advanced video and surveillance technology to capture every detail."
-  schema={[breadcrumbSchema, schema]}>
+  description="Our mobile security trailers are sturdy enough to withstand the Pacific Northwest climate and equipped with the most advanced video and surveillance technology to capture every detail.">
   
-  <Header currentPath="/trailer-technology" />
+  <ServiceSchema {...serviceSchemaData} />
+  <BreadcrumbSchema items={breadcrumbItems} /> 
+
+  <Header showEmergencyBar={true} currentPath="/trailer-technology" />
+  <Analytics /> 
 
   <main>
     <!-- Hero Section -->

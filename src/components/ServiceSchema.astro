@@ -1,0 +1,129 @@
+---
+export interface ServiceSchemaProps {
+  serviceName: string;
+  description: string;
+  images?: string[];
+  price?: string;
+  highPrice?: string;
+  priceCurrency?: string;
+  priceUnit?: 'DAY' | 'WEEK' | 'MONTH' | 'YEAR' | 'WEEKEND';
+  areaServed?: Array<{
+    type: 'State' | 'City';
+    name: string;
+  }>;
+  customProvider?: {
+    name?: string;
+    telephone?: string;
+    email?: string;
+    address?: {
+      addressLocality?: string;
+      addressRegion?: string;
+      addressCountry?: string;
+    };
+  };
+}
+
+const {
+  serviceName,
+  description,
+  images = [
+    "https://www.cctvtrailer.com/images/trailer-1x1.png",
+    "https://www.cctvtrailer.com/images/trailer-4x3.png",
+    "https://www.cctvtrailer.com/images/trailer-16x9.png",
+  ],
+  price,
+  priceCurrency = 'USD',
+  priceUnit,
+  highPrice,
+  areaServed = [],
+  customProvider
+} = Astro.props as ServiceSchemaProps;
+
+// Default provider information for CCTV Trailer
+const defaultProvider = {
+  "@type": "LocalBusiness",
+  "name": "CCTV Trailer",
+  "telephone": "+12536832288",
+  "email": "info@cctvtrailer.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Tacoma",
+    "addressRegion": "WA",
+    "addressCountry": "US"
+  }
+};
+
+// Merge custom provider with defaults
+const provider = customProvider ? {
+  ...defaultProvider,
+  ...customProvider,
+  address: customProvider.address ? {
+    ...defaultProvider.address,
+    ...customProvider.address
+  } : defaultProvider.address
+} : defaultProvider;
+
+// Build the schema object
+const schemaObject: any = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": serviceName,
+  "provider": provider,
+  "description": description
+};
+
+// Add images if provided
+if (images.length > 0) {
+  schemaObject.image = images;
+}
+
+// Add area served if provided
+if (areaServed.length > 0) {
+  schemaObject.areaServed = areaServed.map(area => ({
+    "@type": area.type,
+    "name": area.name,
+    "addressRegion": "WA"
+  }));
+}
+
+// Add pricing information if provided
+if (price) {
+  if (highPrice) {
+    schemaObject.offers = {
+        "@type": "AggregateOffer",
+        "lowPrice": price,
+        "highPrice": highPrice,
+        "unitText": priceUnit,
+        "priceCurrency": priceCurrency,
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": defaultProvider.name
+        }
+      };  
+  } else {
+    schemaObject.offers = {
+      "@type": "Offer",
+      "price": price,
+      "priceCurrency": priceCurrency
+    };
+  }
+
+  if (priceUnit) {
+    schemaObject.offers.priceSpecification = {
+      "@type": "UnitPriceSpecification",
+      "price": price,
+      "priceCurrency": priceCurrency,
+      "unitText": priceUnit
+    };
+  }
+}
+
+
+// Default pricing range
+schemaObject.priceRange = "$$";
+
+const schema = JSON.stringify(schemaObject);
+---
+
+<script type="application/ld+json" set:html={schema} />

@@ -5,49 +5,45 @@ import Footer from '../components/Footer.astro';
 import CTASection from '../components/CTASection.astro';
 import QuoteForm from '../components/QuoteForm.astro';
 import Analytics from '../components/Analytics.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
 
-const schema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Construction Site Security Trailer Rental",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "CCTV Trailer",
-    "telephone": "+12536832288",
-    "email": "info@cctvtrailer.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Tacoma",
-      "addressRegion": "WA",
-      "addressCountry": "US"
-    }
-  },
-  "description": "Professional construction site surveillance trailer rental. Mobile security solutions for jobsites, construction projects, and development sites. 24/7 monitoring and rapid deployment.",
-  "areaServed": [
-    {"@type": "State", "name": "Washington"},
-    {"@type": "City", "name": "Tacoma"},
-    {"@type": "City", "name": "Seattle"},
-    {"@type": "City", "name": "Olympia"}
-  ],
-  "offers": {
-    "@type": "Offer",
-    "price": "8000",
-    "priceCurrency": "USD",
-    "priceSpecification": {
-      "@type": "UnitPriceSpecification",
-      "price": "8000",
-      "priceCurrency": "USD",
-      "unitText": "MONTH"
-    }
-  }
-});
+// Schema data for the construction security service
+const serviceSchemaData = {
+  serviceName: "Construction Site Security Trailer Rental",
+  description: "Professional construction site surveillance trailer rental. Mobile security solutions for jobsites, construction projects, and development sites. 24/7 monitoring and rapid deployment.",
+  price: "7999",
+  priceUnit: "MONTH" as const,
+  areaServed: [
+    { type: "State" as const, name: "Washington" },
+    { type: "City" as const, name: "Tacoma" },
+    { type: "City" as const, name: "Seattle" },
+    { type: "City" as const, name: "Olympia" },
+    { type: "City" as const, name: "Lakewood" },
+    { type: "City" as const, name: "Auburn" },
+    { type: "City" as const, name: "Federal Way" },
+    { type: "City" as const, name: "Fife" },
+    { type: "City" as const, name: "Bony Lake" },
+    { type: "City" as const, name: "Puyallup" }
+  ]
+};
+
+// Breadcrumb data
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Services", url: "/services" },
+  { name: "Construction Security" }
+];
 ---
 
-<Layout 
+<Layout
   title="Construction Site Security Trailer Rental | Mobile Surveillance for Jobsites"
-  description="Construction site surveillance trailer rental with 24/7 monitoring. Protect equipment, materials & jobsites from theft. Same-day deployment. Call (253) 683-2288"
-  schema={schema}>
-  
+  description="Construction site surveillance trailer rental with 24/7 monitoring. Protect equipment, materials & jobsites from theft. Same-day deployment. Call (253) 683-2288">
+
+  <!-- Structured Data Schemas -->
+  <ServiceSchema {...serviceSchemaData} />
+  <BreadcrumbSchema items={breadcrumbItems} />
+
   <Header showEmergencyBar={true} currentPath="/construction-security" />
   <Analytics />
 

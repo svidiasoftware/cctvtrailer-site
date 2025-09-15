@@ -1,65 +1,40 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
 
-const breadcrumbSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.cctvtrailer.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Locations",
-      "item": "https://www.cctvtrailer.com/services/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Auburn Security"
-    }
+// Schema data for the construction security service
+const serviceSchemaData = {
+  serviceName: "Auburn Security Camera Rental",
+  description: "Security camera trailer rental in Auburn, WA. Specialized in manufacturing facilities, logistics centers, and distribution warehouses. Serving the Green River Valley industrial corridor.",
+  price: "3499",
+  highPrice: "4000",
+  priceUnit: "WEEK" as const,
+  areaServed: [
+    { type: "City" as const, name: "Bremerton" },
   ]
-});
+};
 
-const schema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Auburn Security Camera Rental",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "CCTV Trailer",
-    "telephone": "+12536832288"
-  },
-  "areaServed": {
-    "@type": "City",
-    "name": "Auburn",
-    "addressRegion": "WA"
-  },
-  "description": "Security camera trailer rental in Auburn, WA. Specialized in manufacturing facilities, logistics centers, and distribution warehouses. Serving the Green River Valley industrial corridor.",
-  "offers": {
-    "@type": "Offer",
-    "price": "999",
-    "priceCurrency": "USD"
-  }
-});
+// Breadcrumb data
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Locations", url: "/about" },
+  { name: "Auburn Security" }
+];
 ---
 
 <Layout 
   title="Auburn Security Trailer Rental | Manufacturing & Logistics Surveillance"
-  description="Mobile security trailer rentals in Auburn, Algona, Pacific. Manufacturing facility protection, logistics center monitoring, warehouse security. Call (253) 683-2288"
-  schema={[breadcrumbSchema, schema]}>
-  
-  <!-- Emergency Contact Bar -->
-  <div class="bg-red-600 text-white py-2 text-center font-bold sticky top-0 z-50">
-    📞 Auburn Industrial Security: <a href="tel:2536832288" class="underline">(253) 683-2288</a>
-  </div>
-  
-  <Header currentPath="/auburn-manufacturing-security" />
+  description="Mobile security trailer rentals in Auburn, Algona, Pacific. Manufacturing facility protection, logistics center monitoring, warehouse security. Call (253) 683-2288">
+
+  <!-- Structured Data Schemas -->
+  <ServiceSchema {...serviceSchemaData} />
+  <BreadcrumbSchema items={breadcrumbItems} /> 
+
+  <Header showEmergencyBar={true} currentPath="/auburn-manufacturing-security" />
+  <Analytics /> 
 
   <main>
     <!-- Hero Section -->

@@ -1,0 +1,44 @@
+---
+export interface BreadcrumbItem {
+  name: string;
+  url?: string;
+}
+
+export interface BreadcrumbSchemaProps {
+  items: BreadcrumbItem[];
+  baseUrl?: string;
+}
+
+const {
+  items,
+  baseUrl = 'https://www.cctvtrailer.com'
+} = Astro.props as BreadcrumbSchemaProps;
+
+// Build the breadcrumb schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((item, index) => {
+    const listItem: any = {
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name
+    };
+
+    // Add item URL if provided
+    if (item.url) {
+      // Ensure URL is absolute
+      const itemUrl = item.url.startsWith('http')
+        ? item.url
+        : `${baseUrl}${item.url.startsWith('/') ? '' : '/'}${item.url}`;
+      listItem.item = itemUrl;
+    }
+
+    return listItem;
+  })
+};
+
+const schema = JSON.stringify(breadcrumbSchema);
+---
+
+<script type="application/ld+json" set:html={schema} />
