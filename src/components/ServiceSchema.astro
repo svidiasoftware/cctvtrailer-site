@@ -48,8 +48,10 @@ const defaultProvider = {
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Tacoma",
+    "streetAddress": "222 E 26th St",
+    "postalCode": "98421",
     "addressRegion": "WA",
-    "addressCountry": "US"
+    "addressCountry": "US",
   }
 };
 
@@ -91,6 +93,7 @@ if (price) {
   if (highPrice) {
     schemaObject.offers = {
         "@type": "AggregateOffer",
+        "offerCount": 2,
         "lowPrice": price,
         "highPrice": highPrice,
         "unitText": priceUnit,
@@ -104,6 +107,7 @@ if (price) {
   } else {
     schemaObject.offers = {
       "@type": "Offer",
+      "offerCount": 2,
       "price": price,
       "priceCurrency": priceCurrency
     };

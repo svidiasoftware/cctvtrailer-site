@@ -16,6 +16,7 @@ const schema = JSON.stringify({
     "@type": "Brand",
     "name": "CCTV Trailer"
   },
+  "priceRange": "$$",
   "image": [
     "https://www.cctvtrailer.com/images/trailer-1x1.png",
     "https://www.cctvtrailer.com/images/trailer-4x3.png",
@@ -25,6 +26,7 @@ const schema = JSON.stringify({
     {
       "@type": "Offer",
       "name": "Daily Security Trailer Rental - First Day",
+      "offerCount": 2,
       "price": "999",
       "priceCurrency": "USD",
       "priceValidUntil": "2025-12-31",
@@ -35,6 +37,7 @@ const schema = JSON.stringify({
     {
       "@type": "Offer",
       "name": "Daily Security Trailer Rental - Additional Days",
+      "offerCount": 2,
       "price": "499",
       "priceCurrency": "USD",
       "priceValidUntil": "2025-12-31",
@@ -45,17 +48,20 @@ const schema = JSON.stringify({
     {
       "@type": "AggregateOffer",
       "name": "Weekly Security Trailer Rental",
-      "lowPrice": "3500",
+      "offerCount": 2,
+      "lowPrice": "3499",
       "highPrice": "4000",
       "priceCurrency": "USD",
       "priceValidUntil": "2025-12-31",
       "availability": "https://schema.org/InStock",
+      "unitCode": "WEEK",
       "description": "Weekly rental rates with 10% discount"
     },
     {
       "@type": "AggregateOffer",
       "name": "Monthly Security Trailer Rental",
-      "lowPrice": "8000",
+      "offerCount": 2,
+      "lowPrice": "7999",
       "highPrice": "10000",
       "priceCurrency": "USD",
       "priceValidUntil": "2025-12-31",
@@ -76,8 +82,10 @@ const schema = JSON.stringify({
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Tacoma",
+      "streetAddress": "222 E 26th St",
+      "postalCode": "98421",
       "addressRegion": "WA",
-      "addressCountry": "US"
+      "addressCountry": "US",
     },
     "areaServed": [
       {
@@ -90,7 +98,22 @@ const schema = JSON.stringify({
         "geoRadius": "30 miles"
       }
     ]
-  }
+  },
+  "shippingDetails": {
+  "@type": "OfferShippingDetails",
+  "shippingRate": {
+    "@type": "MonetaryAmount",
+    "value": "0",
+    "currency": "USD"
+  },
+  "shippingDestination": [
+    {
+      "@type": "DefinedRegion",
+      "addressCountry": "US",
+      "addressRegion": ["WA"]
+    }
+  ]
+}
 });
 
 // Breadcrumb data
