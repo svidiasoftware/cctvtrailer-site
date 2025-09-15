@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import LazyImage from '../components/LazyImage.astro';
 import CTASection from '../components/CTASection.astro';
 import Analytics from '../components/Analytics.astro';
 import ServiceSchema from '../components/ServiceSchema.astro';
@@ -49,7 +50,7 @@ const breadcrumbItems = [
     <!-- Hero Section -->
     <div class="hero-trailer">
       <div class="hero-overlay">
-        <img src="/images/tacoma-dome-bg-hero3.jpg" alt="Mobile security trailer technical specifications and features" width="1920" height="1080" />
+        <LazyImage src="/images/tacoma-dome-bg-hero3.jpg" alt="Mobile security trailer technical specifications and features" width="1920" height="1080" fetchPriority="high" loading="eager" />
       </div>
       <div class="hero-content">
         <div class="hero-text-wrapper">
@@ -120,7 +121,7 @@ const breadcrumbItems = [
         </div>
         
         <div class="about-image">
-          <img src="/images/trailer-main.jpg" alt="CCTV mobile surveillance trailer with extended camera mast and solar panels" class="trailer-photo" width="400" height="300" loading="lazy" />
+          <LazyImage src="/images/trailer-main.jpg" alt="CCTV mobile surveillance trailer with extended camera mast and solar panels" class="trailer-photo" width="400" height="300" />
         </div>
 
         <div class="video-tech-box">

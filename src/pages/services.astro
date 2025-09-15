@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTASection from '../components/CTASection.astro';
+import LazyImage from '../components/LazyImage.astro';
 
 const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -131,7 +132,7 @@ const schema = JSON.stringify({
     <!-- Hero Section -->
     <section class="hero-trailer">
       <div class="hero-overlay">
-        <img src="/images/tacoma-dome-bg-hero3.jpg" alt="Professional mobile surveillance trailer services for construction sites and events" width="1920" height="1080" />
+        <LazyImage src="/images/tacoma-dome-bg-hero3.jpg" alt="Professional mobile surveillance trailer services for construction sites and events" width="1920" height="1080" fetchPriority="high" loading="eager" />
       </div>
       <div class="hero-content">
         <div class="hero-text-wrapper">
