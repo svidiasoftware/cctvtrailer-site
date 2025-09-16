@@ -1,0 +1,108 @@
+---
+export interface Props {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  fetchPriority?: 'high' | 'low' | 'auto';
+  sizes?: string;
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  class: className = '',
+  loading = 'lazy',
+  fetchPriority = 'auto',
+  sizes = '100vw'
+} = Astro.props;
+
+// Generate responsive image srcset for common viewport sizes
+const generateSrcSet = (originalPath: string) => {
+  if (originalPath.startsWith('http') || originalPath.startsWith('data:') || originalPath.endsWith('.svg')) {
+    return null;
+  }
+
+  // Generate multiple sizes for responsive images
+  const sizes = [640, 768, 1024, 1536, 1920];
+  const basePath = originalPath.substring(0, originalPath.lastIndexOf('.'));
+  const extension = originalPath.substring(originalPath.lastIndexOf('.'));
+
+  return sizes.map(size => {
+    if (size <= width) {
+      return `${basePath}-${size}w${extension} ${size}w`;
+    }
+    return null;
+  }).filter(Boolean).join(', ');
+};
+
+// Generate WebP version of the image path
+const getWebPPath = (originalPath: string) => {
+  if (originalPath.endsWith('.webp') ||
+      originalPath.endsWith('.svg') ||
+      originalPath.startsWith('http') ||
+      originalPath.startsWith('data:')) {
+    return null;
+  }
+  return originalPath.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+};
+
+const webpSrc = getWebPPath(src);
+const shouldUsePicture = webpSrc !== null;
+const srcSet = generateSrcSet(src);
+const webpSrcSet = webpSrc ? generateSrcSet(webpSrc) : null;
+---
+
+{shouldUsePicture ? (
+  <picture>
+    {webpSrcSet && <source srcset={webpSrcSet || webpSrc} type="image/webp" sizes={sizes} />}
+    {srcSet && <source srcset={srcSet || src} type={`image/${src.split('.').pop()}`} sizes={sizes} />}
+    <img
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      class={className}
+      loading={loading}
+      fetchpriority={fetchPriority}
+      decoding="async"
+      sizes={sizes}
+    />
+  </picture>
+) : (
+  <img
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    class={className}
+    loading={loading}
+    fetchpriority={fetchPriority}
+    decoding="async"
+    sizes={sizes}
+    {...(srcSet && { srcset: srcSet })}
+  />
+)}
+
+<style>
+  /* Prevent layout shift with aspect-ratio */
+  img {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: attr(width) / attr(height);
+  }
+
+  /* Smooth loading transition */
+  img {
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
+
+  img.loading {
+    opacity: 0;
+  }
+</style>

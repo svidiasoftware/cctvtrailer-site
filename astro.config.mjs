@@ -15,7 +15,7 @@ export default defineConfig({
     // Generate sitemap automatically
     format: 'directory',
     // Inline critical CSS for faster rendering
-    inlineStylesheets: 'auto'
+    inlineStylesheets: 'always'
   },
   
   // Compression for better performance

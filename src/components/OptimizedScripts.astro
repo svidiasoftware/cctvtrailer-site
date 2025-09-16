@@ -1,0 +1,72 @@
+---
+// Component for optimized script loading
+---
+
+<!-- Google Tag Manager - Moved to end of body for better performance -->
+<script async>
+  // Load GTM after initial page render
+  window.addEventListener('load', function() {
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),
+          dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;
+      j.defer=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5FPMNFLV');
+  });
+</script>
+
+<!-- Preload critical web fonts if any -->
+<link rel="preload" href="/fonts/primary-font.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+
+<!-- Intersection Observer for lazy loading -->
+<script>
+  // Lazy load images when they come into viewport
+  if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.classList.remove('loading');
+          observer.unobserve(img);
+        }
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+      lazyImages.forEach(img => {
+        img.classList.add('loading');
+        imageObserver.observe(img);
+      });
+    });
+  }
+</script>
+
+<!-- Preconnect to critical third-party origins -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
+
+<!-- Performance monitoring -->
+<script>
+  // Log Web Vitals for monitoring
+  if ('PerformanceObserver' in window) {
+    try {
+      const po = new PerformanceObserver((list) => {
+        for (const entry of list.getEntries()) {
+          // Log to console or send to analytics
+          if (entry.entryType === 'largest-contentful-paint') {
+            console.log('LCP:', entry.renderTime || entry.loadTime);
+          }
+        }
+      });
+      po.observe({entryTypes: ['largest-contentful-paint']});
+    } catch (e) {
+      // Silently fail for unsupported browsers
+    }
+  }
+</script>
