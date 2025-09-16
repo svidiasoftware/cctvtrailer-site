@@ -1,6 +1,17 @@
 @import "tailwindcss";
 
-    /* Hero Section - moved critical styles to critical.css */
+    /* Hero Section */
+    .hero-trailer {
+      position: relative;
+      height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+    }
+
     .hero-video {
       position: absolute;
       top: 0;
@@ -9,6 +20,55 @@
       height: 100%;
       object-fit: cover;
       z-index: 1;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.2);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 1200px;
+      width: 100%;
+      padding: 0 32px;
+      margin: 0 auto;
+    }
+
+    .hero-text-wrapper {
+      max-width: 600px;
+    }
+
+    .hero-heading {
+      font-size: 56px;
+      font-weight: 600;
+      color: white;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .hero-paragraph {
+      font-size: 19.2px;
+      color: white;
+      line-height: 1.5;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 10px;
+      justify-content: left;
+      flex-wrap: wrap;
     }
 
     /* Trailer Features Section */

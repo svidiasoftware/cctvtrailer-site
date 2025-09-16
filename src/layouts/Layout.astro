@@ -1,5 +1,5 @@
 ---
-import criticalCSS from '../styles/critical.css?raw';
+import '../styles/global.css';
 import Analytics from '../components/Analytics.astro';
 import OptimizedScripts from '../components/OptimizedScripts.astro';
 
@@ -37,13 +37,6 @@ const ogImageURL = new URL('/images/cctv-trailer-hero.png', siteURL).href;
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-
-    <!-- Inline critical CSS for faster rendering -->
-    <style set:html={criticalCSS} />
-
-    <!-- Load non-critical CSS asynchronously -->
-    <link rel="preload" href="/styles/global.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="/styles/global.css" /></noscript>
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
