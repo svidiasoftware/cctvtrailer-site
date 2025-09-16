@@ -19,27 +19,10 @@ const {
   fetchPriority = 'auto'
 } = Astro.props;
 
-// Generate WebP version of the image path
-const getWebPPath = (originalPath: string) => {
-  // Skip if already a WebP or if it's an SVG or external URL
-  if (originalPath.endsWith('.webp') ||
-      originalPath.endsWith('.svg') ||
-      originalPath.startsWith('http') ||
-      originalPath.startsWith('data:')) {
-    return null;
-  }
-
-  // Replace file extension with .webp
-  return originalPath.replace(/\.(jpg|jpeg|png)$/i, '.webp');
-};
-
-const webpSrc = getWebPPath(src);
-const shouldUsePicture = webpSrc !== null;
 ---
 
-{shouldUsePicture ? (
   <picture>
-    <source srcset={webpSrc} type="image/webp" />
+    <source srcset={src} type="image/webp" />
     <img
       src={src}
       alt={alt}
@@ -51,18 +34,6 @@ const shouldUsePicture = webpSrc !== null;
       decoding="async"
     />
   </picture>
-) : (
-  <img
-    src={src}
-    alt={alt}
-    width={width}
-    height={height}
-    class={className}
-    loading={loading}
-    fetchpriority={fetchPriority}
-    decoding="async"
-  />
-)}
 
 <style>
   /* Add blur-up effect for lazy loaded images */
@@ -72,17 +43,5 @@ const shouldUsePicture = webpSrc !== null;
 
   img[loading="lazy"] {
     background: #f0f0f0;
-  }
-
-  /* Optional: Add loading animation */
-  picture {
-    display: inline-block;
-    position: relative;
-  }
-
-  picture img {
-    display: block;
-    max-width: 100%;
-    height: auto;
   }
 </style>

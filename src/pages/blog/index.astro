@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import CTASection from '../../components/CTASection.astro';
+import LazyImage from '../../components/LazyImage.astro';
 
 
 const blogPosts = [
@@ -12,7 +13,7 @@ const blogPosts = [
     excerpt: 'Complete pricing guide for mobile surveillance trailer rentals. Learn about daily, weekly, and monthly rates, plus factors that affect pricing.',
     date: '2025-01-15',
     readTime: '5 min read',
-    image: 'https://www.cctvtrailer.com/images/how-much-cost-rent-security-trailer.jpg',
+    image: 'https://www.cctvtrailer.com/images/how-much-cost-rent-security-trailer.webp',
     imageAlt: 'Security pricing calculator and surveillance trailer'
   },
   {
@@ -21,7 +22,7 @@ const blogPosts = [
     excerpt: 'Deep dive into S-VIDIA\'s cutting-edge surveillance technology. Learn how AI-powered video analytics, intelligent detection, and cloud integration revolutionize mobile security.',
     date: '2025-01-12',
     readTime: '10 min read',
-    image: 'https://www.cctvtrailer.com/images/advanced-video-surveillance-technology.jpg',
+    image: 'https://www.cctvtrailer.com/images/advanced-video-surveillance-technology.webp',
     imageAlt: 'Security camera surveillance system with multiple monitors'
   },
   {
@@ -30,7 +31,7 @@ const blogPosts = [
     excerpt: 'Comprehensive comparison of mobile surveillance trailers versus fixed security cameras for construction sites. Discover which solution is best for your project.',
     date: '2025-01-10',
     readTime: '7 min read',
-    image: 'https://www.cctvtrailer.com/images/construction-site-security-mobile-vs-fixed.jpg',
+    image: 'https://www.cctvtrailer.com/images/construction-site-security-mobile-vs-fixed.webp',
     imageAlt: 'Construction site with security cameras and mobile surveillance trailer'
   },
   {
@@ -39,7 +40,7 @@ const blogPosts = [
     excerpt: 'Learn proven strategies to prevent theft and vandalism at construction sites. Includes statistics, prevention methods, and security best practices.',
     date: '2025-01-05',
     readTime: '8 min read',
-    image: 'https://www.cctvtrailer.com/images/preventing-theft-construction-sites.jpg',
+    image: 'https://www.cctvtrailer.com/images/preventing-theft-construction-sites.webp',
     imageAlt: 'Construction site security measures and theft prevention'
   }
 ];
@@ -84,7 +85,8 @@ const blogSchema = JSON.stringify({
     <!-- Hero Section -->
     <section class="hero-trailer">
       <div class="hero-overlay">
-        <img src="/images/tacoma-dome-bg-hero.jpg" alt="Mobile surveillance and security blog - Industry insights from CCTV Trailer" width="1920" height="1080" />
+        <LazyImage src="/images/tacoma-dome-bg-hero.webp" alt="Mobile surveillance and security blog - Industry insights from CCTV Trailer" 
+          class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
       </div>
       <div class="hero-content">
         <div class="hero-text-wrapper">

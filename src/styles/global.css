@@ -130,17 +130,11 @@
       height: 100%;
       background-image: url('/images/trailer-cutout.webp');
       background-image: -webkit-image-set(
-        url('/images/trailer-cutout.webp') 1x,
-        url('/images/trailer-cutout.png') 1x
+        url('/images/trailer-cutout.webp') 1x
       );
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
-    }
-
-    /* Fallback for browsers that don't support WebP */
-    .no-webp .trailer-image {
-      background-image: url('/images/trailer-cutout.png');
     }
 
     /* About Trailers Section */
@@ -191,7 +185,7 @@
     .svidia-logo-small {
       width: 80px;
       height: 80px;
-      background-image: url('/images/svidia-logo.png');
+      background-image: url('/images/svidia-logo.svg');
       background-size: contain;
       background-repeat: no-repeat;
       margin-bottom: 20px;
@@ -328,17 +322,12 @@
       height: 400px;
       background-image: url('/images/audio-capabilities.webp');
       background-image: -webkit-image-set(
-        url('/images/audio-capabilities.webp') 1x,
-        url('/images/audio-capabilities.jpg') 1x
+        url('/images/audio-capabilities.webp') 1x
       );
       background-size: cover;
       background-position: center;
       border-radius: 12px;
       flex-shrink: 0;
-    }
-
-    .no-webp .audio-image {
-      background-image: url('/images/audio-capabilities.jpg');
     }
 
     .remote-image {
@@ -346,17 +335,12 @@
       height: 400px;
       background-image: url('/images/remote-transmitting.webp');
       background-image: -webkit-image-set(
-        url('/images/remote-transmitting.webp') 1x,
-        url('/images/remote-transmitting.jpg') 1x
+        url('/images/remote-transmitting.webp') 1x
       );
       background-size: cover;
       background-position: center;
       border-radius: 12px;
       flex-shrink: 0;
-    }
-
-    .no-webp .remote-image {
-      background-image: url('/images/remote-transmitting.jpg');
     }
 
     .content-container {
@@ -431,74 +415,45 @@
     .feature-card-image.generator {
       background-image: url('/images/backup-generator.webp');
       background-image: -webkit-image-set(
-        url('/images/backup-generator.webp') 1x,
-        url('/images/backup-generator.jpg') 1x
+        url('/images/backup-generator.webp') 1x
       );
-    }
-
-    .no-webp .feature-card-image.generator {
-      background-image: url('/images/backup-generator.jpg');
     }
 
     .feature-card-image.computer {
       background-image: url('/images/onboard-computer.webp');
       background-image: -webkit-image-set(
-        url('/images/onboard-computer.webp') 1x,
-        url('/images/onboard-computer.jpg') 1x
+        url('/images/onboard-computer.webp') 1x
       );
-    }
-
-    .no-webp .feature-card-image.computer {
-      background-image: url('/images/onboard-computer.jpg');
     }
 
     .feature-card-image.storage {
       background-image: url('/images/video-storage.webp');
       background-image: -webkit-image-set(
-        url('/images/video-storage.webp') 1x,
-        url('/images/video-storage.jpg') 1x
+        url('/images/video-storage.webp') 1x
       );
-    }
-
-    .no-webp .feature-card-image.storage {
-      background-image: url('/images/video-storage.jpg');
     }
 
     .feature-card-image.radar {
       background-image: url('/images/radar-feature.webp');
       background-image: -webkit-image-set(
-        url('/images/radar-feature.webp') 1x,
-        url('/images/radar-feature.jpg') 1x
+        url('/images/radar-feature.webp') 1x
       );
-    }
-
-    .no-webp .feature-card-image.radar {
-      background-image: url('/images/radar-feature.jpg');
     }
 
     .feature-card-image.floodlights {
       background-image: url('/images/floodlights.webp');
       background-image: -webkit-image-set(
-        url('/images/floodlights.webp') 1x,
-        url('/images/floodlights.jpeg') 1x
+        url('/images/floodlights.webp') 1x
       );
-    }
-
-    .no-webp .feature-card-image.floodlights {
-      background-image: url('/images/floodlights.jpeg');
     }
 
     .feature-card-image.license {
       background-image: url('/images/license-plate.webp');
       background-image: -webkit-image-set(
-        url('/images/license-plate.webp') 1x,
-        url('/images/license-plate.jpg') 1x
+        url('/images/license-plate.webp') 1x
       );
     }
 
-    .no-webp .feature-card-image.license {
-      background-image: url('/images/license-plate.jpg');
-    }
 
     .feature-card-content {
       padding: 24px;
@@ -612,17 +567,12 @@
       height: 500px;
       background-image: url('/images/contact-image.webp');
       background-image: -webkit-image-set(
-        url('/images/contact-image.webp') 1x,
-        url('/images/contact-image.jpg') 1x
+        url('/images/contact-image.webp') 1x
       );
       background-size: cover;
       /* background-position: center; */
       border-radius: 12px;
       flex-shrink: 0;
-    }
-
-    .no-webp .contact-image {
-      background-image: url('/images/contact-image.jpg');
     }
 
     /* Responsive Design */
@@ -903,17 +853,12 @@
       height: 600px;
       background-image: url('/images/svidia-image1.webp');
       background-image: -webkit-image-set(
-        url('/images/svidia-image1.webp') 1x,
-        url('/images/svidia-image1.jpg') 1x
+        url('/images/svidia-image1.webp') 1x
       );
       background-size: cover;
       background-position: center;
       border-radius: 12px;
       flex-shrink: 0;
-    }
-
-    .no-webp .square-image-div {
-      background-image: url('/images/svidia-image1.jpg');
     }
 
     .square-image-block {
@@ -921,17 +866,12 @@
       height: 400px;
       background-image: url('/images/secure-streaming.webp');
       background-image: -webkit-image-set(
-        url('/images/secure-streaming.webp') 1x,
-        url('/images/secure-streaming.jpg') 1x
+        url('/images/secure-streaming.webp') 1x
       );
       background-size: cover;
       background-position: center;
       border-radius: 12px;
       flex-shrink: 0;
-    }
-
-    .no-webp .square-image-block {
-      background-image: url('/images/secure-streaming.jpg');
     }
 
     .column-content-container {
@@ -991,37 +931,22 @@
     .features-image.compression {
       background-image: url('/images/compression-feature.webp');
       background-image: -webkit-image-set(
-        url('/images/compression-feature.webp') 1x,
-        url('/images/compression-feature.jpg') 1x
+        url('/images/compression-feature.webp') 1x
       );
-    }
-
-    .no-webp .features-image.compression {
-      background-image: url('/images/compression-feature.jpg');
     }
 
     .features-image.noise {
       background-image: url('/images/noise-feature.webp');
       background-image: -webkit-image-set(
-        url('/images/noise-feature.webp') 1x,
-        url('/images/noise-feature.jpg') 1x
+        url('/images/noise-feature.webp') 1x
       );
-    }
-
-    .no-webp .features-image.noise {
-      background-image: url('/images/noise-feature.jpg');
     }
 
     .features-image.internal {
       background-image: url('/images/onboard-computer.webp');
       background-image: -webkit-image-set(
-        url('/images/onboard-computer.webp') 1x,
-        url('/images/onboard-computer.jpg') 1x
+        url('/images/onboard-computer.webp') 1x
       );
-    }
-
-    .no-webp .features-image.internal {
-      background-image: url('/images/onboard-computer.jpg');
     }
 
     .heading-3 {

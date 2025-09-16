@@ -17,9 +17,9 @@ const serviceData = {
   serviceName: "Construction Site Security Trailer Rental",
   description: "Professional construction site surveillance...",
   images: [
-    "https://www.cctvtrailer.com/images/trailer-1x1.png",
-    "https://www.cctvtrailer.com/images/trailer-4x3.png",
-    "https://www.cctvtrailer.com/images/trailer-16x9.png",
+    "https://www.cctvtrailer.com/images/trailer-1x1.webp",
+    "https://www.cctvtrailer.com/images/trailer-4x3.webp",
+    "https://www.cctvtrailer.com/images/trailer-16x9.webp",
   ],
   price: "8000",
   priceUnit: "MONTH", // Options: DAY, WEEK, MONTH, YEAR, HOUR

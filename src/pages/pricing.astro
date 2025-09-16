@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import CTASection from '../components/CTASection.astro';
 import Analytics from '../components/Analytics.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import LazyImage from '../components/LazyImage.astro';
 
 
 const schema = JSON.stringify({
@@ -18,9 +19,9 @@ const schema = JSON.stringify({
   },
   "priceRange": "$$",
   "image": [
-    "https://www.cctvtrailer.com/images/trailer-1x1.png",
-    "https://www.cctvtrailer.com/images/trailer-4x3.png",
-    "https://www.cctvtrailer.com/images/trailer-16x9.png",
+    "https://www.cctvtrailer.com/images/trailer-1x1.webp",
+    "https://www.cctvtrailer.com/images/trailer-4x3.webp",
+    "https://www.cctvtrailer.com/images/trailer-16x9.webp",
   ],
   "offers": [
     {
@@ -137,7 +138,8 @@ const breadcrumbItems = [
     <!-- Hero Section -->
     <section class="hero-trailer">
       <div class="hero-overlay">
-        <img src="/images/tacoma-dome-bg-hero.jpg" alt="Mobile surveillance trailer with Tacoma Dome in background - Security rental pricing" width="1920" height="1080" />
+        <LazyImage src="/images/tacoma-dome-bg-hero.webp" alt="Mobile surveillance trailer with Tacoma Dome in background - Security rental pricing" 
+          class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
       </div>
       <div class="hero-content">
         <div class="hero-text-wrapper">

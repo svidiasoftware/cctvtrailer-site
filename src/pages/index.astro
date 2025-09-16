@@ -46,7 +46,10 @@ const schema = JSON.stringify({
     <!-- <section class="relative bg-gradient-to-r from-gray-800 to-gray-900 text-white py-5 overflow-hidden"> -->
     <section class="hero-trailer">
       <div class="hero-overlay">
-        <LazyImage src="/images/tacoma-dome-bg-hero.jpg" alt="Mobile surveillance trailer hero image with Tacoma Dome - Professional security solutions" width="1920" height="1080" fetchPriority="high" loading="eager" />
+        <LazyImage src="/images/tacoma-dome-bg-hero.webp" 
+          alt="Mobile surveillance trailer hero image with Tacoma Dome - Professional security solutions"
+          class="w-full h-full object-cover"
+          width="1920" height="1080" fetchPriority="high" loading="eager" />
       </div>
       <div class="hero-content">
         <div class="hero-text-wrapper">
@@ -61,26 +64,6 @@ const schema = JSON.stringify({
           </div>
         </div>
       </div>
-      <!-- <div class="container mx-auto px-4">
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <h1 class="text-5xl font-bold mb-4">Mobile Surveillance Trailer Rental - Setup in Minutes</h1>
-            <p class="text-xl mb-8">Professional security trailer rentals for construction sites, events, and temporary surveillance needs in Tacoma, Seattle, and the Puget Sound region</p>
-            <div class="flex flex-col sm:flex-row gap-4">
-              <a href="tel:2536832288" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block text-center">
-                📞 Call (253) 683-2288
-              </a>
-              <a href="#quote-form" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block text-center">
-                Get Instant Quote
-              </a>
-            </div>
-            <p class="mt-4 text-lg">✓ Same Day Delivery ✓ No Guards Required ✓ 24/7 Monitoring</p>
-          </div>
-          <div class="flex justify-center">
-            <LazyImage src="/images/cctv-trailer-hero.png" alt="Professional mobile CCTV surveillance trailer unit ready for deployment" class="max-w-full h-auto rounded-lg shadow-xl" width="600" height="400" />
-          </div>
-        </div>
-      </div> -->
     </section>
 
     <section class="py-16">
@@ -114,27 +97,30 @@ const schema = JSON.stringify({
         <!-- <div class="features-grid"> -->
           <!-- Construction -->
           <a href="/construction-security" class="rounded-lg shadow-lg hover:shadow-xl transition-shadow overflow-hidden relative h-64 block">
-            <LazyImage src="/images/industries/construction.png" alt="Construction site with equipment and materials requiring security monitoring" class="w-full h-full object-cover" width="400" height="300" />
+            <LazyImage src="/images/industries/construction.webp" alt="Construction site with equipment and materials requiring security monitoring" 
+              class="w-full h-full object-cover" width="400" height="300" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
               <h3 class="font-bold text-xl mb-2">Construction</h3>
               <p class="text-sm">Prevent theft of materials and equipment at job sites and highway work zones with 24/7 monitoring.</p>
             </div>
           </a>
-          
+
           <!-- Public Events -->
           <a href="/event-security" class="rounded-lg shadow-lg hover:shadow-xl transition-shadow overflow-hidden relative h-64 block">
-            <LazyImage src="/images/industries/public.png" alt="Large crowd at public event requiring security surveillance" class="w-full h-full object-cover" width="400" height="300" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <LazyImage src="/images/industries/public.webp" alt="Large crowd at public event requiring security surveillance" 
+              class="w-full h-full object-cover" width="400" height="300" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
               <h3 class="font-bold text-xl mb-2">Public Events</h3>
               <p class="text-sm">Ensure no detail goes unnoticed at concerts, fairs, and markets with comprehensive coverage.</p>
             </div>
           </a>
-          
+
           <!-- Material Suppliers -->
           <div class="rounded-lg shadow-lg hover:shadow-xl transition-shadow overflow-hidden relative h-64">
-            <LazyImage src="/images/industries/materials.png" alt="Warehouse with bulk materials and supplies needing security protection" class="w-full h-full object-cover" width="400" height="300" />
+            <LazyImage src="/images/industries/materials.webp" alt="Warehouse with bulk materials and supplies needing security protection" 
+              class="w-full h-full object-cover" width="400" height="300" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
               <h3 class="font-bold text-xl mb-2">Material Suppliers</h3>
@@ -144,7 +130,8 @@ const schema = JSON.stringify({
           
           <!-- Retail -->
           <div class="rounded-lg shadow-lg hover:shadow-xl transition-shadow overflow-hidden relative h-64">
-            <LazyImage src="/images/industries/retail.png" alt="Retail shopping center with parking lot requiring theft protection" class="w-full h-full object-cover" width="400" height="300" />
+            <LazyImage src="/images/industries/retail.webp" alt="Retail shopping center with parking lot requiring theft protection" 
+              class="w-full h-full object-cover" width="400" height="300" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
               <h3 class="font-bold text-xl mb-2">Retail</h3>
@@ -154,7 +141,8 @@ const schema = JSON.stringify({
           
           <!-- Rental Facilities -->
           <div class="rounded-lg shadow-lg hover:shadow-xl transition-shadow overflow-hidden relative h-64">
-            <LazyImage src="/images/industries/rental.png" alt="Rental facility with inventory requiring portable security monitoring" class="w-full h-full object-cover" width="400" height="300" />
+            <LazyImage src="/images/industries/rental.webp" alt="Rental facility with inventory requiring portable security monitoring" 
+              class="w-full h-full object-cover" width="400" height="300" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
               <h3 class="font-bold text-xl mb-2">Rental Facilities</h3>
@@ -164,7 +152,8 @@ const schema = JSON.stringify({
           
           <!-- Military -->
           <div class="rounded-lg shadow-lg hover:shadow-xl transition-shadow overflow-hidden relative h-64">
-            <LazyImage src="/images/industries/military.png" alt="Military base facilities requiring day and night surveillance monitoring" class="w-full h-full object-cover" width="400" height="300" />
+            <LazyImage src="/images/industries/military.webp" alt="Military base facilities requiring day and night surveillance monitoring" 
+              class="w-full h-full object-cover" width="400" height="300" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
               <h3 class="font-bold text-xl mb-2">Military</h3>
@@ -174,7 +163,8 @@ const schema = JSON.stringify({
           
           <!-- Marinas and Ports -->
           <div class="rounded-lg shadow-lg hover:shadow-xl transition-shadow overflow-hidden relative h-64">
-            <LazyImage src="/images/industries/ports.png" alt="Marina with boats and port cargo requiring remote security monitoring" class="w-full h-full object-cover" width="400" height="300" />
+            <LazyImage src="/images/industries/ports.webp" alt="Marina with boats and port cargo requiring remote security monitoring" 
+              class="w-full h-full object-cover" width="400" height="300" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
               <h3 class="font-bold text-xl mb-2">Marinas & Ports</h3>
@@ -184,7 +174,8 @@ const schema = JSON.stringify({
           
           <!-- Law Enforcement -->
           <div class="rounded-lg shadow-lg hover:shadow-xl transition-shadow overflow-hidden relative h-64">
-            <LazyImage src="/images/industries/law.png" alt="Police vehicle and high-crime area requiring surveillance monitoring" class="w-full h-full object-cover" width="400" height="300" />
+            <LazyImage src="/images/industries/law.webp" alt="Police vehicle and high-crime area requiring surveillance monitoring" 
+              class="w-full h-full object-cover" width="400" height="300" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
               <h3 class="font-bold text-xl mb-2">Law Enforcement</h3>
@@ -194,7 +185,8 @@ const schema = JSON.stringify({
           
           <!-- Property Management -->
           <div class="rounded-lg shadow-lg hover:shadow-xl transition-shadow overflow-hidden relative h-64">
-            <LazyImage src="/images/industries/property.png" alt="Residential property complex requiring tenant and property protection" class="w-full h-full object-cover" width="400" height="300" />
+            <LazyImage src="/images/industries/property.webp" alt="Residential property complex requiring tenant and property protection" 
+              class="w-full h-full object-cover" width="400" height="300" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
               <h3 class="font-bold text-xl mb-2">Property Management</h3>
@@ -204,7 +196,8 @@ const schema = JSON.stringify({
           
           <!-- Cannabis -->
           <div class="rounded-lg shadow-lg hover:shadow-xl transition-shadow overflow-hidden relative h-64">
-            <LazyImage src="/images/industries/cannabis.png" alt="Cannabis facility requiring employee protection and inventory surveillance" class="w-full h-full object-cover" width="400" height="300" />
+            <LazyImage src="/images/industries/cannabis.webp" alt="Cannabis facility requiring employee protection and inventory surveillance" 
+              class="w-full h-full object-cover" width="400" height="300" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
               <h3 class="font-bold text-xl mb-2">Cannabis</h3>
@@ -214,7 +207,8 @@ const schema = JSON.stringify({
           
           <!-- Neighborhood Watch -->
           <div class="rounded-lg shadow-lg hover:shadow-xl transition-shadow overflow-hidden relative h-64">
-            <LazyImage src="/images/industries/watch.png" alt="Residential neighborhood requiring activity monitoring and security" class="w-full h-full object-cover" width="400" height="300" />
+            <LazyImage src="/images/industries/watch.webp" alt="Residential neighborhood requiring activity monitoring and security" 
+              class="w-full h-full object-cover" width="400" height="300" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
               <h3 class="font-bold text-xl mb-2">Neighborhood Watch</h3>
@@ -224,7 +218,8 @@ const schema = JSON.stringify({
           
           <!-- Oil, Gas & Utilities -->
           <div class="rounded-lg shadow-lg hover:shadow-xl transition-shadow overflow-hidden relative h-64">
-            <LazyImage src="/images/industries/utilities.png" alt="Oil and gas infrastructure requiring weatherproof surveillance protection" class="w-full h-full object-cover" width="400" height="300" />
+            <LazyImage src="/images/industries/utilities.webp" alt="Oil and gas infrastructure requiring weatherproof surveillance protection" 
+              class="w-full h-full object-cover" width="400" height="300" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
               <h3 class="font-bold text-xl mb-2">Oil, Gas & Utilities</h3>
