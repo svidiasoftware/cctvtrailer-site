@@ -1,0 +1,172 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.cctvtrailer.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Site Map"
+    }
+  ]
+});
+---
+
+<Layout
+  title="Site Map | All CCTV Trailer Security Services & Locations"
+  description="Site map: Find all CCTV Trailer services, locations, pricing. Mobile surveillance rentals across Tacoma, Seattle, Pacific Northwest. Quick navigation."
+  schema={breadcrumbSchema}>
+  <Header showEmergencyBar={false} currentPath="/sitemap" />
+
+  <main class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h1 class="text-4xl font-bold text-center mb-4">Complete Site Map</h1>
+      <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+        Navigate all our mobile security services, locations, and resources. Find exactly what you need for your surveillance and protection requirements.
+      </p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Main Pages Section -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h2 class="text-xl font-bold mb-4 text-blue-900 border-b pb-2">🏠 Main Pages</h2>
+          <ul class="space-y-2">
+            <li><a href="/" class="text-blue-600 hover:text-blue-800 hover:underline">Home - Mobile Surveillance Rentals</a></li>
+            <li><a href="/services" class="text-blue-600 hover:text-blue-800 hover:underline">All Services & Rental Options</a></li>
+            <li><a href="/pricing" class="text-blue-600 hover:text-blue-800 hover:underline">Pricing & Packages</a></li>
+            <li><a href="/about" class="text-blue-600 hover:text-blue-800 hover:underline">About CCTV Trailer</a></li>
+            <li><a href="/contact" class="text-blue-600 hover:text-blue-800 hover:underline">Contact & Get Quote</a></li>
+            <li><a href="/faq" class="text-blue-600 hover:text-blue-800 hover:underline">Frequently Asked Questions</a></li>
+          </ul>
+        </div>
+
+        <!-- Security Solutions Section -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h2 class="text-xl font-bold mb-4 text-green-900 border-b pb-2">🛡️ Security Solutions</h2>
+          <ul class="space-y-2">
+            <li><a href="/construction-security" class="text-blue-600 hover:text-blue-800 hover:underline">Construction Site Security</a></li>
+            <li><a href="/event-security" class="text-blue-600 hover:text-blue-800 hover:underline">Event & Festival Security</a></li>
+            <li><a href="/emergency-surveillance" class="text-blue-600 hover:text-blue-800 hover:underline">Emergency Surveillance Response</a></li>
+          </ul>
+          <p class="text-sm text-gray-500 mt-4 pt-4 border-t">
+            Specialized security solutions for construction sites, public events, and emergency situations with 24/7 monitoring.
+          </p>
+        </div>
+
+        <!-- Technology Section -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h2 class="text-xl font-bold mb-4 text-purple-900 border-b pb-2">💻 Technology & Specs</h2>
+          <ul class="space-y-2">
+            <li><a href="/trailer-technology" class="text-blue-600 hover:text-blue-800 hover:underline">Trailer Technology Features</a></li>
+            <li><a href="/video-technology" class="text-blue-600 hover:text-blue-800 hover:underline">S-VIDIA Video Technology</a></li>
+            <li><a href="/technical-specifications" class="text-blue-600 hover:text-blue-800 hover:underline">Technical Specifications</a></li>
+          </ul>
+          <p class="text-sm text-gray-500 mt-4 pt-4 border-t">
+            Advanced surveillance technology with military-grade encryption and AI-powered threat detection.
+          </p>
+        </div>
+
+        <!-- Service Areas - Tacoma/Pierce County -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h2 class="text-xl font-bold mb-4 text-red-900 border-b pb-2">📍 Pierce County Areas</h2>
+          <ul class="space-y-2">
+            <li><a href="/tacoma-security-trailer" class="text-blue-600 hover:text-blue-800 hover:underline">Tacoma Security Trailers</a></li>
+            <li><a href="/puyallup-fairgrounds-security" class="text-blue-600 hover:text-blue-800 hover:underline">Puyallup & Fairgrounds Security</a></li>
+            <li><a href="/lakewood-jblm-security" class="text-blue-600 hover:text-blue-800 hover:underline">Lakewood & JBLM Area</a></li>
+          </ul>
+          <p class="text-sm text-gray-500 mt-4 pt-4 border-t">
+            Headquarters in Tacoma with 1-hour response time throughout Pierce County.
+          </p>
+        </div>
+
+        <!-- Service Areas - King County -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h2 class="text-xl font-bold mb-4 text-red-900 border-b pb-2">📍 King County Areas</h2>
+          <ul class="space-y-2">
+            <li><a href="/seattle-surveillance-rental" class="text-blue-600 hover:text-blue-800 hover:underline">Seattle Surveillance Rental</a></li>
+            <li><a href="/kent-security-rental" class="text-blue-600 hover:text-blue-800 hover:underline">Kent Valley Security</a></li>
+            <li><a href="/federal-way-surveillance" class="text-blue-600 hover:text-blue-800 hover:underline">Federal Way Surveillance</a></li>
+            <li><a href="/auburn-manufacturing-security" class="text-blue-600 hover:text-blue-800 hover:underline">Auburn Manufacturing District</a></li>
+          </ul>
+          <p class="text-sm text-gray-500 mt-4 pt-4 border-t">
+            2-hour deployment to Seattle and surrounding King County locations.
+          </p>
+        </div>
+
+        <!-- Service Areas - Other Counties -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h2 class="text-xl font-bold mb-4 text-red-900 border-b pb-2">📍 Regional Coverage</h2>
+          <ul class="space-y-2">
+            <li><a href="/olympia-mobile-cctv" class="text-blue-600 hover:text-blue-800 hover:underline">Olympia & Thurston County</a></li>
+            <li><a href="/bremerton-naval-security" class="text-blue-600 hover:text-blue-800 hover:underline">Bremerton & Kitsap County</a></li>
+          </ul>
+          <p class="text-sm text-gray-500 mt-4 pt-4 border-t">
+            Extended coverage throughout the Puget Sound region including state capital and naval facilities.
+          </p>
+        </div>
+
+        <!-- Blog Section -->
+        <div class="bg-white rounded-lg shadow-lg p-6 lg:col-span-2">
+          <h2 class="text-xl font-bold mb-4 text-orange-900 border-b pb-2">📚 Security Resources & Blog</h2>
+          <ul class="space-y-2">
+            <li><a href="/blog" class="text-blue-600 hover:text-blue-800 hover:underline font-semibold">Blog Home - Latest Security News</a></li>
+            <li class="ml-4"><a href="/blog/preventing-theft-construction-sites" class="text-blue-600 hover:text-blue-800 hover:underline">Preventing Theft at Construction Sites: Complete Guide</a></li>
+            <li class="ml-4"><a href="/blog/how-much-cost-rent-security-trailer" class="text-blue-600 hover:text-blue-800 hover:underline">How Much Does It Cost to Rent a Security Trailer?</a></li>
+            <li class="ml-4"><a href="/blog/construction-site-security-mobile-vs-fixed" class="text-blue-600 hover:text-blue-800 hover:underline">Construction Security: Mobile vs Fixed Cameras</a></li>
+            <li class="ml-4"><a href="/blog/advanced-video-surveillance-technology-svidia" class="text-blue-600 hover:text-blue-800 hover:underline">Advanced Video Surveillance Technology: S-VIDIA</a></li>
+          </ul>
+          <p class="text-sm text-gray-500 mt-4 pt-4 border-t">
+            Expert insights on construction site security, theft prevention, and surveillance technology trends.
+          </p>
+        </div>
+
+        <!-- Legal/Footer Section -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h2 class="text-xl font-bold mb-4 text-gray-700 border-b pb-2">ℹ️ Additional Information</h2>
+          <ul class="space-y-2">
+            <li><a href="/privacy-policy" class="text-blue-600 hover:text-blue-800 hover:underline">Privacy Policy</a></li>
+            <li><a href="/contact-success" class="text-blue-600 hover:text-blue-800 hover:underline">Contact Success Page</a></li>
+          </ul>
+          <div class="mt-6 pt-4 border-t">
+            <p class="text-sm font-semibold text-gray-700 mb-2">Quick Contact:</p>
+            <a href="tel:2536832288" class="text-green-600 hover:text-green-700 font-bold">📞 (253) 683-2288</a>
+            <p class="text-sm text-gray-600 mt-1">24/7 Emergency Response</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom CTA Section -->
+      <div class="mt-12 bg-blue-900 text-white rounded-lg p-8 text-center">
+        <h2 class="text-2xl font-bold mb-4">Need Security Solutions Now?</h2>
+        <p class="mb-6">Get same-day deployment for your mobile surveillance needs throughout the Pacific Northwest.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="bg-white text-blue-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block">
+            Get Free Quote
+          </a>
+          <a href="tel:2536832288" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
+            📞 Call Now: (253) 683-2288
+          </a>
+        </div>
+      </div>
+
+      <!-- Schema Note -->
+      <div class="mt-8 text-center text-sm text-gray-500">
+        <p>Last Updated: January 2025 | <a href="/sitemap.xml" class="text-blue-600 hover:underline">XML Sitemap</a></p>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
