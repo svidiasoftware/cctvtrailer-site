@@ -5,6 +5,8 @@ import Footer from '../components/Footer.astro';
 import CTASection from '../components/CTASection.astro';
 import QuoteForm from '../components/QuoteForm.astro';
 import Analytics from '../components/Analytics.astro';
+import QuickAnswer from '../components/QuickAnswer.astro';
+import StatBox from '../components/StatBox.astro';
 
 const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -110,6 +112,67 @@ const schema = JSON.stringify({
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Quick Answer Box for Emergency -->
+    <section class="py-8 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <QuickAnswer
+          what="Rapid-deployment surveillance trailers for emergency and crisis situations"
+          cost="Premium rates apply - Call for immediate quote"
+          time="2-4 hour response time, 20-minute setup on arrival"
+          coverage="Entire Puget Sound region, priority dispatch"
+          availability="24/7/365 emergency hotline, dedicated response team"
+          customFields={[
+            { label: "Response", value: "2-hour guarantee within 30 miles" },
+            { label: "Priority", value: "Emergency calls take precedence" }
+          ]}
+          includes={[
+            "Immediate deployment",
+            "Generator power included",
+            "Temporary lighting",
+            "Direct support line",
+            "Flexible rental terms",
+            "No contract required"
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Emergency Response Statistics -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <StatBox
+          title="Emergency Response Capability"
+          layout="compact"
+          stats={[
+            {
+              value: "2 HR",
+              label: "Response Time",
+              icon: "⚡",
+              highlight: true
+            },
+            {
+              value: "24/7",
+              label: "Availability",
+              icon: "🚨",
+              highlight: false
+            },
+            {
+              value: "100%",
+              label: "Deploy Success",
+              icon: "✅",
+              highlight: true
+            },
+            {
+              value: "365",
+              label: "Days Ready",
+              icon: "📅",
+              highlight: false
+            }
+          ]}
+        />
       </div>
     </section>
 
@@ -421,11 +484,12 @@ const schema = JSON.stringify({
     <section class="py-16">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12">Trusted Emergency Response Partner</h2>
-        <div class="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto text-center">
+        <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto text-center">
+        <!-- <div class="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto text-center">
           <div>
             <div class="text-4xl font-bold text-red-600 mb-2">100+</div>
             <p class="text-gray-600">Emergency Deployments</p>
-          </div>
+          </div> -->
           <div>
             <div class="text-4xl font-bold text-red-600 mb-2">2.5hr</div>
             <p class="text-gray-600">Average Response Time</p>
@@ -440,12 +504,12 @@ const schema = JSON.stringify({
           </div>
         </div>
         
-        <div class="mt-12 max-w-3xl mx-auto">
+        <!-- <div class="mt-12 max-w-3xl mx-auto">
           <div class="bg-gray-100 rounded-lg p-6">
             <p class="text-center text-gray-700 italic">"When our warehouse was broken into on a Friday night, CCTV Trailer had surveillance up and running by midnight. The thieves came back Saturday but fled when they saw the trailer. Saved us thousands in additional losses."</p>
             <p class="text-center font-bold mt-4">- Mike R., Tacoma Business Owner</p>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
 

@@ -4,6 +4,9 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTASection from '../components/CTASection.astro';
 import LazyImage from '../components/LazyImage.astro';
+import QuickAnswer from '../components/QuickAnswer.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import StatBox from '../components/StatBox.astro';
 
 const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -150,6 +153,62 @@ const schema = JSON.stringify({
       </div>
     </section>
 
+    <!-- Quick Answer Box -->
+    <section class="py-8 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <QuickAnswer
+          what="Complete mobile surveillance solutions for any security need"
+          cost="Daily: $499-999 | Weekly: $3,500-4,000 | Monthly: $8,000-10,000"
+          time="20-30 minute setup, same-day emergency deployment available"
+          coverage="Tacoma, Seattle, Olympia, Federal Way - entire Puget Sound region"
+          availability="24/7 emergency response, multiple trailers in fleet"
+          customFields={[
+            { label: "Services", value: "Construction, Events, Emergency, Parking, Industrial" },
+            { label: "Technology", value: "S-VIDIA compression, Solar power, PTZ cameras" }
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <StatBox
+          title="Proven Security Results"
+          description="Real impact from 15+ years protecting Pacific Northwest sites"
+          layout="grid"
+          stats={[
+            {
+              value: "95%",
+              label: "Theft Reduction",
+              icon: "🛡️",
+              highlight: true,
+              source: { text: "Client reporting data 2023" }
+            },
+            {
+              value: "500+",
+              label: "Sites Protected",
+              icon: "🏗️",
+              highlight: false
+            },
+            {
+              value: "24/7",
+              label: "Monitoring",
+              icon: "👁️",
+              highlight: false
+            },
+            {
+              value: "$50K+",
+              label: "Avg. Loss Prevention",
+              icon: "💰",
+              highlight: true,
+              source: { text: "Per site average" }
+            }
+          ]}
+        />
+      </div>
+    </section>
+
     <!-- Services Section -->
     <section class="py-16">
       <div class="container mx-auto px-4">
@@ -239,6 +298,99 @@ const schema = JSON.stringify({
             </a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Service Comparison Table -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <ComparisonTable
+          title="Choose the Right Security Solution"
+          description="Compare our service options to find the perfect fit for your security needs"
+          headers={["Short-Term Rental", "Long-Term Rental", "Emergency Response"]}
+          rows={[
+            {
+              feature: "Best For",
+              values: [
+                "Events, Festivals, Weekend Projects",
+                "Construction Sites, Ongoing Projects",
+                "Urgent Situations, Disasters"
+              ]
+            },
+            {
+              feature: "Rental Period",
+              values: [
+                "1-7 days",
+                "1 month+",
+                "As needed"
+              ]
+            },
+            {
+              feature: "Pricing",
+              values: [
+                "$499-999/day",
+                { text: "$8,000/month", highlight: true },
+                "Premium rates"
+              ]
+            },
+            {
+              feature: "Setup Time",
+              values: [
+                "Same/Next day",
+                "Scheduled delivery",
+                { text: "2 hours", highlight: true }
+              ]
+            },
+            {
+              feature: "Contract Required",
+              values: [
+                "Simple agreement",
+                "Monthly contract",
+                "Emergency terms"
+              ]
+            },
+            {
+              feature: "Monitoring",
+              values: [
+                "Self or optional pro",
+                { text: "Included options", highlight: true },
+                "Priority support"
+              ]
+            },
+            {
+              feature: "Relocation",
+              values: [
+                "Limited",
+                { text: "Unlimited", highlight: true },
+                "As needed"
+              ]
+            },
+            {
+              feature: "Support",
+              values: [
+                "Business hours",
+                { text: "24/7 included", highlight: true },
+                "Dedicated team"
+              ]
+            },
+            {
+              feature: "Discounts",
+              values: [
+                "3+ days save 10%",
+                { text: "Up to 30% off", highlight: true },
+                "Case-by-case"
+              ]
+            },
+            {
+              feature: "Ideal Use Case",
+              values: [
+                "Temporary needs",
+                { text: "Maximum value", highlight: true },
+                "Critical response"
+              ]
+            }
+          ]}
+        />
       </div>
     </section>
 

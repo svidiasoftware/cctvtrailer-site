@@ -6,6 +6,9 @@ import CTASection from '../components/CTASection.astro';
 import Analytics from '../components/Analytics.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
 import LazyImage from '../components/LazyImage.astro';
+import QuickAnswer from '../components/QuickAnswer.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import StatBox from '../components/StatBox.astro';
 
 
 const schema = JSON.stringify({
@@ -153,6 +156,61 @@ const breadcrumbItems = [
             </a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Quick Answer Box for Pricing -->
+    <section class="py-8 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <QuickAnswer
+          what="Transparent pricing for mobile surveillance trailer rentals"
+          cost="$499-999/day | $3,500-4,000/week | $8,000-10,000/month"
+          time="Same-day delivery available, 20-30 minute setup"
+          coverage="Free delivery within 30 miles of Tacoma"
+          availability="Multiple units in fleet, volume discounts available"
+          customFields={[
+            { label: "No Hidden Fees", value: "Setup, delivery, pickup included" },
+            { label: "Flexible Terms", value: "Daily, weekly, monthly options" }
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Value Proposition Statistics -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <StatBox
+          title="Why Our Pricing Makes Sense"
+          description="Compare the value against alternatives"
+          layout="grid"
+          stats={[
+            {
+              value: "$0",
+              label: "Setup Fees",
+              icon: "✅",
+              highlight: true
+            },
+            {
+              value: "75%",
+              label: "Less Than Guards",
+              icon: "💰",
+              highlight: true,
+              source: { text: "vs 24/7 security guards" }
+            },
+            {
+              value: "100%",
+              label: "Price Transparency",
+              icon: "📊",
+              highlight: false
+            },
+            {
+              value: "30%",
+              label: "Multi-Unit Discount",
+              icon: "🎯",
+              highlight: true
+            }
+          ]}
+        />
       </div>
     </section>
 
@@ -334,6 +392,99 @@ const breadcrumbItems = [
             </p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Pricing Comparison Table -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <ComparisonTable
+          title="Security Options Cost Comparison"
+          description="See how mobile surveillance trailers compare to other security solutions"
+          headers={["Mobile Trailers", "Security Guards", "Fixed Cameras"]}
+          rows={[
+            {
+              feature: "Monthly Cost",
+              values: [
+                { text: "$8,000-10,000", highlight: true },
+                "$15,000-20,000",
+                "$500 + $5,000 install"
+              ]
+            },
+            {
+              feature: "Setup Time",
+              values: [
+                { text: "30 minutes", highlight: true },
+                "Immediate",
+                "2-5 days"
+              ]
+            },
+            {
+              feature: "24/7 Coverage",
+              values: [
+                { text: "Yes, always", highlight: true },
+                "Shifts/breaks",
+                "Yes"
+              ]
+            },
+            {
+              feature: "Video Evidence",
+              values: [
+                { text: "HD recorded", highlight: true },
+                "No",
+                "HD recorded"
+              ]
+            },
+            {
+              feature: "Relocatable",
+              values: [
+                { text: "Yes, easily", highlight: true },
+                "Yes",
+                "No"
+              ]
+            },
+            {
+              feature: "Weather Impact",
+              values: [
+                { text: "None", highlight: true },
+                "Reduced coverage",
+                "None"
+              ]
+            },
+            {
+              feature: "Deterrent Effect",
+              values: [
+                { text: "Very high", highlight: true },
+                "High",
+                "Medium"
+              ]
+            },
+            {
+              feature: "Maintenance",
+              values: [
+                { text: "Included", highlight: true },
+                "N/A",
+                "Your responsibility"
+              ]
+            },
+            {
+              feature: "Contract Required",
+              values: [
+                { text: "No", highlight: true },
+                "Usually",
+                "Yes"
+              ]
+            },
+            {
+              feature: "ROI",
+              values: [
+                { text: "Immediate", highlight: true },
+                "Variable",
+                "12-18 months"
+              ]
+            }
+          ]}
+        />
       </div>
     </section>
 
