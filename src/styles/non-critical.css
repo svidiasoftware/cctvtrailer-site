@@ -1,0 +1,729 @@
+/* Non-critical CSS - Below-the-fold styles */
+
+/* Trailer Features Section */
+.section-trailer-features {
+  padding: 80px 32px;
+  background-color: #fff;
+}
+
+.features-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.features-left,
+.features-right {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.feature-block {
+  text-align: left;
+}
+
+.feature-heading-main {
+  font-size: 40px;
+  font-weight: 600;
+  color: #141414;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.feature-heading {
+  font-size: 24px;
+  font-weight: 600;
+  color: #141414;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.feature-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+}
+
+.trailer-image-container {
+  position: relative;
+  width: 400px;
+  height: 600px;
+}
+
+.trailer-image {
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/trailer-cutout.webp');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* About Trailers Section */
+.about-trailers-section {
+  padding: 80px 32px;
+  background-color: #f8f8f8;
+}
+
+.about-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-heading {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #141414;
+  text-transform: uppercase;
+}
+
+.about-heading .highlight {
+  color: #141414;
+}
+
+.about-image {
+  text-align: center;
+}
+
+.trailer-photo {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.video-tech-box {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.svidia-logo-small {
+  width: 80px;
+  height: 80px;
+  background-image: url('/images/svidia-logo.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 20px;
+}
+
+.video-tech-heading {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #141414;
+}
+
+.video-tech-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.learn-more-button {
+  display: inline-block;
+  padding: 10px 24px;
+  background-color: transparent;
+  border: 2px solid #141414;
+  color: #141414;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: all 0.3s;
+  background-image: url('/images/red-arrow.svg');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 14px;
+  padding-right: 40px;
+}
+
+.learn-more-button:hover {
+  background-color: #141414;
+  color: white;
+}
+
+/* Video Technology Section */
+.section-videotec-svidia {
+  background-color: #141414;
+  background-image: url('/images/dots-pattern.svg');
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-size: 15px;
+  background-position: center;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.svidia-wrapper-dark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 80px 32px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.heading-2.white {
+  color: white;
+}
+
+.heading-2.center {
+  text-align: center;
+}
+
+.body-white {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #fff;
+  margin-bottom: 32px;
+  max-width: 600px;
+}
+
+.body-white.centered {
+  text-align: center;
+}
+
+.red-button {
+  display: inline-block;
+  background-color: #dc2626;
+  color: white;
+  padding: 12px 32px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+  background-image: url('/images/arrow-icon.svg');
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+  padding-right: 48px;
+}
+
+.red-button:hover {
+  background-color: #b91c1c;
+}
+
+/* Audio & Remote Section */
+.section-audio-remote {
+  padding: 40px 32px;
+  background-color: #fff;
+}
+
+.audio-remote-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container-image-text {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 80px;
+}
+
+.container-image-text.reverse {
+  flex-direction: row-reverse;
+}
+
+.audio-image {
+  width: 500px;
+  height: 400px;
+  background-image: url('/images/audio-capabilities.webp');
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.remote-image {
+  width: 500px;
+  height: 400px;
+  background-image: url('/images/remote-transmitting.webp');
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.content-container {
+  flex: 1;
+}
+
+.section-heading {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #141414;
+  text-transform: uppercase;
+}
+
+.section-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* Features and Benefits Section */
+.features-benefits-section {
+  padding: 80px 32px;
+  background-color: #f8f8f8;
+}
+
+.features-benefits-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #141414;
+  text-transform: uppercase;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.feature-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card-image {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.feature-card-image.generator {
+  background-image: url('/images/backup-generator.webp');
+}
+
+.feature-card-image.computer {
+  background-image: url('/images/onboard-computer.webp');
+}
+
+.feature-card-image.storage {
+  background-image: url('/images/video-storage.webp');
+}
+
+.feature-card-image.radar {
+  background-image: url('/images/radar-feature.webp');
+}
+
+.feature-card-image.floodlights {
+  background-image: url('/images/floodlights.webp');
+}
+
+.feature-card-image.license {
+  background-image: url('/images/license-plate.webp');
+}
+
+.feature-card-content {
+  padding: 24px;
+}
+
+.feature-card-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #141414;
+  text-transform: uppercase;
+}
+
+.feature-card-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* CTA Section */
+.section-wrapper-cta {
+  background-color: #1a202c;
+  background-image: url('/images/dots-pattern.svg');
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-size: 15px;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Contact Section */
+.section-wrapper-contact {
+  background-color: #ebebeb;
+  background-repeat: no-repeat;
+  background-position: 50% 101%;
+  background-size: 105%;
+  min-height: 652px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.content-container-contact {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 32px;
+}
+
+.content-wrapper-contact {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  padding: 80px 0;
+}
+
+.left-side-contact {
+  flex: 1;
+}
+
+.heading-1 {
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: #141414;
+  margin-bottom: 24px;
+}
+
+.text-span-yellow {
+  color: #fbbf24;
+}
+
+.body-black-copy {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 32px;
+  max-width: 450px;
+}
+
+.clear-outline-button {
+  display: inline-block;
+  background-color: transparent;
+  color: #141414;
+  border: 2px solid #141414;
+  padding: 12px 32px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  background-image: url('/images/red-arrow.svg');
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+  padding-right: 48px;
+}
+
+.clear-outline-button:hover {
+  background-color: #141414;
+  color: white;
+}
+
+.contact-image {
+  width: 452px;
+  height: 500px;
+  background-image: url('/images/contact-image.webp');
+  background-size: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* S-VIDIA Section */
+.section-whats-vidia {
+  padding: 64px 32px 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.svidia-wrapper {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.square-image-div {
+  width: 600px;
+  height: 600px;
+  background-image: url('/images/svidia-image1.webp');
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.square-image-block {
+  width: 642px;
+  height: 400px;
+  background-image: url('/images/secure-streaming.webp');
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.column-content-container {
+  flex: 1;
+}
+
+.heading-2 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #141414;
+}
+
+.body-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+/* Three Features Section */
+.section-three-divs {
+  background-color: #ebebeb;
+  padding: 32px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 749px;
+}
+
+.streaming-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 32px;
+  margin: 0 auto;
+}
+
+.features-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 80px 0;
+}
+
+.feature-item {
+  text-align: center;
+}
+
+.features-image {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.features-image.compression {
+  background-image: url('/images/compression-feature.webp');
+}
+
+.features-image.noise {
+  background-image: url('/images/noise-feature.webp');
+}
+
+.features-image.internal {
+  background-image: url('/images/internal-feature.webp');
+}
+
+.heading-3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #141414;
+}
+
+.body-black {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* Responsive styles for non-critical elements */
+@media (max-width: 991px) {
+  .features-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .trailer-image-container {
+    margin: 40px auto;
+  }
+
+  .about-wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .container-image-text,
+  .container-image-text.reverse {
+    flex-direction: column;
+  }
+
+  .audio-image,
+  .remote-image {
+    width: 100%;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .content-wrapper-contact {
+    flex-direction: column;
+  }
+
+  .contact-image {
+    width: 100%;
+    height: 400px;
+  }
+}
+
+@media (max-width: 767px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .feature-heading-main {
+    font-size: 28px;
+  }
+
+  .trailer-image-container {
+    width: 300px;
+    height: 450px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-trailer-features {
+    padding: 40px 16px;
+  }
+
+  .features-wrapper {
+    gap: 30px;
+  }
+
+  .feature-heading {
+    font-size: 18px;
+  }
+
+  .feature-text {
+    font-size: 14px;
+  }
+
+  .about-trailers-section {
+    padding: 40px 16px;
+  }
+
+  .about-heading {
+    font-size: 24px;
+  }
+
+  .video-tech-box {
+    padding: 20px;
+  }
+
+  .section-audio-remote {
+    padding: 40px 16px;
+  }
+
+  .container-image-text {
+    margin-bottom: 40px;
+    gap: 20px;
+  }
+
+  .audio-image,
+  .remote-image {
+    height: 250px;
+  }
+
+  .section-heading {
+    font-size: 20px;
+  }
+
+  .section-text {
+    font-size: 14px;
+  }
+
+  .features-benefits-section {
+    padding: 40px 16px;
+  }
+
+  .features-grid {
+    gap: 20px;
+  }
+
+  .feature-card-image {
+    height: 150px;
+  }
+
+  .feature-card-content {
+    padding: 16px;
+  }
+
+  .feature-card-title {
+    font-size: 16px;
+  }
+
+  .feature-card-text {
+    font-size: 13px;
+  }
+
+  .content-wrapper-contact {
+    padding: 40px 0;
+  }
+
+  .body-black-copy {
+    font-size: 16px;
+  }
+
+  .contact-image {
+    height: 300px;
+  }
+}

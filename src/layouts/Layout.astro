@@ -1,5 +1,7 @@
 ---
-import '../styles/global.css';
+import '../styles/critical.css';
+import '../styles/non-critical.css';
+// import '../styles/global.css';
 import Analytics from '../components/Analytics.astro';
 import OptimizedScripts from '../components/OptimizedScripts.astro';
 
@@ -59,7 +61,7 @@ const ogImageURL = new URL('/images/cctv-trailer-hero.webp', siteURL).href;
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:site" content="@cctvtrailer" />
     <meta property="twitter:creator" content="@cctvtrailer" />
-    
+
     <!-- Defer Google Tag Manager to improve initial load -->
     
     {schema && (

@@ -10,12 +10,12 @@ export default defineConfig({
   // Ensure static output for best SEO
   output: 'static',
   
-  // Build configuration for SEO optimization
+  // Build configuration for performance optimization
   build: {
     // Generate sitemap automatically
     format: 'directory',
-    // Inline critical CSS for faster rendering
-    inlineStylesheets: 'always'
+    // Don't inline all styles - load CSS asynchronously
+    inlineStylesheets: 'never'
   },
   
   // Compression for better performance
@@ -28,6 +28,6 @@ export default defineConfig({
       cssCodeSplit: true,
       // Minify for better performance (using default esbuild)
       minify: true
-    }
+    }  
   }
 });

@@ -3,21 +3,24 @@
 ---
 
 <script is:inline>
-  // Progressive enhancement - only runs if JS is available
-  // Does not block page rendering or affect SEO
+  // Defer analytics initialization until user interaction or idle
   if (typeof window !== 'undefined') {
+    let analyticsInitialized = false;
+
     // Function to initialize analytics when gtag is ready
     function initializeAnalytics() {
+      if (analyticsInitialized) return;
+      analyticsInitialized = true;
+
       // Debug logging in development
       const isDev = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-      // const isDev = true;
-      
+
       function log(message, data) {
         if (isDev) {
           console.log(`[Analytics] ${message}`, data || '');
         }
       }
-      
+
       log('Initializing analytics tracking');
       
       // Track phone number clicks
@@ -210,23 +213,55 @@
       log('Analytics initialization complete');
     }
     
-    // Wait for dataLayer to be available before initializing
-    function waitForDataLayer() {
-      if (typeof window.dataLayer !== 'undefined') {
-        // dataLayer is ready, initialize analytics
-        initializeAnalytics();
+    // Defer analytics initialization to improve performance
+    function deferAnalytics() {
+      // Initialize on first user interaction
+      const initOnInteraction = () => {
+        if (!analyticsInitialized) {
+          if (typeof window.dataLayer !== 'undefined') {
+            initializeAnalytics();
+          } else {
+            // Wait for dataLayer then initialize
+            setTimeout(() => {
+              if (typeof window.dataLayer !== 'undefined') {
+                initializeAnalytics();
+              }
+            }, 500);
+          }
+        }
+        // Remove listeners after initialization
+        ['scroll', 'touchstart', 'mousemove', 'keydown'].forEach(event => {
+          document.removeEventListener(event, initOnInteraction, { once: true });
+        });
+      };
+
+      // Use requestIdleCallback if available, otherwise use timeout
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => {
+          if (typeof window.dataLayer !== 'undefined') {
+            initializeAnalytics();
+          }
+        }, { timeout: 2000 });
       } else {
-        // Check again in 100ms
-        setTimeout(waitForDataLayer, 100);
+        // Fallback: Initialize after 2 seconds
+        setTimeout(() => {
+          if (typeof window.dataLayer !== 'undefined') {
+            initializeAnalytics();
+          }
+        }, 2000);
       }
+
+      // Also initialize on first user interaction
+      ['scroll', 'touchstart', 'mousemove', 'keydown'].forEach(event => {
+        document.addEventListener(event, initOnInteraction, { once: true });
+      });
     }
-    
+
     // Start when DOM is ready
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', waitForDataLayer);
+      document.addEventListener('DOMContentLoaded', deferAnalytics);
     } else {
-      // DOM is already loaded
-      waitForDataLayer();
+      deferAnalytics();
     }
   }
 </script>
