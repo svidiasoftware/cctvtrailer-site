@@ -4,6 +4,9 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import QuoteForm from '../components/QuoteForm.astro';
 import LazyImage from '../components/LazyImage.astro';
+import ReviewSchema from '../components/ReviewSchema.astro';
+import QuickAnswer from '../components/QuickAnswer.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
@@ -34,6 +37,41 @@ const schema = JSON.stringify({
   "openingHours": "Mo-Fr 08:00-18:00",
   "priceRange": "$$"
 });
+
+// Review data for schema
+const reviewData = {
+  reviews: [
+    {
+      author: "Mike Richardson",
+      authorTitle: "Project Manager, Turner Construction",
+      rating: 5,
+      reviewBody: "CCTV Trailer saved our construction site from major theft. Within days of installation, we caught vandals on camera and prevented thousands in losses. The setup was incredibly quick - they had us running in under 30 minutes.",
+      datePublished: "2024-11-15"
+    },
+    {
+      author: "Sarah Chen",
+      authorTitle: "Event Coordinator, Sound Events NW",
+      rating: 5,
+      reviewBody: "We needed emergency security for our outdoor festival in Pierce County. CCTV Trailer delivered and set up within 2 hours of our call. The video quality was crystal clear, even at night. Highly recommend!",
+      datePublished: "2024-10-22"
+    },
+    {
+      author: "Tom Williams",
+      authorTitle: "Operations Director, Puget Logistics",
+      rating: 5,
+      reviewBody: "After copper theft hit our warehouse, we rented a trailer from CCTV. Zero incidents since. The S-VIDIA technology is impressive - we can monitor everything remotely. Much more cost-effective than hiring guards.",
+      datePublished: "2024-09-30"
+    }
+  ],
+  aggregateRating: {
+    ratingValue: 4.9,
+    reviewCount: 127
+  },
+  itemReviewed: {
+    name: "CCTV Trailer Mobile Surveillance Services",
+    type: "LocalBusiness"
+  }
+};
 ---
 
 <Layout 
@@ -63,6 +101,26 @@ const schema = JSON.stringify({
             </a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Quick Answer Box for AI/Search -->
+    <section class="py-8 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <QuickAnswer
+          what="Mobile surveillance trailer rentals with 24/7 monitoring"
+          cost="$499-999/day, $3,500/week, $8,000/month"
+          time="20-30 minute setup, same-day delivery"
+          coverage="Tacoma, Seattle, Olympia, Federal Way, entire Puget Sound"
+          availability="24/7 emergency response, 2 trailers always ready"
+          includes={[
+            "Professional delivery and setup",
+            "Equipment training",
+            "24/7 technical support",
+            "Solar power/generator included",
+            "Remote viewing access"
+          ]}
+        />
       </div>
     </section>
 
@@ -328,6 +386,9 @@ const schema = JSON.stringify({
             </a>
           </div>
         </div> -->
+
+        <!-- Add Review Schema for SEO -->
+        <ReviewSchema {...reviewData} />
       </div>
     </section>
 

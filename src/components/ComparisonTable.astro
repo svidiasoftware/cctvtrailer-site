@@ -1,0 +1,120 @@
+---
+export interface ComparisonTableProps {
+  title?: string;
+  description?: string;
+  headers: string[];
+  rows: Array<{
+    feature: string;
+    values: (string | { text: string; highlight?: boolean })[];
+  }>;
+  className?: string;
+  schema?: boolean;
+}
+
+const {
+  title,
+  description,
+  headers,
+  rows,
+  className = "",
+  schema = true
+} = Astro.props as ComparisonTableProps;
+
+// Generate schema for comparison table (helps AI understand the comparison)
+const comparisonSchema = schema ? {
+  "@context": "https://schema.org",
+  "@type": "Table",
+  "about": title || "Comparison",
+  ...(description && { "description": description }),
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": rows.length,
+    "itemListElement": rows.map((row, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": row.feature,
+      "description": row.values.map((val, i) =>
+        `${headers[i]}: ${typeof val === 'string' ? val : val.text}`
+      ).join(', ')
+    }))
+  }
+} : null;
+---
+
+<div class={`comparison-table-wrapper ${className}`}>
+  {title && <h3 class="text-2xl font-bold mb-4">{title}</h3>}
+  {description && <p class="text-gray-600 mb-6">{description}</p>}
+
+  <div class="overflow-x-auto">
+    <table class="w-full border-collapse bg-white shadow-lg rounded-lg overflow-hidden">
+      <thead>
+        <tr class="bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+          <th class="px-6 py-4 text-left font-semibold">Feature</th>
+          {headers.map(header => (
+            <th class="px-6 py-4 text-center font-semibold">{header}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((row, rowIndex) => (
+          <tr class={rowIndex % 2 === 0 ? "bg-gray-50" : "bg-white"}>
+            <td class="px-6 py-4 font-medium text-gray-900 border-r border-gray-200">
+              {row.feature}
+            </td>
+            {row.values.map((value, colIndex) => {
+              const isHighlighted = typeof value !== 'string' && value.highlight;
+              const text = typeof value === 'string' ? value : value.text;
+              return (
+                <td class={`px-6 py-4 text-center ${isHighlighted ? 'font-semibold text-green-600' : 'text-gray-700'}`}>
+                  {isHighlighted && <span class="inline-block mr-1">✓</span>}
+                  {text}
+                </td>
+              );
+            })}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  {/* Mobile-friendly view */}
+  <div class="md:hidden mt-6 space-y-4">
+    {headers.map((header, headerIndex) => (
+      <div class="bg-white rounded-lg shadow p-4">
+        <h4 class="font-bold text-lg mb-3 text-blue-700">{header}</h4>
+        {rows.map(row => {
+          const value = row.values[headerIndex];
+          const isHighlighted = typeof value !== 'string' && value.highlight;
+          const text = typeof value === 'string' ? value : value.text;
+          return (
+            <div class="flex justify-between py-2 border-b border-gray-200 last:border-0">
+              <span class="font-medium text-gray-700">{row.feature}:</span>
+              <span class={isHighlighted ? 'font-semibold text-green-600' : 'text-gray-900'}>
+                {isHighlighted && <span class="inline-block mr-1">✓</span>}
+                {text}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+    ))}
+  </div>
+</div>
+
+{schema && comparisonSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(comparisonSchema)} />
+)}
+
+<style>
+  @media (max-width: 768px) {
+    .comparison-table-wrapper table {
+      display: none;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .comparison-table-wrapper > div:last-of-type {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,77 @@
+---
+export interface ReviewSchemaProps {
+  reviews?: Array<{
+    author: string;
+    authorTitle?: string;
+    rating: number;
+    reviewBody: string;
+    datePublished?: string;
+  }>;
+  aggregateRating?: {
+    ratingValue: number;
+    reviewCount: number;
+    bestRating?: number;
+  };
+  itemReviewed?: {
+    name: string;
+    description?: string;
+    type?: 'Product' | 'Service' | 'LocalBusiness';
+  };
+}
+
+const {
+  reviews = [],
+  aggregateRating,
+  itemReviewed = {
+    name: "CCTV Trailer Security Services",
+    description: "Mobile surveillance trailer rental services",
+    type: "Service"
+  }
+} = Astro.props as ReviewSchemaProps;
+
+// Generate individual review schemas
+const reviewSchemas = reviews.map(review => ({
+  "@type": "Review",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": review.rating,
+    "bestRating": 5
+  },
+  "author": {
+    "@type": "Person",
+    "name": review.author,
+    ...(review.authorTitle && { "jobTitle": review.authorTitle })
+  },
+  "reviewBody": review.reviewBody,
+  ...(review.datePublished && { "datePublished": review.datePublished })
+}));
+
+// Build the main schema object
+const schemaObject: any = {
+  "@context": "https://schema.org",
+  "@type": itemReviewed.type || "Service",
+  "name": itemReviewed.name,
+  ...(itemReviewed.description && { "description": itemReviewed.description })
+};
+
+// Add individual reviews if provided
+if (reviewSchemas.length > 0) {
+  schemaObject.review = reviewSchemas;
+}
+
+// Add aggregate rating if provided
+if (aggregateRating) {
+  schemaObject.aggregateRating = {
+    "@type": "AggregateRating",
+    "ratingValue": aggregateRating.ratingValue,
+    "reviewCount": aggregateRating.reviewCount,
+    "bestRating": aggregateRating.bestRating || 5
+  };
+}
+
+const schema = JSON.stringify(schemaObject);
+---
+
+{reviews.length > 0 || aggregateRating ? (
+  <script type="application/ld+json" set:html={schema} />
+) : null}

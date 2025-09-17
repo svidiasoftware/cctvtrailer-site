@@ -1,0 +1,145 @@
+---
+export interface QuickAnswerProps {
+  what?: string;
+  cost?: string;
+  time?: string;
+  coverage?: string;
+  availability?: string;
+  includes?: string[];
+  customFields?: Array<{ label: string; value: string }>;
+  className?: string;
+  speakable?: boolean;
+}
+
+const {
+  what,
+  cost,
+  time,
+  coverage,
+  availability,
+  includes = [],
+  customFields = [],
+  className = "",
+  speakable = true
+} = Astro.props as QuickAnswerProps;
+
+// Build structured data for the quick answer
+const quickAnswerData = {
+  what,
+  cost,
+  time,
+  coverage,
+  availability,
+  ...(includes.length > 0 && { includes: includes.join(', ') }),
+  ...Object.fromEntries(customFields.map(field => [field.label.toLowerCase(), field.value]))
+};
+
+const speakableSchema = speakable ? {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".quick-answer-content"]
+  }
+} : null;
+---
+
+<div class={`quick-answer-box bg-gradient-to-br from-blue-50 to-white rounded-xl shadow-lg p-6 mb-8 ${className}`}>
+  <div class="flex items-center mb-4">
+    <svg class="w-6 h-6 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <h3 class="text-xl font-bold text-gray-800">Quick Facts</h3>
+  </div>
+
+  <div class="quick-answer-content grid md:grid-cols-2 gap-4">
+    {what && (
+      <div class="flex items-start">
+        <span class="text-blue-600 mr-2 mt-1">▶</span>
+        <div>
+          <span class="font-semibold text-gray-700">What:</span>
+          <span class="ml-2 text-gray-900">{what}</span>
+        </div>
+      </div>
+    )}
+
+    {cost && (
+      <div class="flex items-start">
+        <span class="text-green-600 mr-2 mt-1">💳</span>
+        <div>
+          <span class="font-semibold text-gray-700">Cost:</span>
+          <span class="ml-2 text-gray-900">{cost}</span>
+        </div>
+      </div>
+    )}
+
+    {time && (
+      <div class="flex items-start">
+        <span class="text-purple-600 mr-2 mt-1">⏱️</span>
+        <div>
+          <span class="font-semibold text-gray-700">Setup Time:</span>
+          <span class="ml-2 text-gray-900">{time}</span>
+        </div>
+      </div>
+    )}
+
+    {coverage && (
+      <div class="flex items-start">
+        <span class="text-orange-600 mr-2 mt-1">📍</span>
+        <div>
+          <span class="font-semibold text-gray-700">Coverage:</span>
+          <span class="ml-2 text-gray-900">{coverage}</span>
+        </div>
+      </div>
+    )}
+
+    {availability && (
+      <div class="flex items-start">
+        <span class="text-red-600 mr-2 mt-1">✅</span>
+        <div>
+          <span class="font-semibold text-gray-700">Availability:</span>
+          <span class="ml-2 text-gray-900">{availability}</span>
+        </div>
+      </div>
+    )}
+
+    {customFields.map(field => (
+      <div class="flex items-start">
+        <span class="text-indigo-600 mr-2 mt-1">•</span>
+        <div>
+          <span class="font-semibold text-gray-700">{field.label}:</span>
+          <span class="ml-2 text-gray-900">{field.value}</span>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  {includes.length > 0 && (
+    <div class="mt-4 pt-4 border-t border-gray-200">
+      <div class="flex items-start">
+        <span class="text-green-600 mr-2 mt-1">✓</span>
+        <div>
+          <span class="font-semibold text-gray-700">Includes:</span>
+          <ul class="ml-2 mt-1 space-y-1">
+            {includes.map(item => (
+              <li class="text-gray-900 flex items-center">
+                <span class="text-green-500 mr-2">•</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  )}
+</div>
+
+{/* Hidden div for structured data - helps AI understand the quick answer */}
+<div style="display: none" data-quick-answer>
+  {JSON.stringify(quickAnswerData)}
+</div>
+
+{speakable && speakableSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(speakableSchema)} />
+)}

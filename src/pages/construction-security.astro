@@ -7,6 +7,8 @@ import QuoteForm from '../components/QuoteForm.astro';
 import Analytics from '../components/Analytics.astro';
 import ServiceSchema from '../components/ServiceSchema.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import QuickAnswer from '../components/QuickAnswer.astro';
 
 // Schema data for the construction security service
 const serviceSchemaData = {
@@ -23,7 +25,7 @@ const serviceSchemaData = {
     { type: "City" as const, name: "Auburn" },
     { type: "City" as const, name: "Federal Way" },
     { type: "City" as const, name: "Fife" },
-    { type: "City" as const, name: "Bony Lake" },
+    { type: "City" as const, name: "Bonney Lake" },
     { type: "City" as const, name: "Puyallup" }
   ]
 };
@@ -179,6 +181,110 @@ const breadcrumbItems = [
             </ul>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Quick Answer Box for Construction Security -->
+    <section class="py-8 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <QuickAnswer
+          what="Solar-powered security trailers designed for construction sites"
+          cost="$8,000-10,000/month with volume discounts"
+          time="20-30 minute setup, relocatable as project progresses"
+          coverage="Complete 360° jobsite coverage with PTZ cameras"
+          availability="Same-day deployment for urgent needs"
+          includes={[
+            "Equipment theft prevention",
+            "Material protection",
+            "Vandalism deterrent",
+            "License plate recognition",
+            "Remote monitoring access",
+            "Insurance documentation"
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Mobile vs Fixed Camera Comparison -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <ComparisonTable
+          title="Mobile Trailers vs Fixed Security Cameras"
+          description="See why construction sites choose mobile surveillance trailers over traditional fixed camera systems"
+          headers={["Mobile Trailers", "Fixed Cameras"]}
+          rows={[
+            {
+              feature: "Setup Time",
+              values: [
+                { text: "20-30 minutes", highlight: true },
+                "2-5 days installation"
+              ]
+            },
+            {
+              feature: "Initial Cost",
+              values: [
+                { text: "$0 (rental)", highlight: true },
+                "$5,000-15,000+ purchase"
+              ]
+            },
+            {
+              feature: "Power Requirements",
+              values: [
+                { text: "Solar/Generator", highlight: true },
+                "Requires electrical hookup"
+              ]
+            },
+            {
+              feature: "Flexibility",
+              values: [
+                { text: "Relocate as needed", highlight: true },
+                "Permanent installation"
+              ]
+            },
+            {
+              feature: "Coverage",
+              values: [
+                { text: "360° PTZ cameras", highlight: true },
+                "Fixed angles only"
+              ]
+            },
+            {
+              feature: "Project Completion",
+              values: [
+                { text: "Return rental", highlight: true },
+                "Must uninstall/store"
+              ]
+            },
+            {
+              feature: "Maintenance",
+              values: [
+                { text: "Included in rental", highlight: true },
+                "Your responsibility"
+              ]
+            },
+            {
+              feature: "Technology Updates",
+              values: [
+                { text: "Always current", highlight: true },
+                "Requires upgrades"
+              ]
+            },
+            {
+              feature: "Insurance Claims",
+              values: [
+                { text: "Full documentation", highlight: true },
+                "Self-managed"
+              ]
+            },
+            {
+              feature: "ROI Timeline",
+              values: [
+                { text: "Immediate protection", highlight: true },
+                "After installation complete"
+              ]
+            }
+          ]}
+        />
       </div>
     </section>
 
