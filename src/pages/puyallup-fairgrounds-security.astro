@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';import Footer from '../component
 import Analytics from '../components/Analytics.astro';
 import ServiceSchema from '../components/ServiceSchema.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import StatBox from '../components/StatBox.astro';
 
 // Schema data for the construction security service
 const serviceSchemaData = {
@@ -21,6 +22,14 @@ const breadcrumbItems = [
   { name: "Home", url: "/" },
   { name: "Locations", url: "/about" },
   { name: "Puyallup Security" }
+];
+
+// Crime statistics data
+const crimeStats = [
+  { value: "1 in 19", label: "Property Crime Risk", highlight: true },
+  { value: "1 in 57", label: "Vehicle Theft Risk", highlight: true },
+  { value: "57", label: "Crimes per 1,000 Residents" },
+  { value: "96%", label: "WA Cities Safer Than Puyallup" }
 ];
 ---
 
@@ -51,6 +60,21 @@ const breadcrumbItems = [
             </a>
           </div>
           <p class="mt-4">⚡ Same-day setup for fairgrounds and agricultural sites</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Crime Statistics Section -->
+    <section class="bg-red-50 py-12">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-6 text-center text-red-900">Puyallup Crime Statistics</h2>
+          <StatBox stats={crimeStats} layout="grid" />
+          <div class="mt-8 bg-white rounded-lg p-6 border-l-4 border-red-600">
+            <p class="text-gray-700 font-semibold">
+              Puyallup faces particularly high vehicle theft rates, making our mobile surveillance critical for fairgrounds parking, agricultural equipment, and business lots. With 96% of Washington cities being safer, robust security is essential.
+            </p>
+          </div>
         </div>
       </div>
     </section>

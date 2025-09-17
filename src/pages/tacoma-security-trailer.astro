@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';import Footer from '../component
 import Analytics from '../components/Analytics.astro';
 import ServiceSchema from '../components/ServiceSchema.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import StatBox from '../components/StatBox.astro';
 
 // Schema data for the construction security service
 const serviceSchemaData = {
@@ -22,6 +23,14 @@ const breadcrumbItems = [
   { name: "Home", url: "/" },
   { name: "Locations", url: "/about" },
   { name: "Tacoma Security" }
+];
+
+// Crime statistics data
+const crimeStats = [
+  { value: "335%", label: "Above National Violent Crime", highlight: true },
+  { value: "336%", label: "Above National Property Crime", highlight: true },
+  { value: "40%", label: "Homicide Reduction in 2024" },
+  { value: "24.6%", label: "Property Crime Reduction 2024" }
 ];
 ---
 
@@ -52,6 +61,22 @@ const breadcrumbItems = [
             </a>
           </div>
           <p class="mt-4">⚡ Fastest delivery in Pierce County - We're local!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Crime Statistics Section -->
+    <section class="bg-yellow-50 py-12">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-6 text-center">Tacoma Crime Statistics & Improvements</h2>
+          <StatBox stats={crimeStats} layout="grid" />
+          <div class="mt-8 bg-white rounded-lg p-6 border-l-4 border-green-600">
+            <p class="text-gray-700 font-semibold">
+              While Tacoma historically faces high crime rates, 2024 shows significant improvements with violent crime down 17.3%.
+              Our surveillance systems have contributed to these reductions by deterring crime and providing critical evidence.
+            </p>
+          </div>
         </div>
       </div>
     </section>

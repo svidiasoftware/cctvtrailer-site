@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';import Footer from '../component
 import Analytics from '../components/Analytics.astro';
 import ServiceSchema from '../components/ServiceSchema.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import StatBox from '../components/StatBox.astro';
 
 // Schema data for the construction security service
 const serviceSchemaData = {
@@ -21,6 +22,14 @@ const breadcrumbItems = [
   { name: "Home", url: "/" },
   { name: "Locations", url: "/about" },
   { name: "Olympia Security" }
+];
+
+// Crime statistics data
+const crimeStats = [
+  { value: "1 in 23", label: "Chance of Being Crime Victim", highlight: true },
+  { value: "44", label: "Crimes per 1,000 Residents", highlight: true },
+  { value: "92%", label: "WA Cities Safer Than Olympia" },
+  { value: "Above", label: "State & National Average Crime" }
 ];
 ---
 
@@ -51,6 +60,21 @@ const breadcrumbItems = [
             </a>
           </div>
           <p class="mt-4">⚡ Rapid deployment to Capitol Campus and throughout Thurston County</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Crime Statistics Section -->
+    <section class="bg-yellow-50 py-12">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-6 text-center">Olympia Security Statistics</h2>
+          <StatBox stats={crimeStats} layout="grid" />
+          <div class="mt-8 bg-white rounded-lg p-6 border-l-4 border-yellow-600">
+            <p class="text-gray-700 font-semibold">
+              Despite being the state capital, Olympia faces significant security challenges with crime rates above both state and national averages. Our mobile CCTV systems provide essential protection for government facilities, businesses, and special events.
+            </p>
+          </div>
         </div>
       </div>
     </section>

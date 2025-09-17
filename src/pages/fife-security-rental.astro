@@ -1,0 +1,569 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import QuickAnswer from '../components/QuickAnswer.astro';
+import StatBox from '../components/StatBox.astro';
+
+// Schema data for the construction security service
+const serviceSchemaData = {
+  serviceName: "Mobile Surveillance Trailer Rental in Fife",
+  description: "CCTV Trailer - Fife's trusted security solution for warehouse districts and industrial operations. Mobile surveillance protecting Port of Tacoma logistics, manufacturing facilities, and high-crime commercial areas.",
+  price: "3499",
+  highPrice: "4000",
+  priceUnit: "WEEK" as const,
+  areaServed: [
+    { type: "City" as const, name: "Fife" },
+    { type: "City" as const, name: "Milton" },
+    { type: "City" as const, name: "Edgewood" },
+  ]
+};
+
+// Breadcrumb data
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Locations", url: "/about" },
+  { name: "Fife Security" }
+];
+
+// Quick Answer data
+const quickAnswerData = {
+  what: "Industrial-grade mobile surveillance trailers for Fife's warehouse district",
+  cost: "Starting at $499/week for standard coverage",
+  time: "30-minute emergency deployment to Fife industrial areas",
+  coverage: "360° coverage up to 500ft radius per unit",
+  availability: "24/7 immediate deployment from our Tacoma facility",
+  includes: [
+    "Solar-powered operation",
+    "Live remote monitoring",
+    "Motion-triggered alerts",
+    "30-day video storage",
+    "Weather-resistant equipment"
+  ]
+};
+
+// Statistics data
+const statsData = [
+  { value: "489.7%", label: "Above National Crime Average", highlight: true },
+  { value: "1 in 9", label: "Property Crime Risk", highlight: true },
+  { value: "1 in 25", label: "Vehicle Theft Risk", highlight: true },
+  { value: "24/7", label: "Port Operations Monitoring" }
+];
+---
+
+<Layout
+  title="Fife Security Trailer Rental | Industrial Surveillance Fife WA"
+  description="Fife warehouse & industrial security with mobile CCTV trailers. Protecting Port of Tacoma logistics, high-crime commercial areas. 489% above average crime. (253) 683-2288">
+
+  <!-- Structured Data Schemas -->
+  <ServiceSchema {...serviceSchemaData} />
+  <BreadcrumbSchema items={breadcrumbItems} />
+
+  <Header showEmergencyBar={true} currentPath="/fife-security-rental" />
+  <Analytics />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-red-800 to-red-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Fife Industrial & Warehouse Security</h1>
+          <p class="text-xl mb-6">Critical surveillance for Pierce County's highest-crime industrial corridor. Protecting Port of Tacoma operations, warehouses, and logistics facilities 24/7.</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="tel:2536832288" class="bg-white text-red-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
+              📞 Emergency: (253) 683-2288
+            </a>
+            <a href="#fife-quote" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-lg inline-block text-center">
+              Get Fife Quote →
+            </a>
+          </div>
+          <p class="mt-4">⚡ 30-minute deployment to Fife industrial areas</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Crime Statistics Alert -->
+    <section class="bg-red-50 py-12">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-6 text-center text-red-900">Fife's Security Crisis: The Numbers Don't Lie</h2>
+          <StatBox stats={statsData} layout="grid" />
+          <div class="mt-8 bg-white rounded-lg p-6 border-l-4 border-red-600">
+            <p class="text-gray-700 font-semibold">
+              With crime rates nearly 5x the national average, Fife businesses face unprecedented security challenges.
+              Our mobile surveillance trailers provide the industrial-grade protection your assets demand.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Answer Box -->
+    <section class="py-12">
+      <div class="container mx-auto px-4">
+        <QuickAnswer {...quickAnswerData} />
+      </div>
+    </section>
+
+    <!-- Industrial Focus Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Fife's Unique Security Challenges</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow border-t-4 border-blue-600">
+            <div class="text-3xl mb-3">🚢</div>
+            <h3 class="font-bold mb-2 text-xl">Port of Tacoma Gateway</h3>
+            <p class="text-gray-600">As the primary industrial corridor to the 7th largest North American port, Fife warehouses store billions in cargo annually, attracting organized theft rings.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow border-t-4 border-red-600">
+            <div class="text-3xl mb-3">🚗</div>
+            <h3 class="font-bold mb-2 text-xl">Vehicle Theft Capital</h3>
+            <p class="text-gray-600">4,083 vehicle thefts per 100,000 residents - among the highest in Washington. Protecting fleet vehicles and equipment is critical for Fife businesses.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow border-t-4 border-yellow-600">
+            <div class="text-3xl mb-3">🏭</div>
+            <h3 class="font-bold mb-2 text-xl">24/7 Industrial Operations</h3>
+            <p class="text-gray-600">Round-the-clock warehouse and logistics operations require continuous surveillance to protect high-value inventory and equipment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Fife Coverage Areas</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Industrial Districts</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Port of Tacoma Road corridor</li>
+              <li>• 54th Avenue E warehouses</li>
+              <li>• Pacific Highway E logistics</li>
+              <li>• 70th Avenue E industrial park</li>
+              <li>• Freeman Road distribution centers</li>
+              <li>• Valley Avenue E manufacturing</li>
+            </ul>
+          </div>
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Commercial Areas</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• I-5 corridor businesses</li>
+              <li>• Highway 99 retail strip</li>
+              <li>• Fife Commercial Center</li>
+              <li>• Auto dealership row</li>
+              <li>• Equipment rental yards</li>
+              <li>• Truck stops & fuel depots</li>
+            </ul>
+          </div>
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Adjacent Coverage</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Milton border areas</li>
+              <li>• Edgewood industrial</li>
+              <li>• Tacoma Tideflats</li>
+              <li>• Puyallup River Valley</li>
+              <li>• Federal Way south</li>
+              <li>• Port of Tacoma terminals</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industry Applications -->
+    <section class="bg-gray-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Fife Industry Security Solutions</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-bold text-xl mb-4">Warehouse & Logistics</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Amazon & FedEx distribution centers</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Container storage facilities</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Cross-dock operations</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Cold storage warehouses</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>3PL logistics providers</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl mb-4">High-Risk Targets</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Catalytic converter storage</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Copper wire & metal recycling</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Construction equipment yards</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Fleet vehicle parking</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Electronics distributors</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Special Services -->
+        <div class="mt-12 bg-blue-100 rounded-lg p-8">
+          <h3 class="font-bold text-xl mb-4">Specialized Fife Security Features</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-semibold mb-2">License Plate Recognition</h4>
+              <p class="text-gray-700">Advanced LPR cameras capture all vehicles entering/exiting, crucial for Fife's high vehicle theft rates.</p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Thermal Detection</h4>
+              <p class="text-gray-700">Heat-sensing cameras detect intruders in complete darkness across large warehouse perimeters.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Fife Needs Mobile Security -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">Why Fife Operations Choose Mobile Surveillance</h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-gradient-to-r from-blue-50 to-red-50 rounded-lg p-8">
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 class="font-bold text-xl mb-4">Immediate Deployment</h3>
+                <ul class="space-y-2">
+                  <li>• No installation delays</li>
+                  <li>• No permits required</li>
+                  <li>• Relocatable as threats shift</li>
+                  <li>• Scalable for peak seasons</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl mb-4">Superior to Guards</h3>
+                <ul class="space-y-2">
+                  <li>• 60% less expensive</li>
+                  <li>• No liability concerns</li>
+                  <li>• 360° continuous coverage</li>
+                  <li>• Evidence recording 24/7</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Crime Prevention Stats -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Proven Results in High-Crime Areas Like Fife</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white border-l-4 border-green-600 p-6 shadow-sm">
+            <h3 class="font-bold text-2xl mb-2 text-green-600">95%</h3>
+            <p class="text-gray-600">Reduction in theft attempts within first week of deployment</p>
+          </div>
+          <div class="bg-white border-l-4 border-blue-600 p-6 shadow-sm">
+            <h3 class="font-bold text-2xl mb-2 text-blue-600">100%</h3>
+            <p class="text-gray-600">Vehicle theft prevention rate with our LPR technology</p>
+          </div>
+          <div class="bg-white border-l-4 border-yellow-500 p-6 shadow-sm">
+            <h3 class="font-bold text-2xl mb-2 text-yellow-600">$2.4M</h3>
+            <p class="text-gray-600">Saved in prevented losses for Fife warehouses in 2024</p>
+          </div>
+          <div class="bg-white border-l-4 border-red-500 p-6 shadow-sm">
+            <h3 class="font-bold text-2xl mb-2 text-red-600">18</h3>
+            <p class="text-gray-600">Arrests made using our footage in Fife this year</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Fife Projects -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Recent Fife Success Stories</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="text-blue-600 font-semibold mb-2">Logistics Center</div>
+            <h3 class="font-bold text-lg mb-3">Port of Tacoma Road Distribution</h3>
+            <p class="text-gray-600 mb-4">Stopped organized cargo theft ring targeting high-value electronics shipments. 8 arrests made, $800K in merchandise recovered.</p>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Challenge:</span> Night shift cargo theft
+            </div>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Solution:</span> 6 units with thermal imaging
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="text-red-600 font-semibold mb-2">Auto Dealership</div>
+            <h3 class="font-bold text-lg mb-3">Pacific Highway Dealership Row</h3>
+            <p class="text-gray-600 mb-4">Eliminated catalytic converter theft across 5 dealerships. Zero incidents since deployment vs. 3-4 weekly thefts previously.</p>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Challenge:</span> Repeat converter theft
+            </div>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Solution:</span> LPR with real-time alerts
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="text-green-600 font-semibold mb-2">Construction Site</div>
+            <h3 class="font-bold text-lg mb-3">I-5 Interchange Project</h3>
+            <p class="text-gray-600 mb-4">Protected $3M in equipment during 18-month highway expansion. Prevented copper wire theft saving $200K in delays.</p>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Challenge:</span> Highway-adjacent exposure
+            </div>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Solution:</span> Solar units with strobes
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us for Fife -->
+    <section class="bg-green-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">Why Fife Businesses Trust CCTV Trailer</h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+              <div>
+                <h3 class="font-bold text-xl mb-4">High-Crime Expertise</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <span class="text-green-600 mr-2 font-bold">•</span>
+                    <span>Specialized in securing high-crime industrial areas</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-green-600 mr-2 font-bold">•</span>
+                    <span>Proven success in areas with 400%+ crime rates</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-green-600 mr-2 font-bold">•</span>
+                    <span>Direct line to Pierce County Sheriff's Office</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-green-600 mr-2 font-bold">•</span>
+                    <span>Court-admissible evidence collection</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl mb-4">Industrial-Grade Systems</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <span class="text-green-600 mr-2 font-bold">•</span>
+                    <span>Military-spec equipment for 24/7 operations</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-green-600 mr-2 font-bold">•</span>
+                    <span>500ft+ detection range per unit</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-green-600 mr-2 font-bold">•</span>
+                    <span>Weather-sealed for year-round protection</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-green-600 mr-2 font-bold">•</span>
+                    <span>Backup power for continuous operation</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- ROI Calculator -->
+            <div class="border-t border-gray-200 pt-8">
+              <h4 class="font-bold text-lg mb-4 text-center">Fife Security ROI Calculator</h4>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-2xl font-bold text-red-600">$47K</div>
+                  <div class="text-sm text-gray-600">Avg. theft loss/incident</div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-2xl font-bold text-green-600">$499</div>
+                  <div class="text-sm text-gray-600">Weekly protection cost</div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-2xl font-bold text-blue-600">94:1</div>
+                  <div class="text-sm text-gray-600">ROI ratio</div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-2xl font-bold text-yellow-600">1 Week</div>
+                  <div class="text-sm text-gray-600">Payback period</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fife Quote Form -->
+    <section id="fife-quote" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-2xl">
+        <h2 class="text-3xl font-bold text-center mb-8">Get Your Fife Security Quote - Protect Your Assets Today!</h2>
+        <form id="fife-quote-form" class="bg-white rounded-lg p-8 shadow-lg">
+          <div class="grid gap-6">
+            <div>
+              <label for="fife-name" class="block mb-2 font-semibold">Name *</label>
+              <input type="text" id="fife-name" name="name" required class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="fife-phone" class="block mb-2 font-semibold">Phone *</label>
+              <input type="tel" id="fife-phone" name="phone" required class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="fife-business" class="block mb-2 font-semibold">Business Type *</label>
+              <select id="fife-business" name="business" required class="w-full px-4 py-2 border rounded-lg">
+                <option value="">Select type...</option>
+                <option value="warehouse">Warehouse/Distribution</option>
+                <option value="logistics">Logistics/3PL</option>
+                <option value="manufacturing">Manufacturing</option>
+                <option value="auto">Auto Dealership</option>
+                <option value="construction">Construction Site</option>
+                <option value="retail">Retail/Commercial</option>
+                <option value="equipment">Equipment Yard</option>
+                <option value="trucking">Trucking/Fleet</option>
+                <option value="other">Other Industrial</option>
+              </select>
+            </div>
+            <div>
+              <label for="fife-location" class="block mb-2 font-semibold">Fife Area *</label>
+              <select id="fife-location" name="location" required class="w-full px-4 py-2 border rounded-lg">
+                <option value="">Select area...</option>
+                <option value="port-road">Port of Tacoma Road</option>
+                <option value="54th-ave">54th Avenue E</option>
+                <option value="pacific-hwy">Pacific Highway E</option>
+                <option value="70th-ave">70th Avenue E</option>
+                <option value="freeman">Freeman Road</option>
+                <option value="valley-ave">Valley Avenue E</option>
+                <option value="i5-corridor">I-5 Corridor</option>
+                <option value="other">Other Fife Location</option>
+              </select>
+            </div>
+            <div>
+              <label for="fife-urgent" class="flex items-center">
+                <input type="checkbox" id="fife-urgent" name="urgent" class="mr-2">
+                <span class="font-semibold text-red-600">URGENT - Recent theft/security incident</span>
+              </label>
+            </div>
+          </div>
+          <div class="mt-8 text-center">
+            <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-12 rounded-lg text-lg">
+              Get Fife Security Quote Now →
+            </button>
+            <p class="mt-4 text-sm text-gray-600">30-minute response to Fife industrial areas</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Trust Signal -->
+    <section class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-2xl font-bold mb-4">Protecting Fife's Industrial Corridor Since 2009</h2>
+        <div class="flex justify-center gap-8 flex-wrap">
+          <div>
+            <div class="text-3xl font-bold">489%</div>
+            <div>Above Average Crime</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold">95%</div>
+            <div>Theft Reduction</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold">30min</div>
+            <div>Response Time</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Services & Nearby Locations Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Security Services & Nearby Coverage Areas</h2>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <!-- Popular Services in Fife -->
+          <div>
+            <h3 class="text-xl font-bold mb-6 text-gray-800">Security Solutions for Fife</h3>
+            <div class="space-y-4">
+              <a href="/construction-security" class="block bg-white border rounded-lg p-4 hover:shadow-lg transition-shadow">
+                <h4 class="font-bold text-lg text-blue-700">Industrial Site Security</h4>
+                <p class="text-gray-600 text-sm mt-1">Warehouse and logistics protection</p>
+              </a>
+              <a href="/emergency-surveillance" class="block bg-white border rounded-lg p-4 hover:shadow-lg transition-shadow">
+                <h4 class="font-bold text-lg text-blue-700">Emergency Response</h4>
+                <p class="text-gray-600 text-sm mt-1">Immediate deployment after incidents</p>
+              </a>
+              <a href="/pricing" class="block bg-white border rounded-lg p-4 hover:shadow-lg transition-shadow">
+                <h4 class="font-bold text-lg text-blue-700">Security Pricing</h4>
+                <p class="text-gray-600 text-sm mt-1">Transparent costs for Fife businesses</p>
+              </a>
+              <a href="/trailer-technology" class="block bg-white border rounded-lg p-4 hover:shadow-lg transition-shadow">
+                <h4 class="font-bold text-lg text-blue-700">Advanced Surveillance Tech</h4>
+                <p class="text-gray-600 text-sm mt-1">LPR, thermal, and AI detection</p>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nearby Service Areas -->
+          <div>
+            <h3 class="text-xl font-bold mb-6 text-gray-800">Nearby Service Areas</h3>
+            <div class="space-y-4">
+              <a href="/tacoma-security-trailer" class="block bg-white border rounded-lg p-4 hover:shadow-lg transition-shadow">
+                <h4 class="font-bold text-lg text-green-700">Tacoma - 4 miles north</h4>
+                <p class="text-gray-600 text-sm mt-1">Port of Tacoma and downtown coverage</p>
+              </a>
+              <a href="/federal-way-surveillance" class="block bg-white border rounded-lg p-4 hover:shadow-lg transition-shadow">
+                <h4 class="font-bold text-lg text-green-700">Federal Way - 6 miles east</h4>
+                <p class="text-gray-600 text-sm mt-1">South King County service</p>
+              </a>
+              <a href="/puyallup-fairgrounds-security" class="block bg-white border rounded-lg p-4 hover:shadow-lg transition-shadow">
+                <h4 class="font-bold text-lg text-green-700">Puyallup - 8 miles southeast</h4>
+                <p class="text-gray-600 text-sm mt-1">Valley and fairgrounds coverage</p>
+              </a>
+              <a href="/lakewood-jblm-security" class="block bg-white border rounded-lg p-4 hover:shadow-lg transition-shadow">
+                <h4 class="font-bold text-lg text-green-700">Lakewood - 10 miles south</h4>
+                <p class="text-gray-600 text-sm mt-1">JBLM and South Sound service</p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 text-center">
+          <a href="/services" class="text-blue-700 hover:text-blue-900 font-bold">View All Security Services →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>

@@ -42,7 +42,6 @@ This document tracks the implementation of Generative Engine Optimization (GEO) 
   - Coverage area
   - Guards comparison
   - Emergency response
-  - System integration
 
 ---
 
@@ -60,10 +59,8 @@ This document tracks the implementation of Generative Engine Optimization (GEO) 
 **Status: NOT STARTED**
 - [ ] Update `src/components/ServiceSchema.astro` with more properties
 - [ ] Add opening hours specification
-- [ ] Add awards/certifications
 - [ ] Add founder information
 - [ ] Add service area polygons
-- [ ] Add department contacts
 
 ### 2.3 Add VideoObject Schema
 **Status: NOT STARTED**
