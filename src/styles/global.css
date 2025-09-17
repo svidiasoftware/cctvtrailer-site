@@ -760,16 +760,34 @@
       }
 
       .section-audio-remote {
-        padding: 20px 16px;
+        padding: 40px 16px;
+      }
+
+      .audio-remote-wrapper {
+        padding: 0;
+      }
+
+      .container-image-text {
+        margin-bottom: 40px;
+        gap: 20px;
       }
 
       .audio-image,
       .remote-image {
         height: 250px;
+        margin: 0 auto;
+      }
+
+      .content-container {
+        padding: 0;
       }
 
       .section-heading {
         font-size: 20px;
+      }
+
+      .section-text {
+        font-size: 14px;
       }
 
       .features-benefits-section {
@@ -844,10 +862,6 @@
       margin-bottom: 120px;
     }
 
-    .container-image-text.reverse {
-      flex-direction: row-reverse;
-    }
-
     .square-image-div {
       width: 600px;
       height: 600px;
@@ -906,6 +920,7 @@
       max-width: 1200px;
       width: 100%;
       padding: 0 32px;
+      margin: 0 auto;
     }
 
     .features-container {
@@ -943,9 +958,9 @@
     }
 
     .features-image.internal {
-      background-image: url('/images/onboard-computer.webp');
+      background-image: url('/images/internal-feature.webp');
       background-image: -webkit-image-set(
-        url('/images/onboard-computer.webp') 1x
+        url('/images/internal-feature.webp') 1x
       );
     }
 
