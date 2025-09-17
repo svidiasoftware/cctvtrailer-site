@@ -23,7 +23,7 @@ export const analyticsConfig = {
     enhancedMeasurement: true,
     
     // Enable debug mode in development
-    debugMode: import.meta.env.DEV,
+    debugMode: false, // Disabled to prevent ar_debug cookie
     
     // Custom dimensions (if needed)
     customDimensions: {

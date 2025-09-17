@@ -4,6 +4,25 @@
 
 <!-- Defer Google Tag Manager to improve initial load performance -->
 <script>
+  // Initialize consent mode with denied defaults to prevent cookies
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  // Default consent mode - deny all cookies initially
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'functionality_storage': 'granted',
+    'personalization_storage': 'granted',
+    'security_storage': 'granted'
+  });
+
+  // Configure to use cookieless pings
+  gtag('set', 'allow_google_signals', false);
+  gtag('set', 'allow_ad_personalization_signals', false);
+
   // Defer GTM loading until user interaction or idle time
   (function() {
     let gtmLoaded = false;
