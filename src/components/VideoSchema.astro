@@ -1,0 +1,143 @@
+---
+export interface VideoSchemaProps {
+  name: string;
+  description: string;
+  thumbnailUrl: string | string[];
+  uploadDate: string;
+  duration?: string;
+  contentUrl?: string;
+  embedUrl?: string;
+  interactionStatistic?: {
+    watchCount?: number;
+    likeCount?: number;
+    commentCount?: number;
+  };
+  publisher?: {
+    name?: string;
+    logo?: string;
+  };
+  transcript?: string;
+  videoQuality?: string;
+  keywords?: string[];
+  genre?: string;
+  actor?: Array<{
+    name: string;
+    role?: string;
+  }>;
+}
+
+const {
+  name,
+  description,
+  thumbnailUrl,
+  uploadDate,
+  duration,
+  contentUrl,
+  embedUrl,
+  interactionStatistic,
+  publisher = {
+    name: "CCTV Trailer",
+    logo: "https://www.cctvtrailer.com/images/cctv-trailer-logo.png"
+  },
+  transcript,
+  videoQuality = "HD",
+  keywords = [],
+  genre = "Security",
+  actor = []
+} = Astro.props as VideoSchemaProps;
+
+const schemaObject: any = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": name,
+  "description": description,
+  "uploadDate": uploadDate
+};
+
+if (Array.isArray(thumbnailUrl)) {
+  schemaObject.thumbnailUrl = thumbnailUrl;
+} else {
+  schemaObject.thumbnailUrl = [thumbnailUrl];
+}
+
+if (duration) {
+  schemaObject.duration = duration;
+}
+
+if (contentUrl) {
+  schemaObject.contentUrl = contentUrl;
+}
+
+if (embedUrl) {
+  schemaObject.embedUrl = embedUrl;
+}
+
+if (interactionStatistic) {
+  const stats = [];
+
+  if (interactionStatistic.watchCount) {
+    stats.push({
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/WatchAction",
+      "userInteractionCount": interactionStatistic.watchCount
+    });
+  }
+
+  if (interactionStatistic.likeCount) {
+    stats.push({
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/LikeAction",
+      "userInteractionCount": interactionStatistic.likeCount
+    });
+  }
+
+  if (interactionStatistic.commentCount) {
+    stats.push({
+      "@type": "InteractionCounter",
+      "interactionType": "https://schema.org/CommentAction",
+      "userInteractionCount": interactionStatistic.commentCount
+    });
+  }
+
+  if (stats.length > 0) {
+    schemaObject.interactionStatistic = stats;
+  }
+}
+
+schemaObject.publisher = {
+  "@type": "Organization",
+  "name": publisher.name,
+  "logo": {
+    "@type": "ImageObject",
+    "url": publisher.logo
+  }
+};
+
+if (transcript) {
+  schemaObject.transcript = transcript;
+}
+
+if (videoQuality) {
+  schemaObject.videoQuality = videoQuality;
+}
+
+if (keywords.length > 0) {
+  schemaObject.keywords = keywords.join(", ");
+}
+
+if (genre) {
+  schemaObject.genre = genre;
+}
+
+if (actor.length > 0) {
+  schemaObject.actor = actor.map(person => ({
+    "@type": "Person",
+    "name": person.name,
+    ...(person.role && { "roleName": person.role })
+  }));
+}
+
+const schema = JSON.stringify(schemaObject);
+---
+
+<script type="application/ld+json" set:html={schema} />

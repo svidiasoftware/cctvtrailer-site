@@ -1,0 +1,405 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTASection from '../components/CTASection.astro';
+import Analytics from '../components/Analytics.astro';
+import HowToSchema from '../components/HowToSchema.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import QuickAnswer from '../components/QuickAnswer.astro';
+import StatBox from '../components/StatBox.astro';
+
+const howToData = {
+  name: "How to Calculate ROI for Construction Site Security Investment",
+  description: "Learn how to calculate the return on investment (ROI) for security systems at construction sites, including theft prevention savings, insurance benefits, and productivity gains.",
+  totalTime: "PT15M",
+  estimatedCost: {
+    value: "0",
+    currency: "USD"
+  },
+  supply: [
+    "Historical theft/loss data",
+    "Current insurance premiums",
+    "Equipment inventory values",
+    "Project timeline information",
+    "Security cost quotes"
+  ],
+  tool: [
+    "Calculator or spreadsheet",
+    "Industry loss statistics",
+    "Insurance policy documents",
+    "Equipment depreciation schedules",
+    "Project management software"
+  ],
+  steps: [
+    {
+      name: "Calculate Current Annual Losses",
+      text: "Review past 3 years of incident reports to determine average annual losses from theft, vandalism, and equipment damage. Include direct losses (stolen items) and indirect costs (project delays, replacement time). Industry average is 1-2% of project value."
+    },
+    {
+      name: "Assess Equipment Value at Risk",
+      text: "Create inventory of all equipment and materials on site. Include purchase/rental values for excavators, generators, tools, copper wire, lumber, and fuel. Typical construction site has $500,000-$2M in assets at risk."
+    },
+    {
+      name: "Calculate Project Delay Costs",
+      text: "Determine daily overhead costs including labor, equipment rentals, and penalties for missed deadlines. A single theft incident averages 3-7 days delay. Calculate: Daily Overhead × Average Delay Days × Incidents per Year."
+    },
+    {
+      name: "Identify Insurance Premium Savings",
+      text: "Contact your insurance provider to determine premium reductions for sites with professional security. Most insurers offer 10-20% discount on premiums. Calculate: Current Premium × Discount Percentage = Annual Savings."
+    },
+    {
+      name: "Factor Productivity Improvements",
+      text: "Measure time saved from eliminating false theft reports, reducing site inspections, and improving worker accountability. Studies show 5-10% productivity gain with surveillance. Calculate: Labor Cost × Productivity Gain Percentage."
+    },
+    {
+      name: "Calculate Total Potential Losses",
+      text: "Sum all loss categories: Direct Theft + Equipment Damage + Project Delays + Lost Productivity + Insurance Deductibles. This represents your total annual risk exposure without security."
+    },
+    {
+      name: "Determine Security Investment Cost",
+      text: "Get quotes for security solutions. Professional CCTV trailer rental typically costs $7,999/month including monitoring. Calculate annual cost: Monthly Rate × 12 months = Annual Investment."
+    },
+    {
+      name: "Apply Theft Reduction Factor",
+      text: "Professional surveillance reduces theft by 85% on average. Calculate prevented losses: Total Potential Losses × 0.85 = Annual Loss Prevention Value."
+    },
+    {
+      name: "Calculate Net Annual Benefit",
+      text: "Subtract security investment from total savings. Formula: (Prevented Losses + Insurance Savings + Productivity Gains) - Security Cost = Net Annual Benefit."
+    },
+    {
+      name: "Determine ROI Percentage",
+      text: "Calculate return on investment percentage. Formula: (Net Annual Benefit ÷ Annual Security Cost) × 100 = ROI%. Industry average ROI is 200-400%."
+    },
+    {
+      name: "Calculate Payback Period",
+      text: "Determine how quickly security investment pays for itself. Formula: Annual Security Cost ÷ Monthly Savings = Payback Period in Months. Most systems pay for themselves in 2-4 months."
+    },
+    {
+      name: "Project Multi-Year Returns",
+      text: "Extend calculations over project lifetime. Include cumulative savings, avoided incidents, and reputation protection value. 3-year ROI often exceeds 1000% when all factors considered."
+    }
+  ],
+  image: "/images/roi-calculator.webp"
+};
+
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Resources", url: "/blog" },
+  { name: "Calculate Security ROI" }
+];
+
+const quickAnswerData = {
+  question: "What's the average ROI for construction site security?",
+  answer: "Professional mobile surveillance typically delivers 200-400% ROI annually. With theft reduction of 85%, insurance savings of 10-20%, and prevention of just one major incident, most systems pay for themselves within 2-4 months.",
+  callToAction: {
+    text: "Get ROI Analysis",
+    href: "tel:2536832288"
+  }
+};
+
+const statBoxData = [
+  { value: "200-400%", label: "Average Annual ROI" },
+  { value: "85%", label: "Theft Reduction" },
+  { value: "2-4mo", label: "Payback Period" },
+  { value: "$300K+", label: "Avg Annual Savings" }
+];
+---
+
+<Layout
+  title="How to Calculate Security ROI | Construction Site Investment Analysis"
+  description="Step-by-step guide to calculating ROI for construction security. Learn how to quantify theft prevention, insurance savings, and productivity gains from surveillance.">
+
+  <HowToSchema {...howToData} />
+  <BreadcrumbSchema items={breadcrumbItems} />
+
+  <Header showEmergencyBar={true} currentPath="/how-to-calculate-security-roi" />
+  <Analytics />
+
+  <main>
+    <section class="bg-gradient-to-r from-purple-800 to-purple-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">How to Calculate Security ROI for Construction Sites</h1>
+          <p class="text-xl mb-6">Quantify Your Security Investment Returns with Data-Driven Analysis</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="tel:2536832288" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-lg inline-block text-center">
+              Get Free ROI Analysis →
+            </a>
+            <a href="#calculator" class="bg-white hover:bg-gray-100 text-purple-900 font-bold py-3 px-8 rounded-lg inline-block text-center">
+              View Calculator ↓
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-8 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <QuickAnswer {...quickAnswerData} />
+      </div>
+    </section>
+
+    <section class="py-12">
+      <div class="container mx-auto px-4">
+        <StatBox stats={statBoxData} />
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-8">Understanding Security ROI Components</h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-green-50 border-l-4 border-green-500 p-6">
+              <h3 class="font-semibold text-green-900 mb-2">Direct Savings</h3>
+              <ul class="text-green-700 space-y-2">
+                <li>• Prevented equipment theft</li>
+                <li>• Avoided material losses</li>
+                <li>• Reduced vandalism damage</li>
+                <li>• Eliminated tool replacement</li>
+              </ul>
+            </div>
+
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6">
+              <h3 class="font-semibold text-blue-900 mb-2">Indirect Benefits</h3>
+              <ul class="text-blue-700 space-y-2">
+                <li>• Insurance premium reductions</li>
+                <li>• Avoided project delays</li>
+                <li>• Improved worker productivity</li>
+                <li>• Enhanced reputation value</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="calculator" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center">12-Step ROI Calculation Process</h2>
+
+          {howToData.steps.map((step, index) => (
+            <div class="mb-8 bg-white rounded-lg shadow-md p-6">
+              <div class="flex items-start">
+                <div class="flex-shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                  {index + 1}
+                </div>
+                <div class="ml-4 flex-1">
+                  <h3 class="text-xl font-bold mb-3">{step.name}</h3>
+                  <p class="text-gray-600">{step.text}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-8">Real-World ROI Example</h2>
+
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <h3 class="text-2xl font-semibold mb-6">$10M Commercial Construction Project</h3>
+
+            <div class="space-y-4 mb-8">
+              <div class="flex justify-between items-center border-b pb-2">
+                <span class="font-medium">Equipment Value at Risk:</span>
+                <span class="text-xl font-bold">$1,500,000</span>
+              </div>
+              <div class="flex justify-between items-center border-b pb-2">
+                <span class="font-medium">Historical Annual Theft Loss (1.5%):</span>
+                <span class="text-xl font-bold text-red-600">$150,000</span>
+              </div>
+              <div class="flex justify-between items-center border-b pb-2">
+                <span class="font-medium">Project Delay Costs (per incident):</span>
+                <span class="text-xl font-bold text-red-600">$50,000</span>
+              </div>
+              <div class="flex justify-between items-center border-b pb-2">
+                <span class="font-medium">Annual Insurance Premium:</span>
+                <span class="text-xl font-bold">$120,000</span>
+              </div>
+            </div>
+
+            <div class="bg-purple-50 rounded-lg p-6 mb-8">
+              <h4 class="font-semibold text-purple-900 mb-4">With CCTV Trailer Security:</h4>
+              <div class="space-y-3">
+                <div class="flex justify-between">
+                  <span>Theft Prevention (85% reduction):</span>
+                  <span class="font-bold text-green-600">+$127,500</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Avoided Delays (2 incidents):</span>
+                  <span class="font-bold text-green-600">+$100,000</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Insurance Savings (15%):</span>
+                  <span class="font-bold text-green-600">+$18,000</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Productivity Gain (5%):</span>
+                  <span class="font-bold text-green-600">+$75,000</span>
+                </div>
+                <div class="flex justify-between border-t pt-3">
+                  <span class="font-semibold">Total Annual Savings:</span>
+                  <span class="font-bold text-green-600 text-xl">$320,500</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gray-100 rounded-lg p-6">
+              <div class="space-y-3">
+                <div class="flex justify-between">
+                  <span>Annual Security Investment:</span>
+                  <span class="font-bold">$95,988</span>
+                </div>
+                <div class="flex justify-between text-xl font-bold border-t pt-3">
+                  <span>Net Annual Benefit:</span>
+                  <span class="text-green-600">$224,512</span>
+                </div>
+                <div class="flex justify-between text-2xl font-bold text-purple-600 border-t pt-3">
+                  <span>ROI Percentage:</span>
+                  <span>234%</span>
+                </div>
+                <div class="flex justify-between text-lg font-semibold">
+                  <span>Payback Period:</span>
+                  <span class="text-green-600">3.6 months</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-8">Hidden Costs of No Security</h2>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <div class="text-4xl mb-4">⚠️</div>
+              <h3 class="text-xl font-semibold mb-3">Reputation Damage</h3>
+              <p class="text-gray-600">Security breaches damage your reputation with clients, leading to lost future contracts worth millions.</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <div class="text-4xl mb-4">⏰</div>
+              <h3 class="text-xl font-semibold mb-3">Investigation Time</h3>
+              <p class="text-gray-600">Each incident requires 40-80 hours of management time for police reports and insurance claims.</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <div class="text-4xl mb-4">👥</div>
+              <h3 class="text-xl font-semibold mb-3">Worker Morale</h3>
+              <p class="text-gray-600">Theft incidents decrease worker morale and increase turnover, costing thousands in recruitment.</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <div class="text-4xl mb-4">📋</div>
+              <h3 class="text-xl font-semibold mb-3">Compliance Penalties</h3>
+              <p class="text-gray-600">Failure to secure sites can result in OSHA fines and contract compliance violations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-8">Quick ROI Reference Table</h2>
+
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse bg-white rounded-lg shadow-sm">
+              <thead>
+                <tr class="bg-purple-600 text-white">
+                  <th class="border p-4 text-left">Project Size</th>
+                  <th class="border p-4 text-left">Typical Loss Risk</th>
+                  <th class="border p-4 text-left">Security Cost</th>
+                  <th class="border p-4 text-left">Expected Savings</th>
+                  <th class="border p-4 text-left">ROI %</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b">
+                  <td class="p-4 font-semibold">$1-5M</td>
+                  <td class="p-4">$50-150K/year</td>
+                  <td class="p-4">$96K/year</td>
+                  <td class="p-4 text-green-600 font-semibold">$125K/year</td>
+                  <td class="p-4 font-bold">130%</td>
+                </tr>
+                <tr class="border-b bg-gray-50">
+                  <td class="p-4 font-semibold">$5-10M</td>
+                  <td class="p-4">$150-300K/year</td>
+                  <td class="p-4">$96K/year</td>
+                  <td class="p-4 text-green-600 font-semibold">$255K/year</td>
+                  <td class="p-4 font-bold">266%</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="p-4 font-semibold">$10-25M</td>
+                  <td class="p-4">$300-750K/year</td>
+                  <td class="p-4">$96K/year</td>
+                  <td class="p-4 text-green-600 font-semibold">$525K/year</td>
+                  <td class="p-4 font-bold">547%</td>
+                </tr>
+                <tr class="border-b bg-gray-50">
+                  <td class="p-4 font-semibold">$25M+</td>
+                  <td class="p-4">$750K+/year</td>
+                  <td class="p-4">$192K/year*</td>
+                  <td class="p-4 text-green-600 font-semibold">$850K+/year</td>
+                  <td class="p-4 font-bold">442%+</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="text-sm text-gray-600 mt-2">*Multiple units for larger sites</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-purple-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-6">Get Your Custom ROI Analysis</h2>
+          <p class="text-xl mb-8">
+            Our security experts will analyze your specific project and provide a detailed ROI projection
+            showing exactly how much you'll save with professional surveillance.
+          </p>
+          <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-8">
+            <div class="grid md:grid-cols-3 gap-4">
+              <div>
+                <div class="text-3xl font-bold text-yellow-400">Free</div>
+                <div>ROI Analysis</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-yellow-400">15min</div>
+                <div>Consultation</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-yellow-400">Custom</div>
+                <div>Recommendations</div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:2536832288" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 px-8 rounded-lg inline-block text-lg">
+              📞 (253) 683-2288 - Get ROI Analysis
+            </a>
+          </div>
+          <p class="mt-4 text-yellow-300">No obligation • Immediate results • Industry-specific data</p>
+        </div>
+      </div>
+    </section>
+
+    <CTASection />
+  </main>
+
+  <Footer />
+</Layout>

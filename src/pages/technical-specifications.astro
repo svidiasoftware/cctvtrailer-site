@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import LazyImage from '../components/LazyImage.astro';
 import Analytics from '../components/Analytics.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import VideoSchema from '../components/VideoSchema.astro';
 
 const techSpecsSchema = {
   "@context": "https://schema.org",
@@ -16,9 +17,9 @@ const techSpecsSchema = {
     "name": "CCTV Trailer"
   },
   "image": [
-    "https://www.cctvtrailer.com/images/trailer-1x1.webp",
-    "https://www.cctvtrailer.com/images/trailer-4x3.webp",
-    "https://www.cctvtrailer.com/images/trailer-16x9.webp",
+    "https://www.cctvtrailer.com/images/trailer-1x1.png",
+    "https://www.cctvtrailer.com/images/trailer-4x3.png",
+    "https://www.cctvtrailer.com/images/trailer-16x9.png",
   ],
   "manufacturer": {
     "@type": "Organization",
@@ -105,6 +106,22 @@ const breadcrumbItems = [
   { name: "Home", url: "/" },
   { name: "Technical Specifications" }
 ];
+
+// Video data for the YouTube video
+const videoData = {
+  name: "CCTV Trailer Mobile Security System Overview",
+  description: "Professional overview of our mobile surveillance trailer systems, showcasing advanced features including PTZ cameras, solar power, S-VIDIA technology, and weatherproof construction designed for Pacific Northwest deployment.",
+  thumbnailUrl: [
+    "https://img.youtube.com/vi/WZh4h-t1D18/maxresdefault.jpg",
+    "https://img.youtube.com/vi/WZh4h-t1D18/hqdefault.jpg"
+  ],
+  uploadDate: "2023-01-01",
+  duration: "PT2M30S",
+  contentUrl: "https://www.youtube.com/watch?v=WZh4h-t1D18",
+  embedUrl: "https://www.youtube-nocookie.com/embed/WZh4h-t1D18",
+  keywords: ["mobile surveillance trailer", "CCTV trailer", "security system", "construction site security", "PTZ cameras", "S-VIDIA technology"],
+  genre: "Security Technology"
+};
 ---
 
 <Layout 
@@ -113,7 +130,8 @@ const breadcrumbItems = [
   schema={JSON.stringify(techSpecsSchema)}
 >
 
-  <BreadcrumbSchema items={breadcrumbItems} /> 
+  <BreadcrumbSchema items={breadcrumbItems} />
+  <VideoSchema {...videoData} />
 
   <Header currentPath="/technical-specifications" />
   <Analytics /> 

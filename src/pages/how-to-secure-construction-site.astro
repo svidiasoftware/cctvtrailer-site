@@ -1,0 +1,350 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTASection from '../components/CTASection.astro';
+import Analytics from '../components/Analytics.astro';
+import HowToSchema from '../components/HowToSchema.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import QuickAnswer from '../components/QuickAnswer.astro';
+import StatBox from '../components/StatBox.astro';
+
+const howToData = {
+  name: "How to Secure a Construction Site from Theft and Vandalism",
+  description: "Complete guide to securing construction sites using mobile surveillance trailers, technology, and proven security strategies to prevent theft and reduce losses.",
+  totalTime: "PT24H",
+  estimatedCost: {
+    value: "7999",
+    currency: "USD"
+  },
+  supply: [
+    "Mobile surveillance trailer",
+    "Warning signs and decals",
+    "Security fencing",
+    "Locks and chains",
+    "Motion-activated lights"
+  ],
+  tool: [
+    "Security assessment checklist",
+    "Site map for camera placement",
+    "Internet connectivity (4G/5G)",
+    "Power source (solar/generator)",
+    "Mobile device for monitoring"
+  ],
+  steps: [
+    {
+      name: "Conduct Security Risk Assessment",
+      text: "Walk the entire construction site perimeter and identify vulnerable areas. Document entry points, blind spots, high-value equipment locations, and material storage areas. Take photos and create a site map marking these critical zones."
+    },
+    {
+      name: "Position Mobile Surveillance Trailer",
+      text: "Place the CCTV trailer at the highest vantage point with clear sightlines to main entry points and equipment storage. Ensure 360-degree PTZ cameras can cover maximum area. The trailer should be visible as a deterrent but secure from tampering."
+    },
+    {
+      name: "Establish Perimeter Security",
+      text: "Install temporary fencing around the entire site with locked gates at entry points. Position the surveillance trailer to monitor all access points. Add warning signs every 50 feet stating '24/7 Video Surveillance in Progress'."
+    },
+    {
+      name: "Configure Detection Zones",
+      text: "Set up motion detection zones in the security system focusing on equipment areas, material storage, and entry points. Configure alerts for after-hours activity. Test each zone to ensure proper sensitivity and coverage."
+    },
+    {
+      name: "Implement Access Control",
+      text: "Create a single controlled entry/exit point monitored by cameras. Issue identification badges to authorized personnel. Log all vehicles entering and leaving the site. Use the surveillance system to verify authorized access."
+    },
+    {
+      name: "Set Up Remote Monitoring",
+      text: "Connect the surveillance system to cloud storage and enable remote viewing. Configure real-time alerts to notify security personnel of breaches. Set up mobile apps for site managers to view cameras remotely."
+    },
+    {
+      name: "Deploy Audio Deterrents",
+      text: "Activate two-way audio speakers on the surveillance trailer. Program automated warnings for detected motion after hours. Enable live audio intervention capability for security monitoring staff."
+    },
+    {
+      name: "Secure High-Value Assets",
+      text: "Park equipment in a centralized location within camera view. Remove keys from all equipment and store securely off-site. Chain or lock smaller tools in storage containers. Use GPS trackers on highest value items."
+    },
+    {
+      name: "Establish Lighting Strategy",
+      text: "Install motion-activated LED floodlights around the perimeter and equipment areas. Ensure surveillance cameras have infrared capability for night vision. Maintain consistent lighting in high-traffic areas."
+    },
+    {
+      name: "Create Response Protocol",
+      text: "Develop clear procedures for security breach response including emergency contacts, law enforcement notification, and evidence preservation. Train all personnel on protocols. Post emergency numbers at key locations."
+    }
+  ],
+  image: "/images/security-trailer-setup.webp"
+};
+
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Resources", url: "/blog" },
+  { name: "How to Secure Construction Site" }
+];
+
+const quickAnswerData = {
+  question: "What's the most effective way to secure a construction site?",
+  answer: "Deploy a mobile surveillance trailer with 24/7 monitoring, establish controlled access points, secure equipment in centralized locations, and implement motion-activated deterrents. Studies show this approach reduces theft by up to 85%.",
+  callToAction: {
+    text: "Get Professional Security",
+    href: "tel:2536832288"
+  }
+};
+
+const statBoxData = [
+  { value: "$1B+", label: "Annual Construction Theft" },
+  { value: "85%", label: "Theft Reduction Rate" },
+  { value: "24/7", label: "Monitoring Coverage" },
+  { value: "30min", label: "Setup Time" }
+];
+---
+
+<Layout
+  title="How to Secure a Construction Site | Complete Security Guide 2024"
+  description="Step-by-step guide to securing construction sites from theft. Learn professional strategies, surveillance placement, and proven methods that reduce losses by 85%.">
+
+  <HowToSchema {...howToData} />
+  <BreadcrumbSchema items={breadcrumbItems} />
+
+  <Header showEmergencyBar={true} currentPath="/how-to-secure-construction-site" />
+  <Analytics />
+
+  <main>
+    <section class="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">How to Secure a Construction Site from Theft</h1>
+          <p class="text-xl mb-6">Professional Guide to Construction Site Security Implementation</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="tel:2536832288" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-lg inline-block text-center">
+              Get Professional Help →
+            </a>
+            <a href="#steps" class="bg-white hover:bg-gray-100 text-blue-900 font-bold py-3 px-8 rounded-lg inline-block text-center">
+              View Steps ↓
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-8 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <QuickAnswer {...quickAnswerData} />
+      </div>
+    </section>
+
+    <section class="py-12">
+      <div class="container mx-auto px-4">
+        <StatBox stats={statBoxData} />
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-8">Why Construction Sites Are Vulnerable</h2>
+          <div class="prose prose-lg max-w-none text-gray-600">
+            <p class="mb-4">
+              Construction sites face unique security challenges that make them prime targets for theft and vandalism.
+              With over $1 billion in equipment and materials stolen annually, implementing proper security measures
+              isn't just recommended—it's essential for project profitability and timeline adherence.
+            </p>
+            <ul class="mb-6 space-y-2">
+              <li>Remote locations with limited natural surveillance</li>
+              <li>High-value equipment left overnight and on weekends</li>
+              <li>Multiple access points and changing perimeters</li>
+              <li>Valuable materials like copper wire and lumber</li>
+              <li>Lack of permanent infrastructure for traditional security</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="steps" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center">10 Steps to Secure Your Construction Site</h2>
+
+          {howToData.steps.map((step, index) => (
+            <div class="mb-8 bg-white rounded-lg shadow-md p-6">
+              <div class="flex items-start">
+                <div class="flex-shrink-0 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                  {index + 1}
+                </div>
+                <div class="ml-4 flex-1">
+                  <h3 class="text-xl font-bold mb-3">{step.name}</h3>
+                  <p class="text-gray-600">{step.text}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-8">Equipment and Tools Needed</h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-xl font-semibold mb-4">Essential Supplies</h3>
+              <ul class="space-y-2">
+                {howToData.supply.map((item) => (
+                  <li class="flex items-start">
+                    <span class="text-green-600 mr-2">✓</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-semibold mb-4">Required Tools</h3>
+              <ul class="space-y-2">
+                {howToData.tool.map((item) => (
+                  <li class="flex items-start">
+                    <span class="text-green-600 mr-2">✓</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-8">Professional vs DIY Security</h2>
+
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse bg-white rounded-lg shadow-sm">
+              <thead>
+                <tr class="bg-blue-600 text-white">
+                  <th class="border p-4 text-left">Aspect</th>
+                  <th class="border p-4 text-left">DIY Security</th>
+                  <th class="border p-4 text-left">Professional CCTV Trailer</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b">
+                  <td class="p-4 font-semibold">Setup Time</td>
+                  <td class="p-4">2-3 days</td>
+                  <td class="p-4 text-green-600 font-semibold">30 minutes</td>
+                </tr>
+                <tr class="border-b bg-gray-50">
+                  <td class="p-4 font-semibold">Coverage Area</td>
+                  <td class="p-4">Limited fixed angles</td>
+                  <td class="p-4 text-green-600 font-semibold">360° PTZ cameras</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="p-4 font-semibold">Night Vision</td>
+                  <td class="p-4">Basic or none</td>
+                  <td class="p-4 text-green-600 font-semibold">Military-grade thermal</td>
+                </tr>
+                <tr class="border-b bg-gray-50">
+                  <td class="p-4 font-semibold">Power Source</td>
+                  <td class="p-4">Grid dependent</td>
+                  <td class="p-4 text-green-600 font-semibold">Solar + backup generator</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="p-4 font-semibold">Monitoring</td>
+                  <td class="p-4">Self-monitored</td>
+                  <td class="p-4 text-green-600 font-semibold">24/7 professional</td>
+                </tr>
+                <tr class="border-b bg-gray-50">
+                  <td class="p-4 font-semibold">Response Time</td>
+                  <td class="p-4">When you notice</td>
+                  <td class="p-4 text-green-600 font-semibold">Immediate alerts</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="p-4 font-semibold">Monthly Cost</td>
+                  <td class="p-4">$3,000-5,000</td>
+                  <td class="p-4 text-green-600 font-semibold">$7,999 all-inclusive</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-8">Common Mistakes to Avoid</h2>
+
+          <div class="space-y-6">
+            <div class="bg-red-50 border-l-4 border-red-500 p-6">
+              <h3 class="font-semibold text-red-900 mb-2">❌ Relying on Fencing Alone</h3>
+              <p class="text-red-700">Fences are easily cut or climbed. They delay but don't prevent theft without surveillance.</p>
+            </div>
+
+            <div class="bg-red-50 border-l-4 border-red-500 p-6">
+              <h3 class="font-semibold text-red-900 mb-2">❌ Using Dummy Cameras</h3>
+              <p class="text-red-700">Professional thieves easily identify fake cameras. Real surveillance with recording is essential.</p>
+            </div>
+
+            <div class="bg-red-50 border-l-4 border-red-500 p-6">
+              <h3 class="font-semibold text-red-900 mb-2">❌ Poor Camera Placement</h3>
+              <p class="text-red-700">Cameras at ground level are vulnerable to vandalism. Elevated positions provide better coverage and security.</p>
+            </div>
+
+            <div class="bg-red-50 border-l-4 border-red-500 p-6">
+              <h3 class="font-semibold text-red-900 mb-2">❌ Inadequate Lighting</h3>
+              <p class="text-red-700">Dark sites invite crime. Proper lighting with motion sensors is crucial for deterrence.</p>
+            </div>
+
+            <div class="bg-red-50 border-l-4 border-red-500 p-6">
+              <h3 class="font-semibold text-red-900 mb-2">❌ No Response Plan</h3>
+              <p class="text-red-700">Having cameras without monitoring and response protocols renders them ineffective.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-blue-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-6">Get Professional Construction Site Security</h2>
+          <p class="text-xl mb-8">
+            Don't leave your valuable equipment and materials at risk. Our mobile CCTV trailers
+            can be deployed today with proven results.
+          </p>
+          <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-8">
+            <div class="grid md:grid-cols-3 gap-4">
+              <div>
+                <div class="text-3xl font-bold text-yellow-400">85%</div>
+                <div>Theft Reduction</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-yellow-400">30min</div>
+                <div>Setup Time</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-yellow-400">24/7</div>
+                <div>Monitoring</div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:2536832288" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 px-8 rounded-lg inline-block text-lg">
+              📞 (253) 683-2288 - Get Immediate Security
+            </a>
+          </div>
+          <p class="mt-4 text-yellow-300">Same-day deployment available</p>
+        </div>
+      </div>
+    </section>
+
+    <CTASection />
+  </main>
+
+  <Footer />
+</Layout>

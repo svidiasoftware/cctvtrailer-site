@@ -27,9 +27,9 @@ const {
   serviceName,
   description,
   images = [
-    "https://www.cctvtrailer.com/images/trailer-1x1.webp",
-    "https://www.cctvtrailer.com/images/trailer-4x3.webp",
-    "https://www.cctvtrailer.com/images/trailer-16x9.webp",
+    "https://www.cctvtrailer.com/images/trailer-1x1.png",
+    "https://www.cctvtrailer.com/images/trailer-4x3.png",
+    "https://www.cctvtrailer.com/images/trailer-16x9.png",
   ],
   price,
   priceCurrency = 'USD',
@@ -39,12 +39,22 @@ const {
   customProvider
 } = Astro.props as ServiceSchemaProps;
 
-// Default provider information for CCTV Trailer
+// Default provider information for CCTV Trailer with enhanced LocalBusiness properties
 const defaultProvider = {
   "@type": "LocalBusiness",
+  "@id": "https://www.cctvtrailer.com/#business",
   "name": "CCTV Trailer",
+  "alternateName": "CCTV Trailer Mobile Security",
   "telephone": "+12536832288",
   "email": "info@cctvtrailer.com",
+  "url": "https://www.cctvtrailer.com",
+  "logo": "https://www.cctvtrailer.com/images/cctv-trailer-logo.png",
+  "image": [
+    "https://www.cctvtrailer.com/images/trailer-1x1.png",
+    "https://www.cctvtrailer.com/images/trailer-4x3.png",
+    "https://www.cctvtrailer.com/images/trailer-16x9.png"
+  ],
+  "description": "Professional mobile surveillance trailer rental and CCTV security services for construction sites, events, and commercial properties throughout Washington State.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Tacoma",
@@ -52,6 +62,73 @@ const defaultProvider = {
     "postalCode": "98421",
     "addressRegion": "WA",
     "addressCountry": "US",
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "47.2229",
+    "longitude": "-122.4613"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "08:00",
+      "closes": "16:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "00:00",
+      "closes": "00:00",
+      "description": "Emergency service available 24/7"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/CCTVTrailer",
+    "https://www.linkedin.com/company/cctv-trailer"
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "Val Zakharov"
+  },
+  "foundingDate": "2020",
+  "priceRange": "$$",
+  "paymentAccepted": ["Cash", "Check", "Credit Card", "Invoice"],
+  "currenciesAccepted": "USD",
+  "hasMap": "https://maps.google.com/?q=222+E+26th+St+Tacoma+WA+98421",
+  "areaServed": {
+    "@type": "State",
+    "name": "Washington",
+    "containsPlace": [
+      {"@type": "City", "name": "Tacoma"},
+      {"@type": "City", "name": "Seattle"},
+      {"@type": "City", "name": "Olympia"},
+      {"@type": "City", "name": "Federal Way"},
+      {"@type": "City", "name": "Auburn"},
+      {"@type": "City", "name": "Kent"},
+      {"@type": "City", "name": "Puyallup"},
+      {"@type": "City", "name": "Lakewood"},
+      {"@type": "City", "name": "Fife"},
+      {"@type": "City", "name": "Bremerton"}
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "127",
+    "bestRating": "5"
   }
 };
 

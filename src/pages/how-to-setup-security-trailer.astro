@@ -1,0 +1,390 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTASection from '../components/CTASection.astro';
+import Analytics from '../components/Analytics.astro';
+import HowToSchema from '../components/HowToSchema.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import QuickAnswer from '../components/QuickAnswer.astro';
+import StatBox from '../components/StatBox.astro';
+
+const howToData = {
+  name: "How to Set Up a Mobile Security Trailer for Maximum Coverage",
+  description: "Step-by-step guide to properly position and configure a mobile CCTV security trailer for optimal surveillance coverage at construction sites, events, and commercial properties.",
+  totalTime: "PT30M",
+  estimatedCost: {
+    value: "0",
+    currency: "USD"
+  },
+  supply: [
+    "Mobile CCTV trailer unit",
+    "Site map or layout plan",
+    "Safety cones for positioning",
+    "Level ground or stabilizing blocks",
+    "Extension cords (if needed)"
+  ],
+  tool: [
+    "Smartphone or tablet for configuration",
+    "Internet connectivity device (4G/5G)",
+    "Measuring tape for distance",
+    "Compass for orientation",
+    "Flashlight for night setup"
+  ],
+  steps: [
+    {
+      name: "Survey the Site",
+      text: "Walk the entire property to identify critical areas needing surveillance. Note entry/exit points, high-value asset locations, blind spots, and potential security vulnerabilities. Create a simple map marking these areas for reference."
+    },
+    {
+      name: "Choose Optimal Position",
+      text: "Select the highest ground available with clear sightlines. The ideal location provides maximum coverage of entry points and valuable assets while remaining visible as a deterrent. Ensure the location has stable, level ground or can be leveled with blocks."
+    },
+    {
+      name: "Check Power Requirements",
+      text: "Verify power source availability. If using solar panels, ensure they face south with no shade obstruction. For generator power, check fuel levels and test start-up. For grid connection, confirm outlet proximity and electrical capacity."
+    },
+    {
+      name: "Position the Trailer",
+      text: "Carefully maneuver the trailer into position using the integrated wheels or towing vehicle. Use safety cones to mark the area during positioning. Ensure at least 10 feet clearance on all sides for maintenance access."
+    },
+    {
+      name: "Level and Stabilize",
+      text: "Use the trailer's built-in leveling jacks or stabilizing blocks to ensure the unit is perfectly level. This prevents camera drift and ensures stable operation. Lock the wheels and engage all stabilizers to prevent movement."
+    },
+    {
+      name: "Deploy the Mast",
+      text: "Following manufacturer guidelines, slowly extend the camera mast to full height (typically 20-30 feet). Check for overhead obstructions like power lines or tree branches. Secure all safety locks once fully extended."
+    },
+    {
+      name: "Configure Camera Angles",
+      text: "Power on the system and access the camera controls via the mobile app or onboard monitor. Adjust each PTZ camera to cover designated zones. Set preset positions for critical areas like gates, equipment storage, and perimeter points."
+    },
+    {
+      name: "Test Night Vision",
+      text: "Wait until dusk or simulate darkness to test infrared and thermal imaging capabilities. Adjust IR intensity and thermal sensitivity settings. Ensure all critical areas are clearly visible in complete darkness."
+    },
+    {
+      name: "Set Motion Detection Zones",
+      text: "Define specific motion detection areas for each camera, avoiding high-traffic zones during operational hours. Configure sensitivity levels to minimize false alarms from animals or weather while maintaining security effectiveness."
+    },
+    {
+      name: "Connect Remote Monitoring",
+      text: "Establish internet connectivity via 4G/5G cellular or WiFi connection. Configure cloud storage settings and test remote viewing access. Set up user accounts for authorized personnel and verify mobile app functionality."
+    },
+    {
+      name: "Configure Alerts",
+      text: "Set up real-time alerts for motion detection, system tampering, and power issues. Configure notification methods (SMS, email, app push). Test alert system to ensure proper delivery to all designated recipients."
+    },
+    {
+      name: "Final Testing",
+      text: "Conduct comprehensive system test including camera movement, recording quality, audio functions, lighting activation, and alert triggers. Document all settings and create a reference sheet for site personnel."
+    }
+  ],
+  image: "/images/trailer-setup-guide.webp"
+};
+
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Resources", url: "/blog" },
+  { name: "Security Trailer Setup" }
+];
+
+const quickAnswerData = {
+  question: "How long does it take to set up a security trailer?",
+  answer: "A professional mobile CCTV trailer can be fully operational in 30 minutes. This includes positioning, leveling, camera configuration, and connectivity setup. Most of the time is spent on fine-tuning camera angles for optimal coverage.",
+  callToAction: {
+    text: "Get Professional Setup",
+    href: "tel:2536832288"
+  }
+};
+
+const statBoxData = [
+  { value: "30min", label: "Setup Time" },
+  { value: "20-30ft", label: "Camera Height" },
+  { value: "360°", label: "Coverage Area" },
+  { value: "500ft", label: "Night Vision Range" }
+];
+---
+
+<Layout
+  title="How to Set Up a Security Trailer | Mobile CCTV Installation Guide"
+  description="Complete guide to setting up a mobile security trailer. Learn optimal positioning, camera configuration, and professional tips for maximum surveillance coverage.">
+
+  <HowToSchema {...howToData} />
+  <BreadcrumbSchema items={breadcrumbItems} />
+
+  <Header showEmergencyBar={true} currentPath="/how-to-setup-security-trailer" />
+  <Analytics />
+
+  <main>
+    <section class="bg-gradient-to-r from-green-800 to-green-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">How to Set Up a Mobile Security Trailer</h1>
+          <p class="text-xl mb-6">Professional Installation Guide for Maximum Surveillance Coverage</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="tel:2536832288" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-lg inline-block text-center">
+              Get Professional Help →
+            </a>
+            <a href="#setup-steps" class="bg-white hover:bg-gray-100 text-green-900 font-bold py-3 px-8 rounded-lg inline-block text-center">
+              View Setup Steps ↓
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-8 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <QuickAnswer {...quickAnswerData} />
+      </div>
+    </section>
+
+    <section class="py-12">
+      <div class="container mx-auto px-4">
+        <StatBox stats={statBoxData} />
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-8">Key Factors for Optimal Trailer Placement</h2>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-semibold mb-4 text-green-800">Strategic Positioning</h3>
+              <ul class="space-y-2 text-gray-600">
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2">•</span>
+                  Elevated positions for maximum visibility
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2">•</span>
+                  Central location to cover multiple zones
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2">•</span>
+                  Clear line of sight to entry points
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2">•</span>
+                  Visible deterrent placement
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-semibold mb-4 text-green-800">Environmental Considerations</h3>
+              <ul class="space-y-2 text-gray-600">
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2">•</span>
+                  Wind exposure and stability
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2">•</span>
+                  Solar panel orientation (if applicable)
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2">•</span>
+                  Drainage and weather protection
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2">•</span>
+                  Accessibility for maintenance
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="setup-steps" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-12 text-center">12-Step Setup Process</h2>
+
+          {howToData.steps.map((step, index) => (
+            <div class="mb-8 bg-white rounded-lg shadow-md p-6">
+              <div class="flex items-start">
+                <div class="flex-shrink-0 w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                  {index + 1}
+                </div>
+                <div class="ml-4 flex-1">
+                  <h3 class="text-xl font-bold mb-3">{step.name}</h3>
+                  <p class="text-gray-600">{step.text}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-8">Camera Configuration Best Practices</h2>
+
+          <div class="space-y-6">
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6">
+              <h3 class="font-semibold text-blue-900 mb-2">Entry Point Coverage</h3>
+              <p class="text-blue-700">Position primary cameras to capture face-level footage at all entry/exit points. Set these as priority preset positions for quick access.</p>
+            </div>
+
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6">
+              <h3 class="font-semibold text-blue-900 mb-2">Overlapping Fields of View</h3>
+              <p class="text-blue-700">Configure cameras with 10-15% overlap in coverage areas to eliminate blind spots and provide multiple angles of incidents.</p>
+            </div>
+
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6">
+              <h3 class="font-semibold text-blue-900 mb-2">License Plate Capture</h3>
+              <p class="text-blue-700">Dedicate at least one camera with zoom capability for vehicle identification at entry points. Adjust shutter speed for clear plate capture.</p>
+            </div>
+
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6">
+              <h3 class="font-semibold text-blue-900 mb-2">Lighting Compensation</h3>
+              <p class="text-blue-700">Configure WDR (Wide Dynamic Range) settings for areas with challenging lighting conditions like shadows or backlighting.</p>
+            </div>
+
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6">
+              <h3 class="font-semibold text-blue-900 mb-2">Motion Detection Sensitivity</h3>
+              <p class="text-blue-700">Start with medium sensitivity and adjust based on environment. Higher for low-activity areas, lower for high-traffic zones.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-8">Common Setup Mistakes to Avoid</h2>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+              <h3 class="font-semibold text-red-900 mb-2">❌ Poor Cable Management</h3>
+              <p class="text-red-700">Exposed cables are vulnerable to damage and tampering. Always secure and protect all connections.</p>
+            </div>
+
+            <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+              <h3 class="font-semibold text-red-900 mb-2">❌ Ignoring Weather Factors</h3>
+              <p class="text-red-700">Failing to account for rain, wind, or sun glare can severely impact camera performance.</p>
+            </div>
+
+            <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+              <h3 class="font-semibold text-red-900 mb-2">❌ Insufficient Testing</h3>
+              <p class="text-red-700">Not testing all conditions (day/night, weather) leads to coverage gaps when you need surveillance most.</p>
+            </div>
+
+            <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+              <h3 class="font-semibold text-red-900 mb-2">❌ Forgetting Backup Power</h3>
+              <p class="text-red-700">Power outages leave sites vulnerable. Always verify backup power systems are functioning.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-8">Setup Time Comparison</h2>
+
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse bg-white rounded-lg shadow-sm">
+              <thead>
+                <tr class="bg-green-600 text-white">
+                  <th class="border p-4 text-left">Setup Phase</th>
+                  <th class="border p-4 text-left">Professional Service</th>
+                  <th class="border p-4 text-left">DIY Attempt</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b">
+                  <td class="p-4 font-semibold">Site Assessment</td>
+                  <td class="p-4 text-green-600 font-semibold">5 minutes</td>
+                  <td class="p-4">30-45 minutes</td>
+                </tr>
+                <tr class="border-b bg-gray-50">
+                  <td class="p-4 font-semibold">Trailer Positioning</td>
+                  <td class="p-4 text-green-600 font-semibold">5 minutes</td>
+                  <td class="p-4">15-20 minutes</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="p-4 font-semibold">System Deployment</td>
+                  <td class="p-4 text-green-600 font-semibold">10 minutes</td>
+                  <td class="p-4">45-60 minutes</td>
+                </tr>
+                <tr class="border-b bg-gray-50">
+                  <td class="p-4 font-semibold">Camera Configuration</td>
+                  <td class="p-4 text-green-600 font-semibold">5 minutes</td>
+                  <td class="p-4">60-90 minutes</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="p-4 font-semibold">Connectivity Setup</td>
+                  <td class="p-4 text-green-600 font-semibold">3 minutes</td>
+                  <td class="p-4">30-45 minutes</td>
+                </tr>
+                <tr class="border-b bg-gray-50">
+                  <td class="p-4 font-semibold">Testing & Optimization</td>
+                  <td class="p-4 text-green-600 font-semibold">2 minutes</td>
+                  <td class="p-4">30-60 minutes</td>
+                </tr>
+                <tr class="bg-green-50 font-bold">
+                  <td class="p-4">Total Time</td>
+                  <td class="p-4 text-green-600">30 minutes</td>
+                  <td class="p-4">3.5-5+ hours</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-green-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-6">Professional Setup Service Available</h2>
+          <p class="text-xl mb-8">
+            Skip the complexity and let our experts handle your security trailer setup.
+            We guarantee optimal coverage and performance.
+          </p>
+          <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-8">
+            <div class="grid md:grid-cols-4 gap-4">
+              <div>
+                <div class="text-3xl font-bold text-yellow-400">30min</div>
+                <div>Complete Setup</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-yellow-400">100%</div>
+                <div>Coverage Guarantee</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-yellow-400">24/7</div>
+                <div>Support</div>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-yellow-400">Free</div>
+                <div>Repositioning</div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:2536832288" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 px-8 rounded-lg inline-block text-lg">
+              📞 (253) 683-2288 - Schedule Setup
+            </a>
+          </div>
+          <p class="mt-4 text-yellow-300">Professional technicians available 7 days a week</p>
+        </div>
+      </div>
+    </section>
+
+    <CTASection />
+  </main>
+
+  <Footer />
+</Layout>

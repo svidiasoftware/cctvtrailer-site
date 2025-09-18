@@ -21,7 +21,7 @@ const {
 
 // Generate absolute URL for social media images
 const siteURL = Astro.site || 'https://www.cctvtrailer.com';
-const ogImageURL = new URL('/images/cctv-trailer-hero.webp', siteURL).href;
+const ogImageURL = new URL('/images/cctv-trailer-logo.png', siteURL).href;
 ---
 
 <!DOCTYPE html>
@@ -59,8 +59,8 @@ const ogImageURL = new URL('/images/cctv-trailer-hero.webp', siteURL).href;
     <meta property="twitter:image" content={ogImageURL} />
     <meta property="twitter:image:alt" content="CCTV Trailer - Mobile Surveillance Solutions" />
     <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:site" content="@cctvtrailer" />
-    <meta property="twitter:creator" content="@cctvtrailer" />
+    <meta property="twitter:site" content="@CCTVTrailer" />
+    <meta property="twitter:creator" content="@CCTVTrailer" />
 
     <!-- Defer Google Tag Manager to improve initial load -->
     
