@@ -194,18 +194,40 @@
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
-  
+
   <url>
     <loc>https://www.cctvtrailer.com/event-security</loc>
     <lastmod>2024-12-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
-  
+
   <url>
     <loc>https://www.cctvtrailer.com/emergency-surveillance</loc>
     <lastmod>2025-01-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+  </url>
+
+  <!-- How-To Guides -->
+  <url>
+    <loc>https://www.cctvtrailer.com/how-to-secure-construction-site</loc>
+    <lastmod>2025-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.cctvtrailer.com/how-to-setup-security-trailer</loc>
+    <lastmod>2025-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.cctvtrailer.com/how-to-calculate-security-roi</loc>
+    <lastmod>2025-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
