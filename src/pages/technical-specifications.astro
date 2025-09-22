@@ -6,6 +6,7 @@ import LazyImage from '../components/LazyImage.astro';
 import Analytics from '../components/Analytics.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
 import VideoSchema from '../components/VideoSchema.astro';
+import DefinitionSchema from '../components/DefinitionSchema.astro';
 
 const techSpecsSchema = {
   "@context": "https://schema.org",
@@ -122,6 +123,45 @@ const videoData = {
   keywords: ["mobile surveillance trailer", "CCTV trailer", "security system", "construction site security", "PTZ cameras", "S-VIDIA technology"],
   genre: "Security Technology"
 };
+
+// Definition schemas for key technical terms
+const definitions = [
+  {
+    term: "Mobile Surveillance Trailer",
+    definition: "A portable, self-contained security system mounted on a wheeled trailer platform that provides comprehensive video surveillance capabilities for temporary or permanent deployment at various locations. These trailers feature cameras, power systems, and communication equipment.",
+    category: "Security Equipment",
+    relatedTerms: ["CCTV Trailer", "Security Trailer", "Mobile Security Unit"],
+    url: "/technical-specifications"
+  },
+  {
+    term: "PTZ Camera",
+    definition: "Pan-Tilt-Zoom camera capable of remote directional and zoom control, allowing operators to actively track subjects and adjust viewing angles across a wide area. PTZ cameras provide 360-degree coverage with optical zoom capabilities.",
+    category: "Surveillance Technology",
+    relatedTerms: ["Security Camera", "Surveillance Camera", "Infrared Camera"],
+    url: "/technical-specifications"
+  },
+  {
+    term: "S-VIDIA Compression",
+    definition: "Advanced video compression technology that reduces bandwidth requirements while maintaining high-quality surveillance footage. S-VIDIA enables efficient transmission of video data over cellular, Wi-Fi, and satellite networks without compromising image clarity.",
+    category: "Video Technology",
+    relatedTerms: ["Video Compression", "Data Transmission", "Bandwidth Optimization"],
+    url: "/video-technology"
+  },
+  {
+    term: "Solar-Powered Security",
+    definition: "Surveillance systems powered by photovoltaic solar panels that convert sunlight into electrical energy, providing sustainable, off-grid operation with battery backup for continuous 24/7 monitoring without reliance on external power sources.",
+    category: "Power Systems",
+    relatedTerms: ["Renewable Energy", "Off-Grid Security", "Solar Panels"],
+    url: "/technical-specifications"
+  },
+  {
+    term: "Construction Site Security",
+    definition: "Comprehensive security measures designed to protect construction sites from theft, vandalism, and unauthorized access, including physical barriers, surveillance systems, access control, and monitoring services to safeguard equipment, materials, and work progress.",
+    category: "Security Services",
+    relatedTerms: ["Site Security", "Jobsite Protection", "Construction Surveillance"],
+    url: "/construction-security"
+  }
+];
 ---
 
 <Layout 
@@ -132,6 +172,7 @@ const videoData = {
 
   <BreadcrumbSchema items={breadcrumbItems} />
   <VideoSchema {...videoData} />
+  <DefinitionSchema definitions={definitions} />
 
   <Header currentPath="/technical-specifications" />
   <Analytics /> 

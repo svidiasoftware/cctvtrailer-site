@@ -18,6 +18,54 @@ const serviceSchemaData = {
   ]
 };
 
+// Local Business Schema with landmarks
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "CCTV Trailer - Tacoma Headquarters",
+  "description": "Mobile surveillance trailer rental serving Tacoma and Pierce County",
+  "url": "https://www.cctvtrailer.com/tacoma-security-trailer",
+  "telephone": "(253) 683-2288",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Tacoma",
+    "addressRegion": "WA",
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Tacoma",
+    "containsPlace": [
+      { "@type": "StadiumOrArena", "name": "Tacoma Dome" },
+      { "@type": "Museum", "name": "Museum of Glass" },
+      { "@type": "Museum", "name": "LeMay - America's Car Museum" },
+      { "@type": "EducationalOrganization", "name": "University of Washington Tacoma" },
+      { "@type": "TouristDestination", "name": "Point Defiance Park" },
+      { "@type": "Zoo", "name": "Point Defiance Zoo & Aquarium" },
+      { "@type": "Port", "name": "Port of Tacoma" },
+      { "@type": "Bridge", "name": "Tacoma Narrows Bridge" },
+      { "@type": "MilitaryBase", "name": "Joint Base Lewis-McChord" }
+    ]
+  },
+  "knowsAbout": [
+    "Construction Site Security in Tacoma",
+    "Port of Tacoma Security Services",
+    "Tacoma Dome Event Security",
+    "S-VIDIA Technology Implementation",
+    "Pierce County Emergency Response"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Tacoma Security Services",
+    "itemListElement": [
+      { "@type": "Service", "name": "Construction Site Monitoring" },
+      { "@type": "Service", "name": "Event Security" },
+      { "@type": "Service", "name": "Port Security" },
+      { "@type": "Service", "name": "Emergency Response" }
+    ]
+  }
+};
+
 // Breadcrumb data
 const breadcrumbItems = [
   { name: "Home", url: "/" },
@@ -34,9 +82,10 @@ const crimeStats = [
 ];
 ---
 
-<Layout 
+<Layout
   title="Tacoma Security Trailer Rental | Mobile CCTV Surveillance Tacoma WA"
-  description="Tacoma's trusted security trailer rental since 2009. Same-day deployment across Pierce County. Construction, events, emergency response. (253) 683-2288">
+  description="Tacoma's trusted security trailer rental. Same-day deployment across Pierce County. Construction, events, emergency response. (253) 683-2288"
+  schema={JSON.stringify(localBusinessSchema)}>
 
   <!-- Structured Data Schemas -->
   <ServiceSchema {...serviceSchemaData} />
@@ -275,11 +324,12 @@ const crimeStats = [
     <section class="py-16">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold mb-8">Recent Tacoma Success Stories</h2>
-        <div class="grid md:grid-cols-3 gap-8">
+        <!-- <div class="grid md:grid-cols-3 gap-8"> -->
+        <div class="grid md:grid-cols-2 gap-8">
           <div class="bg-white rounded-lg shadow-lg p-6">
             <div class="text-green-600 font-semibold mb-2">Port of Tacoma Operations</div>
-            <h3 class="font-bold text-lg mb-3">Blair Waterway Terminal</h3>
-            <p class="text-gray-600 mb-4">Deployed 8 trailers for 6-month terminal expansion project. Eliminated copper theft attempts and reduced equipment vandalism by 100%.</p>
+            <!-- <h3 class="font-bold text-lg mb-3">Blair Waterway Terminal</h3> -->
+            <p class="text-gray-600 mb-4">Deployed 8 trailers for 6-month. Eliminated copper theft attempts and reduced equipment vandalism by 100%.</p>
             <div class="text-sm text-gray-500">
               <span class="font-semibold">Challenge:</span> 24/7 industrial site with multiple entry points
             </div>
@@ -288,6 +338,16 @@ const crimeStats = [
             </div>
           </div>
           <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="text-blue-600 font-semibold mb-2">LeMay Annual Show</div>
+            <p class="text-gray-600 mb-4">Secured 2-day classic car show at LeMay private collection. Protected over $50M in rare vehicles with zero incidents during public event.</p>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Challenge:</span> High-value vintage cars, large crowds, multiple display areas
+            </div>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Solution:</span> Strategic placement with 24/7 monitoring during event
+            </div>
+          </div>
+          <!-- <div class="bg-white rounded-lg shadow-lg p-6">
             <div class="text-blue-600 font-semibold mb-2">Washington State Fair</div>
             <h3 class="font-bold text-lg mb-3">Puyallup Fairgrounds Security</h3>
             <p class="text-gray-600 mb-4">Managed security for 23-day fair run with 1.1 million attendees. Coordinated with Pierce County Sheriff for seamless crowd management.</p>
@@ -297,8 +357,8 @@ const crimeStats = [
             <div class="text-sm text-gray-500">
               <span class="font-semibold">Solution:</span> 15 strategic units with live monitoring
             </div>
-          </div>
-          <div class="bg-white rounded-lg shadow-lg p-6">
+          </div> -->
+          <!-- <div class="bg-white rounded-lg shadow-lg p-6">
             <div class="text-purple-600 font-semibold mb-2">Stadium District Development</div>
             <h3 class="font-bold text-lg mb-3">Pacific Avenue Mixed-Use</h3>
             <p class="text-gray-600 mb-4">Secured downtown Tacoma redevelopment project across from Union Station. Protected $2M construction equipment during 14-month build.</p>
@@ -308,7 +368,7 @@ const crimeStats = [
             <div class="text-sm text-gray-500">
               <span class="font-semibold">Solution:</span> Discrete placement with premium aesthetics
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -346,7 +406,7 @@ const crimeStats = [
                 <div class="space-y-4">
                   <div class="bg-green-50 p-4 rounded-lg">
                     <div class="font-semibold text-green-600">Local Employment</div>
-                    <p class="text-gray-600 text-sm">All 12 technicians live in Pierce County - from Lakewood to Puyallup, supporting local families.</p>
+                    <p class="text-gray-600 text-sm">All technicians live in Pierce County - from Lakewood to Puyallup, supporting local families.</p>
                   </div>
                   <div class="bg-blue-50 p-4 rounded-lg">
                     <div class="font-semibold text-blue-600">Emergency Preparedness</div>
@@ -354,7 +414,7 @@ const crimeStats = [
                   </div>
                   <div class="bg-yellow-50 p-4 rounded-lg">
                     <div class="font-semibold text-orange-600">Military Support</div>
-                    <p class="text-gray-600 text-sm">Veteran-owned company with special rates for JBLM contractors and military families.</p>
+                    <p class="text-gray-600 text-sm">Local company with special rates for JBLM contractors and military families.</p>
                   </div>
                 </div>
               </div>

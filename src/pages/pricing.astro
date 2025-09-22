@@ -9,7 +9,18 @@ import LazyImage from '../components/LazyImage.astro';
 import QuickAnswer from '../components/QuickAnswer.astro';
 import ComparisonTable from '../components/ComparisonTable.astro';
 import StatBox from '../components/StatBox.astro';
+import SpeakableSchema from '../components/SpeakableSchema.astro';
 
+
+// Speakable sections for voice search
+const speakableSections = [
+  { cssSelector: ".quick-answer-content" },
+  { cssSelector: "#pricing-table" },
+  { cssSelector: "#whats-included h2, #whats-included ul" },
+  { cssSelector: ".comparison-table" },
+  { cssSelector: ".stat-box" },
+  { cssSelector: "#pricing-faq h2, #pricing-faq div" }
+];
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
@@ -132,7 +143,8 @@ const breadcrumbItems = [
   description="Security trailer rental pricing: $499-999/day, $3,500/week, $8,000/month. Volume discounts, free setup, no hidden fees. Get instant quote: (253) 683-2288"
   schema={schema}>
 
-  <BreadcrumbSchema items={breadcrumbItems} /> 
+  <BreadcrumbSchema items={breadcrumbItems} />
+  <SpeakableSchema sections={speakableSections} />
 
   <Header showEmergencyBar={true} currentPath="/pricing" />
   <Analytics /> 

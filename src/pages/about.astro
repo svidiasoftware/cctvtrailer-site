@@ -55,6 +55,53 @@ const schema = JSON.stringify({
   "numberOfEmployees": {
     "@type": "QuantitativeValue",
     "value": 5
+  },
+  "memberOf": [
+    {
+      "@type": "Organization",
+      "name": "Associated General Contractors of Washington",
+      "url": "https://www.agcwa.com"
+    },
+    {
+      "@type": "Organization",
+      "name": "Tacoma-Pierce County Chamber of Commerce",
+      "url": "https://www.tacomachamber.org"
+    },
+    {
+      "@type": "Organization",
+      "name": "National Association of Security Companies",
+      "url": "https://www.nasco.org"
+    }
+  ],
+  "knowsAbout": [
+    "Mobile Surveillance Systems",
+    "Construction Site Security",
+    "Event Security",
+    "S-VIDIA Technology",
+    "Solar-Powered Surveillance",
+    "PTZ Camera Systems"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Security Services",
+    "itemListElement": [
+      {
+        "@type": "Service",
+        "name": "Mobile Surveillance Trailer Rental"
+      },
+      {
+        "@type": "Service",
+        "name": "Construction Site Security"
+      },
+      {
+        "@type": "Service",
+        "name": "Event Security Monitoring"
+      },
+      {
+        "@type": "Service",
+        "name": "Emergency Response Surveillance"
+      }
+    ]
   }
 });
 ---
@@ -306,7 +353,7 @@ const schema = JSON.stringify({
           <p class="text-xl text-gray-600 mb-12">
             Dedicated professionals committed to your security
           </p>
-          
+
           <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg p-8 shadow-xl">
             <p class="text-lg mb-6 leading-relaxed">
               Our team consists of security professionals, technical experts, and customer service specialists who work together to deliver the best mobile surveillance solutions in the Pacific Northwest.
@@ -317,6 +364,94 @@ const schema = JSON.stringify({
             <a href="/contact" class="bg-white text-blue-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block transition-colors">
               Get to Know Us Better →
             </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partnerships & Affiliations Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-4">Industry Partnerships & Technology</h2>
+          <p class="text-xl text-gray-600 text-center mb-12">
+            Working with industry leaders to deliver cutting-edge security solutions
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <!-- Technology Partners -->
+            <div class="bg-white rounded-lg p-8 shadow-lg">
+              <h3 class="font-bold text-xl mb-4 text-blue-600">Technology Platform</h3>
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <div>
+                    <strong>S-VIDIA Technology</strong>
+                    <p class="text-gray-600 text-sm mt-1">Advanced video compression and transmission platform enabling efficient remote monitoring</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <div>
+                    <strong>Solar Power Systems</strong>
+                    <p class="text-gray-600 text-sm mt-1">Sustainable energy solutions for off-grid operation</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <div>
+                    <strong>PTZ Camera Systems</strong>
+                    <p class="text-gray-600 text-sm mt-1">Professional-grade Pan-Tilt-Zoom cameras with infrared capabilities</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Industry Affiliations -->
+            <div class="bg-white rounded-lg p-8 shadow-lg">
+              <h3 class="font-bold text-xl mb-4 text-blue-600">Industry Affiliations</h3>
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <div>
+                    <strong>AGC of Washington</strong>
+                    <p class="text-gray-600 text-sm mt-1">Associated General Contractors - Construction industry partner</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <div>
+                    <strong>Tacoma Chamber of Commerce</strong>
+                    <p class="text-gray-600 text-sm mt-1">Active member supporting local business community</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <div>
+                    <strong>NASCO</strong>
+                    <p class="text-gray-600 text-sm mt-1">National Association of Security Companies member</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 text-center">
+            <p class="text-gray-700 leading-relaxed">
+              Our partnerships and technology integrations ensure you receive the most advanced and reliable security solutions available. We continuously invest in the latest security innovations while maintaining strong relationships with industry leaders.
+            </p>
           </div>
         </div>
       </div>

@@ -1,0 +1,43 @@
+---
+export interface DefinitionSchemaProps {
+  definitions?: Array<{
+    term: string;
+    definition: string;
+    category?: string;
+    relatedTerms?: string[];
+    url?: string;
+  }>;
+}
+
+const {
+  definitions = []
+} = Astro.props as DefinitionSchemaProps;
+
+// Generate schema for each definition
+const definitionSchemas = definitions.map(def => ({
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": def.term,
+  "description": def.definition,
+  ...(def.category && {
+    "inDefinedTermSet": {
+      "@type": "DefinedTermSet",
+      "name": def.category
+    }
+  }),
+  ...(def.relatedTerms && def.relatedTerms.length > 0 && {
+    "termCode": def.relatedTerms.map(term => ({
+      "@type": "DefinedTerm",
+      "name": term
+    }))
+  }),
+  ...(def.url && { "url": def.url })
+}));
+
+// If we have definitions, create the schema
+const schema = definitions.length > 0 ? JSON.stringify(definitionSchemas.length === 1 ? definitionSchemas[0] : definitionSchemas) : null;
+---
+
+{schema && (
+  <script type="application/ld+json" set:html={schema} />
+)}

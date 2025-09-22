@@ -7,6 +7,17 @@ import LazyImage from '../components/LazyImage.astro';
 import QuickAnswer from '../components/QuickAnswer.astro';
 import ComparisonTable from '../components/ComparisonTable.astro';
 import StatBox from '../components/StatBox.astro';
+import SpeakableSchema from '../components/SpeakableSchema.astro';
+
+// Speakable sections for voice search
+const speakableSections = [
+  { cssSelector: ".quick-answer-content" },
+  { cssSelector: "#construction-security h2, #construction-security p" },
+  { cssSelector: "#event-security h2, #event-security p" },
+  { cssSelector: "#emergency-response h2, #emergency-response p" },
+  { cssSelector: ".comparison-table" },
+  { cssSelector: ".stat-box" }
+];
 
 const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -125,10 +136,12 @@ const schema = JSON.stringify({
 });
 ---
 
-<Layout 
+<Layout
   title="Mobile Surveillance Trailer Services | CCTV Rental Tacoma"
   description="Mobile surveillance trailer rentals for construction, events & emergencies. 24/7 monitoring, solar-powered, rapid deployment across Puget Sound. Since 2009."
   schema={[breadcrumbSchema, schema]}>
+
+  <SpeakableSchema sections={speakableSections} />
   <Header showEmergencyBar={true} currentPath="/services" />
 
   <main>
