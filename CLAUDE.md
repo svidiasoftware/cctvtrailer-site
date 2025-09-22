@@ -5,4 +5,4 @@
 - check components folder and use reusable components when appropriate
 - use styles defined in src/styles/critical.css and src/styles/non-critical.css and create additional one only if no similar exist
 - pay attention to Google Analytics and update new pages accordingly
-- keep sitemap.xml and src/pages/sitemap.astro map files updated
+- keep public/sitemap.xml and src/pages/sitemap.astro map files updated
