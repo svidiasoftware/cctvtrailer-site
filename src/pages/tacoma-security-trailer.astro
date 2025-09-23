@@ -5,6 +5,7 @@ import Analytics from '../components/Analytics.astro';
 import ServiceSchema from '../components/ServiceSchema.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
 import StatBox from '../components/StatBox.astro';
+import LazyImage from '../components/LazyImage.astro';
 
 // Schema data for the construction security service
 const serviceSchemaData = {
@@ -96,20 +97,26 @@ const crimeStats = [
 
   <main>
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-green-800 to-green-900 text-white py-16">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl">
-          <h1 class="text-4xl md:text-5xl font-bold mb-4">Tacoma's Local Security Trailer Rental Company</h1>
-          <p class="text-xl mb-6">Proudly serving Pierce County with mobile surveillance solutions. Based right here in Tacoma - fastest response times guaranteed!</p>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href="tel:2536832288" class="bg-white text-green-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
+    <section class="hero-trailer">
+      <div class="hero-overlay">
+        <LazyImage src="/images/tacoma-hero.webp" alt="Mobile surveillance trailer with Tacoma Dome in background - Security rental pricing" 
+          class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
+      </div>
+      <div class="hero-content">
+        <div class="hero-text-wrapper">
+          <h1 class="hero-heading">Tacoma's Local Security Trailer Rental Company</h1>
+          <p class="text-xl mb-6 text-white">
+            Proudly serving Pierce County with mobile surveillance solutions. Based right here in Tacoma - fastest response times guaranteed!
+          </p>
+          <div class="hero-buttons">
+            <a href="tel:2536832288" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
               📞 Tacoma Direct: (253) 683-2288
             </a>
-            <a href="#tacoma-quote" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-lg inline-block text-center">
+            <a href="/security-cost-calculator" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
               Get Tacoma Quote →
             </a>
           </div>
-          <p class="mt-4">⚡ Fastest delivery in Pierce County - We're local!</p>
+          <p class="mt-4 text-white">⚡ Fastest delivery in Pierce County - We're local!</p>
         </div>
       </div>
     </section>
@@ -142,7 +149,7 @@ const crimeStats = [
               <p class="text-gray-600">Emergency deployment within Tacoma city limits</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow">
-              <div class="text-3xl mb-3">💰</div>
+              <div class="text-3xl mb-3">💳</div>
               <h3 class="font-bold mb-2">No Delivery Fees</h3>
               <p class="text-gray-600">Free delivery throughout Tacoma and nearby areas</p>
             </div>
