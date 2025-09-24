@@ -1,0 +1,546 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTASection from '../components/CTASection.astro';
+import Analytics from '../components/Analytics.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import LazyImage from '../components/LazyImage.astro';
+import QuickAnswer from '../components/QuickAnswer.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import StatBox from '../components/StatBox.astro';
+import SpeakableSchema from '../components/SpeakableSchema.astro';
+
+// Speakable sections for voice search
+const speakableSections = [
+  { cssSelector: ".quick-answer-content" },
+  { cssSelector: "#local-projects h2, #local-projects p" },
+  { cssSelector: ".stat-box" }
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "CCTV Trailer - Tacoma Construction Security",
+  "description": "Construction site security in Tacoma, WA. Mobile surveillance trailers for construction projects. Same-day deployment, 24/7 monitoring. Serving Tacoma Dome, Port of Tacoma, downtown projects.",
+  "url": "https://www.cctvtrailer.com/tacoma-construction-security",
+  "telephone": "(253) 683-2288",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Tacoma",
+    "streetAddress": "222 E 26th St",
+    "postalCode": "98421",
+    "addressRegion": "WA",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Tacoma",
+      "@id": "https://en.wikipedia.org/wiki/Tacoma,_Washington"
+    },
+    {
+      "@type": "Place",
+      "name": "Port of Tacoma"
+    },
+    {
+      "@type": "Place",
+      "name": "Tacoma Dome District"
+    },
+    {
+      "@type": "Place",
+      "name": "Downtown Tacoma"
+    },
+    {
+      "@type": "Place",
+      "name": "Stadium District"
+    }
+  ],
+  "priceRange": "$$",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+    ],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Construction Security Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Construction Site Mobile Surveillance",
+          "description": "24/7 monitored security trailers for Tacoma construction sites"
+        }
+      }
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "127"
+  }
+});
+
+// Breadcrumb data
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Locations", url: "/locations" },
+  { name: "Tacoma Construction Security" }
+];
+---
+
+<Layout
+  title="Tacoma Construction Site Security | Mobile Surveillance Trailers"
+  description="Construction security in Tacoma, WA. Mobile surveillance trailers protect job sites 24/7. Same-day deployment to Tacoma Dome, Port of Tacoma, downtown. Call (253) 683-2288."
+  schema={schema}>
+
+  <BreadcrumbSchema items={breadcrumbItems} />
+  <SpeakableSchema sections={speakableSections} />
+
+  <Header showEmergencyBar={true} currentPath="/tacoma-construction-security" />
+  <Analytics />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-trailer">
+      <div class="hero-overlay">
+        <LazyImage src="/images/tacoma-dome-bg-hero4.webp" alt="Tacoma construction site security - mobile surveillance trailers"
+          class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
+      </div>
+      <div class="hero-content">
+        <div class="hero-text-wrapper">
+          <h1 class="hero-heading">Tacoma Construction Site Security</h1>
+          <p class="hero-paragraph">
+            Protecting Tacoma's construction projects with advanced mobile surveillance since 2009
+          </p>
+          <div class="hero-buttons">
+            <a href="tel:2536832288" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
+              📞 (253) 683-2288
+            </a>
+            <a href="/same-day-security-rental" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
+              Same-Day Deployment
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Answer Box -->
+    <section class="py-8 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <QuickAnswer
+          what="Mobile surveillance trailers for Tacoma construction sites"
+          cost="$8,000-10,000/month | Volume discounts available"
+          time="2-4 hour deployment anywhere in Tacoma"
+          coverage="Free delivery within Tacoma city limits"
+          availability="Multiple units ready for immediate deployment"
+          customFields={[
+            { label: "Service Areas", value: "Downtown, Port, Tacoma Dome, Stadium District" },
+            { label: "Response Time", value: "Emergency deployment in 2 hours" }
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Local Statistics -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <StatBox
+          title="Construction Security in Tacoma: By the Numbers"
+          description="Local crime statistics and security impact"
+          layout="grid"
+          stats={[
+            {
+              value: "43%",
+              label: "Increase in Construction Theft",
+              icon: "📈",
+              highlight: true,
+              source: { text: "Tacoma PD 2024 Report" }
+            },
+            {
+              value: "$2.3M",
+              label: "Annual Theft Losses",
+              icon: "💰",
+              highlight: true,
+              source: { text: "Pierce County data" }
+            },
+            {
+              value: "< 4hrs",
+              label: "Average Response Time",
+              icon: "⚡",
+              highlight: false
+            },
+            {
+              value: "95%",
+              label: "Theft Prevention Rate",
+              icon: "🛡️",
+              highlight: true
+            }
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Local Projects Section -->
+    <section id="local-projects" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">Protecting Tacoma's Major Construction Projects</h2>
+
+          <!-- Project Types Grid -->
+          <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white rounded-lg p-6 shadow-md">
+              <div class="flex items-center mb-4">
+                <span class="text-3xl mr-3">🏗️</span>
+                <h3 class="text-xl font-semibold">Commercial Development</h3>
+              </div>
+              <ul class="space-y-2 text-gray-700">
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>Tacoma Mall expansion projects</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>Downtown high-rise construction</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>Stadium District developments</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>Brewery District renovations</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-md">
+              <div class="flex items-center mb-4">
+                <span class="text-3xl mr-3">⚓</span>
+                <h3 class="text-xl font-semibold">Port & Infrastructure</h3>
+              </div>
+              <ul class="space-y-2 text-gray-700">
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>Port of Tacoma expansions</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>Tideflats industrial projects</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>Rail yard construction</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>Maritime facility upgrades</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-md">
+              <div class="flex items-center mb-4">
+                <span class="text-3xl mr-3">🏘️</span>
+                <h3 class="text-xl font-semibold">Residential Projects</h3>
+              </div>
+              <ul class="space-y-2 text-gray-700">
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>North End housing developments</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>Proctor District condominiums</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>Affordable housing projects</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>Mixed-use developments</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-md">
+              <div class="flex items-center mb-4">
+                <span class="text-3xl mr-3">🏛️</span>
+                <h3 class="text-xl font-semibold">Public Works</h3>
+              </div>
+              <ul class="space-y-2 text-gray-700">
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>City infrastructure upgrades</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>School construction projects</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>Hospital expansions</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>Bridge and road construction</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Service Area Map -->
+          <div class="bg-white rounded-lg p-8 shadow-md mb-12">
+            <h3 class="text-2xl font-bold mb-6 text-center">Tacoma Service Areas - Fast Response Guaranteed</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+              <div>
+                <h4 class="font-semibold mb-3 text-blue-600">Central Tacoma</h4>
+                <ul class="text-sm space-y-1 text-gray-700">
+                  <li>• Downtown (< 2 hours)</li>
+                  <li>• Tacoma Dome District</li>
+                  <li>• Stadium District</li>
+                  <li>• Hilltop</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-3 text-blue-600">North Tacoma</h4>
+                <ul class="text-sm space-y-1 text-gray-700">
+                  <li>• Proctor District</li>
+                  <li>• North End</li>
+                  <li>• Old Town</li>
+                  <li>• Ruston</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-3 text-blue-600">South/East Tacoma</h4>
+                <ul class="text-sm space-y-1 text-gray-700">
+                  <li>• Port of Tacoma</li>
+                  <li>• Tideflats</li>
+                  <li>• South Tacoma</li>
+                  <li>• East Side</li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-6 text-center text-sm text-gray-600">
+              <p class="font-semibold">Also serving nearby areas:</p>
+              <p>Lakewood, Fife, Federal Way, Puyallup, Gig Harbor, University Place</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Local Challenges Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">Tacoma-Specific Security Challenges</h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-red-50 rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-4 text-red-700">Common Threats</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="text-red-600 mr-2 mt-1">⚠️</span>
+                  <div>
+                    <strong>Port Area Copper Theft</strong>
+                    <p class="text-sm text-gray-600 mt-1">High-value wire targeted near industrial zones</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 mr-2 mt-1">⚠️</span>
+                  <div>
+                    <strong>Equipment Theft on I-5 Corridor</strong>
+                    <p class="text-sm text-gray-600 mt-1">Easy highway access increases theft risk</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 mr-2 mt-1">⚠️</span>
+                  <div>
+                    <strong>Downtown Vandalism</strong>
+                    <p class="text-sm text-gray-600 mt-1">Urban projects face graffiti and damage</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 mr-2 mt-1">⚠️</span>
+                  <div>
+                    <strong>Tool Theft in Residential Areas</strong>
+                    <p class="text-sm text-gray-600 mt-1">Small tools targeted in neighborhood builds</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-green-50 rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-4 text-green-700">Our Solutions</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <div>
+                    <strong>Thermal Detection Systems</strong>
+                    <p class="text-sm text-gray-600 mt-1">Catches intruders in fog and rain conditions</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <div>
+                    <strong>Direct Police Integration</strong>
+                    <p class="text-sm text-gray-600 mt-1">Connected to Tacoma PD for fast response</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <div>
+                    <strong>Weather-Resistant Units</strong>
+                    <p class="text-sm text-gray-600 mt-1">Built for Puget Sound weather conditions</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <div>
+                    <strong>Multi-Site Coordination</strong>
+                    <p class="text-sm text-gray-600 mt-1">Monitor multiple Tacoma locations centrally</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <ComparisonTable
+          title="Why Tacoma Contractors Choose Mobile Surveillance"
+          description="Compare security options for Tacoma construction sites"
+          headers={["Mobile Trailers", "Security Guards", "Fixed Cameras"]}
+          rows={[
+            {
+              feature: "Coverage Quality",
+              values: [
+                { text: "360° HD coverage", highlight: true },
+                "Limited visibility",
+                "Blind spots common"
+              ]
+            },
+            {
+              feature: "Weather Performance",
+              values: [
+                { text: "All-weather operation", highlight: true },
+                "Reduced in rain/fog",
+                "Weather-dependent"
+              ]
+            },
+            {
+              feature: "Response Time",
+              values: [
+                { text: "Instant alerts", highlight: true },
+                "Depends on location",
+                "Recording only"
+              ]
+            },
+            {
+              feature: "Port/Industrial Sites",
+              values: [
+                { text: "Ideal for remote areas", highlight: true },
+                "High cost for coverage",
+                "Infrastructure needed"
+              ]
+            },
+            {
+              feature: "Multi-Site Projects",
+              values: [
+                { text: "Easy relocation", highlight: true },
+                "Separate teams needed",
+                "Fixed installation"
+              ]
+            },
+            {
+              feature: "Tacoma Permit Requirements",
+              values: [
+                { text: "No permits needed", highlight: true },
+                "Various requirements",
+                "Building permits"
+              ]
+            },
+            {
+              feature: "Local Support",
+              values: [
+                { text: "24/7 Tacoma-based", highlight: true },
+                "Varies by company",
+                "Remote support only"
+              ]
+            }
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Recent Projects -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Recent Tacoma Projects Protected</h2>
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div class="bg-gray-50 rounded-lg p-6">
+            <div class="text-3xl mb-3">🏢</div>
+            <h3 class="font-semibold mb-2">Downtown Mixed-Use Tower</h3>
+            <p class="text-sm text-gray-600 mb-3">25th & Pacific development</p>
+            <div class="text-sm">
+              <span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded">Zero incidents in 12 months</span>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 rounded-lg p-6">
+            <div class="text-3xl mb-3">⚓</div>
+            <h3 class="font-semibold mb-2">Port Terminal Expansion</h3>
+            <p class="text-sm text-gray-600 mb-3">Blair Waterway project</p>
+            <div class="text-sm">
+              <span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded">$450K theft prevented</span>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 rounded-lg p-6">
+            <div class="text-3xl mb-3">🏘️</div>
+            <h3 class="font-semibold mb-2">Proctor Station Housing</h3>
+            <p class="text-sm text-gray-600 mb-3">180-unit residential complex</p>
+            <div class="text-sm">
+              <span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded">95% cost savings vs guards</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Local Testimonial -->
+    <!-- <section class="py-16 bg-blue-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <div class="text-5xl mb-4">💬</div>
+          <blockquote class="text-xl italic text-gray-700 mb-6">
+            "After losing $180,000 in equipment at our last Tacoma project, we now use CCTV Trailer on every job. Their rapid deployment saved us when we had an emergency at the Port. Best security investment we've made."
+          </blockquote>
+          <cite class="font-semibold text-gray-900">
+            - Mark Stevens, Tacoma General Contractor
+          </cite>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- CTA Section -->
+    <CTASection
+      title="Protect Your Tacoma Construction Site Today"
+      description="Same-day deployment available throughout Tacoma and Pierce County"
+      features={["✓ 2-Hour Emergency Response", "✓ Free Tacoma Delivery", "✓ Local 24/7 Support", "✓ No Setup Fees"]}
+    />
+  </main>
+
+  <Footer />
+</Layout>

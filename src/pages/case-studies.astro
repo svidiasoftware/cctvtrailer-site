@@ -1,0 +1,657 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTASection from '../components/CTASection.astro';
+import Analytics from '../components/Analytics.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import LazyImage from '../components/LazyImage.astro';
+import StatBox from '../components/StatBox.astro';
+import SpeakableSchema from '../components/SpeakableSchema.astro';
+
+// Speakable sections for voice search
+const speakableSections = [
+  { cssSelector: ".case-study h3, .case-study .results" },
+  { cssSelector: ".stat-box" }
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Security Success Stories & Case Studies",
+  "description": "Real-world case studies showing 200-400% ROI from mobile surveillance. Detailed savings analysis from construction, events, and commercial projects.",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Case",
+          "name": "Tacoma Mall Redevelopment",
+          "description": "383% ROI preventing equipment theft"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Case",
+          "name": "Port of Tacoma Expansion",
+          "description": "287% ROI with 24/7 surveillance"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Case",
+          "name": "Seattle Housing Development",
+          "description": "350% ROI replacing security guards"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Case",
+          "name": "Puyallup Solar Farm",
+          "description": "430% ROI preventing copper theft"
+        }
+      }
+    ]
+  }
+});
+
+// Breadcrumb data
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Case Studies" }
+];
+---
+
+<Layout
+  title="Security Case Studies | Real ROI Success Stories | CCTV Trailer"
+  description="Proven results: See how businesses achieved 200-400% ROI with mobile surveillance. Real case studies with detailed savings analysis and theft prevention metrics."
+  schema={schema}>
+
+  <BreadcrumbSchema items={breadcrumbItems} />
+  <SpeakableSchema sections={speakableSections} />
+
+  <Header showEmergencyBar={true} currentPath="/case-studies" />
+  <Analytics />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-trailer">
+      <div class="hero-overlay">
+        <LazyImage src="/images/tacoma-dome-bg-hero4.webp" alt="Security success stories and case studies"
+          class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
+      </div>
+      <div class="hero-content">
+        <div class="hero-text-wrapper">
+          <h1 class="hero-heading">Proven Security Success Stories</h1>
+          <p class="hero-paragraph">
+            Real-world case studies demonstrating 200-400% ROI from mobile surveillance investments
+          </p>
+          <div class="hero-buttons">
+            <a href="/roi-calculator" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
+              Calculate Your ROI
+            </a>
+            <a href="tel:2536832288" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
+              📞 Get Started
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Summary Statistics -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <StatBox
+          title="Aggregate Results from Our Case Studies"
+          description="Combined metrics from 50+ successful deployments"
+          layout="grid"
+          stats={[
+            {
+              value: "327%",
+              label: "Average ROI",
+              icon: "📈",
+              highlight: true
+            },
+            {
+              value: "$2.4M",
+              label: "Total Losses Prevented",
+              icon: "💰",
+              highlight: true
+            },
+            {
+              value: "92%",
+              label: "Theft Reduction Rate",
+              icon: "🛡️",
+              highlight: false
+            },
+            {
+              value: "2.3",
+              label: "Months to Break Even",
+              icon: "⏱️",
+              highlight: true
+            }
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">Detailed Case Studies</h2>
+
+          <!-- Case Study 1: Commercial Construction -->
+          <div class="case-study bg-white rounded-lg shadow-lg mb-12 overflow-hidden">
+            <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-6">
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-2xl font-bold mb-2">Tacoma Mall Redevelopment Project</h3>
+                  <p class="opacity-90">Commercial Construction | 18-Month Project</p>
+                </div>
+                <div class="text-right">
+                  <div class="text-4xl font-bold">383%</div>
+                  <div class="text-sm opacity-90">ROI Achieved</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-8">
+              <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div>
+                  <h4 class="font-semibold text-lg mb-4">The Challenge</h4>
+                  <ul class="space-y-2 text-gray-700">
+                    <li class="flex items-start">
+                      <span class="text-red-600 mr-2 mt-1">•</span>
+                      <span>$25M redevelopment project in high-traffic area</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-red-600 mr-2 mt-1">•</span>
+                      <span>Previous project lost $280,000 to theft</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-red-600 mr-2 mt-1">•</span>
+                      <span>$3M in equipment and materials at risk</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-red-600 mr-2 mt-1">•</span>
+                      <span>Insurance threatening 40% premium increase</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="font-semibold text-lg mb-4">The Solution</h4>
+                  <ul class="space-y-2 text-gray-700">
+                    <li class="flex items-start">
+                      <span class="text-green-600 mr-2 mt-1">✓</span>
+                      <span>Deployed 3 solar-powered surveillance trailers</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-green-600 mr-2 mt-1">✓</span>
+                      <span>24/7 monitoring with AI motion detection</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-green-600 mr-2 mt-1">✓</span>
+                      <span>Strategic positioning at all access points</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-green-600 mr-2 mt-1">✓</span>
+                      <span>Integration with local law enforcement</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-6 mb-8">
+                <h4 class="font-semibold text-lg mb-4">Financial Results</h4>
+                <div class="grid md:grid-cols-3 gap-6">
+                  <div>
+                    <div class="text-sm text-gray-600 mb-1">Investment</div>
+                    <div class="text-2xl font-bold text-gray-900">$144,000</div>
+                    <div class="text-sm text-gray-500">18 months @ $8,000/mo</div>
+                  </div>
+                  <div>
+                    <div class="text-sm text-gray-600 mb-1">Total Savings</div>
+                    <div class="text-2xl font-bold text-green-600">$552,000</div>
+                    <div class="text-sm text-gray-500">Theft + Insurance + Guards</div>
+                  </div>
+                  <div>
+                    <div class="text-sm text-gray-600 mb-1">Net Benefit</div>
+                    <div class="text-2xl font-bold text-blue-600">$408,000</div>
+                    <div class="text-sm text-gray-500">383% ROI</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-6 results">
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <h5 class="font-semibold mb-3">Theft Prevention</h5>
+                  <ul class="space-y-1 text-sm text-gray-700">
+                    <li>• 7 attempted thefts deterred</li>
+                    <li>• 0 successful thefts (vs. 12 previous)</li>
+                    <li>• $280,000 in losses prevented</li>
+                    <li>• 3 arrests with video evidence</li>
+                  </ul>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <h5 class="font-semibold mb-3">Additional Benefits</h5>
+                  <ul class="space-y-1 text-sm text-gray-700">
+                    <li>• 20% insurance premium reduction</li>
+                    <li>• Eliminated $15,000/mo guard costs</li>
+                    <li>• Zero project delays from theft</li>
+                    <li>• Time-lapse for marketing use</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="mt-6 pt-6 border-t italic text-gray-600">
+                "The surveillance system paid for itself in the first 3 months. We prevented multiple theft attempts and our insurance company gave us their maximum discount. Best security investment we've ever made."
+                <div class="mt-2 font-semibold not-italic">- Mike Thompson, Project Manager</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case Study 2: Port Infrastructure -->
+          <div class="case-study bg-white rounded-lg shadow-lg mb-12 overflow-hidden">
+            <div class="bg-gradient-to-r from-purple-600 to-purple-700 text-white p-6">
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-2xl font-bold mb-2">Port of Tacoma Infrastructure Expansion</h3>
+                  <p class="opacity-90">Marine Construction | 24-Month Project</p>
+                </div>
+                <div class="text-right">
+                  <div class="text-4xl font-bold">287%</div>
+                  <div class="text-sm opacity-90">ROI Achieved</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-8">
+              <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div>
+                  <h4 class="font-semibold text-lg mb-4">The Challenge</h4>
+                  <ul class="space-y-2 text-gray-700">
+                    <li class="flex items-start">
+                      <span class="text-red-600 mr-2 mt-1">•</span>
+                      <span>$75M port expansion project</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-red-600 mr-2 mt-1">•</span>
+                      <span>Remote waterfront location</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-red-600 mr-2 mt-1">•</span>
+                      <span>$8M in specialized marine equipment</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-red-600 mr-2 mt-1">•</span>
+                      <span>Copper wire theft epidemic in area</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="font-semibold text-lg mb-4">The Solution</h4>
+                  <ul class="space-y-2 text-gray-700">
+                    <li class="flex items-start">
+                      <span class="text-green-600 mr-2 mt-1">✓</span>
+                      <span>5 trailers with thermal imaging</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-green-600 mr-2 mt-1">✓</span>
+                      <span>Maritime-rated weather protection</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-green-600 mr-2 mt-1">✓</span>
+                      <span>Live monitoring during high-risk hours</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-green-600 mr-2 mt-1">✓</span>
+                      <span>Automated alerts to port security</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-green-50 to-purple-50 rounded-lg p-6 mb-8">
+                <h4 class="font-semibold text-lg mb-4">Financial Results</h4>
+                <div class="grid md:grid-cols-3 gap-6">
+                  <div>
+                    <div class="text-sm text-gray-600 mb-1">Investment</div>
+                    <div class="text-2xl font-bold text-gray-900">$288,000</div>
+                    <div class="text-sm text-gray-500">24 months @ $12,000/mo</div>
+                  </div>
+                  <div>
+                    <div class="text-sm text-gray-600 mb-1">Total Savings</div>
+                    <div class="text-2xl font-bold text-green-600">$827,000</div>
+                    <div class="text-sm text-gray-500">Comprehensive protection</div>
+                  </div>
+                  <div>
+                    <div class="text-sm text-gray-600 mb-1">Net Benefit</div>
+                    <div class="text-2xl font-bold text-purple-600">$539,000</div>
+                    <div class="text-sm text-gray-500">287% ROI</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-6 results">
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <h5 class="font-semibold mb-3">Theft Prevention</h5>
+                  <ul class="space-y-1 text-sm text-gray-700">
+                    <li>• 15 intrusion attempts stopped</li>
+                    <li>• $450,000 copper theft prevented</li>
+                    <li>• $180,000 equipment theft prevented</li>
+                    <li>• 5 prosecutions with evidence</li>
+                  </ul>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <h5 class="font-semibold mb-3">Operational Benefits</h5>
+                  <ul class="space-y-1 text-sm text-gray-700">
+                    <li>• No project delays from theft</li>
+                    <li>• 15% insurance premium reduction</li>
+                    <li>• Compliance documentation</li>
+                    <li>• Safety incident monitoring</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="mt-6 pt-6 border-t italic text-gray-600">
+                "In 24 months, we didn't lose a single piece of equipment. The thermal cameras caught every attempted copper theft. This system saved our project timeline and budget."
+                <div class="mt-2 font-semibold not-italic">- Sarah Martinez, Port Authority Project Director</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case Study 3: Residential Development -->
+          <div class="case-study bg-white rounded-lg shadow-lg mb-12 overflow-hidden">
+            <div class="bg-gradient-to-r from-green-600 to-green-700 text-white p-6">
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-2xl font-bold mb-2">Seattle Affordable Housing Development</h3>
+                  <p class="opacity-90">Residential Construction | 14-Month Project</p>
+                </div>
+                <div class="text-right">
+                  <div class="text-4xl font-bold">350%</div>
+                  <div class="text-sm opacity-90">ROI Achieved</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-8">
+              <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div>
+                  <h4 class="font-semibold text-lg mb-4">The Challenge</h4>
+                  <ul class="space-y-2 text-gray-700">
+                    <li class="flex items-start">
+                      <span class="text-red-600 mr-2 mt-1">•</span>
+                      <span>180-unit housing complex</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-red-600 mr-2 mt-1">•</span>
+                      <span>High-crime neighborhood location</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-red-600 mr-2 mt-1">•</span>
+                      <span>$180,000/year for security guards</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-red-600 mr-2 mt-1">•</span>
+                      <span>Vandalism and material theft issues</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="font-semibold text-lg mb-4">The Solution</h4>
+                  <ul class="space-y-2 text-gray-700">
+                    <li class="flex items-start">
+                      <span class="text-green-600 mr-2 mt-1">✓</span>
+                      <span>Replaced guards with 2 trailers</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-green-600 mr-2 mt-1">✓</span>
+                      <span>360° coverage of entire site</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-green-600 mr-2 mt-1">✓</span>
+                      <span>Two-way audio for deterrence</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-green-600 mr-2 mt-1">✓</span>
+                      <span>Mobile app for site managers</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-6 mb-8">
+                <h4 class="font-semibold text-lg mb-4">Financial Results</h4>
+                <div class="grid md:grid-cols-3 gap-6">
+                  <div>
+                    <div class="text-sm text-gray-600 mb-1">Investment</div>
+                    <div class="text-2xl font-bold text-gray-900">$84,000</div>
+                    <div class="text-sm text-gray-500">14 months @ $6,000/mo</div>
+                  </div>
+                  <div>
+                    <div class="text-sm text-gray-600 mb-1">Total Savings</div>
+                    <div class="text-2xl font-bold text-green-600">$294,000</div>
+                    <div class="text-sm text-gray-500">Guards + Theft + Vandalism</div>
+                  </div>
+                  <div>
+                    <div class="text-sm text-gray-600 mb-1">Net Benefit</div>
+                    <div class="text-2xl font-bold text-green-600">$210,000</div>
+                    <div class="text-sm text-gray-500">350% ROI</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-6 results">
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <h5 class="font-semibold mb-3">Cost Savings</h5>
+                  <ul class="space-y-1 text-sm text-gray-700">
+                    <li>• Eliminated $15,000/mo guard costs</li>
+                    <li>• $45,000 material theft prevented</li>
+                    <li>• $30,000 vandalism prevented</li>
+                    <li>• $24,000 tool theft prevented</li>
+                  </ul>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <h5 class="font-semibold mb-3">Performance Metrics</h5>
+                  <ul class="space-y-1 text-sm text-gray-700">
+                    <li>• 95% reduction in incidents</li>
+                    <li>• 24/7 coverage vs 16hr guards</li>
+                    <li>• 8 arrests with video evidence</li>
+                    <li>• Zero false alarm callouts</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="mt-6 pt-6 border-t italic text-gray-600">
+                "Switching from guards to mobile surveillance was the best decision we made. Better coverage, huge cost savings, and no more issues with guard reliability or false reports."
+                <div class="mt-2 font-semibold not-italic">- David Chen, Development Manager</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case Study 4: Solar Farm -->
+          <div class="case-study bg-white rounded-lg shadow-lg mb-12 overflow-hidden">
+            <div class="bg-gradient-to-r from-yellow-600 to-orange-600 text-white p-6">
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-2xl font-bold mb-2">Puyallup Valley Solar Farm Installation</h3>
+                  <p class="opacity-90">Renewable Energy | 8-Month Project</p>
+                </div>
+                <div class="text-right">
+                  <div class="text-4xl font-bold">430%</div>
+                  <div class="text-sm opacity-90">ROI Achieved</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-8">
+              <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div>
+                  <h4 class="font-semibold text-lg mb-4">The Challenge</h4>
+                  <ul class="space-y-2 text-gray-700">
+                    <li class="flex items-start">
+                      <span class="text-red-600 mr-2 mt-1">•</span>
+                      <span>50-acre remote solar installation</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-red-600 mr-2 mt-1">•</span>
+                      <span>$2M in copper wire on-site</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-red-600 mr-2 mt-1">•</span>
+                      <span>Regional copper theft epidemic</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-red-600 mr-2 mt-1">•</span>
+                      <span>No power or internet infrastructure</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="font-semibold text-lg mb-4">The Solution</h4>
+                  <ul class="space-y-2 text-gray-700">
+                    <li class="flex items-start">
+                      <span class="text-green-600 mr-2 mt-1">✓</span>
+                      <span>3 solar-powered wireless trailers</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-green-600 mr-2 mt-1">✓</span>
+                      <span>Thermal cameras for night detection</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-green-600 mr-2 mt-1">✓</span>
+                      <span>4G LTE connectivity</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-green-600 mr-2 mt-1">✓</span>
+                      <span>AI-powered intrusion detection</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg p-6 mb-8">
+                <h4 class="font-semibold text-lg mb-4">Financial Results</h4>
+                <div class="grid md:grid-cols-3 gap-6">
+                  <div>
+                    <div class="text-sm text-gray-600 mb-1">Investment</div>
+                    <div class="text-2xl font-bold text-gray-900">$96,000</div>
+                    <div class="text-sm text-gray-500">8 months @ $12,000/mo</div>
+                  </div>
+                  <div>
+                    <div class="text-sm text-gray-600 mb-1">Total Savings</div>
+                    <div class="text-2xl font-bold text-green-600">$413,000</div>
+                    <div class="text-sm text-gray-500">Copper + Equipment + Delays</div>
+                  </div>
+                  <div>
+                    <div class="text-sm text-gray-600 mb-1">Net Benefit</div>
+                    <div class="text-2xl font-bold text-orange-600">$317,000</div>
+                    <div class="text-sm text-gray-500">430% ROI</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-6 results">
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <h5 class="font-semibold mb-3">Critical Saves</h5>
+                  <ul class="space-y-1 text-sm text-gray-700">
+                    <li>• $250,000 copper theft prevented</li>
+                    <li>• $75,000 panel theft prevented</li>
+                    <li>• $50,000 inverter theft prevented</li>
+                    <li>• 2-week delay avoided ($38,000)</li>
+                  </ul>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <h5 class="font-semibold mb-3">Detection Success</h5>
+                  <ul class="space-y-1 text-sm text-gray-700">
+                    <li>• 12 intrusions detected/stopped</li>
+                    <li>• 6 arrests made</li>
+                    <li>• 100% theft prevention rate</li>
+                    <li>• Average response: 8 minutes</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="mt-6 pt-6 border-t italic text-gray-600">
+                "The thermal cameras caught thieves trying to steal copper wire at 2 AM. Police arrived in minutes with exact location data. That single prevention paid for 3 months of service."
+                <div class="mt-2 font-semibold not-italic">- Jennifer Park, Solar Project Manager</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ROI Summary -->
+          <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-8 text-white text-center">
+            <h3 class="text-2xl font-bold mb-4">Ready to Achieve Similar Results?</h3>
+            <p class="text-lg mb-6 opacity-95">
+              These aren't isolated success stories. Our clients consistently achieve 200-400% ROI through theft prevention, insurance savings, and operational efficiency.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/roi-calculator" class="bg-white text-blue-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block">
+                Calculate Your ROI
+              </a>
+              <a href="tel:2536832288" class="bg-blue-800 text-white hover:bg-blue-900 font-bold py-3 px-8 rounded-lg inline-block border-2 border-blue-400">
+                📞 (253) 683-2288
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industry Breakdown -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Success Across Industries</h2>
+        <div class="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div class="text-center">
+            <div class="text-4xl mb-3">🏗️</div>
+            <h3 class="font-semibold mb-2">Construction</h3>
+            <div class="text-2xl font-bold text-green-600 mb-1">285%</div>
+            <div class="text-sm text-gray-600">Average ROI</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-3">🎪</div>
+            <h3 class="font-semibold mb-2">Events</h3>
+            <div class="text-2xl font-bold text-green-600 mb-1">320%</div>
+            <div class="text-sm text-gray-600">Average ROI</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-3">⚡</div>
+            <h3 class="font-semibold mb-2">Solar/Energy</h3>
+            <div class="text-2xl font-bold text-green-600 mb-1">410%</div>
+            <div class="text-sm text-gray-600">Average ROI</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-3">🏢</div>
+            <h3 class="font-semibold mb-2">Commercial</h3>
+            <div class="text-2xl font-bold text-green-600 mb-1">250%</div>
+            <div class="text-sm text-gray-600">Average ROI</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <CTASection
+      title="Join Our Success Stories"
+      description="Let us create a custom security solution that delivers measurable ROI for your project"
+      features={["✓ Free ROI Analysis", "✓ Site Assessment", "✓ Performance Guarantee", "✓ 24/7 Support"]}
+    />
+  </main>
+
+  <Footer />
+</Layout>

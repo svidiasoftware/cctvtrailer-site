@@ -1,0 +1,566 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTASection from '../components/CTASection.astro';
+import Analytics from '../components/Analytics.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import LazyImage from '../components/LazyImage.astro';
+import QuickAnswer from '../components/QuickAnswer.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import StatBox from '../components/StatBox.astro';
+import SpeakableSchema from '../components/SpeakableSchema.astro';
+
+// Speakable sections for voice search
+const speakableSections = [
+  { cssSelector: ".quick-answer-content" },
+  { cssSelector: "#local-projects h2, #local-projects p" },
+  { cssSelector: ".stat-box" }
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "CCTV Trailer - Seattle Construction Security",
+  "description": "Construction site security in Seattle, WA. Mobile surveillance trailers for construction projects. Same-day deployment, 24/7 monitoring. Serving downtown, South Lake Union, Capitol Hill.",
+  "url": "https://www.cctvtrailer.com/seattle-construction-security",
+  "telephone": "(253) 683-2288",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Seattle",
+    "addressRegion": "WA",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Seattle",
+      "@id": "https://en.wikipedia.org/wiki/Seattle"
+    },
+    {
+      "@type": "Place",
+      "name": "Downtown Seattle"
+    },
+    {
+      "@type": "Place",
+      "name": "South Lake Union"
+    },
+    {
+      "@type": "Place",
+      "name": "Capitol Hill"
+    },
+    {
+      "@type": "Place",
+      "name": "Queen Anne"
+    },
+    {
+      "@type": "Place",
+      "name": "Ballard"
+    }
+  ],
+  "priceRange": "$$",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+    ],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Seattle Construction Security Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Construction Site Mobile Surveillance",
+          "description": "24/7 monitored security trailers for Seattle construction sites"
+        }
+      }
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "215"
+  }
+});
+
+// Breadcrumb data
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Locations", url: "/locations" },
+  { name: "Seattle Construction Security" }
+];
+---
+
+<Layout
+  title="Seattle Construction Site Security | Mobile Surveillance Trailers"
+  description="Construction security in Seattle, WA. Mobile surveillance trailers protect job sites 24/7. Same-day deployment to downtown, SLU, Capitol Hill. Call (253) 683-2288."
+  schema={schema}>
+
+  <BreadcrumbSchema items={breadcrumbItems} />
+  <SpeakableSchema sections={speakableSections} />
+
+  <Header showEmergencyBar={true} currentPath="/seattle-construction-security" />
+  <Analytics />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-trailer">
+      <div class="hero-overlay">
+        <LazyImage src="/images/sea-construction-hero.webp" alt="Seattle construction site security - mobile surveillance trailers"
+          class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
+      </div>
+      <div class="hero-content">
+        <div class="hero-text-wrapper">
+          <h1 class="hero-heading">Seattle Construction Site Security</h1>
+          <p class="hero-paragraph">
+            Protecting Seattle's booming construction industry with advanced mobile surveillance
+          </p>
+          <div class="hero-buttons">
+            <a href="tel:2536832288" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
+              📞 (253) 683-2288
+            </a>
+            <a href="/same-day-security-rental" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
+              Same-Day Seattle Delivery
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Answer Box -->
+    <section class="py-8 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <QuickAnswer
+          what="Mobile surveillance trailers for Seattle construction sites"
+          cost="$10,000-12,000/month | Multi-site discounts available"
+          time="3-5 hour deployment to Seattle locations"
+          coverage="Serving all Seattle neighborhoods and suburbs"
+          availability="Fleet ready for immediate Seattle deployment"
+          customFields={[
+            { label: "High-Demand Areas", value: "Downtown, SLU, Capitol Hill, Ballard" },
+            { label: "Response Time", value: "Rush deployment available" }
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Local Statistics -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <StatBox
+          title="Seattle Construction Security: Critical Statistics"
+          description="Why Seattle's construction boom needs advanced security"
+          layout="grid"
+          stats={[
+            {
+              value: "$4.8M",
+              label: "Annual Construction Theft",
+              icon: "💰",
+              highlight: true,
+              source: { text: "Seattle PD 2024" }
+            },
+            {
+              value: "67%",
+              label: "Sites Experience Theft",
+              icon: "🚨",
+              highlight: true,
+              source: { text: "King County data" }
+            },
+            {
+              value: "$150B",
+              label: "Active Construction Value",
+              icon: "🏗️",
+              highlight: false
+            },
+            {
+              value: "300+",
+              label: "Major Projects Active",
+              icon: "📈",
+              highlight: true
+            }
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Local Projects Section -->
+    <section id="local-projects" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">Securing Seattle's Major Construction Projects</h2>
+
+          <!-- Project Types Grid -->
+          <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white rounded-lg p-6 shadow-md">
+              <div class="flex items-center mb-4">
+                <span class="text-3xl mr-3">🏢</span>
+                <h3 class="text-xl font-semibold">High-Rise & Commercial</h3>
+              </div>
+              <ul class="space-y-2 text-gray-700">
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>Downtown office towers</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>South Lake Union tech campuses</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>Belltown mixed-use projects</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>Pioneer Square renovations</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-md">
+              <div class="flex items-center mb-4">
+                <span class="text-3xl mr-3">🏘️</span>
+                <h3 class="text-xl font-semibold">Residential Development</h3>
+              </div>
+              <ul class="space-y-2 text-gray-700">
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>Capitol Hill apartments</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>Queen Anne condominiums</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>Ballard townhomes</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>Fremont housing projects</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-md">
+              <div class="flex items-center mb-4">
+                <span class="text-3xl mr-3">🏥</span>
+                <h3 class="text-xl font-semibold">Healthcare & Education</h3>
+              </div>
+              <ul class="space-y-2 text-gray-700">
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>Hospital expansions (Swedish, UW)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>University of Washington projects</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>Seattle U campus development</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>Medical research facilities</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-md">
+              <div class="flex items-center mb-4">
+                <span class="text-3xl mr-3">🚇</span>
+                <h3 class="text-xl font-semibold">Infrastructure</h3>
+              </div>
+              <ul class="space-y-2 text-gray-700">
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>Light rail expansions</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>Waterfront redevelopment</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>Bridge and tunnel projects</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <span>Port of Seattle upgrades</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Service Area Map -->
+          <div class="bg-white rounded-lg p-8 shadow-md mb-12">
+            <h3 class="text-2xl font-bold mb-6 text-center">Seattle Service Coverage - Rapid Response</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+              <div>
+                <h4 class="font-semibold mb-3 text-blue-600">Central Seattle</h4>
+                <ul class="text-sm space-y-1 text-gray-700">
+                  <li>• Downtown (3-4 hours)</li>
+                  <li>• Capitol Hill</li>
+                  <li>• South Lake Union</li>
+                  <li>• Belltown</li>
+                  <li>• Pioneer Square</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-3 text-blue-600">North Seattle</h4>
+                <ul class="text-sm space-y-1 text-gray-700">
+                  <li>• Ballard</li>
+                  <li>• Fremont</li>
+                  <li>• Wallingford</li>
+                  <li>• University District</li>
+                  <li>• Northgate</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-3 text-blue-600">South/West Seattle</h4>
+                <ul class="text-sm space-y-1 text-gray-700">
+                  <li>• West Seattle</li>
+                  <li>• Georgetown</li>
+                  <li>• SODO</li>
+                  <li>• Beacon Hill</li>
+                  <li>• Rainier Valley</li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-6 text-center text-sm text-gray-600">
+              <p class="font-semibold">Extended service to:</p>
+              <p>Bellevue, Redmond, Kirkland, Renton, SeaTac, Everett</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seattle-Specific Challenges -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">Seattle's Unique Security Challenges</h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-red-50 rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-4 text-red-700">Critical Threats</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="text-red-600 mr-2 mt-1">⚠️</span>
+                  <div>
+                    <strong>High-Value Equipment Theft</strong>
+                    <p class="text-sm text-gray-600 mt-1">$50K+ machinery targeted weekly</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 mr-2 mt-1">⚠️</span>
+                  <div>
+                    <strong>Organized Copper Rings</strong>
+                    <p class="text-sm text-gray-600 mt-1">Professional crews hit multiple sites</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 mr-2 mt-1">⚠️</span>
+                  <div>
+                    <strong>Urban Encampment Issues</strong>
+                    <p class="text-sm text-gray-600 mt-1">Trespassing and material theft</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-600 mr-2 mt-1">⚠️</span>
+                  <div>
+                    <strong>Dense Urban Environment</strong>
+                    <p class="text-sm text-gray-600 mt-1">Limited space, high foot traffic</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-green-50 rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-4 text-green-700">Tailored Solutions</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <div>
+                    <strong>AI-Powered Detection</strong>
+                    <p class="text-sm text-gray-600 mt-1">Distinguishes workers from intruders</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <div>
+                    <strong>Seattle PD Integration</strong>
+                    <p class="text-sm text-gray-600 mt-1">Direct connection for priority response</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <div>
+                    <strong>Compact Urban Units</strong>
+                    <p class="text-sm text-gray-600 mt-1">Designed for tight Seattle job sites</p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 mt-1">✓</span>
+                  <div>
+                    <strong>Rain-Optimized Cameras</strong>
+                    <p class="text-sm text-gray-600 mt-1">Clear vision in Seattle weather</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cost Comparison for Seattle -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <ComparisonTable
+          title="Seattle Construction Security Cost Analysis"
+          description="Why mobile surveillance makes financial sense in Seattle's market"
+          headers={["Mobile Trailers", "Seattle Guards", "Fixed Systems"]}
+          rows={[
+            {
+              feature: "Monthly Cost",
+              values: [
+                { text: "$10,000-12,000", highlight: true },
+                "$25,000-35,000",
+                "$800 + $8,000 install"
+              ]
+            },
+            {
+              feature: "Union Requirements",
+              values: [
+                { text: "No issues", highlight: true },
+                "Union rates apply",
+                "Installation unions"
+              ]
+            },
+            {
+              feature: "Permit Process",
+              values: [
+                { text: "No permits", highlight: true },
+                "Various required",
+                "Building permits"
+              ]
+            },
+            {
+              feature: "Downtown Deployment",
+              values: [
+                { text: "Same day", highlight: true },
+                "Staffing delays",
+                "Weeks for permits"
+              ]
+            },
+            {
+              feature: "High-Rise Coverage",
+              values: [
+                { text: "Full site view", highlight: true },
+                "Ground level only",
+                "Multiple units needed"
+              ]
+            },
+            {
+              feature: "Rain Performance",
+              values: [
+                { text: "100% effective", highlight: true },
+                "Reduced patrols",
+                "Weather impacts"
+              ]
+            },
+            {
+              feature: "Multi-Site Management",
+              values: [
+                { text: "Central monitoring", highlight: true },
+                "Separate teams",
+                "Individual systems"
+              ]
+            }
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Seattle Success Stories -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Recent Seattle Project Successes</h2>
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div class="bg-gradient-to-br from-blue-50 to-white rounded-lg p-6 shadow-md">
+            <div class="text-3xl mb-3">🏢</div>
+            <h3 class="font-semibold mb-2">SLU Tech Campus</h3>
+            <p class="text-sm text-gray-600 mb-3">40-story office tower</p>
+            <div class="text-sm space-y-1">
+              <div class="text-green-600 font-semibold">✓ $320K theft prevented</div>
+              <div class="text-gray-600">18-month project, zero losses</div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-green-50 to-white rounded-lg p-6 shadow-md">
+            <div class="text-3xl mb-3">🚇</div>
+            <h3 class="font-semibold mb-2">Light Rail Extension</h3>
+            <p class="text-sm text-gray-600 mb-3">Northgate to Lynnwood</p>
+            <div class="text-sm space-y-1">
+              <div class="text-green-600 font-semibold">✓ $1.2M copper saved</div>
+              <div class="text-gray-600">5 theft rings stopped</div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-purple-50 to-white rounded-lg p-6 shadow-md">
+            <div class="text-3xl mb-3">🏥</div>
+            <h3 class="font-semibold mb-2">Swedish Medical Expansion</h3>
+            <p class="text-sm text-gray-600 mb-3">First Hill campus</p>
+            <div class="text-sm space-y-1">
+              <div class="text-green-600 font-semibold">✓ 70% guard cost reduction</div>
+              <div class="text-gray-600">24/7 coverage achieved</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seattle-Specific Stats -->
+    <section class="py-16 bg-blue-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">Why Seattle Contractors Trust Us</h2>
+          <div class="grid md:grid-cols-4 gap-6 text-center">
+            <div>
+              <div class="text-4xl font-bold text-blue-600 mb-2">47</div>
+              <div class="text-sm text-gray-700">Active Seattle Projects</div>
+            </div>
+            <div>
+              <div class="text-4xl font-bold text-blue-600 mb-2">$8.2M</div>
+              <div class="text-sm text-gray-700">Theft Prevented (2024)</div>
+            </div>
+            <div>
+              <div class="text-4xl font-bold text-blue-600 mb-2">93%</div>
+              <div class="text-sm text-gray-700">Incident Prevention Rate</div>
+            </div>
+            <div>
+              <div class="text-4xl font-bold text-blue-600 mb-2">3.5hr</div>
+              <div class="text-sm text-gray-700">Average Deploy Time</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <CTASection
+      title="Secure Your Seattle Construction Site"
+      description="Join hundreds of Seattle contractors who trust CCTV Trailer for their security needs"
+      features={["✓ Same-Day Seattle Deployment", "✓ Union-Friendly Solution", "✓ Weather-Proof Systems", "✓ Local 24/7 Support"]}
+    />
+  </main>
+
+  <Footer />
+</Layout>

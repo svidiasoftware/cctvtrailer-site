@@ -1,0 +1,656 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTASection from '../components/CTASection.astro';
+import Analytics from '../components/Analytics.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import LazyImage from '../components/LazyImage.astro';
+import QuickAnswer from '../components/QuickAnswer.astro';
+import StatBox from '../components/StatBox.astro';
+import SpeakableSchema from '../components/SpeakableSchema.astro';
+
+// Speakable sections for voice search
+const speakableSections = [
+  { cssSelector: ".quick-answer-content" },
+  { cssSelector: "#calculator-form" },
+  { cssSelector: ".results-section" },
+  { cssSelector: ".stat-box" }
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Security ROI Calculator",
+  "description": "Calculate your return on investment for mobile surveillance trailers vs security guards and theft losses. Get instant ROI analysis and cost savings projections.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "Theft cost analysis",
+    "Security guard comparison",
+    "Insurance savings calculator",
+    "ROI timeline projection",
+    "Custom site analysis"
+  ],
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "CCTV Trailer",
+    "telephone": "(253) 683-2288",
+    "email": "info@cctvtrailer.com"
+  }
+});
+
+// Breadcrumb data
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Tools", url: "/tools" },
+  { name: "ROI Calculator" }
+];
+---
+
+<Layout
+  title="Security ROI Calculator | Mobile Surveillance Cost Savings Analysis"
+  description="Calculate your security ROI instantly. Compare mobile surveillance costs vs guards & theft losses. Most sites see 210-383% ROI within 6 months."
+  schema={schema}>
+
+  <BreadcrumbSchema items={breadcrumbItems} />
+  <SpeakableSchema sections={speakableSections} />
+
+  <Header showEmergencyBar={true} currentPath="/roi-calculator" />
+  <Analytics />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-trailer">
+      <div class="hero-overlay">
+        <LazyImage src="/images/tacoma-dome-bg-hero4.webp" alt="Security ROI Calculator - Mobile surveillance cost analysis"
+          class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
+      </div>
+      <div class="hero-content">
+        <div class="hero-text-wrapper">
+          <h1 class="hero-heading">Security ROI Calculator</h1>
+          <p class="hero-paragraph">
+            Calculate your exact return on investment and see how much you'll save with mobile surveillance
+          </p>
+          <div class="hero-buttons">
+            <a href="#calculator" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
+              Start Calculation
+            </a>
+            <a href="tel:2536832288" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
+              📞 Get Expert Advice
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Answer Box -->
+    <section class="py-8 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <QuickAnswer
+          what="Interactive ROI calculator for mobile surveillance investment"
+          cost="Average ROI: 210-383% within 6 months"
+          time="2-minute calculation for complete analysis"
+          coverage="Factors in theft, guards, insurance, and operational costs"
+          availability="Free tool, no registration required"
+          customFields={[
+            { label: "Typical Savings", value: "60-75% vs security guards" },
+            { label: "Break-even", value: "Usually 2-3 months" }
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Statistics Overview -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <StatBox
+          title="Industry Loss Statistics"
+          description="Understanding the real cost of inadequate security"
+          layout="grid"
+          stats={[
+            {
+              value: "$1B+",
+              label: "Annual Construction Theft",
+              icon: "🚨",
+              highlight: true,
+              source: { text: "National Equipment Register", url: "#" }
+            },
+            {
+              value: "$400K",
+              label: "Average Theft per Site/Year",
+              icon: "💰",
+              highlight: true
+            },
+            {
+              value: "75%",
+              label: "Sites Experience Theft",
+              icon: "📊",
+              highlight: false
+            },
+            {
+              value: "1 in 5",
+              label: "Tools Never Recovered",
+              icon: "🔧",
+              highlight: true
+            }
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-8">Calculate Your Security ROI</h2>
+
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <form id="calculator-form" class="space-y-6">
+              <!-- Project Information -->
+              <div class="border-b pb-6">
+                <h3 class="text-xl font-semibold mb-4">Project Information</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label for="project-value" class="block text-sm font-medium text-gray-700 mb-2">
+                      Total Project Value ($)
+                    </label>
+                    <input type="number" id="project-value" name="project-value"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      placeholder="e.g., 5000000" value="5000000" />
+                  </div>
+
+                  <div>
+                    <label for="project-duration" class="block text-sm font-medium text-gray-700 mb-2">
+                      Project Duration (months)
+                    </label>
+                    <input type="number" id="project-duration" name="project-duration"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      placeholder="e.g., 12" value="12" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Equipment & Materials -->
+              <div class="border-b pb-6">
+                <h3 class="text-xl font-semibold mb-4">Equipment & Materials On-Site</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label for="equipment-value" class="block text-sm font-medium text-gray-700 mb-2">
+                      Equipment Value ($)
+                    </label>
+                    <input type="number" id="equipment-value" name="equipment-value"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      placeholder="e.g., 500000" value="500000" />
+                  </div>
+
+                  <div>
+                    <label for="material-value" class="block text-sm font-medium text-gray-700 mb-2">
+                      Materials/Copper Value ($)
+                    </label>
+                    <input type="number" id="material-value" name="material-value"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      placeholder="e.g., 100000" value="100000" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Current Security -->
+              <div class="border-b pb-6">
+                <h3 class="text-xl font-semibold mb-4">Current Security Solution</h3>
+                <div class="space-y-4">
+                  <div>
+                    <label for="security-type" class="block text-sm font-medium text-gray-700 mb-2">
+                      Current Security Method
+                    </label>
+                    <select id="security-type" name="security-type"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                      <option value="none">No Security</option>
+                      <option value="guards-day">Security Guards (Day Only)</option>
+                      <option value="guards-night">Security Guards (Night Only)</option>
+                      <option value="guards-247">Security Guards (24/7)</option>
+                      <option value="fixed-cameras">Fixed Cameras</option>
+                      <option value="fence-only">Fence/Barriers Only</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label for="current-cost" class="block text-sm font-medium text-gray-700 mb-2">
+                      Current Monthly Security Cost ($)
+                    </label>
+                    <input type="number" id="current-cost" name="current-cost"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      placeholder="e.g., 15000" value="0" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Risk Assessment -->
+              <div class="border-b pb-6">
+                <h3 class="text-xl font-semibold mb-4">Risk Assessment</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label for="theft-history" class="block text-sm font-medium text-gray-700 mb-2">
+                      Previous Theft Incidents
+                    </label>
+                    <select id="theft-history" name="theft-history"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                      <option value="none">No Previous Incidents</option>
+                      <option value="minor">1-2 Minor Incidents</option>
+                      <option value="moderate">3-5 Incidents</option>
+                      <option value="frequent">Regular Theft Issues</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label for="location-risk" class="block text-sm font-medium text-gray-700 mb-2">
+                      Location Risk Level
+                    </label>
+                    <select id="location-risk" name="location-risk"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                      <option value="low">Low Crime Area</option>
+                      <option value="medium">Medium Risk Area</option>
+                      <option value="high">High Crime Area</option>
+                      <option value="remote">Remote/Isolated Location</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Insurance -->
+              <div class="pb-6">
+                <h3 class="text-xl font-semibold mb-4">Insurance Information</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label for="insurance-premium" class="block text-sm font-medium text-gray-700 mb-2">
+                      Current Monthly Insurance Premium ($)
+                    </label>
+                    <input type="number" id="insurance-premium" name="insurance-premium"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      placeholder="e.g., 5000" value="5000" />
+                  </div>
+
+                  <div>
+                    <label for="deductible" class="block text-sm font-medium text-gray-700 mb-2">
+                      Theft Deductible ($)
+                    </label>
+                    <input type="number" id="deductible" name="deductible"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      placeholder="e.g., 10000" value="10000" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Calculate Button -->
+              <div class="text-center">
+                <button type="button" id="calculate-btn"
+                  class="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-12 rounded-lg text-lg shadow-lg transition-all hover:shadow-xl">
+                  Calculate ROI
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Results Section -->
+          <div id="results-section" class="hidden mt-12">
+            <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg shadow-xl p-8">
+              <h3 class="text-2xl font-bold text-center mb-8">Your Security ROI Analysis</h3>
+
+              <!-- Key Metrics -->
+              <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white rounded-lg p-6 text-center shadow-md">
+                  <div class="text-3xl font-bold text-green-600" id="roi-percentage">0%</div>
+                  <div class="text-gray-600 mt-2">ROI in 6 Months</div>
+                </div>
+                <div class="bg-white rounded-lg p-6 text-center shadow-md">
+                  <div class="text-3xl font-bold text-blue-600" id="monthly-savings">$0</div>
+                  <div class="text-gray-600 mt-2">Monthly Savings</div>
+                </div>
+                <div class="bg-white rounded-lg p-6 text-center shadow-md">
+                  <div class="text-3xl font-bold text-purple-600" id="payback-period">0</div>
+                  <div class="text-gray-600 mt-2">Months to Break Even</div>
+                </div>
+              </div>
+
+              <!-- Detailed Breakdown -->
+              <div class="bg-white rounded-lg p-6 mb-8">
+                <h4 class="text-xl font-semibold mb-4">Cost Breakdown Analysis</h4>
+                <div class="space-y-3">
+                  <div class="flex justify-between items-center py-2 border-b">
+                    <span class="text-gray-700">Estimated Annual Theft Risk:</span>
+                    <span class="font-semibold" id="theft-risk">$0</span>
+                  </div>
+                  <div class="flex justify-between items-center py-2 border-b">
+                    <span class="text-gray-700">Current Security Cost (Annual):</span>
+                    <span class="font-semibold" id="current-annual-cost">$0</span>
+                  </div>
+                  <div class="flex justify-between items-center py-2 border-b">
+                    <span class="text-gray-700">Mobile Surveillance Cost (Annual):</span>
+                    <span class="font-semibold" id="surveillance-annual-cost">$0</span>
+                  </div>
+                  <div class="flex justify-between items-center py-2 border-b">
+                    <span class="text-gray-700">Insurance Premium Reduction:</span>
+                    <span class="font-semibold text-green-600" id="insurance-savings">$0</span>
+                  </div>
+                  <div class="flex justify-between items-center py-2 border-b">
+                    <span class="text-gray-700">Theft Prevention Savings:</span>
+                    <span class="font-semibold text-green-600" id="theft-prevention-savings">$0</span>
+                  </div>
+                  <div class="flex justify-between items-center py-3 bg-green-50 px-3 rounded">
+                    <span class="text-gray-900 font-semibold">Total Annual Savings:</span>
+                    <span class="font-bold text-xl text-green-600" id="total-annual-savings">$0</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ROI Timeline Chart -->
+              <div class="bg-white rounded-lg p-6 mb-8">
+                <h4 class="text-xl font-semibold mb-4">ROI Timeline Projection</h4>
+                <canvas id="roi-chart" width="400" height="200"></canvas>
+              </div>
+
+              <!-- Recommendations -->
+              <div class="bg-blue-50 rounded-lg p-6">
+                <h4 class="text-xl font-semibold mb-4">Recommended Security Package</h4>
+                <div id="recommendations" class="space-y-3">
+                  <!-- Recommendations will be populated by JavaScript -->
+                </div>
+                <div class="mt-6 text-center">
+                  <a href="tel:2536832288" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
+                    📞 Get Custom Quote
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Embeddable Widget Code -->
+            <div class="mt-8 bg-gray-100 rounded-lg p-6">
+              <h4 class="text-lg font-semibold mb-3">Embed This Calculator</h4>
+              <p class="text-sm text-gray-600 mb-3">Copy this code to embed the ROI calculator on your website:</p>
+              <div class="bg-white rounded p-4 font-mono text-sm overflow-x-auto">
+                <code id="embed-code">
+&lt;iframe src="https://www.cctvtrailer.com/roi-calculator-widget" width="100%" height="800" frameborder="0"&gt;&lt;/iframe&gt;
+                </code>
+              </div>
+              <button id="copy-embed" class="mt-3 bg-gray-600 hover:bg-gray-700 text-white font-semibold py-2 px-4 rounded text-sm">
+                Copy Embed Code
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Real-World ROI Examples</h2>
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div class="bg-gradient-to-br from-green-50 to-white rounded-lg p-6 border border-green-200">
+            <div class="text-4xl mb-4">🏗️</div>
+            <h3 class="text-xl font-semibold mb-3">Commercial Construction</h3>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between">
+                <span class="text-gray-600">Project Value:</span>
+                <span class="font-semibold">$12M</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Previous Losses:</span>
+                <span class="font-semibold">$180K/year</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Security Investment:</span>
+                <span class="font-semibold">$96K/year</span>
+              </div>
+              <div class="flex justify-between pt-2 border-t">
+                <span class="text-gray-600">Net Savings:</span>
+                <span class="font-bold text-green-600">$84K/year</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">ROI:</span>
+                <span class="font-bold text-green-600">287%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-blue-50 to-white rounded-lg p-6 border border-blue-200">
+            <div class="text-4xl mb-4">🏘️</div>
+            <h3 class="text-xl font-semibold mb-3">Residential Development</h3>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between">
+                <span class="text-gray-600">Project Value:</span>
+                <span class="font-semibold">$8M</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Guard Costs:</span>
+                <span class="font-semibold">$180K/year</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Trailer Costs:</span>
+                <span class="font-semibold">$72K/year</span>
+              </div>
+              <div class="flex justify-between pt-2 border-t">
+                <span class="text-gray-600">Net Savings:</span>
+                <span class="font-bold text-green-600">$108K/year</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">ROI:</span>
+                <span class="font-bold text-green-600">350%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-purple-50 to-white rounded-lg p-6 border border-purple-200">
+            <div class="text-4xl mb-4">⚡</div>
+            <h3 class="text-xl font-semibold mb-3">Solar Farm Project</h3>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between">
+                <span class="text-gray-600">Project Value:</span>
+                <span class="font-semibold">$25M</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Copper Theft Risk:</span>
+                <span class="font-semibold">$500K</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">3 Trailers Cost:</span>
+                <span class="font-semibold">$144K/year</span>
+              </div>
+              <div class="flex justify-between pt-2 border-t">
+                <span class="text-gray-600">Losses Prevented:</span>
+                <span class="font-bold text-green-600">$475K</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">ROI:</span>
+                <span class="font-bold text-green-600">430%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <CTASection
+      title="Ready to Maximize Your Security ROI?"
+      description="Let our experts create a custom security plan that delivers measurable returns"
+      features={["✓ Free Consultation", "✓ Site Assessment", "✓ ROI Guarantee", "✓ No Long-term Contracts"]}
+    />
+  </main>
+
+  <Footer />
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const calculateBtn = document.getElementById('calculate-btn');
+      const resultsSection = document.getElementById('results-section');
+
+      // Auto-calculate on input change
+      const inputs = document.querySelectorAll('input, select');
+      inputs.forEach(input => {
+        input.addEventListener('change', () => {
+          if (document.getElementById('project-value').value) {
+            calculateROI();
+          }
+        });
+      });
+
+      calculateBtn.addEventListener('click', calculateROI);
+
+      function calculateROI() {
+        // Get input values
+        const projectValue = parseFloat(document.getElementById('project-value').value) || 0;
+        const projectDuration = parseFloat(document.getElementById('project-duration').value) || 12;
+        const equipmentValue = parseFloat(document.getElementById('equipment-value').value) || 0;
+        const materialValue = parseFloat(document.getElementById('material-value').value) || 0;
+        const currentCost = parseFloat(document.getElementById('current-cost').value) || 0;
+        const insurancePremium = parseFloat(document.getElementById('insurance-premium').value) || 0;
+        const deductible = parseFloat(document.getElementById('deductible').value) || 10000;
+
+        const securityType = document.getElementById('security-type').value;
+        const theftHistory = document.getElementById('theft-history').value;
+        const locationRisk = document.getElementById('location-risk').value;
+
+        // Calculate risk factors
+        let theftRiskRate = 0.02; // Base 2% risk
+        if (theftHistory === 'minor') theftRiskRate = 0.04;
+        if (theftHistory === 'moderate') theftRiskRate = 0.08;
+        if (theftHistory === 'frequent') theftRiskRate = 0.15;
+
+        if (locationRisk === 'high') theftRiskRate *= 1.5;
+        if (locationRisk === 'remote') theftRiskRate *= 1.3;
+        if (locationRisk === 'medium') theftRiskRate *= 1.1;
+
+        // Calculate annual theft risk
+        const totalAtRisk = equipmentValue + materialValue;
+        const annualTheftRisk = totalAtRisk * theftRiskRate;
+
+        // Mobile surveillance costs (from pricing page)
+        const monthlyTrailerCost = 8000; // Average monthly rate
+        const annualTrailerCost = monthlyTrailerCost * 12;
+
+        // Current security annual cost
+        const currentAnnualCost = currentCost * 12;
+
+        // Insurance savings (10-15% typical reduction with surveillance)
+        const insuranceSavingsRate = 0.125; // 12.5% average
+        const annualInsuranceSavings = (insurancePremium * 12) * insuranceSavingsRate;
+
+        // Theft prevention effectiveness (85-95% reduction with surveillance)
+        const preventionRate = 0.9; // 90% prevention rate
+        const theftPreventionSavings = annualTheftRisk * preventionRate;
+
+        // Total savings calculation
+        const totalAnnualSavings = (currentAnnualCost - annualTrailerCost) +
+                                   annualInsuranceSavings +
+                                   theftPreventionSavings;
+
+        // ROI calculation
+        const roi = ((totalAnnualSavings / annualTrailerCost) * 100).toFixed(0);
+        const monthlySavings = totalAnnualSavings / 12;
+        const paybackPeriod = annualTrailerCost / (totalAnnualSavings / 12);
+
+        // Update results
+        document.getElementById('roi-percentage').textContent = roi + '%';
+        document.getElementById('monthly-savings').textContent = '$' + monthlySavings.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        document.getElementById('payback-period').textContent = Math.max(1, Math.ceil(paybackPeriod)) + ' months';
+
+        document.getElementById('theft-risk').textContent = '$' + annualTheftRisk.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        document.getElementById('current-annual-cost').textContent = '$' + currentAnnualCost.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        document.getElementById('surveillance-annual-cost').textContent = '$' + annualTrailerCost.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        document.getElementById('insurance-savings').textContent = '$' + annualInsuranceSavings.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        document.getElementById('theft-prevention-savings').textContent = '$' + theftPreventionSavings.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        document.getElementById('total-annual-savings').textContent = '$' + totalAnnualSavings.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+        // Generate recommendations
+        const recommendations = document.getElementById('recommendations');
+        let recHTML = '<ul class="space-y-2">';
+
+        if (totalAtRisk > 1000000) {
+          recHTML += '<li class="flex items-start"><span class="text-green-600 mr-2">✓</span> Multiple trailer units recommended for comprehensive coverage</li>';
+        }
+        if (locationRisk === 'high' || locationRisk === 'remote') {
+          recHTML += '<li class="flex items-start"><span class="text-green-600 mr-2">✓</span> 24/7 live monitoring service highly recommended</li>';
+        }
+        if (materialValue > 200000) {
+          recHTML += '<li class="flex items-start"><span class="text-green-600 mr-2">✓</span> Thermal cameras for copper theft prevention</li>';
+        }
+        recHTML += '<li class="flex items-start"><span class="text-green-600 mr-2">✓</span> Solar-powered units for continuous operation</li>';
+        recHTML += '<li class="flex items-start"><span class="text-green-600 mr-2">✓</span> Insurance documentation package for premium reduction</li>';
+        recHTML += '</ul>';
+
+        recommendations.innerHTML = recHTML;
+
+        // Draw ROI chart
+        drawROIChart(annualTrailerCost, totalAnnualSavings, projectDuration);
+
+        // Show results
+        resultsSection.classList.remove('hidden');
+        resultsSection.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      function drawROIChart(investment, annualSavings, duration) {
+        const canvas = document.getElementById('roi-chart');
+        const ctx = canvas.getContext('2d');
+
+        // Clear canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Simple line chart
+        const months = Math.min(duration, 12);
+        const width = canvas.width;
+        const height = canvas.height;
+        const padding = 40;
+
+        // Draw axes
+        ctx.strokeStyle = '#ccc';
+        ctx.beginPath();
+        ctx.moveTo(padding, padding);
+        ctx.lineTo(padding, height - padding);
+        ctx.lineTo(width - padding, height - padding);
+        ctx.stroke();
+
+        // Draw ROI line
+        ctx.strokeStyle = '#10b981';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+
+        for (let month = 0; month <= months; month++) {
+          const x = padding + (month / months) * (width - 2 * padding);
+          const cumSavings = (annualSavings / 12) * month - investment;
+          const y = height - padding - Math.max(0, (cumSavings + investment) / (annualSavings * 1.5)) * (height - 2 * padding);
+
+          if (month === 0) {
+            ctx.moveTo(x, y);
+          } else {
+            ctx.lineTo(x, y);
+          }
+        }
+        ctx.stroke();
+
+        // Draw break-even line
+        ctx.strokeStyle = '#ef4444';
+        ctx.setLineDash([5, 5]);
+        ctx.beginPath();
+        ctx.moveTo(padding, height/2);
+        ctx.lineTo(width - padding, height/2);
+        ctx.stroke();
+      }
+
+      // Copy embed code
+      document.getElementById('copy-embed').addEventListener('click', function() {
+        const embedCode = document.getElementById('embed-code').textContent;
+        navigator.clipboard.writeText(embedCode);
+        this.textContent = 'Copied!';
+        setTimeout(() => {
+          this.textContent = 'Copy Embed Code';
+        }, 2000);
+      });
+    });
+  </script>
+</Layout>

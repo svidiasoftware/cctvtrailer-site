@@ -6,3 +6,4 @@
 - use styles defined in src/styles/critical.css and src/styles/non-critical.css and create additional one only if no similar exist
 - pay attention to Google Analytics and update new pages accordingly
 - keep public/sitemap.xml and src/pages/sitemap.astro map files updated
+- when dealing with price or cost calculations always read src/pricing.astro page and do not make them up
