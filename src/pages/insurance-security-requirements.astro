@@ -1,0 +1,611 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LazyImage from '../components/LazyImage.astro';
+import CTASection from '../components/CTASection.astro';
+import StatBox from '../components/StatBox.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+
+const title = "Insurance Security Requirements | How Surveillance Reduces Premiums";
+const description = "Learn how mobile surveillance systems meet insurance security requirements and significantly reduce construction insurance premiums. Get detailed premium reduction strategies and documentation requirements.";
+---
+
+<Layout title={title} description={description}>
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <div class="hero-trailer">
+      <div class="hero-overlay">
+        <LazyImage src="/images/tacoma-dome-bg-hero3.webp" alt="Insurance premium reduction through security surveillance"
+        class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
+      </div>
+      <div class="hero-content">
+        <div class="hero-text-wrapper">
+          <h1 class="hero-heading">Insurance Security Requirements</h1>
+          <p class="hero-paragraph">
+            Discover how implementing proper security surveillance can reduce your construction insurance premiums by 10-20% while meeting Washington state insurance requirements.
+          </p>
+          <a href="/contact" class="red-button mt-6">Get Insurance Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Insurance Premium Impact Analysis
+          </h2>
+          <p class="text-xl text-gray-600">
+            Real numbers from actual construction insurance policies
+          </p>
+        </div>
+
+        <StatBox
+          stats={[
+            { value: "10-20%", label: "Premium Reduction", subtext: "With surveillance", color: "green" },
+            { value: "$3-6K", label: "Annual Savings", subtext: "Per $30K premium", color: "blue" },
+            { value: "85%", label: "Crime Prevention", subtext: "With monitoring", color: "purple" },
+            { value: "20-30%", label: "Equipment Recovery", subtext: "Industry average", color: "orange" }
+          ]}
+        />
+
+        <div class="mt-12 bg-gray-50 p-8 rounded-lg">
+          <h3 class="text-2xl font-bold mb-6">Insurance Premium Calculator</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Project Value ($)</label>
+              <input type="number" id="projectValue" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="5000000" value="5000000">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Current Premium Rate (%)</label>
+              <input type="number" id="premiumRate" class="w-full px-3 py-2 border border-gray-300 rounded-md" step="0.1" placeholder="2.5" value="2.5">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Security System Type</label>
+              <select id="securityType" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                <option value="none">No Security System</option>
+                <option value="basic">Basic Cameras</option>
+                <option value="mobile" selected>Mobile Surveillance Trailer</option>
+                <option value="comprehensive">Comprehensive with Guards</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Insurance Type</label>
+              <select id="insuranceType" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                <option value="general">General Liability</option>
+                <option value="builders" selected>Builder's Risk</option>
+                <option value="equipment">Equipment Coverage</option>
+                <option value="comprehensive">Comprehensive</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mt-8 p-6 bg-white rounded-lg">
+            <h4 class="font-bold text-lg mb-4">Estimated Insurance Savings</h4>
+            <div class="grid md:grid-cols-3 gap-4">
+              <div>
+                <p class="text-sm text-gray-600">Current Premium</p>
+                <p class="text-2xl font-bold text-red-600" id="currentPremium">$125,000</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-600">With Surveillance</p>
+                <p class="text-2xl font-bold text-green-600" id="newPremium">$87,500</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-600">Annual Savings</p>
+                <p class="text-2xl font-bold text-blue-600" id="annualSavings">$37,500</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          Major Insurance Carrier Requirements
+        </h2>
+        <div class="text-center mb-8">
+          <p class="text-gray-600 max-w-3xl mx-auto">
+            Security requirements and premium discounts vary by carrier, project size, and location. The percentages shown are typical ranges based on industry data. Contact carriers directly for specific quotes.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold mb-4 text-blue-600">Liberty Mutual</h3>
+            <ul class="space-y-2 text-sm">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Full perimeter fencing with locks</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Projects >$50M require Premier coverage</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Wood frame construction expertise</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Flexible policy structures available</span>
+              </li>
+              <li class="font-semibold mt-3 text-green-600">Premium Reduction: 5-15%</li>
+              <li class="text-xs text-gray-500 mt-1">Coverage up to $500M per project</li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold mb-4 text-blue-600">Travelers Insurance</h3>
+            <ul class="space-y-2 text-sm">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Motion-activated detection systems</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Guards for high-crime areas</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Locked access gates & lighting</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Just-in-time material delivery</span>
+              </li>
+              <li class="font-semibold mt-3 text-green-600">Premium Reduction: 5-10%</li>
+              <li class="text-xs text-gray-500 mt-1">Enhanced Construction Pak available</li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold mb-4 text-blue-600">Zurich Insurance</h3>
+            <ul class="space-y-2 text-sm">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>"Reasonable security" required</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Temporary lighting & fencing</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Projects up to $75M covered</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>45+ years builders risk experience</span>
+              </li>
+              <li class="font-semibold mt-3 text-green-600">Premium Reduction: 10-20%</li>
+              <li class="text-xs text-gray-500 mt-1">US Assure administration available</li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold mb-4 text-blue-600">CNA Insurance</h3>
+            <ul class="space-y-2 text-sm">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>GPS tracking documentation</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Detailed site security measures</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Storage yard protection</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Risk mitigation documentation</span>
+              </li>
+              <li class="font-semibold mt-3 text-green-600">Premium Reduction: 5-10%</li>
+              <li class="text-xs text-gray-500 mt-1">Case-by-case evaluation</li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold mb-4 text-blue-600">AIG</h3>
+            <ul class="space-y-2 text-sm">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Comprehensive perimeter security</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>24/7 monitoring preferred</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Access control documentation</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Minimum 2-meter fencing</span>
+              </li>
+              <li class="font-semibold mt-3 text-green-600">Premium Reduction: 5-15%</li>
+              <li class="text-xs text-gray-500 mt-1">Higher for integrated systems</li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold mb-4 text-blue-600">Chubb</h3>
+            <ul class="space-y-2 text-sm">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Professional monitoring required</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Integrated security systems</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Multiple security features</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Compliance documentation</span>
+              </li>
+              <li class="font-semibold mt-3 text-green-600">Premium Reduction: 5-20%</li>
+              <li class="text-xs text-gray-500 mt-1">Based on system features</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          Documentation Requirements for Premium Reduction
+        </h2>
+
+        <ComparisonTable
+          headers={["Basic Security", "Mobile Surveillance", "Comprehensive System"]}
+          rows={[
+            { feature: "Security System Specifications", values: ["Basic specs", { text: "Detailed technical specs", highlight: true }, "Full engineering report"] },
+            { feature: "Monitoring Agreement", values: ["Not required", { text: "24/7 monitoring contract", highlight: true }, "Multi-tier monitoring"] },
+            { feature: "Video Retention Policy", values: ["7 days", { text: "30-60 days", highlight: true }, "90+ days with backup"] },
+            { feature: "Incident Response Plan", values: ["Basic protocol", { text: "Detailed response matrix", highlight: true }, "Comprehensive emergency plan"] },
+            { feature: "Security Audits", values: ["Annual", { text: "Quarterly", highlight: true }, "Monthly with reports"] },
+            { feature: "Access Control Records", values: ["Sign-in sheets", { text: "Digital logs", highlight: true }, "Biometric + digital"] },
+            { feature: "Training Documentation", values: ["Basic orientation", { text: "Certified training", highlight: true }, "Ongoing certification"] },
+            { feature: "Equipment Maintenance", values: ["As-needed", { text: "Scheduled maintenance", highlight: true }, "Predictive maintenance"] },
+            { feature: "Premium Reduction", values: ["2-5%", { text: "10-20%", highlight: true }, "15-20%"] }
+          ]}
+        />
+
+        <div class="mt-12 grid md:grid-cols-2 gap-8">
+          <div class="bg-blue-50 p-8 rounded-lg">
+            <h3 class="text-xl font-bold mb-6">Required Submission Documents</h3>
+            <ol class="space-y-3">
+              <li class="flex items-start">
+                <span class="font-bold mr-2">1.</span>
+                <span>Security system installation certificate</span>
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">2.</span>
+                <span>Professional monitoring service agreement</span>
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">3.</span>
+                <span>Site security assessment report</span>
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">4.</span>
+                <span>Equipment specifications and coverage maps</span>
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">5.</span>
+                <span>Incident response and escalation procedures</span>
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">6.</span>
+                <span>Security personnel training certificates</span>
+              </li>
+              <li class="flex items-start">
+                <span class="font-bold mr-2">7.</span>
+                <span>Previous 12 months incident reports</span>
+              </li>
+            </ol>
+          </div>
+
+          <div class="bg-green-50 p-8 rounded-lg">
+            <h3 class="text-xl font-bold mb-6">Premium Reduction Timeline</h3>
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">1</div>
+                <div class="ml-4">
+                  <h4 class="font-semibold">Day 1-7: Initial Assessment</h4>
+                  <p class="text-gray-600">Security audit and system design</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">2</div>
+                <div class="ml-4">
+                  <h4 class="font-semibold">Day 8-14: Installation</h4>
+                  <p class="text-gray-600">Deploy surveillance system</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">3</div>
+                <div class="ml-4">
+                  <h4 class="font-semibold">Day 15-21: Documentation</h4>
+                  <p class="text-gray-600">Prepare insurance submissions</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">4</div>
+                <div class="ml-4">
+                  <h4 class="font-semibold">Day 22-30: Approval</h4>
+                  <p class="text-gray-600">Insurance review and premium adjustment</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          ROI Analysis: Security Investment vs Insurance Savings
+        </h2>
+
+        <div class="bg-white p-8 rounded-lg shadow-lg">
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-xl font-bold mb-4">Security Investment Costs</h3>
+              <ul class="space-y-3">
+                <li class="flex justify-between">
+                  <span>Mobile Surveillance Rental (Monthly)</span>
+                  <span class="font-semibold">$2,500 - $4,000</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Professional Monitoring</span>
+                  <span class="font-semibold">$500 - $1,000</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Initial Setup & Training</span>
+                  <span class="font-semibold">$2,000 (one-time)</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Documentation & Compliance</span>
+                  <span class="font-semibold">$1,500 (one-time)</span>
+                </li>
+                <li class="border-t pt-3 flex justify-between font-bold">
+                  <span>Annual Investment</span>
+                  <span>$42,000 - $60,000</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-4">Insurance & Loss Prevention Savings</h3>
+              <ul class="space-y-3">
+                <li class="flex justify-between">
+                  <span>Premium Reduction (10-20%)</span>
+                  <span class="font-semibold text-green-600">$3,000 - $6,000</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Deductible Reduction</span>
+                  <span class="font-semibold text-green-600">$5,000 - $10,000</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Theft Prevention (85% reduction)</span>
+                  <span class="font-semibold text-green-600">$12,750 - $25,500</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Vandalism Prevention</span>
+                  <span class="font-semibold text-green-600">$10,200 - $20,400</span>
+                </li>
+                <li class="border-t pt-3 flex justify-between font-bold text-green-600">
+                  <span>Annual Savings</span>
+                  <span>$30,950 - $61,900</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-8 p-6 bg-green-50 rounded-lg text-center">
+            <h4 class="text-2xl font-bold mb-2">Net Annual ROI</h4>
+            <p class="text-4xl font-bold text-green-600">Up to $20,000</p>
+            <p class="text-lg mt-2">Up to 88% cost savings vs. traditional guards</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          Frequently Asked Insurance Questions
+        </h2>
+
+        <div class="max-w-3xl mx-auto" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="space-y-6">
+            <div class="bg-gray-50 p-6 rounded-lg" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="font-bold text-lg mb-2" itemprop="name">
+                How much can mobile surveillance reduce my construction insurance premiums?
+              </h3>
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p class="text-gray-600" itemprop="text">
+                  Mobile surveillance systems typically reduce construction insurance premiums by 10-20%, with comprehensive monitored systems achieving the higher range. Washington state construction sites report annual theft losses of $5,000-$30,000, making surveillance critical for insurance requirements.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="font-bold text-lg mb-2" itemprop="name">
+                What documentation do insurance companies require for premium discounts?
+              </h3>
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p class="text-gray-600" itemprop="text">
+                  Insurance companies typically require: security system specifications, professional monitoring agreement (24/7), site security assessment, incident response procedures, equipment maintenance records, and training certificates. Washington state law requires two-party consent for audio recording, so cameras should be video-only or muted.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="font-bold text-lg mb-2" itemprop="name">
+                How quickly will I see insurance savings after installing security?
+              </h3>
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p class="text-gray-600" itemprop="text">
+                  Most insurance carriers adjust premiums within 30 days of receiving proper documentation. Many insurers now require surveillance trailers for construction projects, and some won't insure projects without them, especially for high-value builds in Washington state.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="font-bold text-lg mb-2" itemprop="name">
+                Which types of construction insurance benefit most from security systems?
+              </h3>
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p class="text-gray-600" itemprop="text">
+                  Builder's risk insurance sees reductions of 10-20%, followed by general liability (5-15%), equipment coverage (5-10%), and commercial property insurance (5-10%). Construction businesses typically pay 1-4% of project cost for insurance, making security critical for cost control.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="font-bold text-lg mb-2" itemprop="name">
+                Do all insurance carriers offer discounts for mobile surveillance?
+              </h3>
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p class="text-gray-600" itemprop="text">
+                  Most major commercial carriers offer discounts of 5-20% for security systems. The insurance industry increasingly requires surveillance trailers for construction projects. With Washington state experiencing high property crime rates, documented security measures are essential for coverage approval.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CTASection />
+  </main>
+
+  <Footer />
+
+  <script>
+    const projectValue = document.getElementById('projectValue');
+    const premiumRate = document.getElementById('premiumRate');
+    const securityType = document.getElementById('securityType');
+    const insuranceType = document.getElementById('insuranceType');
+    const currentPremium = document.getElementById('currentPremium');
+    const newPremium = document.getElementById('newPremium');
+    const annualSavings = document.getElementById('annualSavings');
+
+    function calculateSavings() {
+      const value = parseFloat(projectValue.value) || 5000000;
+      const rate = parseFloat(premiumRate.value) || 2.5;
+      const security = securityType.value;
+      const insurance = insuranceType.value;
+
+      const basePremium = value * (rate / 100);
+
+      let reduction = 0;
+      if (security === 'basic') reduction = 0.05;
+      else if (security === 'mobile') reduction = 0.15;
+      else if (security === 'comprehensive') reduction = 0.20;
+
+      if (insurance === 'builders') reduction *= 1.2;
+      else if (insurance === 'comprehensive') reduction *= 1.1;
+
+      const newPremiumAmount = basePremium * (1 - reduction);
+      const savings = basePremium - newPremiumAmount;
+
+      currentPremium.textContent = '$' + basePremium.toLocaleString();
+      newPremium.textContent = '$' + newPremiumAmount.toLocaleString();
+      annualSavings.textContent = '$' + savings.toLocaleString();
+    }
+
+    projectValue.addEventListener('input', calculateSavings);
+    premiumRate.addEventListener('input', calculateSavings);
+    securityType.addEventListener('change', calculateSavings);
+    insuranceType.addEventListener('change', calculateSavings);
+
+    calculateSavings();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Insurance Security Requirements - How Surveillance Reduces Premiums",
+    "description": "Learn how mobile surveillance systems meet insurance security requirements and significantly reduce construction insurance premiums",
+    "author": {
+      "@type": "Organization",
+      "name": "CCTV Trailer"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CCTV Trailer",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cctvtrailer.com/logo.png"
+      }
+    },
+    "datePublished": "2025-09-23",
+    "dateModified": "2025-09-23"
+  }
+  </script>
+</Layout>

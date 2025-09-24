@@ -1,0 +1,499 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTASection from '../components/CTASection.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import QuickAnswer from '../components/QuickAnswer.astro';
+
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Services", url: "/services" },
+  { name: "Security Trailer vs Guards" }
+];
+
+const serviceSchemaData = {
+  serviceName: "Security Trailer vs Security Guards Comparison",
+  description: "Compare mobile surveillance trailers vs security guards for construction sites, events, and property protection. Cost analysis, effectiveness comparison, and ROI calculator.",
+  price: "7999",
+  priceUnit: "MONTH" as const,
+  areaServed: [
+    { type: "State" as const, name: "Washington" },
+    { type: "City" as const, name: "Tacoma" },
+    { type: "City" as const, name: "Seattle" },
+    { type: "City" as const, name: "Olympia" }
+  ]
+};
+
+const comparisonData = {
+  title: "Security Trailers vs Security Guards: Complete Comparison",
+  headers: ["Security Trailer", "Security Guards"],
+  rows: [
+    {
+      feature: "Monthly Cost",
+      values: [
+        { text: "$8,000-12,000", highlight: true },
+        "$15,000-25,000+"
+      ]
+    },
+    {
+      feature: "Coverage Area",
+      values: [
+        { text: "360° view, 500ft+ range", highlight: true },
+        "Limited to guard's location"
+      ]
+    },
+    {
+      feature: "24/7 Reliability",
+      values: [
+        { text: "Never sleeps, no breaks", highlight: true },
+        "Shift changes, breaks required"
+      ]
+    },
+    {
+      feature: "Weather Conditions",
+      values: [
+        { text: "All-weather operation", highlight: true },
+        "Limited in severe weather"
+      ]
+    },
+    {
+      feature: "Evidence Recording",
+      values: [
+        { text: "Continuous HD recording", highlight: true },
+        "Written reports only"
+      ]
+    },
+    {
+      feature: "Response Time",
+      values: [
+        "Instant alerts, police dispatch",
+        { text: "On-site intervention possible", highlight: true }
+      ]
+    },
+    {
+      feature: "Setup Time",
+      values: [
+        { text: "30 minutes", highlight: true },
+        "Immediate with personnel"
+      ]
+    },
+    {
+      feature: "Liability Risk",
+      values: [
+        { text: "Minimal liability", highlight: true },
+        "Worker's comp, liability issues"
+      ]
+    },
+    {
+      feature: "Deterrent Effect",
+      values: [
+        "High visibility deterrent",
+        "Human presence deterrent"
+      ]
+    },
+    {
+      feature: "Scalability",
+      values: [
+        { text: "Easy to add units", highlight: true },
+        "Hiring/training required"
+      ]
+    }
+  ]
+};
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does a security trailer cost compared to guards?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Security trailers typically cost $8,000-12,000 per month, while 24/7 security guard coverage costs $15,000-25,000+ monthly. This represents a 40-60% cost savings with surveillance trailers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are security cameras better than security guards?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Security cameras provide 24/7 coverage, recorded evidence, and wider area monitoring at lower cost. Guards offer human intervention and flexibility. Many sites use both for comprehensive protection."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can surveillance trailers replace security guards?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, surveillance trailers can replace guards for many applications including construction sites, parking lots, and storage yards. They provide continuous monitoring, recording, and remote response capabilities."
+      }
+    }
+  ]
+});
+---
+
+<Layout
+  title="Security Trailer vs Security Guards | Cost & Effectiveness Comparison 2025"
+  description="Compare mobile surveillance trailers vs security guards. Save 40-60% with 24/7 coverage, no liability, and recorded evidence. Free comparison calculator."
+  schema={[faqSchema]}>
+
+  <ServiceSchema {...serviceSchemaData} />
+  <BreadcrumbSchema items={breadcrumbItems} />
+
+  <Header showEmergencyBar={true} currentPath="/security-trailer-vs-guards" />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-800 to-blue-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Security Trailer vs Security Guards: Which is Right for You?</h1>
+          <p class="text-xl mb-6">Save 40-60% on security costs while getting 24/7 reliable coverage with zero liability</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="tel:2536832288" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block text-center">
+              📞 (253) 683-2288
+            </a>
+            <a href="#comparison-calculator" class="bg-white text-blue-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
+              Calculate Your Savings →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Answer Section -->
+    <section class="py-8 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <QuickAnswer
+          what="Mobile surveillance trailers provide 24/7 automated security monitoring"
+          cost="$8,000-12,000/month vs $15,000-25,000+ for guards"
+          coverage="360° view, 500ft+ range, all weather conditions"
+          advantages="40-60% cost savings, no liability, continuous recording, instant alerts"
+          bestFor="Construction sites, storage yards, parking lots, events"
+          includes={[
+            "24/7 monitoring without breaks",
+            "HD video evidence recording",
+            "Zero liability or workers comp",
+            "All-weather operation",
+            "Remote access and alerts"
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Cost Comparison Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Real Cost Comparison: Guards vs Surveillance Trailers</h2>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+          <!-- Security Guards Cost Breakdown -->
+          <div class="bg-red-50 border-2 border-red-200 rounded-lg p-6">
+            <h3 class="text-2xl font-bold mb-4 text-red-900">Security Guards (24/7)</h3>
+            <ul class="space-y-3">
+              <li class="flex justify-between">
+                <span>3 Guards @ $25/hr</span>
+                <span class="font-semibold">$18,000/mo</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Overtime & Holiday Pay</span>
+                <span class="font-semibold">$3,000/mo</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Benefits & Insurance</span>
+                <span class="font-semibold">$2,500/mo</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Workers Compensation</span>
+                <span class="font-semibold">$1,200/mo</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Management & Admin</span>
+                <span class="font-semibold">$800/mo</span>
+              </li>
+              <li class="border-t-2 border-red-300 pt-3 flex justify-between">
+                <span class="text-xl font-bold">Total Monthly Cost</span>
+                <span class="text-xl font-bold text-red-900">$25,500</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Security Trailer Cost Breakdown -->
+          <div class="bg-green-50 border-2 border-green-200 rounded-lg p-6">
+            <h3 class="text-2xl font-bold mb-4 text-green-900">Security Trailer (24/7)</h3>
+            <ul class="space-y-3">
+              <li class="flex justify-between">
+                <span>Trailer Rental</span>
+                <span class="font-semibold">$8,000/mo</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Remote Monitoring</span>
+                <span class="font-semibold">Included</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Maintenance</span>
+                <span class="font-semibold">Included</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Insurance/Liability</span>
+                <span class="font-semibold">$0</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Setup/Support</span>
+                <span class="font-semibold">Included</span>
+              </li>
+              <li class="border-t-2 border-green-300 pt-3 flex justify-between">
+                <span class="text-xl font-bold">Total Monthly Cost</span>
+                <span class="text-xl font-bold text-green-900">$8,000</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-blue-100 border-2 border-blue-300 rounded-lg p-6 max-w-3xl mx-auto text-center">
+          <p class="text-2xl font-bold text-blue-900 mb-2">Monthly Savings: $17,500</p>
+          <p class="text-xl text-blue-800">Annual Savings: $210,000</p>
+          <p class="mt-4 text-gray-700">Plus: No liability, no management headaches, better coverage</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Comparison Table -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <ComparisonTable {...comparisonData} />
+      </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">When to Choose Each Option</h2>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <!-- When to Choose Security Trailers -->
+          <div class="bg-green-50 rounded-lg p-8">
+            <h3 class="text-2xl font-bold mb-6 text-green-900">Choose Security Trailers For:</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3 mt-1">✓</span>
+                <div>
+                  <strong>Construction Sites</strong>
+                  <p class="text-gray-600">Monitor equipment, materials, and prevent theft 24/7</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3 mt-1">✓</span>
+                <div>
+                  <strong>Storage Yards & Warehouses</strong>
+                  <p class="text-gray-600">Protect inventory with continuous surveillance</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3 mt-1">✓</span>
+                <div>
+                  <strong>Parking Lots</strong>
+                  <p class="text-gray-600">Wide area coverage with license plate capture</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3 mt-1">✓</span>
+                <div>
+                  <strong>Remote Locations</strong>
+                  <p class="text-gray-600">Solar-powered operation without infrastructure</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3 mt-1">✓</span>
+                <div>
+                  <strong>Insurance Requirements</strong>
+                  <p class="text-gray-600">Meet security requirements for insurance discounts</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- When to Choose Security Guards -->
+          <div class="bg-blue-50 rounded-lg p-8">
+            <h3 class="text-2xl font-bold mb-6 text-blue-900">Consider Security Guards For:</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3 mt-1">✓</span>
+                <div>
+                  <strong>Access Control</strong>
+                  <p class="text-gray-600">Physical ID checks and visitor management needed</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3 mt-1">✓</span>
+                <div>
+                  <strong>Customer Service</strong>
+                  <p class="text-gray-600">When security doubles as customer assistance</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3 mt-1">✓</span>
+                <div>
+                  <strong>High-Risk Situations</strong>
+                  <p class="text-gray-600">Immediate physical intervention required</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3 mt-1">✓</span>
+                <div>
+                  <strong>Indoor Monitoring</strong>
+                  <p class="text-gray-600">Complex indoor layouts requiring patrols</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3 mt-1">✓</span>
+                <div>
+                  <strong>Special Events</strong>
+                  <p class="text-gray-600">Crowd control and immediate response needs</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROI Calculator Section -->
+    <section id="comparison-calculator" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Calculate Your Security Savings</h2>
+
+        <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8">
+          <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div>
+              <label class="block text-sm font-semibold mb-2">Site Size (acres)</label>
+              <input type="number" id="site-size" value="5" class="w-full px-4 py-2 border rounded-lg" />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold mb-2">Current Guard Hours/Day</label>
+              <input type="number" id="guard-hours" value="24" class="w-full px-4 py-2 border rounded-lg" />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold mb-2">Guard Hourly Rate</label>
+              <input type="number" id="hourly-rate" value="25" class="w-full px-4 py-2 border rounded-lg" />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold mb-2">Project Duration (months)</label>
+              <input type="number" id="duration" value="6" class="w-full px-4 py-2 border rounded-lg" />
+            </div>
+          </div>
+
+          <button onclick="calculateSavings()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg">
+            Calculate Savings
+          </button>
+
+          <div id="savings-result" class="mt-8 p-6 bg-green-50 rounded-lg hidden">
+            <h3 class="text-2xl font-bold mb-4 text-green-900">Your Potential Savings</h3>
+            <div class="space-y-2">
+              <p class="text-lg">Current Guard Cost: <span id="guard-cost" class="font-bold"></span></p>
+              <p class="text-lg">Security Trailer Cost: <span id="trailer-cost" class="font-bold"></span></p>
+              <p class="text-xl text-green-700 font-bold">Total Savings: <span id="total-savings"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+
+        <div class="max-w-3xl mx-auto space-y-6">
+          <div class="bg-gray-50 rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-2">How much does a security trailer cost compared to guards?</h3>
+            <p class="text-gray-700">Security trailers typically cost $8,000-12,000 per month, while 24/7 security guard coverage costs $15,000-25,000+ monthly. This represents a 40-60% cost savings with surveillance trailers.</p>
+          </div>
+
+          <div class="bg-gray-50 rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-2">Are security cameras better than security guards?</h3>
+            <p class="text-gray-700">Security cameras provide 24/7 coverage, recorded evidence, and wider area monitoring at lower cost. Guards offer human intervention and flexibility. Many sites use both for comprehensive protection.</p>
+          </div>
+
+          <div class="bg-gray-50 rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-2">Can surveillance trailers replace security guards?</h3>
+            <p class="text-gray-700">Yes, surveillance trailers can replace guards for many applications including construction sites, parking lots, and storage yards. They provide continuous monitoring, recording, and remote response capabilities.</p>
+          </div>
+
+          <div class="bg-gray-50 rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-2">What about response time when something happens?</h3>
+            <p class="text-gray-700">Security trailers provide instant alerts to monitoring centers and law enforcement. While guards can intervene directly, trailers often result in faster police response due to verified video evidence of crimes in progress.</p>
+          </div>
+
+          <div class="bg-gray-50 rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-2">Do security trailers work in bad weather?</h3>
+            <p class="text-gray-700">Yes, security trailers are designed for all-weather operation. They continue monitoring in rain, snow, and extreme temperatures where human guards might seek shelter or have reduced effectiveness.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-blue-900 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-4">Ready to Cut Your Security Costs by 60%?</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">Get a free security assessment and see exactly how much you can save by switching to surveillance trailers.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:2536832288" class="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg inline-block">
+            📞 Call (253) 683-2288
+          </a>
+          <a href="#quote-form" class="bg-white text-blue-900 hover:bg-gray-100 font-bold py-4 px-8 rounded-lg inline-block">
+            Get Free Quote →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Form -->
+    <section id="quote-form" class="py-16 bg-white">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <h2 class="text-3xl font-bold text-center mb-8">Get Your Free Security Comparison Report</h2>
+        <QuoteForm
+          showTitle={false}
+          buttonText="Get My Comparison Report →"
+          formId="comparison-quote-form"
+        />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <script is:inline>
+    function calculateSavings() {
+      const siteSize = parseFloat(document.getElementById('site-size').value) || 5;
+      const guardHours = parseFloat(document.getElementById('guard-hours').value) || 24;
+      const hourlyRate = parseFloat(document.getElementById('hourly-rate').value) || 25;
+      const duration = parseFloat(document.getElementById('duration').value) || 6;
+
+      // Calculate guard costs
+      const dailyGuardCost = guardHours * hourlyRate;
+      const monthlyGuardCost = dailyGuardCost * 30;
+      const totalGuardCost = monthlyGuardCost * duration;
+
+      // Calculate trailer costs (base rate with adjustments for size)
+      const trailersNeeded = Math.ceil(siteSize / 5);
+      const monthlyTrailerCost = 8000 * trailersNeeded;
+      const totalTrailerCost = monthlyTrailerCost * duration;
+
+      // Calculate savings
+      const totalSavings = totalGuardCost - totalTrailerCost;
+
+      // Display results
+      document.getElementById('guard-cost').textContent = `$${totalGuardCost.toLocaleString()}`;
+      document.getElementById('trailer-cost').textContent = `$${totalTrailerCost.toLocaleString()}`;
+      document.getElementById('total-savings').textContent = `$${totalSavings.toLocaleString()}`;
+      document.getElementById('savings-result').classList.remove('hidden');
+    }
+  </script>
+</Layout>

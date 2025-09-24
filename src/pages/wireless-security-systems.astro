@@ -1,0 +1,615 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LazyImage from '../components/LazyImage.astro';
+import CTASection from '../components/CTASection.astro';
+import StatBox from '../components/StatBox.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+
+const title = "Wireless Security Systems | 4G LTE Surveillance Camera Rental";
+const description = "Deploy wireless security camera systems anywhere with 4G LTE connectivity. No power lines or internet required. Rapid deployment for construction sites and remote locations.";
+---
+
+<Layout title={title} description={description}>
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <div class="hero-trailer">
+      <div class="hero-overlay">
+        <LazyImage src="/images/tacoma-dome-bg-hero3.webp" alt="Wireless 4G LTE security camera system"
+        class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
+      </div>
+      <div class="hero-content">
+        <div class="hero-text-wrapper">
+          <h1 class="hero-heading">Wireless Security Systems</h1>
+          <p class="hero-paragraph">
+            Deploy professional security anywhere in minutes. Our wireless systems use cellular networks and solar power for complete independence from local infrastructure.
+          </p>
+          <a href="/contact" class="red-button mt-6">Get Wireless Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Wireless System Performance Metrics
+          </h2>
+          <p class="text-xl text-gray-600">
+            Enterprise-grade security without infrastructure dependencies
+          </p>
+        </div>
+
+        <StatBox
+          stats={[
+            { value: "99.9%", label: "Uptime", subtext: "Network reliability", color: "green" },
+            { value: "< 100ms", label: "Latency", subtext: "Real-time response", color: "blue" },
+            { value: "5G/4G", label: "Connectivity", subtext: "Multi-carrier support", color: "purple" },
+            { value: "30min", label: "Setup Time", subtext: "Full deployment", color: "orange" }
+          ]}
+        />
+
+        <div class="mt-12 grid md:grid-cols-2 gap-8">
+          <div class="bg-gray-50 p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-6">4G/5G Cellular Connectivity</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>Multi-Carrier Support</strong>
+                  <p class="text-gray-600 mt-1">Automatic failover between Verizon, AT&T, T-Mobile</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>Unlimited Data Plans</strong>
+                  <p class="text-gray-600 mt-1">No bandwidth caps or throttling</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>Edge Computing</strong>
+                  <p class="text-gray-600 mt-1">Local processing reduces bandwidth needs by 70%</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>Encrypted Transmission</strong>
+                  <p class="text-gray-600 mt-1">Military-grade AES-256 encryption</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-6">Power Independence</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>Solar + Battery Hybrid</strong>
+                  <p class="text-gray-600 mt-1">Continuous operation without grid power</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>72-Hour Backup</strong>
+                  <p class="text-gray-600 mt-1">Extended operation during outages</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>Intelligent Power Management</strong>
+                  <p class="text-gray-600 mt-1">Adaptive consumption based on conditions</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>Hot-Swappable Batteries</strong>
+                  <p class="text-gray-600 mt-1">Zero downtime maintenance</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          Wireless vs Wired System Comparison
+        </h2>
+
+        <ComparisonTable
+          headers={["Wireless 4G/5G", "Wired Internet", "Traditional CCTV"]}
+          rows={[
+            { feature: "Deployment Time", values: [{ text: "30 minutes", highlight: true }, "2-4 weeks", "3-6 weeks"] },
+            { feature: "Infrastructure Required", values: [{ text: "None", highlight: true }, "Internet + Power", "Full cabling"] },
+            { feature: "Location Flexibility", values: [{ text: "Anywhere with cell signal", highlight: true }, "Near existing services", "Limited to buildings"] },
+            { feature: "Initial Cost", values: [{ text: "$3,000-5,000", highlight: true }, "$10,000-25,000", "$15,000-40,000"] },
+            { feature: "Monthly Operating Cost", values: ["$200-400", "$100-200", "$50-100"] },
+            { feature: "Scalability", values: [{ text: "Instant", highlight: true }, "Requires planning", "Major construction"] },
+            { feature: "Relocation Capability", values: [{ text: "Same day", highlight: true }, "New installation", "Not practical"] },
+            { feature: "Weather Resilience", values: [{ text: "Excellent", highlight: true }, "Cable dependent", "Cable vulnerable"] },
+            { feature: "Maintenance", values: [{ text: "Remote updates", highlight: true }, "On-site required", "Regular on-site"] },
+            { feature: "ROI Period", values: [{ text: "1-2 months", highlight: true }, "6-12 months", "12-24 months"] }
+          ]}
+        />
+
+        <div class="mt-12 bg-blue-50 p-8 rounded-lg">
+          <h3 class="text-xl font-bold mb-6">Coverage Area Calculator</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Site Size (acres)</label>
+              <input type="number" id="siteSize" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="10" value="10">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Site Type</label>
+              <select id="siteType" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                <option value="construction" selected>Construction Site</option>
+                <option value="parking">Parking Lot</option>
+                <option value="warehouse">Warehouse/Storage</option>
+                <option value="event">Event Venue</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mt-6 p-6 bg-white rounded-lg">
+            <h4 class="font-bold mb-4">Recommended Wireless Configuration</h4>
+            <div class="grid md:grid-cols-3 gap-4 text-center">
+              <div>
+                <p class="text-sm text-gray-600">Units Required</p>
+                <p class="text-2xl font-bold text-blue-600" id="unitsRequired">2</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-600">Coverage Area</p>
+                <p class="text-2xl font-bold text-green-600" id="coverageArea">100%</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-600">Monthly Data Usage</p>
+                <p class="text-2xl font-bold text-purple-600" id="dataUsage">480 GB</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          Advanced Wireless Technology Features
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">AI Edge Processing</h3>
+            <p class="text-gray-600">
+              On-device AI analyzes video locally, sending only relevant alerts and reducing bandwidth usage by 70%.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Mesh Network Capability</h3>
+            <p class="text-gray-600">
+              Multiple units create self-healing mesh networks, ensuring coverage even if one unit loses connectivity.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M13 7H7v6h6V7z"/>
+                <path fill-rule="evenodd" d="M7 2a1 1 0 012 0v1h2V2a1 1 0 112 0v1h2a2 2 0 012 2v2h1a1 1 0 110 2h-1v2h1a1 1 0 110 2h-1v2a2 2 0 01-2 2h-2v1a1 1 0 11-2 0v-1H9v1a1 1 0 11-2 0v-1H5a2 2 0 01-2-2v-2H2a1 1 0 110-2h1V9H2a1 1 0 010-2h1V5a2 2 0 012-2h2V2z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">5G Ready</h3>
+            <p class="text-gray-600">
+              Future-proof hardware supports 5G networks for ultra-low latency and 10x faster data speeds.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Thermal Imaging</h3>
+            <p class="text-gray-600">
+              Optional thermal cameras detect heat signatures in complete darkness, fog, or smoke conditions.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Instant Alerts</h3>
+            <p class="text-gray-600">
+              Real-time push notifications to mobile devices with live video streaming of detected events.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"/>
+                <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Analytics Dashboard</h3>
+            <p class="text-gray-600">
+              Comprehensive reporting with heat maps, traffic patterns, and security incident analysis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          Ideal Applications for Wireless Security
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white p-8 rounded-lg shadow">
+            <h3 class="text-2xl font-bold mb-6 text-blue-600">Rapid Deployment Scenarios</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>Emergency Response</strong>
+                  <p class="text-gray-600">Deploy security after incidents in under 30 minutes</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>Pop-up Events</strong>
+                  <p class="text-gray-600">Temporary security for festivals and gatherings</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>Disaster Areas</strong>
+                  <p class="text-gray-600">Monitor damaged infrastructure post-disaster</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>Mobile Operations</strong>
+                  <p class="text-gray-600">Follow equipment as it moves between sites</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow">
+            <h3 class="text-2xl font-bold mb-6 text-green-600">Remote & Challenging Locations</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>Rural Construction</strong>
+                  <p class="text-gray-600">Sites miles from nearest infrastructure</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>Utility Infrastructure</strong>
+                  <p class="text-gray-600">Power lines, substations, water treatment</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>Transportation Hubs</strong>
+                  <p class="text-gray-600">Rail yards, ports, logistics centers</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>Historic Buildings</strong>
+                  <p class="text-gray-600">Protect without invasive installation</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          Technical Specifications
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="text-lg font-bold mb-4">Camera Specifications</h3>
+            <ul class="space-y-2 text-sm">
+              <li class="flex justify-between">
+                <span>Resolution</span>
+                <span class="font-semibold">4K (8MP)</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Frame Rate</span>
+                <span class="font-semibold">30 fps</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Night Vision</span>
+                <span class="font-semibold">300ft IR</span>
+              </li>
+              <li class="flex justify-between">
+                <span>PTZ Range</span>
+                <span class="font-semibold">360° pan, 90° tilt</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Optical Zoom</span>
+                <span class="font-semibold">30x</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Weather Rating</span>
+                <span class="font-semibold">IP67</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="text-lg font-bold mb-4">Connectivity Specs</h3>
+            <ul class="space-y-2 text-sm">
+              <li class="flex justify-between">
+                <span>Primary Network</span>
+                <span class="font-semibold">5G/4G LTE</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Backup Network</span>
+                <span class="font-semibold">3G/Satellite</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Bandwidth</span>
+                <span class="font-semibold">150 Mbps down</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Latency</span>
+                <span class="font-semibold"><100ms</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Encryption</span>
+                <span class="font-semibold">AES-256</span>
+              </li>
+              <li class="flex justify-between">
+                <span>VPN Support</span>
+                <span class="font-semibold">Yes</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="text-lg font-bold mb-4">System Features</h3>
+            <ul class="space-y-2 text-sm">
+              <li class="flex justify-between">
+                <span>Storage</span>
+                <span class="font-semibold">30 days onboard</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Cloud Backup</span>
+                <span class="font-semibold">Unlimited</span>
+              </li>
+              <li class="flex justify-between">
+                <span>AI Analytics</span>
+                <span class="font-semibold">Edge processing</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Integration</span>
+                <span class="font-semibold">REST API</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Mobile App</span>
+                <span class="font-semibold">iOS/Android</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Users</span>
+                <span class="font-semibold">Unlimited</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          Frequently Asked Wireless Questions
+        </h2>
+
+        <div class="max-w-3xl mx-auto" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="space-y-6">
+            <div class="bg-white p-6 rounded-lg shadow" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="font-bold text-lg mb-2" itemprop="name">
+                How reliable is 4G/5G for security surveillance?
+              </h3>
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p class="text-gray-600" itemprop="text">
+                  Modern 4G/5G networks provide 99.9% uptime with automatic failover between multiple carriers. Our systems use multi-carrier SIMs that switch seamlessly between Verizon, AT&T, and T-Mobile for maximum reliability.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="font-bold text-lg mb-2" itemprop="name">
+                What happens if cellular service is temporarily unavailable?
+              </h3>
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p class="text-gray-600" itemprop="text">
+                  The system continues recording locally with 30+ days of onboard storage. Once connectivity returns, footage automatically syncs to the cloud. Critical alerts can be sent via satellite backup if configured.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="font-bold text-lg mb-2" itemprop="name">
+                How much data does wireless surveillance use?
+              </h3>
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p class="text-gray-600" itemprop="text">
+                  With AI edge processing, typical usage is 200-500GB per month for 4 cameras. The system only transmits when motion is detected, and compression reduces bandwidth by 70%. All plans include unlimited data.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="font-bold text-lg mb-2" itemprop="name">
+                Can wireless systems integrate with existing security?
+              </h3>
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p class="text-gray-600" itemprop="text">
+                  Yes, our wireless systems integrate with most existing security platforms via REST API, ONVIF protocol, or RTSP streams. We can also provide hybrid solutions combining wireless and wired cameras on the same platform.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="font-bold text-lg mb-2" itemprop="name">
+                How quickly can wireless security be deployed?
+              </h3>
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p class="text-gray-600" itemprop="text">
+                  Complete deployment takes 30 minutes to 2 hours depending on site size. Units arrive pre-configured and connect automatically. No permits, trenching, or infrastructure work required - just position and power on.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CTASection />
+  </main>
+
+  <Footer />
+
+  <script>
+    const siteSize = document.getElementById('siteSize');
+    const siteType = document.getElementById('siteType');
+    const unitsRequired = document.getElementById('unitsRequired');
+    const coverageArea = document.getElementById('coverageArea');
+    const dataUsage = document.getElementById('dataUsage');
+
+    function calculateCoverage() {
+      const size = parseFloat(siteSize.value) || 10;
+      const type = siteType.value;
+
+      let unitsNeeded = Math.ceil(size / 5); // Base: 1 unit per 5 acres
+      let dataGB = 120; // Base data per unit
+
+      // Adjust for site type
+      if (type === 'construction') {
+        unitsNeeded = Math.ceil(size / 5);
+        dataGB = 120;
+      } else if (type === 'parking') {
+        unitsNeeded = Math.ceil(size / 8);
+        dataGB = 100;
+      } else if (type === 'warehouse') {
+        unitsNeeded = Math.ceil(size / 10);
+        dataGB = 80;
+      } else if (type === 'event') {
+        unitsNeeded = Math.ceil(size / 3);
+        dataGB = 150;
+      }
+
+      const totalData = unitsNeeded * dataGB;
+
+      unitsRequired.textContent = unitsNeeded;
+      coverageArea.textContent = '100%';
+      dataUsage.textContent = totalData + ' GB';
+    }
+
+    siteSize.addEventListener('input', calculateCoverage);
+    siteType.addEventListener('change', calculateCoverage);
+
+    calculateCoverage();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Wireless Security System with 4G LTE",
+    "description": "Deploy wireless security camera systems anywhere with 4G LTE connectivity. No power lines or internet required.",
+    "brand": {
+      "@type": "Brand",
+      "name": "CCTV Trailer"
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": "2500",
+      "priceValidUntil": "2024-12-31",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</Layout>

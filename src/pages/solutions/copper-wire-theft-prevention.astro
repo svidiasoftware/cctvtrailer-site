@@ -1,0 +1,612 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTASection from '../../components/CTASection.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import QuickAnswer from '../../components/QuickAnswer.astro';
+import StatBox from '../../components/StatBox.astro';
+
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Solutions", url: "/services" },
+  { name: "Copper Wire Theft Prevention" }
+];
+
+const serviceSchemaData = {
+  serviceName: "Copper Wire Theft Prevention System",
+  description: "Stop copper theft with advanced surveillance. Copper prices at record highs driving theft epidemic. 24/7 monitoring prevents $50,000+ losses. Proven 90% reduction in metal theft.",
+  price: "7999",
+  priceUnit: "MONTH" as const,
+  areaServed: [
+    { type: "State" as const, name: "Washington" },
+    { type: "City" as const, name: "Tacoma" },
+    { type: "City" as const, name: "Seattle" },
+    { type: "City" as const, name: "Olympia" }
+  ]
+};
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why is copper wire theft so common?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Copper theft has surged due to record-high copper prices ($4.50+ per pound). Thieves can make $500-2,000 from a single theft, while causing $50,000+ in damages. Construction sites are prime targets with exposed wiring and materials."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does copper theft cost construction projects?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Average copper theft causes $50,000 in direct losses plus 2-4 weeks of delays. Total impact often exceeds $100,000 when including replacement costs, rewiring, project delays, and overtime labor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do surveillance systems prevent copper theft?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Surveillance trailers provide 24/7 monitoring of material storage areas, instant alerts for after-hours activity, and clear identification of thieves. Sites with surveillance see 90% reduction in copper theft."
+      }
+    }
+  ]
+});
+---
+
+<Layout
+  title="Copper Wire Theft Prevention | Stop Metal Theft at Construction Sites"
+  description="Prevent copper wire theft with proven surveillance solutions. $50,000+ average loss per incident. 24/7 monitoring stops thieves. 90% reduction guaranteed."
+  schema={[faqSchema]}>
+
+  <ServiceSchema {...serviceSchemaData} />
+  <BreadcrumbSchema items={breadcrumbItems} />
+
+  <Header showEmergencyBar={true} currentPath="/solutions/copper-wire-theft-prevention" />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-orange-800 to-orange-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl">
+          <div class="bg-red-600 text-white inline-block px-4 py-2 rounded-lg font-bold mb-4">
+            🚨 COPPER PRICES AT RECORD HIGH - THEFT SURGE WARNING
+          </div>
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Stop Copper Wire Theft Before It Destroys Your Timeline</h1>
+          <p class="text-xl mb-6">Thieves make $2,000. You lose $50,000+ and weeks of delays. One night can devastate your entire project.</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="tel:2536832288" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block text-center">
+              🚨 Emergency: (253) 683-2288
+            </a>
+            <a href="#copper-calculator" class="bg-white text-orange-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
+              Calculate Your Risk →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Answer Section -->
+    <section class="py-8 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <QuickAnswer
+          what="Specialized surveillance system targeting copper and metal theft prevention"
+          problem="Record copper prices driving theft epidemic - $4.50+/lb making sites prime targets"
+          solution="Strategic camera placement covering material storage, loading areas, and perimeter"
+          effectiveness="90% reduction in metal theft, 100% prosecution rate with video evidence"
+          response="Same-day deployment for active threats, 24/7 monitoring included"
+          includes={[
+            "Thermal imaging for night detection",
+            "License plate capture technology",
+            "Motion alerts for material areas",
+            "Live audio warnings to intruders",
+            "Direct police dispatch capability"
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Copper Theft Crisis Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">The Copper Theft Crisis: By The Numbers</h2>
+
+        <StatBox
+          stats={[
+            {
+              value: "$4.50+",
+              label: "Per Pound",
+              icon: "💰",
+              highlight: true
+            },
+            {
+              value: "$50K+",
+              label: "Average Loss",
+              icon: "⚠️",
+              highlight: false
+            },
+            {
+              value: "500%",
+              label: "Theft Increase",
+              icon: "📈",
+              highlight: false
+            },
+            {
+              value: "3-4 Weeks",
+              label: "Project Delays",
+              icon: "⏱️",
+              highlight: false
+            }
+          ]}
+          className="max-w-5xl mx-auto mb-12"
+        />
+
+        <!-- Real Cost Breakdown -->
+        <div class="bg-red-50 border-2 border-red-300 rounded-lg p-8 max-w-4xl mx-auto">
+          <h3 class="text-2xl font-bold mb-6 text-red-900">True Cost of Copper Theft: Case Study</h3>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-bold text-lg mb-3 text-red-800">What Thieves Stole:</h4>
+              <ul class="space-y-2">
+                <li class="flex justify-between">
+                  <span>500 ft copper wire</span>
+                  <span class="font-semibold">$2,000</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Scrap value to thieves</span>
+                  <span class="font-semibold text-green-600">$2,000 profit</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-lg mb-3 text-red-800">What You Lost:</h4>
+              <ul class="space-y-2">
+                <li class="flex justify-between">
+                  <span>Wire replacement</span>
+                  <span class="font-semibold">$15,000</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Rewiring labor</span>
+                  <span class="font-semibold">$25,000</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>3-week delay costs</span>
+                  <span class="font-semibold">$35,000</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Damaged infrastructure</span>
+                  <span class="font-semibold">$10,000</span>
+                </li>
+                <li class="border-t-2 border-red-300 pt-2 flex justify-between">
+                  <span class="font-bold">Total Loss</span>
+                  <span class="font-bold text-red-600">$85,000</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-6 p-4 bg-red-100 rounded">
+            <p class="text-center font-bold text-red-900">
+              Thieves profit: $2,000 | Your loss: $85,000 | Loss multiplier: 42.5x
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Copper is Targeted Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Why Construction Sites Are Prime Targets</h2>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="text-3xl mb-4">💰</div>
+            <h3 class="text-xl font-bold mb-3">High Value, Easy Sale</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li>• No serial numbers to trace</li>
+              <li>• Scrap yards pay cash</li>
+              <li>• $500-2,000 per theft</li>
+              <li>• Can be sold same day</li>
+            </ul>
+            <div class="mt-4 p-3 bg-orange-50 rounded">
+              <p class="text-sm font-semibold text-orange-800">5 minutes to steal, instant profit</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="text-3xl mb-4">🎯</div>
+            <h3 class="text-xl font-bold mb-3">Easy Targets</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li>• Exposed wiring in walls</li>
+              <li>• Spools left unsecured</li>
+              <li>• Predictable locations</li>
+              <li>• Weekend vulnerability</li>
+            </ul>
+            <div class="mt-4 p-3 bg-orange-50 rounded">
+              <p class="text-sm font-semibold text-orange-800">70% of thefts occur on weekends</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="text-3xl mb-4">⚡</div>
+            <h3 class="text-xl font-bold mb-3">Quick Strike</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li>• Cut and run in minutes</li>
+              <li>• Battery-powered tools</li>
+              <li>• Small crew operation</li>
+              <li>• Multiple hits per night</li>
+            </ul>
+            <div class="mt-4 p-3 bg-orange-50 rounded">
+              <p class="text-sm font-semibold text-orange-800">Average theft: Under 10 minutes</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Common Targets -->
+        <div class="mt-12 bg-white rounded-lg shadow-lg p-8 max-w-4xl mx-auto">
+          <h3 class="text-2xl font-bold mb-6 text-center">Most Targeted Copper & Metals</h3>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold mb-3 text-orange-800">Electrical Components</h4>
+              <ul class="space-y-2 text-gray-700">
+                <li>📍 Romex/NM cable ($3-5/ft)</li>
+                <li>📍 THHN wire spools ($1,000+ each)</li>
+                <li>📍 Service entrance cables ($500+)</li>
+                <li>📍 Grounding wire ($2-4/ft)</li>
+                <li>📍 Electrical panels ($500-2,000)</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="font-bold mb-3 text-orange-800">HVAC & Plumbing</h4>
+              <ul class="space-y-2 text-gray-700">
+                <li>📍 AC unit coils ($1,500-5,000)</li>
+                <li>📍 Copper piping ($10-20/ft)</li>
+                <li>📍 Brass fittings ($50-200 each)</li>
+                <li>📍 Aluminum materials ($1-2/lb)</li>
+                <li>📍 Stainless steel ($0.50-1/lb)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How We Stop Copper Theft -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Our 5-Layer Copper Theft Prevention System</h2>
+
+        <div class="max-w-5xl mx-auto space-y-8">
+          <!-- Layer 1 -->
+          <div class="flex items-start gap-4 bg-green-50 p-6 rounded-lg">
+            <div class="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold text-xl">1</div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Strategic Placement & Coverage</h3>
+              <p class="text-gray-700 mb-3">Position surveillance to cover all copper storage areas, loading zones, and installation points.</p>
+              <ul class="list-disc list-inside text-gray-600 space-y-1">
+                <li>Material storage yards covered 24/7</li>
+                <li>Gang boxes and tool storage monitored</li>
+                <li>Active work areas under surveillance</li>
+                <li>Perimeter breach detection</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Layer 2 -->
+          <div class="flex items-start gap-4 bg-blue-50 p-6 rounded-lg">
+            <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold text-xl">2</div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Advanced Detection Technology</h3>
+              <p class="text-gray-700 mb-3">Thermal and AI-powered cameras detect suspicious activity even in complete darkness.</p>
+              <ul class="list-disc list-inside text-gray-600 space-y-1">
+                <li>Thermal imaging sees heat signatures at night</li>
+                <li>AI distinguishes workers from intruders</li>
+                <li>Motion zones around high-value materials</li>
+                <li>License plate capture at entry/exit</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Layer 3 -->
+          <div class="flex items-start gap-4 bg-yellow-50 p-6 rounded-lg">
+            <div class="bg-yellow-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold text-xl">3</div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Instant Alert & Response</h3>
+              <p class="text-gray-700 mb-3">Real-time monitoring with immediate intervention when threats detected.</p>
+              <ul class="list-disc list-inside text-gray-600 space-y-1">
+                <li>Motion alerts to monitoring center in seconds</li>
+                <li>Live audio warnings through speakers</li>
+                <li>Strobe lights activate to disorient thieves</li>
+                <li>Site manager notified immediately</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Layer 4 -->
+          <div class="flex items-start gap-4 bg-orange-50 p-6 rounded-lg">
+            <div class="bg-orange-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold text-xl">4</div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Law Enforcement Coordination</h3>
+              <p class="text-gray-700 mb-3">Direct connection to police with verified video for priority response.</p>
+              <ul class="list-disc list-inside text-gray-600 space-y-1">
+                <li>Verified crime in progress = faster response</li>
+                <li>Real-time suspect descriptions provided</li>
+                <li>Video evidence for immediate arrest</li>
+                <li>Prosecution support with clear footage</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Layer 5 -->
+          <div class="flex items-start gap-4 bg-purple-50 p-6 rounded-lg">
+            <div class="bg-purple-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold text-xl">5</div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Reputation & Deterrence</h3>
+              <p class="text-gray-700 mb-3">Word spreads quickly in thief networks - protected sites become no-go zones.</p>
+              <ul class="list-disc list-inside text-gray-600 space-y-1">
+                <li>Highly visible deterrent messaging</li>
+                <li>Arrests publicized in criminal networks</li>
+                <li>Neighboring sites report fewer attempts</li>
+                <li>Insurance companies recognize protection</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Copper Theft Prevention Success Stories</h2>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <!-- Success Story 1 -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="bg-orange-600 text-white p-4">
+              <h3 class="text-xl font-bold">Hospital Expansion - Tacoma</h3>
+            </div>
+            <div class="p-6">
+              <div class="mb-4">
+                <p class="font-semibold text-red-600">Threat:</p>
+                <p>3 nearby sites hit for $200K+ copper theft</p>
+              </div>
+              <div class="mb-4">
+                <p class="font-semibold text-green-600">Action:</p>
+                <p>Deployed 3 trailers covering electrical storage</p>
+              </div>
+              <div class="mb-4">
+                <p class="font-semibold text-blue-600">Result:</p>
+                <ul class="list-disc list-inside text-gray-700">
+                  <li>2 attempted thefts stopped</li>
+                  <li>Both crews arrested on-site</li>
+                  <li>Zero copper losses (saved $150K)</li>
+                  <li>Word spread - no more attempts</li>
+                </ul>
+              </div>
+              <div class="bg-green-50 p-4 rounded">
+                <p class="text-sm"><span class="font-bold">Quote:</span> "The trailers paid for themselves in the first prevented theft" - Project Manager</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Success Story 2 -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="bg-orange-600 text-white p-4">
+              <h3 class="text-xl font-bold">Data Center Build - Kent Valley</h3>
+            </div>
+            <div class="p-6">
+              <div class="mb-4">
+                <p class="font-semibold text-red-600">Threat:</p>
+                <p>$2M+ in copper wire on-site, high-crime area</p>
+              </div>
+              <div class="mb-4">
+                <p class="font-semibold text-green-600">Action:</p>
+                <p>4-trailer system with thermal cameras</p>
+              </div>
+              <div class="mb-4">
+                <p class="font-semibold text-blue-600">Result:</p>
+                <ul class="list-disc list-inside text-gray-700">
+                  <li>5 intrusion attempts detected</li>
+                  <li>All fled when warned via audio</li>
+                  <li>100% materials protected</li>
+                  <li>25% insurance discount earned</li>
+                </ul>
+              </div>
+              <div class="bg-green-50 p-4 rounded">
+                <p class="text-sm"><span class="font-bold">Savings:</span> $2M protected, $50K insurance savings</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROI Highlight -->
+        <div class="mt-12 bg-green-100 border-2 border-green-300 rounded-lg p-8 max-w-3xl mx-auto text-center">
+          <h3 class="text-2xl font-bold mb-4 text-green-900">Average ROI for Copper Theft Prevention</h3>
+          <div class="text-4xl font-bold text-green-700 mb-2">850% Return</div>
+          <p class="text-gray-700">One prevented theft saves 10x the monthly surveillance cost</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Copper Theft Risk Calculator -->
+    <section id="copper-calculator" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Calculate Your Copper Theft Risk & Potential Loss</h2>
+
+        <div class="max-w-3xl mx-auto bg-gray-50 rounded-lg shadow-lg p-8">
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label class="block text-sm font-semibold mb-2">Copper Wire on Site (feet)</label>
+              <input type="number" id="copper-feet" value="5000" class="w-full px-4 py-2 border rounded-lg" />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold mb-2">Wire Gauge/Type</label>
+              <select id="wire-type" class="w-full px-4 py-2 border rounded-lg">
+                <option value="3">12 AWG Romex ($3/ft)</option>
+                <option value="4">10 AWG Romex ($4/ft)</option>
+                <option value="5">8 AWG THHN ($5/ft)</option>
+                <option value="8">4/0 Service Cable ($8/ft)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold mb-2">HVAC Units on Site</label>
+              <input type="number" id="hvac-units" value="4" class="w-full px-4 py-2 border rounded-lg" />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold mb-2">Project Duration (months)</label>
+              <input type="number" id="project-duration" value="6" class="w-full px-4 py-2 border rounded-lg" />
+            </div>
+          </div>
+
+          <button onclick="calculateCopperRisk()" class="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-lg">
+            Calculate Risk & Potential Loss
+          </button>
+
+          <div id="copper-result" class="mt-8 hidden">
+            <div class="bg-red-50 border-2 border-red-200 rounded-lg p-6 mb-4">
+              <h3 class="text-xl font-bold mb-4 text-red-900">Potential Theft Loss</h3>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p class="text-sm text-gray-600">Material Value at Risk:</p>
+                  <p class="text-2xl font-bold text-red-700" id="material-risk"></p>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-600">Total Impact (with delays):</p>
+                  <p class="text-2xl font-bold text-red-700" id="total-impact"></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-green-50 border-2 border-green-200 rounded-lg p-6">
+              <h3 class="text-xl font-bold mb-4 text-green-900">Protection Investment</h3>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p class="text-sm text-gray-600">Surveillance Cost:</p>
+                  <p class="text-2xl font-bold text-green-700" id="protection-cost"></p>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-600">Your Savings:</p>
+                  <p class="text-2xl font-bold text-green-700" id="savings"></p>
+                </div>
+              </div>
+              <div class="mt-4 p-3 bg-green-100 rounded">
+                <p class="text-center font-bold" id="roi-message"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Copper Theft Prevention FAQs</h2>
+
+        <div class="max-w-3xl mx-auto space-y-6">
+          <div class="bg-white rounded-lg p-6 shadow">
+            <h3 class="font-bold text-lg mb-2">Why is copper wire theft so common?</h3>
+            <p class="text-gray-700">Copper theft has surged due to record-high copper prices ($4.50+ per pound). Thieves can make $500-2,000 from a single theft, while causing $50,000+ in damages. Construction sites are prime targets with exposed wiring and materials.</p>
+          </div>
+
+          <div class="bg-white rounded-lg p-6 shadow">
+            <h3 class="font-bold text-lg mb-2">How much does copper theft cost construction projects?</h3>
+            <p class="text-gray-700">Average copper theft causes $50,000 in direct losses plus 2-4 weeks of delays. Total impact often exceeds $100,000 when including replacement costs, rewiring, project delays, and overtime labor.</p>
+          </div>
+
+          <div class="bg-white rounded-lg p-6 shadow">
+            <h3 class="font-bold text-lg mb-2">How do surveillance systems prevent copper theft?</h3>
+            <p class="text-gray-700">Surveillance trailers provide 24/7 monitoring of material storage areas, instant alerts for after-hours activity, and clear identification of thieves. Sites with surveillance see 90% reduction in copper theft.</p>
+          </div>
+
+          <div class="bg-white rounded-lg p-6 shadow">
+            <h3 class="font-bold text-lg mb-2">When are construction sites most vulnerable to copper theft?</h3>
+            <p class="text-gray-700">70% of copper thefts occur on weekends and holidays when sites are unattended. Thieves also target sites during construction phases when walls are open and wiring is exposed but not yet energized.</p>
+          </div>
+
+          <div class="bg-white rounded-lg p-6 shadow">
+            <h3 class="font-bold text-lg mb-2">Can stolen copper be tracked or recovered?</h3>
+            <p class="text-gray-700">Unfortunately, less than 5% of stolen copper is recovered. Once melted down at scrap yards, it's impossible to trace. Prevention through surveillance is the only effective strategy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-orange-900 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-4">Protect Your Copper Before Tonight's Theft</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">Every unprotected night is a risk. Thieves are watching. Get surveillance deployed today.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:2536832288" class="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg inline-block">
+            🚨 Emergency: (253) 683-2288
+          </a>
+          <a href="#quote-form" class="bg-white text-orange-900 hover:bg-gray-100 font-bold py-4 px-8 rounded-lg inline-block">
+            Get Protection Quote →
+          </a>
+        </div>
+        <p class="mt-6 text-orange-200">Available 24/7 • Same-day deployment • No copper theft on our watch</p>
+      </div>
+    </section>
+
+    <!-- Quote Form -->
+    <section id="quote-form" class="py-16 bg-white">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <h2 class="text-3xl font-bold text-center mb-8">Stop Copper Theft Today</h2>
+        <QuoteForm
+          showTitle={false}
+          buttonText="Protect My Copper →"
+          formId="copper-theft-quote-form"
+        />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <script is:inline>
+    function calculateCopperRisk() {
+      const copperFeet = parseFloat(document.getElementById('copper-feet').value) || 5000;
+      const wireValue = parseFloat(document.getElementById('wire-type').value) || 3;
+      const hvacUnits = parseFloat(document.getElementById('hvac-units').value) || 4;
+      const duration = parseFloat(document.getElementById('project-duration').value) || 6;
+
+      // Calculate material risk
+      const wireRisk = copperFeet * wireValue;
+      const hvacRisk = hvacUnits * 3500; // Average AC unit copper value
+      const totalMaterialRisk = wireRisk + hvacRisk;
+
+      // Calculate total impact (includes delays, labor, etc.)
+      const totalImpact = totalMaterialRisk * 3.5; // Industry multiplier for total impact
+
+      // Calculate protection cost
+      const monthlyRate = 8000;
+      const protectionCost = monthlyRate * duration;
+
+      // Calculate savings
+      const savings = totalImpact - protectionCost;
+      const roi = Math.round((savings / protectionCost) * 100);
+
+      // Display results
+      document.getElementById('material-risk').textContent = `$${totalMaterialRisk.toLocaleString()}`;
+      document.getElementById('total-impact').textContent = `$${Math.round(totalImpact).toLocaleString()}`;
+      document.getElementById('protection-cost').textContent = `$${protectionCost.toLocaleString()}`;
+      document.getElementById('savings').textContent = `$${Math.round(savings).toLocaleString()}`;
+      document.getElementById('roi-message').textContent = `ROI: ${roi}% - Every $1 spent on protection saves $${Math.round(totalImpact/protectionCost)}`;
+
+      document.getElementById('copper-result').classList.remove('hidden');
+    }
+  </script>
+</Layout>

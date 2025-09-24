@@ -1,0 +1,409 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LazyImage from '../components/LazyImage.astro';
+import CTASection from '../components/CTASection.astro';
+import StatBox from '../components/StatBox.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+
+const title = "Construction Site Security Compliance Guide | OSHA Requirements & Insurance Benefits";
+const description = "Complete guide to meeting OSHA construction site security requirements and reducing insurance premiums with mobile surveillance. Learn compliance strategies and documentation requirements.";
+---
+
+<Layout title={title} description={description}>
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <div class="hero-trailer">
+      <div class="hero-overlay">
+        <LazyImage src="/images/tacoma-dome-bg-hero3.webp" alt="Construction site security compliance with OSHA standards"
+        class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
+      </div>
+      <div class="hero-content">
+        <div class="hero-text-wrapper">
+          <h1 class="hero-heading">Construction Site Security Compliance Guide</h1>
+          <p class="hero-paragraph">
+            Navigate construction site security regulations with confidence. Our comprehensive guide covers OSHA requirements, insurance benefits, and compliance strategies.
+          </p>
+          <a href="/contact" class="red-button mt-6">Get Compliance Assessment</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            OSHA Security Requirements Overview
+          </h2>
+          <p class="text-xl text-gray-600">
+            Understanding and meeting federal safety and security standards
+          </p>
+        </div>
+
+        <StatBox
+          stats={[
+            { value: "$1-2B", label: "Annual Theft Losses", subtext: "Equipment & materials", color: "red" },
+            { value: "10-20%", label: "Premium Reduction", subtext: "With security", color: "green" },
+            { value: "89%", label: "Sites Experience Theft", subtext: "Industry average", color: "blue" },
+            { value: "7%", label: "Recovery Rate", subtext: "Stolen equipment", color: "purple" }
+          ]}
+        />
+
+        <div class="grid md:grid-cols-2 gap-8 mt-12">
+          <div class="bg-gray-50 p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-6">OSHA Safety Standards (29 CFR 1926)</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>1926.95 - PPE Requirements</strong>
+                  <p class="text-gray-600 mt-1">Personal protective equipment must properly fit all workers</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>1926.35 - Emergency Action Plans</strong>
+                  <p class="text-gray-600 mt-1">Written emergency action plan required for evacuation procedures</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>1926.200 - Accident Prevention Signs</strong>
+                  <p class="text-gray-600 mt-1">Safety signs and tags required for hazard warnings</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>1926.20 - General Safety</strong>
+                  <p class="text-gray-600 mt-1">Contractor must initiate safety programs as necessary</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-blue-50 p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-6">State & Local Requirements</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>Washington State L&I</strong>
+                  <p class="text-gray-600 mt-1">Chapter 296-155 WAC safety standards, prevailing wage requirements</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>Public Works Requirements</strong>
+                  <p class="text-gray-600 mt-1">Statement of Intent, certified payroll, workers' comp required</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>Environmental Protection</strong>
+                  <p class="text-gray-600 mt-1">Security for environmentally sensitive areas</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <strong>Fire Marshal Requirements</strong>
+                  <p class="text-gray-600 mt-1">Access control for emergency vehicles</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          Insurance Premium Reduction Benefits
+        </h2>
+
+        <div class="bg-white p-8 rounded-lg shadow-lg mb-8">
+          <h3 class="text-2xl font-bold mb-6">How Security Reduces Your Insurance Costs</h3>
+
+          <ComparisonTable
+            headers={["Without Security", "With Mobile Surveillance"]}
+            rows={[
+              { feature: "Base Premium Rate", values: ["100%", { text: "80-90%", highlight: true }] },
+              { feature: "Theft Deductible", values: ["$25,000", { text: "$10,000", highlight: true }] },
+              { feature: "Equipment Coverage Limit", values: ["$500,000", { text: "$1,000,000", highlight: true }] },
+              { feature: "Vandalism Coverage", values: ["Limited", { text: "Full Coverage", highlight: true }] },
+              { feature: "Liability Protection", values: ["Standard", { text: "Enhanced", highlight: true }] },
+              { feature: "Claims Processing", values: ["30-45 days", { text: "7-14 days", highlight: true }] },
+              { feature: "Risk Assessment Score", values: ["High Risk", { text: "Low-Medium Risk", highlight: true }] },
+              { feature: "Annual Review Adjustment", values: ["+5-10%", { text: "-5-10%", highlight: true }] }
+            ]}
+          />
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow">
+            <div class="text-3xl font-bold text-green-600 mb-2">5-15%</div>
+            <h4 class="font-semibold mb-2">General Liability Reduction</h4>
+            <p class="text-gray-600">Typical premium reduction with comprehensive security systems</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow">
+            <div class="text-3xl font-bold text-green-600 mb-2">10-20%</div>
+            <h4 class="font-semibold mb-2">Builder's Risk Insurance</h4>
+            <p class="text-gray-600">Premium reduction with monitored surveillance systems</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow">
+            <div class="text-3xl font-bold text-green-600 mb-2">$3K-10K</div>
+            <h4 class="font-semibold mb-2">Annual Savings</h4>
+            <p class="text-gray-600">Average savings per $100K in premiums</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          Compliance Documentation Checklist
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-blue-50 p-8 rounded-lg">
+            <h3 class="text-xl font-bold mb-6">Required Documentation</h3>
+            <ul class="space-y-3">
+              <li class="flex items-center">
+                <input type="checkbox" class="mr-3 h-5 w-5 text-blue-600">
+                <span>Written Security Plan (site-specific)</span>
+              </li>
+              <li class="flex items-center">
+                <input type="checkbox" class="mr-3 h-5 w-5 text-blue-600">
+                <span>Equipment Inventory & Serial Numbers</span>
+              </li>
+              <li class="flex items-center">
+                <input type="checkbox" class="mr-3 h-5 w-5 text-blue-600">
+                <span>Access Control Procedures</span>
+              </li>
+              <li class="flex items-center">
+                <input type="checkbox" class="mr-3 h-5 w-5 text-blue-600">
+                <span>Incident Response Protocol</span>
+              </li>
+              <li class="flex items-center">
+                <input type="checkbox" class="mr-3 h-5 w-5 text-blue-600">
+                <span>Security Personnel Credentials</span>
+              </li>
+              <li class="flex items-center">
+                <input type="checkbox" class="mr-3 h-5 w-5 text-blue-600">
+                <span>Daily Security Logs</span>
+              </li>
+              <li class="flex items-center">
+                <input type="checkbox" class="mr-3 h-5 w-5 text-blue-600">
+                <span>Video Retention Policy</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-green-50 p-8 rounded-lg">
+            <h3 class="text-xl font-bold mb-6">Insurance Documentation</h3>
+            <ul class="space-y-3">
+              <li class="flex items-center">
+                <input type="checkbox" class="mr-3 h-5 w-5 text-green-600">
+                <span>Security System Specifications</span>
+              </li>
+              <li class="flex items-center">
+                <input type="checkbox" class="mr-3 h-5 w-5 text-green-600">
+                <span>Monitoring Service Agreement</span>
+              </li>
+              <li class="flex items-center">
+                <input type="checkbox" class="mr-3 h-5 w-5 text-green-600">
+                <span>Incident Reports (last 12 months)</span>
+              </li>
+              <li class="flex items-center">
+                <input type="checkbox" class="mr-3 h-5 w-5 text-green-600">
+                <span>Security Audit Results</span>
+              </li>
+              <li class="flex items-center">
+                <input type="checkbox" class="mr-3 h-5 w-5 text-green-600">
+                <span>Emergency Contact List</span>
+              </li>
+              <li class="flex items-center">
+                <input type="checkbox" class="mr-3 h-5 w-5 text-green-600">
+                <span>Loss Prevention Measures</span>
+              </li>
+              <li class="flex items-center">
+                <input type="checkbox" class="mr-3 h-5 w-5 text-green-600">
+                <span>Annual Security Review</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          Compliance Implementation Timeline
+        </h2>
+
+        <div class="space-y-6">
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="flex items-start">
+              <div class="bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">1</div>
+              <div class="ml-4">
+                <h3 class="text-xl font-bold">Week 1: Assessment & Planning</h3>
+                <p class="text-gray-600 mt-2">Site security audit, risk assessment, compliance gap analysis</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="flex items-start">
+              <div class="bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">2</div>
+              <div class="ml-4">
+                <h3 class="text-xl font-bold">Week 2: System Deployment</h3>
+                <p class="text-gray-600 mt-2">Install surveillance equipment, establish monitoring protocols</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="flex items-start">
+              <div class="bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">3</div>
+              <div class="ml-4">
+                <h3 class="text-xl font-bold">Week 3: Documentation & Training</h3>
+                <p class="text-gray-600 mt-2">Complete all required documentation, train site personnel</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="flex items-start">
+              <div class="bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">4</div>
+              <div class="ml-4">
+                <h3 class="text-xl font-bold">Week 4: Certification & Insurance Review</h3>
+                <p class="text-gray-600 mt-2">Submit compliance certification, negotiate insurance premium reductions</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          Frequently Asked Compliance Questions
+        </h2>
+
+        <div class="max-w-3xl mx-auto" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="space-y-6">
+            <div class="bg-gray-50 p-6 rounded-lg" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="font-bold text-lg mb-2" itemprop="name">
+                What are the minimum OSHA security requirements for construction sites?
+              </h3>
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p class="text-gray-600" itemprop="text">
+                  OSHA 29 CFR 1926 focuses on worker safety including PPE requirements, emergency action plans, accident prevention signs, and general safety programs. Security for theft prevention is not specifically mandated by OSHA but may be required by insurance carriers and local jurisdictions.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="font-bold text-lg mb-2" itemprop="name">
+                How much can I save on insurance with proper security?
+              </h3>
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p class="text-gray-600" itemprop="text">
+                  Construction sites with comprehensive security systems typically see 5-15% reduction in general liability premiums and 10-20% savings on builder's risk insurance. Average annual losses from theft range from $1-2 billion nationally, with 89% of sites experiencing theft.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="font-bold text-lg mb-2" itemprop="name">
+                What documentation do I need for compliance?
+              </h3>
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p class="text-gray-600" itemprop="text">
+                  Required documentation includes a written site-specific security plan, equipment inventory, access control procedures, incident response protocols, daily security logs, and video retention policies. Insurance carriers also require monitoring agreements and audit results.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="font-bold text-lg mb-2" itemprop="name">
+                How quickly can I achieve compliance?
+              </h3>
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p class="text-gray-600" itemprop="text">
+                  Most construction sites can achieve full compliance within 4 weeks: Week 1 for assessment, Week 2 for system deployment, Week 3 for documentation and training, and Week 4 for certification and insurance review.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="font-bold text-lg mb-2" itemprop="name">
+                Do I need 24/7 monitoring for compliance?
+              </h3>
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p class="text-gray-600" itemprop="text">
+                  24/7 monitoring is typically required by insurance carriers for high-value projects, sites with equipment over $500,000, or high-crime areas. While not mandated by OSHA, continuous monitoring can significantly reduce theft losses and insurance premiums.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CTASection />
+  </main>
+
+  <Footer />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Construction Site Security Compliance Guide",
+    "description": "Complete guide to meeting OSHA construction site security requirements and reducing insurance premiums with mobile surveillance",
+    "author": {
+      "@type": "Organization",
+      "name": "CCTV Trailer"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CCTV Trailer",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cctvtrailer.com/logo.png"
+      }
+    },
+    "datePublished": "2025-09-23",
+    "dateModified": "2025-09-23"
+  }
+  </script>
+</Layout>

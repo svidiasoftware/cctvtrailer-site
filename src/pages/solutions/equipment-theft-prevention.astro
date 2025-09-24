@@ -1,0 +1,560 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTASection from '../../components/CTASection.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import QuickAnswer from '../../components/QuickAnswer.astro';
+import StatBox from '../../components/StatBox.astro';
+import LazyImage from '../../components/LazyImage.astro';
+
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Solutions", url: "/services" },
+  { name: "Equipment Theft Prevention" }
+];
+
+const serviceSchemaData = {
+  serviceName: "Construction Equipment Theft Prevention Solution",
+  description: "Prevent equipment theft with mobile surveillance. $1 billion in construction equipment stolen annually. 24/7 monitoring, instant alerts, proven 85% theft reduction.",
+  price: "7999",
+  priceUnit: "MONTH" as const,
+  areaServed: [
+    { type: "State" as const, name: "Washington" },
+    { type: "City" as const, name: "Tacoma" },
+    { type: "City" as const, name: "Seattle" },
+    { type: "City" as const, name: "Olympia" }
+  ]
+};
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much construction equipment is stolen each year?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Over $1 billion worth of construction equipment is stolen annually in the US, with less than 25% ever recovered. The average theft costs contractors $30,000-50,000 in equipment value plus project delays."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What equipment is most commonly stolen from construction sites?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most commonly stolen equipment includes: skid steers, excavators, generators, tools, copper wire, lumber, and fuel. These items are targeted due to high resale value and difficulty tracking."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do surveillance trailers prevent equipment theft?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Surveillance trailers deter theft through visible presence, motion-activated alerts, real-time monitoring, and recorded evidence. Studies show sites with surveillance experience 85% fewer theft incidents."
+      }
+    }
+  ]
+});
+---
+
+<Layout
+  title="Construction Equipment Theft Prevention | Stop Theft Before It Happens"
+  description="Prevent equipment theft with proven surveillance solutions. $1B stolen annually - protect your assets with 24/7 monitoring. 85% theft reduction guaranteed."
+  schema={[faqSchema]}>
+
+  <ServiceSchema {...serviceSchemaData} />
+  <BreadcrumbSchema items={breadcrumbItems} />
+
+  <Header showEmergencyBar={true} currentPath="/solutions/equipment-theft-prevention" />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-red-800 to-red-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl">
+          <div class="bg-yellow-500 text-black inline-block px-4 py-2 rounded-lg font-bold mb-4">
+            ⚠️ CRITICAL THREAT TO YOUR BUSINESS
+          </div>
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Stop Equipment Theft Before It Devastates Your Project</h1>
+          <p class="text-xl mb-6">$1 billion in construction equipment stolen annually. Average loss: $50,000 per incident. Recovery rate: Less than 25%.</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="tel:2536832288" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block text-center">
+              🚨 Emergency: (253) 683-2288
+            </a>
+            <a href="#theft-assessment" class="bg-white text-red-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
+              Get Theft Risk Assessment →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Answer Section -->
+    <section class="py-8 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <QuickAnswer
+          what="Comprehensive equipment theft prevention using mobile surveillance technology"
+          problem="$1 billion annual construction equipment theft, 75% never recovered"
+          solution="24/7 surveillance with motion detection, instant alerts, and police dispatch"
+          effectiveness="85% reduction in theft incidents at monitored sites"
+          response="2-hour emergency deployment, 30-minute setup"
+          includes={[
+            "360° HD surveillance coverage",
+            "Motion-activated alerts",
+            "Live monitoring and response",
+            "Recorded evidence for prosecution",
+            "Insurance claim documentation"
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Shocking Statistics Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">The True Cost of Equipment Theft</h2>
+
+        <StatBox
+          stats={[
+            {
+              value: "$1B+",
+              label: "Annual Theft Losses",
+              highlight: true
+            },
+            {
+              value: "<25%",
+              label: "Recovery Rate",
+              highlight: false
+            },
+            {
+              value: "$50K",
+              label: "Average Loss",
+              highlight: false
+            },
+            {
+              value: "85%",
+              label: "Theft Reduction",
+              highlight: true
+            }
+          ]}
+          className="max-w-5xl mx-auto mb-12"
+        />
+
+        <div class="bg-red-50 border-2 border-red-200 rounded-lg p-8 max-w-4xl mx-auto">
+          <h3 class="text-2xl font-bold mb-4 text-red-900">Hidden Costs Beyond Equipment Value:</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <span class="text-red-600 mr-2">•</span>
+                <span><strong>Project Delays:</strong> 2-4 weeks average</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-600 mr-2">•</span>
+                <span><strong>Rental Replacements:</strong> $5,000-10,000/week</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-600 mr-2">•</span>
+                <span><strong>Insurance Deductibles:</strong> $10,000-25,000</span>
+              </li>
+            </ul>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <span class="text-red-600 mr-2">•</span>
+                <span><strong>Premium Increases:</strong> 20-40% after claims</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-600 mr-2">•</span>
+                <span><strong>Contract Penalties:</strong> $1,000-5,000/day</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-600 mr-2">•</span>
+                <span><strong>Reputation Damage:</strong> Lost future contracts</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Most Stolen Equipment Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Most Targeted Equipment & Materials</h2>
+
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <!-- Heavy Equipment -->
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="text-3xl mb-4">🚜</div>
+            <h3 class="text-xl font-bold mb-3">Heavy Equipment</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li>• Skid Steers ($30,000-50,000)</li>
+              <li>• Excavators ($50,000-150,000)</li>
+              <li>• Backhoes ($40,000-80,000)</li>
+              <li>• Wheel Loaders ($75,000+)</li>
+              <li>• Bulldozers ($100,000+)</li>
+            </ul>
+            <div class="mt-4 p-3 bg-red-50 rounded">
+              <p class="text-sm font-semibold text-red-800">Theft Time: 60 seconds with trailer</p>
+            </div>
+          </div>
+
+          <!-- Tools & Generators -->
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="text-3xl mb-4">🔧</div>
+            <h3 class="text-xl font-bold mb-3">Tools & Generators</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li>• Generators ($2,000-10,000)</li>
+              <li>• Welders ($3,000-8,000)</li>
+              <li>• Compressors ($2,000-5,000)</li>
+              <li>• Power Tools ($500-2,000)</li>
+              <li>• Hand Tools ($5,000+ total)</li>
+            </ul>
+            <div class="mt-4 p-3 bg-red-50 rounded">
+              <p class="text-sm font-semibold text-red-800">Often stolen in bulk at night</p>
+            </div>
+          </div>
+
+          <!-- Materials -->
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="text-3xl mb-4">📦</div>
+            <h3 class="text-xl font-bold mb-3">Materials & Supplies</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li>• Copper Wire ($10,000+)</li>
+              <li>• Lumber ($5,000-20,000)</li>
+              <li>• Steel/Rebar ($10,000+)</li>
+              <li>• Fuel ($2,000-5,000)</li>
+              <li>• HVAC Units ($5,000-15,000)</li>
+            </ul>
+            <div class="mt-4 p-3 bg-red-50 rounded">
+              <p class="text-sm font-semibold text-red-800">Easy to resell, hard to trace</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How Surveillance Stops Theft -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">How Mobile Surveillance Stops Equipment Theft</h2>
+
+        <div class="max-w-5xl mx-auto">
+          <!-- Prevention Timeline -->
+          <div class="space-y-8">
+            <!-- Before Thieves Arrive -->
+            <div class="flex items-start gap-4">
+              <div class="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">1</div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold mb-2">Visible Deterrent (Prevention)</h3>
+                <p class="text-gray-700 mb-3">Highly visible surveillance trailers with warning signs stop 70% of theft attempts before they begin.</p>
+                <div class="bg-green-50 border-l-4 border-green-600 p-4">
+                  <p class="font-semibold">Result: Thieves choose easier targets</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Detection -->
+            <div class="flex items-start gap-4">
+              <div class="bg-yellow-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">2</div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold mb-2">Motion Detection (0-30 seconds)</h3>
+                <p class="text-gray-700 mb-3">AI-powered cameras detect unauthorized movement and trigger instant alerts to monitoring center.</p>
+                <div class="bg-yellow-50 border-l-4 border-yellow-600 p-4">
+                  <p class="font-semibold">Result: Threat identified immediately</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Response -->
+            <div class="flex items-start gap-4">
+              <div class="bg-orange-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">3</div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold mb-2">Active Intervention (30-60 seconds)</h3>
+                <p class="text-gray-700 mb-3">Live monitoring agent activates strobes, sirens, and two-way audio to warn intruders they're being watched.</p>
+                <div class="bg-orange-50 border-l-4 border-orange-600 p-4">
+                  <p class="font-semibold">Result: 90% of intruders flee immediately</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Police Dispatch -->
+            <div class="flex items-start gap-4">
+              <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">4</div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold mb-2">Police Dispatch (1-2 minutes)</h3>
+                <p class="text-gray-700 mb-3">Verified video evidence triggers priority police response with real-time suspect descriptions and location.</p>
+                <div class="bg-red-50 border-l-4 border-red-600 p-4">
+                  <p class="font-semibold">Result: Higher arrest rates, equipment recovery</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Evidence -->
+            <div class="flex items-start gap-4">
+              <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">5</div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold mb-2">Evidence & Prosecution</h3>
+                <p class="text-gray-700 mb-3">HD video evidence ensures successful prosecution and insurance claims, plus deters future attempts.</p>
+                <div class="bg-blue-50 border-l-4 border-blue-600 p-4">
+                  <p class="font-semibold">Result: Full accountability and compensation</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Real Results: Theft Prevention Success Stories</h2>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <!-- Case Study 1 -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="bg-green-600 text-white p-4">
+              <h3 class="text-xl font-bold">Highway Construction - Federal Way</h3>
+            </div>
+            <div class="p-6">
+              <div class="mb-4">
+                <p class="font-semibold text-red-600">Problem:</p>
+                <p>$120,000 excavator stolen from previous project</p>
+              </div>
+              <div class="mb-4">
+                <p class="font-semibold text-green-600">Solution:</p>
+                <p>Deployed 2 surveillance trailers for 8-month project</p>
+              </div>
+              <div class="mb-4">
+                <p class="font-semibold text-blue-600">Results:</p>
+                <ul class="list-disc list-inside text-gray-700">
+                  <li>3 theft attempts prevented</li>
+                  <li>Zero equipment losses</li>
+                  <li>$200,000+ in prevented losses</li>
+                  <li>25% insurance discount earned</li>
+                </ul>
+              </div>
+              <div class="bg-green-50 p-4 rounded">
+                <p class="font-semibold">ROI: 1,200%</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case Study 2 -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="bg-green-600 text-white p-4">
+              <h3 class="text-xl font-bold">Commercial Development - Tacoma</h3>
+            </div>
+            <div class="p-6">
+              <div class="mb-4">
+                <p class="font-semibold text-red-600">Problem:</p>
+                <p>Copper theft epidemic in area, $30K recent loss</p>
+              </div>
+              <div class="mb-4">
+                <p class="font-semibold text-green-600">Solution:</p>
+                <p>Strategic trailer placement covering material storage</p>
+              </div>
+              <div class="mb-4">
+                <p class="font-semibold text-blue-600">Results:</p>
+                <ul class="list-disc list-inside text-gray-700">
+                  <li>Caught 2 thieves on camera</li>
+                  <li>Both arrested and prosecuted</li>
+                  <li>Word spread - no more attempts</li>
+                  <li>Neighboring sites had 5 thefts</li>
+                </ul>
+              </div>
+              <div class="bg-green-50 p-4 rounded">
+                <p class="font-semibold">Savings: $150,000+</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theft Risk Assessment -->
+    <section id="theft-assessment" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Calculate Your Theft Risk</h2>
+
+        <div class="max-w-3xl mx-auto bg-gray-50 rounded-lg shadow-lg p-8">
+          <p class="mb-6 text-gray-700">Answer these questions to assess your equipment theft risk level:</p>
+
+          <div class="space-y-4">
+            <div class="bg-white rounded p-4">
+              <label class="block font-semibold mb-2">Total equipment value on site:</label>
+              <select id="equipment-value" class="w-full px-4 py-2 border rounded">
+                <option value="1">Under $100,000</option>
+                <option value="2">$100,000 - $500,000</option>
+                <option value="3">$500,000 - $1,000,000</option>
+                <option value="4">Over $1,000,000</option>
+              </select>
+            </div>
+
+            <div class="bg-white rounded p-4">
+              <label class="block font-semibold mb-2">Site location:</label>
+              <select id="location-risk" class="w-full px-4 py-2 border rounded">
+                <option value="1">Rural/Low crime area</option>
+                <option value="2">Suburban area</option>
+                <option value="3">Urban/Moderate crime</option>
+                <option value="4">High crime area</option>
+              </select>
+            </div>
+
+            <div class="bg-white rounded p-4">
+              <label class="block font-semibold mb-2">Current security measures:</label>
+              <select id="current-security" class="w-full px-4 py-2 border rounded">
+                <option value="4">None</option>
+                <option value="3">Basic fencing only</option>
+                <option value="2">Fencing with locks</option>
+                <option value="1">Fencing + lighting</option>
+              </select>
+            </div>
+
+            <div class="bg-white rounded p-4">
+              <label class="block font-semibold mb-2">Previous theft incidents:</label>
+              <select id="past-theft" class="w-full px-4 py-2 border rounded">
+                <option value="1">Never</option>
+                <option value="2">Once in past 2 years</option>
+                <option value="3">2-3 incidents</option>
+                <option value="4">Regular problem</option>
+              </select>
+            </div>
+          </div>
+
+          <button onclick="calculateRisk()" class="w-full mt-6 bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg">
+            Calculate My Risk Level
+          </button>
+
+          <div id="risk-result" class="mt-8 p-6 rounded-lg hidden">
+            <h3 class="text-xl font-bold mb-4">Your Theft Risk Assessment:</h3>
+            <div id="risk-level" class="text-2xl font-bold mb-4"></div>
+            <div id="risk-message" class="mb-4"></div>
+            <div id="risk-recommendation" class="p-4 bg-blue-50 rounded"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Equipment Theft Prevention FAQs</h2>
+
+        <div class="max-w-3xl mx-auto space-y-6">
+          <div class="bg-white rounded-lg p-6 shadow">
+            <h3 class="font-bold text-lg mb-2">How much construction equipment is stolen each year?</h3>
+            <p class="text-gray-700">Over $1 billion worth of construction equipment is stolen annually in the US, with less than 25% ever recovered. The average theft costs contractors $30,000-50,000 in equipment value plus project delays.</p>
+          </div>
+
+          <div class="bg-white rounded-lg p-6 shadow">
+            <h3 class="font-bold text-lg mb-2">What equipment is most commonly stolen from construction sites?</h3>
+            <p class="text-gray-700">Most commonly stolen equipment includes: skid steers, excavators, generators, tools, copper wire, lumber, and fuel. These items are targeted due to high resale value and difficulty tracking.</p>
+          </div>
+
+          <div class="bg-white rounded-lg p-6 shadow">
+            <h3 class="font-bold text-lg mb-2">How do surveillance trailers prevent equipment theft?</h3>
+            <p class="text-gray-700">Surveillance trailers deter theft through visible presence, motion-activated alerts, real-time monitoring, and recorded evidence. Studies show sites with surveillance experience 85% fewer theft incidents.</p>
+          </div>
+
+          <div class="bg-white rounded-lg p-6 shadow">
+            <h3 class="font-bold text-lg mb-2">Can surveillance trailers work in remote areas without power?</h3>
+            <p class="text-gray-700">Yes, our trailers are completely self-sufficient with solar panels, battery backup, and 4G LTE connectivity. They can operate indefinitely in remote locations without any infrastructure.</p>
+          </div>
+
+          <div class="bg-white rounded-lg p-6 shadow">
+            <h3 class="font-bold text-lg mb-2">Will my insurance rates decrease with surveillance?</h3>
+            <p class="text-gray-700">Most insurance companies offer 15-25% discounts for sites with professional surveillance. The documentation and reduced claims also prevent rate increases.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-red-900 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-4">Don't Wait Until You're a Victim</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">Every day without protection is a risk. Get surveillance deployed today and protect your valuable equipment.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:2536832288" class="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg inline-block">
+            🚨 Emergency: (253) 683-2288
+          </a>
+          <a href="#quote-form" class="bg-white text-red-900 hover:bg-gray-100 font-bold py-4 px-8 rounded-lg inline-block">
+            Get Protection Quote →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Form -->
+    <section id="quote-form" class="py-16 bg-white">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <h2 class="text-3xl font-bold text-center mb-8">Protect Your Equipment Today</h2>
+        <QuoteForm
+          showTitle={false}
+          buttonText="Get My Security Quote →"
+          formId="equipment-theft-quote-form"
+        />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <script is:inline>
+    function calculateRisk() {
+      const equipmentValue = parseInt(document.getElementById('equipment-value').value);
+      const locationRisk = parseInt(document.getElementById('location-risk').value);
+      const currentSecurity = parseInt(document.getElementById('current-security').value);
+      const pastTheft = parseInt(document.getElementById('past-theft').value);
+
+      const totalRisk = equipmentValue + locationRisk + currentSecurity + pastTheft;
+      const resultDiv = document.getElementById('risk-result');
+      const levelDiv = document.getElementById('risk-level');
+      const messageDiv = document.getElementById('risk-message');
+      const recommendationDiv = document.getElementById('risk-recommendation');
+
+      let level, message, recommendation, color;
+
+      if (totalRisk <= 6) {
+        level = "LOW RISK";
+        color = "text-green-600";
+        message = "Your site has lower theft risk, but surveillance still provides valuable protection and insurance benefits.";
+        recommendation = "Recommended: Single surveillance trailer for deterrence and documentation.";
+      } else if (totalRisk <= 10) {
+        level = "MODERATE RISK";
+        color = "text-yellow-600";
+        message = "Your site faces significant theft risk. Without protection, you have a 40% chance of experiencing theft.";
+        recommendation = "Recommended: 1-2 surveillance trailers with 24/7 monitoring for comprehensive coverage.";
+      } else if (totalRisk <= 14) {
+        level = "HIGH RISK";
+        color = "text-orange-600";
+        message = "Your site is a prime target for thieves. Statistics show 70% chance of theft without proper security.";
+        recommendation = "Urgent: Deploy 2-3 surveillance trailers immediately. Consider additional physical security measures.";
+      } else {
+        level = "CRITICAL RISK";
+        color = "text-red-600";
+        message = "Your site is at extreme risk. Theft is not a matter of if, but when. Immediate action required.";
+        recommendation = "CRITICAL: Deploy comprehensive surveillance system today. Every day of delay increases risk exponentially.";
+      }
+
+      levelDiv.textContent = level;
+      levelDiv.className = `text-2xl font-bold mb-4 ${color}`;
+      messageDiv.textContent = message;
+      recommendationDiv.innerHTML = `<strong>${recommendation}</strong>`;
+
+      resultDiv.classList.remove('hidden');
+      if (totalRisk > 10) {
+        resultDiv.className = 'mt-8 p-6 rounded-lg bg-red-50 border-2 border-red-200';
+      } else if (totalRisk > 6) {
+        resultDiv.className = 'mt-8 p-6 rounded-lg bg-yellow-50 border-2 border-yellow-200';
+      } else {
+        resultDiv.className = 'mt-8 p-6 rounded-lg bg-green-50 border-2 border-green-200';
+      }
+    }
+  </script>
+</Layout>

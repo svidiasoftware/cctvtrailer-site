@@ -1,0 +1,624 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTASection from '../components/CTASection.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import QuickAnswer from '../components/QuickAnswer.astro';
+import LazyImage from '../components/LazyImage.astro';
+
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Services", url: "/services" },
+  { name: "Mobile vs Fixed Surveillance" }
+];
+
+const serviceSchemaData = {
+  serviceName: "Mobile vs Fixed Camera System Comparison",
+  description: "Compare mobile surveillance trailers vs fixed security cameras for construction sites and businesses. Installation costs, flexibility, ROI analysis, and effectiveness comparison.",
+  price: "7999",
+  priceUnit: "MONTH" as const,
+  areaServed: [
+    { type: "State" as const, name: "Washington" },
+    { type: "City" as const, name: "Tacoma" },
+    { type: "City" as const, name: "Seattle" },
+    { type: "City" as const, name: "Olympia" }
+  ]
+};
+
+const comparisonData = {
+  title: "Mobile Surveillance Trailers vs Fixed Camera Systems",
+  headers: ["Mobile Surveillance", "Fixed Cameras"],
+  rows: [
+    {
+      feature: "Installation Cost",
+      values: [
+        { text: "$0 (included)", highlight: true },
+        "$10,000-50,000+"
+      ]
+    },
+    {
+      feature: "Setup Time",
+      values: [
+        { text: "30 minutes", highlight: true },
+        "2-4 weeks"
+      ]
+    },
+    {
+      feature: "Flexibility",
+      values: [
+        { text: "Move anytime", highlight: true },
+        "Permanent installation"
+      ]
+    },
+    {
+      feature: "Power Requirements",
+      values: [
+        { text: "Solar/battery powered", highlight: true },
+        "Electrical installation required"
+      ]
+    },
+    {
+      feature: "Internet Requirements",
+      values: [
+        { text: "Built-in 4G LTE", highlight: true },
+        "Network cabling required"
+      ]
+    },
+    {
+      feature: "Maintenance",
+      values: [
+        { text: "Provider handles all", highlight: true },
+        "Your responsibility"
+      ]
+    },
+    {
+      feature: "Scalability",
+      values: [
+        { text: "Add/remove units easily", highlight: true },
+        "Complex expansion"
+      ]
+    },
+    {
+      feature: "Image Quality",
+      values: [
+        "4K HD cameras",
+        "Varies by system"
+      ]
+    },
+    {
+      feature: "Temporary Projects",
+      values: [
+        { text: "Perfect for short-term", highlight: true },
+        "Not cost-effective"
+      ]
+    },
+    {
+      feature: "Long-term (5+ years)",
+      values: [
+        "Higher total cost",
+        { text: "Lower total cost", highlight: true }
+      ]
+    }
+  ]
+};
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What's the difference between mobile and fixed surveillance systems?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mobile surveillance trailers are self-contained units that can be deployed in 30 minutes without installation. Fixed systems require permanent installation with power and network infrastructure, taking 2-4 weeks to install."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is mobile surveillance more expensive than fixed cameras?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For projects under 2 years, mobile surveillance is typically more cost-effective with no installation costs. Fixed systems have high upfront costs ($10,000-50,000+) but lower monthly costs for long-term use."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can mobile surveillance trailers work without power?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, mobile surveillance trailers are completely self-sufficient with solar panels and battery backup, requiring no external power source. They can operate indefinitely in remote locations."
+      }
+    }
+  ]
+});
+---
+
+<Layout
+  title="Mobile vs Fixed Surveillance Systems | Complete Comparison Guide 2025"
+  description="Compare mobile surveillance trailers vs fixed security cameras. Zero installation cost, deploy in 30 minutes, solar powered. Perfect for construction sites."
+  schema={[faqSchema]}>
+
+  <ServiceSchema {...serviceSchemaData} />
+  <BreadcrumbSchema items={breadcrumbItems} />
+
+  <Header showEmergencyBar={true} currentPath="/mobile-vs-fixed-surveillance" />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-purple-800 to-purple-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Mobile vs Fixed Surveillance: Which Security System is Right for You?</h1>
+          <p class="text-xl mb-6">Deploy in 30 minutes vs weeks of installation. Zero infrastructure vs $50,000+ setup costs.</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="tel:2536832288" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block text-center">
+              📞 (253) 683-2288
+            </a>
+            <a href="#cost-analysis" class="bg-white text-purple-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
+              See Cost Analysis →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Answer Section -->
+    <section class="py-8 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <QuickAnswer
+          what="Self-contained mobile surveillance units vs permanent camera installations"
+          deployment="30 minutes vs 2-4 weeks installation"
+          cost="$0 setup vs $10,000-50,000+ installation"
+          power="Solar/battery powered vs electrical infrastructure required"
+          flexibility="Relocate anytime vs permanent fixed position"
+          includes={[
+            "No installation or permits needed",
+            "Works without power or internet",
+            "Professional monitoring included",
+            "Maintenance handled by provider",
+            "Scale up or down instantly"
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Visual Comparison Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Side-by-Side System Comparison</h2>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <!-- Mobile Surveillance -->
+          <div class="border-2 border-green-200 rounded-lg overflow-hidden">
+            <div class="bg-green-600 text-white p-4">
+              <h3 class="text-2xl font-bold text-center">Mobile Surveillance Trailer</h3>
+            </div>
+            <div class="p-6 space-y-4">
+              <div class="flex items-start">
+                <span class="text-green-600 mr-3 text-2xl">⚡</span>
+                <div>
+                  <strong>Instant Deployment</strong>
+                  <p class="text-gray-600">Operating in 30 minutes, no waiting</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="text-green-600 mr-3 text-2xl">🔋</span>
+                <div>
+                  <strong>Self-Powered</strong>
+                  <p class="text-gray-600">Solar panels with battery backup</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="text-green-600 mr-3 text-2xl">📡</span>
+                <div>
+                  <strong>Built-in Connectivity</strong>
+                  <p class="text-gray-600">4G LTE connection included</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="text-green-600 mr-3 text-2xl">🚚</span>
+                <div>
+                  <strong>Completely Portable</strong>
+                  <p class="text-gray-600">Move to new locations as needed</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="text-green-600 mr-3 text-2xl">🛠️</span>
+                <div>
+                  <strong>Zero Maintenance</strong>
+                  <p class="text-gray-600">Provider handles everything</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="text-green-600 mr-3 text-2xl">📏</span>
+                <div>
+                  <strong>Flexible Terms</strong>
+                  <p class="text-gray-600">Daily, weekly, or monthly rental</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fixed Surveillance -->
+          <div class="border-2 border-blue-200 rounded-lg overflow-hidden">
+            <div class="bg-blue-600 text-white p-4">
+              <h3 class="text-2xl font-bold text-center">Fixed Camera System</h3>
+            </div>
+            <div class="p-6 space-y-4">
+              <div class="flex items-start">
+                <span class="text-blue-600 mr-3 text-2xl">🏗️</span>
+                <div>
+                  <strong>Professional Installation</strong>
+                  <p class="text-gray-600">2-4 weeks installation time</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="text-blue-600 mr-3 text-2xl">⚡</span>
+                <div>
+                  <strong>Electrical Required</strong>
+                  <p class="text-gray-600">Must wire to power source</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="text-blue-600 mr-3 text-2xl">🌐</span>
+                <div>
+                  <strong>Network Infrastructure</strong>
+                  <p class="text-gray-600">Ethernet or WiFi setup needed</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="text-blue-600 mr-3 text-2xl">📍</span>
+                <div>
+                  <strong>Permanent Position</strong>
+                  <p class="text-gray-600">Cannot relocate without reinstall</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="text-blue-600 mr-3 text-2xl">🔧</span>
+                <div>
+                  <strong>Owner Maintenance</strong>
+                  <p class="text-gray-600">Your responsibility to maintain</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="text-blue-600 mr-3 text-2xl">💰</span>
+                <div>
+                  <strong>Capital Investment</strong>
+                  <p class="text-gray-600">High upfront purchase cost</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cost Analysis Section -->
+    <section id="cost-analysis" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Real Cost Breakdown: Mobile vs Fixed Systems</h2>
+
+        <div class="max-w-5xl mx-auto">
+          <!-- Project Timeline Comparison -->
+          <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h3 class="text-2xl font-bold mb-6">Cost by Project Duration</h3>
+
+            <div class="space-y-6">
+              <!-- 3 Month Project -->
+              <div class="border-2 border-gray-200 rounded-lg p-4">
+                <h4 class="font-bold text-lg mb-3">3-Month Construction Project</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <span class="text-green-600 font-semibold">Mobile Surveillance:</span>
+                    <ul class="mt-2 space-y-1 text-sm">
+                      <li>Rental: $8,000 × 3 = $24,000</li>
+                      <li>Setup: $0</li>
+                      <li class="font-bold">Total: $24,000</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <span class="text-blue-600 font-semibold">Fixed Cameras:</span>
+                    <ul class="mt-2 space-y-1 text-sm">
+                      <li>Installation: $25,000</li>
+                      <li>Equipment: $15,000</li>
+                      <li>Removal: $5,000</li>
+                      <li class="font-bold">Total: $45,000</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="mt-3 p-3 bg-green-50 rounded">
+                  <span class="font-bold text-green-700">Mobile Saves: $21,000 (47%)</span>
+                </div>
+              </div>
+
+              <!-- 12 Month Project -->
+              <div class="border-2 border-gray-200 rounded-lg p-4">
+                <h4 class="font-bold text-lg mb-3">12-Month Project</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <span class="text-green-600 font-semibold">Mobile Surveillance:</span>
+                    <ul class="mt-2 space-y-1 text-sm">
+                      <li>Rental: $8,000 × 12 = $96,000</li>
+                      <li>Setup: $0</li>
+                      <li class="font-bold">Total: $96,000</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <span class="text-blue-600 font-semibold">Fixed Cameras:</span>
+                    <ul class="mt-2 space-y-1 text-sm">
+                      <li>Installation: $25,000</li>
+                      <li>Equipment: $15,000</li>
+                      <li>Monitoring: $500 × 12 = $6,000</li>
+                      <li class="font-bold">Total: $46,000</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="mt-3 p-3 bg-yellow-50 rounded">
+                  <span class="font-bold text-yellow-700">Break-even point approaching</span>
+                </div>
+              </div>
+
+              <!-- Permanent Installation -->
+              <div class="border-2 border-gray-200 rounded-lg p-4">
+                <h4 class="font-bold text-lg mb-3">Permanent Installation (5+ Years)</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <span class="text-green-600 font-semibold">Mobile Surveillance:</span>
+                    <ul class="mt-2 space-y-1 text-sm">
+                      <li>Rental: $8,000 × 60 = $480,000</li>
+                      <li>Setup: $0</li>
+                      <li class="font-bold">Total: $480,000</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <span class="text-blue-600 font-semibold">Fixed Cameras:</span>
+                    <ul class="mt-2 space-y-1 text-sm">
+                      <li>Installation: $25,000</li>
+                      <li>Equipment: $15,000</li>
+                      <li>Monitoring: $500 × 60 = $30,000</li>
+                      <li>Maintenance: $15,000</li>
+                      <li class="font-bold">Total: $85,000</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="mt-3 p-3 bg-blue-50 rounded">
+                  <span class="font-bold text-blue-700">Fixed Saves: $395,000 long-term</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Comparison Table -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <ComparisonTable {...comparisonData} />
+      </div>
+    </section>
+
+    <!-- Use Case Scenarios -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Best Use Cases for Each System</h2>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <!-- Mobile Surveillance Best For -->
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <div class="bg-green-100 rounded-lg p-4 mb-6">
+              <h3 class="text-2xl font-bold text-green-900">Mobile Surveillance Best For:</h3>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3 mt-1">✓</span>
+                <div>
+                  <strong>Construction Sites</strong>
+                  <p class="text-gray-600">Move units as project phases change</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3 mt-1">✓</span>
+                <div>
+                  <strong>Special Events</strong>
+                  <p class="text-gray-600">Temporary coverage for festivals, concerts</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3 mt-1">✓</span>
+                <div>
+                  <strong>Emergency Response</strong>
+                  <p class="text-gray-600">Immediate deployment for incidents</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3 mt-1">✓</span>
+                <div>
+                  <strong>Remote Locations</strong>
+                  <p class="text-gray-600">No power or internet infrastructure</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3 mt-1">✓</span>
+                <div>
+                  <strong>Seasonal Needs</strong>
+                  <p class="text-gray-600">Holiday lots, seasonal storage</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3 mt-1">✓</span>
+                <div>
+                  <strong>Testing Security</strong>
+                  <p class="text-gray-600">Try before permanent installation</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Fixed Cameras Best For -->
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <div class="bg-blue-100 rounded-lg p-4 mb-6">
+              <h3 class="text-2xl font-bold text-blue-900">Fixed Cameras Best For:</h3>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3 mt-1">✓</span>
+                <div>
+                  <strong>Permanent Facilities</strong>
+                  <p class="text-gray-600">Warehouses, offices, retail stores</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3 mt-1">✓</span>
+                <div>
+                  <strong>Indoor Coverage</strong>
+                  <p class="text-gray-600">Hallways, rooms, indoor areas</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3 mt-1">✓</span>
+                <div>
+                  <strong>Integrated Systems</strong>
+                  <p class="text-gray-600">Connect with access control, alarms</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3 mt-1">✓</span>
+                <div>
+                  <strong>High Camera Count</strong>
+                  <p class="text-gray-600">20+ cameras for complex coverage</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3 mt-1">✓</span>
+                <div>
+                  <strong>Owned Properties</strong>
+                  <p class="text-gray-600">Long-term investment in owned buildings</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3 mt-1">✓</span>
+                <div>
+                  <strong>Aesthetic Concerns</strong>
+                  <p class="text-gray-600">Discrete, hidden camera needs</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Decision Matrix -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Quick Decision Guide</h2>
+
+        <div class="max-w-4xl mx-auto bg-gray-50 rounded-lg p-8">
+          <h3 class="text-xl font-bold mb-6">Answer these questions to find your best solution:</h3>
+
+          <div class="space-y-4">
+            <div class="bg-white rounded-lg p-4 border-l-4 border-green-500">
+              <p class="font-semibold">Need security TODAY?</p>
+              <p class="text-gray-600">→ Mobile surveillance (30-minute setup)</p>
+            </div>
+
+            <div class="bg-white rounded-lg p-4 border-l-4 border-green-500">
+              <p class="font-semibold">Project duration under 18 months?</p>
+              <p class="text-gray-600">→ Mobile surveillance (more cost-effective)</p>
+            </div>
+
+            <div class="bg-white rounded-lg p-4 border-l-4 border-green-500">
+              <p class="font-semibold">No power or internet available?</p>
+              <p class="text-gray-600">→ Mobile surveillance (self-contained)</p>
+            </div>
+
+            <div class="bg-white rounded-lg p-4 border-l-4 border-blue-500">
+              <p class="font-semibold">Permanent facility for 5+ years?</p>
+              <p class="text-gray-600">→ Fixed cameras (long-term savings)</p>
+            </div>
+
+            <div class="bg-white rounded-lg p-4 border-l-4 border-blue-500">
+              <p class="font-semibold">Need indoor coverage?</p>
+              <p class="text-gray-600">→ Fixed cameras (better for interiors)</p>
+            </div>
+
+            <div class="bg-white rounded-lg p-4 border-l-4 border-blue-500">
+              <p class="font-semibold">Integrating with existing systems?</p>
+              <p class="text-gray-600">→ Fixed cameras (easier integration)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+
+        <div class="max-w-3xl mx-auto space-y-6">
+          <div class="bg-white rounded-lg p-6 shadow">
+            <h3 class="font-bold text-lg mb-2">What's the difference between mobile and fixed surveillance systems?</h3>
+            <p class="text-gray-700">Mobile surveillance trailers are self-contained units that can be deployed in 30 minutes without installation. Fixed systems require permanent installation with power and network infrastructure, taking 2-4 weeks to install.</p>
+          </div>
+
+          <div class="bg-white rounded-lg p-6 shadow">
+            <h3 class="font-bold text-lg mb-2">Is mobile surveillance more expensive than fixed cameras?</h3>
+            <p class="text-gray-700">For projects under 2 years, mobile surveillance is typically more cost-effective with no installation costs. Fixed systems have high upfront costs ($10,000-50,000+) but lower monthly costs for long-term use.</p>
+          </div>
+
+          <div class="bg-white rounded-lg p-6 shadow">
+            <h3 class="font-bold text-lg mb-2">Can mobile surveillance trailers work without power?</h3>
+            <p class="text-gray-700">Yes, mobile surveillance trailers are completely self-sufficient with solar panels and battery backup, requiring no external power source. They can operate indefinitely in remote locations.</p>
+          </div>
+
+          <div class="bg-white rounded-lg p-6 shadow">
+            <h3 class="font-bold text-lg mb-2">How quickly can I get mobile surveillance deployed?</h3>
+            <p class="text-gray-700">Mobile surveillance can be delivered and operational within 2-4 hours for emergency situations, or same-day for standard requests. Setup takes only 30 minutes once on-site.</p>
+          </div>
+
+          <div class="bg-white rounded-lg p-6 shadow">
+            <h3 class="font-bold text-lg mb-2">What happens if my security needs change?</h3>
+            <p class="text-gray-700">Mobile surveillance offers complete flexibility - add more units, relocate to new areas, or return units when no longer needed. Fixed systems require new installation for any changes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-purple-900 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-4">Get Expert Advice on Your Security Needs</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">Free consultation to determine whether mobile or fixed surveillance is right for your specific situation.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:2536832288" class="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg inline-block">
+            📞 Call (253) 683-2288
+          </a>
+          <a href="#quote-form" class="bg-white text-purple-900 hover:bg-gray-100 font-bold py-4 px-8 rounded-lg inline-block">
+            Get Free Assessment →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Form -->
+    <section id="quote-form" class="py-16 bg-white">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <h2 class="text-3xl font-bold text-center mb-8">Get Your Free Security System Comparison</h2>
+        <QuoteForm
+          showTitle={false}
+          buttonText="Get My Comparison Report →"
+          formId="mobile-fixed-comparison-form"
+        />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
