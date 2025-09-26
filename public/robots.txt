@@ -36,6 +36,8 @@ Disallow: /_astro/
 # Allow access to static assets
 User-agent: *
 Allow: /images/
+Allow: /favicons/
+Allow: /favicon.ico
 Allow: /*.css$
 Allow: /*.js$
 Allow: /*.jpg$
