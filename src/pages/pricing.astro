@@ -22,21 +22,22 @@ const speakableSections = [
   { cssSelector: "#pricing-faq h2, #pricing-faq div" }
 ];
 
-const schema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Security Trailer Rental",
-  "description": "CCTV Trailer - Locally owned surveillance security company since 2009. Professional CCTV systems and mobile trailer rentals with advanced S-VIDIA technology for construction sites, events, and emergency response.",
-  "brand": {
-    "@type": "Brand",
-    "name": "CCTV Trailer"
-  },
-  "priceRange": "$$",
-  "image": [
-    "https://www.cctvtrailer.com/images/trailer-1x1.png",
-    "https://www.cctvtrailer.com/images/trailer-4x3.png",
-    "https://www.cctvtrailer.com/images/trailer-16x9.png",
-  ],
+const schemas = [
+  JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Security Trailer Rental",
+    "description": "CCTV Trailer - Locally owned surveillance security company since 2009. Professional CCTV systems and mobile trailer rentals with advanced S-VIDIA technology for construction sites, events, and emergency response.",
+    "brand": {
+      "@type": "Brand",
+      "name": "CCTV Trailer"
+    },
+    "priceRange": "$$",
+    "image": [
+      "https://www.cctvtrailer.com/images/trailer-1x1.png",
+      "https://www.cctvtrailer.com/images/trailer-4x3.png",
+      "https://www.cctvtrailer.com/images/trailer-16x9.png",
+    ],
   "offers": [
     {
       "@type": "Offer",
@@ -129,7 +130,54 @@ const schema = JSON.stringify({
     }
   ]
 }
-});
+  }),
+  JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much does it cost to rent a security trailer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Daily rates: $999 first day, $499 per additional day. Weekly rental: $3,500 (10% discount). Monthly rental: $8,000 (20% discount). All rates include professional delivery, setup, 24/7 support, and solar power or generator."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are there any hidden fees or additional costs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No hidden fees. Our pricing includes delivery within 30 miles of Tacoma, professional setup and training, 24/7 technical support, solar power or generator, and all necessary equipment. Additional delivery distance fees may apply beyond 30 miles."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer volume discounts for multiple trailers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! We offer 10% discount for weekly rentals and 20% discount for monthly rentals. Contact us at (253) 683-2288 for custom quotes on multiple trailer deployments or long-term projects."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is included in the rental price?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "All rentals include: professional delivery and setup, equipment training, 24/7 technical support, solar power or backup generator, PTZ cameras with S-VIDIA technology, remote viewing access, weatherproof construction, and motion-activated recording."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a minimum rental period?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Minimum rental is 1 day at $999. We offer flexible rental periods including daily, weekly, and monthly options. Same-day emergency deployment is available for urgent situations."
+        }
+      }
+    ]
+  })
+];
 
 // Breadcrumb data
 const breadcrumbItems = [
@@ -138,10 +186,10 @@ const breadcrumbItems = [
 ];
 ---
 
-<Layout 
+<Layout
   title="Security Trailer Rental Pricing | CCTV Trailer Tacoma"
   description="Security trailer rental pricing: $499-999/day, $3,500/week, $8,000/month. Volume discounts, free setup, no hidden fees. Get instant quote: (253) 683-2288"
-  schema={schema}>
+  schema={schemas}>
 
   <BreadcrumbSchema items={breadcrumbItems} />
   <SpeakableSchema sections={speakableSections} />

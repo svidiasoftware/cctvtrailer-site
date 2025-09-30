@@ -7,36 +7,96 @@ import LazyImage from '../components/LazyImage.astro';
 import ReviewSchema from '../components/ReviewSchema.astro';
 import QuickAnswer from '../components/QuickAnswer.astro';
 
-const schema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "CCTV Trailer",
-  "description": "Locally owned surveillance security company serving Tacoma and the Pacific Northwest since 2009. Professional CCTV systems and mobile trailer rentals for construction sites, events, and emergency response.",
-  "url": "https://www.cctvtrailer.com",
-  "telephone": "+12536832288",
-  "email": "info@cctvtrailer.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Tacoma",
-    "addressRegion": "WA",
-    "addressCountry": "US"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "47.2529",
-    "longitude": "-122.4443"
-  },
-  "serviceArea": [
-    {"@type": "City", "name": "Tacoma"},
-    {"@type": "City", "name": "Seattle"},
-    {"@type": "City", "name": "Olympia"},
-    {"@type": "City", "name": "Fife"},
-    {"@type": "City", "name": "Federal Way"},
-    {"@type": "City", "name": "Kent"}
-  ],
-  "openingHours": "Mo-Fr 08:00-18:00",
-  "priceRange": "$$"
-});
+const schemas = [
+  JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "CCTV Trailer",
+    "description": "Locally owned surveillance security company serving Tacoma and the Pacific Northwest since 2009. Professional CCTV systems and mobile trailer rentals for construction sites, events, and emergency response.",
+    "url": "https://www.cctvtrailer.com",
+    "telephone": "+12536832288",
+    "email": "info@cctvtrailer.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tacoma",
+      "addressRegion": "WA",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "47.2529",
+      "longitude": "-122.4443"
+    },
+    "serviceArea": [
+      {"@type": "City", "name": "Tacoma"},
+      {"@type": "City", "name": "Seattle"},
+      {"@type": "City", "name": "Olympia"},
+      {"@type": "City", "name": "Fife"},
+      {"@type": "City", "name": "Federal Way"},
+      {"@type": "City", "name": "Kent"}
+    ],
+    "openingHours": "Mo-Fr 08:00-18:00",
+    "priceRange": "$$"
+  }),
+  JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.cctvtrailer.com/"
+      }
+    ]
+  }),
+  JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How quickly can you deploy a mobile surveillance trailer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We offer same-day deployment for emergency situations. Standard setup takes 20-30 minutes, and we maintain 2 trailers ready for immediate dispatch. Our service area covers Tacoma, Seattle, Olympia, and throughout the Puget Sound region."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does it cost to rent a security trailer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Rental rates range from $499-999 per day, $3,500 per week, and $8,000 per month. Pricing includes professional delivery, setup, equipment training, 24/7 technical support, and solar power or generator. Contact us at (253) 683-2288 for a custom quote."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What areas do you serve for mobile surveillance rentals?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We serve Tacoma, Seattle, Olympia, Federal Way, Kent, Fife, Auburn, Lakewood, Puyallup, Bremerton, and the entire Puget Sound region. We've been locally owned and operating since 2009 with 24/7 emergency response availability."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do your trailers work without electricity?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! Our mobile surveillance trailers are solar-powered and include backup generators, making them perfect for remote construction sites and locations without existing power infrastructure. They're designed to operate in all Pacific Northwest weather conditions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What makes mobile surveillance better than fixed cameras?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mobile trailers offer flexibility, faster deployment (20-30 minutes vs days/weeks), no installation costs, solar power independence, and easy relocation as your project progresses. They're ideal for temporary needs like construction sites and events."
+        }
+      }
+    ]
+  })
+];
 
 // Review data for schema
 const reviewData = {
@@ -74,10 +134,10 @@ const reviewData = {
 };
 ---
 
-<Layout 
+<Layout
   title="CCTV Trailer | Mobile Surveillance Trailer Rental Tacoma"
   description="Mobile surveillance trailer rentals in Tacoma & Seattle. 24/7 monitoring, same-day setup for construction & events. Local since 2009. (253) 683-2288"
-  schema={schema}>
+  schema={schemas}>
   <Header showEmergencyBar={true} currentPath="/" />
 
   <main>

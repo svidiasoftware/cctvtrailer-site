@@ -134,12 +134,59 @@ const schema = JSON.stringify({
     "availableLanguage": ["English"]
   }
 });
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What types of surveillance services do you offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer mobile surveillance trailer rentals for construction sites, special events, emergency response, and temporary security needs. Services include 24/7 monitoring, PTZ cameras, solar power systems, and same-day deployment throughout the Tacoma and Seattle area."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can you set up a surveillance trailer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standard setup takes 20-30 minutes. We offer same-day emergency deployment and maintain 2 trailers ready for immediate dispatch. Our service covers the entire Puget Sound region including Tacoma, Seattle, Olympia, and surrounding cities."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide monitoring services or just equipment rental?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We provide complete solutions including equipment rental with 24/7 remote monitoring capabilities, real-time alerts, and technical support. You can access live feeds remotely and receive instant notifications of any activity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes your trailers suitable for construction sites?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our trailers are solar-powered with backup generators, weatherproof, require no existing infrastructure, and feature PTZ cameras with night vision. They're mobile, easy to relocate as projects progress, and designed specifically for harsh construction environments."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you serve events and construction projects outside of Tacoma?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we serve the entire Puget Sound region including Seattle, Olympia, Federal Way, Kent, Auburn, Lakewood, Puyallup, Bremerton, and surrounding areas. We've been providing surveillance services throughout Washington since 2009."
+      }
+    }
+  ]
+});
 ---
 
 <Layout
   title="Mobile Surveillance Trailer Services | CCTV Rental Tacoma"
   description="Mobile surveillance trailer rentals for construction, events & emergencies. 24/7 monitoring, solar-powered, rapid deployment across Puget Sound. Since 2009."
-  schema={[breadcrumbSchema, schema]}>
+  schema={[breadcrumbSchema, schema, faqSchema]}>
 
   <SpeakableSchema sections={speakableSections} />
   <Header showEmergencyBar={true} currentPath="/services" />
