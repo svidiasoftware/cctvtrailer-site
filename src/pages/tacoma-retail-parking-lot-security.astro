@@ -1,0 +1,599 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTASection from '../components/CTASection.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import Analytics from '../components/Analytics.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import QuickAnswer from '../components/QuickAnswer.astro';
+import StatBox from '../components/StatBox.astro';
+
+// Schema data for retail parking lot security service
+const serviceSchemaData = {
+  serviceName: "Retail Parking Lot Security - Tacoma Shopping Centers",
+  description: "Mobile surveillance for Tacoma retail parking lots and shopping centers. Prevent vehicle theft, protect customers, reduce liability. Serving Tacoma Mall, South Tacoma Way, and Lakewood retailers.",
+  price: "8000",
+  priceUnit: "MONTH" as const,
+  areaServed: [
+    { type: "City" as const, name: "Tacoma" },
+    { type: "City" as const, name: "Lakewood" },
+    { type: "City" as const, name: "Federal Way" },
+    { type: "City" as const, name: "Puyallup" },
+    { type: "City" as const, name: "Fife" }
+  ]
+};
+
+// Breadcrumb data
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Services", url: "/services" },
+  { name: "Retail Parking Lot Security - Tacoma" }
+];
+---
+
+<Layout
+  title="Tacoma Retail Parking Lot Security | Shopping Center Surveillance Systems"
+  description="Protect Tacoma retail parking lots from vehicle theft and customer safety incidents. 1 in 34 vehicles stolen in Tacoma. Mobile surveillance for shopping centers. (253) 683-2288">
+
+  <!-- Structured Data Schemas -->
+  <ServiceSchema {...serviceSchemaData} />
+  <BreadcrumbSchema items={breadcrumbItems} />
+
+  <Header showEmergencyBar={true} currentPath="/tacoma-retail-parking-lot-security" />
+  <Analytics />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-purple-900 to-purple-800 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Tacoma Retail Parking Lot Security Solutions</h1>
+          <p class="text-xl mb-6">Protect Customers, Reduce Liability & Prevent Vehicle Theft at Your Shopping Center</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="tel:2536832288" class="bg-white text-purple-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
+              📞 Call Now: (253) 683-2288
+            </a>
+            <a href="#retail-quote" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block text-center">
+              Get Parking Lot Quote →
+            </a>
+          </div>
+          <p class="mt-4 text-yellow-300">⚡ Serving Tacoma Mall, South Tacoma, Lakewood, and Puget Sound retail centers</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Critical Stats Section -->
+    <section class="py-12 bg-red-50">
+      <div class="container mx-auto px-4">
+        <StatBox
+          title="Tacoma Retail Parking Lot Crime Statistics"
+          description="Why shopping centers and retail stores need parking lot security"
+          layout="grid"
+          stats={[
+            {
+              value: "5,901",
+              label: "Vehicles Stolen in Tacoma (2023)",
+              icon: "🚗",
+              highlight: true,
+              source: { text: "Tacoma Police Department" }
+            },
+            {
+              value: "1 in 34",
+              label: "Vehicle Theft Risk in Tacoma",
+              icon: "⚠️",
+              highlight: true,
+              source: { text: "City Crime Statistics" }
+            },
+            {
+              value: "Parking Lots",
+              label: "Top Location for Burglaries",
+              icon: "🅿️",
+              highlight: true,
+              source: { text: "NeighborhoodScout 2024" }
+            },
+            {
+              value: "$2.5M+",
+              label: "Average Liability Lawsuit Settlement",
+              icon: "⚖️",
+              highlight: true
+            }
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Quick Answer Box -->
+    <section class="py-8 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <QuickAnswer
+          what="24/7 mobile surveillance for retail parking lots and shopping centers"
+          cost="$8,000-10,000/month - Less than 1 liability claim settlement"
+          time="Same-day deployment, 30-minute setup for Tacoma retailers"
+          coverage="Complete parking lot coverage with PTZ cameras and motion detection"
+          availability="Emergency response for retailers experiencing crime incidents"
+          includes={[
+            "Customer safety and vehicle protection",
+            "License plate recognition for all vehicles",
+            "Incident documentation for liability protection",
+            "Remote viewing for security managers",
+            "Motion-activated lighting and alerts",
+            "HD video for police reports and insurance"
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Retail Parking Lot Challenges -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Tacoma Retail Parking Lot Security Challenges</h2>
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+            <div class="text-4xl mb-4">🚙</div>
+            <h3 class="text-xl font-bold mb-3">Vehicle Break-Ins & Theft</h3>
+            <p class="text-gray-600">Tacoma's high vehicle theft rate (1 in 34) means customer vehicles are at constant risk. Shopping center parking lots are prime targets for organized theft rings.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+            <div class="text-4xl mb-4">⚖️</div>
+            <h3 class="text-xl font-bold mb-3">Liability & Customer Safety</h3>
+            <p class="text-gray-600">Inadequate parking lot security exposes retailers to multi-million dollar liability claims. One customer assault or theft can destroy your business reputation.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+            <div class="text-4xl mb-4">🌙</div>
+            <h3 class="text-xl font-bold mb-3">After-Hours Vulnerability</h3>
+            <p class="text-gray-600">Empty parking lots after closing attract criminals. Vandalism, illegal dumping, and loitering create unsafe environments that deter morning customers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Tacoma Retail Parking Lots Are Targeted -->
+    <section class="bg-blue-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-4">Why Tacoma Shopping Centers Face High Crime Risk</h2>
+        <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+          Understanding parking lot crime patterns affecting Tacoma and South Sound retailers
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div class="bg-white rounded-lg p-8 shadow-lg">
+            <h3 class="text-2xl font-bold mb-6">Location Risk Factors</h3>
+            <div class="space-y-4">
+              <div class="border-l-4 border-red-600 pl-4">
+                <p class="font-semibold">High-Crime Corridors</p>
+                <p class="text-gray-600">South Tacoma Way, Eastern Tacoma, and parts of Lakewood report highest property crime rates. Retail centers in these areas face daily security challenges.</p>
+              </div>
+              <div class="border-l-4 border-orange-600 pl-4">
+                <p class="font-semibold">Large Unsupervised Spaces</p>
+                <p class="text-gray-600">Big box stores (Home Depot, Target, Walmart) have massive parking lots impossible to monitor with fixed cameras alone.</p>
+              </div>
+              <div class="border-l-4 border-yellow-600 pl-4">
+                <p class="font-semibold">High-Value Target Density</p>
+                <p class="text-gray-600">Tacoma Mall area concentrates hundreds of shopper vehicles worth millions in a small geographic area - attractive to theft rings.</p>
+              </div>
+              <div class="border-l-4 border-purple-600 pl-4">
+                <p class="font-semibold">Limited Police Patrols</p>
+                <p class="text-gray-600">Tacoma PD can't patrol every parking lot. Thieves know response times allow 5-10 minutes for vehicle break-ins.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg p-8 shadow-lg">
+            <h3 class="text-2xl font-bold mb-6">What's Happening in Parking Lots</h3>
+            <div class="space-y-4">
+              <div>
+                <h4 class="font-semibold mb-2 text-purple-600">Vehicle Theft & Break-Ins</h4>
+                <p class="text-gray-600">Cars stolen from parking lots during shopping. Catalytic converters, wheels, and valuables taken in minutes while customers shop.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2 text-purple-600">Customer Assaults & Robberies</h4>
+                <p class="text-gray-600">Shoppers targeted while loading vehicles. Purse snatchings, armed robberies, and assaults create liability exposure for property owners.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2 text-purple-600">Cart & Property Damage</h4>
+                <p class="text-gray-600">Shopping carts damage customer vehicles. Hit-and-runs with no evidence leave retailers facing angry customers and negative reviews.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2 text-purple-600">Organized Retail Crime</h4>
+                <p class="text-gray-600">Shoplifters use parking lots as staging areas. Vehicles used to transport stolen merchandise need surveillance documentation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Retail-Specific Features -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Parking Lot Security Features for Retailers</h2>
+        <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Advanced Surveillance Technology</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>
+                  <strong>Complete Parking Lot Coverage:</strong> 360° PTZ cameras monitor every parking space, entrance, and exit point
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>
+                  <strong>License Plate Recognition:</strong> Automatically log every vehicle entering your property with timestamp and plate
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>
+                  <strong>4K Night Vision:</strong> Crystal-clear footage 24/7 - identify suspects and vehicles even in darkness
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>
+                  <strong>Motion-Activated Alerts:</strong> Real-time notifications when suspicious activity detected after hours
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>
+                  <strong>LED Floodlights:</strong> Bright motion-activated lighting deters criminals and improves customer safety perception
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>
+                  <strong>Two-Way Audio:</strong> Live voice warnings to deter loitering and suspicious behavior
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Retail Business Benefits</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">🛡️</span>
+                <div>
+                  <strong>Liability Protection:</strong> Video evidence protects against false slip-and-fall and assault claims
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">👥</span>
+                <div>
+                  <strong>Customer Confidence:</strong> Visible security increases customer comfort and willingness to shop during evening hours
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">💰</span>
+                <div>
+                  <strong>Insurance Savings:</strong> Reduce liability and property insurance premiums with active surveillance
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">📊</span>
+                <div>
+                  <strong>Incident Documentation:</strong> HD video for police reports, insurance claims, and legal defense
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">🏆</span>
+                <div>
+                  <strong>Marketing Advantage:</strong> Promote your location as the safest place to shop in Tacoma
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">📱</span>
+                <div>
+                  <strong>Remote Monitoring:</strong> Security managers view parking lot from anywhere via smartphone
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Liability Risk vs Security Investment -->
+    <section class="bg-gray-100 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-4">Parking Lot Liability: The Hidden Cost of No Security</h2>
+        <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+          One lawsuit costs more than 25 years of mobile surveillance
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto mb-12">
+          <div class="bg-white rounded-lg p-8 shadow-lg">
+            <h3 class="text-2xl font-bold mb-6 text-red-600">Cost of ONE Liability Incident</h3>
+            <div class="space-y-3">
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Customer assault settlement:</span>
+                <span class="font-bold text-red-600">$2,500,000</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Legal defense costs:</span>
+                <span class="font-bold text-red-600">$250,000</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Reputation damage / lost sales:</span>
+                <span class="font-bold text-red-600">$500,000</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Insurance premium increase:</span>
+                <span class="font-bold text-red-600">$100,000/yr</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Media / PR crisis management:</span>
+                <span class="font-bold text-red-600">$75,000</span>
+              </div>
+              <div class="flex justify-between pt-3 text-lg">
+                <span class="font-bold">TOTAL IMPACT:</span>
+                <span class="font-bold text-red-600 text-xl">$3,425,000+</span>
+              </div>
+            </div>
+            <p class="text-sm text-gray-500 mt-4">* Inadequate security is leading cause of premises liability verdicts</p>
+          </div>
+
+          <div class="bg-white rounded-lg p-8 shadow-lg">
+            <h3 class="text-2xl font-bold mb-6 text-green-600">Your Security Investment</h3>
+            <div class="space-y-3">
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Monthly surveillance cost:</span>
+                <span class="font-bold text-green-600">$8,000</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Annual protection:</span>
+                <span class="font-bold text-green-600">$96,000</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Setup & installation:</span>
+                <span class="font-bold text-green-600">FREE</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">24/7 monitoring & support:</span>
+                <span class="font-bold text-green-600">Included</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Insurance discount (est 10%):</span>
+                <span class="font-bold text-green-600">-$15,000/yr</span>
+              </div>
+              <div class="flex justify-between pt-3 text-lg">
+                <span class="font-bold">NET ANNUAL COST:</span>
+                <span class="font-bold text-green-600 text-xl">$81,000</span>
+              </div>
+            </div>
+            <p class="text-sm text-gray-500 mt-4">* Plus liability protection and customer confidence benefits</p>
+          </div>
+        </div>
+
+        <div class="bg-purple-600 text-white rounded-lg p-8 max-w-4xl mx-auto text-center">
+          <h3 class="text-3xl font-bold mb-4">Avoid ONE Lawsuit = 42 Years of Free Security</h3>
+          <p class="text-xl mb-4">Annual Security: $81,000 | One Liability Claim: $3,425,000+</p>
+          <p class="text-2xl font-bold bg-white text-purple-600 inline-block px-6 py-3 rounded-lg">ROI: 4,229% Risk Mitigation</p>
+          <p class="text-sm mt-4 text-purple-100">Video surveillance is your strongest defense in premises liability cases</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <ComparisonTable
+          title="Retail Parking Lot Security Solutions Comparison"
+          description="Compare mobile surveillance to traditional security methods for shopping centers"
+          headers={["Mobile Trailers", "Security Guards", "Fixed Cameras"]}
+          rows={[
+            {
+              feature: "Monthly Cost",
+              values: [
+                { text: "$8,000-10,000", highlight: true },
+                "$20,000-30,000",
+                "$1,000 + $15,000 install"
+              ]
+            },
+            {
+              feature: "Deployment Speed",
+              values: [
+                { text: "30 minutes", highlight: true },
+                "Immediate",
+                "1-2 weeks installation"
+              ]
+            },
+            {
+              feature: "Coverage Area",
+              values: [
+                { text: "360° PTZ - flexible", highlight: true },
+                "Limited patrol path",
+                "Fixed angles only"
+              ]
+            },
+            {
+              feature: "Video Evidence",
+              values: [
+                { text: "4K HD recorded", highlight: true },
+                "No video",
+                "720p-1080p"
+              ]
+            },
+            {
+              feature: "License Plate Capture",
+              values: [
+                { text: "Automatic LPR", highlight: true },
+                "Manual notes",
+                "Rarely included"
+              ]
+            },
+            {
+              feature: "24/7 Operation",
+              values: [
+                { text: "Always recording", highlight: true },
+                "Shift changes/breaks",
+                "Always recording"
+              ]
+            },
+            {
+              feature: "Weather Impact",
+              values: [
+                { text: "None", highlight: true },
+                "Guards take shelter",
+                "None"
+              ]
+            },
+            {
+              feature: "Relocatable",
+              values: [
+                { text: "Yes - free moves", highlight: true },
+                "N/A",
+                "No - permanent"
+              ]
+            },
+            {
+              feature: "Liability Protection",
+              values: [
+                { text: "Full documentation", highlight: true },
+                "Limited witness",
+                "Limited angles"
+              ]
+            },
+            {
+              feature: "ROI Timeline",
+              values: [
+                { text: "Immediate", highlight: true },
+                "Variable",
+                "After installation"
+              ]
+            }
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="bg-blue-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Tacoma Retail Security Success Stories</h2>
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div class="bg-white border rounded-lg p-6 shadow-lg">
+            <h3 class="font-bold text-lg mb-3">Shopping Center - South Tacoma Way</h3>
+            <p class="text-gray-600 mb-4">Multi-tenant retail plaza experiencing frequent vehicle break-ins. Surveillance eliminated incidents within first month. Zero customer complaints in 18 months.</p>
+            <p class="text-green-600 font-bold">Result: Prevented 12+ break-ins, improved tenant retention</p>
+          </div>
+          <div class="bg-white border rounded-lg p-6 shadow-lg">
+            <h3 class="font-bold text-lg mb-3">Big Box Retailer - Lakewood</h3>
+            <p class="text-gray-600 mb-4">Facing liability claim from parking lot assault. Installed surveillance to prevent future incidents and reduce insurance costs.</p>
+            <p class="text-green-600 font-bold">Result: 15% insurance reduction, marketing as "safest location"</p>
+          </div>
+          <div class="bg-white border rounded-lg p-6 shadow-lg">
+            <h3 class="font-bold text-lg mb-3">Grocery Store - Puyallup</h3>
+            <p class="text-gray-600 mb-4">Cart theft and customer vehicle damage complaints. Surveillance provided evidence for damage claims and stopped cart theft rings.</p>
+            <p class="text-green-600 font-bold">Result: 80% reduction in cart theft, improved customer satisfaction</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-purple-800 to-purple-900 text-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-4">Protect Your Customers & Your Business</h2>
+        <p class="text-center text-purple-100 mb-12 max-w-3xl mx-auto">
+          Don't wait for a liability lawsuit or customer safety incident
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
+          <div class="bg-white/10 backdrop-blur rounded-lg p-6">
+            <div class="text-4xl mb-4">🚨</div>
+            <h3 class="text-xl font-bold mb-2">Recent Incident?</h3>
+            <p class="text-purple-100 mb-4">Just had a break-in, assault, or customer complaint? Emergency deployment within 2 hours.</p>
+            <a href="tel:2536832288" class="bg-white text-purple-800 hover:bg-purple-100 font-bold py-2 px-6 rounded-lg inline-block w-full text-center">
+              Emergency: (253) 683-2288
+            </a>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur rounded-lg p-6">
+            <div class="text-4xl mb-4">📅</div>
+            <h3 class="text-xl font-bold mb-2">Enhance Security</h3>
+            <p class="text-purple-100 mb-4">Get custom quote for your parking lot size and coverage needs.</p>
+            <a href="#retail-quote" class="bg-white text-purple-800 hover:bg-purple-100 font-bold py-2 px-6 rounded-lg inline-block w-full text-center">
+              Get Parking Lot Quote →
+            </a>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur rounded-lg p-6">
+            <div class="text-4xl mb-4">🏢</div>
+            <h3 class="text-xl font-bold mb-2">Multi-Location Retailers</h3>
+            <p class="text-purple-100 mb-4">Own multiple stores? Get volume pricing and priority service.</p>
+            <a href="/contact" class="bg-white text-purple-800 hover:bg-purple-100 font-bold py-2 px-6 rounded-lg inline-block w-full text-center">
+              Multi-Store Pricing
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Form Section -->
+    <section id="retail-quote" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-2xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-8">Get Your Retail Parking Lot Security Quote</h2>
+          <QuoteForm
+            formTitle="Tacoma Retail Parking Lot Security Quote"
+            buttonText="Get Parking Lot Quote →"
+            responseTime="* We'll respond within 1 hour with your custom parking lot security plan"
+            formId="retail-parking-lot-quote-form"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Retail Parking Lot Security FAQs</h2>
+        <div class="max-w-3xl mx-auto space-y-6">
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="font-bold text-lg mb-3">How many trailers do I need for my parking lot?</h3>
+            <p class="text-gray-600">Depends on lot size. One trailer covers 2-3 acres effectively. We'll assess your specific layout and recommend optimal placement for complete coverage.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="font-bold text-lg mb-3">Will surveillance help with false slip-and-fall claims?</h3>
+            <p class="text-gray-600">Yes! Video evidence is crucial defense against fraudulent liability claims. Our 4K cameras document actual conditions and incidents.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="font-bold text-lg mb-3">Can customers see the surveillance coverage?</h3>
+            <p class="text-gray-600">Yes. Visible security presence increases customer comfort. We provide signage indicating "24/7 Video Surveillance" to deter crime and reassure shoppers.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="font-bold text-lg mb-3">Do you work with property management companies?</h3>
+            <p class="text-gray-600">Absolutely. We have multi-year contracts with several Tacoma shopping center property managers protecting multiple retail locations.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="font-bold text-lg mb-3">What if a crime occurs despite surveillance?</h3>
+            <p class="text-gray-600">While surveillance prevents most incidents, our HD footage provides crucial evidence for police investigations and insurance claims if incidents occur.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="font-bold text-lg mb-3">How quickly can you respond to an incident?</h3>
+            <p class="text-gray-600">For emergency situations (recent assault, lawsuit threat), we deploy within 2 hours in Tacoma/Pierce County. Standard deployment is 24-48 hours.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <CTASection
+      title="Make Your Parking Lot the Safest in Tacoma"
+      description="Protect customers, reduce liability, and improve your business reputation"
+      phoneText="📞 24/7 Retail Hotline: (253) 683-2288"
+      quoteText="Secure Your Parking Lot →"
+      quoteLink="#retail-quote"
+      features={["✓ Prevent customer safety incidents", "✓ Defend against liability claims", "✓ Insurance premium discounts", "✓ Market as safest location to shop"]}
+      bgColor="bg-purple-900"
+    />
+
+  </main>
+
+  <Footer />
+</Layout>

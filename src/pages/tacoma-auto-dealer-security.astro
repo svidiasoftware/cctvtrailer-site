@@ -1,0 +1,635 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTASection from '../components/CTASection.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import Analytics from '../components/Analytics.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import QuickAnswer from '../components/QuickAnswer.astro';
+import StatBox from '../components/StatBox.astro';
+
+// Schema data for the auto dealer security service
+const serviceSchemaData = {
+  serviceName: "Auto Dealership Security Trailer Rental - Tacoma",
+  description: "Mobile surveillance trailer rentals for auto dealerships in Tacoma and South Tacoma Way. Protect inventory from vehicle theft with 24/7 monitoring. 1 in 34 vehicles stolen in Tacoma - protect your lot today.",
+  price: "8000",
+  priceUnit: "MONTH" as const,
+  areaServed: [
+    { type: "City" as const, name: "Tacoma" },
+    { type: "City" as const, name: "Fife" },
+    { type: "City" as const, name: "Puyallup" },
+    { type: "City" as const, name: "Federal Way" },
+    { type: "City" as const, name: "Lakewood" }
+  ]
+};
+
+// Breadcrumb data
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Services", url: "/services" },
+  { name: "Auto Dealer Security - Tacoma" }
+];
+---
+
+<Layout
+  title="Auto Dealership Security Tacoma | South Tacoma Way Vehicle Theft Prevention"
+  description="Protect your dealership from Tacoma's 1 in 34 vehicle theft rate. Mobile surveillance for South Tacoma Way dealers. 24/7 monitoring, same-day setup. (253) 683-2288">
+
+  <!-- Structured Data Schemas -->
+  <ServiceSchema {...serviceSchemaData} />
+  <BreadcrumbSchema items={breadcrumbItems} />
+
+  <Header showEmergencyBar={true} currentPath="/tacoma-auto-dealer-security" />
+  <Analytics />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Tacoma Auto Dealership Security Solutions</h1>
+          <p class="text-xl mb-6">Protect Your Inventory from Tacoma's High Vehicle Theft Rate - 1 in 34 Vehicles Stolen</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="tel:2536832288" class="bg-white text-blue-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
+              📞 Call Now: (253) 683-2288
+            </a>
+            <a href="#dealer-quote" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block text-center">
+              Get Dealership Quote →
+            </a>
+          </div>
+          <p class="mt-4 text-yellow-300">⚡ Serving South Tacoma Way, Fife, and Puyallup auto dealers since 2009</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Critical Stats Section -->
+    <section class="py-12 bg-red-50">
+      <div class="container mx-auto px-4">
+        <StatBox
+          title="Tacoma Auto Theft Crisis - Why Dealers Need Protection Now"
+          description="Recent crime statistics affecting South Tacoma Way dealerships"
+          layout="grid"
+          stats={[
+            {
+              value: "5,901",
+              label: "Vehicles Stolen in Tacoma (2023)",
+              icon: "🚗",
+              highlight: true,
+              source: { text: "Tacoma Police Department" }
+            },
+            {
+              value: "1 in 34",
+              label: "Chance of Vehicle Theft",
+              icon: "⚠️",
+              highlight: true,
+              source: { text: "Tacoma Crime Statistics" }
+            },
+            {
+              value: "South Tacoma",
+              label: "High-Crime Zone for Auto Theft",
+              icon: "📍",
+              highlight: true,
+              source: { text: "NeighborhoodScout 2024" }
+            },
+            {
+              value: "$45,000+",
+              label: "Average Inventory Loss Per Incident",
+              icon: "💰",
+              highlight: true
+            }
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Quick Answer Box -->
+    <section class="py-8 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <QuickAnswer
+          what="24/7 mobile surveillance trailers for auto dealerships in Tacoma"
+          cost="$8,000-10,000/month - 75% less than security guards"
+          time="Same-day deployment, 30-minute setup"
+          coverage="360° lot coverage, license plate recognition, night vision"
+          availability="24/7 emergency response for South Tacoma Way dealers"
+          includes={[
+            "HD video recording with S-VIDIA technology",
+            "Remote viewing access for managers",
+            "Motion-activated lighting and alerts",
+            "Insurance documentation support",
+            "Customer parking lot safety",
+            "Theft deterrence visible signage"
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Auto Dealer Challenges Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Security Challenges Facing Tacoma Auto Dealers</h2>
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+            <div class="text-4xl mb-4">🚙</div>
+            <h3 class="text-xl font-bold mb-3">High-Value Inventory Exposure</h3>
+            <p class="text-gray-600">$2M+ in vehicles sitting on open lots. South Tacoma Way dealerships are prime targets with easy highway access for quick getaways.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+            <div class="text-4xl mb-4">🌙</div>
+            <h3 class="text-xl font-bold mb-3">After-Hours Vulnerability</h3>
+            <p class="text-gray-600">76% of vehicle thefts occur overnight and on weekends when dealerships are closed and unmonitored.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+            <div class="text-4xl mb-4">📋</div>
+            <h3 class="text-xl font-bold mb-3">Insurance & Liability Costs</h3>
+            <p class="text-gray-600">Rising premiums due to regional theft rates. Customer vehicle damage in parking lots creates liability exposure.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why South Tacoma Way Dealers Are Targeted -->
+    <section class="bg-blue-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-4">Why South Tacoma Way Dealerships Are High-Risk Targets</h2>
+        <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+          Understanding the specific threats to auto dealers in South Tacoma's high-crime corridor
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div class="bg-white rounded-lg p-8 shadow-lg">
+            <h3 class="text-2xl font-bold mb-6">Geographic Risk Factors</h3>
+            <div class="space-y-4">
+              <div class="border-l-4 border-red-600 pl-4">
+                <p class="font-semibold">South Tacoma High-Crime Zone</p>
+                <p class="text-gray-600">Eastern and South Tacoma report the city's highest crime rates, with South Tacoma Way running through the center of this corridor.</p>
+              </div>
+              <div class="border-l-4 border-orange-600 pl-4">
+                <p class="font-semibold">Highway Access</p>
+                <p class="text-gray-600">I-5 and SR-512 proximity allows thieves to steal vehicles and quickly leave jurisdiction within minutes.</p>
+              </div>
+              <div class="border-l-4 border-yellow-600 pl-4">
+                <p class="font-semibold">Auto Row Concentration</p>
+                <p class="text-gray-600">Multiple dealerships in close proximity create target-rich environment. Thieves scope multiple lots in one visit.</p>
+              </div>
+              <div class="border-l-4 border-purple-600 pl-4">
+                <p class="font-semibold">Recent Break-In Pattern</p>
+                <p class="text-gray-600">Auto shops on South Tacoma Way experienced multiple break-ins in 2024, with thieves stealing vehicles and parts.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg p-8 shadow-lg">
+            <h3 class="text-2xl font-bold mb-6">What Dealerships Are Losing</h3>
+            <div class="space-y-4">
+              <div>
+                <h4 class="font-semibold mb-2 text-blue-600">Vehicle Theft</h4>
+                <p class="text-gray-600">Entire vehicles stolen from lot - average loss $30,000-$80,000 per vehicle. High-end trucks and SUVs are primary targets.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2 text-blue-600">Parts & Catalytic Converters</h4>
+                <p class="text-gray-600">Organized theft rings targeting catalytic converters ($1,500 replacement each) and wheels/rims from luxury vehicles.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2 text-blue-600">Vandalism & Joyriding</h4>
+                <p class="text-gray-600">Broken windows, damaged interiors, and unauthorized test drives result in $5,000-$15,000 repair costs per incident.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2 text-blue-600">Customer Safety Concerns</h4>
+                <p class="text-gray-600">Parking lot crimes deter customers. One safety incident can damage dealership reputation and reduce foot traffic.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dealership-Specific Features -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Auto Dealership Security Features</h2>
+        <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Advanced Surveillance Technology</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>
+                  <strong>License Plate Recognition:</strong> Automatically captures and logs every vehicle entering your lot with timestamp and plate number
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>
+                  <strong>360° PTZ Cameras:</strong> Pan-tilt-zoom cameras provide complete lot coverage - no blind spots for thieves to exploit
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>
+                  <strong>4K Night Vision:</strong> Crystal-clear video even in complete darkness - identify faces and read VINs at 100+ feet
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>
+                  <strong>Motion-Activated Alerts:</strong> Real-time notifications sent to management when unauthorized activity detected after hours
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>
+                  <strong>Two-Way Audio:</strong> Live voice warnings to deter trespassers before theft occurs
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>
+                  <strong>LED Floodlights:</strong> Bright motion-activated lighting illuminates suspicious activity and deters criminals
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Dealership Business Benefits</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">💰</span>
+                <div>
+                  <strong>Insurance Premium Reductions:</strong> Many insurers offer 10-15% discounts for active surveillance systems
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">📊</span>
+                <div>
+                  <strong>Incident Documentation:</strong> HD video evidence for police reports, insurance claims, and legal protection
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">👥</span>
+                <div>
+                  <strong>Customer Safety Assurance:</strong> Visible security presence makes customers feel safe browsing your lot
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">🏆</span>
+                <div>
+                  <strong>Competitive Advantage:</strong> Market your dealership as the safest place to shop for vehicles in Tacoma
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">📱</span>
+                <div>
+                  <strong>Remote Monitoring:</strong> Check your lot from anywhere via smartphone - verify closings and weekend security
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">🎯</span>
+                <div>
+                  <strong>Scalable Coverage:</strong> Protect main lot, service area, and customer parking with multiple trailer placement
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROI Calculator for Auto Dealers -->
+    <section class="bg-gray-100 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-4">Auto Dealership Security ROI Calculator</h2>
+        <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+          See how mobile surveillance pays for itself after just one prevented theft
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto mb-12">
+          <div class="bg-white rounded-lg p-8 shadow-lg">
+            <h3 class="text-2xl font-bold mb-6 text-red-600">Cost of ONE Theft Incident</h3>
+            <div class="space-y-3">
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Average vehicle value stolen:</span>
+                <span class="font-bold text-red-600">$45,000</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Insurance deductible:</span>
+                <span class="font-bold text-red-600">$5,000</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Premium increase (annual):</span>
+                <span class="font-bold text-red-600">$8,000</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Lost sales from negative publicity:</span>
+                <span class="font-bold text-red-600">$10,000</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Investigation time/labor:</span>
+                <span class="font-bold text-red-600">$2,000</span>
+              </div>
+              <div class="flex justify-between pt-3 text-lg">
+                <span class="font-bold">TOTAL IMPACT:</span>
+                <span class="font-bold text-red-600 text-xl">$70,000+</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg p-8 shadow-lg">
+            <h3 class="text-2xl font-bold mb-6 text-green-600">Your Security Investment</h3>
+            <div class="space-y-3">
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Monthly trailer rental:</span>
+                <span class="font-bold text-green-600">$8,000</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Setup & delivery:</span>
+                <span class="font-bold text-green-600">FREE</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">24/7 monitoring:</span>
+                <span class="font-bold text-green-600">Included</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Maintenance & support:</span>
+                <span class="font-bold text-green-600">Included</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Insurance discount (est):</span>
+                <span class="font-bold text-green-600">-$1,200</span>
+              </div>
+              <div class="flex justify-between pt-3 text-lg">
+                <span class="font-bold">NET MONTHLY COST:</span>
+                <span class="font-bold text-green-600 text-xl">$6,800</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-blue-600 text-white rounded-lg p-8 max-w-4xl mx-auto text-center">
+          <h3 class="text-3xl font-bold mb-4">ONE Prevented Theft = 10+ Months of Protection</h3>
+          <p class="text-xl mb-2">Annual Investment: $81,600 (12 months)</p>
+          <p class="text-xl mb-4">Value of Prevented Theft: $70,000+ per incident</p>
+          <p class="text-2xl font-bold bg-white text-blue-600 inline-block px-6 py-3 rounded-lg">Break-Even After First Prevented Theft</p>
+          <p class="text-sm mt-4 text-blue-100">Most dealers prevent 2-3 theft attempts per year with visible surveillance</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <ComparisonTable
+          title="Security Options for Auto Dealerships"
+          description="Compare mobile surveillance trailers to traditional security solutions"
+          headers={["Mobile Trailers", "Security Guards", "Fixed Cameras"]}
+          rows={[
+            {
+              feature: "Monthly Cost",
+              values: [
+                { text: "$8,000-10,000", highlight: true },
+                "$18,000-25,000",
+                "$500 + $8,000 install"
+              ]
+            },
+            {
+              feature: "Setup Time",
+              values: [
+                { text: "30 minutes", highlight: true },
+                "Immediate hire",
+                "3-7 days installation"
+              ]
+            },
+            {
+              feature: "24/7 Coverage",
+              values: [
+                { text: "Always recording", highlight: true },
+                "Shift gaps/breaks",
+                "Always recording"
+              ]
+            },
+            {
+              feature: "Video Evidence",
+              values: [
+                { text: "4K HD footage", highlight: true },
+                "No video",
+                "720p-1080p"
+              ]
+            },
+            {
+              feature: "Deterrent Visibility",
+              values: [
+                { text: "Very High", highlight: true },
+                "High",
+                "Medium"
+              ]
+            },
+            {
+              feature: "License Plate Capture",
+              values: [
+                { text: "Automatic", highlight: true },
+                "Manual notes",
+                "Depends on system"
+              ]
+            },
+            {
+              feature: "Weather Impact",
+              values: [
+                { text: "None", highlight: true },
+                "Guards take breaks",
+                "None"
+              ]
+            },
+            {
+              feature: "Relocatable",
+              values: [
+                { text: "Yes, easily", highlight: true },
+                "N/A",
+                "No - permanent"
+              ]
+            },
+            {
+              feature: "Insurance Approved",
+              values: [
+                { text: "Yes, discounts", highlight: true },
+                "Yes",
+                "Sometimes"
+              ]
+            },
+            {
+              feature: "Annual Cost",
+              values: [
+                { text: "$81,600-96,000", highlight: true },
+                "$216,000-300,000",
+                "$14,000 (after install)"
+              ]
+            }
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="bg-blue-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Tacoma Auto Dealer Success Stories</h2>
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div class="bg-white border rounded-lg p-6 shadow-lg">
+            <h3 class="font-bold text-lg mb-3">South Tacoma Way Toyota Dealer</h3>
+            <p class="text-gray-600 mb-4">After two truck thefts in 2023 ($120,000 total loss), installed mobile surveillance. Zero incidents in 14 months of coverage.</p>
+            <p class="text-green-600 font-bold">Result: $120,000 in prevented losses</p>
+            <p class="text-sm text-gray-500 mt-2">ROI: 150% first year</p>
+          </div>
+          <div class="bg-white border rounded-lg p-6 shadow-lg">
+            <h3 class="font-bold text-lg mb-3">Fife Used Car Dealership</h3>
+            <p class="text-gray-600 mb-4">Frequent catalytic converter thefts costing $18,000 annually. Surveillance trailer eliminated all theft attempts.</p>
+            <p class="text-green-600 font-bold">Result: 15% insurance premium reduction</p>
+            <p class="text-sm text-gray-500 mt-2">Additional benefit: Customer safety marketing</p>
+          </div>
+          <div class="bg-white border rounded-lg p-6 shadow-lg">
+            <h3 class="font-bold text-lg mb-3">Puyallup Luxury Car Dealer</h3>
+            <p class="text-gray-600 mb-4">High-end inventory ($3M lot value) required premium security. Mobile trailer provided visible deterrence and remote monitoring.</p>
+            <p class="text-green-600 font-bold">Result: Zero losses, 20% guard cost reduction</p>
+            <p class="text-sm text-gray-500 mt-2">Upgraded from 2 guards to 1 guard + trailer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-16 bg-gradient-to-r from-blue-800 to-blue-900 text-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-4">Protect Your Dealership Today</h2>
+        <p class="text-center text-blue-100 mb-12 max-w-3xl mx-auto">
+          Join other South Tacoma Way dealers protecting their inventory with mobile surveillance
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
+          <div class="bg-white/10 backdrop-blur rounded-lg p-6">
+            <div class="text-4xl mb-4">🚨</div>
+            <h3 class="text-xl font-bold mb-2">Recent Theft?</h3>
+            <p class="text-blue-100 mb-4">Just experienced a break-in or theft? We deploy within 2 hours for emergency situations.</p>
+            <a href="tel:2536832288" class="bg-white text-blue-800 hover:bg-blue-100 font-bold py-2 px-6 rounded-lg inline-block w-full text-center">
+              Emergency: (253) 683-2288
+            </a>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur rounded-lg p-6">
+            <div class="text-4xl mb-4">📅</div>
+            <h3 class="text-xl font-bold mb-2">Schedule Protection</h3>
+            <p class="text-blue-100 mb-4">Get started with a custom quote for your dealership's specific lot and needs.</p>
+            <a href="#dealer-quote" class="bg-white text-blue-800 hover:bg-blue-100 font-bold py-2 px-6 rounded-lg inline-block w-full text-center">
+              Get Dealer Quote →
+            </a>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur rounded-lg p-6">
+            <div class="text-4xl mb-4">🏆</div>
+            <h3 class="text-xl font-bold mb-2">Multi-Location Discounts</h3>
+            <p class="text-blue-100 mb-4">Own multiple dealerships? Get volume pricing and priority service.</p>
+            <a href="/contact" class="bg-white text-blue-800 hover:bg-blue-100 font-bold py-2 px-6 rounded-lg inline-block w-full text-center">
+              Contact for Volume Pricing
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-white/5 backdrop-blur rounded-lg p-8 max-w-4xl mx-auto">
+          <h3 class="text-2xl font-bold mb-6 text-center">What Happens Next?</h3>
+          <div class="grid md:grid-cols-4 gap-6">
+            <div class="text-center">
+              <div class="bg-white/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                <span class="font-bold">1</span>
+              </div>
+              <h4 class="font-semibold mb-1">Lot Assessment</h4>
+              <p class="text-sm text-blue-100">5-minute call about your lot size and coverage needs</p>
+            </div>
+            <div class="text-center">
+              <div class="bg-white/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                <span class="font-bold">2</span>
+              </div>
+              <h4 class="font-semibold mb-1">Custom Proposal</h4>
+              <p class="text-sm text-blue-100">Detailed quote with ROI analysis and placement plan</p>
+            </div>
+            <div class="text-center">
+              <div class="bg-white/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                <span class="font-bold">3</span>
+              </div>
+              <h4 class="font-semibold mb-1">Fast Deployment</h4>
+              <p class="text-sm text-blue-100">Same-day or scheduled installation at your convenience</p>
+            </div>
+            <div class="text-center">
+              <div class="bg-white/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                <span class="font-bold">4</span>
+              </div>
+              <h4 class="font-semibold mb-1">Lot Protected</h4>
+              <p class="text-sm text-blue-100">30-minute setup, staff training, 24/7 protection starts</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Form Section -->
+    <section id="dealer-quote" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-2xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-8">Get Your Auto Dealership Security Quote</h2>
+          <QuoteForm
+            formTitle="Tacoma Auto Dealer Security Quote"
+            buttonText="Get Dealership Quote →"
+            responseTime="* We'll respond within 1 hour with your custom dealership security plan"
+            formId="auto-dealer-quote-form"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Auto Dealer Security FAQs</h2>
+        <div class="max-w-3xl mx-auto space-y-6">
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="font-bold text-lg mb-3">Can the trailer cover my entire dealership lot?</h3>
+            <p class="text-gray-600">Yes. Our 360° PTZ cameras provide comprehensive coverage. For larger lots (2+ acres), we recommend multiple trailers with overlapping coverage zones.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="font-bold text-lg mb-3">Will this help reduce my insurance premiums?</h3>
+            <p class="text-gray-600">Most auto dealership insurers offer 10-15% premium discounts for active surveillance systems. We provide documentation for your insurance company.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="font-bold text-lg mb-3">How quickly can you deploy after a theft incident?</h3>
+            <p class="text-gray-600">We offer same-day emergency deployment for dealerships that recently experienced theft. Call (253) 683-2288 for immediate response.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="font-bold text-lg mb-3">Can I view my lot remotely after hours?</h3>
+            <p class="text-gray-600">Yes! You'll receive secure login credentials to view live footage from any smartphone, tablet, or computer. Perfect for verifying weekend closings.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="font-bold text-lg mb-3">Does the system capture license plates of every vehicle?</h3>
+            <p class="text-gray-600">Our advanced LPR (License Plate Recognition) system automatically logs every vehicle entering your lot with date, time, and plate number.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="font-bold text-lg mb-3">Do other South Tacoma Way dealers use this service?</h3>
+            <p class="text-gray-600">Yes. We currently protect multiple dealerships along the South Tacoma Way corridor and throughout the Puget Sound region since 2009.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <CTASection
+      title="Stop Vehicle Theft Before It Happens"
+      description="Join Tacoma auto dealers who've eliminated theft with mobile surveillance"
+      phoneText="📞 24/7 Dealer Hotline: (253) 683-2288"
+      quoteText="Protect Your Inventory Now →"
+      quoteLink="#dealer-quote"
+      features={["✓ Same-day emergency deployment", "✓ 75% less than security guards", "✓ Insurance premium discounts", "✓ License plate recognition included"]}
+      bgColor="bg-blue-900"
+    />
+
+  </main>
+
+  <Footer />
+</Layout>

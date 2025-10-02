@@ -1,0 +1,601 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTASection from '../components/CTASection.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import Analytics from '../components/Analytics.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import QuickAnswer from '../components/QuickAnswer.astro';
+import StatBox from '../components/StatBox.astro';
+
+// Schema data for Tacoma construction security service
+const serviceSchemaData = {
+  serviceName: "Tacoma Construction Site Security Trailer Rental",
+  description: "Mobile surveillance trailers for Tacoma construction sites. Prevent equipment theft, protect materials, and document job site activity. Serving contractors in Pierce County, South Sound, and Puget Sound region.",
+  price: "8000",
+  priceUnit: "MONTH" as const,
+  areaServed: [
+    { type: "City" as const, name: "Tacoma" },
+    { type: "City" as const, name: "Lakewood" },
+    { type: "City" as const, name: "Puyallup" },
+    { type: "City" as const, name: "Fife" },
+    { type: "City" as const, name: "Federal Way" },
+    { type: "City" as const, name: "Kent" },
+    { type: "City" as const, name: "Auburn" }
+  ]
+};
+
+// Breadcrumb data
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Services", url: "/services" },
+  { name: "Tacoma Construction Security" }
+];
+---
+
+<Layout
+  title="Tacoma Construction Site Security | Equipment Theft Prevention Pierce County"
+  description="Protect Tacoma construction sites from theft. Mobile surveillance for contractors in Pierce County. Solar-powered, 24/7 monitoring, same-day deployment. (253) 683-2288">
+
+  <!-- Structured Data Schemas -->
+  <ServiceSchema {...serviceSchemaData} />
+  <BreadcrumbSchema items={breadcrumbItems} />
+
+  <Header showEmergencyBar={true} currentPath="/tacoma-construction-site-security" />
+  <Analytics />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-orange-800 to-orange-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Tacoma Construction Site Security Solutions</h1>
+          <p class="text-xl mb-6">Protect Equipment, Materials & Tools from Theft at Tacoma Job Sites</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="tel:2536832288" class="bg-white text-orange-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
+              📞 Emergency: (253) 683-2288
+            </a>
+            <a href="#tacoma-construction-quote" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-lg inline-block text-center">
+              Get Jobsite Quote →
+            </a>
+          </div>
+          <p class="mt-4 text-yellow-300">⚡ Serving Tacoma contractors and builders since 2009 - Same-day deployment available</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Local Construction Theft Stats -->
+    <section class="py-12 bg-red-50">
+      <div class="container mx-auto px-4">
+        <StatBox
+          title="Construction Theft in Tacoma & Pierce County"
+          description="Why Tacoma construction sites need security protection"
+          layout="grid"
+          stats={[
+            {
+              value: "$1B+",
+              label: "Annual Construction Equipment Theft (National)",
+              icon: "🚧",
+              highlight: true,
+              source: { text: "National Equipment Register" }
+            },
+            {
+              value: "$15,000",
+              label: "Average Theft Loss Per Incident",
+              icon: "💰",
+              highlight: true
+            },
+            {
+              value: "76%",
+              label: "Thefts Occur After Hours/Weekends",
+              icon: "🌙",
+              highlight: true
+            },
+            {
+              value: "85%",
+              label: "Theft Reduction with Surveillance",
+              icon: "📹",
+              highlight: true,
+              source: { text: "NICB 2024 Study" }
+            }
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Quick Answer Box -->
+    <section class="py-8 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <QuickAnswer
+          what="Solar-powered mobile surveillance trailers for Tacoma construction sites"
+          cost="$8,000-10,000/month with volume contractor discounts"
+          time="20-30 minute setup, relocatable as your project progresses"
+          coverage="360° jobsite coverage with PTZ cameras, license plate recognition"
+          availability="Same-day emergency deployment for active Tacoma construction sites"
+          includes={[
+            "Equipment theft prevention and deterrence",
+            "Material and copper wire protection",
+            "Vandalism documentation",
+            "Remote monitoring from any device",
+            "Solar power - no electrical hookup needed",
+            "Insurance claim video evidence"
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Tacoma-Specific Construction Challenges -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Tacoma Construction Site Security Challenges</h2>
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+            <div class="text-4xl mb-4">🔧</div>
+            <h3 class="text-xl font-bold mb-3">Equipment Theft Epidemic</h3>
+            <p class="text-gray-600">Tacoma job sites lose thousands in stolen tools, heavy equipment, and machinery. Thieves target construction sites knowing equipment is often left unattended overnight and on weekends.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+            <div class="text-4xl mb-4">📦</div>
+            <h3 class="text-xl font-bold mb-3">Material & Copper Wire Theft</h3>
+            <p class="text-gray-600">Lumber, copper wiring, and building materials are prime targets. Pierce County construction sites report frequent material theft delaying projects and increasing costs.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+            <div class="text-4xl mb-4">⚖️</div>
+            <h3 class="text-xl font-bold mb-3">Liability & Insurance Issues</h3>
+            <p class="text-gray-600">Without documented security, insurance claims are difficult and premiums increase. Video evidence protects contractors from liability and speeds claim processing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Tacoma Construction Sites Are Targeted -->
+    <section class="bg-blue-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-4">Why Tacoma Construction Sites Are High-Risk</h2>
+        <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+          Understanding the specific theft threats facing construction contractors in Tacoma and Pierce County
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div class="bg-white rounded-lg p-8 shadow-lg">
+            <h3 class="text-2xl font-bold mb-6">Local Risk Factors</h3>
+            <div class="space-y-4">
+              <div class="border-l-4 border-red-600 pl-4">
+                <p class="font-semibold">High Property Crime Rate</p>
+                <p class="text-gray-600">Tacoma has high property crime rates, with construction sites offering easy targets for organized theft rings operating in Pierce County.</p>
+              </div>
+              <div class="border-l-4 border-orange-600 pl-4">
+                <p class="font-semibold">Port & Highway Access</p>
+                <p class="text-gray-600">Port of Tacoma and I-5/SR-512 proximity allows thieves to transport stolen equipment quickly across state lines or ship overseas.</p>
+              </div>
+              <div class="border-l-4 border-yellow-600 pl-4">
+                <p class="font-semibold">Industrial Area Concentration</p>
+                <p class="text-gray-600">Fife, South Tacoma, and Lakewood industrial zones have multiple active construction sites creating target-rich environments.</p>
+              </div>
+              <div class="border-l-4 border-purple-600 pl-4">
+                <p class="font-semibold">Remote Job Site Locations</p>
+                <p class="text-gray-600">Many Tacoma development projects are in isolated areas with limited police patrols and no nearby witnesses.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg p-8 shadow-lg">
+            <h3 class="text-2xl font-bold mb-6">What's Being Stolen</h3>
+            <div class="space-y-4">
+              <div>
+                <h4 class="font-semibold mb-2 text-orange-600">Heavy Equipment</h4>
+                <p class="text-gray-600">Excavators, skid steers, generators ($50,000-$200,000 value). Equipment is often unmarked and easy to resell or export.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2 text-orange-600">Copper & Electrical Wire</h4>
+                <p class="text-gray-600">Copper theft costs Tacoma contractors $5,000-$20,000 per incident plus project delays. High resale value makes it attractive target.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2 text-orange-600">Tools & Power Equipment</h4>
+                <p class="text-gray-600">Nail guns, saws, drills, and hand tools ($10,000-$30,000 average loss). Frequently stolen from work trucks and job trailers.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2 text-orange-600">Building Materials</h4>
+                <p class="text-gray-600">Lumber, plumbing fixtures, HVAC units. Thieves target newly delivered materials left on unsecured sites overnight.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Construction-Specific Features -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Built for Tacoma Construction Sites</h2>
+        <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Jobsite-Ready Technology</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>
+                  <strong>Solar + Generator Power:</strong> Works on sites without electrical service - perfect for new Tacoma developments
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>
+                  <strong>Weather-Resistant Design:</strong> Built for Pacific Northwest rain, wind, and storms - operates year-round
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>
+                  <strong>360° PTZ Cameras:</strong> Complete site coverage with pan-tilt-zoom surveillance - no blind spots for thieves
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>
+                  <strong>4K Night Vision:</strong> Crystal-clear footage even in complete darkness - identify faces and license plates at 100+ feet
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>
+                  <strong>Motion-Activated Alerts:</strong> Real-time notifications to project managers when movement detected after hours
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-3">✓</span>
+                <div>
+                  <strong>License Plate Recognition:</strong> Automatically log every vehicle entering your Tacoma job site
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Contractor Benefits</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">📊</span>
+                <div>
+                  <strong>Project Documentation:</strong> Time-lapse recording for progress documentation and dispute resolution
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">💰</span>
+                <div>
+                  <strong>Insurance Savings:</strong> Many insurers offer 10-20% premium discounts with active surveillance systems
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">🚚</span>
+                <div>
+                  <strong>Delivery Verification:</strong> Confirm material deliveries and track contractor arrivals/departures
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">👷</span>
+                <div>
+                  <strong>Safety Compliance:</strong> Document PPE usage, OSHA compliance, and safety protocol adherence
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">📱</span>
+                <div>
+                  <strong>Remote Site Checks:</strong> View your Tacoma job site from anywhere via smartphone or computer
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3">🎯</span>
+                <div>
+                  <strong>Relocatable Security:</strong> Move trailer to different areas as your project progresses - no reinstallation needed
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROI for Tacoma Contractors -->
+    <section class="bg-gray-100 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-4">Construction Security ROI for Tacoma Contractors</h2>
+        <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+          Mobile surveillance pays for itself after preventing just one major theft incident
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto mb-12">
+          <div class="bg-white rounded-lg p-8 shadow-lg">
+            <h3 class="text-2xl font-bold mb-6 text-red-600">True Cost of Construction Theft</h3>
+            <div class="space-y-3">
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Equipment replacement value:</span>
+                <span class="font-bold text-red-600">$50,000</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Project delay costs (5 days):</span>
+                <span class="font-bold text-red-600">$25,000</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Insurance deductible:</span>
+                <span class="font-bold text-red-600">$5,000</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Premium increase (3 years):</span>
+                <span class="font-bold text-red-600">$15,000</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Labor downtime & investigation:</span>
+                <span class="font-bold text-red-600">$8,000</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Client penalties/reputation damage:</span>
+                <span class="font-bold text-red-600">$12,000</span>
+              </div>
+              <div class="flex justify-between pt-3 text-lg">
+                <span class="font-bold">TOTAL THEFT IMPACT:</span>
+                <span class="font-bold text-red-600 text-xl">$115,000+</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg p-8 shadow-lg">
+            <h3 class="text-2xl font-bold mb-6 text-green-600">Your Security Investment</h3>
+            <div class="space-y-3">
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Monthly trailer rental:</span>
+                <span class="font-bold text-green-600">$8,000</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">6-month project total:</span>
+                <span class="font-bold text-green-600">$48,000</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Setup, delivery, pickup:</span>
+                <span class="font-bold text-green-600">FREE</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Relocation within site:</span>
+                <span class="font-bold text-green-600">FREE</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">24/7 monitoring & support:</span>
+                <span class="font-bold text-green-600">Included</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Insurance discount (est 15%):</span>
+                <span class="font-bold text-green-600">-$7,200</span>
+              </div>
+              <div class="flex justify-between pt-3 text-lg">
+                <span class="font-bold">NET PROJECT COST:</span>
+                <span class="font-bold text-green-600 text-xl">$40,800</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-orange-600 text-white rounded-lg p-8 max-w-4xl mx-auto text-center">
+          <h3 class="text-3xl font-bold mb-4">Prevent ONE Theft = $74,200 in Savings</h3>
+          <p class="text-xl mb-4">Security Investment: $40,800 (6 months) | Average Theft Cost: $115,000</p>
+          <p class="text-2xl font-bold bg-white text-orange-600 inline-block px-6 py-3 rounded-lg">ROI: 282% After First Prevented Theft</p>
+          <p class="text-sm mt-4 text-orange-100">Average Tacoma construction site prevents 1-2 major theft attempts per project</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <ComparisonTable
+          title="Tacoma Construction Security Options Comparison"
+          description="See how mobile surveillance trailers compare to other security methods"
+          headers={["Mobile Trailers", "Security Guards", "Fixed Cameras"]}
+          rows={[
+            {
+              feature: "Works Without Power",
+              values: [
+                { text: "Yes (Solar)", highlight: true },
+                "N/A",
+                "No - needs electrical"
+              ]
+            },
+            {
+              feature: "Monthly Cost (6-mo project)",
+              values: [
+                { text: "$8,000", highlight: true },
+                "$18,000-25,000",
+                "$500 + $8,000 install"
+              ]
+            },
+            {
+              feature: "Setup Time",
+              values: [
+                { text: "30 minutes", highlight: true },
+                "Immediate",
+                "3-7 days"
+              ]
+            },
+            {
+              feature: "Relocatable",
+              values: [
+                { text: "Yes, free moves", highlight: true },
+                "N/A",
+                "No - permanent"
+              ]
+            },
+            {
+              feature: "24/7 Coverage",
+              values: [
+                { text: "Always recording", highlight: true },
+                "Shift gaps",
+                "Always recording"
+              ]
+            },
+            {
+              feature: "Weather Protection",
+              values: [
+                { text: "All-weather rated", highlight: true },
+                "Guards take breaks",
+                "Depends on system"
+              ]
+            },
+            {
+              feature: "Video Evidence",
+              values: [
+                { text: "4K HD footage", highlight: true },
+                "No video",
+                "720p-1080p"
+              ]
+            },
+            {
+              feature: "License Plate Capture",
+              values: [
+                { text: "Automatic LPR", highlight: true },
+                "Manual notes",
+                "Rarely included"
+              ]
+            },
+            {
+              feature: "End of Project",
+              values: [
+                { text: "Return - no cost", highlight: true },
+                "End contract",
+                "Uninstall/dispose"
+              ]
+            },
+            {
+              feature: "Insurance Discounts",
+              values: [
+                { text: "10-20% savings", highlight: true },
+                "Sometimes",
+                "Rarely"
+              ]
+            }
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Tacoma Construction Success Stories -->
+    <section class="bg-blue-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Tacoma Construction Security Success Stories</h2>
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div class="bg-white border rounded-lg p-6 shadow-lg">
+            <h3 class="font-bold text-lg mb-3">Commercial Development - Port of Tacoma</h3>
+            <p class="text-gray-600 mb-4">$4M warehouse project. Prevented 3 attempted equipment thefts in first 2 months. Zero losses over 12-month construction period.</p>
+            <p class="text-green-600 font-bold">Result: $180,000 in prevented losses</p>
+            <p class="text-sm text-gray-500 mt-2">Location: Tideflats industrial area</p>
+          </div>
+          <div class="bg-white border rounded-lg p-6 shadow-lg">
+            <h3 class="font-bold text-lg mb-3">Residential Development - South Hill Puyallup</h3>
+            <p class="text-gray-600 mb-4">45-home subdivision. Copper theft was plaguing neighboring projects. Surveillance eliminated all theft attempts.</p>
+            <p class="text-green-600 font-bold">Result: 20% insurance premium reduction</p>
+            <p class="text-sm text-gray-500 mt-2">Project value: $18M over 18 months</p>
+          </div>
+          <div class="bg-white border rounded-lg p-6 shadow-lg">
+            <h3 class="font-bold text-lg mb-3">Highway Project - SR-512 Corridor</h3>
+            <p class="text-gray-600 mb-4">WSDOT infrastructure project. Heavy equipment security and safety compliance documentation. Zero equipment loss.</p>
+            <p class="text-green-600 font-bold">Result: $0 theft losses, safety compliance video</p>
+            <p class="text-sm text-gray-500 mt-2">9-month project, remote location</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Multi-Site Contractor Discounts -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="bg-gradient-to-r from-orange-600 to-orange-800 text-white rounded-lg p-12 max-w-5xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-8">Volume Discounts for Tacoma General Contractors</h2>
+          <div class="grid md:grid-cols-3 gap-8 mb-8">
+            <div class="text-center">
+              <div class="text-5xl font-bold mb-2">10%</div>
+              <p class="text-lg font-semibold mb-2">2 Trailers</p>
+              <p class="text-orange-100 text-sm">Perfect for large commercial projects</p>
+            </div>
+            <div class="text-center">
+              <div class="text-5xl font-bold mb-2">15%</div>
+              <p class="text-lg font-semibold mb-2">3+ Trailers</p>
+              <p class="text-orange-100 text-sm">Multi-site contractors & developments</p>
+            </div>
+            <div class="text-center">
+              <div class="text-5xl font-bold mb-2">20%</div>
+              <p class="text-lg font-semibold mb-2">Annual Contracts</p>
+              <p class="text-orange-100 text-sm">Year-round protection for multiple projects</p>
+            </div>
+          </div>
+          <div class="text-center">
+            <a href="tel:2536832288" class="bg-white text-orange-800 hover:bg-orange-100 font-bold py-3 px-8 rounded-lg inline-block">
+              Call for Contractor Pricing: (253) 683-2288
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Form Section -->
+    <section id="tacoma-construction-quote" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-2xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-8">Get Your Tacoma Construction Security Quote</h2>
+          <QuoteForm
+            formTitle="Tacoma Construction Site Security Quote"
+            buttonText="Get Construction Quote →"
+            responseTime="* We'll respond within 1 hour with your custom Tacoma jobsite security plan"
+            formId="tacoma-construction-quote-form"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Tacoma Construction Security FAQs</h2>
+        <div class="max-w-3xl mx-auto space-y-6">
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="font-bold text-lg mb-3">How quickly can you deploy to a Tacoma construction site?</h3>
+            <p class="text-gray-600">We offer same-day deployment for emergency situations in Tacoma, Lakewood, Fife, and throughout Pierce County. Standard deployment is within 24-48 hours.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="font-bold text-lg mb-3">Do trailers work on new construction sites without power?</h3>
+            <p class="text-gray-600">Yes! Our trailers are completely solar-powered with backup generators. Perfect for Tacoma development projects that don't have utilities yet.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="font-bold text-lg mb-3">Can you relocate the trailer as our project progresses?</h3>
+            <p class="text-gray-600">Absolutely. We offer free relocation within your job site. As your Tacoma project evolves, we'll move the trailer for optimal coverage.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="font-bold text-lg mb-3">Do you work with Tacoma general contractors on multiple projects?</h3>
+            <p class="text-gray-600">Yes! We offer contractor accounts with volume discounts and priority service for GCs managing multiple Tacoma/Pierce County projects.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="font-bold text-lg mb-3">Will this help with insurance claims if theft does occur?</h3>
+            <p class="text-gray-600">Yes. Our 4K HD video provides crucial evidence for police reports and insurance claims, speeding up processing and improving recovery rates.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="font-bold text-lg mb-3">What areas around Tacoma do you serve?</h3>
+            <p class="text-gray-600">We serve all of Pierce County including Tacoma, Lakewood, Puyallup, Fife, Federal Way, Kent, Auburn, and the entire South Sound region.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <CTASection
+      title="Protect Your Tacoma Construction Site Today"
+      description="Stop equipment theft and material losses before they happen"
+      phoneText="📞 24/7 Contractor Hotline: (253) 683-2288"
+      quoteText="Start Protecting Your Site →"
+      quoteLink="#tacoma-construction-quote"
+      features={["✓ Same-day deployment in Tacoma/Pierce County", "✓ Solar-powered - no electrical hookup needed", "✓ Contractor volume discounts", "✓ Free relocation within job site"]}
+      bgColor="bg-orange-900"
+    />
+
+  </main>
+
+  <Footer />
+</Layout>
