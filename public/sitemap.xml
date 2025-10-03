@@ -179,6 +179,13 @@
   
   <!-- Blog Posts -->
   <url>
+    <loc>https://www.cctvtrailer.com/blog/why-svidia-fdc-technology-revolutionizes-security-surveillance</loc>
+    <lastmod>2025-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://www.cctvtrailer.com/blog/how-much-cost-rent-security-trailer</loc>
     <lastmod>2025-01-11</lastmod>
     <changefreq>monthly</changefreq>
