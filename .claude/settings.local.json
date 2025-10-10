@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.travelers.com)",
+      "Bash(npm run build:*)",
+      "WebFetch(domain:industrialcyber.co)",
+      "WebFetch(domain:www.backstreet-surveillance.com)",
+      "WebFetch(domain:www.coram.ai)",
+      "WebFetch(domain:www.getscw.com)",
+      "WebFetch(domain:www.pelco.com)",
+      "WebFetch(domain:www.arcadian.ai)",
+      "WebFetch(domain:fortifiedhealthsecurity.com)",
+      "WebFetch(domain:www.a1securitycameras.com)",
+      "WebFetch(domain:luminator.com)",
+      "WebFetch(domain:blink.ucsd.edu)",
+      "WebFetch(domain:www.rugged-cctv.com)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

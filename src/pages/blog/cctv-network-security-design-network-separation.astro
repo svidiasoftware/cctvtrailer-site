@@ -1,0 +1,597 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTASection from '../../components/CTASection.astro';
+import Analytics from '../../components/Analytics.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import LazyImage from '../../components/LazyImage.astro';
+import QuickAnswer from '../../components/QuickAnswer.astro';
+import StatBox from '../../components/StatBox.astro';
+import SpeakableSchema from '../../components/SpeakableSchema.astro';
+
+// Speakable sections for voice search
+const speakableSections = [
+  { cssSelector: ".quick-answer-content" },
+  { cssSelector: ".blog-content h2, .blog-content p" },
+  { cssSelector: ".stat-box" }
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "CCTV Network Security: Why Network Separation is Critical in 2025",
+  "datePublished": "2025-10-10",
+  "dateModified": "2025-10-10",
+  "author": {
+    "@type": "Organization",
+    "name": "CCTV Trailer",
+    "url": "https://www.cctvtrailer.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CCTV Trailer",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.cctvtrailer.com/images/cctv-trailer-logo.png"
+    }
+  },
+  "description": "Learn why network separation is critical for CCTV security in 2025. Protect against Chinese surveillance backdoors, achieve NDAA compliance, and implement bulletproof network isolation strategies.",
+  "image": [
+    "https://www.cctvtrailer.com/images/cctv-network-security-separation.webp"
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.cctvtrailer.com/blog/cctv-network-security-design-network-separation"
+  },
+  "wordCount": 2800,
+  "keywords": [
+    "CCTV network security",
+    "network separation",
+    "NDAA compliance",
+    "banned surveillance cameras",
+    "Hikvision ban",
+    "Dahua security vulnerability",
+    "air-gap security",
+    "surveillance network isolation",
+    "Chinese camera backdoor",
+    "federal compliance CCTV"
+  ]
+});
+
+// Breadcrumb data
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Blog", url: "/blog" },
+  { name: "CCTV Network Security Design" }
+];
+---
+
+<Layout
+  title="CCTV Network Security: Critical Network Separation Guide 2025 | CCTV Trailer"
+  description="Learn why network separation is critical for CCTV security in 2025. Protect against Chinese surveillance backdoors, achieve NDAA compliance, and implement bulletproof network isolation strategies."
+  schema={schema}>
+
+  <BreadcrumbSchema items={breadcrumbItems} />
+  <SpeakableSchema sections={speakableSections} />
+
+  <Header showEmergencyBar={true} currentPath="/blog" />
+  <Analytics />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-trailer">
+      <div class="hero-overlay">
+        <LazyImage src="/images/cctv-network-security-separation.webp" alt="CCTV network security design showing network separation architecture"
+          class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
+      </div>
+      <div class="hero-content">
+        <div class="hero-text-wrapper">
+          <div class="text-sm uppercase tracking-wider text-blue-300 mb-4">Network Security Guide</div>
+          <h1 class="hero-heading">CCTV Network Security: Why Network Separation is Critical in 2025</h1>
+          <p class="hero-paragraph">
+            Protect against 200,000+ compromised devices with proven network isolation strategies
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="py-8 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <QuickAnswer
+          what="Network separation prevents remote exploitation of CCTV vulnerabilities"
+          cost="$25,000-$50,000 for small business implementation"
+          time="8-week phased implementation plan"
+          coverage="100% isolation from internet threats"
+          availability="Same-day emergency response available"
+          customFields={[
+            { label: "ROI", value: "300-500% within 3 years" },
+            { label: "Compliance", value: "NDAA Section 889 compliant" }
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Key Statistics -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <StatBox
+          title="Critical Security Statistics"
+          description="The scope of CCTV security threats in 2025"
+          layout="grid"
+          stats={[
+            {
+              value: "200,000+",
+              label: "Banned Devices Active in US",
+              icon: "⚠️",
+              highlight: true
+            },
+            {
+              value: "82%",
+              label: "Organizations with Vulnerable Devices",
+              icon: "🔓",
+              highlight: true
+            },
+            {
+              value: "$45B",
+              label: "Annual Losses from Compromised Systems",
+              icon: "💰",
+              highlight: true
+            },
+            {
+              value: "$7,000",
+              label: "Fine Per Non-Compliant Device",
+              icon: "⚖️",
+              highlight: true
+            }
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Main Blog Content -->
+    <article id="content" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto blog-content">
+
+          <!-- Article Meta -->
+          <div class="flex items-center gap-4 text-sm text-gray-600 mb-8 pb-8 border-b">
+            <span>Published: October 10, 2025</span>
+            <span>•</span>
+            <span>10 min read</span>
+            <span>•</span>
+            <span>By CCTV Trailer Security Experts</span>
+          </div>
+
+          <!-- Introduction -->
+          <div class="prose prose-lg max-w-none">
+            <p class="text-xl leading-relaxed mb-8">
+              <strong>With over 200,000 banned Chinese surveillance devices still operating across America and
+              sophisticated cyber threats targeting CCTV networks daily, network separation has become the most
+              critical security measure for protecting your surveillance infrastructure.</strong> This comprehensive
+              guide reveals why air-gapping your CCTV network from the internet isn't just best practice—it's
+              essential for preventing devastating breaches that cost U.S. businesses $300 billion annually.
+            </p>
+
+            <h2 class="text-2xl font-bold mt-12 mb-6">The Hidden Threat in Your Security Cameras</h2>
+
+            <p class="mb-6">
+              Your CCTV system might be your biggest security vulnerability. If you're using cameras from
+              Hikvision, Dahua, Lorex, or dozens of other manufacturers with Chinese-made components, your
+              surveillance network could be actively compromising your organization's security—even if you
+              purchased them through reputable U.S. distributors.
+            </p>
+
+            <h3 class="text-xl font-semibold mt-8 mb-4">The Scope of the Problem</h3>
+
+            <p class="mb-6">Recent federal investigations have revealed alarming statistics:</p>
+
+            <ul class="list-disc pl-6 mb-6 space-y-2">
+              <li><strong>60% of global IP cameras</strong> contain components from banned Chinese manufacturers</li>
+              <li><strong>200,000+ Dahua devices</strong> and <strong>15,000+ Hikvision cameras</strong> remain active in U.S. networks</li>
+              <li><strong>82% of organizations</strong> have at least one vulnerable CCTV device connected to their network</li>
+              <li><strong>$45 billion in annual losses</strong> directly attributed to compromised surveillance systems</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold mt-12 mb-6">Understanding the NDAA Ban and Its Implications</h2>
+
+            <h3 class="text-xl font-semibold mt-8 mb-4">Section 889: What You Need to Know</h3>
+
+            <p class="mb-6">
+              The National Defense Authorization Act (NDAA) Section 889, effective August 2019, prohibits federal
+              agencies and contractors from using surveillance equipment from:
+            </p>
+
+            <div class="bg-red-50 border-l-4 border-red-600 p-6 my-8">
+              <h4 class="font-semibold mb-4">Primary Banned Manufacturers:</h4>
+              <ul class="space-y-2">
+                <li><strong>Hikvision</strong> (Hangzhou Hikvision Digital Technology)</li>
+                <li><strong>Dahua</strong> (Dahua Technology Company)</li>
+                <li><strong>Huawei</strong> (Huawei Technologies Company)</li>
+                <li><strong>ZTE</strong> (ZTE Corporation)</li>
+                <li><strong>Hytera</strong> (Hytera Communications Corporation)</li>
+                <li><strong>Raysharp</strong> (Added October 2024)</li>
+              </ul>
+            </div>
+
+            <h3 class="text-xl font-semibold mt-8 mb-4">The White-Label Problem</h3>
+
+            <p class="mb-6">
+              What makes this ban challenging is the widespread use of OEM (Original Equipment Manufacturer)
+              partnerships. Many familiar brands are actually repackaged Chinese technology:
+            </p>
+
+            <div class="bg-yellow-50 border-l-4 border-yellow-600 p-6 my-8">
+              <h4 class="font-semibold mb-4">Common OEM Relationships:</h4>
+              <ul class="space-y-2">
+                <li><strong>Lorex</strong> → Uses Dahua components</li>
+                <li><strong>Swann</strong> → Rebranded Hikvision</li>
+                <li><strong>LTS</strong> → Hikvision OEM</li>
+                <li><strong>Amcrest</strong> → Dahua technology</li>
+                <li><strong>Night Owl</strong> → Various Chinese manufacturers</li>
+                <li><strong>EZVIZ</strong> → Hikvision subsidiary</li>
+                <li><strong>LaView</strong> → Hikvision OEM</li>
+                <li><strong>Q-See</strong> → Mixed Chinese components</li>
+              </ul>
+            </div>
+
+            <h2 class="text-2xl font-bold mt-12 mb-6">The Three Categories of CCTV Security Vulnerabilities</h2>
+
+            <h3 class="text-xl font-semibold mt-8 mb-4">1. Intentional Backdoors ("Sponsored" Vulnerabilities)</h3>
+
+            <p class="mb-6">
+              Chinese law requires all companies to cooperate with intelligence gathering when requested. This has led to:
+            </p>
+
+            <ul class="list-disc pl-6 mb-6 space-y-2">
+              <li><strong>Hardcoded credentials</strong> that cannot be changed</li>
+              <li><strong>Hidden administrative accounts</strong> accessible remotely</li>
+              <li><strong>Forced cloud connectivity</strong> routing through Chinese servers</li>
+              <li><strong>Firmware update mechanisms</strong> that can install malicious code</li>
+              <li><strong>Data exfiltration protocols</strong> disguised as telemetry</li>
+            </ul>
+
+            <div class="bg-blue-50 border-l-4 border-blue-600 p-6 my-8">
+              <p class="mb-2">
+                <strong>Real-World Example:</strong> In 2023, security researchers discovered Hikvision cameras
+                automatically connecting to servers in China every 30 minutes, transmitting encrypted data packets
+                even when cloud features were "disabled."
+              </p>
+            </div>
+
+            <h3 class="text-xl font-semibold mt-8 mb-4">2. Unintentional Security Flaws</h3>
+
+            <p class="mb-6">Poor security practices create additional vulnerabilities:</p>
+
+            <ul class="list-disc pl-6 mb-6 space-y-2">
+              <li><strong>Unencrypted data transmission</strong> exposing video feeds</li>
+              <li><strong>Weak default passwords</strong> (often "admin/12345")</li>
+              <li><strong>Outdated firmware</strong> with known exploits</li>
+              <li><strong>Open ports</strong> allowing unauthorized access</li>
+              <li><strong>Buffer overflow vulnerabilities</strong> enabling code execution</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold mt-8 mb-4">3. Supply Chain Compromises</h3>
+
+            <p class="mb-6">Even non-Chinese branded cameras may contain compromised components:</p>
+
+            <ul class="list-disc pl-6 mb-6 space-y-2">
+              <li><strong>Huawei HiSilicon chips</strong> found in 40% of "secure" cameras</li>
+              <li><strong>Compromised firmware libraries</strong> shared across manufacturers</li>
+              <li><strong>Malicious code</strong> injected during manufacturing</li>
+              <li><strong>Hardware implants</strong> undetectable by software scans</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold mt-12 mb-6">The Consequences of Compromised CCTV Networks</h2>
+
+            <h3 class="text-xl font-semibold mt-8 mb-4">For Your Business Operations</h3>
+
+            <p class="mb-6">When attackers gain access through CCTV vulnerabilities, they can:</p>
+
+            <ol class="list-decimal pl-6 mb-6 space-y-2">
+              <li><strong>Disable security monitoring</strong> during criminal activities</li>
+              <li><strong>Access live feeds</strong> to plan thefts or attacks</li>
+              <li><strong>Pivot to other systems</strong> using the camera network as entry point</li>
+              <li><strong>Launch ransomware attacks</strong> encrypting critical business data</li>
+              <li><strong>Steal intellectual property</strong> through network traversal</li>
+              <li><strong>Conduct espionage</strong> gathering competitive intelligence</li>
+            </ol>
+
+            <h3 class="text-xl font-semibold mt-8 mb-4">Legal and Compliance Implications</h3>
+
+            <p class="mb-6">Using banned equipment can result in:</p>
+
+            <ul class="list-disc pl-6 mb-6 space-y-2">
+              <li><strong>Loss of federal contracts</strong> worth millions</li>
+              <li><strong>$7,000 fines</strong> per unauthorized device</li>
+              <li><strong>Medicare/Medicaid exclusion</strong> for healthcare facilities</li>
+              <li><strong>Insurance claim denials</strong> for security breaches</li>
+              <li><strong>Liability lawsuits</strong> from compromised data</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold mt-12 mb-6">The Network Separation Solution: Your First Line of Defense</h2>
+
+            <h3 class="text-xl font-semibold mt-8 mb-4">Why Network Separation Works</h3>
+
+            <p class="mb-6">
+              Network separation (air-gapping) creates an impenetrable barrier between your CCTV system and
+              the internet, preventing:
+            </p>
+
+            <ul class="list-disc pl-6 mb-6 space-y-2">
+              <li><strong>Remote exploitation</strong> of vulnerabilities</li>
+              <li><strong>Data exfiltration</strong> to foreign servers</li>
+              <li><strong>Malware propagation</strong> to business systems</li>
+              <li><strong>Unauthorized access</strong> from external attackers</li>
+              <li><strong>Command and control</strong> communication</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold mt-8 mb-4">Implementing Proper Network Segregation</h3>
+
+            <div class="bg-gray-50 rounded-lg p-6 mb-8">
+              <h4 class="font-semibold mb-4">Level 1: Basic Separation (Minimum Security)</h4>
+              <pre class="bg-white p-4 rounded border">
+Internet → Firewall → Business Network
+                ↓
+         VLAN Separation
+                ↓
+           CCTV Network → NVR/Server
+              </pre>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-6 mb-8">
+              <h4 class="font-semibold mb-4">Level 2: Enhanced Separation (Recommended)</h4>
+              <pre class="bg-white p-4 rounded border">
+Internet → Firewall → Business Network
+
+    [Physical Air Gap - No Connection]
+
+Isolated CCTV Network → US-Made NVR → Monitoring Station
+              </pre>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-6 mb-8">
+              <h4 class="font-semibold mb-4">Level 3: Maximum Security (Critical Infrastructure)</h4>
+              <pre class="bg-white p-4 rounded border">
+Internet → Business Network
+
+    [Complete Physical Isolation]
+
+CCTV Network (No Internet Capability)
+    ├── US-Manufactured Cameras
+    ├── Dedicated Switching Infrastructure
+    ├── Local NVR (No Network Ports)
+    └── Closed-Circuit Monitoring Only
+              </pre>
+            </div>
+
+            <h2 class="text-2xl font-bold mt-12 mb-6">Best Practices for Secure CCTV Network Design</h2>
+
+            <h3 class="text-xl font-semibold mt-8 mb-4">1. Hardware Selection</h3>
+
+            <div class="bg-green-50 border-l-4 border-green-600 p-6 my-8">
+              <h4 class="font-semibold mb-4">Choose NDAA-Compliant Manufacturers:</h4>
+              <ul class="space-y-2">
+                <li><strong>Axis Communications</strong> (Sweden)</li>
+                <li><strong>Pelco</strong> (USA)</li>
+                <li><strong>Bosch</strong> (Germany/USA)</li>
+                <li><strong>Hanwha Vision</strong> (South Korea)</li>
+                <li><strong>Verkada</strong> (USA)</li>
+              </ul>
+            </div>
+
+            <h3 class="text-xl font-semibold mt-8 mb-4">2. Network Architecture</h3>
+
+            <p class="mb-6"><strong>Physical Separation Requirements:</strong></p>
+            <ul class="list-disc pl-6 mb-6 space-y-2">
+              <li>Dedicated network switches for CCTV</li>
+              <li>Separate network cabling (different color coding)</li>
+              <li>Isolated power infrastructure</li>
+              <li>Physical security for network equipment</li>
+            </ul>
+
+            <p class="mb-6"><strong>Logical Separation (If Physical Not Possible):</strong></p>
+            <ul class="list-disc pl-6 mb-6 space-y-2">
+              <li>Implement strict VLANs with no inter-VLAN routing</li>
+              <li>Deploy next-generation firewalls between networks</li>
+              <li>Use jump boxes for administrative access</li>
+              <li>Enable network access control (802.1X)</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold mt-8 mb-4">3. The Hidden Catch: Compromised NVRs</h3>
+
+            <p class="mb-6">
+              Many organizations implement network separation but overlook a critical vulnerability: their
+              Network Video Recorder (NVR) or video management server may also be compromised.
+            </p>
+
+            <div class="bg-blue-50 border-l-4 border-blue-600 p-6 my-8">
+              <h4 class="font-semibold mb-4">Trusted NVR/VMS Providers:</h4>
+              <ul class="space-y-2">
+                <li><strong>Milestone Systems</strong> (Denmark/USA)</li>
+                <li><strong>Genetec</strong> (Canada)</li>
+                <li><strong>Avigilon</strong> (Canada/USA)</li>
+                <li><strong>exacqVision</strong> (USA)</li>
+                <li><strong>S-VIDIA</strong> (USA)</li>
+              </ul>
+            </div>
+
+            <h2 class="text-2xl font-bold mt-12 mb-6">Real-World Implementation Guide</h2>
+
+            <h3 class="text-xl font-semibold mt-8 mb-4">Phase 1: Assessment (Week 1)</h3>
+
+            <p class="mb-4"><strong>Inventory Current Equipment:</strong></p>
+            <ul class="list-disc pl-6 mb-6 space-y-2">
+              <li>Document all camera models and manufacturers</li>
+              <li>Identify NVR/server specifications</li>
+              <li>Map network topology</li>
+              <li>Review firewall rules</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold mt-8 mb-4">Phase 2: Planning (Week 2-3)</h3>
+
+            <p class="mb-4"><strong>Design Secure Architecture:</strong></p>
+            <ul class="list-disc pl-6 mb-6 space-y-2">
+              <li>Create network separation plan</li>
+              <li>Specify compliant replacement equipment</li>
+              <li>Develop implementation timeline</li>
+              <li>Calculate budget requirements</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold mt-8 mb-4">Phase 3: Implementation (Week 4-6)</h3>
+
+            <p class="mb-4"><strong>Network Preparation:</strong></p>
+            <ul class="list-disc pl-6 mb-6 space-y-2">
+              <li>Install dedicated CCTV switches</li>
+              <li>Configure VLANs if required</li>
+              <li>Implement firewall rules</li>
+              <li>Set up monitoring systems</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold mt-8 mb-4">Phase 4: Validation (Week 7-8)</h3>
+
+            <p class="mb-4"><strong>Security Testing:</strong></p>
+            <ul class="list-disc pl-6 mb-8 space-y-2">
+              <li>Penetration testing</li>
+              <li>Vulnerability scanning</li>
+              <li>Access control verification</li>
+              <li>Incident response testing</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold mt-12 mb-6">Cost-Benefit Analysis</h2>
+
+            <div class="bg-gray-50 rounded-lg p-6 mb-8">
+              <h3 class="font-semibold mb-4">Investment Required</h3>
+
+              <h4 class="font-medium mt-4 mb-2">Small Business (10-20 cameras):</h4>
+              <ul class="space-y-1">
+                <li>Equipment replacement: $15,000-$30,000</li>
+                <li>Network infrastructure: $5,000-$10,000</li>
+                <li>Implementation: $5,000-$10,000</li>
+                <li class="font-bold pt-2 border-t">Total: $25,000-$50,000</li>
+              </ul>
+
+              <h4 class="font-medium mt-6 mb-2">Medium Business (50-100 cameras):</h4>
+              <ul class="space-y-1">
+                <li>Equipment replacement: $75,000-$150,000</li>
+                <li>Network infrastructure: $20,000-$40,000</li>
+                <li>Implementation: $15,000-$30,000</li>
+                <li class="font-bold pt-2 border-t">Total: $110,000-$220,000</li>
+              </ul>
+            </div>
+
+            <div class="bg-green-50 rounded-lg p-6 mb-8">
+              <h3 class="font-semibold mb-4">Return on Investment</h3>
+              <ul class="space-y-2">
+                <li>Prevent average breach cost: $4.45 million</li>
+                <li>Avoid NDAA non-compliance fines: $7,000 per device</li>
+                <li>Maintain federal contract eligibility: Varies</li>
+                <li>Reduce insurance premiums: 15-20% savings</li>
+                <li class="font-bold pt-2 border-t text-green-700">ROI: 300-500% within 3 years</li>
+              </ul>
+            </div>
+
+            <h2 class="text-2xl font-bold mt-12 mb-6">Emergency Response: What to Do If You Have Banned Equipment</h2>
+
+            <h3 class="text-xl font-semibold mt-8 mb-4">Immediate Actions (Within 24 Hours)</h3>
+
+            <div class="bg-red-50 border-l-4 border-red-600 p-6 my-8">
+              <p class="mb-4"><strong>Isolate Affected Systems:</strong></p>
+              <ul class="space-y-2">
+                <li>Disconnect cameras from internet</li>
+                <li>Disable remote access features</li>
+                <li>Block outbound connections at firewall</li>
+                <li>Document all equipment</li>
+              </ul>
+            </div>
+
+            <h3 class="text-xl font-semibold mt-8 mb-4">Short-Term Mitigation (Within 7 Days)</h3>
+
+            <p class="mb-4"><strong>Implement Network Separation:</strong></p>
+            <ul class="list-disc pl-6 mb-8 space-y-2">
+              <li>Create isolated VLAN for CCTV</li>
+              <li>Deploy firewall rules blocking internet access</li>
+              <li>Disable all cloud features</li>
+              <li>Change all default passwords</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold mt-12 mb-6">Conclusion: Security Through Separation</h2>
+
+            <p class="mb-6">
+              The threat posed by compromised CCTV equipment is real, documented, and growing. With nation-state
+              actors actively exploiting these vulnerabilities and cybercriminals launching increasingly
+              sophisticated attacks, network separation isn't just a best practice—it's essential for survival
+              in today's threat landscape.
+            </p>
+
+            <p class="mb-6">
+              By implementing proper network segregation, choosing NDAA-compliant equipment, and following
+              security best practices, you can transform your CCTV system from a liability into a truly secure
+              asset that protects rather than compromises your organization.
+            </p>
+
+            <div class="bg-yellow-50 border-l-4 border-yellow-600 p-6 my-8">
+              <p class="text-lg font-semibold">
+                Remember: The cheapest camera system becomes the most expensive when it enables a
+                multi-million dollar breach.
+              </p>
+            </div>
+
+            <h2 class="text-2xl font-bold mt-12 mb-6">Take Action Today</h2>
+
+            <p class="mb-6">Don't wait for a breach to discover your vulnerabilities. Contact CCTV Trailer for:</p>
+
+            <ul class="list-disc pl-6 mb-8 space-y-2">
+              <li><strong>Free Security Assessment</strong> of your current CCTV infrastructure</li>
+              <li><strong>NDAA Compliance Consultation</strong> to identify banned equipment</li>
+              <li><strong>Network Separation Design</strong> customized for your needs</li>
+              <li><strong>Deployment of Secure, US-Made</strong> surveillance solutions</li>
+              <li><strong>Same-Day Emergency Response</strong> for critical security needs</li>
+            </ul>
+
+            <div class="bg-blue-100 rounded-lg p-8 text-center">
+              <h3 class="text-2xl font-bold mb-4">Contact Information</h3>
+              <p class="mb-2"><strong>CCTV Trailer - Secure Surveillance Solutions</strong></p>
+              <p>Phone: <a href="tel:833-280-1616" class="text-blue-600 hover:underline">833-280-1616</a></p>
+              <p>Website: <a href="/" class="text-blue-600 hover:underline">www.cctvtrailer.com</a></p>
+              <p>Emergency Response: Available 24/7</p>
+            </div>
+          </div>
+
+          <!-- Related Articles -->
+          <div class="mt-16 pt-8 border-t">
+            <h3 class="text-xl font-semibold mb-6">Related Articles</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+              <a href="/blog/why-svidia-fdc-technology-revolutionizes-security-surveillance" class="block bg-gray-50 rounded-lg p-4 hover:shadow-md transition-shadow">
+                <h4 class="font-semibold mb-2">Why S-VIDIA's FDC Technology Revolutionizes Security</h4>
+                <p class="text-sm text-gray-600">Learn about forensic-quality surveillance technology</p>
+              </a>
+              <a href="/blog/true-cost-construction-theft-vs-security-investment" class="block bg-gray-50 rounded-lg p-4 hover:shadow-md transition-shadow">
+                <h4 class="font-semibold mb-2">True Cost of Construction Theft vs Security Investment</h4>
+                <p class="text-sm text-gray-600">Data-driven analysis of theft losses and security ROI</p>
+              </a>
+              <a href="/construction-compliance-guide" class="block bg-gray-50 rounded-lg p-4 hover:shadow-md transition-shadow">
+                <h4 class="font-semibold mb-2">Construction Security Compliance Guide</h4>
+                <p class="text-sm text-gray-600">Meet OSHA and insurance requirements with mobile surveillance</p>
+              </a>
+              <a href="/wireless-security-systems" class="block bg-gray-50 rounded-lg p-4 hover:shadow-md transition-shadow">
+                <h4 class="font-semibold mb-2">Wireless Security Systems</h4>
+                <p class="text-sm text-gray-600">Deploy secure surveillance without network vulnerabilities</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- CTA Section -->
+    <CTASection
+      title="Secure Your CCTV Network Today"
+      description="Don't let your surveillance system become your biggest vulnerability. Get expert network separation design and NDAA-compliant solutions."
+      features={["✓ Free Security Assessment", "✓ NDAA Compliance Verification", "✓ Network Separation Design", "✓ Same-Day Emergency Response"]}
+    />
+  </main>
+
+  <Footer />
+</Layout>
