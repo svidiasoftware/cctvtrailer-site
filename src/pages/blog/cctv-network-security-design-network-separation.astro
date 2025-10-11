@@ -331,13 +331,19 @@ const breadcrumbItems = [
 
             <div class="bg-red-50 border-l-4 border-red-600 p-6 mb-8">
               <h4 class="font-semibold mb-4">❌ Commonly Used But Flawed Design (Minimal Security)</h4>
-              <pre class="bg-white p-4 rounded border text-sm">
-Internet → Firewall → Business Network
-                ↓
-         VLAN Separation
-                ↓
-           CCTV Network → NVR/Server
-              </pre>
+
+              <!-- Flawed Design Schematic Image -->
+              <div class="my-4 bg-white p-4 rounded">
+                <LazyImage
+                  src="/images/cctv-network-security-separation-flawed-design-schematic.png"
+                  alt="Vulnerable VLAN-based architecture showing security gaps and data exfiltration paths"
+                  class="w-full h-auto mx-auto max-w-3xl"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                />
+              </div>
+
               <p class="mt-4 text-sm">
                 <strong>Critical Flaw:</strong> This design provides almost no security at all. In today's threat landscape,
                 the majority of attacks come from <strong>inside networks</strong>, not outside. This commonly used architecture
@@ -353,18 +359,18 @@ Internet → Firewall → Business Network
 
             <div class="bg-green-50 border-l-4 border-green-600 p-6 mb-8">
               <h4 class="font-semibold mb-4">✅ Recommended Secure Architecture</h4>
-              <pre class="bg-white p-4 rounded border text-sm">
-Internet → Firewall → Business Network
-                ↓
-        US-Made NVR/Server
-                ↓
-    [Physical or Logical Isolation]
-                ↓
-    CCTV Network (No Internet Access)
-        ├── Cameras
-        ├── Access Control Devices
-        └── IoT Security Equipment
-              </pre>
+
+              <!-- Secure Architecture Schematic Image -->
+              <div class="my-4 bg-white p-4 rounded">
+                <LazyImage
+                  src="/images/cctv-network-security-separation-%20secure-architecture-schematic.png"
+                  alt="Recommended secure CCTV network architecture with US-Made NVR gateway and complete isolation"
+                  class="w-full h-auto mx-auto max-w-3xl"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                />
+              </div>
 
               <h5 class="font-semibold mt-4 mb-2">Why This Design Works:</h5>
 
