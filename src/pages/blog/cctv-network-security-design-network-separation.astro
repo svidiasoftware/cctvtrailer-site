@@ -329,41 +329,89 @@ const breadcrumbItems = [
 
             <h3 class="text-xl font-semibold mt-8 mb-4">Implementing Proper Network Segregation</h3>
 
-            <div class="bg-gray-50 rounded-lg p-6 mb-8">
-              <h4 class="font-semibold mb-4">Level 1: Basic Separation (Minimum Security)</h4>
-              <pre class="bg-white p-4 rounded border">
+            <div class="bg-red-50 border-l-4 border-red-600 p-6 mb-8">
+              <h4 class="font-semibold mb-4">❌ Commonly Used But Flawed Design (Minimal Security)</h4>
+              <pre class="bg-white p-4 rounded border text-sm">
 Internet → Firewall → Business Network
                 ↓
          VLAN Separation
                 ↓
            CCTV Network → NVR/Server
               </pre>
+              <p class="mt-4 text-sm">
+                <strong>Critical Flaw:</strong> This design provides almost no security at all. In today's threat landscape,
+                the majority of attacks come from <strong>inside networks</strong>, not outside. This commonly used architecture
+                offers <strong>zero protection</strong> against:
+              </p>
+              <ul class="list-disc pl-6 mt-2 space-y-1 text-sm">
+                <li>Data exfiltration from compromised cameras to external servers</li>
+                <li>Command and control communication from infected devices</li>
+                <li>Lateral movement from CCTV network to business systems</li>
+                <li>Insider threats and compromised credentials</li>
+              </ul>
             </div>
 
-            <div class="bg-gray-50 rounded-lg p-6 mb-8">
-              <h4 class="font-semibold mb-4">Level 2: Enhanced Separation (Recommended)</h4>
-              <pre class="bg-white p-4 rounded border">
+            <div class="bg-green-50 border-l-4 border-green-600 p-6 mb-8">
+              <h4 class="font-semibold mb-4">✅ Recommended Secure Architecture</h4>
+              <pre class="bg-white p-4 rounded border text-sm">
 Internet → Firewall → Business Network
-
-    [Physical Air Gap - No Connection]
-
-Isolated CCTV Network → US-Made NVR → Monitoring Station
+                ↓
+        US-Made NVR/Server
+                ↓
+    [Physical or Logical Isolation]
+                ↓
+    CCTV Network (No Internet Access)
+        ├── Cameras
+        ├── Access Control Devices
+        └── IoT Security Equipment
               </pre>
+
+              <h5 class="font-semibold mt-4 mb-2">Why This Design Works:</h5>
+
+              <p class="mb-4">
+                This architecture positions the <strong>US-manufactured NVR/Server as a secure gateway</strong> between
+                your business network and the isolated CCTV network. The NVR acts as a one-way valve—it can pull video
+                from cameras but cameras cannot initiate connections outward.
+              </p>
+
+              <div class="bg-white rounded p-4 mb-4">
+                <h6 class="font-semibold mb-2">Key Security Benefits:</h6>
+                <ul class="list-disc pl-6 space-y-2 text-sm">
+                  <li><strong>Complete Internet Isolation:</strong> Cameras have zero ability to communicate with external servers,
+                      preventing data exfiltration and "phone home" attempts</li>
+                  <li><strong>Controlled Access Point:</strong> The US-made NVR serves as the only bridge, with strict firewall
+                      rules allowing only necessary protocols (RTSP, ONVIF) from NVR to cameras</li>
+                  <li><strong>Maintained Usability:</strong> Unlike complete air-gapping, authorized users can still access
+                      video feeds through the NVR's business network interface</li>
+                  <li><strong>Audit Trail:</strong> All access to camera feeds goes through the NVR, creating comprehensive logs</li>
+                  <li><strong>No Lateral Movement:</strong> Even if a camera is compromised, it cannot reach business systems
+                      or the internet</li>
+                </ul>
+              </div>
+
+              <div class="bg-white rounded p-4">
+                <h6 class="font-semibold mb-2">Implementation Requirements:</h6>
+                <ul class="list-disc pl-6 space-y-2 text-sm">
+                  <li><strong>Dual-NIC NVR Configuration:</strong> One interface on business network, one on isolated CCTV network</li>
+                  <li><strong>Strict Firewall Rules:</strong> Block all traffic from CCTV network except NVR-initiated connections</li>
+                  <li><strong>VLAN Configuration:</strong> Cameras on separate VLAN with no routing to business network</li>
+                  <li><strong>Disable Camera Cloud Features:</strong> Turn off all manufacturer cloud services, P2P, and DDNS</li>
+                  <li><strong>Regular Security Audits:</strong> Monitor for unauthorized connection attempts</li>
+                </ul>
+              </div>
             </div>
 
-            <div class="bg-gray-50 rounded-lg p-6 mb-8">
-              <h4 class="font-semibold mb-4">Level 3: Maximum Security (Critical Infrastructure)</h4>
-              <pre class="bg-white p-4 rounded border">
-Internet → Business Network
-
-    [Complete Physical Isolation]
-
-CCTV Network (No Internet Capability)
-    ├── US-Manufactured Cameras
-    ├── Dedicated Switching Infrastructure
-    ├── Local NVR (No Network Ports)
-    └── Closed-Circuit Monitoring Only
-              </pre>
+            <div class="bg-yellow-50 border-l-4 border-yellow-600 p-6 mb-8">
+              <h4 class="font-semibold mb-4">⚠️ Critical Implementation Notes</h4>
+              <p class="mb-3">
+                <strong>Physical vs. Logical Isolation:</strong> While physical isolation (separate switches, cabling)
+                provides the highest security, properly configured logical separation with VLANs and firewall rules
+                can achieve similar protection levels when physical separation isn't feasible.
+              </p>
+              <p>
+                <strong>NVR Selection is Critical:</strong> The entire security model depends on using a trustworthy,
+                US-manufactured NVR without backdoors. Compromised NVRs defeat the entire security architecture.
+              </p>
             </div>
 
             <h2 class="text-2xl font-bold mt-12 mb-6">Best Practices for Secure CCTV Network Design</h2>

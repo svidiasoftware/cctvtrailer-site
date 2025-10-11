@@ -7,3 +7,4 @@
 - pay attention to Google Analytics and update new pages accordingly
 - keep public/sitemap.xml and src/pages/sitemap.astro map files updated
 - when dealing with price or cost calculations always read src/pricing.astro page and do not make them up
+- when crafting a new blog article update src/pages/blog/index.astro page
