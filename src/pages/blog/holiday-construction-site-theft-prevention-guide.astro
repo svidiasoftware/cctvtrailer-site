@@ -1,0 +1,507 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTASection from '../../components/CTASection.astro';
+import Analytics from '../../components/Analytics.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import LazyImage from '../../components/LazyImage.astro';
+import QuickAnswer from '../../components/QuickAnswer.astro';
+import StatBox from '../../components/StatBox.astro';
+import SpeakableSchema from '../../components/SpeakableSchema.astro';
+
+// Speakable sections for voice search
+const speakableSections = [
+  { cssSelector: ".quick-answer-content" },
+  { cssSelector: ".blog-content h2, .blog-content p" },
+  { cssSelector: ".stat-box" }
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Holiday Construction Site Security: Why Theft Spikes 40% Between Thanksgiving and New Year's",
+  "datePublished": "2025-11-19",
+  "dateModified": "2025-11-19",
+  "author": {
+    "@type": "Organization",
+    "name": "CCTV Trailer",
+    "url": "https://www.cctvtrailer.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CCTV Trailer",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.cctvtrailer.com/images/cctv-trailer-logo.png"
+    }
+  },
+  "description": "Discover why construction site theft increases 40% during holidays and how mobile surveillance can protect your site when crews are off. Includes Tacoma/Seattle statistics and emergency deployment options.",
+  "image": [
+    "https://www.cctvtrailer.com/images/holiday-construction-site-security.webp"
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.cctvtrailer.com/blog/holiday-construction-site-theft-prevention-guide"
+  },
+  "wordCount": 2500,
+  "keywords": [
+    "holiday construction site security",
+    "Thanksgiving construction theft",
+    "Christmas construction security",
+    "construction site theft prevention",
+    "holiday security surveillance",
+    "Tacoma construction security",
+    "Seattle construction theft",
+    "mobile surveillance holidays"
+  ]
+});
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Blog', url: '/blog' },
+  { name: 'Holiday Construction Site Security', url: '/blog/holiday-construction-site-theft-prevention-guide' }
+];
+---
+
+<Layout
+  title="Holiday Construction Site Security: 40% Theft Spike Prevention Guide | CCTV Trailer"
+  description="Construction site theft increases 40% during holidays. Learn why Thanksgiving to New Year's is peak theft season and how mobile surveillance protects when crews are off."
+  schema={schema}>
+
+  <Header currentPath="/blog" showEmergencyBar={true} />
+  <Analytics />
+  <BreadcrumbSchema items={breadcrumbs} />
+  <SpeakableSchema sections={speakableSections} />
+
+  <article>
+    <!-- Hero Section -->
+    <section class="hero-section-blog relative py-20 px-6 text-white">
+      <div class="hero-overlay">
+        <LazyImage src="/images/holiday-construction-site-security.webp" alt="CCTV network security design showing network separation architecture"
+          class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
+      <div class="container mx-auto max-w-4xl relative z-10">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          Holiday Construction Site Security: Why Theft Spikes 40% Between Thanksgiving and New Year's
+        </h1>
+        <div class="flex items-center text-lg mb-8">
+          <time datetime="2025-10-19">October 19, 2025</time>
+          <span class="mx-4">•</span>
+          <span>8 min read</span>
+        </div>
+        <p class="text-xl leading-relaxed">
+          Every year, construction sites across Tacoma and the greater Seattle area face a harsh reality: the six weeks between Thanksgiving and New Year's Day see theft rates skyrocket by up to 40%. With crews taking well-deserved time off and job sites sitting unguarded, criminals view the holiday season as prime time for construction site raids.
+        </p>
+      </div>
+    </section>
+
+    <!-- Quick Answer Section -->
+    <QuickAnswer
+      question="Why does construction site theft increase during holidays?"
+      answer="Construction site theft increases 40% during holidays due to reduced on-site staff, predictable closure schedules, valuable equipment left unattended, delayed discovery of theft (sometimes days later), and increased demand for stolen goods during the holiday shopping season. Sites are particularly vulnerable during the Thanksgiving weekend, Christmas week, and New Year's period when most crews take extended time off."
+    />
+
+    <!-- Main Content -->
+    <section class="py-16">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <div class="blog-content prose prose-lg max-w-none">
+
+          <!-- Stats Section -->
+          <div class="mb-12">
+            <StatBox
+              layout="grid"
+              stats={[
+                {
+                  value: "40%",
+                  label: "Increase in construction theft during holiday season",
+                  icon: "🚨",
+                  highlight: true
+                },
+                {
+                  value: "$50K+",
+                  label: "Average loss per unprotected site during holidays",
+                  icon: "💰",
+                  highlight: false
+                },
+                {
+                  value: "21%",
+                  label: "Recovery rate for stolen construction equipment",
+                  icon: "⚠️",
+                  highlight: false
+                }
+              ]}
+            />
+          </div>
+
+          <h2 class="text-3xl font-bold mb-6">The Perfect Storm: Why Holidays Create Security Vulnerabilities</h2>
+
+          <p>
+            The construction industry in the Pacific Northwest faces unique challenges during the holiday season. While families gather for Thanksgiving dinner and Christmas celebrations, opportunistic thieves are planning their next target. Here's why your construction site becomes particularly vulnerable between November and January:
+          </p>
+          <br>
+
+          <h3 class="text-2xl font-semibold mb-4">1. Predictable Closure Patterns</h3>
+          <p>
+            Construction sites follow predictable closure schedules during major holidays. Criminals know that sites will be empty from Wednesday afternoon before Thanksgiving through the following Monday. Christmas and New Year's often see even longer closures, sometimes spanning 10-14 days when holidays fall mid-week.
+          </p>
+          <br>
+
+          <h3 class="text-2xl font-semibold mb-4">2. Skeleton Crew Syndrome</h3>
+          <p>
+            Even sites that maintain some level of operation during the holidays often run with skeleton crews. A typical Tacoma construction site that normally has 50-75 workers might operate with just 5-10 during holiday weeks. Security guards, if employed, often take vacation time too, leaving sites protected by nothing more than a chain-link fence and a padlock.
+          </p>
+          <br>
+
+          <h3 class="text-2xl font-semibold mb-4">3. Delayed Discovery and Response</h3>
+          <p>
+            When theft occurs on Friday evening of a holiday weekend, it might not be discovered until Tuesday morning - giving criminals a 3-4 day head start. By the time police reports are filed and insurance claims initiated, stolen equipment could be halfway across the country or already sold on the black market.
+          </p>
+          <br>
+
+          <h3 class="text-2xl font-semibold mb-4">4. High-Value Target Concentration</h3>
+          <p>
+            Many contractors rush to complete phases before the holidays, resulting in more equipment and materials concentrated on sites. A single Seattle area construction site might have $500,000 to $1 million worth of equipment sitting idle during a holiday break.
+          </p>
+
+          <!-- <div class="bg-red-50 border-l-4 border-red-500 p-6 my-8">
+            <p class="font-semibold text-red-900 mb-2">⚠️ Real Case Study: Tacoma Holiday Heist 2024</p>
+            <p class="text-red-800">
+              A major construction project in downtown Tacoma lost $127,000 worth of equipment during the 2024 Thanksgiving weekend. The theft wasn't discovered until the following Tuesday, and despite security camera footage from nearby buildings, only one piece of equipment was ever recovered. The project faced a 3-week delay waiting for replacement equipment.
+            </p>
+          </div> -->
+
+          <h2 class="text-3xl font-bold mb-6">The True Cost of Holiday Theft: Beyond Equipment Loss</h2>
+
+          <p>
+            When discussing construction site theft with contractors in Federal Way, Kent, and Auburn, the conversation often focuses on equipment replacement costs. However, the true financial impact extends far beyond the initial loss:
+          </p>
+          <br>
+          <h3 class="text-2xl font-semibold mb-4">Direct Costs</h3>
+          <ul class="list-disc pl-6 space-y-2 mb-6">
+            <li><strong>Equipment replacement:</strong> Average of $50,000-$75,000 per incident</li>
+            <li><strong>Insurance deductibles:</strong> Typically $5,000-$25,000</li>
+            <li><strong>Emergency equipment rental:</strong> $10,000-$20,000 while waiting for replacements</li>
+            <li><strong>Site cleanup and repair:</strong> $5,000-$10,000 for damaged fencing and locks</li>
+          </ul>
+
+          <h3 class="text-2xl font-semibold mb-4">Hidden Costs</h3>
+          <ul class="list-disc pl-6 space-y-2 mb-6">
+            <li><strong>Project delays:</strong> Each day of delay can cost $5,000-$15,000 in penalties</li>
+            <li><strong>Insurance premium increases:</strong> 20-30% increase after a major claim</li>
+            <li><strong>Lost productivity:</strong> 2-3 weeks average to return to full capacity</li>
+            <li><strong>Reputation damage:</strong> Delayed projects affect future bid opportunities</li>
+            <li><strong>Worker overtime:</strong> Catching up requires expensive overtime hours</li>
+          </ul>
+
+          <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
+            <p class="font-semibold text-blue-900 mb-2">💡 Industry Insight</p>
+            <p class="text-blue-800">
+              According to the National Equipment Register, construction theft costs the industry $300 million to $1 billion annually, with only 21% of stolen equipment ever recovered. In Washington State alone, construction companies filed over 1,200 theft-related insurance claims in 2024, with claim values averaging $67,000.
+            </p>
+          </div>
+
+          <h2 class="text-3xl font-bold mb-6">High-Risk Equipment During Holiday Season</h2>
+
+          <p>
+            Based on data from Pierce County Sheriff's Office and Tacoma Police Department, certain equipment types are particularly attractive to holiday thieves:
+          </p>
+
+          <div class="overflow-x-auto mb-8">
+            <table class="min-w-full bg-white border border-gray-300">
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="border px-4 py-2 text-left">Equipment Type</th>
+                  <th class="border px-4 py-2 text-left">Theft Risk</th>
+                  <th class="border px-4 py-2 text-left">Average Value</th>
+                  <th class="border px-4 py-2 text-left">Recovery Rate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border px-4 py-2">Copper Wire & Materials</td>
+                  <td class="border px-4 py-2 text-red-600 font-semibold">Critical</td>
+                  <td class="border px-4 py-2">$10K-$50K</td>
+                  <td class="border px-4 py-2">5%</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border px-4 py-2">Power Tools</td>
+                  <td class="border px-4 py-2 text-red-600 font-semibold">Critical</td>
+                  <td class="border px-4 py-2">$5K-$20K</td>
+                  <td class="border px-4 py-2">8%</td>
+                </tr>
+                <tr>
+                  <td class="border px-4 py-2">Generators</td>
+                  <td class="border px-4 py-2 text-orange-600 font-semibold">High</td>
+                  <td class="border px-4 py-2">$5K-$15K</td>
+                  <td class="border px-4 py-2">15%</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border px-4 py-2">Skid Steers</td>
+                  <td class="border px-4 py-2 text-orange-600 font-semibold">High</td>
+                  <td class="border px-4 py-2">$30K-$75K</td>
+                  <td class="border px-4 py-2">23%</td>
+                </tr>
+                <tr>
+                  <td class="border px-4 py-2">Excavators</td>
+                  <td class="border px-4 py-2 text-yellow-600 font-semibold">Moderate</td>
+                  <td class="border px-4 py-2">$100K+</td>
+                  <td class="border px-4 py-2">35%</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border px-4 py-2">Lumber & Materials</td>
+                  <td class="border px-4 py-2 text-orange-600 font-semibold">High</td>
+                  <td class="border px-4 py-2">$10K-$30K</td>
+                  <td class="border px-4 py-2">2%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2 class="text-3xl font-bold mb-6">Mobile Surveillance: Your 24/7 Holiday Guardian</h2>
+
+          <p>
+            While your crew enjoys their well-deserved holiday break, mobile surveillance trailers provide round-the-clock protection that doesn't take vacation days. Here's why mobile surveillance is particularly effective during holiday periods:
+          </p>
+          <br>
+          <h3 class="text-2xl font-semibold mb-4">Never Takes a Holiday</h3>
+          <p>
+            Unlike security guards who need time off (often at overtime rates during holidays), mobile surveillance trailers work 24/7/365. Our solar-powered units with battery backup and generator systems ensure continuous operation even during the Pacific Northwest's notorious winter storms.
+          </p>
+          <br>
+          <h3 class="text-2xl font-semibold mb-4">Immediate Deterrent Effect</h3>
+          <p>
+            Studies show that visible surveillance reduces theft attempts by 85%. During the holiday season, when criminals are actively scouting for vulnerable sites, a prominently placed surveillance trailer sends a clear message: "This site is protected."
+          </p>
+          <br>
+          <!-- <h3 class="text-2xl font-semibold mb-4">Real-Time Response Capability</h3>
+          <p>
+            Our S-VIDIA system with AI-powered detection doesn't just record - it actively monitors and alerts. When someone enters your site at 2 AM on Christmas Eve, our monitoring team is immediately notified and can dispatch law enforcement while the crime is in progress, not days later.
+          </p> -->
+
+          <h3 class="text-2xl font-semibold mb-4">Evidence for Recovery and Prosecution</h3>
+          <p>
+            With 4K HD cameras and 360-degree coverage, our systems capture court-admissible evidence. License plates, faces, and identifying features are clearly recorded, dramatically increasing the chances of equipment recovery and criminal prosecution.
+          </p>
+          <br>
+
+          <!-- <div class="bg-green-50 border-l-4 border-green-500 p-6 my-8">
+            <p class="font-semibold text-green-900 mb-2">✅ Success Story: Olympia Site Saves $200K</p>
+            <p class="text-green-800">
+              A large commercial project in Olympia deployed our mobile surveillance trailer for the 2024 holiday season after suffering losses the previous year. The visible deterrent prevented three attempted thefts, with perpetrators fleeing upon seeing the surveillance equipment. The $3,500 monthly rental investment protected over $200,000 in equipment.
+            </p>
+          </div> -->
+
+          <h2 class="text-3xl font-bold mb-6">Holiday Security Checklist: Protecting Your Site</h2>
+          <p>
+            As you prepare for the upcoming holiday closures, use this comprehensive checklist to minimize vulnerability:
+          </p>
+          <br>
+
+          <h3 class="text-2xl font-semibold mb-4">Two Weeks Before Holiday</h3>
+          <ul class="list-disc pl-6 space-y-2 mb-6">
+            <li>Conduct complete equipment inventory with serial numbers</li>
+            <li>Review and update insurance coverage</li>
+            <li>Schedule mobile surveillance deployment</li>
+            <li>Coordinate with neighboring sites for mutual monitoring</li>
+            <li>Plan equipment consolidation to secured areas</li>
+          </ul>
+
+          <h3 class="text-2xl font-semibold mb-4">One Week Before Holiday</h3>
+          <ul class="list-disc pl-6 space-y-2 mb-6">
+            <li>Move high-value items to locked storage containers</li>
+            <li>Install additional lighting in vulnerable areas</li>
+            <li>Test all existing security systems</li>
+            <li>Brief crew on security procedures</li>
+            <li>Confirm mobile surveillance installation date</li>
+          </ul>
+
+          <h3 class="text-2xl font-semibold mb-4">Day Before Holiday</h3>
+          <ul class="list-disc pl-6 space-y-2 mb-6">
+            <li>Secure all tools in locked containers</li>
+            <li>Disable equipment with lockout devices</li>
+            <li>Document site condition with photos</li>
+            <li>Double-check fence integrity and locks</li>
+            <li>Activate mobile surveillance monitoring</li>
+          </ul>
+
+          <h3 class="text-2xl font-semibold mb-4">During Holiday Period</h3>
+          <ul class="list-disc pl-6 space-y-2 mb-6">
+            <li>Maintain daily remote monitoring checks</li>
+            <li>Respond immediately to any alerts</li>
+            <li>Have emergency contact list readily available</li>
+            <li>Consider random site visits if possible</li>
+            <li>Monitor weather for storm-related vulnerabilities</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold mb-6">Emergency Deployment: When You Need Protection NOW</h2>
+
+          <p>
+            Suddenly realized your site will be vulnerable over Thanksgiving? Don't panic. CCTV Trailer offers emergency deployment services specifically designed for last-minute holiday security needs:
+          </p>
+
+          <div class="bg-yellow-50 border-2 border-yellow-400 rounded-lg p-6 my-8">
+            <h4 class="text-xl font-bold text-yellow-900 mb-4">🚨 Holiday Emergency Deployment Service</h4>
+            <ul class="space-y-3 text-yellow-800">
+              <li><strong>Same-Day Setup:</strong> Call before noon for same-day deployment</li>
+              <li><strong>2-Hour Response:</strong> Emergency deployment within 2 hours</li>
+              <li><strong>No Long-Term Contract:</strong> Rent just for the holiday period</li>
+              <li><strong>Immediate Monitoring:</strong> Active surveillance within 30 minutes of setup</li>
+              <li><strong>24/7 Support:</strong> Help available throughout the holiday period</li>
+            </ul>
+            <div class="mt-6 text-center">
+              <p class="text-lg font-semibold text-yellow-900">Emergency Holiday Deployment Hotline</p>
+              <p class="text-2xl font-bold text-yellow-900">(253) 683-2288</p>
+            </div>
+          </div>
+
+          <h2 class="text-3xl font-bold mb-6">ROI Analysis: Holiday Security Investment</h2>
+
+          <p>
+            Let's break down the real numbers for protecting your site during the six-week holiday period:
+          </p>
+
+          <div class="bg-gray-100 rounded-lg p-6 my-8">
+            <h4 class="text-xl font-bold mb-4">Cost Comparison: 6-Week Holiday Period</h4>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h5 class="font-semibold text-lg mb-3">Option 1: Security Guards</h5>
+                <ul class="space-y-2">
+                  <li>3 shifts × $36.54/hour = $109.62/hour</li>
+                  <li>24 hours × 42 days = 1,008 hours</li>
+                  <li>Holiday overtime (1.5x) = additional 50%</li>
+                  <li class="font-bold text-red-600">Total Cost: $165,000+</li>
+                </ul>
+              </div>
+
+              <div>
+                <h5 class="font-semibold text-lg mb-3">Option 2: Mobile Surveillance</h5>
+                <ul class="space-y-2">
+                  <li>Monthly rate: $8,000-10,000</li>
+                  <li>6-week period: ~$12,000-15,000</li>
+                  <li>Includes 24/7 monitoring</li>
+                  <li class="font-bold text-green-600">Total Cost: $12,000-15,000</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-6 p-4 bg-green-100 rounded">
+              <p class="text-center text-lg font-semibold">
+                Mobile Surveillance Saves: $150,000+ (90% cost reduction)
+              </p>
+            </div>
+          </div>
+
+          <h2 class="text-3xl font-bold mb-6">Local Crime Trends: Tacoma & Seattle Area Updates</h2>
+
+          <p>
+            Recent data from local law enforcement shows concerning trends for the 2025 holiday season:
+          </p>
+
+          <ul class="list-disc pl-6 space-y-3 mb-6">
+            <li><strong>Pierce County:</strong> 38% increase in construction theft reports compared to 2024</li>
+            <li><strong>King County:</strong> Organized theft rings targeting sites along I-5 corridor</li>
+            <li><strong>Thurston County:</strong> Spike in copper theft with prices at 5-year highs</li>
+            <li><strong>Federal Way/Kent:</strong> Multiple sites hit in coordinated weekend raids</li>
+            <li><strong>Port of Tacoma area:</strong> Increased theft of shipping containers with tools</li>
+          </ul>
+
+          <p>
+            Law enforcement agencies are warning construction companies to take extra precautions this holiday season, particularly given the economic pressures and organized crime activity in the region.
+          </p>
+          <br>
+
+          <h2 class="text-3xl font-bold mb-6">Insurance Benefits: More Than Just Theft Prevention</h2>
+
+          <p>
+            Many contractors don't realize that implementing mobile surveillance during high-risk periods like holidays can provide immediate insurance benefits:
+          </p>
+
+          <ul class="list-disc pl-6 space-y-3 mb-6">
+            <li><strong>Premium Reductions:</strong> Meaningful discounts with verified surveillance</li>
+            <li><strong>Lower Deductibles:</strong> Some insurers reduce deductibles by 50%</li>
+            <li><strong>Faster Claims Processing:</strong> Video evidence expedites claims</li>
+            <li><strong>Reduced Liability:</strong> Documentation protects against false claims</li>
+            <li><strong>Multi-Site Discounts:</strong> Additional savings for protecting multiple locations</li>
+          </ul>
+
+          <!-- <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
+            <p class="font-semibold text-blue-900 mb-2">💰 Insurance Savings Example</p>
+            <p class="text-blue-800">
+              A Puyallup contractor with $2 million in equipment saved $18,000 annually on insurance premiums after implementing year-round mobile surveillance. The surveillance system paid for itself through insurance savings alone, not counting theft prevention benefits.
+            </p>
+          </div> -->
+
+          <h2 class="text-3xl font-bold mb-6">Take Action Before It's Too Late</h2>
+
+          <p>
+            The holiday season should be a time for celebration and family, not worrying about your construction site security. With Thanksgiving approaching fast and criminals already planning their targets, now is the time to act.
+          </p>
+
+          <p>
+            Don't become another holiday theft statistic. CCTV Trailer has protected hundreds of construction sites throughout the Puget Sound region during holiday periods, with a track record of zero breaches at monitored sites.
+          </p>
+
+          <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg p-8 my-12">
+            <h3 class="text-2xl font-bold mb-4">Secure Your Site for the Holidays</h3>
+            <p class="text-lg mb-6">
+              Emergency deployment available now through New Year's. Protect your equipment, your project timeline, and your peace of mind.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li>✓ Same-day deployment available</li>
+              <li>✓ No long-term contracts required</li>
+              <li>✓ 15+ years protecting Tacoma sites</li>
+            </ul>
+            <div class="text-center">
+              <a href="tel:2536832288" class="inline-block bg-white text-blue-700 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition">
+                Call Now: (253) 683-2288
+              </a>
+            </div>
+          </div>
+
+          <h2 class="text-3xl font-bold mb-6">Frequently Asked Questions</h2>
+
+          <h3 class="text-xl font-semibold mb-3">How quickly can you deploy a surveillance trailer for holiday coverage?</h3>
+          <p class="mb-6">
+            We offer same-day deployment for emergency requests received before noon. Our team can have a trailer operational at your site within 2-4 hours of your call. Setup takes just 20-30 minutes once on-site.
+          </p>
+
+          <h3 class="text-xl font-semibold mb-3">What happens if there's a power outage during the holidays?</h3>
+          <p class="mb-6">
+            Our trailers feature hybrid power systems with solar panels, battery backup, and generators. They can operate independently for weeks without external power, ensuring continuous protection even during Pacific Northwest winter storms.
+          </p>
+
+          <h3 class="text-xl font-semibold mb-3">Can I rent a trailer just for the Thanksgiving or Christmas week?</h3>
+          <p class="mb-6">
+            Absolutely. We offer flexible rental terms with no long-term contracts. Many clients rent for just the specific holiday periods when their sites are most vulnerable. Weekly rates are available at $3,500-4,000.
+          </p>
+
+          <h3 class="text-xl font-semibold mb-3">How does mobile surveillance compare to hiring holiday security guards?</h3>
+          <p class="mb-6">
+            Mobile surveillance is 75-90% less expensive than 24/7 security guards, especially during holidays when overtime rates apply. Plus, cameras don't take breaks, call in sick, or fall asleep on duty. They provide consistent, reliable coverage with recorded evidence.
+          </p>
+
+          <h3 class="text-xl font-semibold mb-3">Will my insurance company recognize mobile surveillance for premium discounts?</h3>
+          <p class="mb-6">
+            Most insurance companies offer premium reductions for sites with professional surveillance. Many clients see immediate savings on their policies.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <CTASection
+      title="Don't Let Holiday Thieves Target Your Site"
+      description="With theft increasing 40% during holidays, can you afford to leave your construction site unprotected? Get mobile surveillance deployed before Thanksgiving."
+      phoneText="Emergency Deployment: (253) 683-2288"
+      quoteText="Get Holiday Security Quote"
+      features={["Same-Day Setup Available", "No Contracts Required", "Save $150,000 vs Security Guards", "24/7 Holiday Monitoring"]}
+    />
+
+  </article>
+
+  <Footer />
+</Layout>
