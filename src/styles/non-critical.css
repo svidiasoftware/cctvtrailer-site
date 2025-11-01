@@ -173,6 +173,16 @@
   flex-shrink: 0;
 }
 
+.power-image {
+  width: 500px;
+  height: 400px;
+  background-image: url('/images/backup-generator.webp');
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
 .content-container {
   flex: 1;
 }
@@ -508,7 +518,8 @@
   }
 
   .audio-image,
-  .remote-image {
+  .remote-image,
+  .power-image {
     width: 100%;
   }
 
@@ -572,7 +583,8 @@
   }
 
   .audio-image,
-  .remote-image {
+  .remote-image,
+  .power-image {
     height: 250px;
   }
 

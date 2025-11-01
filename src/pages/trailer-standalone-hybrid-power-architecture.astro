@@ -1,0 +1,352 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LazyImage from '../components/LazyImage.astro';
+import CTASection from '../components/CTASection.astro';
+import Analytics from '../components/Analytics.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import StatBox from '../components/StatBox.astro';
+
+// Schema data for the standalone power service
+const serviceSchemaData = {
+  serviceName: "Standalone Hybrid Power Security Trailers",
+  description: "100% autonomous mobile surveillance with three-way power system - solar, generator, optional shore power for Washington State weather conditions",
+  price: "3499",
+  highPrice: "4500",
+  priceUnit: "WEEK" as const,
+  areaServed: [
+    { type: "State" as const, name: "Washington" },
+    { type: "City" as const, name: "Tacoma" },
+    { type: "City" as const, name: "Seattle" },
+    { type: "City" as const, name: "Olympia" },
+    { type: "City" as const, name: "Lakewood" },
+    { type: "City" as const, name: "Auburn" },
+    { type: "City" as const, name: "Federal Way" },
+    { type: "City" as const, name: "Fife" },
+    { type: "City" as const, name: "Bonney Lake" },
+    { type: "City" as const, name: "Puyallup" },
+    { type: "City" as const, name: "Kent" },
+    { type: "City" as const, name: "Renton" },
+    { type: "City" as const, name: "Bellevue" }
+  ]
+};
+
+// Breadcrumb data
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Services", url: "/services" },
+  { name: "Standalone Power System" }
+];
+
+const title = "Standalone CCTV Trailer Power System | 100% Autonomous Operation WA";
+const description = "Deploy security trailers anywhere in Washington State with our standalone hybrid power system. Solar primary, generator backup for cloudy Pacific Northwest winters. No grid connection required.";
+---
+
+<Layout
+  title={title}
+  description={description}>
+  
+  <ServiceSchema {...serviceSchemaData} />
+  <BreadcrumbSchema items={breadcrumbItems} /> 
+
+  <Header showEmergencyBar={true} currentPath="/services" />
+  <Analytics />
+
+  <main>
+    <!-- Hero Section -->
+    <div class="hero-trailer">
+      <div class="hero-overlay">
+        <LazyImage src="/images/tacoma-dome-bg-hero6.webp" alt="Standalone hybrid power security trailer system for Pacific Northwest weather"
+        class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
+      </div>
+      <div class="hero-content">
+        <div class="hero-text-wrapper">
+          <h1 class="hero-heading">100% Standalone Power System</h1>
+          <p class="hero-paragraph">
+            Deploy security anywhere in Washington State. Our hybrid power architecture ensures continuous operation through 150+ cloudy days per year with zero grid dependency.
+          </p>
+          <a href="/contact" class="red-button mt-6">Get Standalone Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <StatBox
+          stats={[
+            { value: "100%", label: "Grid Independent", subtext: "Complete autonomous operation", color: "green" },
+            { value: "365", label: "Days Coverage", subtext: "Year-round WA weather ready", color: "blue" },
+            { value: "3", label: "Power Sources", subtext: "Solar, generator, optional shore", color: "purple" },
+            { value: "72hr", label: "Battery Runtime", subtext: "Between charging cycles", color: "orange" }
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Three-Way Power System Section -->
+    <div class="py-16 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Three-Way Power System Built for Pacific Northwest Weather</h2>
+          <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+            From Seattle's overcast winters to Tacoma's rainy seasons, our standalone power system ensures uninterrupted surveillance
+            without relying on power lines or infrastructure that may not exist at your site.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center mb-12">
+          <div>
+            <LazyImage
+              src="/images/three-way-power.webp"
+              alt="Three-way power system diagram showing solar panels, MPPT controller, battery bank, generator, and shore power integration"
+              class="w-full rounded-lg shadow-lg"
+              width="800"
+              height="600"
+              loading="lazy"
+            />
+          </div>
+
+          <div>
+            <div class="space-y-4">
+              <div class="bg-white p-4 rounded-lg shadow">
+                <h4 class="font-bold text-green-600 mb-2">Primary: Solar Energy Harvesting</h4>
+                <ul class="text-sm space-y-1 text-gray-700">
+                  <li>• 2.4kW high-efficiency monocrystalline solar array</li>
+                  <li>• MPPT charge controller with 99.9% tracking efficiency</li>
+                  <li>• Automatic maximum power point optimization</li>
+                  <li>• Zero emissions, silent operation</li>
+                </ul>
+              </div>
+
+              <div class="bg-white p-4 rounded-lg shadow">
+                <h4 class="font-bold text-orange-600 mb-2">Secondary: Generator System (Essential for WA Climate)</h4>
+                <ul class="text-sm space-y-1 text-gray-700">
+                  <li>• 2.8kW Onan Cummins gasoline generator</li>
+                  <li>• Critical for Pacific Northwest's 150+ cloudy days</li>
+                  <li>• 20-gallon fuel capacity (60+ days runtime)</li>
+                  <li>• Auto-start on low battery voltage</li>
+                  <li>• Remote monitoring and control</li>
+                  <li>• Ensures 100% uptime during Washington's extended overcast periods</li>
+                </ul>
+              </div>
+
+              <div class="bg-white p-4 rounded-lg shadow">
+                <h4 class="font-bold text-blue-600 mb-2">Optional: Shore Power Connection</h4>
+                <ul class="text-sm space-y-1 text-gray-700">
+                  <li>• Available when convenient, never required</li>
+                  <li>• 110V/220V AC input compatibility</li>
+                  <li>• Automatic transfer switch (&lt;10ms switchover)</li>
+                  <li>• Smart charging with float stage management</li>
+                  <li>• Reduces generator runtime when grid access exists</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical Specifications Grid -->
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h3 class="text-lg font-bold mb-4 text-purple-600">MPPT Solar Controller</h3>
+            <ul class="space-y-2 text-sm">
+              <li class="flex justify-between"><span>Model</span><span class="font-semibold">Victron MPPT 150/70</span></li>
+              <li class="flex justify-between"><span>Max PV Input</span><span class="font-semibold">150V DC</span></li>
+              <li class="flex justify-between"><span>Charge Current</span><span class="font-semibold">70A</span></li>
+              <li class="flex justify-between"><span>Efficiency</span><span class="font-semibold">98%</span></li>
+              <li class="flex justify-between"><span>Communication</span><span class="font-semibold">Bluetooth/VE.Direct</span></li>
+              <li class="flex justify-between"><span>Protection</span><span class="font-semibold">PV reverse polarity</span></li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h3 class="text-lg font-bold mb-4 text-blue-600">Battery Management System</h3>
+            <ul class="space-y-2 text-sm">
+              <li class="flex justify-between"><span>Battery Type</span><span class="font-semibold">LiFePO4 24V 540Ah</span></li>
+              <li class="flex justify-between"><span>Capacity</span><span class="font-semibold">14.4 kWh</span></li>
+              <li class="flex justify-between"><span>Runtime</span><span class="font-semibold">72-96 hours</span></li>
+              <li class="flex justify-between"><span>Cycle Life</span><span class="font-semibold">6000+ cycles</span></li>
+              <li class="flex justify-between"><span>BMS Features</span><span class="font-semibold">Cell balancing</span></li>
+              <li class="flex justify-between"><span>Temperature</span><span class="font-semibold">-20°C to 60°C</span></li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h3 class="text-lg font-bold mb-4 text-green-600">Power Distribution</h3>
+            <ul class="space-y-2 text-sm">
+              <li class="flex justify-between"><span>DC Output</span><span class="font-semibold">12V/24V/48V</span></li>
+              <li class="flex justify-between"><span>AC Inverter</span><span class="font-semibold">3000W pure sine</span></li>
+              <li class="flex justify-between"><span>Circuit Protection</span><span class="font-semibold">DC/AC breakers</span></li>
+              <li class="flex justify-between"><span>Surge Protection</span><span class="font-semibold">6000W peak</span></li>
+              <li class="flex justify-between"><span>Ground Fault</span><span class="font-semibold">GFCI protected</span></li>
+              <li class="flex justify-between"><span>Monitoring</span><span class="font-semibold">Remote/Local</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Key Benefits -->
+        <div class="bg-white p-8 rounded-lg shadow">
+          <h3 class="text-2xl font-bold mb-6 text-center">Operational Benefits of Three-Way Power</h3>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div>
+              <h4 class="font-bold text-blue-700 mb-2">100% Uptime Guarantee</h4>
+              <p class="text-sm text-gray-600">Seamless automatic switchover between power sources ensures continuous surveillance without interruption</p>
+            </div>
+            <div>
+              <h4 class="font-bold text-green-700 mb-2">Pacific Northwest Weather Ready</h4>
+              <p class="text-sm text-gray-600">Generator backup ensures continuous operation through Washington's 150+ cloudy days per year - completely grid-independent</p>
+            </div>
+            <div>
+              <h4 class="font-bold text-purple-700 mb-2">Climate-Adaptive Charging</h4>
+              <p class="text-sm text-gray-600">Temperature-compensated charging profiles optimize battery life in extreme conditions</p>
+            </div>
+            <div>
+              <h4 class="font-bold text-orange-700 mb-2">Zero Infrastructure Required</h4>
+              <p class="text-sm text-gray-600">Fully standalone operation - deploy anywhere without power lines, poles, or trenching. Grid connection optional, never necessary</p>
+            </div>
+            <div>
+              <h4 class="font-bold text-red-700 mb-2">70% Cost Reduction</h4>
+              <p class="text-sm text-gray-600">Solar-first operation minimizes fuel costs while eliminating security guard expenses</p>
+            </div>
+            <div>
+              <h4 class="font-bold text-indigo-700 mb-2">Smart Load Management</h4>
+              <p class="text-sm text-gray-600">Prioritizes critical systems and optimizes power distribution based on availability</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Perfect for Washington State Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Ideal for Washington State Deployments</h2>
+          <p class="text-xl text-gray-600">Engineered specifically for Pacific Northwest conditions and locations</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Construction Sites -->
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="text-xl font-bold mb-4 text-blue-600">Construction Sites</h3>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li>✓ Remote job sites without power infrastructure</li>
+              <li>✓ New developments in Tacoma, Federal Way, Auburn</li>
+              <li>✓ Highway projects on I-5, I-90, SR-167</li>
+              <li>✓ Bridge construction over Puget Sound</li>
+            </ul>
+          </div>
+
+          <!-- Industrial Areas -->
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="text-xl font-bold mb-4 text-green-600">Industrial Zones</h3>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li>✓ Port of Tacoma operations</li>
+              <li>✓ Seattle waterfront facilities</li>
+              <li>✓ Kent Valley warehouses</li>
+              <li>✓ Puyallup distribution centers</li>
+            </ul>
+          </div>
+
+          <!-- Special Events -->
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="text-xl font-bold mb-4 text-purple-600">Event Venues</h3>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li>✓ Puyallup Fair (Washington State Fair)</li>
+              <li>✓ Tacoma Dome events</li>
+              <li>✓ Outdoor festivals in parks</li>
+              <li>✓ Temporary parking areas</li>
+            </ul>
+          </div>
+
+          <!-- Rural Properties -->
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="text-xl font-bold mb-4 text-orange-600">Rural Properties</h3>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li>✓ Agricultural land in Pierce County</li>
+              <li>✓ Equipment storage yards</li>
+              <li>✓ Remote cell towers</li>
+              <li>✓ Undeveloped land parcels</li>
+            </ul>
+          </div>
+
+          <!-- Emergency Response -->
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="text-xl font-bold mb-4 text-red-600">Emergency Response</h3>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li>✓ Wildfire monitoring zones</li>
+              <li>✓ Flood-prone areas</li>
+              <li>✓ Disaster recovery sites</li>
+              <li>✓ Critical infrastructure protection</li>
+            </ul>
+          </div>
+
+          <!-- Government Sites -->
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="text-xl font-bold mb-4 text-indigo-600">Government Facilities</h3>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li>✓ JBLM perimeter areas</li>
+              <li>✓ Municipal utility sites</li>
+              <li>✓ Public works projects</li>
+              <li>✓ Transportation corridors</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Weather Resilience Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">Built to Handle Washington Weather Extremes</h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-xl font-bold mb-4 text-blue-600">Rainy Season Performance</h3>
+              <p class="text-gray-700 mb-4">With over 150 days of precipitation annually in the Puget Sound region, our generator backup ensures continuous operation when solar efficiency drops.</p>
+              <ul class="space-y-2 text-sm">
+                <li><strong>November-March:</strong> Generator runs 40-60% of time</li>
+                <li><strong>April-October:</strong> Solar handles 80%+ of load</li>
+                <li><strong>Year-round:</strong> 100% uptime guaranteed</li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-xl font-bold mb-4 text-green-600">Temperature Adaptability</h3>
+              <p class="text-gray-700 mb-4">From summer highs of 90°F to winter lows of 20°F, our battery management system maintains optimal performance.</p>
+              <ul class="space-y-2 text-sm">
+                <li><strong>Summer:</strong> Cooling fans prevent overheating</li>
+                <li><strong>Winter:</strong> Insulated enclosure maintains battery temp</li>
+                <li><strong>All seasons:</strong> Temperature-compensated charging</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <div class="section-wrapper-contact">
+      <div class="content-container-contact">
+        <div class="content-wrapper-contact">
+          <div class="left-side-contact">
+            <h2 class="heading-1 space">
+              Deploy Anywhere<br>
+              <span class="text-span-yellow">No Grid Required</span>
+            </h2>
+            <p class="body-black-copy">
+              From remote construction sites to rural properties across Washington State, our standalone power system ensures your surveillance never stops. Contact us to discuss your specific location needs.
+            </p>
+            <a href="/contact" class="clear-outline-button">GET STANDALONE QUOTE</a>
+          </div>
+          <div class="contact-image"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
