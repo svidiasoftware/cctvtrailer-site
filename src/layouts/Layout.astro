@@ -12,16 +12,50 @@ export interface Props {
   canonicalURL?: string;
 }
 
-const { 
-  title, 
+const {
+  title,
   description = "Mobile surveillance trailer rentals throughout Tacoma and the Puget Sound region. Advanced video technology for construction sites, events, and temporary security needs.",
   schema,
-  canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://www.cctvtrailer.com').href
+  canonicalURL
 } = Astro.props;
 
 // Generate absolute URL for social media images
 const siteURL = Astro.site || 'https://www.cctvtrailer.com';
 const ogImageURL = new URL('/images/cctv-trailer-logo.png', siteURL).href;
+
+// Generate normalized canonical URL
+// Remove trailing slashes except for the root domain
+// This ensures consistency across all pages
+function normalizeCanonicalURL(pathname: string, siteUrl: string): string {
+  // Ensure siteUrl is a string and has a value
+  const baseSite = String(siteUrl || 'https://www.cctvtrailer.com');
+
+  // Clean the pathname
+  let cleanPath = String(pathname || '/');
+
+  // Remove multiple slashes
+  cleanPath = cleanPath.replace(/\/+/g, '/');
+
+  // Remove trailing slash except for root
+  if (cleanPath.length > 1 && cleanPath.endsWith('/')) {
+    cleanPath = cleanPath.slice(0, -1);
+  }
+
+  // Ensure it starts with a slash
+  if (!cleanPath.startsWith('/')) {
+    cleanPath = '/' + cleanPath;
+  }
+
+  // For the root path, return just the site URL (without trailing slash)
+  if (cleanPath === '/') {
+    return baseSite.replace(/\/$/, '');
+  }
+
+  // Combine with site URL, ensuring no double slashes
+  return baseSite.replace(/\/$/, '') + cleanPath;
+}
+
+const finalCanonicalURL = canonicalURL || normalizeCanonicalURL(Astro.url.pathname, siteURL);
 ---
 
 <!DOCTYPE html>
@@ -47,7 +81,7 @@ const ogImageURL = new URL('/images/cctv-trailer-logo.png', siteURL).href;
     <meta name="theme-color" content="#dd1f26" />
     <meta name="msapplication-TileColor" content="#dd1f26" />
 
-    <link rel="canonical" href={canonicalURL} />
+    <link rel="canonical" href={finalCanonicalURL} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     
@@ -59,7 +93,7 @@ const ogImageURL = new URL('/images/cctv-trailer-logo.png', siteURL).href;
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="CCTV Trailer - Mobile Surveillance Solutions" />
-    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:url" content={finalCanonicalURL} />
     <meta property="og:site_name" content="CCTV Trailer" />
     <meta property="og:locale" content="en_US" />
     
@@ -69,7 +103,7 @@ const ogImageURL = new URL('/images/cctv-trailer-logo.png', siteURL).href;
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={ogImageURL} />
     <meta property="twitter:image:alt" content="CCTV Trailer - Mobile Surveillance Solutions" />
-    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:url" content={finalCanonicalURL} />
     <meta property="twitter:site" content="@CCTVTrailer" />
     <meta property="twitter:creator" content="@CCTVTrailer" />
 
