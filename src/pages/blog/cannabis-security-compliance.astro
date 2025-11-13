@@ -1,0 +1,520 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTASection from '../../components/CTASection.astro';
+import Analytics from '../../components/Analytics.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import LazyImage from '../../components/LazyImage.astro';
+import QuickAnswer from '../../components/QuickAnswer.astro';
+import StatBox from '../../components/StatBox.astro';
+import SpeakableSchema from '../../components/SpeakableSchema.astro';
+
+// Speakable sections for voice search
+const speakableSections = [
+  { cssSelector: ".quick-answer-content" },
+  { cssSelector: ".blog-content h2, .blog-content p" },
+  { cssSelector: ".stat-box" }
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Mobile Surveillance Solutions for Washington Cannabis Producers: Meeting I-502 Compliance While Protecting Your Investment",
+  "datePublished": "2025-11-12",
+  "dateModified": "2025-11-12",
+  "author": {
+    "@type": "Organization",
+    "name": "CCTV Trailer",
+    "url": "https://www.cctvtrailer.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CCTV Trailer",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.cctvtrailer.com/images/cctv-trailer-logo.png"
+    }
+  },
+  "description": "Complete guide to I-502 compliance for Washington cannabis producers. Learn how mobile surveillance meets WSLCB requirements while protecting against harvest season theft.",
+  "image": [
+    "https://www.cctvtrailer.com/images/growers-hero.webp"
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.cctvtrailer.com/blog/cannabis-security-compliance"
+  },
+  "wordCount": 2800,
+  "keywords": [
+    "I-502 compliance",
+    "Washington cannabis security",
+    "cannabis surveillance requirements",
+    "WSLCB compliance",
+    "cannabis cultivation security",
+    "mobile surveillance cannabis",
+    "harvest season security",
+    "cannabis theft prevention"
+  ]
+});
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Blog', url: '/blog' },
+  { name: 'Cannabis Security Compliance', url: '/blog/cannabis-security-compliance' }
+];
+---
+
+<Layout
+  title="Washington Cannabis Security: I-502 Compliance Guide | CCTV Trailer"
+  description="Complete guide to I-502 compliance for Washington cannabis producers. Mobile surveillance meets WSLCB requirements while protecting against $250K harvest thefts."
+  schema={schema}>
+
+  <Header currentPath="/blog" showEmergencyBar={true} />
+  <Analytics />
+  <BreadcrumbSchema items={breadcrumbs} />
+  <SpeakableSchema sections={speakableSections} />
+
+  <article>
+    <!-- Hero Section -->
+    <section class="hero-section-blog relative py-20 px-6 text-white">
+      <div class="hero-overlay">
+        <LazyImage src="/images/growers-hero.webp" alt="Mobile surveillance trailer protecting cannabis cultivation facility with Mount Rainier in background"
+          class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
+      <div class="container mx-auto max-w-4xl relative z-10">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          Mobile Surveillance Solutions for Washington Cannabis Producers: Meeting I-502 Compliance While Protecting Your Investment
+        </h1>
+        <div class="flex items-center text-lg mb-8">
+          <time datetime="2025-11-12">November 12, 2025</time>
+          <span class="mx-4">•</span>
+          <span>8 min read</span>
+        </div>
+        <p class="text-xl leading-relaxed">
+          Washington's cannabis industry contributes over $454 million annually in tax revenue while supporting thousands of jobs across the Pacific Northwest. Yet licensed producers face an increasingly complex security landscape: strict I-502 compliance requirements, sophisticated theft rings targeting harvest season, and the operational challenges of securing both indoor and outdoor cultivation sites.
+        </p>
+      </div>
+    </section>
+
+    <!-- Quick Answer Section -->
+    <QuickAnswer
+      question="What are Washington's I-502 surveillance requirements?"
+      answer="Washington's I-502 requires 24/7 continuous recording at minimum 10 fps with 640x470 resolution, 45-day retention, coverage of all cultivation/processing areas and entrances/exits, secured storage devices, and immediate availability for WSLCB inspection. Mobile surveillance systems exceed these requirements with 4K HD cameras, encrypted cloud storage, and remote access capabilities while eliminating the need for costly fixed installations."
+    />
+
+    <!-- Main Content -->
+    <section class="py-16">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <div class="blog-content prose prose-lg max-w-none">
+
+          <!-- Stats Section -->
+          <div class="mb-12">
+            <StatBox
+              layout="grid"
+              stats={[
+                {
+                  value: "$454M+",
+                  label: "Annual tax revenue from Washington cannabis",
+                  icon: "💰",
+                  highlight: true
+                },
+                {
+                  value: "$52K-250K",
+                  label: "Average theft loss per incident",
+                  icon: "⚠️",
+                  highlight: false
+                },
+                {
+                  value: "10%",
+                  label: "Product loss to internal theft industry-wide",
+                  icon: "📊",
+                  highlight: false
+                }
+              ]}
+            />
+          </div>
+
+          <h2 class="text-3xl font-bold mb-6">The Stakes Have Never Been Higher for Cannabis Security</h2>
+
+          <p>
+            With individual theft losses ranging from $52,000 to $250,000 per incident and harvest season approaching each September, the question isn't whether you need comprehensive security—it's how to implement it efficiently and cost-effectively.
+          </p>
+
+          <h2 class="text-3xl font-bold mb-6">Understanding Washington's I-502 Surveillance Requirements</h2>
+
+          <p>
+            The Washington State Liquor and Cannabis Board (WSLCB) mandates specific surveillance standards under WAC 314-55-083 that every licensed facility must meet. Non-compliance doesn't just risk fines—it can jeopardize your license entirely.
+          </p>
+
+          <h3 class="text-2xl font-semibold mb-4">Core Video Surveillance Requirements</h3>
+
+          <div class="bg-gray-100 rounded-lg p-6 my-8">
+            <h4 class="text-xl font-bold mb-4">Technical Specifications:</h4>
+            <ul class="list-disc pl-6 space-y-2 mb-6">
+              <li>Minimum camera resolution of 640 x 470 pixels</li>
+              <li>IP-compatible storage device and/or cameras</li>
+              <li>Continuous 24/7 recording capability</li>
+              <li>Minimum 10 frames per second recording rate</li>
+              <li>45-day minimum retention for all footage</li>
+            </ul>
+
+            <h4 class="text-xl font-bold mb-4">Required Coverage Areas:</h4>
+            <ul class="list-disc pl-6 space-y-2 mb-6">
+              <li>All cultivation areas (indoor, greenhouse, and outdoor)</li>
+              <li>Processing and storage areas</li>
+              <li>Waste disposal locations</li>
+              <li>Every entrance and exit (interior and exterior views)</li>
+              <li>Perimeter fencing with 20-foot visibility beyond boundaries</li>
+              <li>Surveillance equipment storage locations</li>
+            </ul>
+
+            <h4 class="text-xl font-bold mb-4">Security & Access:</h4>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Secured storage device in lockbox or cabinet</li>
+              <li>Time and date stamps on all recordings</li>
+              <li>Immediate availability for WSLCB inspection</li>
+              <li>Ability to provide copies to law enforcement on request</li>
+            </ul>
+          </div>
+
+          <!-- I-502 Compliance Documentation Image -->
+          <div class="my-12">
+            <LazyImage
+              src="/images/growers-blog-i502.webp"
+              alt="I-502 compliance documentation and mobile surveillance trailer meeting WSLCB requirements"
+              class="w-full rounded-lg shadow-xl"
+              width="1200"
+              height="800"
+            />
+            <p class="text-sm text-gray-600 mt-4 text-center italic">
+              Mobile surveillance systems provide comprehensive documentation for WSLCB compliance audits
+            </p>
+          </div>
+
+          <h3 class="text-2xl font-semibold mb-4">The Hidden Costs of Fixed Installation</h3>
+
+          <p>
+            Traditional surveillance systems require significant infrastructure investment. Fixed cameras need:
+          </p>
+
+          <ul class="list-disc pl-6 space-y-2 mb-6">
+            <li>Professional installation and permits</li>
+            <li>Electrical work and trenching for power/data cables</li>
+            <li>Network configuration and IT setup</li>
+            <li>Ongoing maintenance contracts</li>
+            <li>Expansion costs as your operation grows</li>
+          </ul>
+
+          <p>
+            For outdoor cultivation sites, these costs multiply—and the cameras can't move when you rotate crops or expand your growing areas.
+          </p>
+
+          <h2 class="text-3xl font-bold mb-6">The Harvest Season Security Crisis</h2>
+
+          <h3 class="text-2xl font-semibold mb-4">September-October: Peak Risk Period</h3>
+
+          <p>
+            Washington's outdoor harvest season runs from late September through mid-October, creating a narrow window when mature plants reach peak value. This timing is no secret to thieves.
+          </p>
+
+          <div class="bg-red-50 border-l-4 border-red-500 p-6 my-8">
+            <p class="font-semibold text-red-900 mb-2">Recent data shows the scale of the threat:</p>
+            <ul class="list-disc pl-6 space-y-2 text-red-800">
+              <li>Over 100 cannabis retail robberies statewide in 2022</li>
+              <li>67 armed robberies in just the first months of 2022 alone</li>
+              <li>Individual grow site losses reaching $250,000 per incident</li>
+              <li>Industry estimates of 10% product loss to internal theft</li>
+            </ul>
+          </div>
+
+          <h3 class="text-2xl font-semibold mb-4">Why Traditional Security Falls Short</h3>
+
+          <p>
+            <strong>Fixed cameras</strong> can't adapt to seasonal changes or temporary cultivation areas. When you need to protect drying sheds, trim rooms, or transport routes during harvest, fixed systems leave gaps.
+          </p>
+
+          <p>
+            <strong>Security guards</strong> cost $25-40 per hour for 24/7 coverage—that's $4,200-$6,700 per week during critical harvest periods. And unlike video surveillance, guards can't provide recorded evidence for insurance claims or law enforcement.
+          </p>
+
+          <p>
+            <strong>Basic alarms</strong> only react after breaches occur. By then, thieves can strip valuable plants in minutes, long before law enforcement arrives.
+          </p>
+
+          <h2 class="text-3xl font-bold mb-6">Mobile Surveillance: The Compliance-Ready Solution</h2>
+
+          <h3 class="text-2xl font-semibold mb-4">Rapid Deployment Without Infrastructure</h3>
+
+          <p>
+            Mobile surveillance trailers arrive fully equipped and operational in 20-30 minutes. No permits. No installation. No construction. This means:
+          </p>
+
+          <ul class="list-disc pl-6 space-y-2 mb-6">
+            <li><strong>Immediate compliance</strong> - Meet I-502 requirements today, not weeks from now</li>
+            <li><strong>Flexible positioning</strong> - Move units as crops rotate or operations expand</li>
+            <li><strong>Seasonal scalability</strong> - Add extra units during harvest without permanent costs</li>
+            <li><strong>Zero infrastructure damage</strong> - No trenching or drilling on leased land</li>
+          </ul>
+
+          <h3 class="text-2xl font-semibold mb-4">Technology That Exceeds Requirements</h3>
+
+          <p>
+            Modern mobile surveillance systems don't just meet I-502 standards—they exceed them:
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-6 my-8">
+            <div class="bg-blue-50 rounded-lg p-6">
+              <h4 class="text-lg font-bold mb-3 text-blue-900">Video Quality & Storage:</h4>
+              <ul class="space-y-2 text-blue-800">
+                <li>• 4K HD cameras (exceeding 640x470 minimum)</li>
+                <li>• Advanced compression reducing bandwidth by 60%</li>
+                <li>• Solar-powered with battery/generator backup</li>
+                <li>• Weatherproof IP66 rating for PNW conditions</li>
+              </ul>
+            </div>
+
+            <div class="bg-green-50 rounded-lg p-6">
+              <h4 class="text-lg font-bold mb-3 text-green-900">Intelligent Detection:</h4>
+              <ul class="space-y-2 text-green-800">
+                <li>• AI-powered person vs. wildlife discrimination</li>
+                <li>• License plate reading capability</li>
+                <li>• Motion-triggered instant phone alerts</li>
+                <li>• Pan-tilt-zoom cameras with 360° coverage</li>
+              </ul>
+            </div>
+
+            <div class="bg-yellow-50 rounded-lg p-6">
+              <h4 class="text-lg font-bold mb-3 text-yellow-900">Compliance Features:</h4>
+              <ul class="space-y-2 text-yellow-800">
+                <li>• Encrypted cloud backup (45+ day retention)</li>
+                <li>• Tamper-proof locked storage</li>
+                <li>• Remote access for instant retrieval</li>
+                <li>• Auto time/date stamping with GPS</li>
+              </ul>
+            </div>
+
+            <div class="bg-purple-50 rounded-lg p-6">
+              <h4 class="text-lg font-bold mb-3 text-purple-900">Cost Benefits:</h4>
+              <ul class="space-y-2 text-purple-800">
+                <li>• 75% savings vs. security guards</li>
+                <li>• 15-20% insurance premium reductions</li>
+                <li>• No installation or infrastructure costs</li>
+                <li>• Flexible rental terms available</li>
+              </ul>
+            </div>
+          </div>
+
+          <h2 class="text-3xl font-bold mb-6">Real ROI: Beyond Compliance</h2>
+
+          <h3 class="text-2xl font-semibold mb-4">Cost Comparison Analysis</h3>
+
+          <div class="overflow-x-auto mb-8">
+            <table class="min-w-full bg-white border border-gray-300">
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="border px-4 py-2 text-left">Security Option</th>
+                  <th class="border px-4 py-2 text-left">Setup Time</th>
+                  <th class="border px-4 py-2 text-left">Monthly Cost</th>
+                  <th class="border px-4 py-2 text-left">Annual Cost</th>
+                  <th class="border px-4 py-2 text-left">Relocatable</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border px-4 py-2 font-semibold">24/7 Security Guards</td>
+                  <td class="border px-4 py-2">Immediate</td>
+                  <td class="border px-4 py-2">$18,200-$29,000</td>
+                  <td class="border px-4 py-2 text-red-600 font-bold">$218,000-$348,000</td>
+                  <td class="border px-4 py-2">N/A</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="border px-4 py-2 font-semibold">Fixed Camera System</td>
+                  <td class="border px-4 py-2">2-4 weeks</td>
+                  <td class="border px-4 py-2">$1,250-$4,200*</td>
+                  <td class="border px-4 py-2">$15,000-$50,000</td>
+                  <td class="border px-4 py-2 text-red-600">No</td>
+                </tr>
+                <tr>
+                  <td class="border px-4 py-2 font-semibold">Mobile Surveillance</td>
+                  <td class="border px-4 py-2 text-green-600">30 minutes</td>
+                  <td class="border px-4 py-2">$8,000-$10,000</td>
+                  <td class="border px-4 py-2 text-green-600 font-bold">$96,000-$120,000</td>
+                  <td class="border px-4 py-2 text-green-600">Yes</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="text-sm text-gray-600 mt-2">*Amortized over 12 months including installation costs</p>
+          </div>
+
+          <h3 class="text-2xl font-semibold mb-4">Insurance Premium Reductions</h3>
+
+          <p>
+            Many insurers offer 15-20% premium reductions for facilities with professional surveillance systems. For a medium-sized cultivation operation, this can mean $10,000-$20,000 in annual savings—offsetting much of your security investment.
+          </p>
+
+          <h3 class="text-2xl font-semibold mb-4">Loss Prevention Value</h3>
+
+          <div class="bg-green-50 border-l-4 border-green-500 p-6 my-8">
+            <p class="font-semibold text-green-900 mb-2">Consider the math:</p>
+            <ul class="space-y-2 text-green-800">
+              <li>• Average theft incident: $52,000-$200,000</li>
+              <li>• Mobile surveillance monthly cost: $8,000-$10,000</li>
+              <li class="font-bold">• Preventing just one incident pays for 5-20 months of protection</li>
+            </ul>
+          </div>
+
+          <h2 class="text-3xl font-bold mb-6">Best Practices for Cannabis Facility Security</h2>
+
+          <h3 class="text-2xl font-semibold mb-4">Layered Security Approach</h3>
+
+          <ol class="list-decimal pl-6 space-y-2 mb-6">
+            <li><strong>Perimeter Detection:</strong> Mobile units positioned at access points</li>
+            <li><strong>Area Coverage:</strong> Overlapping camera views eliminating blind spots</li>
+            <li><strong>Activity Monitoring:</strong> AI alerts for unusual movement patterns</li>
+            <li><strong>Evidence Collection:</strong> High-resolution footage for prosecution</li>
+          </ol>
+
+          <h3 class="text-2xl font-semibold mb-4">Harvest Season Protocols</h3>
+
+          <div class="bg-yellow-50 rounded-lg p-6 my-8">
+            <h4 class="text-lg font-bold mb-3">Pre-Harvest (August):</h4>
+            <ul class="list-disc pl-6 space-y-2 mb-4">
+              <li>Position additional units at outdoor grow perimeters</li>
+              <li>Test all alert systems and emergency contacts</li>
+              <li>Review footage retention to ensure 45-day compliance</li>
+            </ul>
+
+            <h4 class="text-lg font-bold mb-3">Active Harvest (September-October):</h4>
+            <ul class="list-disc pl-6 space-y-2 mb-4">
+              <li>Monitor trim rooms and drying areas 24/7</li>
+              <li>Track vehicle access for transport security</li>
+              <li>Maintain visibility of temporary storage locations</li>
+            </ul>
+
+            <h4 class="text-lg font-bold mb-3">Post-Harvest:</h4>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Secure processing and packaging areas</li>
+              <li>Monitor inventory storage facilities</li>
+              <li>Maintain chain-of-custody video documentation</li>
+            </ul>
+          </div>
+
+          <h3 class="text-2xl font-semibold mb-4">Compliance Documentation</h3>
+
+          <p>
+            Mobile surveillance systems provide comprehensive reporting for WSLCB audits:
+          </p>
+
+          <ul class="list-disc pl-6 space-y-2 mb-6">
+            <li>Automated coverage maps showing camera positions</li>
+            <li>System uptime reports proving 24/7 operation</li>
+            <li>Footage retrieval logs for inspection requests</li>
+            <li>Maintenance records demonstrating operational compliance</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold mb-6">Case Study: Tacoma Producer Achieves Zero-Loss Harvest</h2>
+
+          <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
+            <p class="text-blue-800 mb-4">
+              <em>[Name withheld for security]</em>
+            </p>
+            <p class="text-blue-800 mb-4">
+              A Pierce County outdoor cultivation facility faced repeated theft attempts during previous harvest seasons, with losses exceeding $150,000 in 2023. For their 2024 harvest, they deployed mobile surveillance units in late August.
+            </p>
+
+            <h4 class="font-semibold text-blue-900 mb-2">Results:</h4>
+            <ul class="list-disc pl-6 space-y-2 text-blue-800 mb-4">
+              <li>Zero theft incidents during entire harvest period</li>
+              <li>3 attempted intrusions detected and deterred</li>
+              <li>Insurance premiums reduced by 18%</li>
+              <li>ROI achieved in first 60 days</li>
+              <li>Full I-502 compliance maintained throughout</li>
+            </ul>
+
+            <p class="text-blue-800 italic">
+              "The mobile units gave us flexibility we never had with fixed cameras. When we moved our drying operation to a temporary structure, we simply relocated the trailer. Try doing that with hardwired cameras." - Facility Security Manager
+            </p>
+          </div>
+
+          <h2 class="text-3xl font-bold mb-6">The Path Forward: Protecting Washington's Cannabis Industry</h2>
+
+          <p>
+            As Washington's cannabis market matures, security requirements will only intensify. The businesses that thrive will be those that implement professional, compliant security solutions before incidents occur—not after.
+          </p>
+
+          <p>
+            Mobile surveillance offers cannabis producers a unique advantage: enterprise-level security without enterprise-level costs or complexity. Whether you're protecting a small outdoor grow or a large multi-site operation, the flexibility and reliability of mobile units ensure both compliance and peace of mind.
+          </p>
+
+          <h2 class="text-3xl font-bold mb-6">Take Action Before Harvest Season</h2>
+
+          <p>
+            Don't wait for an incident to prioritize security. With harvest season approaching each September and theft rings becoming increasingly sophisticated, the time to act is now.
+          </p>
+
+          <div class="bg-gradient-to-r from-green-600 to-green-700 text-white rounded-lg p-8 my-12">
+            <h3 class="text-2xl font-bold mb-4">Next Steps:</h3>
+            <ol class="list-decimal pl-6 space-y-2 text-lg">
+              <li>Audit your current security against I-502 requirements</li>
+              <li>Identify vulnerable areas in your cultivation and processing operations</li>
+              <li>Calculate the true cost of 24/7 security coverage</li>
+              <li>Consider mobile surveillance for immediate deployment</li>
+            </ol>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="bg-gray-100 py-16">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <h3 class="text-2xl font-bold mb-6">About CCTV Trailer</h3>
+
+        <p class="mb-6">
+          Since 2009, CCTV Trailer has provided mobile surveillance solutions to Pacific Northwest businesses, including numerous I-502 licensed cannabis facilities. Our solar-powered, rapidly deployable units meet all WSLCB requirements while providing flexibility that fixed systems can't match.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div>
+            <h4 class="font-bold text-lg mb-3">Why Cannabis Producers Choose CCTV Trailer:</h4>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>100% I-502 compliant surveillance systems</li>
+              <li>30-minute setup with no installation required</li>
+              <li>24/7 monitoring and support</li>
+              <li>Flexible rental terms with no long-term contracts</li>
+              <li>Local company understanding Washington regulations</li>
+              <li>Emergency deployment available</li>
+            </ul>
+          </div>
+
+          <div class="bg-white rounded-lg p-6 shadow-md">
+            <h4 class="font-bold text-lg mb-3">Contact us today for a free compliance assessment:</h4>
+            <ul class="space-y-2">
+              <li><strong>Phone:</strong> <a href="tel:2536832288" class="text-blue-600 hover:underline">(253) 683-2288</a></li>
+              <li><strong>Email:</strong> <a href="mailto:info@cctvtrailer.com" class="text-blue-600 hover:underline">info@cctvtrailer.com</a></li>
+              <li><strong>Web:</strong> <a href="/cannabis-security" class="text-blue-600 hover:underline">cctvtrailer.com/cannabis-security</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="text-center italic text-gray-600">
+          Protecting Washington's legal cannabis industry with professional, compliant security solutions.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <CTASection
+      title="Ensure I-502 Compliance Today"
+      description="Don't risk your license or lose $250,000 to theft. Get mobile surveillance that meets all WSLCB requirements and protects your investment during harvest season."
+      phoneText="Call for Compliance Assessment: (253) 683-2288"
+      quoteText="Get I-502 Compliant Quote"
+      features={["100% WSLCB Compliant Systems", "30-Minute Setup, No Installation", "Harvest Season Protection", "15-20% Insurance Premium Savings"]}
+    />
+
+  </article>
+
+  <Footer />
+</Layout>

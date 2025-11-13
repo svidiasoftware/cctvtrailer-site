@@ -20,18 +20,25 @@ const {
 } = Astro.props;
 
 // Generate absolute URL for social media images
-const siteURL = Astro.site || 'https://www.cctvtrailer.com';
+const siteURL = Astro.site ? Astro.site.toString() : 'https://www.cctvtrailer.com';
 const ogImageURL = new URL('/images/cctv-trailer-logo.png', siteURL).href;
 
 // Generate normalized canonical URL
-// Remove trailing slashes except for the root domain
-// This ensures consistency across all pages
+// Follows Google's best practices for canonical URLs:
+// - Uses absolute URLs with HTTPS protocol
+// - Removes trailing slashes (except for root)
+// - Strips query parameters and fragments
+// - Ensures consistent URL structure for proper indexing
 function normalizeCanonicalURL(pathname: string, siteUrl: string): string {
-  // Ensure siteUrl is a string and has a value
-  const baseSite = String(siteUrl || 'https://www.cctvtrailer.com');
+  // Ensure siteUrl is a string and has a value, enforce HTTPS
+  const baseSite = String(siteUrl || 'https://www.cctvtrailer.com')
+    .replace(/^http:/, 'https:'); // Enforce HTTPS as Google prefers
 
   // Clean the pathname
   let cleanPath = String(pathname || '/');
+
+  // Remove query parameters and fragments (defensive, though pathname shouldn't have them)
+  cleanPath = cleanPath.split('?')[0].split('#')[0];
 
   // Remove multiple slashes
   cleanPath = cleanPath.replace(/\/+/g, '/');
