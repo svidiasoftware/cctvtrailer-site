@@ -123,6 +123,9 @@ const finalCanonicalURL = canonicalURL || normalizeCanonicalURL(Astro.url.pathna
         <script type="application/ld+json" set:html={schema} />
       )
     )}
+
+    <!-- Google Tag Manager Script - Placed in head as per Google's recommendations -->
+    <OptimizedScripts />
   </head>
   <body class="min-h-screen bg-white">
     <!-- Google Tag Manager (noscript) -->
@@ -131,9 +134,8 @@ const finalCanonicalURL = canonicalURL || normalizeCanonicalURL(Astro.url.pathna
     <!-- End Google Tag Manager (noscript) -->
     
     <slot />
-    
-    <!-- Optimized Scripts and Analytics -->
-    <OptimizedScripts />
+
+    <!-- Analytics (Event Tracking) -->
     <Analytics />
   </body>
 </html>

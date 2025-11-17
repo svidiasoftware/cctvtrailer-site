@@ -80,14 +80,12 @@ const crimeStats = [
   title="Seattle Mobile Surveillance Trailer Rental | Security Camera Rental Seattle"
   description="Mobile surveillance trailers in Seattle. Same-day setup in Capitol Hill, Queen Anne, Ballard. Construction sites, events, parking lots. (253) 683-2288"
   schema={JSON.stringify(localBusinessSchema)}>
-  
-  <Header currentPath="/seattle-surveillance-rental" />
+
+  <Header showEmergencyBar={true} currentPath="/seattle-surveillance-rental" />
 
   <!-- Structured Data Schemas -->
   <ServiceSchema {...serviceSchemaData} />
-  <BreadcrumbSchema items={breadcrumbItems} /> 
-
-  <Header showEmergencyBar={true} currentPath="/seattle-surveillance-rental" />
+  <BreadcrumbSchema items={breadcrumbItems} />
   <Analytics /> 
   
   <main>

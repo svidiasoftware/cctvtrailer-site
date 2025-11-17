@@ -194,94 +194,112 @@ const breadcrumbItems = [
               <li><strong>$45 billion in annual losses</strong> directly attributed to compromised surveillance systems</li>
             </ul>
 
-            <h2 class="text-2xl font-bold mt-12 mb-6">Understanding the NDAA Ban and Its Implications</h2>
+            <section class="ndaa-ban-section">
+              <h2 class="text-2xl font-bold mt-12 mb-6">Understanding the NDAA Ban and Its Implications</h2>
 
-            <h3 class="text-xl font-semibold mt-8 mb-4">Section 889: What You Need to Know</h3>
+              <div class="ndaa-details">
+                <div class="section-889">
+                  <h3 class="text-xl font-semibold mt-8 mb-4">Section 889: What You Need to Know</h3>
 
-            <p class="mb-6">
-              The National Defense Authorization Act (NDAA) Section 889, effective August 2019, prohibits federal
-              agencies and contractors from using surveillance equipment from:
-            </p>
+                  <p class="mb-6">
+                    The National Defense Authorization Act (NDAA) Section 889, effective August 2019, prohibits federal
+                    agencies and contractors from using surveillance equipment from:
+                  </p>
 
-            <div class="bg-red-50 border-l-4 border-red-600 p-6 my-8">
-              <h4 class="font-semibold mb-4">Primary Banned Manufacturers:</h4>
-              <ul class="space-y-2">
-                <li><strong>Hikvision</strong> (Hangzhou Hikvision Digital Technology)</li>
-                <li><strong>Dahua</strong> (Dahua Technology Company)</li>
-                <li><strong>Huawei</strong> (Huawei Technologies Company)</li>
-                <li><strong>ZTE</strong> (ZTE Corporation)</li>
-                <li><strong>Hytera</strong> (Hytera Communications Corporation)</li>
-                <li><strong>Raysharp</strong> (Added October 2024)</li>
-              </ul>
-            </div>
+                  <div class="bg-red-50 border-l-4 border-red-600 p-6 my-8">
+                    <h4 class="font-semibold mb-4">Primary Banned Manufacturers:</h4>
+                    <ul class="space-y-2">
+                      <li><strong>Hikvision</strong> (Hangzhou Hikvision Digital Technology)</li>
+                      <li><strong>Dahua</strong> (Dahua Technology Company)</li>
+                      <li><strong>Huawei</strong> (Huawei Technologies Company)</li>
+                      <li><strong>ZTE</strong> (ZTE Corporation)</li>
+                      <li><strong>Hytera</strong> (Hytera Communications Corporation)</li>
+                      <li><strong>Raysharp</strong> (Added October 2024)</li>
+                    </ul>
+                  </div>
+                </div>
 
-            <h3 class="text-xl font-semibold mt-8 mb-4">The White-Label Problem</h3>
+                <div class="white-label-problem">
+                  <h3 class="text-xl font-semibold mt-8 mb-4">The White-Label Problem</h3>
 
-            <p class="mb-6">
-              What makes this ban challenging is the widespread use of OEM (Original Equipment Manufacturer)
-              partnerships. Many familiar brands are actually repackaged Chinese technology:
-            </p>
+                  <p class="mb-6">
+                    What makes this ban challenging is the widespread use of OEM (Original Equipment Manufacturer)
+                    partnerships. Many familiar brands are actually repackaged Chinese technology:
+                  </p>
 
-            <div class="bg-yellow-50 border-l-4 border-yellow-600 p-6 my-8">
-              <h4 class="font-semibold mb-4">Common OEM Relationships:</h4>
-              <ul class="space-y-2">
-                <li><strong>Lorex</strong> → Uses Dahua components</li>
-                <li><strong>Swann</strong> → Rebranded Hikvision</li>
-                <li><strong>LTS</strong> → Hikvision OEM</li>
-                <li><strong>Amcrest</strong> → Dahua technology</li>
-                <li><strong>Night Owl</strong> → Various Chinese manufacturers</li>
-                <li><strong>EZVIZ</strong> → Hikvision subsidiary</li>
-                <li><strong>LaView</strong> → Hikvision OEM</li>
-                <li><strong>Q-See</strong> → Mixed Chinese components</li>
-              </ul>
-            </div>
+                  <div class="bg-yellow-50 border-l-4 border-yellow-600 p-6 my-8">
+                    <h4 class="font-semibold mb-4">Common OEM Relationships:</h4>
+                    <ul class="space-y-2">
+                      <li><strong>Lorex</strong> → Uses Dahua components</li>
+                      <li><strong>Swann</strong> → Rebranded Hikvision</li>
+                      <li><strong>LTS</strong> → Hikvision OEM</li>
+                      <li><strong>Amcrest</strong> → Dahua technology</li>
+                      <li><strong>Night Owl</strong> → Various Chinese manufacturers</li>
+                      <li><strong>EZVIZ</strong> → Hikvision subsidiary</li>
+                      <li><strong>LaView</strong> → Hikvision OEM</li>
+                      <li><strong>Q-See</strong> → Mixed Chinese components</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
 
-            <h2 class="text-2xl font-bold mt-12 mb-6">The Three Categories of CCTV Security Vulnerabilities</h2>
+            <section class="vulnerabilities-section">
+              <h2 class="text-2xl font-bold mt-12 mb-6">The Three Categories of CCTV Security Vulnerabilities</h2>
 
-            <h3 class="text-xl font-semibold mt-8 mb-4">1. Intentional Backdoors ("Sponsored" Vulnerabilities)</h3>
+              <div class="vulnerability-categories">
+                <div class="category-backdoors">
+                  <h3 class="text-xl font-semibold mt-8 mb-4">1. Intentional Backdoors ("Sponsored" Vulnerabilities)</h3>
 
-            <p class="mb-6">
-              Chinese law requires all companies to cooperate with intelligence gathering when requested. This has led to:
-            </p>
+                  <p class="mb-6">
+                    Chinese law requires all companies to cooperate with intelligence gathering when requested. This has led to:
+                  </p>
 
-            <ul class="list-disc pl-6 mb-6 space-y-2">
-              <li><strong>Hardcoded credentials</strong> that cannot be changed</li>
-              <li><strong>Hidden administrative accounts</strong> accessible remotely</li>
-              <li><strong>Forced cloud connectivity</strong> routing through Chinese servers</li>
-              <li><strong>Firmware update mechanisms</strong> that can install malicious code</li>
-              <li><strong>Data exfiltration protocols</strong> disguised as telemetry</li>
-            </ul>
+                  <ul class="list-disc pl-6 mb-6 space-y-2">
+                    <li><strong>Hardcoded credentials</strong> that cannot be changed</li>
+                    <li><strong>Hidden administrative accounts</strong> accessible remotely</li>
+                    <li><strong>Forced cloud connectivity</strong> routing through Chinese servers</li>
+                    <li><strong>Firmware update mechanisms</strong> that can install malicious code</li>
+                    <li><strong>Data exfiltration protocols</strong> disguised as telemetry</li>
+                  </ul>
 
-            <div class="bg-blue-50 border-l-4 border-blue-600 p-6 my-8">
-              <p class="mb-2">
-                <strong>Real-World Example:</strong> In 2023, security researchers discovered Hikvision cameras
-                automatically connecting to servers in China every 30 minutes, transmitting encrypted data packets
-                even when cloud features were "disabled."
-              </p>
-            </div>
+                  <div class="bg-blue-50 border-l-4 border-blue-600 p-6 my-8">
+                    <p class="mb-2">
+                      <strong>Real-World Example:</strong> In 2023, security researchers discovered Hikvision cameras
+                      automatically connecting to servers in China every 30 minutes, transmitting encrypted data packets
+                      even when cloud features were "disabled."
+                    </p>
+                  </div>
+                </div>
 
-            <h3 class="text-xl font-semibold mt-8 mb-4">2. Unintentional Security Flaws</h3>
+                <div class="category-unintentional">
+                  <h3 class="text-xl font-semibold mt-8 mb-4">2. Unintentional Security Flaws</h3>
 
-            <p class="mb-6">Poor security practices create additional vulnerabilities:</p>
+                  <p class="mb-6">Poor security practices create additional vulnerabilities:</p>
 
-            <ul class="list-disc pl-6 mb-6 space-y-2">
-              <li><strong>Unencrypted data transmission</strong> exposing video feeds</li>
-              <li><strong>Weak default passwords</strong> (often "admin/12345")</li>
-              <li><strong>Outdated firmware</strong> with known exploits</li>
-              <li><strong>Open ports</strong> allowing unauthorized access</li>
-              <li><strong>Buffer overflow vulnerabilities</strong> enabling code execution</li>
-            </ul>
+                  <ul class="list-disc pl-6 mb-6 space-y-2">
+                    <li><strong>Unencrypted data transmission</strong> exposing video feeds</li>
+                    <li><strong>Weak default passwords</strong> (often "admin/12345")</li>
+                    <li><strong>Outdated firmware</strong> with known exploits</li>
+                    <li><strong>Open ports</strong> allowing unauthorized access</li>
+                    <li><strong>Buffer overflow vulnerabilities</strong> enabling code execution</li>
+                  </ul>
+                </div>
 
-            <h3 class="text-xl font-semibold mt-8 mb-4">3. Supply Chain Compromises</h3>
+                <div class="category-supply-chain">
+                  <h3 class="text-xl font-semibold mt-8 mb-4">3. Supply Chain Compromises</h3>
 
-            <p class="mb-6">Even non-Chinese branded cameras may contain compromised components:</p>
+                  <p class="mb-6">Even non-Chinese branded cameras may contain compromised components:</p>
 
-            <ul class="list-disc pl-6 mb-6 space-y-2">
-              <li><strong>Huawei HiSilicon chips</strong> found in 40% of "secure" cameras</li>
-              <li><strong>Compromised firmware libraries</strong> shared across manufacturers</li>
-              <li><strong>Malicious code</strong> injected during manufacturing</li>
-              <li><strong>Hardware implants</strong> undetectable by software scans</li>
-            </ul>
+                  <ul class="list-disc pl-6 mb-6 space-y-2">
+                    <li><strong>Huawei HiSilicon chips</strong> found in 40% of "secure" cameras</li>
+                    <li><strong>Compromised firmware libraries</strong> shared across manufacturers</li>
+                    <li><strong>Malicious code</strong> injected during manufacturing</li>
+                    <li><strong>Hardware implants</strong> undetectable by software scans</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
 
             <h2 class="text-2xl font-bold mt-12 mb-6">The Consequences of Compromised CCTV Networks</h2>
 

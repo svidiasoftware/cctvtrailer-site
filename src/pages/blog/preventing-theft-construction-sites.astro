@@ -99,10 +99,14 @@ const schemas = [breadcrumbSchema, schema];
 
         <!-- Featured Image -->
         <div class="relative h-96 -mx-4 md:mx-0 mb-8 rounded-none md:rounded-lg overflow-hidden">
-          <img 
-            src="/images/preventing-theft-construction-sites.webp" 
-            alt="Construction site security and theft prevention measures" 
+          <img
+            src="/images/preventing-theft-construction-sites.webp"
+            alt="Construction site security and theft prevention measures"
             class="w-full h-full object-cover"
+            width="1200"
+            height="600"
+            loading="eager"
+            fetchpriority="high"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
         </div>
@@ -164,6 +168,7 @@ const schemas = [breadcrumbSchema, schema];
 
           <div class="overflow-x-auto mb-6">
             <table class="w-full border-collapse border border-gray-300">
+              <caption class="sr-only">The True Cost of Construction Theft</caption>
               <thead>
                 <tr class="bg-gray-100">
                   <th class="border border-gray-300 px-4 py-2 text-left">Cost Category</th>
@@ -458,6 +463,7 @@ const schemas = [breadcrumbSchema, schema];
           <div class="bg-yellow-50 rounded-lg p-6 mb-6">
             <h4 class="font-bold mb-3">Investment vs. Return:</h4>
             <table class="w-full text-sm">
+              <caption class="sr-only">Investment vs. Return ROI Comparison</caption>
               <thead>
                 <tr class="border-b border-yellow-300">
                   <th class="text-left py-2">Security Measure</th>

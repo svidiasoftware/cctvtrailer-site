@@ -347,6 +347,7 @@ const description = "Deploy solar powered security trailers for sustainable, off
           <div>
             <h3 class="text-xl font-bold mb-6">Solar Panel Specifications</h3>
             <table class="w-full border-collapse">
+              <caption class="sr-only">Solar Panel Specifications including panel type, power output, efficiency, array size, operating temperature, and warranty</caption>
               <tbody>
                 <tr class="border-b">
                   <td class="py-2 font-semibold">Panel Type</td>
@@ -379,6 +380,7 @@ const description = "Deploy solar powered security trailers for sustainable, off
           <div>
             <h3 class="text-xl font-bold mb-6">Battery System Specifications</h3>
             <table class="w-full border-collapse">
+              <caption class="sr-only">Battery System Specifications including battery type, capacity, backup duration, charge cycles, depth of discharge, and lifespan</caption>
               <tbody>
                 <tr class="border-b">
                   <td class="py-2 font-semibold">Battery Type</td>
@@ -450,58 +452,58 @@ const description = "Deploy solar powered security trailers for sustainable, off
           Frequently Asked Solar Questions
         </h2>
 
-        <div class="max-w-3xl mx-auto" itemscope itemtype="https://schema.org/FAQPage">
+        <div class="max-w-3xl mx-auto">
           <div class="space-y-6">
-            <div class="bg-white p-6 rounded-lg shadow" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-              <h3 class="font-bold text-lg mb-2" itemprop="name">
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="font-bold text-lg mb-2">
                 How do solar security trailers work in cloudy weather?
               </h3>
-              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                <p class="text-gray-600" itemprop="text">
+              <div>
+                <p class="text-gray-600">
                   Solar panels generate power even on cloudy days (at 10-25% capacity), while the 72-96 hour battery backup ensures continuous operation during extended cloudy periods. The system automatically manages power consumption to prioritize essential functions.
                 </p>
               </div>
             </div>
 
-            <div class="bg-white p-6 rounded-lg shadow" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-              <h3 class="font-bold text-lg mb-2" itemprop="name">
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="font-bold text-lg mb-2">
                 What's the payback period for solar vs generator power?
               </h3>
-              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                <p class="text-gray-600" itemprop="text">
+              <div>
+                <p class="text-gray-600">
                   Solar systems typically pay for themselves in 3-6 months compared to generator operations. With zero fuel costs and minimal maintenance, solar saves $1,500-2,500 monthly vs generators, plus eliminates refueling logistics.
                 </p>
               </div>
             </div>
 
-            <div class="bg-white p-6 rounded-lg shadow" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-              <h3 class="font-bold text-lg mb-2" itemprop="name">
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="font-bold text-lg mb-2">
                 Can solar trailers operate year-round in northern climates?
               </h3>
-              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                <p class="text-gray-600" itemprop="text">
+              <div>
+                <p class="text-gray-600">
                   Yes, modern solar security trailers operate reliably year-round even in Seattle and Portland. Winter performance is enhanced with panel angle adjustment, snow-shedding coating, and larger battery banks to compensate for shorter days.
                 </p>
               </div>
             </div>
 
-            <div class="bg-white p-6 rounded-lg shadow" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-              <h3 class="font-bold text-lg mb-2" itemprop="name">
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="font-bold text-lg mb-2">
                 How much maintenance do solar panels require?
               </h3>
-              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                <p class="text-gray-600" itemprop="text">
+              <div>
+                <p class="text-gray-600">
                   Solar panels require minimal maintenance - typically just annual cleaning and inspection. The panels have no moving parts and come with 25-year warranties. Battery systems require checking every 6 months, with replacement after 10-15 years.
                 </p>
               </div>
             </div>
 
-            <div class="bg-white p-6 rounded-lg shadow" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-              <h3 class="font-bold text-lg mb-2" itemprop="name">
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="font-bold text-lg mb-2">
                 What happens if the batteries run out during an extended storm?
               </h3>
-              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                <p class="text-gray-600" itemprop="text">
+              <div>
+                <p class="text-gray-600">
                   Our systems include optional backup connections for emergency generator or grid power. The system automatically switches to backup power if batteries drop below 20%, then returns to solar when conditions improve. Most units never need backup power.
                 </p>
               </div>
@@ -583,6 +585,55 @@ const description = "Deploy solar powered security trailers for sustainable, off
       "priceValidUntil": "2025-12-31",
       "availability": "https://schema.org/InStock"
     }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do solar security trailers work in cloudy weather?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Solar panels generate power even on cloudy days (at 10-25% capacity), while the 72-96 hour battery backup ensures continuous operation during extended cloudy periods. The system automatically manages power consumption to prioritize essential functions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the payback period for solar vs generator power?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Solar systems typically pay for themselves in 3-6 months compared to generator operations. With zero fuel costs and minimal maintenance, solar saves $1,500-2,500 monthly vs generators, plus eliminates refueling logistics."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can solar trailers operate year-round in northern climates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, modern solar security trailers operate reliably year-round even in Seattle and Portland. Winter performance is enhanced with panel angle adjustment, snow-shedding coating, and larger battery banks to compensate for shorter days."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much maintenance do solar panels require?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Solar panels require minimal maintenance - typically just annual cleaning and inspection. The panels have no moving parts and come with 25-year warranties. Battery systems require checking every 6 months, with replacement after 10-15 years."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if the batteries run out during an extended storm?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our systems include optional backup connections for emergency generator or grid power. The system automatically switches to backup power if batteries drop below 20%, then returns to solar when conditions improve. Most units never need backup power."
+        }
+      }
+    ]
   }
   </script>
 </Layout>

@@ -99,10 +99,14 @@ const schemas = [breadcrumbSchema, schema];
 
         <!-- Featured Image -->
         <div class="relative h-96 -mx-4 md:mx-0 mb-8 rounded-none md:rounded-lg overflow-hidden">
-          <img 
-            src="/images/construction-site-security-mobile-vs-fixed.webp" 
-            alt="Construction site comparing mobile and fixed security cameras" 
+          <img
+            src="/images/construction-site-security-mobile-vs-fixed.webp"
+            alt="Construction site comparing mobile and fixed security cameras"
             class="w-full h-full object-cover"
+            width="1200"
+            height="600"
+            loading="eager"
+            fetchpriority="high"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
         </div>
@@ -191,6 +195,7 @@ const schemas = [breadcrumbSchema, schema];
           
           <div class="overflow-x-auto mb-8">
             <table class="w-full border-collapse border border-gray-300">
+              <caption class="sr-only">Head-to-Head Comparison: Mobile Trailers vs Fixed Cameras</caption>
               <thead>
                 <tr class="bg-gray-100">
                   <th class="border border-gray-300 px-4 py-2 text-left">Factor</th>
