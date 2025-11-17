@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import RelatedPages from '../components/RelatedPages.astro';
 import CTASection from '../components/CTASection.astro';
 import QuoteForm from '../components/QuoteForm.astro';
 import Analytics from '../components/Analytics.astro';
@@ -31,6 +32,39 @@ const breadcrumbItems = [
   { name: "Home", url: "/" },
   { name: "Services", url: "/services" },
   { name: "Auto Dealer Security - Tacoma" }
+];
+
+const relatedPages = [
+  {
+    title: "Tacoma Security Trailer Services",
+    href: "/tacoma-security-trailer",
+    description: "Full range of mobile security services in Tacoma including retail, construction, and event surveillance."
+  },
+  {
+    title: "Tacoma Retail Parking Lot Security",
+    href: "/tacoma-retail-parking-lot-security",
+    description: "Specialized parking lot surveillance for Tacoma retail centers and commercial properties."
+  },
+  {
+    title: "Equipment Theft Prevention",
+    href: "/solutions/equipment-theft-prevention",
+    description: "Protect high-value inventory and equipment with advanced mobile surveillance technology."
+  },
+  {
+    title: "Fife Security Rental Services",
+    href: "/fife-security-rental",
+    description: "Security trailer rentals in Fife - 5 miles south serving South Tacoma Way corridor."
+  },
+  {
+    title: "Technical Specifications",
+    href: "/technical-specifications",
+    description: "Advanced surveillance features including license plate recognition for dealership security."
+  },
+  {
+    title: "View Pricing & Plans",
+    href: "/pricing",
+    description: "Monthly rental plans for auto dealership security - reduce insurance premiums."
+  }
 ];
 ---
 
@@ -630,6 +664,11 @@ const breadcrumbItems = [
     />
 
   </main>
+
+  <RelatedPages
+    title="Related Dealership Security & Tacoma Services"
+    pages={relatedPages}
+  />
 
   <Footer />
 </Layout>

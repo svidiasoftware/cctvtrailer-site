@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
 import CTASection from '../../components/CTASection.astro';
 import Analytics from '../../components/Analytics.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
@@ -61,6 +62,39 @@ const breadcrumbs = [
   { name: 'Home', url: '/' },
   { name: 'Blog', url: '/blog' },
   { name: 'Cannabis Security Compliance', url: '/blog/cannabis-security-compliance' }
+];
+
+const relatedPages = [
+  {
+    title: "Construction Site Security Solutions",
+    href: "/construction-security",
+    description: "Mobile surveillance solutions for construction and industrial sites with comprehensive monitoring capabilities."
+  },
+  {
+    title: "Advanced Video Surveillance Technology",
+    href: "/video-technology",
+    description: "S-VIDIA AI-powered video analytics for enhanced security monitoring and compliance documentation."
+  },
+  {
+    title: "Technical Specifications of Security Trailers",
+    href: "/technical-specifications",
+    description: "Detailed technical specifications including camera systems, storage, and compliance features."
+  },
+  {
+    title: "Insurance Security Requirements Guide",
+    href: "/insurance-security-requirements",
+    description: "Understanding insurance requirements for security systems and compliance standards."
+  },
+  {
+    title: "Security Cost Calculator",
+    href: "/security-cost-calculator",
+    description: "Calculate security costs and compare against potential losses and compliance penalties."
+  },
+  {
+    title: "Emergency Surveillance Deployment",
+    href: "/emergency-surveillance",
+    description: "24/7 rapid deployment security solutions for urgent compliance and protection needs."
+  }
 ];
 ---
 
@@ -515,6 +549,11 @@ const breadcrumbs = [
     />
 
   </article>
+
+  <RelatedPages
+    title="Related Security & Compliance Resources"
+    pages={relatedPages}
+  />
 
   <Footer />
 </Layout>

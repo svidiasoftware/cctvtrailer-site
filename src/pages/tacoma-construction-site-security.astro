@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import RelatedPages from '../components/RelatedPages.astro';
 import CTASection from '../components/CTASection.astro';
 import QuoteForm from '../components/QuoteForm.astro';
 import Analytics from '../components/Analytics.astro';
@@ -33,6 +34,39 @@ const breadcrumbItems = [
   { name: "Home", url: "/" },
   { name: "Services", url: "/services" },
   { name: "Tacoma Construction Security" }
+];
+
+const relatedPages = [
+  {
+    title: "Construction Site Security Solutions",
+    href: "/construction-security",
+    description: "Comprehensive construction security solutions for all project types across the Pacific Northwest."
+  },
+  {
+    title: "Equipment Theft Prevention",
+    href: "/solutions/equipment-theft-prevention",
+    description: "Protect construction equipment and tools with advanced surveillance and monitoring systems."
+  },
+  {
+    title: "Tacoma Security Trailer Services",
+    href: "/tacoma-security-trailer",
+    description: "Full range of mobile security services in Tacoma including retail, events, and industrial surveillance."
+  },
+  {
+    title: "Auburn Manufacturing Security",
+    href: "/auburn-manufacturing-security",
+    description: "Industrial and construction security in Auburn - 25 miles northeast serving the Kent Valley."
+  },
+  {
+    title: "Technical Specifications",
+    href: "/technical-specifications",
+    description: "Solar-powered mobile surveillance trailers with no electrical hookup required for job sites."
+  },
+  {
+    title: "View Pricing & Plans",
+    href: "/pricing",
+    description: "Contractor volume discounts and flexible rental plans for Tacoma construction projects."
+  }
 ];
 ---
 
@@ -596,6 +630,11 @@ const breadcrumbItems = [
     />
 
   </main>
+
+  <RelatedPages
+    title="Related Construction Security & Pierce County Services"
+    pages={relatedPages}
+  />
 
   <Footer />
 </Layout>

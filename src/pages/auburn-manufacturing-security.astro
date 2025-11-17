@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import RelatedPages from '../components/RelatedPages.astro';
 import Analytics from '../components/Analytics.astro';
 import ServiceSchema from '../components/ServiceSchema.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
@@ -32,6 +34,39 @@ const crimeStats = [
   { value: "96%", label: "WA Cities Safer Than Auburn" },
   { value: "#30", label: "Safety Rank in WA" }
 ];
+
+const relatedPages = [
+  {
+    title: "Construction Site Security Solutions",
+    href: "/construction-security",
+    description: "Mobile surveillance for Auburn manufacturing facilities and industrial construction projects."
+  },
+  {
+    title: "Equipment Theft Prevention Solutions",
+    href: "/solutions/equipment-theft-prevention",
+    description: "Specialized security for protecting valuable manufacturing equipment and materials."
+  },
+  {
+    title: "Kent Security Rental Services",
+    href: "/kent-security-rental",
+    description: "Mobile surveillance for nearby Kent Valley warehouse and distribution centers."
+  },
+  {
+    title: "Federal Way Surveillance",
+    href: "/federal-way-surveillance",
+    description: "Security trailer rentals for Federal Way commercial and industrial areas."
+  },
+  {
+    title: "Technical Specifications",
+    href: "/technical-specifications",
+    description: "Detailed specifications of our industrial-grade mobile security trailers."
+  },
+  {
+    title: "Tacoma Security Trailer Services",
+    href: "/tacoma-security-trailer",
+    description: "Our Pierce County headquarters - 15 miles southwest with rapid deployment."
+  }
+];
 ---
 
 <Layout 
@@ -51,7 +86,7 @@ const crimeStats = [
       <div class="container mx-auto px-4">
         <div class="max-w-4xl">
           <h1 class="text-4xl md:text-5xl font-bold mb-4">Auburn Manufacturing & Logistics Security</h1>
-          <p class="text-xl mb-6">Protecting Auburn's industrial corridor with advanced mobile surveillance. Specialized solutions for manufacturing plants, distribution centers, and logistics operations.</p>
+          <p class="text-xl mb-6"><strong>Protecting Auburn's industrial corridor</strong> with advanced mobile surveillance. <strong>Specialized solutions for manufacturing plants, distribution centers, and logistics operations</strong>.</p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="tel:2536832288" class="bg-white text-orange-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
               📞 Call: (253) 683-2288
@@ -325,6 +360,11 @@ const crimeStats = [
       </div>
     </section>
   </main>
+
+  <RelatedPages
+    title="Related Industrial Security & Nearby Areas"
+    pages={relatedPages}
+  />
 
   <Footer />
 </Layout>

@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import RelatedPages from '../components/RelatedPages.astro';
 import Analytics from '../components/Analytics.astro';
 import ServiceSchema from '../components/ServiceSchema.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
@@ -80,6 +82,39 @@ const crimeStats = [
   { value: "336%", label: "Above National Property Crime", highlight: true },
   { value: "40%", label: "Homicide Reduction in 2024" },
   { value: "24.6%", label: "Property Crime Reduction 2024" }
+];
+
+const relatedPages = [
+  {
+    title: "Construction Site Security Solutions",
+    href: "/construction-security",
+    description: "Professional mobile surveillance for Tacoma construction sites and development projects."
+  },
+  {
+    title: "Event Security Trailer Rentals",
+    href: "/event-security",
+    description: "Security solutions for Tacoma Dome events, festivals, and outdoor gatherings."
+  },
+  {
+    title: "Technical Specifications",
+    href: "/technical-specifications",
+    description: "Detailed specifications of our mobile security trailers serving Tacoma and Pierce County."
+  },
+  {
+    title: "Seattle Surveillance Rental Services",
+    href: "/seattle-surveillance-rental",
+    description: "Mobile surveillance services for Seattle - 30 miles north of Tacoma."
+  },
+  {
+    title: "Olympia Mobile CCTV Solutions",
+    href: "/olympia-mobile-cctv",
+    description: "Security trailer rentals for Olympia and Thurston County - nearby coverage."
+  },
+  {
+    title: "View Pricing & Plans",
+    href: "/pricing",
+    description: "Transparent pricing for Tacoma area security trailer rentals with local delivery."
+  }
 ];
 ---
 
@@ -581,6 +616,11 @@ const crimeStats = [
     </section>
 
   </main>
+
+  <RelatedPages
+    title="Related Security Services & Nearby Areas"
+    pages={relatedPages}
+  />
 
   <Footer />
 </Layout>

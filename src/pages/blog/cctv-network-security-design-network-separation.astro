@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
 import CTASection from '../../components/CTASection.astro';
 import Analytics from '../../components/Analytics.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
@@ -64,6 +65,39 @@ const breadcrumbItems = [
   { name: "Home", url: "/" },
   { name: "Blog", url: "/blog" },
   { name: "CCTV Network Security Design" }
+];
+
+const relatedPages = [
+  {
+    title: "Technical Specifications",
+    href: "/technical-specifications",
+    description: "Detailed technical specifications of our secure CCTV surveillance systems and network architecture."
+  },
+  {
+    title: "Mobile Trailer Technology",
+    href: "/trailer-technology",
+    description: "Learn about the network security features built into our mobile surveillance trailers."
+  },
+  {
+    title: "S-VIDIA Video Technology",
+    href: "/video-technology",
+    description: "Advanced S-VIDIA video surveillance technology with built-in security features."
+  },
+  {
+    title: "Advanced S-VIDIA Surveillance Technology",
+    href: "/blog/advanced-video-surveillance-technology-svidia",
+    description: "Comprehensive overview of S-VIDIA's secure video surveillance technology."
+  },
+  {
+    title: "Construction Security Solutions",
+    href: "/construction-security",
+    description: "Secure mobile surveillance solutions for construction sites with network isolation."
+  },
+  {
+    title: "Insurance Security Requirements",
+    href: "/insurance-security-requirements",
+    description: "Understanding insurance requirements for secure CCTV systems and network compliance."
+  }
 ];
 ---
 
@@ -664,6 +698,11 @@ const breadcrumbItems = [
       features={["✓ Free Security Assessment", "✓ NDAA Compliance Verification", "✓ Network Separation Design", "✓ Same-Day Emergency Response"]}
     />
   </main>
+
+  <RelatedPages
+    title="Related Network Security & Technical Resources"
+    pages={relatedPages}
+  />
 
   <Footer />
 </Layout>

@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import RelatedPages from '../components/RelatedPages.astro';
 import CTASection from '../components/CTASection.astro';
 import Analytics from '../components/Analytics.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
@@ -93,6 +94,39 @@ const breadcrumbItems = [
   { name: "Home", url: "/" },
   { name: "Locations", url: "/locations" },
   { name: "Seattle Construction Security" }
+];
+
+const relatedPages = [
+  {
+    title: "Construction Site Security Solutions",
+    href: "/construction-security",
+    description: "Comprehensive mobile surveillance solutions for construction sites across all industries and project sizes."
+  },
+  {
+    title: "Seattle Surveillance Rental Services",
+    href: "/seattle-surveillance-rental",
+    description: "Full range of mobile security services in Seattle including retail, events, and commercial surveillance."
+  },
+  {
+    title: "Federal Way Surveillance Services",
+    href: "/federal-way-surveillance",
+    description: "Security trailer rentals in Federal Way - 20 miles south serving South King County."
+  },
+  {
+    title: "Bremerton Naval Security Services",
+    href: "/bremerton-naval-security",
+    description: "Security services in Bremerton - ferry accessible from Seattle serving Kitsap County."
+  },
+  {
+    title: "Technical Specifications",
+    href: "/technical-specifications",
+    description: "Weather-proof mobile surveillance trailers built for Seattle's climate and urban construction sites."
+  },
+  {
+    title: "View Pricing & Plans",
+    href: "/pricing",
+    description: "Transparent pricing for Seattle area construction security with contractor volume discounts."
+  }
 ];
 ---
 
@@ -561,6 +595,11 @@ const breadcrumbItems = [
       features={["✓ Same-Day Seattle Deployment", "✓ Union-Friendly Solution", "✓ Weather-Proof Systems", "✓ Local 24/7 Support"]}
     />
   </main>
+
+  <RelatedPages
+    title="Related Construction Security & Seattle Services"
+    pages={relatedPages}
+  />
 
   <Footer />
 </Layout>

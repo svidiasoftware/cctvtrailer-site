@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
 import CTASection from '../../components/CTASection.astro';
 import Analytics from '../../components/Analytics.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
@@ -60,6 +61,39 @@ const breadcrumbItems = [
   { name: "Home", url: "/" },
   { name: "Blog", url: "/blog" },
   { name: "Construction Theft vs Security Investment" }
+];
+
+const relatedPages = [
+  {
+    title: "ROI Calculator for Security Investment",
+    href: "/roi-calculator",
+    description: "Calculate the exact return on investment for implementing mobile surveillance at your construction project."
+  },
+  {
+    title: "Security Cost Calculator",
+    href: "/security-cost-calculator",
+    description: "Estimate total security costs and compare against potential theft losses for your construction site."
+  },
+  {
+    title: "Preventing Construction Site Theft Guide",
+    href: "/blog/preventing-theft-construction-sites",
+    description: "Complete guide to theft prevention strategies with statistics, case studies, and proven security methods."
+  },
+  {
+    title: "Construction Security Solutions",
+    href: "/construction-security",
+    description: "Comprehensive mobile surveillance solutions specifically designed for construction site protection."
+  },
+  {
+    title: "Technical Specifications",
+    href: "/technical-specifications",
+    description: "Detailed specifications of our mobile security trailers including cameras, power systems, and monitoring capabilities."
+  },
+  {
+    title: "Insurance Requirements Guide",
+    href: "/insurance-security-requirements",
+    description: "Understanding insurance requirements and how security measures can reduce premiums and improve coverage."
+  }
 ];
 ---
 
@@ -494,31 +528,14 @@ const breadcrumbItems = [
             </div>
           </div>
 
-          <!-- Related Articles -->
-          <div class="mt-16 pt-8 border-t">
-            <h3 class="text-xl font-semibold mb-6">Related Articles</h3>
-            <div class="grid md:grid-cols-2 gap-6">
-              <a href="/solutions/equipment-theft-prevention" class="block bg-gray-50 rounded-lg p-4 hover:shadow-md transition-shadow">
-                <h4 class="font-semibold mb-2">Equipment Theft Prevention Guide</h4>
-                <p class="text-sm text-gray-600">Comprehensive strategies to protect your valuable equipment</p>
-              </a>
-              <a href="/insurance-security-requirements" class="block bg-gray-50 rounded-lg p-4 hover:shadow-md transition-shadow">
-                <h4 class="font-semibold mb-2">Insurance Requirements & Savings</h4>
-                <p class="text-sm text-gray-600">How surveillance reduces premiums by 10-25%</p>
-              </a>
-              <a href="/construction-compliance-guide" class="block bg-gray-50 rounded-lg p-4 hover:shadow-md transition-shadow">
-                <h4 class="font-semibold mb-2">OSHA Compliance Guide</h4>
-                <p class="text-sm text-gray-600">Meeting security requirements for construction sites</p>
-              </a>
-              <a href="/same-day-security-rental" class="block bg-gray-50 rounded-lg p-4 hover:shadow-md transition-shadow">
-                <h4 class="font-semibold mb-2">Emergency Security Deployment</h4>
-                <p class="text-sm text-gray-600">Rapid response for immediate protection needs</p>
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </article>
+
+    <RelatedPages
+      title="Related Security Resources & Calculators"
+      pages={relatedPages}
+    />
 
     <!-- CTA Section -->
     <CTASection

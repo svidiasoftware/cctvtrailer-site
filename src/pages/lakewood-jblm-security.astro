@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import RelatedPages from '../components/RelatedPages.astro';
 import Analytics from '../components/Analytics.astro';
 import ServiceSchema from '../components/ServiceSchema.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
@@ -30,6 +32,39 @@ const crimeStats = [
   { value: "Above", label: "State Average Crime Rate", highlight: true },
   { value: "JBLM", label: "Adjacent Military Base" },
   { value: "High", label: "Retail Theft Risk" }
+];
+
+const relatedPages = [
+  {
+    title: "Construction Site Security Solutions",
+    href: "/construction-security",
+    description: "Mobile surveillance for Lakewood commercial construction and JBLM contractor projects."
+  },
+  {
+    title: "Event Security Trailer Rentals",
+    href: "/event-security",
+    description: "Security solutions for Lakewood community events and military ceremonies."
+  },
+  {
+    title: "Tacoma Security Trailer Services",
+    href: "/tacoma-security-trailer",
+    description: "Our headquarters in Tacoma - 5 miles north with immediate response to Lakewood."
+  },
+  {
+    title: "Olympia Mobile CCTV Solutions",
+    href: "/olympia-mobile-cctv",
+    description: "Security services for Olympia - 30 miles south serving Thurston County."
+  },
+  {
+    title: "Technical Specifications",
+    href: "/technical-specifications",
+    description: "Military-grade mobile security trailers serving JBLM contractors."
+  },
+  {
+    title: "View Pricing & Plans",
+    href: "/pricing",
+    description: "Competitive pricing for Lakewood and JBLM area security rentals."
+  }
 ];
 ---
 
@@ -342,6 +377,11 @@ const crimeStats = [
       </div>
     </section>
   </main>
+
+  <RelatedPages
+    title="Related Military & Commercial Security"
+    pages={relatedPages}
+  />
 
   <Footer />
 </Layout>

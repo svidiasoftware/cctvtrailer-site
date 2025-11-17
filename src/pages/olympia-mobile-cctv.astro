@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import RelatedPages from '../components/RelatedPages.astro';
 import Analytics from '../components/Analytics.astro';
 import ServiceSchema from '../components/ServiceSchema.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
@@ -31,6 +33,39 @@ const crimeStats = [
   { value: "92%", label: "WA Cities Safer Than Olympia" },
   { value: "Above", label: "State & National Average Crime" }
 ];
+
+const relatedPages = [
+  {
+    title: "Construction Site Security Solutions",
+    href: "/construction-security",
+    description: "Mobile surveillance for Olympia construction sites and state government projects."
+  },
+  {
+    title: "Event Security Trailer Rentals",
+    href: "/event-security",
+    description: "Security solutions for Olympia festivals, state events, and outdoor gatherings."
+  },
+  {
+    title: "Tacoma Security Trailer Services",
+    href: "/tacoma-security-trailer",
+    description: "Our Pierce County headquarters - 30 miles north with fastest deployment."
+  },
+  {
+    title: "Seattle Surveillance Rental",
+    href: "/seattle-surveillance-rental",
+    description: "Mobile surveillance services for Seattle and King County areas."
+  },
+  {
+    title: "Technical Specifications",
+    href: "/technical-specifications",
+    description: "Detailed specifications of our mobile security trailers serving Thurston County."
+  },
+  {
+    title: "View Pricing & Plans",
+    href: "/pricing",
+    description: "Transparent pricing for Olympia area security trailer rentals."
+  }
+];
 ---
 
 <Layout 
@@ -50,7 +85,7 @@ const crimeStats = [
       <div class="container mx-auto px-4">
         <div class="max-w-4xl">
           <h1 class="text-4xl md:text-5xl font-bold mb-4">Mobile CCTV Rental in Olympia, WA</h1>
-          <p class="text-xl mb-6">Protecting Washington's capital city with advanced mobile surveillance. From government facilities to special events, we secure Thurston County 24/7.</p>
+          <p class="text-xl mb-6"><strong>Protecting Washington's capital city</strong> with advanced mobile surveillance. From government facilities to special events, we <strong>secure Thurston County 24/7</strong>.</p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="tel:2536832288" class="bg-white text-emerald-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
               📞 Call Now: (253) 683-2288
@@ -259,6 +294,11 @@ const crimeStats = [
       </div>
     </section>
   </main>
+
+  <RelatedPages
+    title="Related Security Services & Nearby Areas"
+    pages={relatedPages}
+  />
 
   <Footer />
 </Layout>

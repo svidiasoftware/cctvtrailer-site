@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import RelatedPages from '../components/RelatedPages.astro';
 import Analytics from '../components/Analytics.astro';
 import ServiceSchema from '../components/ServiceSchema.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
@@ -32,6 +34,39 @@ const crimeStats = [
   { value: "18%", label: "Robbery Reduction 2024" },
   { value: "26%", label: "Increase in Assaults", highlight: true }
 ];
+
+const relatedPages = [
+  {
+    title: "Construction Site Security Solutions",
+    href: "/construction-security",
+    description: "Mobile surveillance for Kent Valley warehouse construction and logistics facilities."
+  },
+  {
+    title: "Equipment Theft Prevention",
+    href: "/solutions/equipment-theft-prevention",
+    description: "Specialized security for protecting warehouse equipment and inventory."
+  },
+  {
+    title: "Auburn Manufacturing Security",
+    href: "/auburn-manufacturing-security",
+    description: "Industrial security for nearby Auburn manufacturing and distribution centers."
+  },
+  {
+    title: "Federal Way Surveillance",
+    href: "/federal-way-surveillance",
+    description: "Security trailer rentals for Federal Way commercial areas - 10 miles north."
+  },
+  {
+    title: "Tacoma Security Trailer Services",
+    href: "/tacoma-security-trailer",
+    description: "Our headquarters in Pierce County - 20 miles southwest with rapid response."
+  },
+  {
+    title: "View Pricing & Plans",
+    href: "/pricing",
+    description: "Transparent pricing for Kent Valley security trailer rentals."
+  }
+];
 ---
 
 <Layout 
@@ -52,7 +87,7 @@ const crimeStats = [
       <div class="container mx-auto px-4">
         <div class="max-w-4xl">
           <h1 class="text-4xl md:text-5xl font-bold mb-4">Kent Security Camera Rental Services</h1>
-          <p class="text-xl mb-6">Protecting Kent Valley's warehouses, retail centers, and construction sites. Mobile surveillance solutions for the industrial heart of King County.</p>
+          <p class="text-xl mb-6"><strong>Protecting Kent Valley's warehouses</strong>, retail centers, and construction sites. <strong>Mobile surveillance solutions for the industrial heart of King County</strong>.</p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="tel:2536832288" class="bg-white text-purple-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
               📞 Call: (253) 683-2288
@@ -266,6 +301,11 @@ const crimeStats = [
       </div>
     </section>
   </main>
+
+  <RelatedPages
+    title="Related Warehouse Security & Nearby Areas"
+    pages={relatedPages}
+  />
 
   <Footer />
 </Layout>

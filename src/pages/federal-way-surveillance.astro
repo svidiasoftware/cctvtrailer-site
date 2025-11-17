@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import RelatedPages from '../components/RelatedPages.astro';
 import Analytics from '../components/Analytics.astro';
 import ServiceSchema from '../components/ServiceSchema.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
@@ -31,6 +33,39 @@ const crimeStats = [
   { value: "52%", label: "Vehicle Theft Reduction 2024" },
   { value: "11%", label: "Overall Crime Reduction 2024" },
   { value: "402%", label: "Increase in Drug Arrests" }
+];
+
+const relatedPages = [
+  {
+    title: "Construction Site Security Solutions",
+    href: "/construction-security",
+    description: "Mobile surveillance for Federal Way commercial construction and development projects."
+  },
+  {
+    title: "Event Security Trailer Rentals",
+    href: "/event-security",
+    description: "Security solutions for Federal Way community events and festivals."
+  },
+  {
+    title: "Kent Security Rental Services",
+    href: "/kent-security-rental",
+    description: "Mobile surveillance for nearby Kent Valley - 10 miles south."
+  },
+  {
+    title: "Seattle Surveillance Rental",
+    href: "/seattle-surveillance-rental",
+    description: "Security services for Seattle - 20 miles north of Federal Way."
+  },
+  {
+    title: "Tacoma Security Trailer Services",
+    href: "/tacoma-security-trailer",
+    description: "Our headquarters in Tacoma - 15 miles southwest with fastest response."
+  },
+  {
+    title: "View Pricing & Plans",
+    href: "/pricing",
+    description: "Transparent pricing for Federal Way area security trailer rentals."
+  }
 ];
 ---
 
@@ -408,6 +443,11 @@ const crimeStats = [
       </div>
     </section>
   </main>
+
+  <RelatedPages
+    title="Related Security Services & Nearby Areas"
+    pages={relatedPages}
+  />
 
   <Footer />
 </Layout>

@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import RelatedPages from '../components/RelatedPages.astro';
 import CTASection from '../components/CTASection.astro';
 import QuoteForm from '../components/QuoteForm.astro';
 import Analytics from '../components/Analytics.astro';
@@ -31,6 +32,39 @@ const breadcrumbItems = [
   { name: "Home", url: "/" },
   { name: "Services", url: "/services" },
   { name: "Retail Parking Lot Security - Tacoma" }
+];
+
+const relatedPages = [
+  {
+    title: "Tacoma Security Trailer Services",
+    href: "/tacoma-security-trailer",
+    description: "Full range of mobile security services in Tacoma including construction, events, and industrial surveillance."
+  },
+  {
+    title: "Tacoma Auto Dealership Security",
+    href: "/tacoma-auto-dealer-security",
+    description: "Specialized surveillance for auto dealerships protecting high-value vehicle inventory in Tacoma."
+  },
+  {
+    title: "Federal Way Surveillance Services",
+    href: "/federal-way-surveillance",
+    description: "Retail and commercial security in Federal Way - 15 miles north serving South King County."
+  },
+  {
+    title: "Lakewood JBLM Security Services",
+    href: "/lakewood-jblm-security",
+    description: "Commercial and retail security in Lakewood - 10 miles southwest on Bridgeport."
+  },
+  {
+    title: "Technical Specifications",
+    href: "/technical-specifications",
+    description: "Advanced surveillance features for 24/7 parking lot monitoring and customer safety."
+  },
+  {
+    title: "View Pricing & Plans",
+    href: "/pricing",
+    description: "Monthly rental plans for retail parking lot security - reduce liability insurance premiums."
+  }
 ];
 ---
 
@@ -594,6 +628,11 @@ const breadcrumbItems = [
     />
 
   </main>
+
+  <RelatedPages
+    title="Related Retail Security & Tacoma Services"
+    pages={relatedPages}
+  />
 
   <Footer />
 </Layout>

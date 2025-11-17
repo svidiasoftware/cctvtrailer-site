@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';import Footer from '../components/Footer.astro';
+import RelatedPages from '../components/RelatedPages.astro';
 import Analytics from '../components/Analytics.astro';
 import ServiceSchema from '../components/ServiceSchema.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
@@ -73,6 +74,39 @@ const crimeStats = [
   { value: "184.5%", label: "Above National Property Crime", highlight: true },
   { value: "1 in 17", label: "Chance of Property Crime" },
   { value: "#4", label: "Worst Crime Among Major US Cities" }
+];
+
+const relatedPages = [
+  {
+    title: "Seattle Construction Site Security",
+    href: "/seattle-construction-security",
+    description: "Specialized construction security for Seattle job sites including downtown, SLU, and Capitol Hill."
+  },
+  {
+    title: "Event Security Trailer Rentals",
+    href: "/event-security",
+    description: "Mobile surveillance for Seattle events at Climate Pledge Arena, Lumen Field, and Seattle Center."
+  },
+  {
+    title: "Federal Way Surveillance Services",
+    href: "/federal-way-surveillance",
+    description: "Security trailer rentals in Federal Way - 20 miles south serving South King County."
+  },
+  {
+    title: "Bremerton Naval Security Services",
+    href: "/bremerton-naval-security",
+    description: "Mobile security in Bremerton - ferry accessible from Seattle serving Kitsap County."
+  },
+  {
+    title: "Technical Specifications",
+    href: "/technical-specifications",
+    description: "Advanced S-VIDIA surveillance technology with weather-proof systems for Seattle's climate."
+  },
+  {
+    title: "View Pricing & Plans",
+    href: "/pricing",
+    description: "Transparent pricing for Seattle area mobile surveillance trailer rentals."
+  }
 ];
 ---
 
@@ -519,6 +553,11 @@ const crimeStats = [
     </section>
 
   </main>
+
+  <RelatedPages
+    title="Related Seattle Security Services & Nearby Areas"
+    pages={relatedPages}
+  />
 
   <Footer />
 </Layout>

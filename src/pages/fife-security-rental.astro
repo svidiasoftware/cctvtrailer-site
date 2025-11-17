@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import RelatedPages from '../components/RelatedPages.astro';
 import Analytics from '../components/Analytics.astro';
 import ServiceSchema from '../components/ServiceSchema.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
@@ -51,6 +53,39 @@ const statsData = [
   { value: "1 in 25", label: "Vehicle Theft Risk", highlight: true },
   { value: "24/7", label: "Port Operations Monitoring" }
 ];
+
+const relatedPages = [
+  {
+    title: "Construction Site Security Solutions",
+    href: "/construction-security",
+    description: "Mobile surveillance for Fife industrial parks and Port of Tacoma construction."
+  },
+  {
+    title: "Equipment Theft Prevention",
+    href: "/solutions/equipment-theft-prevention",
+    description: "Specialized security for protecting valuable port equipment and cargo."
+  },
+  {
+    title: "Tacoma Security Trailer Services",
+    href: "/tacoma-security-trailer",
+    description: "Our nearby Tacoma headquarters - 5 miles away with immediate response."
+  },
+  {
+    title: "Puyallup Fairgrounds Security",
+    href: "/puyallup-fairgrounds-security",
+    description: "Event security for nearby Puyallup and Pierce County fairgrounds."
+  },
+  {
+    title: "Technical Specifications",
+    href: "/technical-specifications",
+    description: "Industrial-grade mobile security trailers for port and logistics facilities."
+  },
+  {
+    title: "View Pricing & Plans",
+    href: "/pricing",
+    description: "Competitive pricing for Fife and Port of Tacoma security rentals."
+  }
+];
 ---
 
 <Layout
@@ -70,7 +105,7 @@ const statsData = [
       <div class="container mx-auto px-4">
         <div class="max-w-4xl">
           <h1 class="text-4xl md:text-5xl font-bold mb-4">Fife Industrial & Warehouse Security</h1>
-          <p class="text-xl mb-6">Critical surveillance for Pierce County's highest-crime industrial corridor. Protecting Port of Tacoma operations, warehouses, and logistics facilities 24/7.</p>
+          <p class="text-xl mb-6"><strong>Critical surveillance for Pierce County's highest-crime industrial corridor.</strong> Protecting Port of Tacoma operations, warehouses, and logistics facilities <strong>24/7</strong>.</p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="tel:2536832288" class="bg-white text-red-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
               📞 Emergency: (253) 683-2288
@@ -564,6 +599,11 @@ const statsData = [
     </section>
 
   </main>
+
+  <RelatedPages
+    title="Related Port & Industrial Security"
+    pages={relatedPages}
+  />
 
   <Footer />
 </Layout>

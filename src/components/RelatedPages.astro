@@ -1,0 +1,36 @@
+---
+export interface RelatedPage {
+  title: string;
+  href: string;
+  description: string;
+}
+
+export interface Props {
+  title?: string;
+  pages: RelatedPage[];
+  columns?: 2 | 3;
+}
+
+const { title = "Related Resources", pages, columns = 3 } = Astro.props;
+const gridClass = columns === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3';
+---
+
+<section class="bg-gray-50 py-12 mt-12 border-t border-gray-200">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-8 text-center">{title}</h2>
+    <div class={`grid grid-cols-1 ${gridClass} gap-6`}>
+      {pages.map((page) => (
+        <a
+          href={page.href}
+          class="block bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-200 hover:border-blue-500"
+        >
+          <h3 class="text-xl font-bold mb-3 text-gray-900">{page.title}</h3>
+          <p class="text-gray-600 mb-4">{page.description}</p>
+          <span class="text-blue-600 font-semibold hover:text-blue-700">
+            Learn more →
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

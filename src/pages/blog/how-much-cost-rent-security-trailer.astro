@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 
 const breadcrumbSchema = JSON.stringify({
@@ -32,9 +33,9 @@ const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "How Much Does It Cost to Rent a Security Trailer?",
-  "alternativeHeadline": "2024 Security Trailer Rental Pricing Guide",
+  "alternativeHeadline": "2025 Security Trailer Rental Pricing Guide",
   "datePublished": "2024-01-15",
-  "dateModified": "2024-01-15",
+  "dateModified": "2025-01-15",
   "author": {
     "@type": "Organization",
     "name": "CCTV Trailer",
@@ -71,10 +72,43 @@ const schema = JSON.stringify({
 });
 
 const schemas = [breadcrumbSchema, schema];
+
+const relatedPages = [
+  {
+    title: "View Our Pricing & Plans",
+    href: "/pricing",
+    description: "Detailed pricing information for security trailer rentals including daily, weekly, and monthly rates."
+  },
+  {
+    title: "Security Cost Calculator",
+    href: "/security-cost-calculator",
+    description: "Calculate exact security costs for your specific project and compare rental options."
+  },
+  {
+    title: "ROI Calculator for Security Investment",
+    href: "/roi-calculator",
+    description: "Determine the return on investment for security trailer rentals versus potential losses."
+  },
+  {
+    title: "Construction Security Solutions",
+    href: "/construction-security",
+    description: "Comprehensive security trailer solutions for construction sites with flexible rental terms."
+  },
+  {
+    title: "Event Security Trailer Rentals",
+    href: "/event-security",
+    description: "Weekend and short-term security trailer rentals for events, festivals, and special occasions."
+  },
+  {
+    title: "Technical Specifications & Features",
+    href: "/technical-specifications",
+    description: "Detailed specifications of our security trailers to understand what you're renting."
+  }
+];
 ---
 
 <Layout
-  title="How Much Does It Cost to Rent a Security Trailer? | 2024 Pricing Guide"
+  title="How Much Does It Cost to Rent a Security Trailer? | 2025 Pricing Guide"
   description="Detailed cost breakdown for security trailer rentals. Daily rates from $499-999, weekly and monthly discounts available. Free delivery in Tacoma area."
   schema={schemas}>
   
@@ -334,6 +368,11 @@ const schemas = [breadcrumbSchema, schema];
       </div>
     </article>
   </main>
+
+  <RelatedPages
+    title="Related Pricing & Security Resources"
+    pages={relatedPages}
+  />
 
   <Footer />
 </Layout>

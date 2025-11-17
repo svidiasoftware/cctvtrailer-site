@@ -50,7 +50,7 @@ const blogPosts = [
     date: '2025-09-24',
     readTime: '9 min read',
     image: '/images/true-cost-construction.webp',
-    imageAlt: 'Security pricing calculator and surveillance trailer'
+    imageAlt: 'Construction theft cost analysis comparing security investment ROI'
   },
   {
     slug: 'preventing-theft-construction-sites',
@@ -77,7 +77,7 @@ const blogPosts = [
     date: '2025-01-11',
     readTime: '5 min read',
     image: '/images/how-much-cost-rent-security-trailer.webp',
-    imageAlt: 'Security pricing calculator and surveillance trailer'
+    imageAlt: 'Mobile surveillance trailer rental pricing guide with daily and monthly rates'
   },
   {
     slug: 'advanced-video-surveillance-technology-svidia',
@@ -137,9 +137,9 @@ const blogSchema = JSON.stringify({
       </div>
       <div class="hero-content">
         <div class="hero-text-wrapper">
-          <h1 class="hero-heading">Security Insights & Resources</h1>
+          <h1 class="hero-heading"><strong>Security Insights & Resources</strong></h1>
           <p class="hero-paragraph">
-            Expert advice on mobile surveillance and construction site security from 15+ years of experience
+            <strong>Expert advice</strong> on mobile surveillance and construction site security from <strong>15+ years of experience</strong>
           </p>
         </div>
       </div>
@@ -148,6 +148,37 @@ const blogSchema = JSON.stringify({
     <!-- Blog Content -->
     <section class="py-16 bg-gray-50">
       <div class="container mx-auto px-4 max-w-6xl">
+        <!-- Featured Topics -->
+        <div class="mb-12 bg-white border-2 border-blue-200 rounded-lg p-8">
+          <h2 class="text-2xl font-bold mb-6 text-gray-900">Popular Topics</h2>
+          <ul class="grid md:grid-cols-2 gap-4">
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">•</span>
+              <a href="/blog/preventing-theft-construction-sites" class="text-gray-700 hover:text-blue-600 hover:underline">
+                Construction site security and theft prevention
+              </a>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">•</span>
+              <a href="/video-technology" class="text-gray-700 hover:text-blue-600 hover:underline">
+                Mobile surveillance technology and AI analytics
+              </a>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">•</span>
+              <a href="/blog/cannabis-security-compliance" class="text-gray-700 hover:text-blue-600 hover:underline">
+                Security compliance and regulatory requirements
+              </a>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">•</span>
+              <a href="/roi-calculator" class="text-gray-700 hover:text-blue-600 hover:underline">
+                ROI analysis and cost-benefit comparisons
+              </a>
+            </li>
+          </ul>
+        </div>
+
         <!-- Blog Posts Grid -->
         <div class="grid md:grid-cols-2 gap-8">
           {blogPosts.map(post => (
@@ -173,10 +204,8 @@ const blogSchema = JSON.stringify({
                     <time datetime={post.date}>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
                   </div>
                 </div>
-                <h2 class="text-xl font-bold mb-3">
-                  <a href={`/blog/${post.slug}`} class="hover:text-blue-600 transition-colors">
-                    {post.title}
-                  </a>
+                <h2 class="text-xl font-bold mb-3 hover:text-blue-600 transition-colors">
+                  {post.title}
                 </h2>
                 <p class="text-gray-600 mb-4">{post.excerpt}</p>
                 <a href={`/blog/${post.slug}`} class="text-blue-600 font-semibold hover:text-blue-700 inline-flex items-center group">

@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
 const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -69,10 +70,43 @@ const schema = JSON.stringify({
 });
 
 const schemas = [breadcrumbSchema, schema];
+
+const relatedPages = [
+  {
+    title: "S-VIDIA Video Technology Overview",
+    href: "/video-technology",
+    description: "Comprehensive overview of S-VIDIA AI-powered video surveillance technology and its capabilities."
+  },
+  {
+    title: "S-VIDIA FDC Technology Explained",
+    href: "/blog/why-svidia-fdc-technology-revolutionizes-security-surveillance",
+    description: "Learn how S-VIDIA's FDC technology revolutionizes security surveillance with advanced compression."
+  },
+  {
+    title: "Mobile Trailer Technology Features",
+    href: "/trailer-technology",
+    description: "Technical specifications of our mobile surveillance trailers powered by S-VIDIA technology."
+  },
+  {
+    title: "Construction Security Solutions",
+    href: "/construction-security",
+    description: "See S-VIDIA technology in action protecting construction sites with AI-powered surveillance."
+  },
+  {
+    title: "Technical Specifications",
+    href: "/technical-specifications",
+    description: "Detailed technical specifications including S-VIDIA camera systems and AI analytics features."
+  },
+  {
+    title: "CCTV Network Security Design",
+    href: "/blog/cctv-network-security-design-network-separation",
+    description: "Network security best practices for CCTV systems using advanced video surveillance technology."
+  }
+];
 ---
 
 <Layout 
-  title="Advanced Video Surveillance Technology: S-VIDIA System Explained | 2024"
+  title="Advanced Video Surveillance Technology: S-VIDIA System Explained | 2025"
   description="Discover how S-VIDIA's advanced video compression, AI analytics, and cloud technology power modern surveillance trailers. Superior image quality meets unbeatable storage efficiency."
   schema={schemas}>
   
@@ -417,6 +451,11 @@ const schemas = [breadcrumbSchema, schema];
       </div>
     </article>
   </main>
+
+  <RelatedPages
+    title="Related Video Technology Resources"
+    pages={relatedPages}
+  />
 
   <Footer />
 </Layout>

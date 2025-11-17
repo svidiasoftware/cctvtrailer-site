@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';import Footer from '../components/Footer.astro';
+import RelatedPages from '../components/RelatedPages.astro';
 import Analytics from '../components/Analytics.astro';
 import ServiceSchema from '../components/ServiceSchema.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
@@ -31,6 +32,39 @@ const crimeStats = [
   { value: "57", label: "Crimes per 1,000 Residents" },
   { value: "96%", label: "WA Cities Safer Than Puyallup" }
 ];
+
+const relatedPages = [
+  {
+    title: "Event Security Trailer Rentals",
+    href: "/event-security",
+    description: "Specialized security for Washington State Fair, festivals, concerts, and large-scale events throughout Puyallup."
+  },
+  {
+    title: "Construction Site Security Solutions",
+    href: "/construction-security",
+    description: "Mobile surveillance for South Hill construction projects and commercial development sites."
+  },
+  {
+    title: "Equipment Theft Prevention",
+    href: "/solutions/equipment-theft-prevention",
+    description: "Protect agricultural equipment, farm machinery, and irrigation systems in Puyallup Valley."
+  },
+  {
+    title: "Fife Security Rental Services",
+    href: "/fife-security-rental",
+    description: "Industrial security in Fife - 10 miles west serving the Port of Tacoma corridor."
+  },
+  {
+    title: "Tacoma Security Trailer Services",
+    href: "/tacoma-security-trailer",
+    description: "Our headquarters in Tacoma - 15 miles northwest with rapid 15-minute response to Puyallup."
+  },
+  {
+    title: "View Pricing & Plans",
+    href: "/pricing",
+    description: "Transparent event and agricultural security pricing for Puyallup fairgrounds and farms."
+  }
+];
 ---
 
 <Layout 
@@ -50,7 +84,7 @@ const crimeStats = [
       <div class="container mx-auto px-4">
         <div class="max-w-4xl">
           <h1 class="text-4xl md:text-5xl font-bold mb-4">Puyallup Security Camera Rental Services</h1>
-          <p class="text-xl mb-6">Protecting the Washington State Fairgrounds, agricultural facilities, and South Hill businesses with advanced mobile surveillance technology.</p>
+          <p class="text-xl mb-6"><strong>Protecting the Washington State Fairgrounds</strong>, agricultural facilities, and South Hill businesses with <strong>advanced mobile surveillance technology</strong>.</p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="tel:2536832288" class="bg-white text-green-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
               📞 Call: (253) 683-2288
@@ -337,6 +371,11 @@ const crimeStats = [
       </div>
     </section>
   </main>
+
+  <RelatedPages
+    title="Related Event Security & Nearby Areas"
+    pages={relatedPages}
+  />
 
   <Footer />
 </Layout>

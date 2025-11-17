@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import RelatedPages from '../components/RelatedPages.astro';
 import CTASection from '../components/CTASection.astro';
 import Analytics from '../components/Analytics.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
@@ -91,6 +92,39 @@ const breadcrumbItems = [
   { name: "Home", url: "/" },
   { name: "Locations", url: "/locations" },
   { name: "Tacoma Construction Security" }
+];
+
+const relatedPages = [
+  {
+    title: "Construction Site Security Solutions",
+    href: "/construction-security",
+    description: "Comprehensive mobile surveillance solutions for construction sites across all industries and project sizes."
+  },
+  {
+    title: "Tacoma Security Trailer Services",
+    href: "/tacoma-security-trailer",
+    description: "Full range of mobile security services in Tacoma including retail, events, and industrial surveillance."
+  },
+  {
+    title: "Tacoma Retail Parking Lot Security",
+    href: "/tacoma-retail-parking-lot-security",
+    description: "Specialized parking lot surveillance for Tacoma retail centers and commercial properties."
+  },
+  {
+    title: "Lakewood JBLM Security Services",
+    href: "/lakewood-jblm-security",
+    description: "Military contractor security in Lakewood - 10 miles southwest serving JBLM area."
+  },
+  {
+    title: "Technical Specifications",
+    href: "/technical-specifications",
+    description: "Detailed specs on our construction-grade mobile surveillance trailer technology."
+  },
+  {
+    title: "View Pricing & Plans",
+    href: "/pricing",
+    description: "Transparent construction security pricing for Tacoma area projects."
+  }
 ];
 ---
 
@@ -541,6 +575,11 @@ const breadcrumbItems = [
       features={["✓ 2-Hour Emergency Response", "✓ Free Tacoma Delivery", "✓ Local 24/7 Support", "✓ No Setup Fees"]}
     />
   </main>
+
+  <RelatedPages
+    title="Related Construction Security & Tacoma Services"
+    pages={relatedPages}
+  />
 
   <Footer />
 </Layout>

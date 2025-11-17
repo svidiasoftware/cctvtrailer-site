@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
 import CTASection from '../../components/CTASection.astro';
 import Analytics from '../../components/Analytics.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
@@ -61,6 +62,39 @@ const breadcrumbs = [
   { name: 'Home', url: '/' },
   { name: 'Blog', url: '/blog' },
   { name: 'Holiday Construction Site Security', url: '/blog/holiday-construction-site-theft-prevention-guide' }
+];
+
+const relatedPages = [
+  {
+    title: "Preventing Theft at Construction Sites Guide",
+    href: "/blog/preventing-theft-construction-sites",
+    description: "Comprehensive guide to preventing theft at construction sites with proven strategies, statistics, and security best practices."
+  },
+  {
+    title: "Construction Site Security Solutions",
+    href: "/construction-security",
+    description: "Professional mobile surveillance trailers designed to protect construction sites from theft and vandalism 24/7."
+  },
+  {
+    title: "Emergency Surveillance Deployment",
+    href: "/emergency-surveillance",
+    description: "Rapid deployment mobile security solutions for urgent protection needs, available 24/7 including holidays."
+  },
+  {
+    title: "Calculate Your Security Costs",
+    href: "/security-cost-calculator",
+    description: "Estimate the cost of implementing security measures versus the potential impact of theft during holidays."
+  },
+  {
+    title: "Security Equipment Specifications",
+    href: "/technical-specifications",
+    description: "Detailed technical specifications of our mobile surveillance trailers and security camera systems."
+  },
+  {
+    title: "Insurance Security Requirements",
+    href: "/insurance-security-requirements",
+    description: "Learn about insurance requirements for construction site security during holidays and year-round protection."
+  }
 ];
 ---
 
@@ -567,6 +601,11 @@ const breadcrumbs = [
     />
 
   </article>
+
+  <RelatedPages
+    title="Additional Construction Security Resources"
+    pages={relatedPages}
+  />
 
   <Footer />
 </Layout>

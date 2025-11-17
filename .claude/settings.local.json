@@ -14,7 +14,11 @@
       "WebFetch(domain:www.a1securitycameras.com)",
       "WebFetch(domain:luminator.com)",
       "WebFetch(domain:blink.ucsd.edu)",
-      "WebFetch(domain:www.rugged-cctv.com)"
+      "WebFetch(domain:www.rugged-cctv.com)",
+      "Bash(for file in construction-site-security-mobile-vs-fixed.astro advanced-video-surveillance-technology-svidia.astro why-svidia-fdc-technology-revolutionizes-security-surveillance.astro)",
+      "Bash(do echo \"=== $file ===\" grep -n \"^---$\" /Users/bv/projects/svd/cctvtrailer/cctvtrailer-site/src/pages/blog/$file)",
+      "Bash(for file in olympia-mobile-cctv.astro auburn-manufacturing-security.astro bremerton-naval-security.astro)",
+      "Bash(do echo \"=== $file ===\" awk '/^---$/{count++; if(count==2) {print \"\"\"\"Frontmatter ends at line \"\"\"\" NR; exit}}' /Users/bv/projects/svd/cctvtrailer/cctvtrailer-site/src/pages/$file echo -n \"Footer at line: \" grep -n \"<Footer />\" /Users/bv/projects/svd/cctvtrailer/cctvtrailer-site/src/pages/$file)"
     ],
     "deny": [],
     "ask": []

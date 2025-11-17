@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
 
 const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -33,7 +34,7 @@ const schema = JSON.stringify({
   "headline": "Construction Site Security: Mobile vs Fixed Cameras - Complete Comparison Guide",
   "alternativeHeadline": "Mobile Surveillance Trailers vs Fixed Security Cameras: Which is Better?",
   "datePublished": "2024-01-10",
-  "dateModified": "2024-01-10",
+  "dateModified": "2025-01-10",
   "author": {
     "@type": "Organization",
     "name": "CCTV Trailer",
@@ -70,10 +71,43 @@ const schema = JSON.stringify({
 });
 
 const schemas = [breadcrumbSchema, schema];
+
+const relatedPages = [
+  {
+    title: "Construction Site Security Solutions",
+    href: "/construction-security",
+    description: "Mobile surveillance trailer solutions designed specifically for construction site protection."
+  },
+  {
+    title: "Mobile Trailer Technology Specifications",
+    href: "/trailer-technology",
+    description: "Detailed technical specifications of our mobile security trailers and their advanced features."
+  },
+  {
+    title: "Preventing Theft at Construction Sites",
+    href: "/blog/preventing-theft-construction-sites",
+    description: "Comprehensive guide to construction site theft prevention with proven strategies and statistics."
+  },
+  {
+    title: "Security Cost Calculator",
+    href: "/security-cost-calculator",
+    description: "Compare costs between mobile and fixed security solutions for your construction project."
+  },
+  {
+    title: "True Cost of Construction Theft Analysis",
+    href: "/blog/true-cost-construction-theft-vs-security-investment",
+    description: "In-depth analysis of construction theft costs versus security investment ROI."
+  },
+  {
+    title: "Technical Specifications",
+    href: "/technical-specifications",
+    description: "Complete technical specifications for both mobile and fixed surveillance systems."
+  }
+];
 ---
 
 <Layout
-  title="Construction Site Security: Mobile vs Fixed Cameras | 2024 Comparison"
+  title="Construction Site Security: Mobile vs Fixed Cameras | 2025 Comparison"
   description="Mobile trailers vs fixed cameras for construction security: cost comparison, pros/cons, ROI analysis. Find the best solution for your jobsite protection."
   schema={schemas}>
   
@@ -437,6 +471,11 @@ const schemas = [breadcrumbSchema, schema];
       </div>
     </article>
   </main>
+
+  <RelatedPages
+    title="Related Construction Security Resources"
+    pages={relatedPages}
+  />
 
   <Footer />
 </Layout>

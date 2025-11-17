@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
 import CTASection from '../../components/CTASection.astro';
 import Analytics from '../../components/Analytics.astro';
 import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
@@ -60,6 +61,39 @@ const breadcrumbItems = [
   { name: "Home", url: "/" },
   { name: "Blog", url: "/blog" },
   { name: "S-VIDIA FDC Technology Revolution" }
+];
+
+const relatedPages = [
+  {
+    title: "Advanced S-VIDIA Video Surveillance Technology",
+    href: "/blog/advanced-video-surveillance-technology-svidia",
+    description: "Comprehensive overview of S-VIDIA's advanced video surveillance technology and AI capabilities."
+  },
+  {
+    title: "S-VIDIA Video Technology Features",
+    href: "/video-technology",
+    description: "Detailed look at S-VIDIA AI-powered video analytics and surveillance features."
+  },
+  {
+    title: "Mobile Trailer Technology",
+    href: "/trailer-technology",
+    description: "Learn how S-VIDIA FDC technology powers our mobile surveillance trailers."
+  },
+  {
+    title: "Technical Specifications",
+    href: "/technical-specifications",
+    description: "Complete technical specifications including S-VIDIA camera systems and compression technology."
+  },
+  {
+    title: "CCTV Network Security Design",
+    href: "/blog/cctv-network-security-design-network-separation",
+    description: "Network security best practices for S-VIDIA-powered CCTV surveillance systems."
+  },
+  {
+    title: "Construction Security Solutions",
+    href: "/construction-security",
+    description: "See S-VIDIA FDC technology protecting construction sites with superior image quality."
+  }
 ];
 ---
 
@@ -539,6 +573,11 @@ const breadcrumbItems = [
       features={["✓ 94% Evidence Recovery Rate", "✓ 60% Storage Savings", "✓ 100% Court Admissibility", "✓ Same-Day Deployment"]}
     />
   </main>
+
+  <RelatedPages
+    title="Related S-VIDIA Technology Resources"
+    pages={relatedPages}
+  />
 
   <Footer />
 </Layout>

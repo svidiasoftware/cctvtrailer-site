@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
 import CTASection from '../../components/CTASection.astro';
 import QuoteForm from '../../components/QuoteForm.astro';
 import ServiceSchema from '../../components/ServiceSchema.astro';
@@ -13,6 +14,39 @@ const breadcrumbItems = [
   { name: "Home", url: "/" },
   { name: "Solutions", url: "/services" },
   { name: "Copper Wire Theft Prevention" }
+];
+
+const relatedPages = [
+  {
+    title: "Construction Site Security Solutions",
+    href: "/construction-security",
+    description: "Comprehensive mobile surveillance for construction sites with copper wire and material theft prevention."
+  },
+  {
+    title: "Preventing Theft at Construction Sites",
+    href: "/blog/preventing-theft-construction-sites",
+    description: "Complete guide to construction site theft prevention including copper wire protection strategies."
+  },
+  {
+    title: "Equipment Theft Prevention Solutions",
+    href: "/solutions/equipment-theft-prevention",
+    description: "Protect valuable construction equipment, tools, and materials from theft with mobile surveillance."
+  },
+  {
+    title: "Security Cost Calculator",
+    href: "/security-cost-calculator",
+    description: "Calculate the cost of security measures versus potential copper wire and material theft losses."
+  },
+  {
+    title: "Mobile Trailer Technology",
+    href: "/trailer-technology",
+    description: "Advanced surveillance technology designed for construction site protection and theft deterrence."
+  },
+  {
+    title: "ROI Calculator for Security",
+    href: "/roi-calculator",
+    description: "Calculate return on investment for copper wire theft prevention and security measures."
+  }
 ];
 
 const serviceSchemaData = {
@@ -79,7 +113,7 @@ const faqSchema = JSON.stringify({
             🚨 COPPER PRICES AT RECORD HIGH - THEFT SURGE WARNING
           </div>
           <h1 class="text-4xl md:text-5xl font-bold mb-4">Stop Copper Wire Theft Before It Destroys Your Timeline</h1>
-          <p class="text-xl mb-6">Thieves make $2,000. You lose $50,000+ and weeks of delays. One night can devastate your entire project.</p>
+          <p class="text-xl mb-6">Thieves make $2,000. <strong>You lose $50,000+ and weeks of delays.</strong> One night can devastate your entire project.</p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="tel:2536832288" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block text-center">
               🚨 Emergency: (253) 683-2288
@@ -573,6 +607,11 @@ const faqSchema = JSON.stringify({
       </div>
     </section>
   </main>
+
+  <RelatedPages
+    title="Related Theft Prevention Resources"
+    pages={relatedPages}
+  />
 
   <Footer />
 
