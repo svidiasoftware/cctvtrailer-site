@@ -1,0 +1,536 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import CTASection from '../../components/CTASection.astro';
+import Analytics from '../../components/Analytics.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import LazyImage from '../../components/LazyImage.astro';
+import QuickAnswer from '../../components/QuickAnswer.astro';
+import StatBox from '../../components/StatBox.astro';
+import SpeakableSchema from '../../components/SpeakableSchema.astro';
+
+// Speakable sections for voice search
+const speakableSections = [
+  { cssSelector: ".quick-answer-content" },
+  { cssSelector: ".blog-content h2, .blog-content p" },
+  { cssSelector: ".stat-box" }
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Auto Dealer Lot Security: How Mobile Surveillance Stops Vehicle Theft in Washington",
+  "datePublished": "2026-02-07",
+  "dateModified": "2026-02-07",
+  "author": {
+    "@type": "Organization",
+    "name": "CCTV Trailer",
+    "url": "https://www.cctvtrailer.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CCTV Trailer",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.cctvtrailer.com/images/cctv-trailer-logo.png"
+    }
+  },
+  "description": "Washington auto dealers face 50+ vehicle thefts per day in King County alone. Learn how mobile surveillance trailers protect dealer lots from organized theft rings, catalytic converter theft, and after-hours vandalism across the Puget Sound region.",
+  "image": [
+    "https://www.cctvtrailer.com/images/tacoma-dome-bg-hero6.webp"
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.cctvtrailer.com/blog/auto-dealer-lot-security-mobile-surveillance"
+  },
+  "wordCount": 2800,
+  "keywords": [
+    "auto dealer lot security",
+    "car dealership theft prevention",
+    "mobile surveillance auto dealer",
+    "vehicle theft Washington state",
+    "dealer lot security cameras",
+    "Tacoma auto dealer security",
+    "Seattle dealership theft",
+    "catalytic converter theft dealership",
+    "South Tacoma Way auto dealers"
+  ]
+});
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Blog', url: '/blog' },
+  { name: 'Auto Dealer Lot Security', url: '/blog/auto-dealer-lot-security-mobile-surveillance' }
+];
+
+const relatedPages = [
+  {
+    title: "Tacoma Auto Dealer Security Solutions",
+    href: "/tacoma-auto-dealer-security",
+    description: "Mobile surveillance specifically designed for Tacoma and South Tacoma Way auto dealerships. Same-day deployment available."
+  },
+  {
+    title: "Equipment Theft Prevention",
+    href: "/solutions/equipment-theft-prevention",
+    description: "Advanced theft prevention solutions using mobile surveillance technology with license plate capture."
+  },
+  {
+    title: "Tacoma Retail Parking Lot Security",
+    href: "/tacoma-retail-parking-lot-security",
+    description: "Parking lot and outdoor lot surveillance solutions for retail and commercial properties in Tacoma."
+  },
+  {
+    title: "Security Trailer vs Guards Cost Comparison",
+    href: "/security-trailer-vs-guards",
+    description: "Detailed cost analysis comparing mobile surveillance trailers to traditional security guard services."
+  },
+  {
+    title: "Technical Specifications",
+    href: "/technical-specifications",
+    description: "PTZ cameras, license plate recognition, and night vision capabilities ideal for dealer lot monitoring."
+  },
+  {
+    title: "Same-Day Security Rental",
+    href: "/same-day-security-rental",
+    description: "Emergency deployment available for dealerships that need immediate lot protection."
+  }
+];
+---
+
+<Layout
+  title="Auto Dealer Lot Security: How Mobile Surveillance Stops Vehicle Theft | CCTV Trailer"
+  description="Washington auto dealers face 50+ vehicle thefts per day in King County. Learn how mobile surveillance protects dealer lots from organized theft, catalytic converter theft, and vandalism."
+  schema={schema}>
+
+  <Header currentPath="/blog" showEmergencyBar={true} />
+  <Analytics />
+  <BreadcrumbSchema items={breadcrumbs} />
+  <SpeakableSchema sections={speakableSections} />
+
+  <article>
+    <!-- Hero Section -->
+    <section class="hero-section-blog relative py-20 px-6 text-white">
+      <div class="hero-overlay">
+        <LazyImage src="/images/tacoma-dome-bg-hero6.webp" alt="Mobile surveillance trailer protecting auto dealership lot in Tacoma Washington"
+          class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
+      <div class="container mx-auto max-w-4xl relative z-10">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          Auto Dealer Lot Security: How Mobile Surveillance Stops Vehicle Theft in Washington
+        </h1>
+        <div class="flex items-center text-lg mb-8">
+          <time datetime="2026-02-07">February 7, 2026</time>
+          <span class="mx-4">&bull;</span>
+          <span>9 min read</span>
+        </div>
+        <p class="text-xl leading-relaxed">
+          With <strong>50 vehicles stolen per day</strong> in King County and organized theft rings targeting dealership lots across the Puget Sound, auto dealers in Washington are facing a crisis. Here's why mobile surveillance is becoming the go-to solution for lot security from South Tacoma Way to Seattle's auto row.
+        </p>
+      </div>
+    </section>
+
+    <!-- Quick Answer Section -->
+    <QuickAnswer
+      question="How can auto dealers protect their lots from vehicle theft?"
+      answer="Auto dealers can protect their lots with mobile surveillance trailers that provide 24/7 monitoring, 360-degree PTZ camera coverage, license plate recognition, and night vision capabilities. Mobile surveillance reduces theft attempts by up to 90% and costs 75-85% less than 24/7 security guard coverage. Trailers deploy in under 30 minutes, require no permanent installation, and can be repositioned as lot layouts change. CCTV Trailer serves dealerships throughout Tacoma, Seattle, and the Puget Sound region with same-day deployment."
+    />
+
+    <!-- Main Content -->
+    <section class="py-16">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <div class="blog-content prose prose-lg max-w-none">
+
+          <!-- Stats Section -->
+          <div class="mb-12">
+            <StatBox
+              layout="grid"
+              stats={[
+                {
+                  value: "50/day",
+                  label: "Vehicles stolen daily in King County",
+                  icon: "🚗",
+                  highlight: true,
+                  source: {
+                    text: "Puget Sound Auto Theft Task Force",
+                    url: "https://blog.piercecountywa.gov/autothefttaskforce/"
+                  }
+                },
+                {
+                  value: "4 in 10",
+                  label: "Auto thefts happen at dealerships",
+                  icon: "🏪",
+                  highlight: false
+                },
+                {
+                  value: "90%",
+                  label: "Fewer theft attempts with surveillance",
+                  icon: "📉",
+                  highlight: false
+                },
+                {
+                  value: "$67K",
+                  label: "Average claim value per theft incident",
+                  icon: "💰",
+                  highlight: false
+                }
+              ]}
+            />
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6">Washington's Auto Theft Crisis: What Dealers Are Up Against</h2>
+
+            <p>
+              Auto dealers in the Tacoma-Seattle corridor are operating in one of the highest vehicle theft regions in the country. Washington ranked <strong>fourth nationally for stolen vehicles</strong> in 2023 with 43,160 vehicles stolen. While statewide numbers dropped 42% in the first half of 2025, the Puget Sound region remains a hotspot for organized theft operations targeting dealer lots.
+            </p>
+            <br>
+
+            <p>
+              The <a href="https://blog.piercecountywa.gov/autothefttaskforce/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Puget Sound Auto Theft Task Force</a> reported that King County alone sees approximately 50 cars stolen per day, with Pierce County logging 386 stolen vehicles in a single month. For dealerships with dozens or hundreds of vehicles sitting on open lots overnight, the math is not in their favor.
+            </p>
+            <br>
+
+            <p>
+              As one dealer association member put it in a <a href="https://www.king5.com/article/news/crime/thefts-vandalisms-up-at-washington-auto-dealerships/281-eb858e86-1961-4a5e-9627-b27b2a059df3" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">KING 5 report</a>: <strong>"It's like the Wild West."</strong> Thefts, vandalism, and catalytic converter theft at Washington auto dealerships have been rising steadily, with franchised dealers reporting significant increases since 2020.
+            </p>
+          </section>
+
+          <div class="bg-red-50 border-l-4 border-red-500 p-6 my-8">
+            <p class="font-semibold text-red-900 mb-2">Real Threat: Organized Theft Rings</p>
+            <p class="text-red-800 mb-3">
+              In January 2026, Tacoma police arrested a suspect with <strong>47 total charges</strong> including four counts of Robbery in the Second Degree and multiple counts of identity theft. The suspect was caught after detectives tracked a pattern of stolen vehicles being dumped along Pacific Avenue. He attempted to flee by ramming police vehicles with a stolen car before being taken into custody.
+            </p>
+            <p class="text-red-800 text-sm">
+              <a href="https://www.chronline.com/stories/police-agencies-join-forces-to-nab-prolific-suspected-tacoma-car-thief,391547" target="_blank" rel="noopener noreferrer" class="underline hover:text-red-600">
+                Source: The Daily Chronicle, November 2025
+              </a>
+            </p>
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6">The Three Biggest Threats to Dealership Lots</h2>
+
+            <h3 class="text-2xl font-semibold mb-4">1. Vehicle Theft and Joyriding</h3>
+            <p>
+              The most obvious threat: vehicles driven straight off the lot. Thieves have become increasingly sophisticated, using fake IDs to test-drive vehicles and never return, or simply breaking into key lockboxes during off-hours. High-tech methods like relay attacks on keyless-entry systems make modern vehicles especially vulnerable. In some cases, <strong>thieves drive away with vehicles worth up to $100,000</strong> before the dealership even knows they're gone.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">2. Catalytic Converter Theft</h3>
+            <p>
+              Even when vehicles aren't stolen outright, they're targeted for parts. Catalytic converter theft has seen a <a href="https://westseattleblog.com/2026/02/west-seattlecrime-watch-resurgence-of-catalytic-converter-thefts-continues/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">resurgence across the Puget Sound in early 2026</a>. A single converter can be cut out in under 90 seconds and sold for $100-$500 in scrap, but costs the dealer <strong>$1,000-$3,000 per vehicle to repair</strong>. When a thief hits 10-15 vehicles in one night, the losses add up fast.
+            </p>
+            <br>
+            <p>
+              Washington has enacted laws requiring catalytic converter marking on vehicles sold at retail starting April 2025, with trafficking penalties of up to five years and $10,000 in fines. But enforcement remains a challenge, and dealers are still the primary targets.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">3. Vandalism and Property Damage</h3>
+            <p>
+              Beyond theft, dealerships face vandalism that can damage dozens of vehicles in a single incident. In March 2025, six Cybertrucks were spray-painted overnight at a Lynnwood Tesla Service Center. Keying, window smashing, and tire slashing incidents are routinely reported across Puget Sound dealer lots. Each vandalized vehicle can cost $2,000-$10,000 in body work, and the damage is rarely covered by the perpetrators.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6">Why Traditional Dealer Lot Security Falls Short</h2>
+
+            <p>
+              Most dealerships rely on some combination of fencing, lighting, alarm systems, and occasionally security guards. Here's why each of these measures alone isn't enough:
+            </p>
+            <br>
+
+            <div class="overflow-x-auto mb-8">
+              <table class="min-w-full bg-white border border-gray-300">
+                <caption class="sr-only">Comparison of traditional security measures for auto dealerships</caption>
+                <thead>
+                  <tr class="bg-gray-100">
+                    <th class="border px-4 py-2 text-left">Security Method</th>
+                    <th class="border px-4 py-2 text-left">Limitations</th>
+                    <th class="border px-4 py-2 text-left">Monthly Cost</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="border px-4 py-2 font-semibold">Fencing & Gates</td>
+                    <td class="border px-4 py-2">Easily climbed or cut; no deterrent once breached; no evidence captured</td>
+                    <td class="border px-4 py-2">$0 ongoing</td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="border px-4 py-2 font-semibold">Alarm Systems</td>
+                    <td class="border px-4 py-2">High false alarm rates; reactive only; no visual verification; police response deprioritized</td>
+                    <td class="border px-4 py-2">$200-$500</td>
+                  </tr>
+                  <tr>
+                    <td class="border px-4 py-2 font-semibold">Fixed CCTV Cameras</td>
+                    <td class="border px-4 py-2">Limited coverage; blind spots; recording only (no active deterrent); requires installation</td>
+                    <td class="border px-4 py-2">$500-$2,000</td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="border px-4 py-2 font-semibold">Security Guards (24/7)</td>
+                    <td class="border px-4 py-2">Can only be in one place; fatigue and distraction; call-outs and no-shows; high cost</td>
+                    <td class="border px-4 py-2 text-red-600 font-semibold">$15,000-$25,000</td>
+                  </tr>
+                  <tr>
+                    <td class="border px-4 py-2 font-semibold">Mobile Surveillance Trailer</td>
+                    <td class="border px-4 py-2 text-green-700">360-degree coverage; active deterrent; license plate capture; night vision; repositionable</td>
+                    <td class="border px-4 py-2 text-green-600 font-semibold">$3,500-$8,000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6">How Mobile Surveillance Protects Dealer Lots</h2>
+
+            <p>
+              Mobile surveillance trailers are purpose-built for exactly this scenario: large open lots with high-value inventory that needs round-the-clock protection. Here's what makes them the preferred solution for <a href="/tacoma-auto-dealer-security" class="text-blue-600 hover:underline">auto dealers across the Tacoma-Seattle corridor</a>:
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Elevated 360-Degree Coverage</h3>
+            <p>
+              Our trailers mount cameras at <strong>18-22 feet</strong>, providing a bird's-eye view that eliminates the blind spots ground-level cameras miss. A single trailer can cover <strong>2-5 acres of lot space</strong>, monitoring hundreds of vehicles simultaneously. PTZ (pan-tilt-zoom) cameras can zoom in on specific areas of interest, from a suspicious person near the fence line to a license plate on a passing vehicle.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">License Plate Recognition</h3>
+            <p>
+              Every vehicle entering and leaving the lot vicinity is logged. When a theft is reported, <strong>investigators have immediate access to plate numbers, timestamps, and vehicle descriptions</strong>. This capability alone has been responsible for faster recoveries and successful prosecutions in the Puget Sound region.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Night Vision and Floodlights</h3>
+            <p>
+              The majority of dealer lot thefts occur between 11 PM and 4 AM. Our trailers are equipped with infrared night vision cameras that see clearly in complete darkness, plus <strong>high-intensity LED floodlights</strong> that can be triggered by motion or activated remotely. Suddenly illuminating a would-be thief at 2 AM is often all the deterrent needed.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Visible Deterrent Effect</h3>
+            <p>
+              A 12-foot mobile surveillance trailer parked at the entrance of your lot sends an unmistakable message. Industry data shows dealerships with visible surveillance systems report <strong>up to 90% fewer theft attempts</strong>. Criminals looking for easy targets move on to lots without visible protection.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">No Infrastructure Required</h3>
+            <p>
+              Unlike fixed camera systems that require weeks of installation, trenching, and wiring, a mobile surveillance trailer is <strong>operational within 30 minutes of arriving on-site</strong>. Solar power and battery backup mean no electrical hookup is needed. When your lot layout changes for a sale event or seasonal reorganization, the trailer moves with it.
+            </p>
+          </section>
+
+          <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
+            <p class="font-semibold text-blue-900 mb-2">Insurance Benefit</p>
+            <p class="text-blue-800">
+              Many auto dealers don't realize that implementing professional surveillance can reduce their <strong>garage liability and comprehensive insurance premiums</strong>. Insurance companies recognize that documented, 24/7 surveillance reduces claims frequency and value. Dealers in our service area have reported meaningful premium reductions after deploying mobile surveillance, often covering a significant portion of the rental cost through insurance savings alone.
+            </p>
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6">Dealer Lot Security Checklist</h2>
+
+            <p>
+              Whether you manage a small independent lot on South Tacoma Way or a large franchise dealership in Seattle, here's a comprehensive security checklist:
+            </p>
+            <br>
+
+            <div class="checklist-timeline">
+              <div class="checklist-phase">
+                <h3 class="text-2xl font-semibold mb-4">Physical Security</h3>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>Inspect perimeter fencing weekly for cuts, gaps, or damage</li>
+                  <li>Ensure all lot lighting is operational, especially in back rows and corners</li>
+                  <li>Secure key lockboxes with high-security locks and limit access</li>
+                  <li>Use steering wheel locks or tire boots on high-value inventory</li>
+                  <li>Park vehicles close together to limit access between rows after hours</li>
+                </ul>
+              </div>
+
+              <div class="checklist-phase">
+                <h3 class="text-2xl font-semibold mb-4">Surveillance & Monitoring</h3>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>Deploy mobile surveillance with 360-degree PTZ camera coverage</li>
+                  <li>Ensure cameras cover all lot entrances, exits, and perimeter</li>
+                  <li>Enable license plate capture for all vehicles approaching the lot</li>
+                  <li>Verify night vision is functioning and covers the entire inventory area</li>
+                  <li>Test remote viewing access weekly to ensure connectivity</li>
+                </ul>
+              </div>
+
+              <div class="checklist-phase">
+                <h3 class="text-2xl font-semibold mb-4">Operational Procedures</h3>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>Maintain daily inventory counts of all vehicles on the lot</li>
+                  <li>Record VIN and plate numbers with photos for every vehicle received</li>
+                  <li>Implement sign-out procedures for all test drives with ID verification</li>
+                  <li>Coordinate with local law enforcement on area crime trends</li>
+                  <li>Report all incidents promptly, even minor vandalism, to establish patterns</li>
+                </ul>
+              </div>
+
+              <div class="checklist-phase">
+                <h3 class="text-2xl font-semibold mb-4">Catalytic Converter Protection</h3>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>Mark catalytic converters with VIN etching per Washington state law</li>
+                  <li>Position surveillance to cover vehicle undercarriages in back rows</li>
+                  <li>Consider catalytic converter cages for high-risk vehicles (trucks, SUVs, hybrids)</li>
+                  <li>Park hybrid vehicles (especially Priuses) in well-lit, high-visibility areas</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6">Cost Analysis: Mobile Surveillance ROI for Dealers</h2>
+
+            <p>
+              The numbers tell a clear story for auto dealers evaluating lot security options:
+            </p>
+
+            <div class="bg-gray-100 rounded-lg p-6 my-8">
+              <h4 class="text-xl font-bold mb-4">Annual Security Cost Comparison</h4>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h5 class="font-semibold text-lg mb-3">24/7 Security Guards</h5>
+                  <ul class="space-y-2">
+                    <li>3 shifts x $36.54/hour = $109.62/hour</li>
+                    <li>24 hours x 365 days = 8,760 hours</li>
+                    <li>Plus overtime, benefits, management</li>
+                    <li class="font-bold text-red-600">Annual Cost: $960,000+</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h5 class="font-semibold text-lg mb-3">Mobile Surveillance Trailer</h5>
+                  <ul class="space-y-2">
+                    <li>Monthly rate: $3,500-$8,000</li>
+                    <li>12 months of continuous coverage</li>
+                    <li>Includes maintenance and support</li>
+                    <li class="font-bold text-green-600">Annual Cost: $42,000-$96,000</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="mt-6 p-4 bg-green-100 rounded">
+                <p class="text-center text-lg font-semibold">
+                  Annual Savings with Mobile Surveillance: $864,000+ (90% cost reduction)
+                </p>
+              </div>
+            </div>
+
+            <p>
+              And that's before factoring in prevented losses. A single vehicle theft at a dealership can result in $30,000-$100,000 in direct costs plus insurance premium increases, project delays for body shops, and lost sales from depleted inventory. Preventing even one theft per quarter pays for the surveillance system many times over.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6">What Washington State Is Doing About Dealer Theft</h2>
+
+            <p>
+              Washington has taken legislative steps to address the auto theft and catalytic converter epidemic:
+            </p>
+            <br>
+
+            <ul class="list-disc pl-6 space-y-3 mb-6">
+              <li><strong>Catalytic Converter Marking Law (2025):</strong> Dealers must offer VIN etching on catalytic converters for all retail vehicle sales, creating a traceable deterrent</li>
+              <li><strong>Trafficking Penalties:</strong> Knowingly trafficking detached catalytic converters now carries up to five years in prison and $10,000 in fines</li>
+              <li><strong>$500 Licensing Fee:</strong> New fees fund Washington State Patrol inspections and enforcement at scrap metal dealers</li>
+              <li><strong>Puget Sound Auto Theft Task Force:</strong> Multi-agency operation conducting regular emphasis patrols and sting operations across King and Pierce Counties</li>
+            </ul>
+
+            <p>
+              While these measures help, they're primarily focused on <strong>prosecution after the fact</strong>. For dealers, the priority needs to be prevention. A stolen vehicle recovered three states away is still a massive disruption to your business. Active surveillance that <strong>deters theft before it happens</strong> remains the most effective strategy.
+            </p>
+          </section>
+
+          <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg p-8 my-12">
+            <h3 class="text-2xl font-bold mb-4">Protect Your Dealership Lot Today</h3>
+            <p class="text-lg mb-6">
+              Same-day deployment available for dealerships across Tacoma, Seattle, and the Puget Sound region. No long-term contracts, no installation required.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li>&#10003; 360-degree PTZ cameras with license plate capture</li>
+              <li>&#10003; Solar-powered with battery backup, no hookup needed</li>
+              <li>&#10003; Serving South Tacoma Way, Fife, and Seattle auto dealers since 2009</li>
+            </ul>
+            <div class="text-center">
+              <a href="tel:2536832288" class="inline-block bg-white text-blue-700 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition">
+                Call Now: (253) 683-2288
+              </a>
+            </div>
+          </div>
+
+          <section class="faq-section">
+            <h2 class="text-3xl font-bold mb-6">Frequently Asked Questions</h2>
+
+            <div class="faq-items">
+              <div class="faq-item">
+                <h3 class="text-xl font-semibold mb-3">How many cameras does a surveillance trailer have for a dealer lot?</h3>
+                <p class="mb-6">
+                  Our mobile surveillance trailers are equipped with multiple PTZ (pan-tilt-zoom) cameras mounted at 18-22 feet, providing 360-degree coverage. A single trailer can effectively monitor 2-5 acres of lot space, covering hundreds of vehicles. For larger dealerships with multiple buildings or separate lots, we can deploy additional trailers for complete coverage.
+                </p>
+              </div>
+
+              <div class="faq-item">
+                <h3 class="text-xl font-semibold mb-3">Can the cameras capture license plates at night?</h3>
+                <p class="mb-6">
+                  Yes. Our cameras feature infrared night vision that produces clear images in complete darkness. The PTZ zoom capabilities combined with high-resolution sensors can capture readable license plates on vehicles passing the lot, even at night. This has been critical for identifying theft suspects and recovering stolen vehicles in the Puget Sound area.
+                </p>
+              </div>
+
+              <div class="faq-item">
+                <h3 class="text-xl font-semibold mb-3">Do I need a permit to place a surveillance trailer on my lot?</h3>
+                <p class="mb-6">
+                  In most cases, no permit is required for a temporary mobile surveillance unit on your own commercial property. Since our trailers are mounted on wheels and don't require permanent installation, they fall under temporary equipment in most Tacoma, Seattle, and Pierce County jurisdictions. We can advise on any specific requirements for your location.
+                </p>
+              </div>
+
+              <div class="faq-item">
+                <h3 class="text-xl font-semibold mb-3">What if my lot layout changes for sales events or seasonal inventory?</h3>
+                <p class="mb-6">
+                  That's one of the biggest advantages of mobile surveillance over fixed cameras. When you rearrange your lot for a clearance event, receive a large shipment, or adjust for seasonal inventory, the trailer can be repositioned in minutes. No rewiring, no new camera angles to program, no blind spots from moved vehicles blocking fixed cameras.
+                </p>
+              </div>
+
+              <div class="faq-item">
+                <h3 class="text-xl font-semibold mb-3">Will my insurance company recognize mobile surveillance for premium reductions?</h3>
+                <p class="mb-6">
+                  Most commercial auto and garage liability insurers offer premium reductions for dealerships with documented professional surveillance. We provide deployment documentation that you can submit to your insurer. Many dealers in our service area have seen their insurance savings cover a significant portion of the monthly surveillance rental cost.
+                </p>
+              </div>
+
+              <div class="faq-item">
+                <h3 class="text-xl font-semibold mb-3">How quickly can you deploy to my dealership?</h3>
+                <p class="mb-6">
+                  We offer same-day deployment for dealerships in the Tacoma-Seattle metro area. Setup takes approximately 20-30 minutes once on-site. For emergency situations, we can have a trailer operational within 2-4 hours of your call. Contact us at <a href="tel:2536832288" class="text-blue-600 hover:underline">(253) 683-2288</a> for immediate availability.
+                </p>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <CTASection
+      title="Don't Wait Until Your Lot Gets Hit"
+      description="With vehicle theft rates among the highest in the nation, Puget Sound auto dealers need proactive protection. Get mobile surveillance deployed on your lot today."
+      phoneText="Call Now: (253) 683-2288"
+      quoteText="Get Dealer Lot Quote"
+      features={["Same-Day Deployment", "No Contracts Required", "Save 90% vs Security Guards", "License Plate Capture Included"]}
+    />
+
+  </article>
+
+  <RelatedPages
+    title="Additional Dealer Security Resources"
+    pages={relatedPages}
+  />
+
+  <Footer />
+</Layout>

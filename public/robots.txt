@@ -1,49 +1,34 @@
 # Robots.txt for CCTV Trailer
 # https://www.cctvtrailer.com/
 
-# Allow all crawlers
+# Allow all crawlers full access
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /api/
 
-# Specific crawler instructions
+# Google - crawl freely, no delay
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
 
+# Bing - crawl freely, no delay
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 0
 
-# Block known malicious/aggressive bots
+# Block known aggressive bots
 User-agent: DotBot
 Disallow: /
 
 User-agent: MJ12bot
 Disallow: /
 
-# Block admin or private directories (if any exist in future)
-User-agent: *
-Disallow: /admin/
-Disallow: /api/
-Disallow: /_astro/
+User-agent: AhrefsBot
+Disallow: /
 
-# Allow access to static assets
-User-agent: *
-Allow: /images/
-Allow: /favicons/
-Allow: /favicon.ico
-Allow: /*.css$
-Allow: /*.js$
-Allow: /*.jpg$
-Allow: /*.jpeg$
-Allow: /*.png$
-Allow: /*.gif$
-Allow: /*.svg$
-Allow: /*.webp$
+User-agent: SemrushBot
+Disallow: /
 
 # Sitemap location
 Sitemap: https://www.cctvtrailer.com/sitemap.xml
-
-# Crawl-delay for respectful crawling (in seconds)
-# This applies to all user agents unless specified otherwise
-Crawl-delay: 1

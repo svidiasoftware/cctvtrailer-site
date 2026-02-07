@@ -72,6 +72,12 @@ const finalCanonicalURL = canonicalURL || normalizeCanonicalURL(Astro.url.pathna
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Geo meta tags for local SEO -->
+    <meta name="geo.region" content="US-WA" />
+    <meta name="geo.placename" content="Tacoma" />
+    <meta name="geo.position" content="47.2529;-122.4443" />
+    <meta name="ICBM" content="47.2529, -122.4443" />
+
     <!-- Resource hints for faster connections -->
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
