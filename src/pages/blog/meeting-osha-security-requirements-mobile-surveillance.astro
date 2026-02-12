@@ -3,17 +3,129 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import RelatedPages from '../../components/RelatedPages.astro';
+import CTASection from '../../components/CTASection.astro';
+import Analytics from '../../components/Analytics.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import LazyImage from '../../components/LazyImage.astro';
+import QuickAnswer from '../../components/QuickAnswer.astro';
+import StatBox from '../../components/StatBox.astro';
+import SpeakableSchema from '../../components/SpeakableSchema.astro';
 
-const title = "Meeting OSHA Security Requirements with Mobile Surveillance | CCTV Trailer Blog";
-const description = "Learn how mobile surveillance trailers help construction sites meet OSHA security requirements while reducing costs and improving safety compliance. Practical implementation guide included.";
-const publishDate = "2025-09-22";
-const author = "CCTV Trailer Security Team";
+// Speakable sections for voice search
+const speakableSections = [
+  { cssSelector: ".quick-answer-content" },
+  { cssSelector: ".blog-content h2, .blog-content p" },
+  { cssSelector: ".stat-box" }
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "OSHA & DOSH Compliance Checklist for Washington Construction Sites",
+  "datePublished": "2025-09-22",
+  "dateModified": "2026-02-12",
+  "author": {
+    "@type": "Organization",
+    "name": "CCTV Trailer",
+    "url": "https://www.cctvtrailer.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CCTV Trailer",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.cctvtrailer.com/images/cctv-trailer-logo.png"
+    }
+  },
+  "description": "Washington-specific OSHA and DOSH compliance checklist for construction sites. Covers WAC 296-155, DOSH penalties, inspection readiness, and how mobile surveillance documents compliance in the Tacoma-Seattle area.",
+  "image": [
+    "https://www.cctvtrailer.com/images/sea-construction-hero.webp"
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.cctvtrailer.com/blog/meeting-osha-security-requirements-mobile-surveillance"
+  },
+  "wordCount": 3200,
+  "keywords": [
+    "DOSH compliance Washington",
+    "OSHA construction site checklist",
+    "WAC 296-155",
+    "Washington construction safety",
+    "DOSH inspection readiness",
+    "Washington fall protection requirements",
+    "mobile surveillance OSHA compliance",
+    "Tacoma construction security",
+    "Seattle construction DOSH",
+    "L&I construction safety"
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is DOSH and how does it differ from federal OSHA in Washington?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DOSH (Division of Occupational Safety and Health) operates under Washington's Department of Labor & Industries (L&I). Washington is one of approximately 22 states with an OSHA-approved state plan, meaning DOSH enforces its own standards that must be at least as effective as federal OSHA but can be stricter. For example, Washington's fall protection trigger height for construction is 4 feet, compared to federal OSHA's 6 feet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are DOSH penalty amounts for construction violations in Washington?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DOSH penalties in Washington include up to $7,000 per serious violation and up to $70,000 per willful or repeat violation. Failure-to-abate penalties can reach $7,000 per day. Penalty amounts are adjusted based on employer size, good faith efforts, and violation history. DOSH can also issue immediate restraint orders to shut down work that poses imminent danger."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does WAC 296-155 cover for Washington construction safety?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "WAC 296-155 is Washington's Safety Standards for Construction Work. It covers fall protection (stricter than federal at 4-foot trigger height), scaffolding, excavation, crane safety (including the nation's strictest crane operator certification under WAC 296-155-53100), electrical safety, hazard communication, personal protective equipment, and site security requirements. All Washington construction employers must comply with these standards."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can video surveillance help during a DOSH inspection in Washington?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Time-stamped video footage from mobile surveillance systems can document ongoing compliance with safety standards including PPE usage, fall protection deployment, hazard communication signage, and emergency response procedures. During a DOSH inspection, this footage serves as objective evidence that safety protocols are consistently followed, not just when inspectors are present."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What triggers a DOSH construction site inspection in Washington?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DOSH inspections can be triggered by worker complaints (which can be filed anonymously through L&I), referrals from other agencies, severe injuries or fatalities (must be reported within 8 hours), follow-up on previous violations, or programmed inspections targeting high-hazard industries. Construction is consistently one of the most-inspected industries in Washington State."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are Washington's new outdoor heat exposure rules for construction workers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Washington adopted permanent outdoor heat exposure rules under WAC 296-307-097 that require employers to provide access to drinking water, shade, and rest breaks when temperatures reach 80 degrees Fahrenheit. At 90 degrees and above, mandatory 10-minute cool-down rest periods are required every 2 hours. These rules apply year-round and are stricter than any federal OSHA heat standard."
+      }
+    }
+  ]
+});
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Blog', url: '/blog' },
+  { name: 'OSHA & DOSH Compliance Checklist for WA Construction', url: '/blog/meeting-osha-security-requirements-mobile-surveillance' }
+];
 
 const relatedPages = [
   {
     title: "Construction Site Security Solutions",
     href: "/construction-security",
-    description: "OSHA-compliant mobile surveillance solutions designed for construction site safety and security."
+    description: "Professional mobile surveillance solutions designed for construction site safety and security across Washington State."
   },
   {
     title: "Insurance Security Requirements Guide",
@@ -21,448 +133,528 @@ const relatedPages = [
     description: "Understanding insurance and compliance requirements for construction site security systems."
   },
   {
-    title: "Preventing Theft at Construction Sites",
-    href: "/blog/preventing-theft-construction-sites",
-    description: "Comprehensive guide to construction site theft prevention and safety compliance."
+    title: "Construction Compliance Guide",
+    href: "/construction-compliance-guide",
+    description: "Complete guide to construction site compliance including security, safety, and documentation requirements."
   },
   {
-    title: "Technical Specifications",
-    href: "/technical-specifications",
-    description: "Detailed technical specifications of our OSHA-compliant mobile surveillance systems."
+    title: "How to Set Up a Security Trailer",
+    href: "/how-to-setup-security-trailer",
+    description: "Step-by-step guide to deploying mobile surveillance at your construction site."
   },
   {
     title: "Security Cost Calculator",
     href: "/security-cost-calculator",
-    description: "Calculate security costs and OSHA compliance investment for your construction project."
+    description: "Calculate security costs and compliance investment for your construction project."
   },
   {
-    title: "Mobile Trailer Technology",
-    href: "/trailer-technology",
-    description: "Advanced mobile surveillance trailer technology meeting OSHA safety requirements."
+    title: "Preventing Theft at Construction Sites",
+    href: "/blog/preventing-theft-construction-sites",
+    description: "Comprehensive guide to construction site theft prevention and safety compliance."
   }
 ];
 ---
 
-<Layout title={title} description={description}>
-  <Header />
+<Layout
+  title="OSHA & DOSH Compliance Checklist for Washington Construction Sites | CCTV Trailer"
+  description="Washington-specific OSHA and DOSH compliance checklist for construction sites. Covers WAC 296-155, DOSH penalties, inspection readiness, and how mobile surveillance documents compliance."
+  schema={[schema, faqSchema]}>
 
-  <main>
-    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <header class="mb-8">
-        <h1 class="text-4xl font-bold text-gray-900 mb-4">
-          Meeting OSHA Security Requirements with Mobile Surveillance
+  <Header currentPath="/blog" showEmergencyBar={true} />
+  <Analytics />
+  <BreadcrumbSchema items={breadcrumbs} />
+  <SpeakableSchema sections={speakableSections} />
+
+  <article>
+    <!-- Hero Section -->
+    <section class="hero-section-blog relative py-20 px-6 text-white">
+      <div class="hero-overlay">
+        <LazyImage src="/images/sea-construction-hero.webp" alt="Construction site in Seattle area requiring OSHA and DOSH safety compliance"
+          class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
+      <div class="container mx-auto max-w-4xl relative z-10">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          OSHA & DOSH Compliance Checklist for Washington Construction Sites
         </h1>
-        <div class="flex items-center text-gray-600">
-          <time datetime={publishDate}>{new Date(publishDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
-          <span class="mx-2">•</span>
-          <span>{author}</span>
-          <span class="mx-2">•</span>
+        <div class="flex items-center text-lg mb-8">
+          <time datetime="2025-09-22">September 22, 2025</time>
+          <span class="mx-4">|</span>
+          <span>Updated February 12, 2026</span>
+          <span class="mx-4">|</span>
           <span>10 min read</span>
         </div>
-      </header>
-
-      <img
-        src="/images/growers-blog-i502.webp"
-        alt="OSHA compliant mobile surveillance on construction site"
-        class="w-full h-96 object-cover rounded-lg mb-8"
-        width="1200"
-        height="600"
-        loading="eager"
-        fetchpriority="high"
-      />
-
-      <div class="prose prose-lg max-w-none">
-        <p class="lead text-xl text-gray-600 mb-8">
-          Construction site security isn't just about protecting assets—it's a federal requirement. OSHA's evolving standards for workplace safety now encompass comprehensive security measures. Mobile surveillance trailers offer the most efficient path to compliance while delivering measurable ROI through insurance savings and theft prevention.
+        <p class="text-xl leading-relaxed">
+          Washington State does not rely on federal OSHA alone. The Division of Occupational Safety and Health (DOSH) under L&I enforces its own workplace safety standards -- and in many cases, they are stricter than the federal rules. If you operate a construction site in the Tacoma-Seattle corridor or anywhere in Washington, here is the compliance checklist you need.
         </p>
+      </div>
+    </section>
 
-        <h2>Understanding OSHA's Security Mandates</h2>
+    <!-- Quick Answer Section -->
+    <QuickAnswer
+      what="Washington-specific OSHA/DOSH compliance checklist for construction sites"
+      cost="DOSH penalties: up to $7,000/serious violation, $70,000/willful violation"
+      time="DOSH inspections can happen with zero advance notice"
+      coverage="WAC 296-155 covers all WA construction safety standards"
+      availability="Mobile surveillance documents compliance 24/7"
+      customFields={[
+        { label: "WA Authority", value: "DOSH under L&I (lni.wa.gov)" }
+      ]}
+    />
 
-        <p>
-          The Occupational Safety and Health Administration (OSHA) has expanded its interpretation of workplace safety to include security measures that protect both workers and equipment. Under 29 CFR 1926, construction sites must implement "adequate security measures" to ensure worker safety and prevent unauthorized access that could create hazardous conditions.
-        </p>
+    <!-- Main Content -->
+    <section class="py-16">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <div class="blog-content prose prose-lg max-w-none">
 
-        <h3>Key OSHA Requirements Addressed by Mobile Surveillance</h3>
-
-        <h4>1. 29 CFR 1926.95 - Security Planning</h4>
-        <p>
-          OSHA requires written security plans for construction projects exceeding $100,000 in value. Mobile surveillance systems provide documented, verifiable security measures that satisfy this requirement. Our systems automatically generate compliance reports showing:
-        </p>
-        <ul>
-          <li>24/7 monitoring coverage maps</li>
-          <li>Incident response logs</li>
-          <li>Access control records</li>
-          <li>Daily security summaries</li>
-        </ul>
-
-        <h4>2. 29 CFR 1926.64 - Hazardous Materials Protection</h4>
-        <p>
-          Sites storing hazardous materials must maintain continuous monitoring. Traditional security guards cost $150,000+ annually for 24/7 coverage. Mobile surveillance trailers provide superior monitoring at 70% less cost while maintaining perfect compliance records.
-        </p>
-
-        <h4>3. 29 CFR 1926.200 - Signage and Barriers</h4>
-        <p>
-          Physical barriers alone don't prevent intrusions—they require monitoring to be effective. Mobile surveillance units equipped with motion detection and automated alerts ensure immediate response to barrier breaches, satisfying OSHA's requirement for "effective" security measures.
-        </p>
-
-        <h2>The Mobile Surveillance Advantage for OSHA Compliance</h2>
-
-        <h3>Immediate Deployment</h3>
-        <p>
-          Unlike fixed camera systems requiring weeks of installation, mobile surveillance trailers deploy in 2-4 hours. This rapid deployment is crucial for meeting OSHA's requirement that security measures be in place "before commencement of construction activities."
-        </p>
-
-        <h3>Comprehensive Coverage Without Blind Spots</h3>
-        <p>
-          OSHA inspectors frequently cite inadequate coverage as a violation. Mobile surveillance trailers with 360-degree PTZ cameras eliminate blind spots. The elevated position (typically 20-25 feet) provides coverage impossible with ground-level security guards or fixed cameras.
-        </p>
-
-        <h3>Documentation and Reporting</h3>
-        <p>
-          OSHA requires detailed documentation of security measures and incidents. Mobile surveillance systems automatically generate:
-        </p>
-        <ul>
-          <li>Time-stamped video evidence</li>
-          <li>Motion detection logs</li>
-          <li>Access attempt records</li>
-          <li>Compliance audit trails</li>
-          <li>Incident report templates</li>
-        </ul>
-
-        <h2>Real-World Implementation: A Case Study</h2>
-
-        <div class="bg-blue-50 p-6 rounded-lg my-8">
-          <h4 class="font-bold text-lg mb-3">Turner Construction - Seattle High-Rise Project</h4>
-          <p class="mb-3">
-            <strong>Challenge:</strong> $450 million project required OSHA-compliant security for hazardous materials, expensive equipment, and 500+ daily workers.
-          </p>
-          <p class="mb-3">
-            <strong>Solution:</strong> Deployed 4 mobile surveillance trailers with AI-powered analytics and 24/7 professional monitoring.
-          </p>
-          <p class="mb-3">
-            <strong>Results:</strong>
-          </p>
-          <ul>
-            <li>100% OSHA compliance score during inspections</li>
-            <li>Zero security-related incidents in 18 months</li>
-            <li>35% reduction in insurance premiums</li>
-            <li>$275,000 saved vs. traditional security guards</li>
-            <li>ROI achieved in 3 months</li>
-          </ul>
-        </div>
-
-        <section class="osha-compliance-steps">
-          <h2>Step-by-Step OSHA Compliance with Mobile Surveillance</h2>
-
-          <div class="compliance-timeline">
-            <div class="week-section">
-              <h3>Week 1: Assessment and Planning</h3>
-              <ol>
-                <li><strong>Site Survey:</strong> Identify high-risk areas, entry points, and equipment locations</li>
-                <li><strong>Compliance Gap Analysis:</strong> Review current security against OSHA requirements</li>
-                <li><strong>Coverage Mapping:</strong> Design surveillance placement for 100% coverage</li>
-                <li><strong>Documentation Setup:</strong> Establish reporting procedures and compliance tracking</li>
-              </ol>
-            </div>
-
-            <div class="week-section">
-              <h3>Week 2: Deployment and Integration</h3>
-              <ol>
-                <li><strong>Trailer Positioning:</strong> Strategic placement for maximum coverage</li>
-                <li><strong>System Configuration:</strong> Set detection zones and alert parameters</li>
-                <li><strong>Access Control Integration:</strong> Connect with existing site management systems</li>
-                <li><strong>Signage Installation:</strong> OSHA-compliant warning signs referencing surveillance</li>
-              </ol>
-            </div>
-
-            <div class="week-section">
-              <h3>Week 3: Training and Testing</h3>
-              <ol>
-                <li><strong>Staff Training:</strong> Educate site managers on system capabilities</li>
-                <li><strong>Emergency Procedures:</strong> Establish incident response protocols</li>
-                <li><strong>System Testing:</strong> Verify all cameras, alerts, and recording functions</li>
-                <li><strong>Documentation Review:</strong> Ensure all OSHA paperwork is complete</li>
-              </ol>
-            </div>
-
-            <div class="week-section">
-              <h3>Week 4: Compliance Certification</h3>
-              <ol>
-                <li><strong>Final Inspection:</strong> Comprehensive system review</li>
-                <li><strong>Report Generation:</strong> Create OSHA compliance documentation</li>
-                <li><strong>Insurance Submission:</strong> Provide documentation for premium reductions</li>
-                <li><strong>Ongoing Monitoring:</strong> Establish maintenance and audit schedules</li>
-              </ol>
-            </div>
+          <!-- Stats Section -->
+          <div class="mb-12">
+            <StatBox
+              layout="grid"
+              stats={[
+                {
+                  value: "$7K",
+                  label: "Max DOSH penalty per serious violation",
+                  highlight: true
+                },
+                {
+                  value: "$70K",
+                  label: "Max DOSH penalty per willful violation",
+                  highlight: false
+                },
+                {
+                  value: "4 ft",
+                  label: "WA fall protection trigger height (vs 6 ft federal)",
+                  highlight: false
+                },
+                {
+                  value: "~22",
+                  label: "States with OSHA-approved state plans including WA",
+                  highlight: false
+                }
+              ]}
+            />
           </div>
-        </section>
 
-        <h2>Insurance Benefits Beyond OSHA Compliance</h2>
+          <section>
+            <h2 class="text-3xl font-bold mb-6">Washington's Own OSHA: Understanding DOSH</h2>
 
-        <p>
-          While OSHA compliance is mandatory, the insurance benefits provide compelling ROI. Major carriers recognize mobile surveillance as superior to traditional security methods:
-        </p>
+            <p>
+              Most contractors know about federal OSHA, but many underestimate the significance of Washington's own enforcement arm. The <strong>Division of Occupational Safety and Health (DOSH)</strong> operates under the <strong>Department of Labor & Industries (L&I)</strong> and functions as Washington's state-level OSHA program.
+            </p>
+            <br>
 
-        <div class="bg-green-50 p-6 rounded-lg my-8">
-          <h4 class="font-bold text-lg mb-3">Typical Insurance Premium Reductions</h4>
-          <ul>
-            <li><strong>General Liability:</strong> 15-25% reduction</li>
-            <li><strong>Builder's Risk:</strong> 25-40% reduction</li>
-            <li><strong>Equipment Coverage:</strong> 20-35% reduction</li>
-            <li><strong>Umbrella Policies:</strong> 10-20% reduction</li>
-          </ul>
-          <p class="mt-3 font-semibold">
-            Average Annual Savings: $125,000 for mid-size projects
-          </p>
-        </div>
+            <p>
+              Washington is one of approximately 22 states (plus several territories) that maintain an <strong>OSHA-approved state plan</strong>. This means DOSH has its own set of rules, its own inspection teams, and its own penalty structure. Federal OSHA does not directly enforce workplace safety in Washington -- DOSH does.
+            </p>
+            <br>
 
-        <section class="osha-violations">
-          <h2>Common OSHA Violations Prevented by Mobile Surveillance</h2>
-
-          <div class="violations-list">
-            <div class="violation-item">
-              <h3>1. Inadequate Perimeter Security (Citation 1926.95)</h3>
-              <p>
-                <strong>Typical Fine:</strong> $13,653 per violation<br/>
-                <strong>Prevention:</strong> 360-degree cameras with motion detection create virtual perimeters that detect and deter intrusions before they occur.
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
+              <p class="font-semibold text-blue-900 mb-2">Key Distinction</p>
+              <p class="text-blue-800">
+                Under federal law, state plans must be "at least as effective" as federal OSHA standards. In practice, Washington's DOSH standards are often <strong>stricter</strong>. The most notable example: Washington's fall protection trigger height for construction is <strong>4 feet</strong>, compared to federal OSHA's 6-foot standard. If you are following federal OSHA minimums on a Washington construction site, you may already be out of compliance.
               </p>
             </div>
 
-            <div class="violation-item">
-              <h3>2. Uncontrolled Site Access (Citation 1926.95(a))</h3>
-              <p>
-                <strong>Typical Fine:</strong> $9,753 per violation<br/>
-                <strong>Prevention:</strong> License plate recognition and facial detection systems log all site entries, creating auditable access records.
-              </p>
-            </div>
-
-            <div class="violation-item">
-              <h3>3. Hazardous Material Security Breaches (Citation 1926.64)</h3>
-              <p>
-                <strong>Typical Fine:</strong> $136,532 per willful violation<br/>
-                <strong>Prevention:</strong> Thermal imaging and AI analytics detect unauthorized presence near hazmat storage areas 24/7.
-              </p>
-            </div>
-
-            <div class="violation-item">
-              <h3>4. Inadequate Incident Documentation (Citation 1904)</h3>
-              <p>
-                <strong>Typical Fine:</strong> $13,653 per violation<br/>
-                <strong>Prevention:</strong> Automatic incident recording with cloud backup ensures permanent, time-stamped documentation.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section class="technology-features">
-          <h2>Technology Features Critical for OSHA Compliance</h2>
-
-          <div class="features-list">
-            <div class="feature-item">
-              <h3>AI-Powered Analytics</h3>
-              <p>
-                Modern mobile surveillance systems use artificial intelligence to distinguish between authorized personnel, visitors, and potential threats. This reduces false alarms while ensuring genuine security events trigger immediate response.
-              </p>
-            </div>
-
-            <div class="feature-item">
-              <h3>Thermal Imaging Capabilities</h3>
-              <p>
-                Required for sites operating 24/7 or storing temperature-sensitive materials. Thermal cameras detect intruders in complete darkness and adverse weather conditions, maintaining OSHA-required continuous monitoring.
-              </p>
-            </div>
-
-            <div class="feature-item">
-              <h3>Two-Way Audio Systems</h3>
-              <p>
-                Enable immediate verbal warnings to trespassers, often preventing incidents before they occur. OSHA recognizes active deterrence as superior to passive recording.
-              </p>
-            </div>
-
-            <div class="feature-item">
-              <h3>Cloud-Based Storage and Redundancy</h3>
-              <p>
-                OSHA requires security footage retention for potential incident investigation. Cloud storage with automatic backup ensures compliance with retention requirements while protecting against data loss.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <h2>Calculating ROI: Compliance Costs vs. Violation Risks</h2>
-
-        <div class="bg-yellow-50 p-6 rounded-lg my-8">
-          <h4 class="font-bold text-lg mb-3">Cost-Benefit Analysis</h4>
-
-          <div class="mb-4">
-            <h5 class="font-semibold">Mobile Surveillance Investment:</h5>
-            <ul>
-              <li>Monthly rental: $3,500</li>
-              <li>Annual cost: $42,000</li>
-              <li>Setup and training: $5,000 (one-time)</li>
+            <h3 class="text-2xl font-semibold mb-4">DOSH at a Glance</h3>
+            <ul class="list-disc pl-6 space-y-2 mb-6">
+              <li><strong>Governing body:</strong> Washington Department of Labor & Industries (L&I)</li>
+              <li><strong>Website:</strong> <a href="https://lni.wa.gov/safety-health/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">lni.wa.gov/safety-health</a></li>
+              <li><strong>Primary construction standard:</strong> WAC 296-155 (Safety Standards for Construction Work)</li>
+              <li><strong>Inspection authority:</strong> Can enter any worksite without advance notice</li>
+              <li><strong>Complaint process:</strong> Workers can file anonymous complaints through L&I</li>
+              <li><strong>Reporting requirement:</strong> Fatalities and in-patient hospitalizations must be reported within 8 hours</li>
             </ul>
-          </div>
+          </section>
 
-          <div class="mb-4">
-            <h5 class="font-semibold">Potential OSHA Violation Costs (Annual Risk):</h5>
-            <ul>
-              <li>Average fine per violation: $13,653</li>
-              <li>Average violations per unprotected site: 3-5</li>
-              <li>Work stoppage costs: $50,000-$200,000 per incident</li>
-              <li>Legal and consultation fees: $25,000-$75,000</li>
+          <section>
+            <h2 class="text-3xl font-bold mb-6">DOSH Inspection Readiness Checklist</h2>
+
+            <p>
+              DOSH compliance officers can arrive at your construction site without warning. Being prepared for an inspection is not optional -- it is the baseline expectation. Here is what inspectors evaluate and the documentation you need to have ready.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">What DOSH Inspectors Look For</h3>
+            <ul class="list-disc pl-6 space-y-2 mb-6">
+              <li><strong>Fall protection systems:</strong> Guardrails, safety nets, personal fall arrest systems at 4+ feet</li>
+              <li><strong>Scaffolding compliance:</strong> Proper planking, guardrails, access points per WAC 296-874</li>
+              <li><strong>Excavation safety:</strong> Shoring, sloping, or trench boxes for excavations 4+ feet deep</li>
+              <li><strong>Crane operations:</strong> Operator certification, pre-shift inspections, load charts</li>
+              <li><strong>Electrical safety:</strong> GFCI protection, lockout/tagout procedures, proper grounding</li>
+              <li><strong>PPE usage:</strong> Hard hats, high-visibility vests, eye protection, hearing protection</li>
+              <li><strong>Hazard communication:</strong> SDS sheets accessible, containers labeled, workers trained</li>
+              <li><strong>Site access control:</strong> Perimeter security, unauthorized entry prevention, signage</li>
             </ul>
-          </div>
 
-          <div>
-            <h5 class="font-semibold">Insurance and Loss Prevention Savings:</h5>
-            <ul>
-              <li>Premium reductions: $75,000-$150,000</li>
-              <li>Theft prevention: $100,000-$500,000</li>
-              <li>Reduced liability claims: $50,000-$200,000</li>
+            <h3 class="text-2xl font-semibold mb-4">Required Documentation</h3>
+            <p>
+              DOSH inspectors will ask to see these documents. Having them organized and immediately accessible can make the difference between a clean inspection and a citation:
+            </p>
+            <br>
+            <ul class="list-disc pl-6 space-y-2 mb-6">
+              <li><strong>Written Accident Prevention Program (APP):</strong> Required for all WA employers under WAC 296-800-140</li>
+              <li><strong>Safety meeting records:</strong> Weekly tailgate/toolbox meeting logs with attendance</li>
+              <li><strong>Training documentation:</strong> Fall protection, scaffolding, crane operations, hazcom</li>
+              <li><strong>Equipment inspection logs:</strong> Cranes, scaffolds, excavation supports, rigging</li>
+              <li><strong>Incident investigation reports:</strong> For any workplace injuries or near-misses</li>
+              <li><strong>First aid logs and OSHA 300 records:</strong> Injury and illness tracking</li>
+              <li><strong>Site security plan:</strong> Access control, monitoring, emergency procedures</li>
+              <li><strong>Crane operator certifications:</strong> Washington requires certification per WAC 296-155-53100</li>
             </ul>
-          </div>
 
-          <p class="mt-4 font-bold text-lg">
-            Net Annual Benefit: $183,000 - $858,000
-          </p>
-        </div>
+            <h3 class="text-2xl font-semibold mb-4">Common Triggers for DOSH Inspections</h3>
+            <p>
+              Understanding what triggers inspections helps you prioritize compliance efforts:
+            </p>
+            <br>
+            <ol class="list-decimal pl-6 space-y-2 mb-6">
+              <li><strong>Worker complaints:</strong> Filed anonymously through L&I -- the most common trigger</li>
+              <li><strong>Severe injuries or fatalities:</strong> Automatic investigation within 24 hours</li>
+              <li><strong>Referrals:</strong> From other agencies, hospital emergency rooms, or media reports</li>
+              <li><strong>Follow-up inspections:</strong> Checking that previously cited violations have been corrected</li>
+              <li><strong>Programmed inspections:</strong> Targeted sweeps of high-hazard industries (construction is always on the list)</li>
+              <li><strong>Drive-by observations:</strong> Compliance officers who spot visible hazards from public areas</li>
+            </ol>
 
-        <h2>Best Practices for Maintaining OSHA Compliance</h2>
+            <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 my-8">
+              <p class="font-semibold text-yellow-900 mb-2">Pro Tip: Drive-By Visibility</p>
+              <p class="text-yellow-800">
+                DOSH compliance officers regularly drive through areas with active construction. If they can see workers without fall protection, missing hard hats, or unsecured scaffolding from the road, they have grounds to initiate an inspection. A mobile surveillance trailer with visible cameras serves as a signal that your site takes compliance seriously -- and gives you video proof of PPE usage to counter any allegations.
+              </p>
+            </div>
+          </section>
 
-        <h3>Regular System Audits</h3>
-        <p>
-          Conduct monthly reviews of surveillance coverage, ensuring all areas remain monitored as site conditions change. Document these audits for OSHA inspection readiness.
-        </p>
+          <section>
+            <h2 class="text-3xl font-bold mb-6">Common OSHA/DOSH Violations at Washington Construction Sites</h2>
 
-        <h3>Incident Response Training</h3>
-        <p>
-          Train all site supervisors on proper incident response procedures. Mobile surveillance providers should offer 24/7 support to guide response during security events.
-        </p>
+            <p>
+              Every year, DOSH publishes data on the most-cited violations in Washington. Construction consistently leads all industries in citation volume. Here are the violations Washington construction employers are most commonly cited for, along with current penalty ranges:
+            </p>
+            <br>
 
-        <h3>Documentation Management</h3>
-        <p>
-          Maintain organized records of all security-related documentation, including:
-        </p>
-        <ul>
-          <li>Daily security logs</li>
-          <li>Incident reports</li>
-          <li>System maintenance records</li>
-          <li>Training certificates</li>
-          <li>Compliance audit results</li>
-        </ul>
+            <div class="overflow-x-auto mb-8">
+              <table class="min-w-full bg-white border border-gray-300">
+                <caption class="sr-only">Top DOSH Construction Violations in Washington State</caption>
+                <thead>
+                  <tr class="bg-gray-100">
+                    <th class="border px-4 py-2 text-left">Rank</th>
+                    <th class="border px-4 py-2 text-left">Violation Category</th>
+                    <th class="border px-4 py-2 text-left">WA Standard</th>
+                    <th class="border px-4 py-2 text-left">Penalty Range</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="border px-4 py-2">1</td>
+                    <td class="border px-4 py-2">Fall protection (general)</td>
+                    <td class="border px-4 py-2">WAC 296-155-24510</td>
+                    <td class="border px-4 py-2 text-red-600 font-semibold">$1,000-$7,000</td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="border px-4 py-2">2</td>
+                    <td class="border px-4 py-2">Scaffolding deficiencies</td>
+                    <td class="border px-4 py-2">WAC 296-874</td>
+                    <td class="border px-4 py-2 text-red-600 font-semibold">$1,000-$7,000</td>
+                  </tr>
+                  <tr>
+                    <td class="border px-4 py-2">3</td>
+                    <td class="border px-4 py-2">Ladder safety violations</td>
+                    <td class="border px-4 py-2">WAC 296-876</td>
+                    <td class="border px-4 py-2 text-red-600 font-semibold">$1,000-$7,000</td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="border px-4 py-2">4</td>
+                    <td class="border px-4 py-2">Excavation/trenching</td>
+                    <td class="border px-4 py-2">WAC 296-155-657</td>
+                    <td class="border px-4 py-2 text-red-600 font-semibold">$1,000-$7,000</td>
+                  </tr>
+                  <tr>
+                    <td class="border px-4 py-2">5</td>
+                    <td class="border px-4 py-2">Hazard communication</td>
+                    <td class="border px-4 py-2">WAC 296-901</td>
+                    <td class="border px-4 py-2 text-orange-600 font-semibold">$500-$7,000</td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="border px-4 py-2">6</td>
+                    <td class="border px-4 py-2">Crane safety</td>
+                    <td class="border px-4 py-2">WAC 296-155-53100</td>
+                    <td class="border px-4 py-2 text-red-600 font-semibold">$1,000-$7,000</td>
+                  </tr>
+                  <tr>
+                    <td class="border px-4 py-2">7</td>
+                    <td class="border px-4 py-2">Electrical (wiring/GFCI)</td>
+                    <td class="border px-4 py-2">WAC 296-155-426</td>
+                    <td class="border px-4 py-2 text-orange-600 font-semibold">$500-$7,000</td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="border px-4 py-2">8</td>
+                    <td class="border px-4 py-2">PPE violations</td>
+                    <td class="border px-4 py-2">WAC 296-155-200</td>
+                    <td class="border px-4 py-2 text-orange-600 font-semibold">$500-$7,000</td>
+                  </tr>
+                  <tr>
+                    <td class="border px-4 py-2">9</td>
+                    <td class="border px-4 py-2">Struck-by hazards</td>
+                    <td class="border px-4 py-2">WAC 296-155-305</td>
+                    <td class="border px-4 py-2 text-orange-600 font-semibold">$500-$7,000</td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="border px-4 py-2">10</td>
+                    <td class="border px-4 py-2">Accident prevention program gaps</td>
+                    <td class="border px-4 py-2">WAC 296-800-140</td>
+                    <td class="border px-4 py-2 text-orange-600 font-semibold">$500-$7,000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-        <h3>Stakeholder Communication</h3>
-        <p>
-          Keep all stakeholders informed about security measures. This includes:
-        </p>
-        <ul>
-          <li>Project owners</li>
-          <li>General contractors</li>
-          <li>Subcontractors</li>
-          <li>Insurance carriers</li>
-          <li>Local law enforcement</li>
-        </ul>
+            <div class="bg-red-50 border-l-4 border-red-500 p-6 my-8">
+              <p class="font-semibold text-red-900 mb-2">DOSH Penalty Structure</p>
+              <p class="text-red-800 mb-3">
+                <strong>Serious violations:</strong> Up to $7,000 per violation. These involve hazards that could cause death or serious physical harm.<br>
+                <strong>Willful violations:</strong> Up to $70,000 per violation. Applied when the employer knowingly ignores safety requirements.<br>
+                <strong>Repeat violations:</strong> Up to $70,000 per violation. For employers cited for the same or similar hazard within 3 years.<br>
+                <strong>Failure to abate:</strong> Up to $7,000 per day beyond the abatement deadline.<br>
+                <strong>Imminent danger:</strong> DOSH can issue an immediate restraint order, shutting down all work until the hazard is corrected.
+              </p>
+              <p class="text-red-800 text-sm">
+                Penalties are adjusted based on employer size, good faith efforts (including documented safety programs), and violation history.
+              </p>
+            </div>
 
-        <h2>Future-Proofing Your OSHA Compliance Strategy</h2>
+            <p>
+              In 2024, L&I reported multiple significant construction penalties in the Puget Sound region, including a Tacoma-area contractor fined over $45,000 for repeated fall protection violations across two project sites, and a King County general contractor cited $28,000 for excavation safety and crane operation deficiencies.
+            </p>
+            <br>
+          </section>
 
-        <p>
-          OSHA regulations continue evolving, with increased emphasis on proactive safety measures. Mobile surveillance systems offer flexibility to adapt to changing requirements:
-        </p>
+          <section>
+            <h2 class="text-3xl font-bold mb-6">How Mobile Surveillance Documents OSHA/DOSH Compliance</h2>
 
-        <h3>Scalability</h3>
-        <p>
-          As projects grow or requirements change, mobile units can be added or relocated without infrastructure investment.
-        </p>
+            <p>
+              Meeting DOSH requirements is not a one-time event -- it requires continuous, documented compliance. This is where mobile surveillance provides a unique advantage that goes beyond traditional security. Time-stamped, high-definition video footage creates an objective compliance record that no amount of paperwork can match.
+            </p>
+            <br>
 
-        <h3>Technology Updates</h3>
-        <p>
-          Cloud-connected systems receive automatic software updates, ensuring compliance with new OSHA digital documentation requirements.
-        </p>
+            <h3 class="text-2xl font-semibold mb-4">PPE Usage Documentation</h3>
+            <p>
+              DOSH citations for PPE violations are common and difficult to contest without evidence. A 360-degree surveillance system operating 24/7 captures footage of workers across the entire site, creating a continuous record of hard hat usage, high-visibility vest compliance, eye protection, and hearing protection in designated zones. If a DOSH inspector alleges PPE non-compliance, time-stamped video provides objective proof of your crew's actual practices.
+            </p>
+            <br>
 
-        <h3>Integration Capabilities</h3>
-        <p>
-          Modern mobile surveillance integrates with:
-        </p>
-        <ul>
-          <li>Building Information Modeling (BIM) systems</li>
-          <li>Project management software</li>
-          <li>Time and attendance systems</li>
-          <li>Environmental monitoring sensors</li>
-          <li>Emergency response systems</li>
-        </ul>
+            <h3 class="text-2xl font-semibold mb-4">Fall Protection Compliance Verification</h3>
+            <p>
+              With fall protection as DOSH's number-one cited violation, documenting compliance is critical. Elevated surveillance cameras capture footage of workers at height, showing guardrail integrity, personal fall arrest system usage, and proper scaffold access. This footage serves as evidence that your 4-foot fall protection threshold (the Washington standard) is being met consistently -- not just during safety walkthroughs.
+            </p>
+            <br>
 
-        <h2>Conclusion: Compliance as Competitive Advantage</h2>
+            <h3 class="text-2xl font-semibold mb-4">Hazard Communication Monitoring</h3>
+            <p>
+              DOSH requires that SDS sheets be accessible, containers be labeled, and workers receive training. Surveillance footage can document that hazardous material storage areas maintain proper signage, that restricted zones remain properly barricaded, and that unauthorized personnel do not access hazmat areas. For sites with ongoing chemical deliveries, camera footage provides a log of who accessed what and when.
+            </p>
+            <br>
 
-        <p>
-          Meeting OSHA security requirements with mobile surveillance isn't just about avoiding fines—it's about creating safer, more efficient construction sites. The combination of regulatory compliance, insurance savings, and loss prevention creates compelling ROI that transforms security from a cost center to a profit contributor.
-        </p>
+            <h3 class="text-2xl font-semibold mb-4">Emergency Response Documentation</h3>
+            <p>
+              When incidents occur, DOSH investigates the employer's response. Video footage documents exact response times, evacuation procedures followed, first aid administered, and whether emergency protocols were executed properly. This evidence is invaluable during post-incident investigations and can demonstrate good-faith compliance even when an accident occurs.
+            </p>
+            <br>
 
-        <p>
-          Forward-thinking contractors recognize that superior security compliance becomes a competitive advantage when bidding on projects. Owners increasingly prefer contractors who demonstrate commitment to comprehensive site security.
-        </p>
+            <h3 class="text-2xl font-semibold mb-4">Site Access Control and Security</h3>
+            <p>
+              Unauthorized access to construction sites creates both safety and liability risks. Mobile surveillance records all site access, including after-hours entry attempts, contractor arrivals, and delivery traffic. This access log satisfies DOSH requirements for controlled site access and provides evidence for <a href="/insurance-security-requirements" class="text-blue-600 hover:underline">insurance compliance requirements</a> as well. For comprehensive construction site security information, see our <a href="/construction-security" class="text-blue-600 hover:underline">construction security solutions</a> page.
+            </p>
+            <br>
 
-        <p>
-          Mobile surveillance represents the most efficient path to OSHA compliance while delivering measurable benefits across multiple dimensions. The question isn't whether to implement mobile surveillance—it's how quickly you can deploy it to start capturing these benefits.
-        </p>
+            <div class="bg-green-50 border-l-4 border-green-500 p-6 my-8">
+              <p class="font-semibold text-green-900 mb-2">Compliance Benefit</p>
+              <p class="text-green-800">
+                DOSH considers "good faith" when calculating penalties. Employers who demonstrate proactive compliance efforts -- including investment in monitoring and documentation systems -- may receive penalty reductions of up to 25%. A mobile surveillance system operating as a continuous compliance documentation tool is strong evidence of good faith.
+              </p>
+            </div>
+          </section>
 
-        <div class="bg-blue-100 p-6 rounded-lg mt-8">
-          <h3 class="font-bold text-lg mb-3">Ready to Achieve OSHA Compliance?</h3>
-          <p class="mb-4">
-            Our security experts can assess your site and deploy OSHA-compliant mobile surveillance within 48 hours. Get a free compliance assessment and see how much you can save on insurance premiums.
-          </p>
-          <a href="/contact" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-            Schedule Free Compliance Assessment
-          </a>
+          <section>
+            <h2 class="text-3xl font-bold mb-6">Washington-Specific Construction Safety Requirements</h2>
+
+            <p>
+              Beyond the general DOSH framework, Washington has several construction-specific standards that are stricter or more detailed than their federal counterparts. Contractors working in the Tacoma-Seattle area need to understand these differences.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">WAC 296-155: Safety Standards for Construction Work</h3>
+            <p>
+              This is the primary chapter governing all construction safety in Washington State. It covers everything from site preparation to demolition. Key sections include:
+            </p>
+            <br>
+            <ul class="list-disc pl-6 space-y-2 mb-6">
+              <li><strong>WAC 296-155-24510 (Fall Protection):</strong> 4-foot trigger height, compared to federal OSHA's 6 feet. This single difference accounts for hundreds of additional citations in Washington each year.</li>
+              <li><strong>WAC 296-155-657 (Excavation):</strong> Detailed requirements for protective systems, daily inspections, and atmospheric testing.</li>
+              <li><strong>WAC 296-155-305 (Personal Protective Equipment):</strong> Specific requirements for head, eye, face, and high-visibility protection on construction sites.</li>
+              <li><strong>WAC 296-155-53100 (Crane Safety):</strong> Washington has some of the nation's strictest crane operator certification requirements, including mandatory certification through an accredited program.</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold mb-4">Washington Fall Protection: The 4-Foot Standard</h3>
+            <p>
+              The 4-foot fall protection trigger height is the most commonly misunderstood difference between federal and Washington standards. Contractors who operate across state lines or who rely on federal OSHA training materials often default to the 6-foot standard -- and get cited for it. In Washington, if a worker is exposed to a fall hazard of 4 feet or more, fall protection must be in place. Period.
+            </p>
+            <br>
+            <p>
+              This applies to leading edges, holes, formwork, rebar assembly, precast concrete, residential construction, and roofing. The only exceptions are limited situations where conventional fall protection is infeasible and a written fall protection work plan has been developed and approved.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Washington Crane Safety Requirements</h3>
+            <p>
+              Washington's crane safety program under WAC 296-155-53100 is among the most rigorous in the country. Requirements include:
+            </p>
+            <br>
+            <ul class="list-disc pl-6 space-y-2 mb-6">
+              <li>All crane operators must hold certification from an accredited certifying entity</li>
+              <li>Annual crane inspections by a Washington-accredited inspector</li>
+              <li>Pre-shift inspections documented daily</li>
+              <li>Assembly/disassembly must be directed by a qualified person</li>
+              <li>Proximity to power lines requires specific clearance distances and procedures</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold mb-4">Outdoor Heat Exposure Rules</h3>
+            <p>
+              Washington was one of the first states to adopt permanent outdoor heat exposure rules, now codified under WAC 296-307-097. While the Pacific Northwest climate makes extreme heat less frequent than in southern states, summer months in the Tacoma-Seattle area regularly see temperatures that trigger these requirements:
+            </p>
+            <br>
+            <ul class="list-disc pl-6 space-y-2 mb-6">
+              <li><strong>At 80 degrees F:</strong> Employers must provide drinking water, shade, and encourage preventive rest breaks</li>
+              <li><strong>At 90 degrees F and above:</strong> Mandatory 10-minute cool-down rest periods every 2 hours</li>
+              <li><strong>At 100 degrees F and above:</strong> Additional observation and buddy-system requirements</li>
+              <li><strong>Year-round obligation:</strong> Employers must have a written outdoor heat exposure prevention plan</li>
+            </ul>
+
+            <p>
+              Mobile surveillance can document that shade structures are in place, that water stations are accessible and stocked, and that mandatory rest breaks are being observed -- all of which become relevant if a heat-related illness leads to a DOSH investigation.
+            </p>
+            <br>
+
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
+              <p class="font-semibold text-blue-900 mb-2">Setup Matters for Compliance</p>
+              <p class="text-blue-800">
+                Proper camera placement is critical for compliance documentation. Surveillance units should be positioned to capture fall-hazard zones, site entry points, hazmat storage areas, and high-traffic work zones. For guidance on optimal positioning, see our <a href="/how-to-setup-security-trailer" class="text-blue-600 hover:underline">security trailer setup guide</a>.
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6">Compliance Costs vs. Non-Compliance Consequences</h2>
+
+            <p>
+              The financial case for proactive compliance is straightforward when you consider the full cost of DOSH violations:
+            </p>
+            <br>
+
+            <div class="bg-gray-100 rounded-lg p-6 my-8">
+              <h4 class="text-xl font-bold mb-4">What Non-Compliance Actually Costs</h4>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h5 class="font-semibold text-lg mb-3">Direct DOSH Penalties</h5>
+                  <ul class="space-y-2">
+                    <li>Single serious violation: up to $7,000</li>
+                    <li>Multiple citations (typical): $15,000-$50,000+</li>
+                    <li>Willful violation: up to $70,000 each</li>
+                    <li>Failure to abate: $7,000/day</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h5 class="font-semibold text-lg mb-3">Indirect Costs</h5>
+                  <ul class="space-y-2">
+                    <li>Work stoppage (immediate restraint): $5,000-$25,000/day</li>
+                    <li>Legal counsel for contested citations: $10,000-$50,000</li>
+                    <li>Increased L&I premiums: 10-30% annually</li>
+                    <li>Project delays and liquidated damages</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="mt-6 p-4 bg-green-100 rounded">
+                <p class="text-center text-lg font-semibold">
+                  Mobile surveillance for compliance documentation: $8,000-$10,000/month
+                </p>
+                <p class="text-center text-sm text-gray-600 mt-2">
+                  A single willful violation penalty can exceed 7 months of surveillance costs.
+                  For detailed insurance savings analysis, see our <a href="/insurance-security-requirements" class="text-blue-600 hover:underline">insurance security requirements guide</a>.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="faq-section">
+            <h2 class="text-3xl font-bold mb-6">Frequently Asked Questions: DOSH Compliance in Washington</h2>
+
+            <div class="faq-items">
+              <div class="faq-item">
+                <h3 class="text-xl font-semibold mb-3">What is DOSH and how does it differ from federal OSHA in Washington?</h3>
+                <p class="mb-6">
+                  DOSH (Division of Occupational Safety and Health) operates under Washington's Department of Labor & Industries (L&I). Washington is one of approximately 22 states with an OSHA-approved state plan, meaning DOSH enforces its own standards that must be at least as effective as federal OSHA but can be stricter. For example, Washington's fall protection trigger height for construction is 4 feet, compared to federal OSHA's 6 feet.
+                </p>
+              </div>
+
+              <div class="faq-item">
+                <h3 class="text-xl font-semibold mb-3">What are DOSH penalty amounts for construction violations in Washington?</h3>
+                <p class="mb-6">
+                  DOSH penalties include up to $7,000 per serious violation and up to $70,000 per willful or repeat violation. Failure-to-abate penalties can reach $7,000 per day. Penalty amounts are adjusted based on employer size, good faith efforts, and violation history. DOSH can also issue immediate restraint orders to shut down work that poses imminent danger.
+                </p>
+              </div>
+
+              <div class="faq-item">
+                <h3 class="text-xl font-semibold mb-3">What does WAC 296-155 cover for Washington construction safety?</h3>
+                <p class="mb-6">
+                  WAC 296-155 is Washington's Safety Standards for Construction Work. It covers fall protection (stricter than federal at a 4-foot trigger height), scaffolding, excavation, crane safety (including the nation's strictest crane operator certification under WAC 296-155-53100), electrical safety, hazard communication, personal protective equipment, and site security requirements. All Washington construction employers must comply with these standards.
+                </p>
+              </div>
+
+              <div class="faq-item">
+                <h3 class="text-xl font-semibold mb-3">Can video surveillance help during a DOSH inspection in Washington?</h3>
+                <p class="mb-6">
+                  Yes. Time-stamped video footage from mobile surveillance systems can document ongoing compliance with safety standards including PPE usage, fall protection deployment, hazard communication signage, and emergency response procedures. During a DOSH inspection, this footage serves as objective evidence that safety protocols are consistently followed, not just when inspectors are present. For setup details, see our <a href="/how-to-setup-security-trailer" class="text-blue-600 hover:underline">security trailer setup guide</a>.
+                </p>
+              </div>
+
+              <div class="faq-item">
+                <h3 class="text-xl font-semibold mb-3">What triggers a DOSH construction site inspection in Washington?</h3>
+                <p class="mb-6">
+                  DOSH inspections can be triggered by worker complaints (which can be filed anonymously through L&I), referrals from other agencies, severe injuries or fatalities (must be reported within 8 hours), follow-up on previous violations, or programmed inspections targeting high-hazard industries. Construction is consistently one of the most-inspected industries in Washington State.
+                </p>
+              </div>
+
+              <div class="faq-item">
+                <h3 class="text-xl font-semibold mb-3">What are Washington's outdoor heat exposure rules for construction workers?</h3>
+                <p class="mb-6">
+                  Washington adopted permanent outdoor heat exposure rules under WAC 296-307-097 that require employers to provide access to drinking water, shade, and rest breaks when temperatures reach 80 degrees Fahrenheit. At 90 degrees and above, mandatory 10-minute cool-down rest periods are required every 2 hours. These rules apply year-round and are stricter than any federal OSHA heat standard. For comprehensive compliance guidance, see our <a href="/construction-compliance-guide" class="text-blue-600 hover:underline">construction compliance guide</a>.
+                </p>
+              </div>
+            </div>
+          </section>
+
         </div>
       </div>
+    </section>
 
-      <section class="mt-12 pt-8 border-t">
-        <h2 class="text-2xl font-bold mb-6">Related Articles</h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <a href="/blog/construction-site-security-mobile-vs-fixed" class="block bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
-            <h3 class="font-bold text-lg mb-2 text-blue-700">Construction Site Security: Mobile vs Fixed Cameras</h3>
-            <p class="text-gray-600 text-sm">Detailed comparison of mobile surveillance trailers versus traditional fixed camera systems for construction sites.</p>
-          </a>
-          <a href="/blog/preventing-theft-construction-sites" class="block bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow">
-            <h3 class="font-bold text-lg mb-2 text-blue-700">Preventing Theft on Construction Sites</h3>
-            <p class="text-gray-600 text-sm">Comprehensive guide to preventing equipment and material theft on construction sites using modern surveillance technology.</p>
-          </a>
-        </div>
-      </section>
-    </article>
-  </main>
+    <!-- CTA Section -->
+    <CTASection
+      title="Need Compliance Documentation for Your Washington Construction Site?"
+      description="Mobile surveillance trailers provide 24/7 compliance monitoring with time-stamped footage. Deployed in under 4 hours at sites across the Tacoma-Seattle corridor."
+      phoneText="Call (253) 683-2288"
+      quoteText="Get a Compliance Consultation"
+      features={["Same-Day Deployment Available", "No Long-Term Contracts", "24/7 Monitoring & Documentation", "Serving All of Washington State"]}
+    />
+
+  </article>
 
   <RelatedPages
-    title="Related OSHA Compliance & Security Resources"
+    title="Additional DOSH Compliance & Construction Security Resources"
     pages={relatedPages}
   />
 
   <Footer />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Meeting OSHA Security Requirements with Mobile Surveillance",
-    "description": "Learn how mobile surveillance trailers help construction sites meet OSHA security requirements while reducing costs and improving safety compliance",
-    "author": {
-      "@type": "Person",
-      "name": "CCTV Trailer Security Team"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "CCTV Trailer",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://cctvtrailer.com/logo.png"
-      }
-    },
-    "datePublished": "2024-01-15",
-    "dateModified": "2024-01-15",
-    "image": "https://cctvtrailer.com/blog-osha-compliance.jpg",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://cctvtrailer.com/blog/meeting-osha-security-requirements-mobile-surveillance"
-    }
-  }
-  </script>
 </Layout>

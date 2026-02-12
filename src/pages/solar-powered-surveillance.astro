@@ -6,33 +6,60 @@ import LazyImage from '../components/LazyImage.astro';
 import CTASection from '../components/CTASection.astro';
 import StatBox from '../components/StatBox.astro';
 import ComparisonTable from '../components/ComparisonTable.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import Analytics from '../components/Analytics.astro';
+import RelatedPages from '../components/RelatedPages.astro';
+import SpeakableSchema from '../components/SpeakableSchema.astro';
 
 const title = "Solar Powered Security Trailer | Eco-Friendly Off-Grid Surveillance";
-const description = "Deploy solar powered security trailers for sustainable, off-grid surveillance. Zero emissions, no power costs, and reliable 24/7 operation in remote locations without infrastructure.";
+const description = "Deploy solar powered security trailers for sustainable, off-grid surveillance in Tacoma, Seattle, and the Pacific Northwest. Zero emissions, no power costs, and reliable 24/7 operation in remote locations without infrastructure.";
+
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Technology", url: "/trailer-technology" },
+  { name: "Solar Powered Surveillance" }
+];
+
+const relatedPages = [
+  { title: "Construction Security", href: "/construction-security", description: "Protect active construction sites across the Tacoma-Seattle corridor with rapid-deploy mobile surveillance trailers." },
+  { title: "Trailer Technology", href: "/trailer-technology", description: "Explore the advanced technology behind our mobile surveillance trailers including cameras, AI analytics, and connectivity." },
+  { title: "Standalone Hybrid Power", href: "/trailer-standalone-hybrid-power-architecture", description: "Learn about our hybrid solar-battery-generator power architecture designed for Pacific Northwest conditions." },
+  { title: "Technical Specifications", href: "/technical-specifications", description: "Detailed specs on cameras, solar panels, battery systems, and connectivity for our surveillance trailers." },
+  { title: "How to Setup Security Trailer", href: "/how-to-setup-security-trailer", description: "Step-by-step guide to deploying and configuring your mobile security trailer on-site in under 30 minutes." },
+  { title: "Pricing", href: "/pricing", description: "Transparent rental pricing for mobile surveillance trailers. Monthly and long-term options available." }
+];
 ---
 
 <Layout title={title} description={description}>
-  <Header />
+  <BreadcrumbSchema items={breadcrumbItems} />
+  <SpeakableSchema sections={[
+    { id: "solar-performance", cssSelector: "#solar-performance" },
+    { id: "pnw-solar", cssSelector: "#pnw-solar" },
+    { id: "solar-faq", cssSelector: "#solar-faq" }
+  ]} />
+
+  <Header showEmergencyBar={true} currentPath="/solar-powered-surveillance" />
+  <Analytics />
 
   <main>
     <!-- Hero Section -->
     <div class="hero-trailer">
       <div class="hero-overlay">
-        <LazyImage src="/images/tacoma-dome-bg-hero3.webp" alt="Solar powered security trailer with panels"
+        <LazyImage src="/images/tacoma-dome-bg-hero3.webp" alt="Solar powered security trailer with panels deployed in the Pacific Northwest"
         class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
       </div>
       <div class="hero-content">
         <div class="hero-text-wrapper">
           <h1 class="hero-heading">Solar Powered Security Trailers</h1>
           <p class="hero-paragraph">
-            Deploy eco-friendly security anywhere with our solar powered surveillance trailers. No power connection needed, zero emissions, and reliable 24/7 operation.
+            Deploy eco-friendly security anywhere in the Pacific Northwest with our solar powered surveillance trailers. No power connection needed, zero emissions, and reliable 24/7 operation -- even through Seattle and Tacoma's cloudy winters.
           </p>
           <a href="/contact" class="red-button mt-6">Get Solar Quote</a>
         </div>
       </div>
     </div>
 
-    <section class="py-16 bg-white">
+    <section id="solar-performance" class="py-16 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-3xl font-bold text-gray-900 mb-4">
@@ -154,7 +181,7 @@ const description = "Deploy solar powered security trailers for sustainable, off
             </div>
             <h3 class="text-xl font-bold mb-3">High-Efficiency Panels</h3>
             <p class="text-gray-600">
-              Monocrystalline silicon panels with 22% efficiency rating, maximizing power generation even in low-light conditions.
+              Monocrystalline silicon panels with 22% efficiency rating, maximizing power generation even in low-light Pacific Northwest conditions. View full <a href="/technical-specifications" class="text-blue-600 hover:text-blue-800 underline">technical specifications</a>.
             </p>
           </div>
 
@@ -214,7 +241,7 @@ const description = "Deploy solar powered security trailers for sustainable, off
             </div>
             <h3 class="text-xl font-bold mb-3">Weather Resistant</h3>
             <p class="text-gray-600">
-              IP67 rated components withstand extreme weather, from -40°F to 140°F, with hail and wind resistance.
+              IP67 rated components withstand extreme weather, from -40 degrees F to 140 degrees F, with hail and wind resistance.
             </p>
           </div>
         </div>
@@ -229,15 +256,15 @@ const description = "Deploy solar powered security trailers for sustainable, off
 
         <div class="grid md:grid-cols-2 gap-8">
           <div class="bg-white p-8 rounded-lg shadow">
-            <h3 class="text-2xl font-bold mb-6 text-green-600">Remote Locations</h3>
+            <h3 class="text-2xl font-bold mb-6 text-green-600">Pacific Northwest Applications</h3>
             <ul class="space-y-4">
               <li class="flex items-start">
                 <svg class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                 </svg>
                 <div>
-                  <strong>Pipeline Monitoring</strong>
-                  <p class="text-gray-600">Monitor remote pipeline sections without infrastructure</p>
+                  <strong>Construction Sites (Tacoma-Seattle Corridor)</strong>
+                  <p class="text-gray-600">No power hookup needed at new development sites along I-5 and surrounding areas. <a href="/construction-security" class="text-blue-600 hover:text-blue-800 underline">Learn about construction security</a>.</p>
                 </div>
               </li>
               <li class="flex items-start">
@@ -245,8 +272,8 @@ const description = "Deploy solar powered security trailers for sustainable, off
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                 </svg>
                 <div>
-                  <strong>Mining Operations</strong>
-                  <p class="text-gray-600">Secure equipment in off-grid mining sites</p>
+                  <strong>Timber & Logging Operations</strong>
+                  <p class="text-gray-600">Remote forestry sites in Washington and Oregon with no infrastructure -- protect equipment and monitor access roads</p>
                 </div>
               </li>
               <li class="flex items-start">
@@ -255,7 +282,7 @@ const description = "Deploy solar powered security trailers for sustainable, off
                 </svg>
                 <div>
                   <strong>Agricultural Monitoring</strong>
-                  <p class="text-gray-600">Protect crops and equipment on large farms</p>
+                  <p class="text-gray-600">Yakima Valley farms, Skagit Valley tulip fields, and Pacific Northwest cannabis grows -- protect crops and equipment across vast acreage</p>
                 </div>
               </li>
               <li class="flex items-start">
@@ -263,23 +290,23 @@ const description = "Deploy solar powered security trailers for sustainable, off
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                 </svg>
                 <div>
-                  <strong>Border Security</strong>
-                  <p class="text-gray-600">Monitor remote border areas continuously</p>
+                  <strong>Port & Maritime</strong>
+                  <p class="text-gray-600">Port of Tacoma and Port of Seattle container yards -- solar-powered perimeter surveillance without running power lines across sprawling terminals</p>
                 </div>
               </li>
             </ul>
           </div>
 
           <div class="bg-white p-8 rounded-lg shadow">
-            <h3 class="text-2xl font-bold mb-6 text-blue-600">Environmentally Sensitive Areas</h3>
+            <h3 class="text-2xl font-bold mb-6 text-blue-600">PNW Environmental & Public</h3>
             <ul class="space-y-4">
               <li class="flex items-start">
                 <svg class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                 </svg>
                 <div>
-                  <strong>National Parks</strong>
-                  <p class="text-gray-600">Zero-emission security for protected lands</p>
+                  <strong>Olympic National Park & Forest</strong>
+                  <p class="text-gray-600">Zero-emission security for protected federal lands -- meet strict environmental requirements with silent, clean solar power</p>
                 </div>
               </li>
               <li class="flex items-start">
@@ -287,8 +314,8 @@ const description = "Deploy solar powered security trailers for sustainable, off
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                 </svg>
                 <div>
-                  <strong>Wildlife Reserves</strong>
-                  <p class="text-gray-600">Silent monitoring without disturbing wildlife</p>
+                  <strong>Puget Sound Shoreline</strong>
+                  <p class="text-gray-600">Monitor sensitive marine ecosystems sustainably -- no fuel spill risk or exhaust near critical salmon habitat and shellfish beds</p>
                 </div>
               </li>
               <li class="flex items-start">
@@ -296,8 +323,8 @@ const description = "Deploy solar powered security trailers for sustainable, off
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                 </svg>
                 <div>
-                  <strong>Wetlands Protection</strong>
-                  <p class="text-gray-600">Monitor sensitive ecosystems sustainably</p>
+                  <strong>Washington State Parks</strong>
+                  <p class="text-gray-600">Silent monitoring for camping areas, trailheads, and day-use facilities -- no noise to disturb visitors or wildlife</p>
                 </div>
               </li>
               <li class="flex items-start">
@@ -305,8 +332,8 @@ const description = "Deploy solar powered security trailers for sustainable, off
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                 </svg>
                 <div>
-                  <strong>Historic Sites</strong>
-                  <p class="text-gray-600">Protect heritage sites without infrastructure impact</p>
+                  <strong>Tribal Lands</strong>
+                  <p class="text-gray-600">Sovereign nation security without permanent infrastructure -- deploy and remove without leaving any footprint on culturally significant sites</p>
                 </div>
               </li>
             </ul>
@@ -318,7 +345,7 @@ const description = "Deploy solar powered security trailers for sustainable, off
           <div class="grid md:grid-cols-4 gap-6 text-center">
             <div>
               <div class="text-3xl font-bold text-green-600">12 tons</div>
-              <p class="text-sm text-gray-600">CO₂ saved annually</p>
+              <p class="text-sm text-gray-600">CO2 saved annually</p>
             </div>
             <div>
               <div class="text-3xl font-bold text-green-600">0 gallons</div>
@@ -337,7 +364,193 @@ const description = "Deploy solar powered security trailers for sustainable, off
       </div>
     </section>
 
-    <section class="py-16 bg-white">
+    <!-- Pacific Northwest Solar Performance Section -->
+    <section id="pnw-solar" class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Pacific Northwest Solar Performance
+          </h2>
+          <p class="text-xl text-gray-600">
+            Does solar work in rainy Seattle and Tacoma? Absolutely -- here is why.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="bg-gray-50 p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-6">The PNW Solar Reality</h3>
+            <p class="text-gray-700 mb-4">
+              The biggest misconception about solar power in the Pacific Northwest is that our cloudy skies make it impractical. The data tells a different story:
+            </p>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-green-600 font-bold mr-2">-</span>
+                <span><strong>Seattle</strong> averages ~4.0 peak sun hours daily (annual average)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 font-bold mr-2">-</span>
+                <span><strong>Tacoma</strong> averages ~4.1 peak sun hours daily (annual average)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 font-bold mr-2">-</span>
+                <span><strong>US national average</strong> is ~4.5 peak sun hours -- PNW is only 10-15% less</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 font-bold mr-2">-</span>
+                <span><strong>Summer months</strong> (May-September) actually deliver 6-8 peak sun hours -- more than many southern cities</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 font-bold mr-2">-</span>
+                <span><strong>Winter months</strong> (November-January) drop to 1.5-2.5 hours -- this is where our 72-96 hour battery backup is critical</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-green-50 p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-6">Configured for PNW Conditions</h3>
+            <p class="text-gray-700 mb-4">
+              Our trailers are specifically configured for Pacific Northwest conditions with oversized battery banks and panel arrays. Unlike off-the-shelf solar systems, we design for worst-case PNW winter performance:
+            </p>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>Oversized solar arrays (up to 4.8 kW) to capture maximum energy on short winter days</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>Extended battery banks (up to 28.8 kWh) for multi-day cloudy stretches</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>Panels optimized for diffuse light (cloudy sky) performance, not just direct sun</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>Optional <a href="/trailer-standalone-hybrid-power-architecture" class="text-blue-600 hover:text-blue-800 underline">hybrid backup generator</a> for extended storm events</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Month-by-Month Performance Table -->
+        <div class="bg-gray-50 p-8 rounded-lg">
+          <h3 class="text-2xl font-bold mb-6 text-center">Month-by-Month Solar Performance: Tacoma / Seattle</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse text-sm">
+              <caption class="sr-only">Monthly peak sun hours and expected solar performance for Tacoma and Seattle, Washington</caption>
+              <thead>
+                <tr class="bg-gray-200">
+                  <th class="py-3 px-4 text-left font-bold">Month</th>
+                  <th class="py-3 px-4 text-center font-bold">Peak Sun Hours</th>
+                  <th class="py-3 px-4 text-center font-bold">System Capacity</th>
+                  <th class="py-3 px-4 text-center font-bold">Battery Reliance</th>
+                  <th class="py-3 px-4 text-left font-bold">Performance Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b bg-red-50">
+                  <td class="py-2 px-4 font-semibold">January</td>
+                  <td class="py-2 px-4 text-center">1.5 hrs</td>
+                  <td class="py-2 px-4 text-center">35-40%</td>
+                  <td class="py-2 px-4 text-center font-semibold text-red-600">High</td>
+                  <td class="py-2 px-4">Battery backup critical; hybrid generator recommended</td>
+                </tr>
+                <tr class="border-b bg-red-50">
+                  <td class="py-2 px-4 font-semibold">February</td>
+                  <td class="py-2 px-4 text-center">2.5 hrs</td>
+                  <td class="py-2 px-4 text-center">50-55%</td>
+                  <td class="py-2 px-4 text-center font-semibold text-orange-600">Moderate</td>
+                  <td class="py-2 px-4">Improving daylight; oversized panels compensate</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="py-2 px-4 font-semibold">March</td>
+                  <td class="py-2 px-4 text-center">3.5 hrs</td>
+                  <td class="py-2 px-4 text-center">70-75%</td>
+                  <td class="py-2 px-4 text-center text-yellow-600">Low</td>
+                  <td class="py-2 px-4">Spring ramp-up; most days fully self-sufficient</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="py-2 px-4 font-semibold">April</td>
+                  <td class="py-2 px-4 text-center">4.5 hrs</td>
+                  <td class="py-2 px-4 text-center">85-90%</td>
+                  <td class="py-2 px-4 text-center text-green-600">Minimal</td>
+                  <td class="py-2 px-4">Strong output; batteries fully charged daily</td>
+                </tr>
+                <tr class="border-b bg-green-50">
+                  <td class="py-2 px-4 font-semibold">May</td>
+                  <td class="py-2 px-4 text-center">6.0 hrs</td>
+                  <td class="py-2 px-4 text-center font-semibold text-green-700">100%</td>
+                  <td class="py-2 px-4 text-center text-green-600">None</td>
+                  <td class="py-2 px-4">Excellent output; surplus energy stored</td>
+                </tr>
+                <tr class="border-b bg-green-50">
+                  <td class="py-2 px-4 font-semibold">June</td>
+                  <td class="py-2 px-4 text-center">7.0 hrs</td>
+                  <td class="py-2 px-4 text-center font-semibold text-green-700">100%+</td>
+                  <td class="py-2 px-4 text-center text-green-600">None</td>
+                  <td class="py-2 px-4">Peak performance; longest days of the year</td>
+                </tr>
+                <tr class="border-b bg-green-50">
+                  <td class="py-2 px-4 font-semibold">July</td>
+                  <td class="py-2 px-4 text-center">8.0 hrs</td>
+                  <td class="py-2 px-4 text-center font-semibold text-green-700">100%+</td>
+                  <td class="py-2 px-4 text-center text-green-600">None</td>
+                  <td class="py-2 px-4">Best month -- clear skies and long days</td>
+                </tr>
+                <tr class="border-b bg-green-50">
+                  <td class="py-2 px-4 font-semibold">August</td>
+                  <td class="py-2 px-4 text-center">7.0 hrs</td>
+                  <td class="py-2 px-4 text-center font-semibold text-green-700">100%+</td>
+                  <td class="py-2 px-4 text-center text-green-600">None</td>
+                  <td class="py-2 px-4">Excellent; typically driest month in PNW</td>
+                </tr>
+                <tr class="border-b bg-green-50">
+                  <td class="py-2 px-4 font-semibold">September</td>
+                  <td class="py-2 px-4 text-center">5.5 hrs</td>
+                  <td class="py-2 px-4 text-center font-semibold text-green-700">100%</td>
+                  <td class="py-2 px-4 text-center text-green-600">None</td>
+                  <td class="py-2 px-4">Strong performance; Indian summer common</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="py-2 px-4 font-semibold">October</td>
+                  <td class="py-2 px-4 text-center">3.5 hrs</td>
+                  <td class="py-2 px-4 text-center">70-75%</td>
+                  <td class="py-2 px-4 text-center text-yellow-600">Low</td>
+                  <td class="py-2 px-4">Fall transition; rain returns but still adequate</td>
+                </tr>
+                <tr class="border-b bg-red-50">
+                  <td class="py-2 px-4 font-semibold">November</td>
+                  <td class="py-2 px-4 text-center">2.0 hrs</td>
+                  <td class="py-2 px-4 text-center">40-50%</td>
+                  <td class="py-2 px-4 text-center font-semibold text-orange-600">Moderate</td>
+                  <td class="py-2 px-4">Shorter days; battery backup engaged regularly</td>
+                </tr>
+                <tr class="border-b bg-red-50">
+                  <td class="py-2 px-4 font-semibold">December</td>
+                  <td class="py-2 px-4 text-center">1.5 hrs</td>
+                  <td class="py-2 px-4 text-center">35-40%</td>
+                  <td class="py-2 px-4 text-center font-semibold text-red-600">High</td>
+                  <td class="py-2 px-4">Lowest output; extended battery + optional hybrid</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-sm text-gray-500 mt-4 text-center">
+            Peak sun hours represent equivalent hours of full sunlight intensity (1,000 W/m2). System capacity percentage indicates solar generation relative to system demand. All figures based on historical NREL data for the Tacoma-Seattle area.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-center mb-12">
           Solar System Specifications
@@ -367,7 +580,7 @@ const description = "Deploy solar powered security trailers for sustainable, off
                 </tr>
                 <tr class="border-b">
                   <td class="py-2 font-semibold">Operating Temp</td>
-                  <td class="py-2 text-right">-40°F to 185°F</td>
+                  <td class="py-2 text-right">-40 degrees F to 185 degrees F</td>
                 </tr>
                 <tr class="border-b">
                   <td class="py-2 font-semibold">Warranty</td>
@@ -417,28 +630,28 @@ const description = "Deploy solar powered security trailers for sustainable, off
             <div>
               <h4 class="font-semibold mb-2">MPPT Controller</h4>
               <ul class="text-sm text-gray-600 space-y-1">
-                <li>• 98% conversion efficiency</li>
-                <li>• Multi-stage charging</li>
-                <li>• Temperature compensation</li>
-                <li>• Remote monitoring</li>
+                <li>- 98% conversion efficiency</li>
+                <li>- Multi-stage charging</li>
+                <li>- Temperature compensation</li>
+                <li>- Remote monitoring</li>
               </ul>
             </div>
             <div>
               <h4 class="font-semibold mb-2">Inverter System</h4>
               <ul class="text-sm text-gray-600 space-y-1">
-                <li>• Pure sine wave output</li>
-                <li>• 3000W continuous</li>
-                <li>• 6000W surge capacity</li>
-                <li>• Auto-transfer switch</li>
+                <li>- Pure sine wave output</li>
+                <li>- 3000W continuous</li>
+                <li>- 6000W surge capacity</li>
+                <li>- Auto-transfer switch</li>
               </ul>
             </div>
             <div>
               <h4 class="font-semibold mb-2">Monitoring Features</h4>
               <ul class="text-sm text-gray-600 space-y-1">
-                <li>• Real-time power tracking</li>
-                <li>• Battery health monitoring</li>
-                <li>• Weather integration</li>
-                <li>• Predictive analytics</li>
+                <li>- Real-time power tracking</li>
+                <li>- Battery health monitoring</li>
+                <li>- Weather integration</li>
+                <li>- Predictive analytics</li>
               </ul>
             </div>
           </div>
@@ -446,7 +659,7 @@ const description = "Deploy solar powered security trailers for sustainable, off
       </div>
     </section>
 
-    <section class="py-16 bg-gray-50">
+    <section id="solar-faq" class="py-16 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-center mb-12">
           Frequently Asked Solar Questions
@@ -460,7 +673,7 @@ const description = "Deploy solar powered security trailers for sustainable, off
               </h3>
               <div>
                 <p class="text-gray-600">
-                  Solar panels generate power even on cloudy days (at 10-25% capacity), while the 72-96 hour battery backup ensures continuous operation during extended cloudy periods. The system automatically manages power consumption to prioritize essential functions.
+                  Solar panels generate power even on cloudy days (at 10-25% capacity), while the 72-96 hour battery backup ensures continuous operation during extended cloudy periods. The system automatically manages power consumption to prioritize essential functions. For the most demanding PNW winter deployments, our <a href="/trailer-standalone-hybrid-power-architecture" class="text-blue-600 hover:text-blue-800 underline">hybrid backup power system</a> provides an additional safety net with automatic generator failover.
                 </p>
               </div>
             </div>
@@ -514,6 +727,12 @@ const description = "Deploy solar powered security trailers for sustainable, off
     </section>
 
     <CTASection />
+
+    <RelatedPages
+      title="Related Solar & Surveillance Resources"
+      pages={relatedPages}
+      columns={3}
+    />
   </main>
 
   <Footer />
@@ -571,20 +790,56 @@ const description = "Deploy solar powered security trailers for sustainable, off
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Solar Powered Security Trailer",
-    "description": "Eco-friendly solar powered security surveillance trailer with zero emissions and off-grid capability",
-    "brand": {
-      "@type": "Brand",
-      "name": "CCTV Trailer"
-    },
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "USD",
-      "price": "3500",
-      "priceValidUntil": "2025-12-31",
-      "availability": "https://schema.org/InStock"
-    }
+    "@graph": [
+      {
+        "@type": "Product",
+        "name": "Solar Powered Security Trailer",
+        "description": "Eco-friendly solar powered security surveillance trailer with zero emissions and off-grid capability, configured for Pacific Northwest conditions",
+        "brand": {
+          "@type": "Brand",
+          "name": "CCTV Trailer"
+        },
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "USD",
+          "price": "7999",
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock"
+        }
+      },
+      {
+        "@type": "LocalBusiness",
+        "name": "CCTV Trailer",
+        "description": "Solar powered mobile surveillance trailer rental serving Tacoma, Seattle, and the Pacific Northwest",
+        "telephone": "(253) 683-2288",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "222 E 26th St",
+          "addressLocality": "Tacoma",
+          "addressRegion": "WA",
+          "postalCode": "98421",
+          "addressCountry": "US"
+        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Tacoma",
+            "containedInPlace": { "@type": "State", "name": "Washington" }
+          },
+          {
+            "@type": "City",
+            "name": "Seattle",
+            "containedInPlace": { "@type": "State", "name": "Washington" }
+          },
+          {
+            "@type": "State",
+            "name": "Washington"
+          }
+        ],
+        "url": "https://www.cctvtrailer.com",
+        "priceRange": "$$"
+      }
+    ]
   }
   </script>
 
@@ -598,7 +853,7 @@ const description = "Deploy solar powered security trailers for sustainable, off
         "name": "How do solar security trailers work in cloudy weather?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Solar panels generate power even on cloudy days (at 10-25% capacity), while the 72-96 hour battery backup ensures continuous operation during extended cloudy periods. The system automatically manages power consumption to prioritize essential functions."
+          "text": "Solar panels generate power even on cloudy days (at 10-25% capacity), while the 72-96 hour battery backup ensures continuous operation during extended cloudy periods. The system automatically manages power consumption to prioritize essential functions. For the most demanding PNW winter deployments, our hybrid backup power system provides an additional safety net with automatic generator failover."
         }
       },
       {

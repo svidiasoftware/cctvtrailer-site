@@ -6,6 +6,7 @@ import CTASection from '../components/CTASection.astro';
 import Analytics from '../components/Analytics.astro';
 import HowToSchema from '../components/HowToSchema.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
 import QuickAnswer from '../components/QuickAnswer.astro';
 import StatBox from '../components/StatBox.astro';
 
@@ -92,7 +93,7 @@ const breadcrumbItems = [
 
 const quickAnswerData = {
   question: "How long does it take to set up a security trailer?",
-  answer: "A professional mobile CCTV trailer can be <strong>fully operational in 30 minutes</strong>. This includes positioning, leveling, camera configuration, and connectivity setup. Most of the time is spent on fine-tuning camera angles for optimal coverage.",
+  answer: "A professional mobile CCTV trailer can be <strong>fully operational in 30 minutes</strong>. This includes positioning, leveling, camera configuration, and connectivity setup. Our Tacoma-based technicians handle setup at no extra cost with every rental in the Pacific Northwest region.",
   callToAction: {
     text: "Get Professional Setup",
     href: "tel:2536832288"
@@ -108,45 +109,71 @@ const statBoxData = [
 ---
 
 <Layout
-  title="How to Set Up a Security Trailer | Mobile CCTV Installation Guide"
-  description="Complete guide to setting up a mobile security trailer. Learn optimal positioning, camera configuration, and professional tips for maximum surveillance coverage.">
+  title="How to Set Up a Security Trailer | Mobile CCTV Installation Guide - Tacoma & Seattle"
+  description="Professional security trailer setup guide for the Pacific Northwest. Learn optimal positioning, camera configuration, and PNW-specific tips. Free setup included with rental. (253) 683-2288">
 
   <HowToSchema {...howToData} />
   <BreadcrumbSchema items={breadcrumbItems} />
+  <ServiceSchema
+    serviceName="Mobile Security Trailer Professional Setup Service"
+    description="Professional on-site setup and configuration of mobile CCTV security trailers for construction sites, events, and commercial properties throughout the Tacoma-Seattle corridor and greater Pacific Northwest. Setup is included free with all trailer rentals."
+    price="0"
+    priceUnit={"MONTH" as const}
+    areaServed={[
+      { type: "City" as const, name: "Tacoma" },
+      { type: "City" as const, name: "Seattle" },
+      { type: "City" as const, name: "Olympia" },
+      { type: "City" as const, name: "Federal Way" },
+      { type: "City" as const, name: "Kent" },
+      { type: "City" as const, name: "Auburn" },
+      { type: "City" as const, name: "Puyallup" },
+      { type: "City" as const, name: "Lakewood" },
+      { type: "City" as const, name: "Fife" },
+      { type: "City" as const, name: "Bremerton" }
+    ]}
+  />
 
   <Header showEmergencyBar={true} currentPath="/how-to-setup-security-trailer" />
   <Analytics />
 
   <main>
+    <!-- Hero Section -->
     <section class="bg-gradient-to-r from-green-800 to-green-900 text-white py-16">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl">
-          <h1 class="text-4xl md:text-5xl font-bold mb-4">How to Set Up a Mobile Security Trailer</h1>
-          <p class="text-xl mb-6"><strong>Professional Installation Guide</strong> for Maximum Surveillance Coverage</p>
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">How to Set Up a Mobile Security Trailer in the Pacific Northwest</h1>
+          <p class="text-xl mb-3"><strong>Professional Installation Guide</strong> for Maximum Surveillance Coverage in the Tacoma-Seattle Area</p>
+          <p class="text-lg mb-6 text-green-200">Our technicians have deployed trailers across Western Washington since 2009. Setup is <strong>free with every rental</strong> -- but here is what goes into getting it right.</p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="tel:2536832288" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-lg inline-block text-center">
-              Get Professional Help →
+              Get Professional Help: (253) 683-2288
             </a>
-            <a href="#setup-steps" class="bg-white hover:bg-gray-100 text-green-900 font-bold py-3 px-8 rounded-lg inline-block text-center">
-              View Setup Steps ↓
+            <a href="/pricing" class="bg-white hover:bg-gray-100 text-green-900 font-bold py-3 px-8 rounded-lg inline-block text-center">
+              View Setup Pricing
+            </a>
+            <a href="#setup-steps" class="border-2 border-white hover:bg-white/10 text-white font-bold py-3 px-8 rounded-lg inline-block text-center">
+              View Setup Steps
             </a>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Quick Answer -->
     <section class="py-8 bg-gray-50">
       <div class="container mx-auto px-4">
         <QuickAnswer {...quickAnswerData} />
       </div>
     </section>
 
+    <!-- Stat Box -->
     <section class="py-12">
       <div class="container mx-auto px-4">
         <StatBox stats={statBoxData} />
       </div>
     </section>
 
+    <!-- Key Factors for Optimal Trailer Placement -->
     <section class="py-16">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
@@ -157,19 +184,19 @@ const statBoxData = [
               <h3 class="text-xl font-semibold mb-4 text-green-800">Strategic Positioning</h3>
               <ul class="space-y-2 text-gray-600">
                 <li class="flex items-start">
-                  <span class="text-green-600 mr-2">•</span>
+                  <span class="text-green-600 mr-2">&#8226;</span>
                   Elevated positions for maximum visibility
                 </li>
                 <li class="flex items-start">
-                  <span class="text-green-600 mr-2">•</span>
+                  <span class="text-green-600 mr-2">&#8226;</span>
                   Central location to cover multiple zones
                 </li>
                 <li class="flex items-start">
-                  <span class="text-green-600 mr-2">•</span>
+                  <span class="text-green-600 mr-2">&#8226;</span>
                   Clear line of sight to entry points
                 </li>
                 <li class="flex items-start">
-                  <span class="text-green-600 mr-2">•</span>
+                  <span class="text-green-600 mr-2">&#8226;</span>
                   Visible deterrent placement
                 </li>
               </ul>
@@ -179,19 +206,19 @@ const statBoxData = [
               <h3 class="text-xl font-semibold mb-4 text-green-800">Environmental Considerations</h3>
               <ul class="space-y-2 text-gray-600">
                 <li class="flex items-start">
-                  <span class="text-green-600 mr-2">•</span>
+                  <span class="text-green-600 mr-2">&#8226;</span>
                   Wind exposure and stability
                 </li>
                 <li class="flex items-start">
-                  <span class="text-green-600 mr-2">•</span>
+                  <span class="text-green-600 mr-2">&#8226;</span>
                   Solar panel orientation (if applicable)
                 </li>
                 <li class="flex items-start">
-                  <span class="text-green-600 mr-2">•</span>
+                  <span class="text-green-600 mr-2">&#8226;</span>
                   Drainage and weather protection
                 </li>
                 <li class="flex items-start">
-                  <span class="text-green-600 mr-2">•</span>
+                  <span class="text-green-600 mr-2">&#8226;</span>
                   Accessibility for maintenance
                 </li>
               </ul>
@@ -201,6 +228,43 @@ const statBoxData = [
       </div>
     </section>
 
+    <!-- Washington State Setup Requirements -->
+    <section class="py-16 bg-blue-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-4">Washington State Setup Requirements</h2>
+          <p class="text-gray-600 mb-8">Deploying a mobile security trailer in the Tacoma-Seattle corridor involves specific local considerations that out-of-state providers often miss. Our team handles all of these details as part of every deployment.</p>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
+              <h3 class="text-xl font-semibold mb-3 text-blue-800">City of Tacoma</h3>
+              <p class="text-gray-600">No special permits are needed for temporary mobile surveillance units placed on <strong>private property</strong>. This covers most construction sites, commercial lots, and event venues in Pierce County. Our team verifies placement requirements before every deployment.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
+              <h3 class="text-xl font-semibold mb-3 text-blue-800">City of Seattle</h3>
+              <p class="text-gray-600">Units placed on <strong>public right-of-way</strong> may require a temporary use permit from SDOT. Private property placements are straightforward. We assist clients with permitting when needed for Seattle-area deployments.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-600">
+              <h3 class="text-xl font-semibold mb-3 text-green-800">Cellular Coverage</h3>
+              <p class="text-gray-600"><strong>T-Mobile and Verizon</strong> provide the best coverage across Pierce and King Counties for remote monitoring connectivity. Some rural areas of Thurston County have coverage gaps -- we always perform a signal test before committing to a position. See our <a href="/technical-specifications" class="text-green-700 underline font-semibold">technical specifications</a> for connectivity details.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-600">
+              <h3 class="text-xl font-semibold mb-3 text-green-800">Solar Power in the PNW</h3>
+              <p class="text-gray-600">Pacific Northwest cloud cover means <strong>solar panels need to be sized 20% larger</strong> than equivalent sunbelt installations to maintain reliable power year-round. Our trailers are pre-configured for PNW conditions with oversized panels and backup generators. Learn more on our <a href="/solar-powered-surveillance" class="text-green-700 underline font-semibold">solar-powered surveillance</a> page.</p>
+            </div>
+          </div>
+
+          <div class="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
+            <p class="text-green-800 font-semibold text-lg">All our trailers are pre-configured for Pacific Northwest conditions -- including oversized solar arrays, rain-rated enclosures, and cellular connectivity optimized for Western Washington carriers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12-Step Setup Process -->
     <section id="setup-steps" class="py-16 bg-gray-50">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
@@ -223,6 +287,93 @@ const statBoxData = [
       </div>
     </section>
 
+    <!-- Professional vs DIY Setup Comparison -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-4">Professional vs DIY Setup Comparison</h2>
+          <p class="text-gray-600 mb-8">Every CCTV Trailer rental in the Tacoma-Seattle area includes free professional setup by our experienced technicians. Here is why that matters for your site security.</p>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div class="bg-green-50 border-2 border-green-500 rounded-lg p-6">
+              <h3 class="text-2xl font-bold text-green-800 mb-4">Professional Setup</h3>
+              <p class="text-green-700 text-sm font-semibold mb-4">INCLUDED FREE WITH RENTAL</p>
+              <ul class="space-y-3 text-gray-700">
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 font-bold">&#10003;</span>
+                  <span><strong>30 minutes</strong> from arrival to fully operational</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 font-bold">&#10003;</span>
+                  <span><strong>Guaranteed coverage</strong> -- no blind spots</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 font-bold">&#10003;</span>
+                  <span><strong>Optimized camera angles</strong> by trained technicians who know PNW conditions</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 font-bold">&#10003;</span>
+                  <span><strong>Cellular signal verified</strong> on-site before leaving</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 font-bold">&#10003;</span>
+                  <span><strong>Ground assessment</strong> for Washington clay soil and drainage</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 font-bold">&#10003;</span>
+                  <span><strong>Full warranty</strong> remains intact</span>
+                </li>
+              </ul>
+              <div class="mt-6 bg-green-100 rounded-lg p-4 text-center">
+                <span class="text-green-800 font-bold text-xl">$0</span>
+                <span class="text-green-700 ml-2">Setup is free with every rental</span>
+              </div>
+            </div>
+
+            <div class="bg-red-50 border-2 border-red-300 rounded-lg p-6">
+              <h3 class="text-2xl font-bold text-red-800 mb-4">DIY Setup</h3>
+              <p class="text-red-600 text-sm font-semibold mb-4">NOT RECOMMENDED</p>
+              <ul class="space-y-3 text-gray-700">
+                <li class="flex items-start">
+                  <span class="text-red-500 mr-2 font-bold">&#10007;</span>
+                  <span><strong>3-5 hours</strong> for first-time setup, often longer</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-500 mr-2 font-bold">&#10007;</span>
+                  <span><strong>Risk of blind spots</strong> from improper camera placement</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-500 mr-2 font-bold">&#10007;</span>
+                  <span><strong>No PNW optimization</strong> -- rain angles, solar tilt, and wind not accounted for</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-500 mr-2 font-bold">&#10007;</span>
+                  <span><strong>Connectivity issues</strong> in coverage gap areas go undetected</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-500 mr-2 font-bold">&#10007;</span>
+                  <span><strong>Ground stability unknown</strong> -- risk of shifting on wet soil</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-500 mr-2 font-bold">&#10007;</span>
+                  <span><strong>May void warranty</strong> if equipment is damaged during setup</span>
+                </li>
+              </ul>
+              <div class="mt-6 bg-red-100 rounded-lg p-4 text-center">
+                <span class="text-red-800 font-bold text-xl">$50K+ risk</span>
+                <span class="text-red-700 ml-2">in uncovered areas</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-yellow-50 border border-yellow-300 rounded-lg p-6 text-center">
+            <p class="text-yellow-900 font-semibold text-lg">Why risk your $50,000+ in equipment and materials to save on setup? Professional installation is included free with every <a href="/pricing" class="text-yellow-800 underline font-bold">trailer rental</a> at $8,000-$10,000/month.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Camera Configuration Best Practices -->
     <section class="py-16">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
@@ -254,40 +405,49 @@ const statBoxData = [
               <p class="text-blue-700">Start with medium sensitivity and adjust based on environment. Higher for low-activity areas, lower for high-traffic zones.</p>
             </div>
           </div>
+
+          <p class="mt-8 text-gray-600">For a detailed look at our camera systems, PTZ capabilities, and S-VIDIA technology, visit our <a href="/technical-specifications" class="text-green-700 underline font-semibold">technical specifications</a> page. Wondering how mobile surveillance stacks up against permanent installations? See our <a href="/mobile-vs-fixed-surveillance" class="text-green-700 underline font-semibold">mobile vs fixed surveillance comparison</a>.</p>
         </div>
       </div>
     </section>
 
-    <section class="py-16 bg-gray-50">
+    <!-- Setting Up in Pacific Northwest Weather -->
+    <section class="py-16 bg-gray-100">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-bold mb-8">Common Setup Mistakes to Avoid</h2>
+          <h2 class="text-3xl font-bold mb-4">Setting Up in Pacific Northwest Weather</h2>
+          <p class="text-gray-600 mb-8">Western Washington weather is unpredictable, and security does not wait for a clear day. Our technicians have deployed trailers in every PNW weather condition since 2009. Here is what we account for.</p>
 
           <div class="grid md:grid-cols-2 gap-6">
-            <div class="bg-red-50 border border-red-200 rounded-lg p-6">
-              <h3 class="font-semibold text-red-900 mb-2">❌ Poor Cable Management</h3>
-              <p class="text-red-700">Exposed cables are vulnerable to damage and tampering. Always secure and protect all connections.</p>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-semibold mb-3 text-blue-800">Rain Deployments</h3>
+              <p class="text-gray-600">Our trailers operate flawlessly in all weather conditions, but setup during dry windows is easier and faster. All electrical connections are weatherproof-rated, and camera housings are sealed against horizontal rain common in the Puget Sound region. We recommend scheduling setup during a dry window when possible, though our crew is fully equipped for wet-weather deployment.</p>
             </div>
 
-            <div class="bg-red-50 border border-red-200 rounded-lg p-6">
-              <h3 class="font-semibold text-red-900 mb-2">❌ Ignoring Weather Factors</h3>
-              <p class="text-red-700">Failing to account for rain, wind, or sun glare can severely impact camera performance.</p>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-semibold mb-3 text-blue-800">Wind Considerations</h3>
+              <p class="text-gray-600">The Puget Sound corridor can experience sustained winds of 30+ mph, especially near the waterfront in Tacoma, along the I-5 corridor, and at higher elevations. Our mast deployment guidelines require wind speed assessment before extending to full height. In high-wind conditions, masts may be partially extended or deployed with additional guy-wire stabilization.</p>
             </div>
 
-            <div class="bg-red-50 border border-red-200 rounded-lg p-6">
-              <h3 class="font-semibold text-red-900 mb-2">❌ Insufficient Testing</h3>
-              <p class="text-red-700">Not testing all conditions (day/night, weather) leads to coverage gaps when you need surveillance most.</p>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-semibold mb-3 text-blue-800">Fog and Low Visibility</h3>
+              <p class="text-gray-600">Western Washington fog is a frequent challenge, particularly in the Puyallup Valley, along the Nisqually corridor, and near the waterfront. Our <strong>thermal imaging cameras</strong> are essential in these conditions -- they detect body heat through fog that renders standard cameras useless. This is a critical advantage for PNW deployments that <a href="/mobile-vs-fixed-surveillance" class="text-blue-700 underline font-semibold">fixed camera installations</a> often lack.</p>
             </div>
 
-            <div class="bg-red-50 border border-red-200 rounded-lg p-6">
-              <h3 class="font-semibold text-red-900 mb-2">❌ Forgetting Backup Power</h3>
-              <p class="text-red-700">Power outages leave sites vulnerable. Always verify backup power systems are functioning.</p>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-semibold mb-3 text-blue-800">Snow and Cold</h3>
+              <p class="text-gray-600">Snow is rare in the Tacoma lowlands but common at higher elevations in Pierce and King Counties. When deployed at elevation, solar panel clearing may be required. Our <a href="/solar-powered-surveillance" class="text-blue-700 underline font-semibold">solar-powered systems</a> include panel heating options and backup generator power to maintain operations through extended overcast periods common from November through February.</p>
             </div>
+          </div>
+
+          <div class="bg-green-50 border border-green-200 rounded-lg p-6 mt-8 text-center">
+            <p class="text-green-800 font-semibold text-lg">Our technicians have deployed trailers in every PNW weather condition since 2009. Rain, wind, fog, or snow -- your site stays protected.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Setup Time Comparison -->
     <section class="py-16">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
@@ -346,13 +506,102 @@ const statBoxData = [
       </div>
     </section>
 
+    <!-- Common Setup Mistakes to Avoid -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-4">Common Setup Mistakes to Avoid</h2>
+          <p class="text-gray-600 mb-8">These are the most frequent errors we see when clients attempt self-setup or work with providers unfamiliar with Pacific Northwest conditions.</p>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+              <h3 class="font-semibold text-red-900 mb-2">Poor Cable Management</h3>
+              <p class="text-red-700">Exposed cables are vulnerable to damage and tampering. Always secure and protect all connections.</p>
+            </div>
+
+            <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+              <h3 class="font-semibold text-red-900 mb-2">Ignoring Weather Factors</h3>
+              <p class="text-red-700">Failing to account for rain, wind, or sun glare can severely impact camera performance.</p>
+            </div>
+
+            <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+              <h3 class="font-semibold text-red-900 mb-2">Insufficient Testing</h3>
+              <p class="text-red-700">Not testing all conditions (day/night, weather) leads to coverage gaps when you need surveillance most.</p>
+            </div>
+
+            <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+              <h3 class="font-semibold text-red-900 mb-2">Forgetting Backup Power</h3>
+              <p class="text-red-700">Power outages leave sites vulnerable. Always verify backup power systems are functioning.</p>
+            </div>
+
+            <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+              <h3 class="font-semibold text-red-900 mb-2">Ignoring PNW Rain Angles</h3>
+              <p class="text-red-700">Camera lenses need rain shields properly angled for Pacific Northwest <strong>horizontal rain patterns</strong>. Standard-angle shields designed for vertical rain leave lenses exposed to water streaking, degrading image quality during the 150+ rainy days per year in the Puget Sound region.</p>
+            </div>
+
+            <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+              <h3 class="font-semibold text-red-900 mb-2">Wrong Solar Panel Orientation</h3>
+              <p class="text-red-700">In the Tacoma-Seattle corridor, <strong>panels must face south at a 35-40 degree tilt</strong> for optimal winter performance. Incorrect orientation can reduce charging efficiency by 30-40% during the critical November-February low-light months. Our trailers arrive <a href="/solar-powered-surveillance" class="text-red-800 underline font-semibold">pre-configured for PNW solar angles</a>.</p>
+            </div>
+
+            <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+              <h3 class="font-semibold text-red-900 mb-2">Poor Ground Assessment</h3>
+              <p class="text-red-700">Washington's <strong>clay soil and frequent rain</strong> mean ground stability is critical for a multi-ton trailer supporting a 30-foot mast. Always check for soft spots, drainage paths, and recent excavation areas. A trailer that shifts even slightly can misalign camera coverage by hundreds of feet at distance.</p>
+            </div>
+
+            <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+              <h3 class="font-semibold text-red-900 mb-2">Skipping Cellular Coverage Test</h3>
+              <p class="text-red-700">Rural areas of <strong>Pierce and Thurston Counties have known coverage gaps</strong>, particularly in the foothills east of Eatonville and areas south of Olympia. Always perform a signal strength test at the exact deployment position before committing. A trailer without reliable connectivity cannot send alerts or enable remote monitoring.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lead Generation CTA -->
+    <section class="py-16 bg-gradient-to-r from-blue-700 to-blue-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-4">Request Professional Setup</h2>
+          <p class="text-xl mb-3">Free setup is included with all trailer rentals in the Tacoma-Seattle area and throughout Western Washington.</p>
+          <p class="text-lg mb-8 text-blue-200">Our technicians handle site assessment, positioning, camera configuration, connectivity, and testing -- typically in under 30 minutes. Monthly rentals start at <strong>$8,000-$10,000/month</strong> with setup included at no additional cost.</p>
+          <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-8 max-w-2xl mx-auto">
+            <div class="grid sm:grid-cols-3 gap-4 text-center">
+              <div>
+                <div class="text-2xl font-bold text-yellow-400">FREE</div>
+                <div class="text-sm">Professional Setup</div>
+              </div>
+              <div>
+                <div class="text-2xl font-bold text-yellow-400">30 min</div>
+                <div class="text-sm">Setup Time</div>
+              </div>
+              <div>
+                <div class="text-2xl font-bold text-yellow-400">24/7</div>
+                <div class="text-sm">Support Included</div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:2536832288" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 px-8 rounded-lg inline-block text-lg">
+              Call (253) 683-2288
+            </a>
+            <a href="/contact" class="bg-white hover:bg-gray-100 text-blue-800 font-bold py-4 px-8 rounded-lg inline-block text-lg">
+              Request Setup Online
+            </a>
+          </div>
+          <p class="mt-4 text-blue-200 text-sm">Based in Tacoma, WA 98421. Serving the entire Puget Sound region.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Setup Service -->
     <section class="py-16 bg-green-900 text-white">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
           <h2 class="text-3xl font-bold mb-6">Professional Setup Service Available</h2>
           <p class="text-xl mb-8">
-            Skip the complexity and let our experts handle your security trailer setup.
-            We guarantee optimal coverage and performance.
+            Skip the complexity and let our Tacoma-based experts handle your security trailer setup.
+            We guarantee optimal coverage and performance across the Pacific Northwest -- from downtown Seattle to rural Pierce County.
           </p>
           <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-8">
             <div class="grid md:grid-cols-4 gap-4">
@@ -376,10 +625,13 @@ const statBoxData = [
           </div>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:2536832288" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 px-8 rounded-lg inline-block text-lg">
-              📞 (253) 683-2288 - Schedule Setup
+              (253) 683-2288 - Schedule Setup
+            </a>
+            <a href="/pricing" class="bg-white hover:bg-gray-100 text-green-900 font-bold py-4 px-8 rounded-lg inline-block text-lg">
+              View Rental Pricing
             </a>
           </div>
-          <p class="mt-4 text-yellow-300">Professional technicians available 7 days a week</p>
+          <p class="mt-4 text-yellow-300">Professional technicians available 7 days a week across the Tacoma-Seattle corridor</p>
         </div>
       </div>
     </section>

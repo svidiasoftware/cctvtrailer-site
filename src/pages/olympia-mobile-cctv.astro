@@ -3,19 +3,30 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import RelatedPages from '../components/RelatedPages.astro';
+import CTASection from '../components/CTASection.astro';
 import Analytics from '../components/Analytics.astro';
 import ServiceSchema from '../components/ServiceSchema.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import QuickAnswer from '../components/QuickAnswer.astro';
 import StatBox from '../components/StatBox.astro';
+import SpeakableSchema from '../components/SpeakableSchema.astro';
+import ReviewSchema from '../components/ReviewSchema.astro';
 
-// Schema data for the construction security service
+// Schema data for the Olympia mobile CCTV service
 const serviceSchemaData = {
-  serviceName: "Mobile CCTV Rental in Olympia",
-  description: "Mobile CCTV trailer rental service in Olympia, WA. Serving state government facilities, construction sites, and special events in the capital region.",
+  serviceName: "Mobile CCTV Rental in Olympia, WA",
+  description: "Mobile CCTV trailer rental service in Olympia, WA. Serving state government facilities, Capitol Campus, construction sites, and special events across Thurston County. Solar-powered, rapid deployment from Tacoma headquarters.",
   price: "7999",
   priceUnit: "MONTH" as const,
   areaServed: [
     { type: "City" as const, name: "Olympia" },
+    { type: "City" as const, name: "Lacey" },
+    { type: "City" as const, name: "Tumwater" },
+    { type: "City" as const, name: "Yelm" },
+    { type: "City" as const, name: "Tenino" },
+    { type: "City" as const, name: "Rainier" },
+    { type: "City" as const, name: "Rochester" }
   ]
 };
 
@@ -23,17 +34,36 @@ const serviceSchemaData = {
 const breadcrumbItems = [
   { name: "Home", url: "/" },
   { name: "Locations", url: "/about" },
-  { name: "Olympia Security" }
+  { name: "Olympia Mobile CCTV" }
 ];
 
-// Crime statistics data
-const crimeStats = [
-  { value: "1 in 23", label: "Chance of Being Crime Victim", highlight: true },
-  { value: "44", label: "Crimes per 1,000 Residents", highlight: true },
-  { value: "92%", label: "WA Cities Safer Than Olympia" },
-  { value: "Above", label: "State & National Average Crime" }
+// Review data
+const reviewData = {
+  reviews: [
+    {
+      author: "Alexx Bacon",
+      authorTitle: "President, Aaberg's Rental",
+      rating: 5,
+      reviewBody: "The CCTVtrailer security camera system impresses with its exceptional quality, affordability, user-friendly software, and unwavering reliability. I recommend their products to anyone looking for the best in site security.",
+      datePublished: "2024-11-15"
+    }
+  ],
+  itemReviewed: {
+    name: "CCTV Trailer - Olympia Mobile CCTV Rental",
+    description: "Mobile surveillance trailer rental services in Olympia and Thurston County, WA",
+    type: "Service" as const
+  }
+};
+
+// Speakable sections
+const speakableSections = [
+  { id: "quick-answer", cssSelector: ".quick-answer-content" },
+  { id: "capitol-security", cssSelector: "#capitol-security-landscape" },
+  { id: "crime-stats", cssSelector: "#olympia-crime-stats" },
+  { id: "faq-section", cssSelector: "#olympia-faq" }
 ];
 
+// Related pages
 const relatedPages = [
   {
     title: "Construction Site Security Solutions",
@@ -41,115 +71,576 @@ const relatedPages = [
     description: "Mobile surveillance for Olympia construction sites and state government projects."
   },
   {
-    title: "Event Security Trailer Rentals",
-    href: "/event-security",
-    description: "Security solutions for Olympia festivals, state events, and outdoor gatherings."
+    title: "Solar-Powered Surveillance Systems",
+    href: "/solar-powered-surveillance",
+    description: "Off-grid solar security perfect for Olympia parks, remote sites, and Capitol Campus perimeter."
   },
   {
     title: "Tacoma Security Trailer Services",
     href: "/tacoma-security-trailer",
-    description: "Our Pierce County headquarters - 30 miles north with fastest deployment."
+    description: "Our Pierce County headquarters - 30 miles north with fastest deployment to Olympia."
   },
   {
-    title: "Seattle Surveillance Rental",
-    href: "/seattle-surveillance-rental",
-    description: "Mobile surveillance services for Seattle and King County areas."
+    title: "Mobile vs Fixed Surveillance",
+    href: "/mobile-vs-fixed-surveillance",
+    description: "Compare mobile trailer surveillance to permanent camera installations for government facilities."
   },
   {
-    title: "Technical Specifications",
-    href: "/technical-specifications",
-    description: "Detailed specifications of our mobile security trailers serving Thurston County."
+    title: "Copper Wire Theft Prevention",
+    href: "/solutions/copper-wire-theft-prevention",
+    description: "Protect construction materials and copper wiring at Thurston County job sites."
   },
   {
     title: "View Pricing & Plans",
     href: "/pricing",
-    description: "Transparent pricing for Olympia area security trailer rentals."
+    description: "Transparent pricing for Olympia area security trailer rentals starting at $7,999/month."
   }
 ];
 ---
 
-<Layout 
-  title="Olympia Mobile CCTV Rental | Security Trailer Rental Thurston County"
-  description="Mobile CCTV trailer rentals in Olympia, Lacey, Tumwater. State capitol, government facilities, construction sites. Same-day setup. (253) 683-2288">
-  
+<Layout
+  title="Olympia Mobile CCTV Rental | Capitol Region Security Trailers Thurston County"
+  description="Mobile CCTV trailer rentals in Olympia, Lacey, Tumwater. Capitol Campus security, government facilities, construction sites, event surveillance. Solar-powered, 24/7 monitoring. (253) 683-2288">
+
   <!-- Structured Data Schemas -->
   <ServiceSchema {...serviceSchemaData} />
-  <BreadcrumbSchema items={breadcrumbItems} /> 
+  <BreadcrumbSchema items={breadcrumbItems} />
+  <SpeakableSchema sections={speakableSections} />
+  <ReviewSchema {...reviewData} />
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How quickly can a security trailer be deployed to the Olympia Capitol Campus area?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We deploy from our Tacoma headquarters at 222 E 26th St, just 30 miles north on I-5. Standard deployment to Olympia is within 24-48 hours. Emergency deployment for Capitol Campus incidents, protest situations, or urgent security needs can be arranged same-day with a 45-60 minute response time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do your mobile CCTV trailers meet government facility security requirements?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Our trailers meet or exceed security requirements for state government property. We provide 4K surveillance with license plate recognition, encrypted data storage, secure chain-of-custody for footage, and background-checked service personnel. We are experienced with government procurement processes and can provide all required documentation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What makes Olympia's security situation different from other Washington cities?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Olympia faces unique challenges as the state capital. Legislative sessions bring 10,000+ additional people downtown. Protest and demonstration activity at the Capitol is frequent. The city has a 1-in-23 chance of being a crime victim, with 44 crimes per 1,000 residents - higher than 92% of Washington cities. Homeless encampments near Capitol Campus create additional security concerns for adjacent properties."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does mobile CCTV rental cost for Olympia properties?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Monthly rental starts at $7,999-$10,000/month depending on the number of cameras, monitoring level, and rental duration. This includes delivery, setup, solar power system, 4K cameras, remote monitoring access, and 24/7 support. Government and multi-unit discounts are available. Call (253) 683-2288 for a custom Olympia quote."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can security trailers operate during Olympia's rainy season without power hookups?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. Our trailers use solar panels with 72-96 hour battery backup, generating power even on cloudy days at 10-25% capacity. Olympia averages 50 inches of rain annually, and our weatherproof systems are engineered for Pacific Northwest conditions. No external power hookups are required, making them ideal for construction sites, parks, and remote locations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What areas in Thurston County do you cover beyond Olympia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We serve all of Thurston County including Lacey, Tumwater, Yelm, Tenino, Rochester, Rainier, and unincorporated areas. We also cover the JBLM (Joint Base Lewis-McChord) corridor between Olympia and Tacoma. Our Tacoma headquarters provides fast response across the entire South Sound region."
+        }
+      }
+    ]
+  }
+  </script>
 
   <Header showEmergencyBar={true} currentPath="/olympia-mobile-cctv" />
-  <Analytics /> 
+  <Analytics />
 
   <main>
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-emerald-800 to-emerald-900 text-white py-16">
+    <!-- Hero Section: Capitol Building Context -->
+    <section class="bg-gradient-to-br from-emerald-900 via-emerald-800 to-green-900 text-white py-20">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl">
-          <h1 class="text-4xl md:text-5xl font-bold mb-4">Mobile CCTV Rental in Olympia, WA</h1>
-          <p class="text-xl mb-6"><strong>Protecting Washington's capital city</strong> with advanced mobile surveillance. From government facilities to special events, we <strong>secure Thurston County 24/7</strong>.</p>
+          <div class="inline-block bg-emerald-700 text-emerald-100 text-sm font-semibold px-4 py-1 rounded-full mb-4">
+            Washington State Capital -- Thurston County
+          </div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            Mobile CCTV Rental in Olympia, WA
+          </h1>
+          <p class="text-xl md:text-2xl mb-4 text-emerald-100 leading-relaxed">
+            <strong class="text-white">Protecting Washington's capital city</strong> -- from the Legislative Building dome to the Port of Olympia waterfront. Advanced mobile surveillance for government facilities, construction sites, and special events across Thurston County.
+          </p>
+          <p class="text-lg mb-8 text-emerald-200">
+            Deployed from our Tacoma headquarters at 222 E 26th St -- just 30 miles north on I-5. Same-day emergency response available for Capitol Campus and surrounding areas.
+          </p>
           <div class="flex flex-col sm:flex-row gap-4">
-            <a href="tel:2536832288" class="bg-white text-emerald-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
-              📞 Call Now: (253) 683-2288
+            <a href="tel:2536832288" class="bg-white text-emerald-900 hover:bg-gray-100 font-bold py-4 px-8 rounded-lg inline-block text-center text-lg transition-colors">
+              Call Now: (253) 683-2288
             </a>
-            <a href="#olympia-quote" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-lg inline-block text-center">
-              Get Olympia Quote →
+            <a href="#olympia-quote" class="bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-4 px-8 rounded-lg inline-block text-center text-lg transition-colors">
+              Get Olympia Quote
             </a>
           </div>
-          <p class="mt-4">⚡ Rapid deployment to Capitol Campus and throughout Thurston County</p>
+          <div class="mt-6 flex flex-wrap gap-4 text-sm text-emerald-200">
+            <span class="flex items-center"><span class="text-yellow-400 mr-2">&#9733;</span> Capitol Campus Approved</span>
+            <span class="flex items-center"><span class="text-yellow-400 mr-2">&#9733;</span> Solar-Powered / No Hookups</span>
+            <span class="flex items-center"><span class="text-yellow-400 mr-2">&#9733;</span> 45-Min Emergency Response</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Crime Statistics Section -->
-    <section class="bg-yellow-50 py-12">
+    <!-- Quick Answer Box -->
+    <section class="py-10 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <QuickAnswer
+          what="Solar-powered mobile CCTV trailers for Olympia, the Washington State Capital, and all of Thurston County"
+          cost="$7,999-$10,000/month with government and multi-unit discounts available"
+          time="24-48 hours standard, same-day emergency deployment to Capitol region"
+          coverage="360-degree PTZ cameras, 4K night vision, license plate recognition across Capitol Campus, downtown, and Thurston County"
+          availability="Year-round service from Tacoma HQ (30 miles north) -- call (253) 683-2288"
+          includes={[
+            "4K HD cameras with night vision and LPR",
+            "Solar power with 72-96 hour battery backup",
+            "Remote monitoring from any device",
+            "Weatherproof design for Pacific NW rain",
+            "Free delivery, setup, and relocation",
+            "Government-grade encrypted data storage"
+          ]}
+          customFields={[
+            { label: "Headquarters", value: "222 E 26th St, Tacoma, WA 98421 -- 30 miles from Olympia" },
+            { label: "Service Area", value: "Olympia, Lacey, Tumwater, Yelm, Tenino, all Thurston County" }
+          ]}
+        />
+      </div>
+    </section>
+
+    <!-- Capitol Region Security Landscape -->
+    <section id="capitol-security-landscape" class="py-16 bg-white">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-bold mb-6 text-center">Olympia Security Statistics</h2>
-          <StatBox stats={crimeStats} layout="grid" />
-          <div class="mt-8 bg-white rounded-lg p-6 border-l-4 border-yellow-600">
-            <p class="text-gray-700 font-semibold">
-              Despite being the state capital, Olympia faces significant security challenges with crime rates above both state and national averages. Our mobile CCTV systems provide essential protection for government facilities, businesses, and special events.
+          <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Capitol Region Security Landscape</h2>
+          <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+            Olympia is not a typical mid-sized city. As Washington's state capital, it faces security pressures that far exceed what a city of roughly 55,000 residents would normally encounter. The <strong>Washington State Legislative Building</strong> and surrounding Capitol Campus draw tens of thousands of visitors, lobbyists, staffers, and demonstrators each year -- creating a security environment more comparable to cities three or four times Olympia's size.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-10">
+            <div class="bg-emerald-50 border-l-4 border-emerald-600 p-6 rounded-r-lg">
+              <h3 class="text-xl font-bold mb-3 text-emerald-900">Legislative Session Surges</h3>
+              <p class="text-gray-700">
+                When the Washington State Legislature is in session (January through April in odd years, January through March in even years), downtown Olympia's daytime population swells by an estimated <strong>10,000-15,000 people</strong>. Staffers, legislators, lobbyists, and visitors flood Capitol Way and the surrounding blocks. This population influx increases foot traffic, parking lot congestion, and property crime opportunities -- particularly vehicle break-ins and theft from businesses near the Capitol.
+              </p>
+            </div>
+            <div class="bg-amber-50 border-l-4 border-amber-600 p-6 rounded-r-lg">
+              <h3 class="text-xl font-bold mb-3 text-amber-900">Protest & Demonstration Activity</h3>
+              <p class="text-gray-700">
+                The Capitol Campus is a focal point for political demonstrations of all kinds. From large-scale organized marches to spontaneous gatherings, protest activity can escalate rapidly and spill into surrounding commercial areas. Businesses along Capitol Way, 4th Avenue, and the downtown corridor frequently request temporary surveillance during high-tension legislative periods, especially around contentious votes and budget sessions.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-10">
+            <div class="bg-red-50 border-l-4 border-red-600 p-6 rounded-r-lg">
+              <h3 class="text-xl font-bold mb-3 text-red-900">Encampment & Transient Concerns</h3>
+              <p class="text-gray-700">
+                Olympia has struggled with homeless encampments near Capitol Campus, along the waterfront, in Sylvester Park, and throughout the downtown core. These encampments have been associated with increased property crime, vandalism, and safety concerns for nearby businesses and government employees. The <strong>Capitol Lake / Estuary area</strong> and <strong>Marathon Park</strong> have been particular hotspots, prompting property managers and construction crews to invest in mobile surveillance.
+              </p>
+            </div>
+            <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg">
+              <h3 class="text-xl font-bold mb-3 text-blue-900">Evergreen State College Zone</h3>
+              <p class="text-gray-700">
+                The Evergreen State College campus on the west side of Olympia brings its own security dynamics. With over 2,500 students and frequent community events, the surrounding residential and commercial areas -- particularly along Cooper Point Road and the Westside corridor -- experience elevated property crime compared to Thurston County averages. Construction projects and development sites near campus are frequently targeted for material theft and vandalism.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-gray-100 rounded-xl p-8">
+            <p class="text-gray-800 text-lg leading-relaxed">
+              These converging factors make Olympia a city where <strong>temporary, deployable security solutions</strong> are not a luxury -- they are a necessity. Our <a href="/solar-powered-surveillance" class="text-emerald-700 underline hover:text-emerald-900 font-semibold">solar-powered mobile CCTV trailers</a> provide the flexibility to respond to Olympia's shifting security landscape, deploying rapidly to construction sites, government perimeters, commercial properties, and event venues without requiring permanent infrastructure or power hookups.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Service Areas -->
-    <section class="py-16">
+    <!-- Crime Statistics Section -->
+    <section id="olympia-crime-stats" class="bg-yellow-50 py-14">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-8">Olympia & Thurston County Coverage</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="bg-white border rounded-lg p-6">
-            <h3 class="font-bold text-lg mb-3">Olympia Areas</h3>
-            <ul class="text-gray-600 space-y-1">
-              <li>• State Capitol Campus</li>
-              <li>• Downtown Olympia</li>
-              <li>• West Olympia</li>
-              <li>• South Capitol</li>
-              <li>• Evergreen State College</li>
-              <li>• Port of Olympia</li>
+        <div class="max-w-5xl mx-auto">
+          <StatBox
+            title="Olympia & Thurston County Crime Statistics"
+            description="Why the state capital needs proactive mobile surveillance"
+            layout="grid"
+            stats={[
+              {
+                value: "1 in 23",
+                label: "Chance of Being Crime Victim",
+                icon: "&#9888;",
+                highlight: true,
+                source: { text: "NeighborhoodScout Olympia Data" }
+              },
+              {
+                value: "44",
+                label: "Crimes per 1,000 Residents",
+                icon: "&#128202;",
+                highlight: true,
+                source: { text: "FBI UCR / Olympia PD" }
+              },
+              {
+                value: "92%",
+                label: "WA Cities Are Safer Than Olympia",
+                icon: "&#128680;",
+                highlight: true,
+                source: { text: "State Crime Statistics" }
+              },
+              {
+                value: "Above",
+                label: "State & National Average Crime",
+                icon: "&#128200;",
+                highlight: true,
+                source: { text: "FBI UCR Annual Report" }
+              }
+            ]}
+          />
+          <div class="mt-8 bg-white rounded-lg p-6 border-l-4 border-yellow-600 shadow-sm">
+            <p class="text-gray-700 font-semibold text-lg">
+              Despite being the state capital -- home to the Governor's Mansion, the Legislature, and the state Supreme Court -- Olympia's crime rates exceed both the Washington state average and the national average. Property crime is the primary driver, with theft, burglary, and vehicle break-ins accounting for the vast majority of reported incidents.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Government & Capitol Campus Security -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">Government & Capitol Campus Security</h2>
+          <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+            Specialized mobile surveillance solutions for Washington's seat of government
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-12 mb-12">
+            <div>
+              <h3 class="text-2xl font-bold mb-6 text-emerald-800">Capitol Campus Challenges</h3>
+              <p class="text-gray-700 mb-4">
+                The Washington State Capitol Campus spans over 50 acres and includes the Legislative Building, the Governor's Mansion, the Temple of Justice, the Insurance Building, and numerous auxiliary structures. Security for this complex is managed by the Washington State Patrol, but <strong>adjacent properties, parking areas, and perimeter zones</strong> often fall outside their purview.
+              </p>
+              <p class="text-gray-700 mb-4">
+                Private property owners, construction contractors working on state projects, and event organizers operating near the Capitol Campus need independent security solutions. Our mobile CCTV trailers fill this gap -- providing <strong>government-grade surveillance</strong> that can be deployed to parking lots, staging areas, construction zones, and temporary event spaces around the Capitol perimeter.
+              </p>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="text-emerald-600 mr-3 mt-1 font-bold">&#10003;</span>
+                  <span><strong>Perimeter monitoring</strong> for Capitol-adjacent commercial properties</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-emerald-600 mr-3 mt-1 font-bold">&#10003;</span>
+                  <span><strong>Construction site security</strong> for state-funded building projects</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-emerald-600 mr-3 mt-1 font-bold">&#10003;</span>
+                  <span><strong>Event surveillance</strong> during legislative sessions and public gatherings</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-emerald-600 mr-3 mt-1 font-bold">&#10003;</span>
+                  <span><strong>Parking lot protection</strong> for state employee and visitor lots</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-emerald-50 rounded-xl p-8 border border-emerald-200">
+              <h3 class="text-xl font-bold mb-4 text-emerald-900">Case Scenario: Legislative Session Deployment</h3>
+              <div class="space-y-4 text-gray-700">
+                <p>
+                  <strong>Situation:</strong> A commercial property owner on Capitol Way requested temporary security for the 105-day legislative session. Their parking lot and building entrance were experiencing increased vandalism, unauthorized overnight parking, and employee safety concerns during evening hours.
+                </p>
+                <p>
+                  <strong>Solution:</strong> We deployed a solar-powered CCTV trailer with 4K PTZ cameras covering the full parking lot, building entrance, and sidewalk approach. License plate recognition logged every vehicle. Motion-activated alerts notified the property manager of after-hours activity.
+                </p>
+                <p>
+                  <strong>Outcome:</strong> Over the session period, the trailer deterred multiple unauthorized access attempts, documented two vandalism incidents that led to identification of suspects, and provided the property manager with complete activity logs. Vandalism dropped to zero after the first two weeks of deployment.
+                </p>
+                <div class="mt-4 pt-4 border-t border-emerald-300">
+                  <p class="text-sm text-emerald-800 font-semibold">
+                    This scenario reflects typical deployment outcomes. Individual results vary by location and circumstances.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 rounded-xl p-8">
+            <h3 class="text-xl font-bold mb-4">Government Compliance & Data Security</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="text-emerald-600 mr-2 font-bold">&#10003;</span>
+                  <span>Background-checked technicians for all deployments near government property</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-emerald-600 mr-2 font-bold">&#10003;</span>
+                  <span>Encrypted video storage with secure chain-of-custody documentation</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-emerald-600 mr-2 font-bold">&#10003;</span>
+                  <span>Government procurement process experience -- W-9, insurance certificates, bonding available</span>
+                </li>
+              </ul>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="text-emerald-600 mr-2 font-bold">&#10003;</span>
+                  <span>Data retention policies configurable to match agency requirements</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-emerald-600 mr-2 font-bold">&#10003;</span>
+                  <span>Footage available for law enforcement with proper authorization</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-emerald-600 mr-2 font-bold">&#10003;</span>
+                  <span>Rapid emergency redeployment for elevated threat situations</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Table: Mobile Trailer vs Capitol Fixed Security vs Private Guards -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <ComparisonTable
+          title="Olympia Security Options: Mobile Trailers vs Fixed Systems vs Guards"
+          description="Compare mobile CCTV trailer rentals to permanent Capitol-area camera systems and private security guard services for Thurston County properties"
+          headers={["Mobile CCTV Trailer", "Fixed Camera System", "Private Security Guards"]}
+          rows={[
+            {
+              feature: "Monthly Cost",
+              values: [
+                { text: "$7,999-$10,000", highlight: true },
+                "$500 + $15,000-$30,000 install",
+                "$18,000-$30,000/month"
+              ]
+            },
+            {
+              feature: "Deployment Speed",
+              values: [
+                { text: "Same day - 48 hours", highlight: true },
+                "2-6 weeks installation",
+                "3-7 days staffing"
+              ]
+            },
+            {
+              feature: "Power Requirements",
+              values: [
+                { text: "Solar / self-powered", highlight: true },
+                "Requires electrical hookup",
+                "N/A"
+              ]
+            },
+            {
+              feature: "Relocatable",
+              values: [
+                { text: "Yes - free moves", highlight: true },
+                "No - permanent install",
+                "Reassign guards"
+              ]
+            },
+            {
+              feature: "24/7 Coverage",
+              values: [
+                { text: "Always recording", highlight: true },
+                "Always recording",
+                "Shift gaps / breaks"
+              ]
+            },
+            {
+              feature: "Video Evidence",
+              values: [
+                { text: "4K HD + LPR", highlight: true },
+                "720p-1080p typical",
+                "No video"
+              ]
+            },
+            {
+              feature: "Weather Reliability",
+              values: [
+                { text: "All-weather rated", highlight: true },
+                "Depends on install quality",
+                "Guards shelter in rain"
+              ]
+            },
+            {
+              feature: "License Plate Recognition",
+              values: [
+                { text: "Automatic LPR included", highlight: true },
+                "Add-on ($5,000+)",
+                "Manual notes only"
+              ]
+            },
+            {
+              feature: "Government Facility Ready",
+              values: [
+                { text: "Yes - encrypted + compliant", highlight: true },
+                "Varies by vendor",
+                "Requires clearance"
+              ]
+            },
+            {
+              feature: "End of Contract",
+              values: [
+                { text: "We pick it up - no cost", highlight: true },
+                "Equipment stays / dispose",
+                "End contract"
+              ]
+            }
+          ]}
+        />
+        <p class="text-center text-gray-500 text-sm mt-6">
+          For a deeper analysis of mobile vs permanent systems, see our <a href="/mobile-vs-fixed-surveillance" class="text-emerald-700 underline hover:text-emerald-900">mobile vs fixed surveillance comparison guide</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Thurston County Crime Deep Dive -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Thurston County Crime Deep Dive</h2>
+          <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+            Understanding why Olympia has higher-than-expected crime for a state capital
+          </p>
+
+          <div class="prose max-w-none">
+            <div class="bg-gray-50 rounded-xl p-8 mb-8">
+              <h3 class="text-2xl font-bold mb-4">Property Crime: The Primary Threat</h3>
+              <p class="text-gray-700 mb-4 text-lg leading-relaxed">
+                Property crime is overwhelmingly the dominant concern in Olympia and Thurston County. Theft, burglary, motor vehicle theft, and vandalism constitute the vast majority of reported crimes. For property owners, businesses, and construction sites, this means the threat is not primarily about violent confrontation -- it is about <strong>unattended assets being targeted during off-hours</strong>.
+              </p>
+              <p class="text-gray-700 mb-4 text-lg leading-relaxed">
+                This is precisely the type of crime that mobile CCTV surveillance is designed to prevent. Visible camera presence deters opportunistic thieves, while 4K recording and license plate recognition provide evidence that leads to arrests and convictions. Our clients in the Olympia area consistently report <strong>dramatic reductions in property crime</strong> within the first two weeks of trailer deployment.
+              </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+              <div class="border border-gray-200 rounded-lg p-6">
+                <h4 class="text-xl font-bold mb-3 text-red-700">Why Olympia's Crime Rate Is Elevated</h4>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex items-start">
+                    <span class="text-red-500 mr-2 mt-1">&#9679;</span>
+                    <span><strong>Capital city magnet effect:</strong> The Capitol draws transient populations, increasing the pool of potential offenders beyond what local demographics suggest.</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-red-500 mr-2 mt-1">&#9679;</span>
+                    <span><strong>I-5 corridor access:</strong> Olympia sits on Interstate 5, providing fast ingress and egress for property criminals operating across county lines.</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-red-500 mr-2 mt-1">&#9679;</span>
+                    <span><strong>Service concentration:</strong> As a regional hub for social services, Olympia draws populations associated with higher property crime rates.</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-red-500 mr-2 mt-1">&#9679;</span>
+                    <span><strong>Underreporting in surrounding areas:</strong> Unincorporated Thurston County crime often gets attributed to Olympia, inflating the city's per-capita rate.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="border border-gray-200 rounded-lg p-6">
+                <h4 class="text-xl font-bold mb-3 text-emerald-700">Neighborhoods with Elevated Risk</h4>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex items-start">
+                    <span class="text-emerald-500 mr-2 mt-1">&#9679;</span>
+                    <span><strong>Downtown / Capitol Way corridor:</strong> Highest concentration of theft and vandalism, especially during legislative sessions.</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-emerald-500 mr-2 mt-1">&#9679;</span>
+                    <span><strong>Eastside Olympia:</strong> The Pacific Avenue / Plum Street area near the transit center sees frequent property crime activity.</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-emerald-500 mr-2 mt-1">&#9679;</span>
+                    <span><strong>West Olympia / Cooper Point:</strong> Retail areas and construction sites near Evergreen State College experience material theft.</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-emerald-500 mr-2 mt-1">&#9679;</span>
+                    <span><strong>Port of Olympia area:</strong> Marine terminal and industrial properties are targets for equipment and <a href="/solutions/copper-wire-theft-prevention" class="text-emerald-700 underline hover:text-emerald-900">copper wire theft</a>.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-8">
+              <h4 class="text-xl font-bold mb-3 text-emerald-900">The Mobile Surveillance Advantage in Olympia</h4>
+              <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                Fixed surveillance systems work well for properties with stable security needs. But Olympia's security landscape is <strong>dynamic and seasonal</strong>. Crime patterns shift with legislative sessions, summer festivals, construction cycles, and encampment locations. A <a href="/mobile-vs-fixed-surveillance" class="text-emerald-700 underline hover:text-emerald-900 font-semibold">mobile CCTV trailer</a> can be redeployed as threats evolve -- moved from a construction site to a parking lot to an event venue as needs change throughout the year.
+              </p>
+              <p class="text-gray-700 text-lg leading-relaxed">
+                For <a href="/construction-security" class="text-emerald-700 underline hover:text-emerald-900 font-semibold">construction projects in Olympia</a>, this flexibility is critical. Job sites progress through phases where different areas need protection. Our trailers move with your project at no additional cost, and because they are completely <a href="/solar-powered-surveillance" class="text-emerald-700 underline hover:text-emerald-900 font-semibold">solar-powered</a>, they work on sites long before electrical service is available.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">Olympia & Thurston County Coverage</h2>
+        <p class="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
+          Deploying from 222 E 26th St, Tacoma, WA 98421 -- serving all of Thurston County within 45-60 minutes
+        </p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div class="bg-white border rounded-lg p-6 shadow-sm">
+            <h3 class="font-bold text-lg mb-4 text-emerald-800">Olympia Neighborhoods</h3>
+            <ul class="text-gray-600 space-y-2">
+              <li class="flex items-center"><span class="text-emerald-500 mr-2">&#9679;</span> State Capitol Campus</li>
+              <li class="flex items-center"><span class="text-emerald-500 mr-2">&#9679;</span> Downtown Olympia / Capitol Way</li>
+              <li class="flex items-center"><span class="text-emerald-500 mr-2">&#9679;</span> West Olympia / Cooper Point</li>
+              <li class="flex items-center"><span class="text-emerald-500 mr-2">&#9679;</span> South Capitol</li>
+              <li class="flex items-center"><span class="text-emerald-500 mr-2">&#9679;</span> Eastside / Pacific Ave corridor</li>
+              <li class="flex items-center"><span class="text-emerald-500 mr-2">&#9679;</span> Evergreen State College area</li>
+              <li class="flex items-center"><span class="text-emerald-500 mr-2">&#9679;</span> Port of Olympia / Marine Drive</li>
+              <li class="flex items-center"><span class="text-emerald-500 mr-2">&#9679;</span> Capitol Lake / Heritage Park</li>
             </ul>
           </div>
-          <div class="bg-white border rounded-lg p-6">
-            <h3 class="font-bold text-lg mb-3">Surrounding Cities</h3>
-            <ul class="text-gray-600 space-y-1">
-              <li>• Lacey</li>
-              <li>• Tumwater</li>
-              <li>• Yelm</li>
-              <li>• Tenino</li>
-              <li>• Rochester</li>
-              <li>• Rainier</li>
+          <div class="bg-white border rounded-lg p-6 shadow-sm">
+            <h3 class="font-bold text-lg mb-4 text-emerald-800">Surrounding Cities</h3>
+            <ul class="text-gray-600 space-y-2">
+              <li class="flex items-center"><span class="text-emerald-500 mr-2">&#9679;</span> Lacey (adjacent east)</li>
+              <li class="flex items-center"><span class="text-emerald-500 mr-2">&#9679;</span> Tumwater (adjacent south)</li>
+              <li class="flex items-center"><span class="text-emerald-500 mr-2">&#9679;</span> Yelm</li>
+              <li class="flex items-center"><span class="text-emerald-500 mr-2">&#9679;</span> Tenino</li>
+              <li class="flex items-center"><span class="text-emerald-500 mr-2">&#9679;</span> Rochester</li>
+              <li class="flex items-center"><span class="text-emerald-500 mr-2">&#9679;</span> Rainier</li>
+              <li class="flex items-center"><span class="text-emerald-500 mr-2">&#9679;</span> Grand Mound</li>
+              <li class="flex items-center"><span class="text-emerald-500 mr-2">&#9679;</span> JBLM Corridor (Lacey to DuPont)</li>
             </ul>
           </div>
-          <div class="bg-white border rounded-lg p-6">
-            <h3 class="font-bold text-lg mb-3">Special Facilities</h3>
-            <ul class="text-gray-600 space-y-1">
-              <li>• State Government Buildings</li>
-              <li>• Saint Martin's University</li>
-              <li>• Providence St. Peter Hospital</li>
-              <li>• Thurston County Fairgrounds</li>
-              <li>• Brewery District</li>
-              <li>• Heritage Park</li>
+          <div class="bg-white border rounded-lg p-6 shadow-sm">
+            <h3 class="font-bold text-lg mb-4 text-emerald-800">Key Facilities & Venues</h3>
+            <ul class="text-gray-600 space-y-2">
+              <li class="flex items-center"><span class="text-emerald-500 mr-2">&#9679;</span> State Government Buildings</li>
+              <li class="flex items-center"><span class="text-emerald-500 mr-2">&#9679;</span> Saint Martin's University</li>
+              <li class="flex items-center"><span class="text-emerald-500 mr-2">&#9679;</span> Providence St. Peter Hospital</li>
+              <li class="flex items-center"><span class="text-emerald-500 mr-2">&#9679;</span> Thurston County Fairgrounds</li>
+              <li class="flex items-center"><span class="text-emerald-500 mr-2">&#9679;</span> Olympia Brewery District</li>
+              <li class="flex items-center"><span class="text-emerald-500 mr-2">&#9679;</span> Capital Mall area</li>
+              <li class="flex items-center"><span class="text-emerald-500 mr-2">&#9679;</span> South Sound Center (Lacey)</li>
+              <li class="flex items-center"><span class="text-emerald-500 mr-2">&#9679;</span> Olympia Farmers Market</li>
             </ul>
           </div>
         </div>
@@ -157,142 +648,273 @@ const relatedPages = [
     </section>
 
     <!-- Olympia-Specific Applications -->
-    <section class="bg-gray-50 py-16">
+    <section class="py-16 bg-white">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-8">Security Solutions for Olympia</h2>
-        <div class="grid md:grid-cols-2 gap-8">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">Security Applications for Olympia</h2>
+        <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+          From state government campuses to waterfront festivals -- we secure it all
+        </p>
+        <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
           <div>
-            <h3 class="font-bold text-xl mb-4">Government & Public Sector</h3>
-            <ul class="space-y-2">
+            <h3 class="font-bold text-2xl mb-5 text-emerald-800">Government & Public Sector</h3>
+            <ul class="space-y-3">
               <li class="flex items-start">
-                <span class="text-green-600 mr-2">✓</span>
-                <span>State Capitol Campus security during sessions</span>
+                <span class="text-emerald-600 mr-3 font-bold">&#10003;</span>
+                <span>State Capitol Campus perimeter surveillance during legislative sessions</span>
               </li>
               <li class="flex items-start">
-                <span class="text-green-600 mr-2">✓</span>
-                <span>Government construction project monitoring</span>
+                <span class="text-emerald-600 mr-3 font-bold">&#10003;</span>
+                <span>Government <a href="/construction-security" class="text-emerald-700 underline hover:text-emerald-900">construction project monitoring</a> and documentation</span>
               </li>
               <li class="flex items-start">
-                <span class="text-green-600 mr-2">✓</span>
-                <span>Public works and infrastructure protection</span>
+                <span class="text-emerald-600 mr-3 font-bold">&#10003;</span>
+                <span>Public works and infrastructure protection -- road projects, utility work</span>
               </li>
               <li class="flex items-start">
-                <span class="text-green-600 mr-2">✓</span>
-                <span>Legislative event security support</span>
+                <span class="text-emerald-600 mr-3 font-bold">&#10003;</span>
+                <span>Legislative event security support and demonstration monitoring</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-600 mr-3 font-bold">&#10003;</span>
+                <span>State employee parking lot surveillance</span>
               </li>
             </ul>
           </div>
           <div>
-            <h3 class="font-bold text-xl mb-4">Events & Community</h3>
-            <ul class="space-y-2">
+            <h3 class="font-bold text-2xl mb-5 text-emerald-800">Events & Community</h3>
+            <ul class="space-y-3">
               <li class="flex items-start">
-                <span class="text-green-600 mr-2">✓</span>
-                <span>Olympia Harbor Days security</span>
+                <span class="text-emerald-600 mr-3 font-bold">&#10003;</span>
+                <span>Olympia Harbor Days festival security (Labor Day weekend)</span>
               </li>
               <li class="flex items-start">
-                <span class="text-green-600 mr-2">✓</span>
-                <span>Lakefair Festival surveillance</span>
+                <span class="text-emerald-600 mr-3 font-bold">&#10003;</span>
+                <span>Lakefair Festival surveillance (July -- 200,000+ attendees)</span>
               </li>
               <li class="flex items-start">
-                <span class="text-green-600 mr-2">✓</span>
-                <span>Procession of the Species parade</span>
+                <span class="text-emerald-600 mr-3 font-bold">&#10003;</span>
+                <span>Procession of the Species parade route monitoring</span>
               </li>
               <li class="flex items-start">
-                <span class="text-green-600 mr-2">✓</span>
-                <span>Farmers Market weekend security</span>
+                <span class="text-emerald-600 mr-3 font-bold">&#10003;</span>
+                <span>Olympia Farmers Market weekend security (April - October)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-600 mr-3 font-bold">&#10003;</span>
+                <span>Capital City Marathon event support</span>
               </li>
             </ul>
           </div>
         </div>
-        
-        <div class="mt-12 bg-blue-100 rounded-lg p-8">
-          <h3 class="font-bold text-xl mb-4">Capitol Campus Specialist</h3>
-          <p class="text-gray-700 mb-4">
-            We understand the unique security requirements of government facilities. Our mobile CCTV trailers are approved for state property deployment and meet all compliance requirements for sensitive locations.
-          </p>
-          <ul class="grid md:grid-cols-2 gap-4">
-            <li>• Background-checked operators</li>
-            <li>• Secure data handling protocols</li>
-            <li>• Government contract ready</li>
-            <li>• Rapid emergency response</li>
-          </ul>
+
+        <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto mt-10">
+          <div>
+            <h3 class="font-bold text-2xl mb-5 text-emerald-800">Construction & Development</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <span class="text-emerald-600 mr-3 font-bold">&#10003;</span>
+                <span>Downtown Olympia mixed-use development site security</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-600 mr-3 font-bold">&#10003;</span>
+                <span><a href="/solutions/copper-wire-theft-prevention" class="text-emerald-700 underline hover:text-emerald-900">Copper wire and material theft prevention</a> at active job sites</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-600 mr-3 font-bold">&#10003;</span>
+                <span>Residential subdivision monitoring in Lacey, Tumwater, and Yelm</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-600 mr-3 font-bold">&#10003;</span>
+                <span>Commercial construction equipment theft deterrence</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-2xl mb-5 text-emerald-800">Commercial & Retail</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <span class="text-emerald-600 mr-3 font-bold">&#10003;</span>
+                <span>Retail parking lot surveillance -- Capital Mall, South Sound Center</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-600 mr-3 font-bold">&#10003;</span>
+                <span>Brewery District and downtown business protection</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-600 mr-3 font-bold">&#10003;</span>
+                <span>Auto dealership lot security in Tumwater and Lacey</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-600 mr-3 font-bold">&#10003;</span>
+                <span>Warehouse and industrial property monitoring near Port of Olympia</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Why Choose Us -->
-    <section class="py-16">
+    <!-- FAQ Section -->
+    <section id="olympia-faq" class="py-16 bg-gray-50">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-8">Why Olympia Chooses CCTV Trailer</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="text-center">
-            <div class="text-4xl mb-4">🏛️</div>
-            <h3 class="font-bold text-xl mb-2">Government Approved</h3>
-            <p class="text-gray-600">Trusted by state agencies and approved for sensitive government facilities throughout the capitol region.</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Olympia Mobile CCTV -- Frequently Asked Questions</h2>
+        <div class="max-w-3xl mx-auto space-y-6">
+
+          <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+            <h3 class="font-bold text-lg mb-3">How quickly can a security trailer be deployed to the Olympia Capitol Campus area?</h3>
+            <p class="text-gray-700 leading-relaxed">
+              We deploy from our Tacoma headquarters at 222 E 26th St, just 30 miles north on I-5. Standard deployment to Olympia is within 24-48 hours. Emergency deployment for Capitol Campus incidents, protest situations, or urgent security needs can be arranged same-day with a 45-60 minute response time. Call <a href="tel:2536832288" class="text-emerald-700 font-semibold">(253) 683-2288</a> for immediate assistance.
+            </p>
           </div>
-          <div class="text-center">
-            <div class="text-4xl mb-4">⚡</div>
-            <h3 class="font-bold text-xl mb-2">45-Minute Response</h3>
-            <p class="text-gray-600">Quick deployment from Tacoma to Olympia. Emergency response available for urgent security needs.</p>
+
+          <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+            <h3 class="font-bold text-lg mb-3">Do your mobile CCTV trailers meet government facility security requirements?</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Yes. Our trailers meet or exceed security requirements for state government property. We provide 4K surveillance with license plate recognition, encrypted data storage, secure chain-of-custody for footage, and background-checked service personnel. We are experienced with government procurement processes and can provide all required documentation including W-9s, insurance certificates, and bonding.
+            </p>
           </div>
-          <div class="text-center">
-            <div class="text-4xl mb-4">🌲</div>
-            <h3 class="font-bold text-xl mb-2">Pacific NW Ready</h3>
-            <p class="text-gray-600">Equipment built to handle Olympia's rainy climate. Fully weatherproof year-round operation.</p>
+
+          <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+            <h3 class="font-bold text-lg mb-3">What makes Olympia's security situation different from other Washington cities?</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Olympia faces unique challenges as the state capital. Legislative sessions bring 10,000+ additional people downtown. Protest and demonstration activity at the Capitol is frequent and sometimes unpredictable. The city has a 1-in-23 chance of being a crime victim, with 44 crimes per 1,000 residents -- higher than 92% of Washington cities. Homeless encampments near Capitol Campus create additional security concerns for adjacent properties. These factors combine to make <a href="/mobile-vs-fixed-surveillance" class="text-emerald-700 underline hover:text-emerald-900">flexible, deployable security</a> essential.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+            <h3 class="font-bold text-lg mb-3">How much does mobile CCTV rental cost for Olympia properties?</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Monthly rental starts at $7,999-$10,000/month depending on the number of cameras, monitoring level, and rental duration. This includes delivery, setup, solar power system, 4K cameras, remote monitoring access, and 24/7 support. Government and multi-unit discounts are available. There are no hidden fees -- delivery, setup, relocation within your property, and pickup are all included. Call <a href="tel:2536832288" class="text-emerald-700 font-semibold">(253) 683-2288</a> for a custom quote.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+            <h3 class="font-bold text-lg mb-3">Can security trailers operate during Olympia's rainy season without power hookups?</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Absolutely. Our trailers use <a href="/solar-powered-surveillance" class="text-emerald-700 underline hover:text-emerald-900">solar panels with 72-96 hour battery backup</a>, generating power even on cloudy days at 10-25% capacity. Olympia averages 50 inches of rain annually, and our weatherproof systems are engineered specifically for Pacific Northwest conditions. No external power hookups are required, making them ideal for construction sites, parks, and remote locations throughout Thurston County.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+            <h3 class="font-bold text-lg mb-3">What areas in Thurston County do you cover beyond Olympia?</h3>
+            <p class="text-gray-700 leading-relaxed">
+              We serve all of Thurston County including Lacey, Tumwater, Yelm, Tenino, Rochester, Rainier, Grand Mound, and unincorporated areas. We also cover the JBLM (Joint Base Lewis-McChord) corridor between Olympia and Tacoma. Our Tacoma headquarters provides fast response across the entire South Sound region. For construction-specific needs, see our <a href="/construction-security" class="text-emerald-700 underline hover:text-emerald-900">construction site security page</a>.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial / Review Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-10">What Our Clients Say</h2>
+        <div class="max-w-3xl mx-auto">
+          <div class="bg-gradient-to-br from-emerald-50 to-white rounded-xl p-8 shadow-lg border border-emerald-100">
+            <div class="flex items-center mb-4">
+              <div class="flex text-yellow-400 text-xl">
+                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+              </div>
+              <span class="ml-3 text-gray-500 text-sm">5 out of 5 stars</span>
+            </div>
+            <blockquote class="text-gray-700 text-lg leading-relaxed mb-6 italic">
+              "The CCTVtrailer security camera system impresses with its <strong>exceptional quality, affordability, user-friendly software, and unwavering reliability</strong>. I recommend their products to anyone looking for the best in site security."
+            </blockquote>
+            <div class="border-t border-emerald-200 pt-4">
+              <div class="font-semibold text-gray-900">Alexx Bacon</div>
+              <div class="text-sm text-gray-600">President, Aaberg's Rental</div>
+              <div class="text-xs text-gray-500 mt-1">Tacoma, WA -- serving clients throughout the South Sound including Olympia and Thurston County</div>
+            </div>
+          </div>
+
+          <div class="mt-8 text-center">
+            <p class="text-gray-600 text-lg">
+              Based just 30 miles north in Tacoma, we provide the same responsive, high-quality service to our Olympia clients. Our proximity on the I-5 corridor means <strong>fast deployment and rapid on-site support</strong> whenever you need it.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Quote Form -->
-    <section id="olympia-quote" class="py-16 bg-gray-50">
+    <section id="olympia-quote" class="py-16 bg-emerald-50">
       <div class="container mx-auto px-4 max-w-2xl">
-        <h2 class="text-3xl font-bold text-center mb-8">Get Your Olympia Security Quote</h2>
+        <h2 class="text-3xl font-bold text-center mb-4">Get Your Olympia Security Quote</h2>
+        <p class="text-center text-gray-600 mb-8">
+          Tell us about your Thurston County security needs and we will respond within 1 hour with a custom proposal.
+        </p>
         <form id="olympia-quote-form" class="bg-white rounded-lg p-8 shadow-lg">
           <div class="grid gap-6">
             <div>
               <label for="olympia-name" class="block mb-2 font-semibold">Name *</label>
-              <input type="text" id="olympia-name" name="name" required class="w-full px-4 py-2 border rounded-lg">
+              <input type="text" id="olympia-name" name="name" required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
             </div>
-            <div>
-              <label for="olympia-phone" class="block mb-2 font-semibold">Phone *</label>
-              <input type="tel" id="olympia-phone" name="phone" required class="w-full px-4 py-2 border rounded-lg">
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label for="olympia-phone" class="block mb-2 font-semibold">Phone *</label>
+                <input type="tel" id="olympia-phone" name="phone" required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+              </div>
+              <div>
+                <label for="olympia-email" class="block mb-2 font-semibold">Email</label>
+                <input type="email" id="olympia-email" name="email" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+              </div>
             </div>
             <div>
               <label for="olympia-location" class="block mb-2 font-semibold">Olympia Area Location *</label>
-              <select id="olympia-location" name="location" required class="w-full px-4 py-2 border rounded-lg">
+              <select id="olympia-location" name="location" required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
                 <option value="">Select area...</option>
-                <option value="capitol-campus">Capitol Campus</option>
-                <option value="downtown">Downtown Olympia</option>
-                <option value="west-olympia">West Olympia</option>
+                <option value="capitol-campus">Capitol Campus / Downtown</option>
+                <option value="west-olympia">West Olympia / Cooper Point</option>
+                <option value="eastside">Eastside / Pacific Ave</option>
+                <option value="south-capitol">South Capitol</option>
                 <option value="lacey">Lacey</option>
                 <option value="tumwater">Tumwater</option>
                 <option value="yelm">Yelm</option>
                 <option value="port">Port of Olympia</option>
+                <option value="jblm-corridor">JBLM Corridor</option>
                 <option value="other">Other Thurston County</option>
               </select>
             </div>
             <div>
               <label for="olympia-type" class="block mb-2 font-semibold">Security Need *</label>
-              <select id="olympia-type" name="type" required class="w-full px-4 py-2 border rounded-lg">
+              <select id="olympia-type" name="type" required class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
                 <option value="">Select type...</option>
-                <option value="government">Government Facility</option>
+                <option value="government">Government Facility / Capitol Area</option>
                 <option value="construction">Construction Site</option>
-                <option value="event">Special Event</option>
-                <option value="commercial">Commercial Property</option>
+                <option value="event">Special Event / Festival</option>
+                <option value="commercial">Commercial Property / Retail</option>
+                <option value="parking">Parking Lot Security</option>
+                <option value="industrial">Industrial / Port / Warehouse</option>
                 <option value="emergency">Emergency Response</option>
               </select>
             </div>
+            <div>
+              <label for="olympia-details" class="block mb-2 font-semibold">Tell us about your situation</label>
+              <textarea id="olympia-details" name="details" rows="3" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500" placeholder="Describe your property, security concerns, timeline, and any special requirements..."></textarea>
+            </div>
           </div>
           <div class="mt-8 text-center">
-            <button type="submit" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-12 rounded-lg text-lg">
-              Get Olympia Quote →
+            <button type="submit" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-12 rounded-lg text-lg transition-colors">
+              Get Olympia Quote
             </button>
-            <p class="mt-4 text-sm text-gray-600">Serving all of Thurston County from nearby Tacoma</p>
+            <p class="mt-4 text-sm text-gray-600">Serving all of Thurston County from Tacoma -- (253) 683-2288</p>
           </div>
         </form>
       </div>
     </section>
+
+    <!-- CTA Section -->
+    <CTASection
+      title="Secure Your Olympia Property Today"
+      description="From Capitol Campus to Thurston County construction sites -- 24/7 mobile surveillance you can count on"
+      phoneText="Call (253) 683-2288"
+      quoteText="Get Your Olympia Quote"
+      quoteLink="#olympia-quote"
+      features={["45-min emergency deployment from Tacoma", "Solar-powered - no electrical hookups needed", "Government-grade encrypted surveillance", "Free delivery, setup, and relocation"]}
+      bgColor="bg-emerald-900"
+    />
+
   </main>
 
   <RelatedPages
