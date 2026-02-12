@@ -1,3 +1,6 @@
+## Geographic location
+- the location of this project is Tacoma-Seattle area, Washington, US, then making analysis and web searches consider this location
+
 ## general
 - this site is suppose to be static compiled astro site
 - before creating pages look how Home page and other pages are implemented
