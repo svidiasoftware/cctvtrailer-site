@@ -20,6 +20,11 @@
       "source": "/warranty",
       "destination": "/about",
       "statusCode": 301
+    },
+    {
+      "source": "/tacoma-construction-security",
+      "destination": "/tacoma-construction-site-security",
+      "statusCode": 301
     }
   ],
   "headers": [
