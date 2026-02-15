@@ -25,6 +25,51 @@
       "source": "/tacoma-construction-security",
       "destination": "/tacoma-construction-site-security",
       "statusCode": 301
+    },
+    {
+      "source": "/trailer-video-systems",
+      "destination": "/trailer-technology",
+      "statusCode": 301
+    },
+    {
+      "source": "/cannabis-security",
+      "destination": "/blog/cannabis-security-compliance",
+      "statusCode": 301
+    },
+    {
+      "source": "/about-us",
+      "destination": "/about",
+      "statusCode": 301
+    },
+    {
+      "source": "/mo",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/news-updates",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/news-and-updates/:path*",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/tools",
+      "destination": "/services",
+      "statusCode": 301
+    },
+    {
+      "source": "/locations",
+      "destination": "/contact",
+      "statusCode": 301
+    },
+    {
+      "source": "/resources-downloads",
+      "destination": "/blog",
+      "statusCode": 301
     }
   ],
   "headers": [
