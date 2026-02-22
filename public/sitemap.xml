@@ -357,12 +357,19 @@
   <!-- Blog Index -->
   <url>
     <loc>https://www.cctvtrailer.com/blog</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Blog Posts -->
+  <url>
+    <loc>https://www.cctvtrailer.com/blog/copper-theft-seattle-tacoma-construction-sites</loc>
+    <lastmod>2026-02-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <url>
     <loc>https://www.cctvtrailer.com/blog/auto-dealer-lot-security-mobile-surveillance</loc>
     <lastmod>2026-02-07</lastmod>
