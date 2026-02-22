@@ -15,7 +15,7 @@ export interface ReviewSchemaProps {
   itemReviewed?: {
     name: string;
     description?: string;
-    type?: 'Product' | 'Service' | 'LocalBusiness';
+    type?: 'Product' | 'LocalBusiness' | 'Organization';
   };
 }
 
@@ -25,7 +25,7 @@ const {
   itemReviewed = {
     name: "CCTV Trailer Security Services",
     description: "Mobile surveillance trailer rental services",
-    type: "Service"
+    type: "LocalBusiness"
   }
 } = Astro.props as ReviewSchemaProps;
 
