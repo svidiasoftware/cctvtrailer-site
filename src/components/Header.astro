@@ -15,13 +15,15 @@ const isActive = (href: string) => {
 };
 ---
 
-{showEmergencyBar && (
+<!-- TEMPORARILY DISABLED: Emergency bar hidden while rental units are near capacity. To re-enable, uncomment the block below and restore the sticky header class. -->
+{/* showEmergencyBar && (
   <div class="bg-red-600 text-white py-2 text-center font-bold sticky top-0 z-50">
     📞 Emergency Rental Available 24/7: <a href="tel:2536832288" class="underline">(253) 683-2288</a>
   </div>
-)}
+) */}
 
-<header class={`bg-gray-900 text-white ${showEmergencyBar ? 'sticky top-8 z-40' : ''}`}>
+<header class={`bg-gray-900 text-white`}>
+<!-- Original header class when emergency bar is active: class={`bg-gray-900 text-white ${showEmergencyBar ? 'sticky top-8 z-40' : ''}`} -->
   <nav class="container mx-auto px-4 py-4">
     <div class="flex justify-between items-center">
       <a href="/" class="flex items-center">
