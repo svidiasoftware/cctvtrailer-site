@@ -1,0 +1,581 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import CTASection from '../../components/CTASection.astro';
+import Analytics from '../../components/Analytics.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import LazyImage from '../../components/LazyImage.astro';
+import QuickAnswer from '../../components/QuickAnswer.astro';
+import StatBox from '../../components/StatBox.astro';
+import SpeakableSchema from '../../components/SpeakableSchema.astro';
+
+// Speakable sections for voice search
+const speakableSections = [
+  { cssSelector: ".quick-answer-content" },
+  { cssSelector: ".blog-content h2, .blog-content p" },
+  { cssSelector: ".stat-box" }
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Tacoma's Public Space Safety Problem: What the Numbers Actually Show and What's Being Done About It",
+  "datePublished": "2026-03-01",
+  "dateModified": "2026-03-01",
+  "author": {
+    "@type": "Organization",
+    "name": "CCTV Trailer",
+    "url": "https://www.cctvtrailer.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CCTV Trailer",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.cctvtrailer.com/images/cctv-trailer-logo.png"
+    }
+  },
+  "description": "Only 24% of Tacoma residents feel safe downtown. Point Defiance Park saw 5 assaults and a sexual assault in 2024. South Park lost $400K to vandalism. Here's what Tacoma is doing about public space safety — and where the gaps remain.",
+  "image": [
+    "https://www.cctvtrailer.com/images/tacoma-safety.webp"
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.cctvtrailer.com/blog/tacoma-public-space-safety-mobile-surveillance"
+  },
+  "wordCount": 3200,
+  "keywords": [
+    "Tacoma public safety",
+    "Tacoma park security",
+    "Point Defiance Park safety",
+    "Tacoma crime statistics 2025",
+    "Tacoma downtown safety",
+    "mobile surveillance Tacoma parks",
+    "public space surveillance Tacoma",
+    "Pierce County crime",
+    "Tacoma park vandalism",
+    "Hilltop Tacoma safety"
+  ]
+});
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Blog', url: '/blog' },
+  { name: 'Tacoma Public Space Safety', url: '/blog/tacoma-public-space-safety-mobile-surveillance' }
+];
+
+const relatedPages = [
+  {
+    title: "Vandalism Prevention Solutions",
+    href: "/solutions/vandalism-prevention",
+    description: "Mobile surveillance solutions designed to prevent vandalism and property damage at parks, public facilities, and infrastructure."
+  },
+  {
+    title: "Event Security",
+    href: "/event-security",
+    description: "Mobile surveillance for public events, festivals, and outdoor gatherings throughout the Puget Sound region."
+  },
+  {
+    title: "Copper Wire Theft Prevention",
+    href: "/solutions/copper-wire-theft-prevention",
+    description: "Protect park infrastructure and public facilities from copper theft that costs Tacoma parks hundreds of thousands in damages."
+  },
+  {
+    title: "Tacoma Security Trailer Rental",
+    href: "/tacoma-security-trailer",
+    description: "Local mobile surveillance deployment throughout Tacoma and Pierce County with same-day availability."
+  },
+  {
+    title: "Security Trailer vs Guards",
+    href: "/security-trailer-vs-guards",
+    description: "Cost comparison between mobile surveillance trailers and traditional security guard patrols for public spaces."
+  },
+  {
+    title: "Same-Day Security Rental",
+    href: "/same-day-security-rental",
+    description: "Emergency surveillance deployment for parks and public areas experiencing sudden safety concerns."
+  }
+];
+---
+
+<Layout
+  title="Tacoma Public Space Safety: What the Numbers Show and What's Being Done | CCTV Trailer"
+  description="Only 24% of Tacoma residents feel safe downtown. Point Defiance Park had 5 assaults in 2024. South Park lost $400K to vandalism. Real data on Tacoma's public space safety challenge."
+  schema={schema}>
+
+  <Header currentPath="/blog" showEmergencyBar={true} />
+  <Analytics />
+  <BreadcrumbSchema items={breadcrumbs} />
+  <SpeakableSchema sections={speakableSections} />
+
+  <article>
+    <!-- Hero Section -->
+    <section class="hero-section-blog relative py-20 px-6 text-white">
+      <div class="hero-overlay">
+        <LazyImage src="/images/tacoma-safety.webp" alt="Downtown Tacoma at dusk showing Pacific Avenue, Museum of Glass, cable-stayed bridge, and Mount Rainier — the public spaces at the center of the city's safety improvements"
+          class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
+      <div class="container mx-auto max-w-4xl relative z-10">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          Tacoma's Public Space Safety Problem: What the Numbers Actually Show
+        </h1>
+        <div class="flex items-center text-lg mb-8">
+          <time datetime="2026-03-01">March 1, 2026</time>
+          <span class="mx-4">&bull;</span>
+          <span>11 min read</span>
+        </div>
+        <p class="text-xl leading-relaxed">
+          Tacoma cut violent crime by <strong>17% in 2024</strong>. That's real progress. But walk through downtown, visit Point Defiance Park after dark, or talk to business owners along East 25th Street, and you'll hear a different story. Only <strong>24% of residents</strong> say they feel safe in downtown Tacoma. Here's what's actually happening on the ground, where the biggest gaps are, and what's working to close them.
+        </p>
+      </div>
+    </section>
+
+    <!-- Quick Answer Section -->
+    <QuickAnswer
+      question="How safe are Tacoma's public spaces in 2025-2026?"
+      answer="Tacoma recorded 22,230 total crimes in 2024, giving residents a 1-in-12 chance of becoming a property crime victim. While overall violent crime dropped 17.3% in 2024, specific public spaces remain problem areas. Point Defiance Park experienced 5 assaults and 1 sexual assault in 2024. South Park suffered $400,000 in vandalism damage. Only 24% of residents feel safe downtown. The city's Violent Crime Reduction Plan — developed with UT San Antonio researchers — produced a 19% drop in street crimes in target areas, and the city is now expanding surveillance camera authority to parks and public zones under HB 2384. Mobile surveillance trailers offer a flexible, rapid-deployment option for covering parks, trailheads, and public facilities where permanent cameras haven't been installed yet."
+    />
+
+    <!-- Main Content -->
+    <section class="py-16">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <div class="blog-content prose prose-lg max-w-none">
+
+          <!-- Stats Section -->
+          <div class="mb-12">
+            <StatBox
+              layout="grid"
+              stats={[
+                {
+                  value: "24%",
+                  label: "Tacoma residents who feel safe downtown",
+                  icon: "🏙️",
+                  highlight: true,
+                  source: {
+                    text: "2024 Tacoma Community Survey (ETC Institute)",
+                    url: "https://etcinstitute.com/city-of-tacoma-community-survey-results-revealed-2024/"
+                  }
+                },
+                {
+                  value: "22,230",
+                  label: "Total crimes reported in Tacoma, 2024",
+                  icon: "📊",
+                  highlight: false,
+                  source: {
+                    text: "AreaVibes Crime Data",
+                    url: "https://www.areavibes.com/tacoma-wa/crime/"
+                  }
+                },
+                {
+                  value: "$400K",
+                  label: "Vandalism damage to South Park alone",
+                  icon: "🔨",
+                  highlight: true,
+                  source: {
+                    text: "Metro Parks Tacoma Board Minutes, March 2025",
+                    url: "https://www.parkstacoma.gov/wp-content/uploads/2025/04/March-24_-2025-Regular-Board-Meeting-Minutes.pdf"
+                  }
+                },
+                {
+                  value: "17.3%",
+                  label: "Violent crime reduction in 2024 vs. 2023",
+                  icon: "📉",
+                  highlight: false,
+                  source: {
+                    text: "City of Tacoma / FOX 13",
+                    url: "https://www.fox13seattle.com/news/tacoma-crime-reduction-plan-2024"
+                  }
+                }
+              ]}
+            />
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6">The Big Picture: Crime Is Down, But People Still Don't Feel Safe</h2>
+
+            <p>
+              Let's start with what's working. Tacoma's overall crime numbers moved in the right direction in 2024. Violent crime dropped 17.3%. Property crime fell 24.6%. Homicides came in at 22, down significantly from 45 in 2022. Police Chief Avery Moore told the city council that the department was <a href="https://tacoma.gov/news/city-council-briefed-on-tacoma-police-departments-violent-crime-reduction-plan-progress/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">"still going in the right direction."</a>
+            </p>
+            <br>
+
+            <p>
+              But those citywide averages hide a lot of pain. When the city conducted its <a href="https://etcinstitute.com/city-of-tacoma-community-survey-results-revealed-2024/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">2024 Community Survey</a> — 905 responses across all six council districts — the results told a story that statistics alone don't capture. While 64% of residents said they felt safe in their own neighborhoods during daytime, only 24% felt safe downtown. "Addressing homelessness" came in as the number one neighborhood priority, followed by housing affordability and community safety.
+            </p>
+            <br>
+
+            <p>
+              And 2025 hasn't been kind. By late April, Tacoma had recorded <a href="https://komonews.com/news/local/tacoma-police-significant-spike-homicides-death-killing-officer-investigation-shooting-murder-victim-salishan-neighborhood-tacoma-school-students-gun-violence-2025" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">10 homicides with 11 victims</a> — a 67% increase over the same period the year before. Four of those victims were 18 or younger.
+            </p>
+          </section>
+
+          <!-- Point Defiance Image -->
+          <div class="my-10 rounded-lg overflow-hidden shadow-lg">
+            <LazyImage
+              src="/images/tacoma-safety-point-defiance.webp"
+              alt="Wooded trail at Point Defiance Park in Tacoma Washington where violent incidents prompted security overhaul"
+              class="w-full h-auto"
+              width="1200"
+              height="675"
+              loading="lazy"
+            />
+            <p class="text-sm text-gray-500 px-4 py-2 bg-gray-50 italic">Point Defiance Park — 760 acres of trails, forest, and waterfront that saw 5 assaults and a sexual assault in 2024.</p>
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">Point Defiance Park: 760 Acres, 1-2 Guards, and a Growing Problem</h2>
+
+            <p>
+              Point Defiance is one of the largest urban parks in the country. At 760 acres, it has trails, a zoo, an aquarium, a dog park, picnic areas, and kayak rentals. It's the crown jewel of Tacoma's park system. And in 2024, it became the setting for a series of violent attacks that forced Metro Parks to rethink everything about park security.
+            </p>
+            <br>
+
+            <p>
+              On February 10, 2024, a woman identified in reports as "Jane" was <a href="https://thetacomaledger.com/2024/04/15/stabbing-at-point-defiance-park-sparks-discussion-of-park-public-safety-measures/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">stabbed in the park</a>, suffering multiple facial lacerations and a skull fracture. The suspect, Nicholas Fitzgerald Matthew, wasn't apprehended until March 29 — in San Francisco. He was charged with first-degree attempted murder.
+            </p>
+            <br>
+
+            <p>
+              Then on December 11, 2024, a woman was <a href="https://komonews.com/news/local/tacoma-park-metro-parks-surveillance-cameras-off-leash-dog-area-point-defiance-park-pierce-county-stabbing-comprehensive-security-crime-washington-state" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">attacked and sexually assaulted</a> near the off-leash dog park area while walking her dog as the park was closing. That suspect remains at large.
+            </p>
+            <br>
+
+            <p>
+              All told, Tacoma Police documented <strong>5 assaults and 1 sexual assault</strong> in Point Defiance Park during 2024. And a child was injured in a shooting at the park in 2023.
+            </p>
+          </section>
+
+          <div class="bg-amber-50 border-l-4 border-amber-500 p-6 my-8">
+            <p class="font-semibold text-amber-900 mb-2">The Camera Trailer Experiment That Failed</p>
+            <p class="text-amber-800 mb-3">
+              After the February 2024 stabbing, Metro Parks installed <strong>temporary mobile camera trailers</strong> at Point Defiance. But here's what happened: they were removed after just 3-4 months because police said the cameras "weren't useful enough." The problem wasn't the concept — it was the execution. Without proper placement strategy, remote monitoring capability, or integration with law enforcement response, the trailers were essentially recording footage nobody was watching in real time.
+            </p>
+            <p class="text-amber-800">
+              Joe Brady, Deputy Director of Metro Parks Tacoma, put it plainly: <em>"We simply can't have our crown jewel park fall victim to this type of activity. It's unacceptable."</em> He added: <em>"We need to have a digital footprint of folks that enter the park."</em>
+            </p>
+            <p class="text-amber-800 text-sm mt-3">
+              Sources: <a href="https://www.fox13seattle.com/news/officials-removed-cameras-tacoma-park" target="_blank" rel="noopener noreferrer" class="underline hover:text-amber-600">FOX 13</a>, <a href="https://www.king5.com/article/news/local/metro-parks-tacoma-will-be-installing-permanent-security-cameras-at-point-defiance-park/281-882f22d3-675e-448b-beb9-ee2b592be67d" target="_blank" rel="noopener noreferrer" class="underline hover:text-amber-600">KING5</a>
+            </p>
+          </div>
+
+          <section>
+            <p>
+              Metro Parks is now planning to install <strong>12-15 permanent camera locations</strong> throughout Point Defiance, based on police recommendations. But permanent cameras take time to install, require infrastructure, and cover fixed sight lines. The park currently operates with just 1-2 security guards during daytime hours — and nobody at night.
+            </p>
+            <br>
+
+            <p>
+              Peter Sluka, who founded the Point Defiance Park Watch volunteer group in 1997, has been vocal about the need for better surveillance coverage. He's right. The question isn't whether cameras should be in the park. It's whether fixed cameras alone can cover 760 acres of trails, parking lots, and wooded areas — or whether mobile, rapidly repositionable surveillance needs to be part of the mix.
+            </p>
+          </section>
+
+          <!-- Park Vandalism Image -->
+          <div class="my-10 rounded-lg overflow-hidden shadow-lg">
+            <LazyImage
+              src="/images/tacoma-safety-park-vandalism.webp"
+              alt="Vandalized public park restroom building in Tacoma showing damage from repeated break-ins and arson"
+              class="w-full h-auto"
+              width="1200"
+              height="675"
+              loading="lazy"
+            />
+            <p class="text-sm text-gray-500 px-4 py-2 bg-gray-50 italic">Tacoma park facilities have been hit by repeated vandalism, arson, and copper theft — costing taxpayers hundreds of thousands in repairs.</p>
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">Parks Under Siege: Vandalism, Arson, and $400,000 in Damage</h2>
+
+            <p>
+              Point Defiance gets the headlines, but it's not the only Tacoma park with problems. The pattern of vandalism and destruction affecting Metro Parks facilities reads like a war of attrition.
+            </p>
+            <br>
+
+            <p>
+              <strong>South Park</strong> was hit by vandalism in December 2024 and again in March 2025. Total damage: approximately <strong>$400,000</strong>. Thieves stole copper wire — the same material driving theft at construction sites across the region — which knocked out the park's bathrooms and sprayground. Metro Parks staff told the board they hoped to have working bathrooms by May 2025, but the sprayground was unlikely to operate that entire season. That's a public park, funded by taxpayers, rendered unusable because of preventable theft.
+            </p>
+            <br>
+
+            <p>
+              <strong>Charlotte's Blueberry Park</strong> on East D Street had <a href="https://www.parkstacoma.gov/fire-vandalism/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">13 fruit trees stolen</a> in March 2025 — trees that had been planted just weeks earlier. That was just the latest hit. In 2021, the same park was targeted by multiple arsons that destroyed portable toilets and park structures.
+            </p>
+            <br>
+
+            <p>
+              <strong>Jefferson Park</strong> on North Mason Avenue lost a WPA-era restroom building to arson — a structure described as "the only indoor fitness facility in North End parks." <strong>Portland Avenue Community Center</strong> had its building damaged by arsonists and its restroom/storage building vandalized repeatedly, forcing restroom closures pending repairs.
+            </p>
+            <br>
+
+            <p>
+              None of these parks had adequate surveillance at the time of the incidents. Every one of them represents a facility that went offline for weeks or months, affecting the neighborhoods that depend on them most.
+            </p>
+          </section>
+
+          <div class="mb-12 mt-12">
+            <StatBox
+              layout="grid"
+              stats={[
+                {
+                  value: "5",
+                  label: "Assaults at Point Defiance Park in 2024",
+                  icon: "⚠️",
+                  highlight: true,
+                  source: {
+                    text: "Tacoma Police Department / KOMO News",
+                    url: "https://komonews.com/news/local/tacoma-park-metro-parks-surveillance-cameras-off-leash-dog-area-point-defiance-park-pierce-county-stabbing-comprehensive-security-crime-washington-state"
+                  }
+                },
+                {
+                  value: "2,955",
+                  label: "Homeless individuals in Pierce County (2025 count, up 11%)",
+                  icon: "📋",
+                  highlight: false,
+                  source: {
+                    text: "2025 Point-in-Time Count",
+                    url: "https://www.huduser.gov/portal/sites/default/files/pdf/Tacoma-Encampment-Report.pdf"
+                  }
+                },
+                {
+                  value: "776",
+                  label: "Encampments removed from prohibited areas",
+                  icon: "🏕️",
+                  highlight: false,
+                  source: {
+                    text: "City of Tacoma",
+                    url: "https://tacoma.gov/news/tacoma-city-council-takes-action-to-mitigate-community-impacts-of-encampments-on-public-spaces-and-shelters/"
+                  }
+                },
+                {
+                  value: "50.5%",
+                  label: "Survey respondents ranking community safety as top priority",
+                  icon: "🗳️",
+                  highlight: true,
+                  source: {
+                    text: "Tacoma 2050 Parks & Recreation Goals",
+                    url: "https://cms.tacoma.gov/Planning/Comprehensive%20Plan/2024%20Update/08-%20Parks%20and%20Recreation%20DRAFT.pdf"
+                  }
+                }
+              ]}
+            />
+          </div>
+
+          <!-- Downtown Night Image -->
+          <div class="my-10 rounded-lg overflow-hidden shadow-lg">
+            <LazyImage
+              src="/images/tacoma-safety-downtown-night.webp"
+              alt="Tacoma downtown commercial street at night with wet sidewalks and storefronts reflecting streetlights"
+              class="w-full h-auto"
+              width="1200"
+              height="675"
+              loading="lazy"
+            />
+            <p class="text-sm text-gray-500 px-4 py-2 bg-gray-50 italic">Downtown Tacoma at night — only 24% of residents say they feel safe here, despite ongoing revitalization efforts.</p>
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6">The Neighborhoods: Hilltop, East 25th, and Downtown</h2>
+
+            <p>
+              Public space safety in Tacoma isn't limited to parks. Three areas keep coming up in police reports, community surveys, and local news coverage.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Hilltop</h3>
+            <p>
+              On February 22, 2025, 18-year-old Messiah Washington was <a href="https://www.king5.com/article/news/crime/teens-charged-fatal-shooting-of-teen-tacoma-apartment-building-hilltop-messiah-washington/281-b0c5c621-9e2e-49b3-9a6a-3a55a14ad2e0" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">shot and killed inside an elevator</a> at the Housing Hilltop South apartment complex. He was surrounded by a group; at least two were captured on video holding firearms. A 15-year-old was arrested in March and charged with second-degree murder. Two 16-year-old suspects were arrested in April.
+            </p>
+            <br>
+
+            <p>
+              Less than a year earlier, <a href="https://komonews.com/news/local/tacoma-homicide-crime-shooting-teenage-girl-shot-taken-to-hospital-died-1800-south-15th-street-gun-violence-police-investigation-tpd" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">17-year-old De'Layah Sims was shot</a> on the 1800 block of South 15th Street on March 23, 2024. The common thread: young victims, public or semi-public spaces, and limited surveillance coverage at the time of the incident.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">East 25th Street Corridor</h3>
+            <p>
+              While violent crime fell across most of Tacoma in late 2024, the East 25th Street corridor — stretching from East 25th to Puyallup Avenue and from East Portland Avenue to East K Street — was the <a href="https://komonews.com/news/local/tacoma-crime-e-25th-street-public-safety-violence-drug-use-prostitution-assault-robbery-break-in-homeless-business-concerns" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">notable exception</a>. Violent crimes in this area stayed flat while they dropped everywhere else.
+            </p>
+            <br>
+
+            <p>
+              Business owners along the corridor have been dealing with break-ins, drug dealing, prostitution, vandalism, and aggressive behavior. Alexx Bacon, owner of Aaberg's Rentals, described the situation to KOMO News: <em>"Just a lot of narcotics crime, some prostitution still that we've always seen, a lot of illegal camping on the streets."</em> His business eventually installed an <strong>electric fence</strong> to keep out intruders. Jamie Rasmussen from Aqua Rec's Fireside Hearth and Home added: <em>"They're climbing over the back buildings to break into the warehouse. They're breaking windows. They're being aggressive."</em>
+            </p>
+            <br>
+
+            <p>
+              Tacoma Police responded with increased patrols, better street lighting, and graffiti removal, but business owners said it wasn't enough. The corridor became Phase 3 of the city's Violent Crime Reduction Plan in April 2025.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Downtown</h3>
+            <p>
+              The 24% safety perception stat tells the downtown story better than any crime number could. The Downtown Tacoma Partnership operates both a Safety Team (providing security escorts and addressing nuisance behaviors) and a Clean Team (removing graffiti and maintaining streets). In September 2024, the BLOXHUB organization published a <a href="https://bloxhub.org/wp-content/uploads/2024/11/Playbook_Tacoma_Downtown-revitalization_September-202465.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Downtown Revitalization Playbook</a> recommending arts-led programs and converting underused buildings into multi-use hubs. But revitalization requires safety first — people won't patronize restaurants, shops, or cultural venues if they don't feel secure walking there.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">What Tacoma Is Already Doing (And Where the Gaps Are)</h2>
+
+            <p>
+              It would be unfair to say the city isn't trying. Tacoma has invested in several initiatives that are producing measurable results.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">The Violent Crime Reduction Plan</h3>
+            <p>
+              Launched in July 2022 in partnership with researchers from the University of Texas at San Antonio, this three-phase strategy targets the highest-crime neighborhoods with data-driven patrol patterns. The results have been significant: <strong>hot-spot patrol areas saw a 13% reduction</strong> in violent crime, while surrounding catchment zones saw a <strong>19% reduction</strong>. The most effective approach — police patrols with direct community engagement — produced a <a href="https://tacoma.gov/news/city-council-briefed-on-tacoma-police-departments-violent-crime-reduction-plan-progress/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">41% reduction in violent crimes</a>. Emergency light deployments alone produced a 26% reduction.
+            </p>
+            <br>
+
+            <p>
+              That last comparison matters. Lights alone cut crime by 26%. Active patrols with engagement cut it by 41%. The implication: visible deterrence works, but monitored deterrence — where someone is actually watching and responding — works substantially better.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Encampment Management</h3>
+            <p>
+              In October 2025, City Council <a href="https://tacoma.gov/news/tacoma-city-council-takes-action-to-mitigate-community-impacts-of-encampments-on-public-spaces-and-shelters/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">expanded the camping prohibition</a> to include two-block buffer zones around public schools, parks, libraries, and shelters. The city's HEAL team has referred more than 3,300 people to supportive services with a 64% acceptance rate. But Pierce County's 2025 Point-in-Time count showed <strong>2,955 people experiencing homelessness</strong> — an 11% increase from 2024. Council Member John Hines was clear that enforcement alone isn't the answer: <em>"This policy is not our sole response to homelessness."</em>
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Expanded Camera Authority</h3>
+            <p>
+              In 2024, Washington state passed <strong>House Bill 2384</strong>, broadening local authority for automated enforcement cameras beyond school zones and red-light intersections to include <strong>high-crash locations, park zones, and hospital zones</strong>. In December 2024, Tacoma's City Council voted to expand camera use to new high-risk areas. The city currently operates 9 red light cameras, 4 school zone speed cameras, and 1 speed camera — but those are traffic enforcement tools, not security surveillance.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">What Didn't Work: ShotSpotter</h3>
+            <p>
+              Tacoma received an <strong>$800,000 federal grant</strong> from the Bureau of Justice Assistance for ShotSpotter gunshot detection technology. Sensors were installed in a two-square-mile area around Hosmer Street. They were <a href="https://www.spokesman.com/stories/2025/nov/07/tacoma-police-got-big-money-for-gunshot-detection-/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">never activated</a>. The program was cancelled in summer 2025, with the department stating it was "not the right time or tool for Tacoma." Roughly $300,000 in grant funds went unspent.
+            </p>
+          </section>
+
+          <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
+            <p class="font-semibold text-blue-900 mb-2">The Surveillance Gap Nobody Talks About</p>
+            <p class="text-blue-800 mb-3">
+              Tacoma is installing permanent cameras at Point Defiance. It has traffic enforcement cameras at 14 intersections. But the vast majority of Tacoma's public spaces — neighborhood parks, trailheads, community centers, downtown corridors, transit stops — have <strong>zero surveillance coverage</strong>. Fixed cameras require infrastructure buildout (power, networking, mounting) that takes months to plan and install. Meanwhile, the problems aren't waiting.
+            </p>
+            <p class="text-blue-800">
+              That's the gap mobile surveillance fills. A CCTV trailer can be deployed to a problem park in hours, repositioned as crime patterns shift, and provide both live monitoring and recorded evidence without any permanent infrastructure. When the city's own Violent Crime Reduction Plan showed that visible, monitored deterrence produces a 41% crime reduction — compared to 26% from passive measures — the case for actively monitored mobile surveillance becomes hard to ignore.
+            </p>
+          </div>
+
+          <!-- Surveillance Trailer at Park Image -->
+          <div class="my-10 rounded-lg overflow-hidden shadow-lg">
+            <LazyImage
+              src="/images/tacoma-safety-surveillance-park.webp"
+              alt="Mobile CCTV surveillance trailer deployed at a public park providing security coverage with solar-powered cameras"
+              class="w-full h-auto"
+              width="1200"
+              height="675"
+              loading="lazy"
+            />
+            <p class="text-sm text-gray-500 px-4 py-2 bg-gray-50 italic">A mobile surveillance trailer deployed at a park entrance — solar powered, rapidly repositionable, and visible enough to deter before incidents happen.</p>
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6">Where Mobile Surveillance Makes the Biggest Difference</h2>
+
+            <p>
+              Not every public safety problem has a surveillance solution. But based on the specific patterns playing out across Tacoma, several scenarios stand out where mobile CCTV trailers deliver measurable impact.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Parks and Trailheads</h3>
+            <p>
+              Point Defiance is 760 acres. Even with 12-15 permanent cameras, that's roughly one camera per 50 acres — barely covering parking lot entrances and high-traffic areas. The off-leash dog park where the December 2024 assault occurred, the wooded trail sections, and seasonal-use areas like the kayak launch all need flexible coverage that can be adjusted as usage patterns change with the seasons.
+            </p>
+            <br>
+
+            <p>
+              Mobile trailers with PTZ (pan-tilt-zoom) cameras mounted at 20+ feet provide wide-angle coverage of parking lots, trailheads, and gathering areas. They run on solar power with battery backup, so they don't need grid connections. And because they're visible — tall, clearly marked, with active deterrent lighting — they serve as a "someone is watching" signal that Point Defiance's brief camera experiment failed to deliver because the equipment wasn't positioned for maximum visibility.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Vandalism-Prone Facilities</h3>
+            <p>
+              South Park's $400,000 in copper theft and vandalism damage happened at a known target. Charlotte's Blueberry Park was hit by arson before the trees were stolen. Jefferson Park's WPA-era building had been a community asset for decades before it was torched. In each case, the pattern was the same: the facility was unmonitored, the damage happened at night, and there was no video evidence to aid prosecution.
+            </p>
+            <br>
+
+            <p>
+              A surveillance trailer positioned at a facility that's been targeted even once creates a documented deterrent zone. Our systems include AI-powered motion detection that distinguishes between animals, weather, and human activity — triggering alerts only when someone approaches outside of normal hours. That's a fundamentally different capability than a passive camera recording to a hard drive that someone checks after the damage is already done.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Business Corridors and Downtown</h3>
+            <p>
+              The East 25th Street businesses installing electric fences and the Downtown Tacoma Partnership providing security escorts both point to the same problem: there's no persistent visual deterrent in public commercial areas. Mobile CCTV trailers stationed at corridor entry points and parking areas provide 360-degree coverage and visible deterrence that both discourages criminal activity and makes residents and customers feel safer. When the city's own survey shows that safety perception is the number one barrier to downtown revitalization, that visual signal matters as much as the footage itself.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Event Security and Seasonal Needs</h3>
+            <p>
+              Tacoma hosts outdoor events, farmers markets, holiday celebrations, and community gatherings throughout the year. Each one creates a temporary public space that needs temporary security coverage. Mobile trailers can be deployed before an event, provide real-time monitoring during it, and be relocated afterward — all without the cost of hiring security personnel for a one-time occasion.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">What Other Cities Have Figured Out</h2>
+
+            <p>
+              Tacoma's experience mirrors challenges that cities across the country are dealing with. The ones that have seen the best results aren't choosing between permanent cameras and patrols — they're layering mobile surveillance on top of both. The key lessons from other jurisdictions:
+            </p>
+            <br>
+
+            <ul class="list-disc pl-6 space-y-3 mb-6">
+              <li><strong>Visibility matters more than you think.</strong> Tacoma's own data showed that emergency lighting reduced violent crime by 26%. A well-positioned, clearly marked surveillance trailer creates an even stronger visual deterrent because it signals active monitoring, not just illumination.</li>
+              <li><strong>Fixed cameras have fixed blind spots.</strong> Point Defiance is planning 12-15 permanent cameras. That's a start. But criminals learn camera positions. Mobile units that can be repositioned weekly or daily close the adaptation gap.</li>
+              <li><strong>Speed of deployment is critical.</strong> When a park has an incident, the community response window is 48-72 hours. If visible security measures aren't deployed within that window, residents lose confidence and stop using the space — which makes it less safe.</li>
+              <li><strong>Evidence quality determines prosecution outcomes.</strong> Of the violent incidents documented at Point Defiance in 2024, multiple suspects remain unidentified. High-definition, continuously recorded surveillance footage — particularly from elevated camera positions — provides the kind of evidence that leads to identification and conviction.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">The Bottom Line for Tacoma</h2>
+
+            <p>
+              Tacoma is making real progress on public safety. The Violent Crime Reduction Plan works. The expanded camping buffer zones are being enforced. The city is adding cameras to Point Defiance. But the gap between what's being done and what's needed remains substantial — particularly for the dozens of neighborhood parks, community centers, business districts, and public gathering spaces that don't have any surveillance coverage at all.
+            </p>
+            <br>
+
+            <p>
+              Mobile surveillance isn't a replacement for policing, community engagement, or social services. It's the layer that fills the space between a community reporting a problem and the city deploying a permanent solution. When South Park gets vandalized for $400,000 worth of damage, a surveillance trailer deployed the next day says "we're watching now." When Point Defiance has a violent assault, a mobile camera unit at the trailhead doesn't just deter the next incident — it provides the evidence that helps solve the one that already happened.
+            </p>
+            <br>
+
+            <p>
+              For city departments, park districts, business improvement districts, and community organizations across Tacoma and Pierce County: we deploy mobile surveillance trailers throughout the region with same-day availability. If you're dealing with vandalism, safety concerns, or need temporary coverage for events or construction in public areas, <a href="/contact" class="text-blue-600 hover:underline font-semibold">get in touch</a> or call us directly at <a href="tel:2536832288" class="text-blue-600 hover:underline font-semibold">(253) 683-2288</a>.
+            </p>
+          </section>
+
+          <!-- About Section -->
+          <div class="bg-gray-50 border border-gray-200 rounded-lg p-8 mt-12">
+            <h3 class="text-xl font-bold mb-4">About CCTV Trailer</h3>
+            <p class="text-gray-700 mb-4">
+              CCTV Trailer provides mobile surveillance solutions across the Puget Sound region, headquartered in Tacoma with same-day deployment capability throughout Pierce County and King County. Our solar-powered trailers feature PTZ cameras with AI-powered analytics, 4G/5G connectivity for live remote monitoring, and elevated camera positions for maximum coverage area.
+            </p>
+            <p class="text-gray-700">
+              We work with construction companies, municipalities, park districts, event organizers, and businesses to provide flexible, effective surveillance coverage without the cost and timeline of permanent camera installations. <a href="/about" class="text-blue-600 hover:underline">Learn more about our team and technology</a>.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <CTASection
+      title="Need Surveillance for a Public Space or Park?"
+      description="Deploy mobile CCTV coverage at parks, trailheads, community centers, and business corridors — same-day availability throughout Tacoma and Pierce County."
+      features={["✓ Same-Day Deployment", "✓ Solar Powered — No Grid Needed", "✓ Live Remote Monitoring"]}
+    />
+
+    <!-- Related Pages -->
+    <RelatedPages pages={relatedPages} />
+
+  </article>
+
+  <Footer />
+</Layout>
