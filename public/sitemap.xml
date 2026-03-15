@@ -357,12 +357,19 @@
   <!-- Blog Index -->
   <url>
     <loc>https://www.cctvtrailer.com/blog</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-03-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Blog Posts -->
+  <url>
+    <loc>https://www.cctvtrailer.com/blog/event-security-seattle-tacoma-summer-2026</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <url>
     <loc>https://www.cctvtrailer.com/blog/tacoma-public-space-safety-mobile-surveillance</loc>
     <lastmod>2026-03-01</lastmod>

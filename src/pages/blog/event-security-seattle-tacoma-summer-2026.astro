@@ -1,0 +1,561 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import CTASection from '../../components/CTASection.astro';
+import Analytics from '../../components/Analytics.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import LazyImage from '../../components/LazyImage.astro';
+import QuickAnswer from '../../components/QuickAnswer.astro';
+import StatBox from '../../components/StatBox.astro';
+import SpeakableSchema from '../../components/SpeakableSchema.astro';
+
+// Speakable sections for voice search
+const speakableSections = [
+  { cssSelector: ".quick-answer-content" },
+  { cssSelector: ".blog-content h2, .blog-content p" },
+  { cssSelector: ".stat-box" }
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Event Security in Seattle and Tacoma: What Organizers Need to Know Before Summer 2026",
+  "datePublished": "2026-03-15",
+  "dateModified": "2026-03-15",
+  "author": {
+    "@type": "Organization",
+    "name": "CCTV Trailer",
+    "url": "https://www.cctvtrailer.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CCTV Trailer",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.cctvtrailer.com/images/cctv-trailer-logo.png"
+    }
+  },
+  "description": "Summer 2026 brings the FIFA World Cup, Seafair, Bite of Seattle, and 40+ major festivals to the Puget Sound. Seattle ranks 3rd worst for property crime nationally. Here's what event organizers actually need for security — permits, insurance, staffing, and where mobile surveillance fits in.",
+  "image": [
+    "https://www.cctvtrailer.com/images/event-security-seattle.webp"
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.cctvtrailer.com/blog/event-security-seattle-tacoma-summer-2026"
+  },
+  "wordCount": 3100,
+  "keywords": [
+    "event security Seattle",
+    "festival security Tacoma",
+    "outdoor event security Washington",
+    "mobile surveillance events",
+    "Seattle event security requirements",
+    "event security cost",
+    "FIFA World Cup Seattle security",
+    "Seafair security",
+    "Bite of Seattle vendor theft",
+    "Washington event insurance requirements",
+    "event crowd management Seattle",
+    "festival surveillance Puget Sound"
+  ]
+});
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Blog', url: '/blog' },
+  { name: 'Event Security Seattle-Tacoma 2026', url: '/blog/event-security-seattle-tacoma-summer-2026' }
+];
+
+const relatedPages = [
+  {
+    title: "Event Security Services",
+    href: "/event-security",
+    description: "Mobile surveillance for public events, festivals, and outdoor gatherings throughout the Puget Sound region."
+  },
+  {
+    title: "Same-Day Security Rental",
+    href: "/same-day-security-rental",
+    description: "Emergency surveillance deployment for events and venues needing rapid security coverage."
+  },
+  {
+    title: "Security Trailer vs Guards",
+    href: "/security-trailer-vs-guards",
+    description: "Cost comparison between mobile surveillance trailers and traditional security guard services for events."
+  },
+  {
+    title: "Vandalism Prevention Solutions",
+    href: "/solutions/vandalism-prevention",
+    description: "Protect vendor areas, staging zones, and event infrastructure from theft and vandalism."
+  },
+  {
+    title: "How Much Does a Security Trailer Cost?",
+    href: "/blog/how-much-cost-rent-security-trailer",
+    description: "Complete pricing guide for mobile surveillance trailer rentals — daily, weekly, and monthly rates."
+  },
+  {
+    title: "Tacoma Public Space Safety",
+    href: "/blog/tacoma-public-space-safety-mobile-surveillance",
+    description: "Data-driven look at Tacoma's public space safety challenges and the role of mobile surveillance."
+  }
+];
+---
+
+<Layout
+  title="Event Security in Seattle and Tacoma: What Organizers Need to Know | CCTV Trailer"
+  description="Summer 2026 brings the FIFA World Cup, Seafair, and 40+ festivals to the Puget Sound. Seattle ranks 3rd worst for property crime. Here's what event organizers need for security."
+  schema={schema}>
+
+  <Header currentPath="/blog" showEmergencyBar={true} />
+  <Analytics />
+  <BreadcrumbSchema items={breadcrumbs} />
+  <SpeakableSchema sections={speakableSections} />
+
+  <article>
+    <!-- Hero Section -->
+    <section class="hero-section-blog relative py-20 px-6 text-white">
+      <div class="hero-overlay">
+        <LazyImage src="/images/event-security-seattle.webp" alt="Outdoor festival grounds in Seattle with crowds, vendor tents, and the city skyline — the kind of event that requires layered security planning"
+          class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
+      <div class="container mx-auto max-w-4xl relative z-10">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          Event Security in Seattle and Tacoma: What Organizers Need to Know Before Summer 2026
+        </h1>
+        <div class="flex items-center text-lg mb-8">
+          <time datetime="2026-03-15">March 15, 2026</time>
+          <span class="mx-4">&bull;</span>
+          <span>12 min read</span>
+        </div>
+        <p class="text-xl leading-relaxed">
+          Summer 2026 is shaping up to be the biggest event season the Puget Sound has ever seen. The <strong>FIFA World Cup</strong> brings an estimated 750,000 visitors to Seattle. Seafair runs 40+ events over 10 weeks. The Bite of Seattle, Bumbershoot, and dozens of community festivals fill every weekend from June through September. And all of this is happening in a city that ranks <strong>third worst nationally for property crime</strong>. Here's what organizers, vendors, and venue operators actually need to plan for.
+        </p>
+      </div>
+    </section>
+
+    <!-- Quick Answer Section -->
+    <QuickAnswer
+      question="What security do outdoor events in Seattle and Tacoma require in 2026?"
+      answer="Seattle Fire Code (SFC 403.3) requires 1 trained crowd manager per 250 attendees for any event exceeding 1,000 people. All events on public land need minimum $1,000,000 general liability insurance per occurrence — $2,000,000 if alcohol is served. Events with 5,000+ attendees must coordinate medical staffing with King County Medic One. Security guards for events cost $45-$65 per hour per officer. Mobile surveillance trailers offer an alternative for parking areas, vendor zones, and perimeter coverage at a fraction of the cost, with setup in under 30 minutes and no infrastructure requirements."
+    />
+
+    <!-- Main Content -->
+    <section class="py-16">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <div class="blog-content prose prose-lg max-w-none">
+
+          <!-- Stats Section -->
+          <div class="mb-12">
+            <StatBox
+              layout="grid"
+              stats={[
+                {
+                  value: "750K",
+                  label: "Expected visitors for FIFA World Cup in Seattle",
+                  icon: "🏟️",
+                  highlight: true,
+                  source: {
+                    text: "KOMO News / SeattleFWC26",
+                    url: "https://komonews.com/news/local/world-cup-seattle-security-chief-2026-event-king-county-department-adult-juvenile-detention-king-county-lumen-field-homeland-security-downtown-tickets-400-days-away"
+                  }
+                },
+                {
+                  value: "5,008",
+                  label: "Seattle's property crime rate per 100,000 — 3rd worst nationally",
+                  icon: "📊",
+                  highlight: true,
+                  source: {
+                    text: "FBI Crime Data 2024 / The Center Square",
+                    url: "https://www.thecentersquare.com/washington/article_8598c8b3-6fcf-4ca1-bc77-308008136901.html"
+                  }
+                },
+                {
+                  value: "$1M",
+                  label: "Minimum liability insurance per occurrence for Seattle events",
+                  icon: "📋",
+                  highlight: false,
+                  source: {
+                    text: "Seattle Special Events Office",
+                    url: "https://www.seattle.gov/special-events/policies-and-compliance/insurance"
+                  }
+                },
+                {
+                  value: "1:250",
+                  label: "Required crowd manager ratio for events over 1,000 people",
+                  icon: "👥",
+                  highlight: false,
+                  source: {
+                    text: "Seattle Fire Code SFC 403.3",
+                    url: "https://www.seattle.gov/special-events/public-safety/public-safety-and-event-management"
+                  }
+                }
+              ]}
+            />
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6">Summer 2026: The Busiest Event Season in Puget Sound History</h2>
+
+            <p>
+              There's no gentle way to put it: summer 2026 is going to stress-test every aspect of event security in the Seattle-Tacoma corridor. The event calendar is stacked in a way it hasn't been before.
+            </p>
+            <br>
+
+            <p>
+              The <strong>FIFA World Cup</strong> lands at Lumen Field for <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/seattle-host-six-matches-stadium" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">six matches between June 11 and July 19</a>. Seattle's organizing committee has set up fan celebration zones at Seattle Center, Waterfront Park, Pacific Place, and Victory Hall in SODO, connected by a <a href="https://www.seattlefwc26.org/fan-zones" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">4.25-mile Unity Loop</a> walking trail through downtown. Nine additional fan zones are planned across Washington, from Bellingham to Spokane, including one at the Puyallup Tribal Headquarters near Tacoma. Former Seattle Police Chief John Diaz, who's heading up World Cup security operations, told reporters the event carries a <a href="https://komonews.com/news/local/world-cup-seattle-security-chief-2026-event-king-county-department-adult-juvenile-detention-king-county-lumen-field-homeland-security-downtown-tickets-400-days-away" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">SEAR 2 rating</a> — one step below the Super Bowl. His team has 27 working groups coordinating security across the state.
+            </p>
+            <br>
+
+            <p>
+              Then there's everything else. <strong>Seafair</strong> runs mid-June through early August with <a href="https://www.seafair.org/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">40+ events reaching over two million people</a>. The <strong>Bite of Seattle</strong> takes over July 24-26 with 250+ food vendors and 50+ musical acts. The <a href="https://www.thefair.com/washington-state-fair/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Washington State Fair</a> in Puyallup drew 912,000 visitors in 2024 and runs August 29 through September 21. <a href="https://bumbershoot.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Bumbershoot</a> closes out the season September 5-6 at Seattle Center.
+            </p>
+            <br>
+
+            <p>
+              The City of Tacoma is <a href="https://tacoma.gov/news/community-event-funding-announced-for-2026/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">supporting 28 community organizations</a> with event funding for 2026 — everything from neighborhood block parties to cultural festivals. Add in farmers markets, Pride events, concert series, outdoor movie screenings, and private corporate gatherings, and you're looking at hundreds of permitted outdoor events across the region between May and October.
+            </p>
+            <br>
+
+            <p>
+              Each one of these events creates a temporary venue that needs to be secured. And that's where many organizers — particularly smaller ones running their first or second event — run into trouble.
+            </p>
+          </section>
+
+          <!-- Festival Crowd Image -->
+          <div class="my-10 rounded-lg overflow-hidden shadow-lg">
+            <LazyImage
+              src="/images/event-security-festival-crowd.webp"
+              alt="Crowded outdoor summer festival in the Pacific Northwest with food vendor tents, string lights, and attendees filling a park setting"
+              class="w-full h-auto"
+              width="1200"
+              height="675"
+              loading="lazy"
+            />
+            <p class="text-sm text-gray-500 px-4 py-2 bg-gray-50 italic">A packed summer festival in the Puget Sound region — the kind of event where security planning needs to start months before the first vendor tent goes up.</p>
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">What Happened at the Bite of Seattle Is a Warning</h2>
+
+            <p>
+              In 2024, the Bite of Seattle drew more than 350,000 visits across its three-day run. It was, by most accounts, a successful event. But behind the scenes, vendors were dealing with something the organizers hadn't adequately planned for.
+            </p>
+            <br>
+
+            <p>
+              Artist Courtney Correia's booth was <a href="https://www.fox13seattle.com/news/bite-seattle-vendors-allegations" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">ransacked overnight</a>, resulting in more than $1,500 in stolen handmade merchandise — prints, hoodies, t-shirts, artwork, and stickers. Another vendor reported over $600 in stolen equipment and filed a police report. Multiple vendors alleged that the festival's overnight security was inadequate and failed to protect their booths.
+            </p>
+            <br>
+
+            <p>
+              This isn't unusual. Festival vendor theft is one of the most under-reported security problems in the events industry. Vendors pay $1,500 to $3,250 for booth space, haul in thousands of dollars of inventory, then leave it overnight in a tent with a zipper for a lock. The typical security arrangement — a couple of guards walking the perimeter — leaves massive gaps, particularly in the overnight hours between teardown and the next morning's setup.
+            </p>
+            <br>
+
+            <p>
+              And this is happening in a city where the FBI's 2024 data shows a <a href="https://www.thecentersquare.com/washington/article_8598c8b3-6fcf-4ca1-bc77-308008136901.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">property crime rate of 5,007.6 per 100,000 residents</a> — nearly triple the national average. Seattle ranked worst in the nation for burglary. When you set up a temporary market full of merchandise in a city with those numbers, security isn't optional. It's the thing that determines whether your vendors come back next year.
+            </p>
+          </section>
+
+          <div class="bg-amber-50 border-l-4 border-amber-500 p-6 my-8">
+            <p class="font-semibold text-amber-900 mb-2">The Three Windows When Events Are Most Vulnerable</p>
+            <p class="text-amber-800 mb-3">
+              Event security planning tends to focus on the hours when attendees are present. But the highest-risk periods are actually before and after:
+            </p>
+            <ul class="text-amber-800 space-y-2 ml-4">
+              <li><strong>Setup (1-3 days before):</strong> Equipment, staging, vendor inventory, and AV gear arrive before security is fully operational. Generators, sound systems, and lighting rigs are high-value targets sitting in an open field.</li>
+              <li><strong>Overnight between event days:</strong> Multi-day festivals leave vendor booths, food equipment, and merchandise on-site. Security staffing typically drops to a skeleton crew after the event closes — if there's any coverage at all.</li>
+              <li><strong>Breakdown (1-2 days after):</strong> Crews are exhausted, security contracts have ended, and expensive equipment sits staged for pickup. This is when organized theft crews know nobody's paying attention.</li>
+            </ul>
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">Washington's Event Security Requirements: What the Law Actually Requires</h2>
+
+            <p>
+              Before we get into security options, it's worth understanding what event organizers in Washington are legally required to have. These aren't suggestions — failure to comply can result in permit denial, event shutdown, or significant liability exposure.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Crowd Management (Seattle Fire Code SFC 403.3)</h3>
+            <p>
+              Any event with more than <strong>1,000 attendees</strong> must provide trained crowd managers at a minimum ratio of <a href="https://www.seattle.gov/special-events/public-safety/public-safety-and-event-management" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">1 crowd manager per 250 people</a>. That means a 5,000-person community festival needs at least 20 trained crowd management staff. These staff must be trained in emergency procedures, exit monitoring, and fire watch responsibilities. The Seattle Special Events Office recommends Event Safety Alliance Core Safety Skill Training certification.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Liability Insurance</h3>
+            <p>
+              All events on public land in Seattle require proof of <a href="https://www.seattle.gov/special-events/policies-and-compliance/insurance" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">general liability insurance</a> with a <strong>minimum $1,000,000 limit per occurrence</strong>. The City of Seattle must be named as an Additional Insured. Events serving alcohol need <strong>$2,000,000 in liquor liability coverage</strong> (reduced to $1M for nonprofits). If your event includes carnival rides, that jumps to <strong>$5,000,000</strong>. The City of Everett and other municipalities across the Puget Sound have <a href="https://www.everettwa.gov/DocumentCenter/View/36962" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">similar requirements</a>.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Medical Staffing</h3>
+            <p>
+              Events expecting <strong>5,000+ attendees</strong> must contact King County Medic One to discuss medical staffing requirements. Depending on the event's risk profile, this can range from first aid kits and roving responders to dedicated ambulance crews.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Public Safety Plan</h3>
+            <p>
+              Any event with 1,000+ expected attendees must submit a formal Public Safety Plan covering access and egress, medical emergencies, fire hazards, severe weather, earthquakes, civil disturbances, hazardous materials, and terrorism contingencies. City, county, and state agencies all review these applications. Processing takes a minimum of 15 business days.
+            </p>
+            <br>
+
+            <p>
+              Here's what none of those requirements address: vendor area security, parking lot coverage, overnight asset protection, and perimeter surveillance. That's left entirely to the organizer — and it's where most security plans have holes.
+            </p>
+          </section>
+
+          <div class="mb-12 mt-12">
+            <StatBox
+              layout="grid"
+              stats={[
+                {
+                  value: "$45-65",
+                  label: "Per hour, per guard for event security staffing",
+                  icon: "💰",
+                  highlight: true,
+                  source: {
+                    text: "Building Security Services / Industry Data 2026",
+                    url: "https://www.buildingsecurity.com/statistics/security-guard-industry/"
+                  }
+                },
+                {
+                  value: "912K",
+                  label: "Visitors to Washington State Fair in 2024",
+                  icon: "🎪",
+                  highlight: false,
+                  source: {
+                    text: "South Sound Magazine",
+                    url: "https://www.southsoundmag.com/travel-outdoor/how-the-washington-state-fair-went-this-year-according-to-organizers/article_65877d84-7f78-11ef-b390-834f4ce7377d.html"
+                  }
+                },
+                {
+                  value: "28",
+                  label: "Community organizations receiving Tacoma event funding for 2026",
+                  icon: "🎭",
+                  highlight: false,
+                  source: {
+                    text: "City of Tacoma",
+                    url: "https://tacoma.gov/news/community-event-funding-announced-for-2026/"
+                  }
+                },
+                {
+                  value: "$5.5B",
+                  label: "Global event security market size in 2025 (6.9% annual growth)",
+                  icon: "📈",
+                  highlight: false,
+                  source: {
+                    text: "Industry Market Data",
+                    url: "https://www.buildingsecurity.com/statistics/security-guard-industry/"
+                  }
+                }
+              ]}
+            />
+          </div>
+
+          <!-- Vendor Zone at Night Image -->
+          <div class="my-10 rounded-lg overflow-hidden shadow-lg">
+            <LazyImage
+              src="/images/event-security-vendor-overnight.webp"
+              alt="Empty festival vendor booths and tents at dusk with no visible security presence — the overnight window when theft risk is highest"
+              class="w-full h-auto"
+              width="1200"
+              height="675"
+              loading="lazy"
+            />
+            <p class="text-sm text-gray-500 px-4 py-2 bg-gray-50 italic">Festival vendor booths after hours — merchandise left overnight in open-sided tents with minimal security is where most event theft occurs.</p>
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6">The Math Problem: Why Security Guards Alone Don't Work for Most Events</h2>
+
+            <p>
+              Event security guards in the Pacific Northwest currently run <a href="https://www.buildingsecurity.com/statistics/security-guard-industry/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">$45 to $65 per hour per officer</a>. For a three-day festival with 12-hour coverage, hiring just four guards costs $6,480 to $9,360. If you want 24-hour coverage — which you need if vendors are leaving inventory overnight — that doubles to roughly $13,000 to $18,700. For a weekend.
+            </p>
+            <br>
+
+            <p>
+              And that's before you account for the <a href="https://www.buildingsecurity.com/statistics/security-guard-industry/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">labor shortage</a> that's been hitting the security industry hard. High turnover rates and flat growth projections mean that finding qualified event security staff — particularly for dates when every festival in the region is competing for the same guards — is getting harder every year. The global manned guarding market grew by $6.5 billion between 2025 and 2026, but that growth is being driven by rising wages, not more available staff.
+            </p>
+            <br>
+
+            <p>
+              Even well-staffed security teams have a coverage problem. Four guards walking a 10-acre festival site can cover their immediate area. But a festival site has parking lots on the perimeter, vendor zones spread across multiple areas, equipment staging behind the main stage, restroom facilities, and entry/exit points. Four people can't be everywhere. And at 3 AM during the overnight shift, when the real theft risk peaks, fatigue sets in.
+            </p>
+            <br>
+
+            <p>
+              This isn't an argument against guards. You need trained people for access control, crowd management, and incident response — that's what the fire code requires, and for good reason. The argument is that guards alone leave massive blind spots, and those blind spots are exactly where the problems happen.
+            </p>
+          </section>
+
+          <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
+            <p class="font-semibold text-blue-900 mb-2">The World Cup Effect on Regional Event Security</p>
+            <p class="text-blue-800 mb-3">
+              When the FIFA World Cup comes to Seattle from June 11 to July 19, the security infrastructure impact extends well beyond Lumen Field. John Diaz's security operation involves 27 working groups coordinating across multiple agencies, with additional security deployed along Third Avenue, at transit stops, and near <a href="https://komonews.com/news/local/seattle-leaders-mark-100-days-until-the-world-cup-fifa-soccer-host-city-lumen-field-match-downtown-artwork-bolstering-security" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:underline">downtown fan zones</a>. That draws from the same pool of law enforcement and private security personnel that every other summer event in the region depends on.
+            </p>
+            <p class="text-blue-800">
+              If you're organizing a festival, concert, or community event anywhere in the Puget Sound during those five weeks, your security staffing options will be more limited and more expensive than usual. Plan accordingly.
+            </p>
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">Where Mobile Surveillance Fills the Gaps</h2>
+
+            <p>
+              A mobile surveillance trailer doesn't replace security guards. It replaces the gaps between them. And for events, those gaps are predictable, which means they're solvable.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Parking Lots and Perimeter Areas</h3>
+            <p>
+              For most outdoor events, the parking area is the single largest piece of real estate to secure — and the one with the least foot traffic from guards. Vehicle break-ins, catalytic converter theft, and car prowling all spike during large gatherings when thieves know owners are distracted for hours. A single trailer with 360-degree PTZ cameras and license plate recognition, positioned at the main lot entrance, provides continuous coverage of an area that would take two or three dedicated guards to patrol.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Vendor Zones Overnight</h3>
+            <p>
+              The Bite of Seattle booth ransacking didn't happen during event hours. It happened overnight, when the crowd left and security thinned out. A mobile surveillance unit parked at the vendor zone perimeter provides a visible deterrent — a 20-foot elevated camera platform is hard to miss — and continuous recording that captures anyone entering the area. AI-powered motion detection sends alerts in real time, meaning response can happen in minutes rather than being discovered the next morning.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Setup and Breakdown Periods</h3>
+            <p>
+              The window between load-in and doors-open is when the most expensive equipment is sitting unprotected. Generators, sound systems, LED walls, portable bars, food service equipment — all being staged in an open field or parking lot before the security team's contract clock starts. A trailer deployed the day before setup begins and removed the day after breakdown ends covers the entire event lifecycle, not just the hours when attendees are present.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Entry and Exit Monitoring</h3>
+            <p>
+              For events that charge admission, unauthorized entry is a direct revenue loss. For free events, monitoring entry and exit flow is still critical for capacity management and emergency planning. Elevated cameras provide a bird's-eye view of crowd density and movement patterns that ground-level guards simply can't see.
+            </p>
+          </section>
+
+          <!-- Surveillance Trailer at Event Image -->
+          <div class="my-10 rounded-lg overflow-hidden shadow-lg">
+            <LazyImage
+              src="/images/event-security-trailer-festival.webp"
+              alt="Mobile CCTV surveillance trailer with elevated camera mast deployed at an outdoor festival venue providing perimeter and parking lot security coverage"
+              class="w-full h-auto"
+              width="1200"
+              height="675"
+              loading="lazy"
+            />
+            <p class="text-sm text-gray-500 px-4 py-2 bg-gray-50 italic">A mobile surveillance trailer deployed at an event venue — solar powered, 360-degree PTZ cameras at 20+ feet, covering parking lots and vendor zones around the clock.</p>
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">What This Looks Like in Practice: A Three-Day Festival Scenario</h2>
+
+            <p>
+              Consider a mid-size community festival — something like Tacoma's Summer Blast or a multi-day farmers market event with 3,000-5,000 daily attendees, 40-60 vendor booths, a main stage, food court area, and a parking lot for 500 cars.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Traditional Guard-Only Approach</h3>
+            <ul class="list-disc pl-6 space-y-2 mb-6">
+              <li>6 guards during event hours (10 AM - 10 PM): 12 hrs x 6 guards x $55/hr = $3,960/day</li>
+              <li>2 guards overnight (10 PM - 10 AM): 12 hrs x 2 guards x $55/hr = $1,320/day</li>
+              <li>3-day total: <strong>$15,840</strong></li>
+              <li>Coverage: Good for crowd management, weak for parking lot and perimeter, minimal overnight</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold mb-4">Hybrid Approach: Guards + Mobile Surveillance</h3>
+            <ul class="list-disc pl-6 space-y-2 mb-6">
+              <li>4 guards during event hours for crowd management and access control: 12 hrs x 4 guards x $55/hr = $2,640/day</li>
+              <li>2 mobile surveillance trailers covering parking lot and vendor zone 24/7: ~$2,000-3,000 for 4-5 days (including setup day and breakdown day)</li>
+              <li>3-day total: <strong>$9,920-10,920</strong> (plus complete 24/7 coverage the guard-only approach doesn't provide)</li>
+              <li>Coverage: Crowd management handled by trained guards, parking and vendor areas covered by AI-monitored cameras around the clock</li>
+            </ul>
+
+            <p>
+              The hybrid approach costs 30-35% less while providing better actual coverage. More importantly, it provides the overnight and perimeter surveillance that guard-only setups almost always skip because of cost.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">A Checklist for Puget Sound Event Organizers</h2>
+
+            <p>
+              Whether you're planning a 500-person block party or a 50,000-person festival, the security fundamentals are the same. Work through these before you submit your permit application.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">90+ Days Before the Event</h3>
+            <ul class="list-disc pl-6 space-y-2 mb-6">
+              <li>Submit your special event application through the city's permitting system (Seattle uses <a href="https://www.seattle.gov/special-events" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Eproval</a>)</li>
+              <li>Secure general liability insurance — $1M minimum per occurrence, $2M if serving alcohol</li>
+              <li>Draft your Public Safety Plan if expecting 1,000+ attendees</li>
+              <li>Contact King County Medic One if expecting 5,000+</li>
+              <li>Book security staffing early — competition for qualified guards intensifies as summer approaches, and World Cup demand will thin the pool further</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold mb-4">30 Days Before</h3>
+            <ul class="list-disc pl-6 space-y-2 mb-6">
+              <li>Finalize your site security map: identify all entry/exit points, parking areas, vendor zones, staging areas, and blind spots</li>
+              <li>Arrange surveillance coverage for setup and breakdown periods — not just event hours</li>
+              <li>Confirm crowd manager staffing meets the 1:250 ratio</li>
+              <li>Coordinate with local police if your event involves street closures or expects significant crowd density</li>
+              <li>Send vendor communication with security protocols: what's covered, what vendors are responsible for, overnight policies</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold mb-4">Day-Of Checklist</h3>
+            <ul class="list-disc pl-6 space-y-2 mb-6">
+              <li>Verify all surveillance positions are operational before vendor load-in begins</li>
+              <li>Brief crowd managers on emergency procedures and communication protocols</li>
+              <li>Confirm medical staffing is on-site and positioned per your safety plan</li>
+              <li>Test communication equipment (radios, phones) between security, medical, and event management</li>
+              <li>Verify overnight security handoff procedures — who's covering what, and when</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">The Bottom Line</h2>
+
+            <p>
+              The Puget Sound's summer 2026 event calendar is extraordinary. Between the World Cup, Seafair, the Bite, the Washington State Fair, Bumbershoot, and the hundreds of community events filling every weekend, there will be more temporary outdoor venues operating simultaneously than any previous season. That's great for the regional economy. It also means more exposure to the property crime, vendor theft, and security staffing challenges that have been building for years.
+            </p>
+            <br>
+
+            <p>
+              The organizers who get this right won't be the ones who spend the most money. They'll be the ones who think about security as a full-lifecycle problem — from the day equipment arrives on-site to the day the last truck drives off — and use the right tools for each phase. Guards for crowd management and incident response. Mobile surveillance for parking lots, vendor zones, perimeters, and the overnight hours that guards alone can't cost-effectively cover.
+            </p>
+            <br>
+
+            <p>
+              We've been providing mobile surveillance for outdoor events, festivals, and temporary venues across the Puget Sound since 2009. If you're planning an event this summer and want to talk through site coverage, we're happy to do a free walkthrough of your venue. <a href="/contact" class="text-blue-600 hover:underline font-semibold">Get in touch</a> or call us at <a href="tel:2536832288" class="text-blue-600 hover:underline font-semibold">(253) 683-2288</a>.
+            </p>
+          </section>
+
+          <!-- About Section -->
+          <div class="bg-gray-50 border border-gray-200 rounded-lg p-8 mt-12">
+            <h3 class="text-xl font-bold mb-4">About CCTV Trailer</h3>
+            <p class="text-gray-700 mb-4">
+              CCTV Trailer provides mobile surveillance solutions across the Puget Sound region, headquartered in Tacoma with same-day deployment capability throughout Pierce County and King County. Our solar-powered trailers feature PTZ cameras with AI-powered analytics, 4G/5G connectivity for live remote monitoring, and elevated camera positions for maximum coverage area.
+            </p>
+            <p class="text-gray-700">
+              We work with event organizers, municipalities, construction companies, and businesses to provide flexible, effective surveillance coverage without the cost and timeline of permanent camera installations. <a href="/about" class="text-blue-600 hover:underline">Learn more about our team and technology</a>.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <CTASection
+      title="Planning an Event This Summer?"
+      description="Get mobile surveillance coverage for your festival, concert, or outdoor event — from setup through breakdown. Free site walkthroughs available."
+      features={["✓ Same-Day Deployment", "✓ Solar Powered — No Grid Needed", "✓ 24/7 Overnight Coverage"]}
+    />
+
+    <!-- Related Pages -->
+    <RelatedPages pages={relatedPages} />
+
+  </article>
+
+  <Footer />
+</Layout>
