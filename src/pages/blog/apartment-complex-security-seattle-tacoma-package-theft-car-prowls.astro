@@ -1,0 +1,521 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import CTASection from '../../components/CTASection.astro';
+import Analytics from '../../components/Analytics.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import LazyImage from '../../components/LazyImage.astro';
+import QuickAnswer from '../../components/QuickAnswer.astro';
+import StatBox from '../../components/StatBox.astro';
+import SpeakableSchema from '../../components/SpeakableSchema.astro';
+
+// Speakable sections for voice search
+const speakableSections = [
+  { cssSelector: ".quick-answer-content" },
+  { cssSelector: ".blog-content h2, .blog-content p" },
+  { cssSelector: ".stat-box" }
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Apartment Security in the Puget Sound: Package Theft, Car Prowls, and Why 'Secure' Parking Often Isn't",
+  "datePublished": "2026-04-17",
+  "dateModified": "2026-04-17",
+  "author": {
+    "@type": "Organization",
+    "name": "CCTV Trailer",
+    "url": "https://www.cctvtrailer.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CCTV Trailer",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.cctvtrailer.com/images/cctv-trailer-logo.png"
+    }
+  },
+  "description": "Seattle-Tacoma still ranks among the worst U.S. metros for package theft. A gated Belltown garage had 10 cars broken into overnight. Kent's Phoenix Court has logged 8 shootings. Here's what apartment and condo property managers across the Puget Sound are actually up against in 2026 — and what works.",
+  "image": [
+    "https://www.cctvtrailer.com/images/apartment-security-puget-sound-hero.webp"
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.cctvtrailer.com/blog/apartment-complex-security-seattle-tacoma-package-theft-car-prowls"
+  },
+  "wordCount": 3400,
+  "keywords": [
+    "apartment complex security Seattle Tacoma",
+    "multi-family property security Puget Sound",
+    "package theft Seattle Tacoma",
+    "porch piracy apartment complex",
+    "car prowls apartment parking garage Seattle",
+    "mail theft arrow key USPS Seattle",
+    "condo parking lot security Tacoma",
+    "property manager liability Washington",
+    "mobile surveillance apartment complex",
+    "Walton Lofts break-in",
+    "Phoenix Court apartments Kent",
+    "Federal Way apartment shootings 2025"
+  ]
+});
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Blog', url: '/blog' },
+  { name: 'Apartment Security in the Puget Sound', url: '/blog/apartment-complex-security-seattle-tacoma-package-theft-car-prowls' }
+];
+
+const relatedPages = [
+  {
+    title: "Same-Day Security Rental",
+    href: "/same-day-security-rental",
+    description: "Emergency mobile surveillance for apartment complexes, condo associations, and property managers dealing with active crime problems."
+  },
+  {
+    title: "Vandalism Prevention Solutions",
+    href: "/solutions/vandalism-prevention",
+    description: "24/7 surveillance to deter vandalism, graffiti, and property damage across multi-family and commercial properties."
+  },
+  {
+    title: "Retail Parking Lot Security",
+    href: "/tacoma-retail-parking-lot-security",
+    description: "Mobile surveillance for commercial parking lots and mixed-use properties where apartments sit above or next to retail."
+  },
+  {
+    title: "Auto Dealer Lot Security",
+    href: "/blog/auto-dealer-lot-security-mobile-surveillance",
+    description: "How visible surveillance stops the same organized vehicle-theft crews that target apartment garages across Pierce and King counties."
+  },
+  {
+    title: "Tacoma Public Space Safety",
+    href: "/blog/tacoma-public-space-safety-mobile-surveillance",
+    description: "What the crime data actually shows for public and common-area spaces across Tacoma — the same patterns hit apartment grounds."
+  },
+  {
+    title: "Security Trailer vs Guards",
+    href: "/security-trailer-vs-guards",
+    description: "Cost comparison between mobile surveillance trailers and traditional security guard patrols for multi-family properties."
+  }
+];
+---
+
+<Layout
+  title="Apartment Security in the Puget Sound: Package Theft, Car Prowls & Why 'Secure' Parking Often Isn't | CCTV Trailer"
+  description="Seattle-Tacoma ranks among the nation's worst for package theft. A gated Belltown garage had 10 cars broken into overnight. Here's what apartment property managers across the Puget Sound are actually up against in 2026 — and what works."
+  schema={schema}>
+
+  <Header currentPath="/blog" showEmergencyBar={true} />
+  <Analytics />
+  <BreadcrumbSchema items={breadcrumbs} />
+  <SpeakableSchema sections={speakableSections} />
+
+  <article>
+    <!-- Hero Section -->
+    <section class="hero-section-blog relative py-20 px-6 text-white">
+      <div class="hero-overlay">
+        <LazyImage src="/images/apartment-security-puget-sound-hero.webp" alt="Large apartment complex in the Seattle-Tacoma area at dusk with lit windows, parking lot, and delivery packages in the foreground"
+          class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
+      <div class="container mx-auto max-w-4xl relative z-10">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          Apartment Security in the Puget Sound: Package Theft, Car Prowls, and Why "Secure" Parking Often Isn't
+        </h1>
+        <div class="flex items-center text-lg mb-8">
+          <time datetime="2026-04-17">April 17, 2026</time>
+          <span class="mx-4">&bull;</span>
+          <span>13 min read</span>
+        </div>
+        <p class="text-xl leading-relaxed">
+          Seattle-Tacoma-Bellevue has ranked at the top of <strong>America's worst metros for package theft</strong> for three years running. A "secure" gated garage in Belltown had <strong>10 cars broken into overnight</strong> last December while tenants paid $275 a month for parking. Kent's Phoenix Court Apartments has logged <strong>eight confirmed shootings</strong>. Federal Way saw three fatal apartment-complex shootings in 2025 alone. And mail thieves are still pulling up to cluster mailboxes with a <strong>single stolen USPS arrow key</strong> that opens every box in a ZIP code. If you manage a multi-family property in the Puget Sound, this is the 2026 landscape.
+        </p>
+      </div>
+    </section>
+
+    <!-- Quick Answer Section -->
+    <QuickAnswer
+      question="How bad is crime at apartment complexes in the Seattle-Tacoma area and what can property managers actually do about it?"
+      answer="The Seattle-Tacoma-Bellevue metro has consistently ranked among the worst in the nation for package theft, with an estimated 104 million packages stolen nationally each year at a cost of roughly $16 billion. Multi-family properties report higher theft rates than single-family homes due to shared package and mail areas. Gated parking garages are routinely breached — a Belltown complex lost 10 vehicles in a single overnight in December 2025. Car prowls and stolen firearms from vehicles remain stubbornly high: 206 guns were stolen from Seattle vehicles in 2025. Mail theft using stolen USPS arrow keys — which sell for $1,000 to $7,000 on the dark web — continues to hit cluster mailboxes across the region. And several Puget Sound complexes have become repeat sites for violence: Kent's Phoenix Court has logged 8 shootings, and Federal Way saw three fatal apartment-complex shootings in 2025. A 40-year meta-analysis from the Office of Justice Programs found CCTV surveillance delivers its largest and most consistent crime-reduction effects in parking areas and residential properties, particularly when combined with lighting and active monitoring. Mobile surveillance trailers give property managers elevated 360-degree coverage with deterrent-level visibility — typically deployed within 24 hours and without infrastructure changes."
+    />
+
+    <!-- Main Content -->
+    <section class="py-16">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <div class="blog-content prose prose-lg max-w-none">
+
+          <!-- Stats Section -->
+          <div class="mb-12">
+            <StatBox
+              layout="grid"
+              stats={[
+                {
+                  value: "#1-2",
+                  label: "Seattle-Tacoma-Bellevue's ranking among U.S. metros for package theft",
+                  icon: "📦",
+                  highlight: true,
+                  source: {
+                    text: "SafeWise / Seattle Times",
+                    url: "https://www.seattletimes.com/seattle-news/package-theft-is-more-common-in-seattle-tacoma-than-most-other-metro-areas-heres-how-to-foil-porch-pirates/"
+                  }
+                },
+                {
+                  value: "10",
+                  label: "Vehicles broken into overnight inside a gated Belltown garage (Dec 2025)",
+                  icon: "🚗",
+                  highlight: true,
+                  source: {
+                    text: "KING 5",
+                    url: "https://www.king5.com/article/news/crime/residents-threaten-break-lease-car-break-seattle-apartments/281-0f7adfc3-47d1-4b60-b8cb-695b7ab86328"
+                  }
+                },
+                {
+                  value: "206",
+                  label: "Firearms stolen from vehicles in Seattle in 2025",
+                  icon: "🔫",
+                  highlight: false,
+                  source: {
+                    text: "SPD Year in Review",
+                    url: "https://spdblotter.seattle.gov/2026/02/02/2025-spd-year-in-review/"
+                  }
+                },
+                {
+                  value: "8",
+                  label: "Confirmed shootings at Kent's Phoenix Court Apartments, per KPD",
+                  icon: "⚠️",
+                  highlight: false,
+                  source: {
+                    text: "KOMO News",
+                    url: "https://komonews.com/news/local/kent-police-department-chief-violent-crime-hub-phoenix-court-apartments-king-county-jail-lakewood-kpd-safety-shootings-gun-violence-druge-use-community-investigation-suspect-"
+                  }
+                }
+              ]}
+            />
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6">The Package Problem Isn't Getting Better</h2>
+
+            <p>
+              If you manage a building in Seattle, Tacoma, Bellevue, or anywhere in between, you already know this one. Packages disappear. Residents complain. Amazon reships. The cycle repeats. What the national data tells us is that the Seattle-Tacoma-Bellevue metro has been near the top of the country's worst package-theft rankings for years. A <a href="https://www.seattletimes.com/seattle-news/package-theft-is-more-common-in-seattle-tacoma-than-most-other-metro-areas-heres-how-to-foil-porch-pirates/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">SafeWise analysis reported in the Seattle Times</a> placed our metro as the nation's most impacted for porch piracy, and follow-up reporting through 2025 kept it firmly in the top tier.
+            </p>
+            <br>
+
+            <p>
+              The scale nationally is hard to picture until you see the raw number. SafeWise's 2025 analysis <a href="https://www.safewise.com/blog/metro-areas-porch-theft/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">estimates roughly 104 million packages stolen in a single year</a>, representing about $15–16 billion in lost merchandise. And the same report notes something property managers already suspect: apartment complexes report higher theft rates than single-family homes, because the delivery target is always in the same shared lobby, mailroom, or leasing-office doorway.
+            </p>
+            <br>
+
+            <p>
+              The federal response has finally showed up. On December 23, 2025, a bipartisan group introduced the <a href="https://gottheimer.house.gov/posts/release-bipartisan-porch-pirates-bill-introduced-during-holiday-season-to-combat-package-theft" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Porch Pirates Act</a>, which extends the FBI's and Department of Justice's authority over interstate delivery theft all the way to the customer's door. Before that change, federal protection essentially stopped once the package left the truck. Whether the bill passes or not, the signal is clear: the problem has grown past what local theft statutes can manage.
+            </p>
+            <br>
+
+            <p>
+              For a property manager, the frustrating reality is that most apartment-building package theft isn't opportunistic. It's routine. People who steal packages for a living watch the delivery routes. They know which buildings have unmanned lobbies, which have cameras pointed the wrong way, and which have a propped-open side door at a predictable hour. Stopping it is less about catching individual thieves and more about making the building a worse target than the one across the street.
+            </p>
+          </section>
+
+          <!-- Package mailroom image -->
+          <div class="my-10 rounded-lg overflow-hidden shadow-lg">
+            <LazyImage
+              src="/images/apartment-package-mailroom-piracy.webp"
+              alt="Unmonitored apartment complex mailroom with scattered packages on the floor near mailboxes illustrating porch piracy vulnerability"
+              class="w-full h-auto"
+              width="1200"
+              height="675"
+              loading="lazy"
+            />
+            <p class="text-sm text-gray-500 px-4 py-2 bg-gray-50 italic">Shared mailrooms and unmanned lobbies are the single largest vulnerability for multi-family properties across the Puget Sound — delivery patterns are predictable, and thieves know it.</p>
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">The Belltown Garage That Proved "Gated" Means Nothing</h2>
+
+            <p>
+              On December 4, 2025, tenants at <a href="https://www.king5.com/article/news/crime/residents-threaten-break-lease-car-break-seattle-apartments/281-0f7adfc3-47d1-4b60-b8cb-695b7ab86328" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Walton Lofts at 75 Vine Street in Belltown</a> woke up to find at least ten vehicles broken into inside the building's own gated parking garage. Tenants there pay $275 a month for that space. The garage had cameras, but the ones that mattered weren't working. Residents publicly threatened to break their leases. Building management spent the following week explaining what happened.
+            </p>
+            <br>
+
+            <p>
+              What made the Walton Lofts incident useful — from a pattern-recognition standpoint — wasn't that it was unusual. It's that it was typical. A few weeks earlier, <a href="https://westseattleblog.com/2025/11/west-seattle-crime-watch-another-garage-break-in/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">West Seattle Blog reported repeat garage break-ins</a> tied to a suspect driving a dark-blue Prius. The same pattern — follow a resident through the roll-up gate, wait for them to disappear into the elevator, then spend thirty minutes working the row — shows up in garage after garage across the region. The gate is mostly symbolic. Once a vehicle is inside, the cameras either aren't there, aren't pointed right, or aren't being watched.
+            </p>
+            <br>
+
+            <p>
+              That last piece matters more than the hardware itself. The <a href="https://www.ojp.gov/library/publications/cctv-surveillance-crime-prevention-40-year-systematic-review-meta-analysis" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Office of Justice Programs' 40-year meta-analysis of CCTV</a> found the largest, most consistent crime-reduction effects in parking areas and residential settings — but the effect size climbs significantly when surveillance is actively monitored instead of passively recording. Footage that nobody looks at until after a break-in is documentation, not deterrence.
+            </p>
+
+            <h3 class="text-2xl font-semibold mb-4 mt-8">The Citywide Numbers Tell a Complicated Story</h3>
+            <p>
+              The Seattle Police Department's <a href="https://spdblotter.seattle.gov/2026/02/02/2025-spd-year-in-review/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">2025 Year in Review</a> reports a 7% reduction in car prowls citywide and a 24% reduction in stolen vehicles — roughly 1,821 fewer victims compared to the prior year. King County overall reported <a href="https://komonews.com/news/local/king-county-reports-22-drop-in-2025-crime-rate-with-murders-and-car-theft-down-homicide-assault-criminal-felon-downtown-safety-public-transit-gun-violence-funding-hiring" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">a 22% drop in overall crime</a>, with property crime including auto theft down nearly 50%. That's genuine progress, and it's worth acknowledging.
+            </p>
+            <br>
+
+            <p>
+              Here's where property managers have to read the fine print. Citywide averages are not the same as the numbers at your specific building. SPD's own data still shows 206 firearms stolen out of Seattle vehicles in 2025 — which means car prowlers are still out there, still armed after the fact, and still hitting parking facilities the same way they always have. If your complex hasn't seen a meaningful reduction in reported incidents, the citywide trend doesn't help you. It just means the criminals in your neighborhood haven't moved on yet.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">Vehicle Theft: The Kia/Hyundai Wave Isn't Fully Over</h2>
+
+            <p>
+              The Kia and Hyundai theft wave that started in late 2022 is past its peak but still shaping risk at apartment lots. In the first two weeks of January 2023, <a href="https://www.kiro7.com/news/local/kia-hyundai-owners-take-extreme-lengths-prevent-theft-year-after-wa-trend/Z7K76D2B7VB2RAHHKCBIZ644L4/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Tacoma saw 348 vehicles stolen — 48% of them were Kias or Hyundais</a>, compared to just 5% in the same window a year earlier. Seattle saw Kia thefts climb 363% and Hyundai 503% from 2021 to 2022. Both cities filed lawsuits against the manufacturers, and free software upgrades eventually rolled out through mobile clinics.
+            </p>
+            <br>
+
+            <p>
+              The improvement in 2024–2025 is real — King County's overall auto theft drop bears that out. But the vehicles that weren't patched are still parked at apartment complexes across the Puget Sound. And the TikTok-driven method the original wave made famous didn't create car thieves; it just handed them a new technique. A property manager with an open lot full of 2015–2021 model-year vehicles still has exposure, whether or not the headlines have moved on.
+            </p>
+
+            <h3 class="text-2xl font-semibold mb-4 mt-8">Catalytic Converters: Mostly Solved</h3>
+            <p>
+              Here's a bright spot. Washington's <a href="https://www.westsideseattle.com/robinson-papers/2025/03/26/efforts-curb-catalytic-converter-theft-start-april" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">ESHB 2153 took effect April 1, 2025</a>, requiring licensed purchasers, three-year record retention, and creating new felony penalties for trafficking. The results have been fast. State Farm reported a <a href="https://newsroom.statefarm.com/state-farm-sees-74-percent-drop-in-catalytic-converter-thefts/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">74% year-over-year drop in Washington catalytic-converter theft claims</a> in the first half of 2024, on top of a 77% decline in 2023 — the largest of any state.
+            </p>
+            <br>
+
+            <p>
+              If catalytic converter theft was the exposure driving security decisions at your property two years ago, that's worth revisiting. The threat profile has shifted. What remains high is vehicle break-ins, firearms stolen from parked cars, and targeted vehicle theft of a shrinking but still-present pool of older Kia and Hyundai models.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">The Mail Theft Problem Most People Don't See</h2>
+
+            <p>
+              A USPS "arrow key" is the master key that opens every cluster mailbox in a ZIP code. It's meant to be in the possession of one letter carrier. In practice, arrow keys are stolen off carriers — sometimes at gunpoint — and then resold. KIRO 7 reported that these keys move on the dark web for <a href="https://www.kiro7.com/news/local/mail-theft-with-master-key-impacts-entire-south-seattle-zip-code/YYGH5YKBVRESDDUDU6NYTDODQQ/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">anywhere from $1,000 to $7,000</a>. Once somebody has one, every cluster box in that ZIP — including the ones at your apartment complex — is open to them until USPS rekeys the route.
+            </p>
+            <br>
+
+            <p>
+              Neighborhoods across the Puget Sound keep getting hit. <a href="https://westseattleblog.com/2025/07/west-seattle-crime-watch-mail-theft-victim-shares-lessons-learned/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">West Seattle cluster mailboxes were compromised</a> in both November 2024 and June 2025. Residents reported stolen checks, identity-theft follow-ups, and the slow, frustrating process of working through USPS Postal Inspection Service complaints. For apartment complexes that rely on cluster boxes as the primary mail delivery point, a stolen arrow key isn't just a mail-theft incident. It's every tenant in the building having their mail opened, sometimes for weeks before anyone notices the pattern.
+            </p>
+            <br>
+
+            <p>
+              The Postal Inspection Service has acknowledged the scale. Its <a href="https://about.usps.com/newsroom/national-releases/2023/0512-usps-postal-inspection-service-roll-out-expanded-measures-to-crack-down-on-mail-theft.htm" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Project Safe Delivery program</a>, launched in 2023, is in the process of replacing 49,000 arrow locks nationwide with electronic versions that don't have a single physical master. That's the right fix. But Seattle's specific rollout timeline hasn't been announced, and until it reaches your route, every cluster box in your building sits behind the same shared lock.
+            </p>
+          </section>
+
+          <!-- Cluster mailbox image -->
+          <div class="my-10 rounded-lg overflow-hidden shadow-lg">
+            <LazyImage
+              src="/images/apartment-cluster-mailbox-pry-damage.webp"
+              alt="USPS cluster mailbox outside an apartment complex showing pry damage and forced-open compartments from a mail theft incident"
+              class="w-full h-auto"
+              width="1200"
+              height="675"
+              loading="lazy"
+            />
+            <p class="text-sm text-gray-500 px-4 py-2 bg-gray-50 italic">Cluster mailboxes at apartment complexes are a single point of failure — one stolen USPS arrow key opens every box in the ZIP until the route is rekeyed.</p>
+          </div>
+
+          <div class="mb-12 mt-12">
+            <StatBox
+              layout="grid"
+              stats={[
+                {
+                  value: "$1K-$7K",
+                  label: "Dark-web resale range for a stolen USPS arrow key",
+                  icon: "🔑",
+                  highlight: true,
+                  source: {
+                    text: "KIRO 7",
+                    url: "https://www.kiro7.com/news/local/mail-theft-with-master-key-impacts-entire-south-seattle-zip-code/YYGH5YKBVRESDDUDU6NYTDODQQ/"
+                  }
+                },
+                {
+                  value: "74%",
+                  label: "Drop in Washington catalytic-converter theft claims (State Farm, H1 2024)",
+                  icon: "📉",
+                  highlight: true,
+                  source: {
+                    text: "State Farm Newsroom",
+                    url: "https://newsroom.statefarm.com/state-farm-sees-74-percent-drop-in-catalytic-converter-thefts/"
+                  }
+                },
+                {
+                  value: "24%",
+                  label: "Reduction in stolen vehicles in Seattle in 2025 (vs. prior year)",
+                  icon: "🚘",
+                  highlight: false,
+                  source: {
+                    text: "SPD Year in Review",
+                    url: "https://spdblotter.seattle.gov/2026/02/02/2025-spd-year-in-review/"
+                  }
+                },
+                {
+                  value: "3",
+                  label: "Fatal shootings at Federal Way apartment complexes in 2025 alone",
+                  icon: "🚨",
+                  highlight: false,
+                  source: {
+                    text: "Kent Reporter",
+                    url: "https://www.kentreporter.com/2025/05/06/man-20-fatally-shot-at-federal-way-apartment-complex/"
+                  }
+                }
+              ]}
+            />
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">The Violence at Specific Complexes</h2>
+
+            <p>
+              Nobody likes this section of the piece, but it's the one property managers ask about most when we sit down with them. Some multi-family properties in the Puget Sound have become repeat sites for serious violent crime, and the incidents aren't random.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Kent: Phoenix Court Apartments</h3>
+            <p>
+              The Kent Police Department publicly characterized <a href="https://komonews.com/news/local/kent-police-department-chief-violent-crime-hub-phoenix-court-apartments-king-county-jail-lakewood-kpd-safety-shootings-gun-violence-druge-use-community-investigation-suspect-" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Phoenix Court Apartments as a "hub for extraordinary violent crime,"</a> citing eight confirmed shootings — two of them fatal. For a single property, that's a level of law-enforcement attention that almost always precedes either a management change, a lease-up collapse, or both.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Federal Way: Pavilion, Glen Park, and Beyond</h3>
+            <p>
+              Federal Way alone saw three fatal apartment-complex shootings in a four-month stretch in 2025. A young woman was <a href="https://www.federalwaymirror.com/news/young-adult-woman-killed-at-pavilion-apartment-homes/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">killed by gunshot at Pavilion Apartment Homes on February 13</a>. Three days later, a 24-year-old Tacoma man was <a href="https://www.kentreporter.com/northwest/young-adult-woman-killed-at-federal-way-apartment-complex/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">shot and killed at Glen Park at West Campus</a>. On May 3, a <a href="https://www.kentreporter.com/2025/05/06/man-20-fatally-shot-at-federal-way-apartment-complex/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">20-year-old man was fatally shot at another Federal Way complex</a>.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Everett: Gateway Apartments</h3>
+            <p>
+              On June 2, 2025, <a href="https://lynnwoodtimes.com/2025/06/03/shooting-gateway-apartments/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">two juveniles — ages 11 and 17 — were shot</a> at Everett's Gateway Apartments in what Everett PD described as gang-related. The 11-year-old's injuries alone are the kind of detail that changes how neighboring complexes think about their own risk, and how insurance underwriters price those policies.
+            </p>
+            <br>
+
+            <p>
+              None of this means every apartment complex is unsafe. Most properties across the Puget Sound have no shootings and no serious violent incidents. But for the complexes that do, the pattern is often similar: early signs of trespassing, vandalism, or loitering get managed passively, and by the time anyone acknowledges there's a pattern, the property's reputation with tenants and with law enforcement has already shifted.
+            </p>
+          </section>
+
+          <div class="bg-amber-50 border-l-4 border-amber-500 p-6 my-8">
+            <p class="font-semibold text-amber-900 mb-2">The Landlord Liability Angle</p>
+            <p class="text-amber-800 mb-3">
+              Washington operates under a comparative negligence doctrine, which means a property owner can be held partially liable for tenant injuries or property losses even when a tenant also shares some fault. The practical effect, as summarized by <a href="https://www.spokaneinsurance.net/washington-landlord-insurance-requirements-and-best-practices/" target="_blank" rel="noopener noreferrer" class="text-amber-700 hover:underline">Washington landlord insurance analyses</a>, is that $500,000–$1,000,000 liability limits plus a $1–2 million umbrella policy (roughly $200–$400/year) have become standard guidance for multi-family operators. The <a href="https://www.steadily.com/states/washington" target="_blank" rel="noopener noreferrer" class="text-amber-700 hover:underline">average Washington landlord liability claim exceeds $22,300</a>, with property-damage claims averaging over $9,800. Documented surveillance — cameras that worked, footage that exists, a system a plaintiff's attorney can't easily argue "should have been there" — shifts the negotiation. Missing footage or a non-functional camera on the night of an incident is often the piece that moves a routine case into a punitive one.
+            </p>
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">What Actually Works at Multi-Family Properties</h2>
+
+            <p>
+              The research on what reduces crime at residential and parking-lot environments is more mature than most people realize. A 2025 peer-reviewed study published in the <a href="https://www.tandfonline.com/doi/full/10.1080/24751979.2025.2474706" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Justice Evaluation Journal</a> reinforced the OJP meta-analysis: CCTV is specifically effective at reducing property crime, with the strongest results in car parks and residential settings. What both bodies of research also make clear is that CCTV alone doesn't reduce violent crime — it has to be layered with lighting, access control, and, ideally, a real-time response capability.
+            </p>
+
+            <h3 class="text-2xl font-semibold mb-4 mt-8">The Layers That Matter</h3>
+            <ul class="list-disc pl-6 space-y-2 mb-6">
+              <li><strong>Elevated surveillance over the parking area, not just the entrances.</strong> Storefront-height cameras miss the back rows where most garage prowls actually happen. A 20+ foot camera position with PTZ capability covers what eight fixed cameras can't.</li>
+              <li><strong>Active monitoring, not passive recording.</strong> The OJP meta-analysis specifically calls out active monitoring as the driver of the largest effect sizes. Footage that nobody sees until the morning after is documentation, not prevention.</li>
+              <li><strong>Lighting across the full lot and garage.</strong> LED floodlighting is one of the cheapest and most consistent crime deterrents in the CPTED (Crime Prevention Through Environmental Design) research.</li>
+              <li><strong>Two-way audio or voice-down capability.</strong> A large share of prowls, trespassing incidents, and suspicious loitering end the moment somebody realizes they're being watched in real time. Speaker announcements or operator voice-down is more effective than sirens.</li>
+              <li><strong>Cellular-connected, off-site storage.</strong> On-site NVRs can be disabled, stolen, or vandalized. Footage that has already transmitted off-site can't be destroyed by the person in frame.</li>
+              <li><strong>License plate recognition at entry points.</strong> Organized prowl crews and known-offender vehicles reuse plates. A pattern only becomes visible if somebody is actually reading the plates.</li>
+              <li><strong>Package lockers or a staffed receiving point.</strong> Architectural solutions to package theft outperform camera-only approaches. If a package never sits unattended in a shared space, the theft vector closes.</li>
+              <li><strong>Clear trespass notices and documented enforcement.</strong> In Tacoma, property owners can file a <a href="https://tacoma.gov/government/departments/neighborhood-and-community-services/homelessness-services/encampment-policies-and-procedures/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">No Trespass Authorization with TPD</a>, which lets officers remove unauthorized individuals without a property-manager having to call about every incident. Pierce County maintains a <a href="https://www.piercecountywa.gov/6483/Unauthorized-Encampments" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">dedicated Unauthorized Encampments portal</a> as well.</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold mb-4 mt-8">Why Fixed Cameras Aren't Enough for Most Apartment Lots</h3>
+            <p>
+              Most apartment complexes already have cameras — usually mounted under eaves at 10 to 12 feet, covering the front entrance and maybe the leasing office. A portion of the parking rows sits in frame. The footage records to an NVR in a back office that nobody watches in real time. After a break-in, somebody pulls the tape, discovers the license plate isn't quite readable, and files it with a police report that goes into the backlog. You've probably lived this exact cycle.
+            </p>
+            <br>
+
+            <p>
+              Fixed cameras aren't useless. They do a fine job at entrances, mailrooms, and amenity areas. But for the parking garage — especially the back rows, where organized prowl crews actually work — a camera at storefront height watching a fixed angle is simply seeing the wrong spaces. The problem happens in the gaps between the cameras, and it always has.
+            </p>
+          </section>
+
+          <!-- Mobile surveillance at apartment image -->
+          <div class="my-10 rounded-lg overflow-hidden shadow-lg">
+            <LazyImage
+              src="/images/apartment-mobile-surveillance-trailer-parking.webp"
+              alt="Solar-powered mobile CCTV surveillance trailer deployed at the entrance of an apartment complex parking lot providing elevated camera coverage"
+              class="w-full h-auto"
+              width="1200"
+              height="675"
+              loading="lazy"
+            />
+            <p class="text-sm text-gray-500 px-4 py-2 bg-gray-50 italic">A mobile surveillance trailer at the entrance of an apartment lot — the elevated PTZ position covers the entire parking area and creates the visible deterrent that fixed cameras under the eaves can't.</p>
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">Where Mobile Surveillance Fits</h2>
+
+            <p>
+              Mobile surveillance trailers aren't a replacement for fixed cameras at the front door. They're what you deploy when you have an active problem — a run of prowls, a recent shooting nearby, a period of construction where contractors are pulling permits and trades are coming and going — and you need a visible, operational presence on the property within 24 hours.
+            </p>
+            <br>
+
+            <p>
+              A single trailer parked at the lot entrance sits at 20+ feet of elevation, carries 360-degree PTZ cameras, and runs on solar power so it doesn't depend on tapping into building electrical. It connects over 4G/5G cellular for live remote monitoring, pushes AI-tagged alerts when unusual activity is detected, and offers two-way audio for real-time intervention. One unit covers the parking area that would take eight or more fixed cameras to cover properly.
+            </p>
+            <br>
+
+            <p>
+              More importantly, it's visible. According to research <a href="https://sentrypods.com/mobile-security-towers-in-parking-lots-purpose-stats-and-effectiveness/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">cited in Security Magazine</a>, over half of burglars report avoiding properties with visible cameras entirely. The prowl crews driving through apartment complexes at 3 a.m. are making exactly this calculation — and they consistently pick the property that doesn't have the tower over the property that does.
+            </p>
+            <br>
+
+            <p>
+              For a property manager, the math is usually simpler than it looks. A single serious incident at a complex — one shooting, one spree of garage prowls, one mail-theft event that spirals into identity theft for ten residents — can cost more in tenant turnover, lease terminations, and insurance premium hikes than a year of surveillance coverage. Deployed as a temporary response to an active problem, or seasonally during higher-risk months, mobile surveillance is one of the most direct tools property managers have to break a pattern before it becomes the building's reputation.
+            </p>
+          </section>
+
+          <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
+            <p class="font-semibold text-blue-900 mb-2">The Insurance and Lease Angle</p>
+            <p class="text-blue-800 mb-3">
+              Documented surveillance coverage, especially with timestamped, AI-tagged footage, is increasingly a factor in how commercial property insurance premiums are set on multi-family properties — 15–20% reductions are not unusual once an underwriter sees an active system in place. It also changes claims dynamics. A break-in or assault claim with clear footage resolves faster and with fewer disputes than one where the camera "was supposed to be working." And on the leasing side, prospective tenants in 2026 are asking security questions during property tours that they weren't asking five years ago. A visible, operational surveillance posture isn't just a security investment — it's a lease-up and retention investment.
+            </p>
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">The Bottom Line for Puget Sound Property Managers</h2>
+
+            <p>
+              Crime statistics across Seattle and King County are improving, and that's real. But citywide averages don't run your property. Your property is run by the specific patterns showing up at your specific gate, your specific mailbox, and your specific parking garage — and those patterns are still very much alive across the Puget Sound in 2026. Package theft in this metro has been near the top of the national rankings for three years. Gated garages are getting breached in Belltown, West Seattle, and everywhere in between. Cluster mailboxes share a single key that moves for four figures on the dark web. And a small number of complexes across Kent, Federal Way, and Everett have become repeat sites for serious violence that almost always started smaller.
+            </p>
+            <br>
+
+            <p>
+              What property managers can control is the security posture. The research is clear, and has been for forty years, that visible surveillance — actively monitored, well-lit, layered with access control — delivers its largest crime-reduction effects in exactly the environments apartment complexes are built around: parking areas, shared common spaces, residential entries. The question isn't whether it works. It's whether your property is the one the prowl crew drives past, or the one they stop at.
+            </p>
+            <br>
+
+            <p>
+              We've been deploying mobile surveillance across apartment complexes, condo associations, HOA properties, and mixed-use buildings in the Puget Sound since 2009. Our trailers are solar powered, cellular connected, and built for PNW weather. If you're a property manager or owner dealing with a rise in incidents — or trying to get ahead of a pattern before it becomes one — we'll do a free site assessment. <a href="/contact" class="text-blue-600 hover:underline font-semibold">Get in touch</a> or call us at <a href="tel:2536832288" class="text-blue-600 hover:underline font-semibold">(253) 683-2288</a>.
+            </p>
+          </section>
+
+          <!-- About Section -->
+          <div class="bg-gray-50 border border-gray-200 rounded-lg p-8 mt-12">
+            <h3 class="text-xl font-bold mb-4">About CCTV Trailer</h3>
+            <p class="text-gray-700 mb-4">
+              CCTV Trailer is a locally owned mobile surveillance company headquartered in Tacoma, serving the Pacific Northwest since 2009. Our solar-powered trailers feature 360-degree PTZ cameras with AI-powered analytics, 4G/5G connectivity for live remote monitoring, two-way audio, and elevated positions for maximum parking-area coverage. Same-day deployment is available throughout Pierce and King counties.
+            </p>
+            <p class="text-gray-700">
+              We work with apartment owners, condo associations, property management companies, shopping centers, construction sites, and event organizers to provide flexible, effective surveillance coverage without the cost and timeline of permanent installations. <a href="/about" class="text-blue-600 hover:underline">Learn more about our team and technology</a>.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <CTASection
+      title="Dealing With a Rise in Incidents at Your Property?"
+      description="Get mobile surveillance deployed at your apartment complex, condo, or multi-family property within 24 hours — solar powered, no infrastructure required."
+      features={["✓ Same-Day Deployment", "✓ Solar Powered — No Grid Needed", "✓ Active Monitoring + Two-Way Audio"]}
+    />
+
+    <!-- Related Pages -->
+    <RelatedPages pages={relatedPages} />
+
+  </article>
+
+  <Footer />
+</Layout>
