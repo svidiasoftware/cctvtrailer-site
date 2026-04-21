@@ -1,0 +1,496 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import CTASection from '../../components/CTASection.astro';
+import Analytics from '../../components/Analytics.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import LazyImage from '../../components/LazyImage.astro';
+import QuickAnswer from '../../components/QuickAnswer.astro';
+import StatBox from '../../components/StatBox.astro';
+import SpeakableSchema from '../../components/SpeakableSchema.astro';
+
+// Speakable sections for voice search
+const speakableSections = [
+  { cssSelector: ".quick-answer-content" },
+  { cssSelector: ".blog-content h2, .blog-content p" },
+  { cssSelector: ".stat-box" }
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The 2026 Puget Sound Construction Boom Map: Where the Major Projects Are — and Where the Security Gap Is",
+  "datePublished": "2026-04-22",
+  "dateModified": "2026-04-22",
+  "author": {
+    "@type": "Organization",
+    "name": "CCTV Trailer",
+    "url": "https://www.cctvtrailer.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CCTV Trailer",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.cctvtrailer.com/images/cctv-trailer-logo.png"
+    }
+  },
+  "description": "A region-by-region map of the active 2026 Puget Sound construction pipeline — Sound Transit Link extensions, Amazon's Bellevue towers, Microsoft Redmond refresh, Kent Valley warehouse growth, Tacoma tideflats, JBLM, and Bremerton naval expansion — and the security gap at each kind of site.",
+  "image": [
+    "https://www.cctvtrailer.com/images/sea-construction-hero.webp"
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.cctvtrailer.com/blog/puget-sound-construction-boom-map-2026"
+  },
+  "wordCount": 3100,
+  "keywords": [
+    "Puget Sound construction 2026",
+    "Seattle construction projects 2026",
+    "Bellevue Amazon towers construction",
+    "Sound Transit Link extension construction",
+    "Kent Valley warehouse construction",
+    "Tacoma tideflats development",
+    "Microsoft Redmond campus construction",
+    "Everett Paine Field construction",
+    "JBLM military construction security",
+    "Bremerton naval base construction",
+    "construction site security Washington",
+    "jobsite theft prevention Puget Sound"
+  ]
+});
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Blog', url: '/blog' },
+  { name: '2026 Puget Sound Construction Boom Map', url: '/blog/puget-sound-construction-boom-map-2026' }
+];
+
+const relatedPages = [
+  {
+    title: "Construction Site Security",
+    href: "/construction-security",
+    description: "Mobile surveillance for active jobsites across Pierce, King, Snohomish, and Kitsap counties — staging yards, lay-down areas, and perimeter coverage."
+  },
+  {
+    title: "Seattle Construction Security",
+    href: "/seattle-construction-security",
+    description: "Security coverage for SLU, downtown, Rainier Valley, Ballard, and SODO builds — the densest concentration of active cranes in the state."
+  },
+  {
+    title: "Bellevue Surveillance Trailer",
+    href: "/bellevue-surveillance-trailer",
+    description: "Coverage for downtown Bellevue and Spring District high-rise builds, office re-fits, and Microsoft/Amazon campus construction on the Eastside."
+  },
+  {
+    title: "Everett Mobile Security Trailer",
+    href: "/everett-mobile-security-trailer",
+    description: "Snohomish County coverage for Paine Field, Boeing-adjacent, and Lynnwood light-rail transit-oriented development sites."
+  },
+  {
+    title: "Kent Security Trailer Rental",
+    href: "/kent-security-rental",
+    description: "Kent Valley warehouse and distribution-center construction coverage — the fourth-largest warehouse district in the U.S."
+  },
+  {
+    title: "Tacoma Construction Site Security",
+    href: "/tacoma-construction-site-security",
+    description: "Tideflats industrial, port-adjacent, and downtown Tacoma jobsite coverage — same-day deployment across Pierce County."
+  },
+  {
+    title: "Copper Theft at Construction Sites",
+    href: "/blog/copper-theft-seattle-tacoma-construction-sites",
+    description: "Why 2026 is the worst year on record for jobsite copper theft in Washington — and what actually deters organized crews."
+  },
+  {
+    title: "Cargo Theft on the I-5 Corridor",
+    href: "/blog/warehouse-cargo-theft-i5-corridor-seattle-tacoma",
+    description: "The same organized rings hitting jobsites are also hitting freight yards along the I-5 warehouse corridor."
+  }
+];
+---
+
+<Layout
+  title="The 2026 Puget Sound Construction Boom Map: Where the Projects Are & Where the Security Gap Is | CCTV Trailer"
+  description="A region-by-region map of the 2026 Puget Sound construction pipeline — from Amazon's Bellevue towers to Kent Valley warehouses to JBLM — and the security gap at each kind of jobsite."
+  schema={schema}>
+
+  <Header currentPath="/blog" showEmergencyBar={true} />
+  <Analytics />
+  <BreadcrumbSchema items={breadcrumbs} />
+  <SpeakableSchema sections={speakableSections} />
+
+  <article>
+    <!-- Hero Section -->
+    <section class="hero-section-blog relative py-20 px-6 text-white">
+      <div class="hero-overlay">
+        <LazyImage src="/images/sea-construction-hero.webp" alt="Seattle skyline with active construction cranes along South Lake Union and downtown showing the 2026 Puget Sound construction boom"
+          class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
+      <div class="container mx-auto max-w-4xl relative z-10">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          The 2026 Puget Sound Construction Boom Map: Where the Projects Are &mdash; and Where the Security Gap Is
+        </h1>
+        <div class="flex items-center text-lg mb-8">
+          <time datetime="2026-04-22">April 22, 2026</time>
+          <span class="mx-4">&bull;</span>
+          <span>12 min read</span>
+        </div>
+        <p class="text-xl leading-relaxed">
+          The Puget Sound has more cranes in the sky than almost any metro in the country. Amazon is finishing out a multi-tower Bellevue campus, Sound Transit is still extending Link Light Rail in three directions, Microsoft is deep into a multi-year Redmond campus refresh, the Kent Valley is still absorbing new warehouse space, and Tacoma's tideflats are quietly becoming one of the state's most active industrial construction zones. Here's a region-by-region map of what's actually being built in 2026 &mdash; and where the security gap shows up for each kind of jobsite.
+        </p>
+      </div>
+    </section>
+
+    <!-- Quick Answer Section -->
+    <QuickAnswer
+      question="What are the biggest active construction projects in the Puget Sound in 2026?"
+      answer="The largest active construction zones in the 2026 Puget Sound pipeline include: Amazon's ongoing Bellevue campus buildout (downtown Bellevue and the Spring District), Microsoft's multi-year Redmond campus modernization, Sound Transit's Federal Way Link extension and Tacoma Dome Link extension, continued warehouse and distribution center construction across the Kent-Auburn-Federal Way valley, downtown Tacoma and tideflats industrial projects, Paine Field aerospace-adjacent work in Everett, Lynnwood transit-oriented development around the 2024-opened Lynnwood Link station, JBLM military construction in Pierce County, and Naval Base Kitsap expansion in Bremerton. Each of these site types has a different theft profile — copper and wire theft at high-voltage jobsites, equipment theft at staging yards, cargo theft at distribution-center builds, and metal theft at transit infrastructure projects."
+    />
+
+    <!-- Main Content -->
+    <section class="py-16">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <div class="blog-content prose prose-lg max-w-none">
+
+          <!-- Stats Section -->
+          <div class="mb-12">
+            <StatBox
+              layout="grid"
+              stats={[
+                {
+                  value: "$142B+",
+                  label: "Sound Transit's long-range capital program across the Puget Sound",
+                  icon: "🚆",
+                  highlight: true,
+                  source: {
+                    text: "Sound Transit Financial Plan",
+                    url: "https://www.soundtransit.org/get-to-know-us/documents-reports/financial-plan"
+                  }
+                },
+                {
+                  value: "77%",
+                  label: "Jump in metal theft in 2025 — tracks with light-rail and high-voltage jobsites",
+                  icon: "⚡",
+                  highlight: true,
+                  source: {
+                    text: "CargoNet 2025 Annual Report",
+                    url: "https://www.cargonet.com/news-and-events/cargonet-in-the-media/2025-theft-trends/"
+                  }
+                },
+                {
+                  value: "#4",
+                  label: "Kent Valley's national ranking as a warehouse and distribution district",
+                  icon: "📦",
+                  highlight: false,
+                  source: {
+                    text: "Kent Economic Development",
+                    url: "https://www.goldenservicesllc.com/blog/is-kent-wa-safe-a-neighborhood-by-neighborhood-breakdown/"
+                  }
+                },
+                {
+                  value: "$1B+",
+                  label: "Typical annual Pierce County non-residential construction spend",
+                  icon: "🏗️",
+                  highlight: false,
+                  source: {
+                    text: "AGC of Washington",
+                    url: "https://www.agcwa.com/"
+                  }
+                }
+              ]}
+            />
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6">Why a Construction &ldquo;Boom Map&rdquo; Matters for Security</h2>
+
+            <p>
+              Every wave of construction brings with it a predictable wave of theft. It's not a moral judgment &mdash; it's a logistics reality. A jobsite is a temporary concentration of extremely valuable, extremely portable assets (copper, tools, generators, fuel, lumber, finish materials) in a space that by definition does not have its permanent security infrastructure yet. Once you know where the cranes are going up, you can predict within a few weeks where the crews will start showing up after dark.
+            </p>
+            <br>
+
+            <p>
+              That's what this post is. A region-by-region look at what's actively being built across the Puget Sound in 2026, what the typical theft profile looks like for that kind of project, and the existing city-page deep dives for operators who want to go narrower. We'll finish with a framework for what a modern jobsite security setup actually looks like &mdash; the layered approach that's now table stakes for general contractors bidding projects in this region.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">Seattle &amp; King County Core</h2>
+
+            <p>
+              Seattle is still one of the most crane-dense cities in North America. <strong>South Lake Union</strong> continues to fill in around the Amazon HQ campus, with ongoing residential and mixed-use towers along Denny Way and Westlake. <strong>Downtown</strong> and <strong>First Hill</strong> have several active hospital-adjacent and office retrofits. <strong>Rainier Valley</strong> is seeing TOD (transit-oriented development) infill around the Othello, Columbia City, and Mount Baker stations. <strong>Ballard</strong> and <strong>Georgetown</strong> have active light-industrial and mixed-use builds. And out along <strong>SR-99</strong> and <strong>SODO</strong>, logistics and arena-adjacent construction continues.
+            </p>
+            <br>
+
+            <p>
+              The theft profile here is dominated by two things: <strong>copper wire theft</strong> and <strong>tool &amp; small equipment theft</strong>. High-voltage feeds into new buildings are a repeat target &mdash; Sound Transit itself has been hit by copper theft so many times that it now budgets for it. Our own deep dive on <a href="/blog/copper-theft-seattle-tacoma-construction-sites" class="text-blue-600 hover:underline">copper theft at Seattle and Tacoma construction sites</a> found incident counts roughly doubling year-over-year. For mid-size active jobsites in the Seattle core, <a href="/seattle-construction-security" class="text-blue-600 hover:underline">Seattle construction security</a> coverage through a mobile trailer gives you an elevated, cellular-connected eye on the yard without waiting for permanent system rough-in.
+            </p>
+            <br>
+
+            <p>
+              The specific risk windows: anything inside <strong>SODO</strong> or just south of downtown toward Georgetown has higher after-hours organized-theft pressure because the same crews that hit I-5 freight yards also run through these neighborhoods. <strong>Rainier Valley</strong> TOD sites see a mix of opportunistic and organized activity. <strong>SLU</strong> and downtown high-rise sites are mostly at risk during materials-on-site phases rather than superstructure phases.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">The Eastside: Bellevue, Redmond, Kirkland, Issaquah</h2>
+
+            <p>
+              The Eastside is where the single biggest concentration of <em>dollar value</em> in the active 2026 pipeline sits. <strong>Amazon's downtown Bellevue campus</strong> has been the defining Eastside story for three years and is still in active construction and tenant-improvement phases across multiple towers. The <strong>Spring District</strong> continues to build out office, residential, and transit-oriented space north of I-90, anchored by the newly opened East Link Light Rail stations. <strong>Microsoft's Redmond campus modernization</strong> is a multi-year, multi-building program that's been steadily replacing and expanding its main-campus footprint. And there's a steady drumbeat of <strong>Kirkland</strong> and <strong>Issaquah</strong> office and residential mid-rise work along the I-405 corridor.
+            </p>
+            <br>
+
+            <p>
+              The theft profile on the Eastside is different from Seattle: less street-level opportunistic theft, more organized-crew targeting of <strong>high-value finish materials</strong> (appliances, HVAC copper, fixtures) and <strong>tool cribs</strong>. Because many of these sites are deep inside corporate campuses, the perimeters are actually pretty well defined &mdash; but the bad news is that once someone does breach that perimeter, the inside of a Microsoft or Amazon construction zone is a shopping mall of valuable materials with very few eyes on it after hours.
+            </p>
+            <br>
+
+            <p>
+              For high-rise Bellevue sites and Spring District work, the usable model is a <a href="/bellevue-surveillance-trailer" class="text-blue-600 hover:underline">Bellevue surveillance trailer</a> parked at the main materials staging area rather than inside the enclosed building. Elevated PTZ cameras see over the perimeter fence, cellular uplinks can't be cut (unlike the buried fiber runs on site), and the trailer itself becomes a visible deterrent. Redmond campus work has similar dynamics &mdash; the campus is patrolled, but the active construction footprint inside it is not.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">Snohomish: Everett, Lynnwood, Paine Field</h2>
+
+            <p>
+              Snohomish County's construction story in 2026 is about <strong>aerospace, transit, and TOD</strong>. <strong>Paine Field</strong> has ongoing aerospace-adjacent work around the Boeing footprint and the growing commercial aviation terminal. <strong>Lynnwood</strong> has become a transit-oriented development magnet since the <strong>Lynnwood Link Light Rail extension</strong> opened, with mid-rise residential, hotel, and retail builds clustered around the transit center. <strong>Everett</strong> itself continues to see downtown residential and mixed-use infill, plus industrial-corridor work along the SR-99 and I-5 interchange areas.
+            </p>
+            <br>
+
+            <p>
+              The theft profile in Snohomish leans heavily toward <strong>equipment theft from staging yards</strong> &mdash; skid steers, generators, light towers, compressors &mdash; and <strong>metal theft from electrical rough-in</strong>. Aerospace-adjacent sites occasionally see targeted specialty-tool theft that looks more like inside-knowledge than opportunistic crime. Paine Field's proximity to both the airport and the I-5 freight corridor means there's a natural escape route for anyone hitting a yard after midnight.
+            </p>
+            <br>
+
+            <p>
+              For builds in Lynnwood, Everett, or the Paine Field corridor, an <a href="/everett-mobile-security-trailer" class="text-blue-600 hover:underline">Everett mobile security trailer</a> covers a wide footprint with solar-powered, cellular-connected cameras &mdash; no need to wait for utility power on site, and no cables exposed to cut. The same setup works for Lynnwood TOD sites where fencing is in but the buildings are still shells.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">South King Valley: Kent, Auburn, Federal Way</h2>
+
+            <p>
+              The Kent-Auburn-Federal Way stretch is the <strong>heavy-logistics construction zone</strong> of the Puget Sound. The <a href="https://www.goldenservicesllc.com/blog/is-kent-wa-safe-a-neighborhood-by-neighborhood-breakdown/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Kent Valley is the fourth-largest warehouse and distribution district in the United States</a>, and 2026 continues a trend of new distribution-center and light-industrial construction pushing further south and east along the valley floor. Amazon, FedEx, UPS, REI, Costco, Starbucks, and dozens of 3PL operators either already have facilities here or are actively expanding them. <strong>Federal Way</strong> is getting a major boost from the <strong>Federal Way Link extension</strong>, which is actively adding TOD potential around new station sites along the I-5 corridor. <strong>Auburn</strong>'s manufacturing-adjacent industrial corridor also continues to see active construction.
+            </p>
+            <br>
+
+            <p>
+              This is the part of the region where the construction-theft and the <a href="/blog/warehouse-cargo-theft-i5-corridor-seattle-tacoma" class="text-blue-600 hover:underline">cargo-theft story</a> actually converge. The same organized crews who hit finished freight yards also hit warehouses <em>while they're still being built</em>. The theft targets differ &mdash; during the construction phase it's structural steel offcuts, rebar, copper ground wire, generators, and temp-power gear &mdash; but the crews and the routes are the same. South King also has some of the highest property crime rates in the state (Tukwila tops the list, followed closely by Federal Way and Kent).
+            </p>
+            <br>
+
+            <p>
+              A <a href="/kent-security-rental" class="text-blue-600 hover:underline">Kent security trailer rental</a> placed at the main yard gate covers a very wide footprint because most of these sites are flat, horizontal distribution boxes with long sight lines &mdash; ideal terrain for elevated PTZ coverage. The same is true for <a href="/auburn-manufacturing-security" class="text-blue-600 hover:underline">Auburn manufacturing security</a> and <a href="/federal-way-surveillance" class="text-blue-600 hover:underline">Federal Way surveillance</a> deployments.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">Pierce County: Tacoma Tideflats, Fife, Puyallup, Lakewood-JBLM</h2>
+
+            <p>
+              Pierce County's 2026 construction map is broader and more industrial than most people assume. The <strong>Tacoma tideflats</strong> are one of the most active industrial construction zones in the state, with Port of Tacoma-related work, marine industrial facilities, and warehouse/distribution buildouts happening in parallel. Downtown Tacoma has continued residential and mixed-use infill. <strong>Fife</strong> sits at the logistics junction of the port and I-5 and continues to absorb new warehouse construction. <strong>Puyallup</strong> has ongoing retail, healthcare, and fairgrounds-adjacent work. And <strong>Lakewood and the JBLM footprint</strong> have a constant drumbeat of both commercial and military construction &mdash; base housing refreshes, commissary and medical expansions, and adjacent contractor-sector buildouts.
+            </p>
+            <br>
+
+            <p>
+              The theft profile in Pierce is the most varied of any sub-region. Tideflats and port-adjacent sites see organized metal, copper, and equipment theft. Fife and Puyallup sites see high-frequency opportunistic theft &mdash; Fife's property crime rate is the highest in the state. Military-adjacent Lakewood work has its own compliance overlay because any contractor touching base-adjacent or on-base work has to meet specific physical-security expectations. Across all of Pierce, the <strong>copper wire theft</strong> pattern we see at Seattle sites is repeating at a similar or higher frequency.
+            </p>
+            <br>
+
+            <p>
+              <a href="/tacoma-construction-site-security" class="text-blue-600 hover:underline">Tacoma construction site security</a> trailers are in near-continuous rotation across the tideflats and downtown. <a href="/fife-security-rental" class="text-blue-600 hover:underline">Fife</a>, <a href="/puyallup-fairgrounds-security" class="text-blue-600 hover:underline">Puyallup</a>, and <a href="/lakewood-jblm-security" class="text-blue-600 hover:underline">Lakewood/JBLM</a> all have their own deployment patterns. For most of Pierce County we can do <a href="/same-day-security-rental" class="text-blue-600 hover:underline">same-day surveillance deployment</a>, which matters because theft incidents tend to cluster in the first two weeks after a site goes active and before permanent lighting is up.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">Kitsap: Bremerton &amp; Naval Base Kitsap</h2>
+
+            <p>
+              Kitsap County's construction pipeline is smaller in dollar terms but unusually consistent because of the <strong>Naval Base Kitsap</strong> footprint. Naval Base Kitsap-Bremerton and Naval Base Kitsap-Bangor together represent one of the largest concentrations of federal construction in the Pacific Northwest. On the civilian side, <strong>downtown Bremerton</strong>, <strong>Silverdale</strong>, and <strong>Port Orchard</strong> all have active residential, healthcare, and commercial builds, with a steady stream of contractor-sector work that supports the naval base economy.
+            </p>
+            <br>
+
+            <p>
+              The theft profile in Kitsap is more equipment- and materials-focused than in the Seattle core. Sites tend to be smaller, more rural, and less densely monitored, which shifts the risk toward overnight entry and bulk-materials theft rather than the organized targeted-material theft we see closer to I-5. Federal and naval-adjacent work has its own compliance overlay &mdash; any contractor doing perimeter work on or near the base has to meet specific documented-surveillance expectations.
+            </p>
+            <br>
+
+            <p>
+              A <a href="/bremerton-naval-security" class="text-blue-600 hover:underline">Bremerton naval security</a> trailer deployment covers both contractor yards and perimeter lines. The solar-powered, cellular-connected architecture is particularly useful in Kitsap because sites tend to be further from reliable grid and fiber infrastructure.
+            </p>
+          </section>
+
+          <!-- Second Stats Section -->
+          <div class="mb-12 mt-12">
+            <StatBox
+              layout="grid"
+              stats={[
+                {
+                  value: "60%",
+                  label: "National cargo theft loss increase in 2025 — same crews hit jobsites",
+                  icon: "🚛",
+                  highlight: true,
+                  source: {
+                    text: "CargoNet / Verisk 2025 Annual Report",
+                    url: "https://www.verisk.com/company/newsroom/cargo-theft-losses-surge-to-estimated-$725-million-in-2025-verisk-cargonet-analysis-reveals/"
+                  }
+                },
+                {
+                  value: "2x",
+                  label: "Year-over-year copper theft incidents at PNW construction sites",
+                  icon: "🧰",
+                  highlight: true,
+                  source: {
+                    text: "CCTV Trailer copper theft deep dive",
+                    url: "/blog/copper-theft-seattle-tacoma-construction-sites"
+                  }
+                },
+                {
+                  value: "24 hr",
+                  label: "Typical same-day deployment window for a mobile surveillance trailer",
+                  icon: "⚡",
+                  highlight: false
+                },
+                {
+                  value: "$10K–$100K",
+                  label: "Typical single-incident loss range at an unprotected Puget Sound jobsite",
+                  icon: "💸",
+                  highlight: false
+                }
+              ]}
+            />
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">The Security Gap at Each Kind of Jobsite</h2>
+
+            <p>
+              A useful way to think about it: the theft profile of a Puget Sound construction site changes dramatically depending on what type of build it is. Here's the pattern we see across the region.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">High-rise &amp; mid-rise buildings (Seattle, Bellevue)</h3>
+            <p>
+              Risk peaks during the <strong>rough-in and finish</strong> phases, not during superstructure. Copper, HVAC components, appliances, and finish materials drive the target list. Permanent building systems aren't active yet, so a mobile surveillance trailer at the materials staging area handles the gap until the building itself takes over coverage.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Distribution centers &amp; warehouses (Kent Valley, Tacoma tideflats)</h3>
+            <p>
+              Risk is consistent throughout the build because the horizontal footprint is large, sight lines across the yard are long, and temp power / temp lighting tend to lag the envelope. Elevated PTZ coverage from a trailer covers most of the yard from one deployment point. See our <a href="/blog/warehouse-cargo-theft-i5-corridor-seattle-tacoma" class="text-blue-600 hover:underline">cargo theft deep dive</a> for how the active-operation risk rolls into the construction-phase risk.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Transit &amp; infrastructure (Sound Transit extensions)</h3>
+            <p>
+              Risk is <strong>metal- and copper-focused</strong> and distributed along a long linear footprint. Transit projects are the single most frequently targeted construction type for wire theft in the region.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Aerospace &amp; manufacturing (Paine Field, Auburn)</h3>
+            <p>
+              Mix of equipment theft and occasional specialty-tool theft that looks like inside information. Perimeter coverage matters most during staging phases.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Military &amp; federal (JBLM, Naval Base Kitsap)</h3>
+            <p>
+              Compliance overlay matters as much as theft deterrence. Documented, timestamped surveillance footage is part of the project's deliverable, not just a loss-prevention nice-to-have.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">TOD &amp; mixed-use (Lynnwood, Federal Way, Rainier Valley)</h3>
+            <p>
+              Sites are often adjacent to active transit nodes with steady foot traffic, which changes the calculus. Visible, active surveillance &mdash; with signs indicating it &mdash; is a meaningful deterrent. Our take on <a href="/solutions/equipment-theft-prevention" class="text-blue-600 hover:underline">equipment theft prevention</a> and <a href="/solutions/copper-wire-theft-prevention" class="text-blue-600 hover:underline">copper wire theft prevention</a> goes deeper on what actually works.
+            </p>
+          </section>
+
+          <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
+            <p class="font-semibold text-blue-900 mb-2">The Pricing Question</p>
+            <p class="text-blue-800">
+              If you're scoping security into a project bid, the cost gap between a mobile surveillance trailer and a full guard-service contract is usually larger than estimators expect. See the <a href="/security-trailer-vs-guards" class="text-blue-700 hover:underline font-semibold">trailer vs. guards cost comparison</a> and run your own numbers through the <a href="/roi-calculator" class="text-blue-700 hover:underline font-semibold">ROI calculator</a>. Most 6-to-18-month builds in this region come out well ahead with a mobile trailer covering the perimeter and staging area, and guards reserved for active construction hours only.
+            </p>
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">A Framework for Construction Site Security in 2026</h2>
+
+            <p>
+              No matter which region your build is in, the framework that's working consistently across the Puget Sound in 2026 looks like this:
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">Perimeter &amp; access</h3>
+            <ul class="list-disc pl-6 space-y-2 mb-6">
+              <li>Solid fence line with weekly integrity checks &mdash; organized crews often pre-stage breaches</li>
+              <li>Gate access logging at every entry and exit point</li>
+              <li>Temporary lighting across the yard, not just at the building face</li>
+              <li>No blind spots behind conex boxes, fuel tanks, or lay-down piles</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold mb-4">Active surveillance</h3>
+            <ul class="list-disc pl-6 space-y-2 mb-6">
+              <li>Elevated PTZ cameras covering the entire staging yard, not just the gate</li>
+              <li>Solar-powered and cellular-connected so nothing breaks when temp power gets bumped</li>
+              <li>AI motion detection with real-time alerts &mdash; someone should know within seconds when a person enters the yard after hours</li>
+              <li>Two-way audio for immediate verbal intervention when an alert fires</li>
+              <li>Documented retention of footage for the length of the project, for both theft response and compliance</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold mb-4">Operational protocols</h3>
+            <ul class="list-disc pl-6 space-y-2 mb-6">
+              <li>Secure tool and copper storage overnight &mdash; no bare wire on spools left in the yard</li>
+              <li>Daily incident logging, even for minor issues, so patterns get caught early</li>
+              <li>Clear escalation path with the subcontractor whose materials are involved</li>
+              <li>Report every incident to the local jurisdiction. Jurisdictional fragmentation means the pattern tying your site to three others in the same corridor may only become visible if everyone reports.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">The Bottom Line</h2>
+
+            <p>
+              The 2026 Puget Sound construction pipeline is one of the most active in the country, and it's spread across every sub-region from the Tacoma tideflats to Naval Base Kitsap to the Spring District to Paine Field. The theft pressure tracks that pipeline almost exactly, and the general contractors who are coming out ahead are the ones treating jobsite security as part of the schedule &mdash; deployed in week one of site mobilization, not after the first theft.
+            </p>
+            <br>
+
+            <p>
+              We've been deploying mobile surveillance at Puget Sound jobsites for over 15 years &mdash; from downtown Seattle towers to Kent Valley distribution-center pads to JBLM-adjacent commercial work. Our trailers are solar powered (no dependence on site temp power), cellular connected (no cables to cut), and equipped with AI-powered detection that sends alerts the moment someone enters the yard after hours. If you're scoping security for a 2026 project and want to pressure-test your plan, we'll walk the site with you for free and show you what we'd recommend. <a href="/contact" class="text-blue-600 hover:underline font-semibold">Get in touch</a> or call us at <a href="tel:2536832288" class="text-blue-600 hover:underline font-semibold">(253) 683-2288</a>.
+            </p>
+          </section>
+
+          <!-- About Section -->
+          <div class="bg-gray-50 border border-gray-200 rounded-lg p-8 mt-12">
+            <h3 class="text-xl font-bold mb-4">About CCTV Trailer</h3>
+            <p class="text-gray-700 mb-4">
+              CCTV Trailer provides mobile surveillance solutions across the Puget Sound region, headquartered in Tacoma with same-day deployment capability throughout Pierce, King, Snohomish, and Kitsap counties. Our solar-powered trailers feature PTZ cameras with AI-powered analytics, 4G/5G connectivity for live remote monitoring, and elevated camera positions for maximum coverage area.
+            </p>
+            <p class="text-gray-700">
+              We work with general contractors, distribution-center operators, federal contractors, and event organizers to provide flexible, effective surveillance coverage without the cost and timeline of permanent camera installations. <a href="/about" class="text-blue-600 hover:underline">Learn more about our team and technology</a>.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <CTASection
+      title="Scoping Security for a 2026 Puget Sound Build?"
+      description="Get mobile surveillance deployed to your jobsite within 24 hours — perimeter, staging yard, and equipment protection across Pierce, King, Snohomish, and Kitsap counties."
+      features={["✓ Same-Day Deployment", "✓ Solar Powered — No Grid Needed", "✓ Cellular Connected — No Cables to Cut"]}
+    />
+
+    <!-- Related Pages -->
+    <RelatedPages pages={relatedPages} />
+
+  </article>
+
+  <Footer />
+</Layout>
