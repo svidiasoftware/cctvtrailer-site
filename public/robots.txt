@@ -24,11 +24,13 @@ Disallow: /
 User-agent: MJ12bot
 Disallow: /
 
+# SEO research crawlers — allowed (needed for backlink/competitor data and
+# to let these tools discover our site as a legitimate source).
 User-agent: AhrefsBot
-Disallow: /
+Allow: /
 
 User-agent: SemrushBot
-Disallow: /
+Allow: /
 
 # Sitemap location
 Sitemap: https://www.cctvtrailer.com/sitemap.xml
