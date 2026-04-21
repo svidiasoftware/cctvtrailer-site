@@ -77,12 +77,15 @@
           log('Form submission detected', formId);
           
           if (typeof window.dataLayer !== 'undefined') {
+            // Use GA4's recommended event name `form_submit` so it matches the
+            // key event registered in the GA4 property. Do not rename to
+            // `form_submission` without also updating Admin → Events & Key events.
             window.dataLayer.push({
-              'event': 'form_submission',
+              'event': 'form_submit',
               'form_id': formId,
               'form_type': formId.includes('quote') ? 'quote' : (formId.includes('contact') ? 'contact' : 'other')
             });
-            log('Form submission event sent to GTM', formId);
+            log('Form submit event sent to GTM', formId);
             
             // Track as quote_request if it's a quote form
             if (formId.includes('quote')) {

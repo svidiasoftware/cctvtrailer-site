@@ -359,7 +359,7 @@ Current `public/robots.txt` blocks Ahrefs and Semrush bots. This hurts your own 
 
 Configure these as GA4 key events (`Admin → Events → Mark as key event`):
 
-- `form_submission` (already pushed via dataLayer)
+- `form_submit` (already pushed via dataLayer — matches GA4's recommended event name)
 - `phone_click` (already pushed)
 - `quote_request` (already pushed)
 - `cta_click` (already pushed)
