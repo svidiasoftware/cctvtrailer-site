@@ -1,0 +1,61 @@
+---
+// Small deflection block for "for sale" intent queries.
+// Places on pages that attract "security camera trailer for sale" / "mobile surveillance trailer for sale"
+// and pivots the visitor toward our rental value prop rather than pogo-sticking off-site.
+export interface Props {
+  variant?: 'inline' | 'banner';
+}
+const { variant = 'banner' } = Astro.props;
+---
+
+{variant === 'banner' && (
+  <section class="py-8 bg-amber-50 border-y-2 border-amber-300" aria-labelledby="rent-vs-buy-heading">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-start gap-6 max-w-5xl mx-auto">
+        <div class="flex-shrink-0 text-4xl" aria-hidden="true">💡</div>
+        <div class="flex-1">
+          <h2 id="rent-vs-buy-heading" class="text-xl md:text-2xl font-bold mb-2 text-gray-900">
+            Looking to buy a security trailer? Here's why most Puget Sound contractors rent instead.
+          </h2>
+          <p class="text-gray-700 mb-3">
+            CCTV Trailer is a <strong>rental-only</strong> service &mdash; we don't sell equipment. But most
+            of our customers were originally shopping to buy, and chose rental after seeing the math:
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 space-y-1 mb-3">
+            <li><strong>Purchase:</strong> $20,000&ndash;$65,000 upfront + ongoing cell data, maintenance, PTZ calibration, NVR firmware, physical security, and 24/7 monitoring labor.</li>
+            <li><strong>Rental from $499/day or $3,499/week:</strong> unit, solar panels, cameras, cellular connectivity, monitoring platform, deployment, and retrieval &mdash; all included.</li>
+            <li><strong>Break-even</strong> usually lands past <strong>12&ndash;18 months of continuous use</strong>. For jobsites, events, and seasonal deployments, rental almost always wins on total cost.</li>
+          </ul>
+          <p class="text-gray-700 mb-4">
+            If you still want to purchase, industry vendors like WCCTV and Edge CCTV sell comparable units. For Puget Sound projects,
+            we'd rather get a trailer deployed at your site today than have you wait 4&ndash;8 weeks for a purchase to ship.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="/pricing" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg transition-colors">
+              See Rental Pricing
+            </a>
+            <a href="tel:2536832288" class="inline-block bg-white hover:bg-gray-50 text-blue-600 font-semibold px-6 py-2 rounded-lg border-2 border-blue-600 transition-colors">
+              Call (253) 683-2288
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+)}
+
+{variant === 'inline' && (
+  <aside class="my-8 p-5 bg-amber-50 border-l-4 border-amber-400 rounded-r-lg" aria-labelledby="rent-vs-buy-inline-heading">
+    <h3 id="rent-vs-buy-inline-heading" class="font-bold text-gray-900 mb-2">Shopping to buy a security trailer?</h3>
+    <p class="text-gray-700 mb-2">
+      CCTV Trailer is <strong>rental-only</strong>. Purchase units run $20,000&ndash;$65,000 plus ongoing data,
+      maintenance, and 24/7 monitoring labor. Our rental &mdash; starting at $499/day or $3,499/week &mdash; includes
+      everything and typically costs less than purchase for any project under ~15 months of continuous use.
+    </p>
+    <p class="text-gray-700">
+      <a href="/pricing" class="text-blue-600 font-semibold hover:underline">See rental pricing</a>
+      <span class="mx-2 text-gray-400">·</span>
+      <a href="tel:2536832288" class="text-blue-600 font-semibold hover:underline">Call (253) 683-2288</a>
+    </p>
+  </aside>
+)}

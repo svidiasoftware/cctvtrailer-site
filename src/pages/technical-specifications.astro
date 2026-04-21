@@ -7,6 +7,7 @@ import Analytics from '../components/Analytics.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
 import VideoSchema from '../components/VideoSchema.astro';
 import DefinitionSchema from '../components/DefinitionSchema.astro';
+import RentVsBuy from '../components/RentVsBuy.astro';
 
 const techSpecsSchema = {
   "@context": "https://schema.org",
@@ -160,8 +161,8 @@ const definitions = [
 ---
 
 <Layout 
-  title="Trailer Video Systems - Mobile Security Solutions | CCTV Trailer" 
-  description="Professional mobile security trailers designed for Pacific Northwest climate. Advanced video surveillance with solar power, PTZ cameras, and S-VIDIA technology."
+  title="Mobile Surveillance Trailer Specs · 4K PTZ · Solar Power"
+  description="Mobile surveillance trailer specs: 4K PTZ cameras, 360° coverage, solar power, same-day setup. Built for Pacific Northwest. Call (253) 683-2288."
   schema={JSON.stringify(techSpecsSchema)}
 >
 
@@ -522,6 +523,8 @@ const definitions = [
         </div>
       </div>
     </section>
+
+    <RentVsBuy variant="banner" />
   </main>
 
   <!-- Footer -->

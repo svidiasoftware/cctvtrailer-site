@@ -10,6 +10,7 @@ import QuickAnswer from '../components/QuickAnswer.astro';
 import ComparisonTable from '../components/ComparisonTable.astro';
 import StatBox from '../components/StatBox.astro';
 import SpeakableSchema from '../components/SpeakableSchema.astro';
+import RentVsBuy from '../components/RentVsBuy.astro';
 
 
 // Speakable sections for voice search
@@ -602,8 +603,10 @@ const breadcrumbItems = [
       </div>
     </section>
 
+    <RentVsBuy variant="banner" />
+
     <!-- CTA Section -->
-    <CTASection 
+    <CTASection
       title="Ready to Secure Your Property?"
       description="Get a custom quote tailored to your specific security needs"
       features={["✓ Same Day Delivery", "✓ No Setup Fees", "✓ 24/7 Support", "✓ No Contracts Required"]}

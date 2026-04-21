@@ -4,6 +4,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import RelatedPages from '../../components/RelatedPages.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import RentVsBuy from '../../components/RentVsBuy.astro';
 
 const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -108,8 +109,8 @@ const relatedPages = [
 ---
 
 <Layout
-  title="How Much Does It Cost to Rent a Security Trailer? | 2025 Pricing Guide"
-  description="Detailed cost breakdown for security trailer rentals. Daily rates from $499-999, weekly and monthly discounts available. Free delivery in Tacoma area."
+  title="Security Trailer Rental Cost: 2026 Pricing Guide ($499–$8K)"
+  description="Security trailer rental cost 2026: $499-999/day, $3,499-4,000/week, $7,999+/month. No deposit, same-day setup in Tacoma-Seattle. (253) 683-2288"
   schema={schemas}>
   
   <Header currentPath="/blog/how-much-cost-rent-security-trailer" />
@@ -358,6 +359,8 @@ const relatedPages = [
               </a>
             </div>
           </div>
+
+          <RentVsBuy variant="inline" />
 
           <div class="mt-8 p-6 bg-gray-50 rounded-lg">
             <p class="text-sm text-gray-600">
