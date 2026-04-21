@@ -10,6 +10,7 @@ import LazyImage from '../../components/LazyImage.astro';
 import QuickAnswer from '../../components/QuickAnswer.astro';
 import StatBox from '../../components/StatBox.astro';
 import SpeakableSchema from '../../components/SpeakableSchema.astro';
+import AuthorBio from '../../components/AuthorBio.astro';
 
 // Speakable sections for voice search
 const speakableSections = [
@@ -25,9 +26,16 @@ const schema = JSON.stringify({
   "datePublished": "2025-09-24",
   "dateModified": "2026-02-12",
   "author": {
-    "@type": "Organization",
-    "name": "CCTV Trailer",
-    "url": "https://www.cctvtrailer.com"
+    "@type": "Person",
+    "name": "Val Zakharov",
+    "description": "15 years of experience in the Pacific Northwest mobile surveillance and security industry, covering construction jobsite, warehouse, and event-security deployments across Pierce, King, Snohomish, and Kitsap counties.",
+    "knowsAbout": ["Mobile CCTV Surveillance", "Construction Site Security", "Warehouse Security", "Event Security", "Puget Sound Security Operations"],
+    "url": "https://www.cctvtrailer.com/about",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "CCTV Trailer",
+      "url": "https://www.cctvtrailer.com"
+    }
   },
   "publisher": {
     "@type": "Organization",
@@ -496,6 +504,8 @@ const relatedPages = [
 
         </div>
       </div>
+    <AuthorBio />
+
     </article>
 
     <RelatedPages
