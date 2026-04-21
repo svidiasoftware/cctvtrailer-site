@@ -1,4 +1,6 @@
 ---
+import { locationGroups } from '../data/locations.js';
+
 export interface Props {
   showEmergencyBar?: boolean;
   currentPath?: string;
@@ -13,6 +15,11 @@ const isActive = (href: string) => {
   }
   return currentPath.startsWith(href);
 };
+
+// Any of the city pages active? Highlight the dropdown when so.
+const serviceAreasActive = locationGroups.some((g) =>
+  g.cities.some((c) => currentPath === c.href || currentPath === `${c.href}/`)
+) || currentPath === '/locations';
 ---
 
 <!-- TEMPORARILY DISABLED: Emergency bar hidden while rental units are near capacity. To re-enable, uncomment the block below and restore the sticky header class. -->
@@ -29,18 +36,55 @@ const isActive = (href: string) => {
       <a href="/" class="flex items-center">
         <img src="/images/cctv-trailer-logo.svg" alt="CCTV Trailer - Mobile Surveillance Solutions Logo" class="h-12" width="144" height="48" />
       </a>
-      
+
       <!-- Mobile menu button -->
       <button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center items-center" aria-label="Toggle menu">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
       </button>
-      
+
       <!-- Desktop menu -->
-      <div class="hidden md:flex gap-6">
+      <div class="hidden md:flex gap-6 items-center">
         <a href="/" class={`hover:text-gray-300 ${isActive('/') && currentPath === '/' ? 'text-blue-400' : ''}`}>Home</a>
         <a href="/services" class={`hover:text-gray-300 ${isActive('/services') ? 'text-blue-400' : ''}`}>Our Services</a>
+
+        <!-- Service Areas dropdown (hover on desktop) -->
+        <div class="service-areas-dropdown relative">
+          <a
+            href="/locations"
+            class={`service-areas-trigger inline-flex items-center gap-1 hover:text-gray-300 ${serviceAreasActive ? 'text-blue-400' : ''}`}
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Service Areas
+            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.06l3.71-3.83a.75.75 0 1 1 1.08 1.04l-4.24 4.38a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06z" clip-rule="evenodd"/>
+            </svg>
+          </a>
+          <div class="service-areas-panel">
+            <div class="service-areas-inner">
+              {locationGroups.map((group) => (
+                <div class="service-areas-group">
+                  <p class="service-areas-group-label">{group.label}</p>
+                  <ul class="service-areas-list">
+                    {group.cities.map((c) => (
+                      <li>
+                        <a href={c.href} class={`service-areas-link ${currentPath === c.href ? 'text-blue-400' : ''}`}>
+                          {c.city}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+              <div class="service-areas-footer">
+                <a href="/locations" class="text-sm text-blue-400 hover:text-blue-300">All Puget Sound service areas →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <a href="/pricing" class={`hover:text-gray-300 ${isActive('/pricing') ? 'text-blue-400' : ''}`}>Pricing & Plans</a>
         <a href="/about" class={`hover:text-gray-300 ${isActive('/about') ? 'text-blue-400' : ''}`}>About Us</a>
         <a href="/faq" class={`hover:text-gray-300 ${isActive('/faq') ? 'text-blue-400' : ''}`}>FAQ & Support</a>
@@ -48,11 +92,37 @@ const isActive = (href: string) => {
         <a href="/contact" class={`hover:text-gray-300 ${isActive('/contact') ? 'text-blue-400' : ''}`}>Contact Us</a>
       </div>
     </div>
-    
+
     <!-- Mobile menu -->
     <div id="mobile-menu" class="mobile-menu">
       <a href="/" class={`mobile-menu-item ${isActive('/') && currentPath === '/' ? 'text-blue-400' : ''}`}>Home</a>
       <a href="/services" class={`mobile-menu-item ${isActive('/services') ? 'text-blue-400' : ''}`}>Our Services</a>
+
+      <!-- Mobile Service Areas accordion -->
+      <div class="mobile-service-areas">
+        <button
+          type="button"
+          id="mobile-service-areas-toggle"
+          class={`mobile-menu-item mobile-accordion-trigger ${serviceAreasActive ? 'text-blue-400' : ''}`}
+          aria-expanded="false"
+          aria-controls="mobile-service-areas-panel"
+        >
+          <span>Service Areas</span>
+          <span class="mobile-accordion-caret" aria-hidden="true">▸</span>
+        </button>
+        <div id="mobile-service-areas-panel" class="mobile-accordion-panel">
+          {locationGroups.map((group) => (
+            <div class="mobile-accordion-group">
+              <p class="mobile-accordion-group-label">{group.label}</p>
+              {group.cities.map((c) => (
+                <a href={c.href} class={`mobile-accordion-link ${currentPath === c.href ? 'text-blue-400' : ''}`}>{c.city}</a>
+              ))}
+            </div>
+          ))}
+          <a href="/locations" class="mobile-accordion-link mobile-accordion-hub">All Puget Sound service areas →</a>
+        </div>
+      </div>
+
       <a href="/pricing" class={`mobile-menu-item ${isActive('/pricing') ? 'text-blue-400' : ''}`}>Pricing & Plans</a>
       <a href="/about" class={`mobile-menu-item ${isActive('/about') ? 'text-blue-400' : ''}`}>About Us</a>
       <a href="/faq" class={`mobile-menu-item ${isActive('/faq') ? 'text-blue-400' : ''}`}>FAQ & Support</a>
@@ -70,7 +140,7 @@ const isActive = (href: string) => {
     margin: 3px 0;
     transition: 0.3s;
   }
-  
+
   .mobile-menu {
     display: none;
     flex-direction: column;
@@ -79,36 +149,175 @@ const isActive = (href: string) => {
     margin-top: 1rem;
     border-top: 1px solid rgba(255,255,255,0.1);
   }
-  
+
   .mobile-menu.active {
     display: flex;
   }
-  
+
   .mobile-menu-item {
     padding: 0.5rem 0;
     display: block;
     transition: color 0.2s;
   }
-  
+
   .mobile-menu-item:hover {
     color: #9ca3af;
   }
-  
+
   @media (min-width: 768px) {
     .mobile-menu {
       display: none !important;
     }
+  }
+
+  /* Desktop Service Areas dropdown */
+  .service-areas-dropdown {
+    position: relative;
+  }
+
+  .service-areas-panel {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    /* Anchor panel horizontally centered under the trigger.             */
+    /* Clamp width so it never overflows the viewport on narrow laptops.  */
+    left: 50%;
+    width: min(640px, calc(100vw - 2rem));
+    max-width: 640px;
+    background: #111827;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 0.5rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    padding: 1.25rem 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -6px);
+    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0s linear 0.15s;
+    z-index: 50;
+  }
+
+  .service-areas-dropdown:hover .service-areas-panel,
+  .service-areas-dropdown:focus-within .service-areas-panel,
+  .service-areas-dropdown.is-open .service-areas-panel {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+  }
+
+  .service-areas-inner {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem 1.5rem;
+  }
+
+  .service-areas-group-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9ca3af;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .service-areas-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .service-areas-link {
+    display: block;
+    color: #e5e7eb;
+    padding: 0.2rem 0;
+    font-size: 0.9rem;
+    line-height: 1.35;
+  }
+
+  .service-areas-link:hover {
+    color: #ffffff;
+  }
+
+  .service-areas-footer {
+    grid-column: 1 / -1;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 0.5rem;
+    padding-top: 0.75rem;
+  }
+
+  /* Mobile Service Areas accordion */
+  .mobile-accordion-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .mobile-accordion-caret {
+    transition: transform 0.2s ease;
+  }
+
+  .mobile-accordion-trigger[aria-expanded="true"] .mobile-accordion-caret {
+    transform: rotate(90deg);
+  }
+
+  .mobile-accordion-panel {
+    display: none;
+    padding: 0 0 0.5rem 0.75rem;
+    border-left: 2px solid rgba(255,255,255,0.08);
+    margin-left: 0.25rem;
+  }
+
+  .mobile-accordion-panel.active {
+    display: block;
+  }
+
+  .mobile-accordion-group {
+    padding: 0.5rem 0;
+  }
+
+  .mobile-accordion-group-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9ca3af;
+    margin: 0 0 0.35rem 0;
+  }
+
+  .mobile-accordion-link {
+    display: block;
+    padding: 0.35rem 0;
+    color: #e5e7eb;
+    font-size: 0.95rem;
+  }
+
+  .mobile-accordion-link:hover {
+    color: #ffffff;
+  }
+
+  .mobile-accordion-hub {
+    margin-top: 0.5rem;
+    color: #60a5fa;
   }
 </style>
 
 <script>
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
-  
+
   if (mobileMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('active');
-      
+
       // Animate hamburger to X
       const lines = mobileMenuBtn.querySelectorAll('.hamburger-line');
       if (mobileMenu.classList.contains('active')) {
@@ -122,4 +331,34 @@ const isActive = (href: string) => {
       }
     });
   }
+
+  // Mobile Service Areas accordion
+  const mobileServiceAreasToggle = document.getElementById('mobile-service-areas-toggle');
+  const mobileServiceAreasPanel = document.getElementById('mobile-service-areas-panel');
+  if (mobileServiceAreasToggle && mobileServiceAreasPanel) {
+    mobileServiceAreasToggle.addEventListener('click', () => {
+      const open = mobileServiceAreasPanel.classList.toggle('active');
+      mobileServiceAreasToggle.setAttribute('aria-expanded', String(open));
+    });
+  }
+
+  // Desktop dropdown — keyboard access (Enter/Space opens, Esc closes)
+  document.querySelectorAll('.service-areas-dropdown').forEach((dd) => {
+    const trigger = dd.querySelector('.service-areas-trigger');
+    if (!trigger) return;
+    trigger.addEventListener('keydown', (e) => {
+      const evt = e as KeyboardEvent;
+      if (evt.key === 'Enter' || evt.key === ' ') {
+        // Let the link navigate on Enter; only toggle on Space.
+        if (evt.key === ' ') {
+          evt.preventDefault();
+          dd.classList.toggle('is-open');
+          trigger.setAttribute('aria-expanded', dd.classList.contains('is-open') ? 'true' : 'false');
+        }
+      } else if (evt.key === 'Escape') {
+        dd.classList.remove('is-open');
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
 </script>

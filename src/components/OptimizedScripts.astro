@@ -4,14 +4,16 @@
 
 <!-- Defer Google Tag Manager to improve initial load performance -->
 <script>
-  // Initialize consent mode with denied defaults to prevent cookies
+  // Initialize Consent Mode v2.
+  // analytics_storage: granted — enables GA4 measurement for anonymous first-party
+  //   analytics (acceptable under current US/WA guidance; IP-anonymized + cookieless pings).
+  // All ad_* signals stay denied until an explicit opt-in banner ships (Phase 1).
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
 
-  // Default consent mode - deny all cookies initially
   gtag('consent', 'default', {
     'ad_storage': 'denied',
-    'analytics_storage': 'denied',
+    'analytics_storage': 'granted',
     'ad_user_data': 'denied',
     'ad_personalization': 'denied',
     'functionality_storage': 'granted',

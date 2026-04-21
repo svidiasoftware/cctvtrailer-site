@@ -14,6 +14,11 @@ import SpeakableSchema from '../components/SpeakableSchema.astro';
 const title = "Solar Powered Security Trailer | Eco-Friendly Off-Grid Surveillance";
 const description = "Deploy solar powered security trailers for sustainable, off-grid surveillance in Tacoma, Seattle, and the Pacific Northwest. Zero emissions, no power costs, and reliable 24/7 operation in remote locations without infrastructure.";
 
+// Rolling 12-month priceValidUntil so Product/Offer rich results stay valid.
+const priceValidUntil = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)
+  .toISOString()
+  .split('T')[0];
+
 const breadcrumbItems = [
   { name: "Home", url: "/" },
   { name: "Technology", url: "/trailer-technology" },
@@ -787,8 +792,7 @@ const relatedPages = [
     calculateSolar();
   </script>
 
-  <script type="application/ld+json">
-  {
+  <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@graph": [
       {
@@ -808,7 +812,7 @@ const relatedPages = [
           "@type": "Offer",
           "priceCurrency": "USD",
           "price": "7999",
-          "priceValidUntil": "2026-12-31",
+          "priceValidUntil": priceValidUntil,
           "availability": "https://schema.org/InStock"
         }
       },
@@ -845,8 +849,7 @@ const relatedPages = [
         "priceRange": "$$"
       }
     ]
-  }
-  </script>
+  })}></script>
 
   <script type="application/ld+json">
   {

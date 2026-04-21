@@ -13,9 +13,10 @@ export const analyticsConfig = {
   googleTagManagerId: 'GTM-5FPMNFLV',
   
   // Google Search Console Verification Code
-  // Get this from: https://search.google.com/search-console
-  // Use the HTML tag method and copy the content value
-  searchConsoleVerification: 'YOUR_VERIFICATION_CODE_HERE',
+  // NOTE: the site is currently verified via `sc-domain:cctvtrailer.com` (DNS),
+  // so the HTML-tag method is not required. Populate only if switching to a
+  // URL-prefix property. Leave empty to avoid rendering a placeholder meta tag.
+  searchConsoleVerification: '',
   
   // Additional tracking settings
   settings: {

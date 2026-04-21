@@ -62,11 +62,6 @@
       "statusCode": 301
     },
     {
-      "source": "/locations",
-      "destination": "/contact",
-      "statusCode": 301
-    },
-    {
       "source": "/resources-downloads",
       "destination": "/blog",
       "statusCode": 301

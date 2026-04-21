@@ -9,6 +9,11 @@ import ComparisonTable from '../components/ComparisonTable.astro';
 
 const title = "Wireless Security Systems | 4G LTE Surveillance Camera Rental";
 const description = "Deploy wireless security camera systems anywhere with 4G LTE connectivity. No power lines or internet required. Rapid deployment for construction sites and remote locations.";
+
+// Rolling 12-month priceValidUntil so Product/Offer rich results stay valid.
+const priceValidUntil = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)
+  .toISOString()
+  .split('T')[0];
 ---
 
 <Layout title={title} description={description}>
@@ -593,8 +598,7 @@ const description = "Deploy wireless security camera systems anywhere with 4G LT
     calculateCoverage();
   </script>
 
-  <script type="application/ld+json">
-  {
+  <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Wireless Security System with 4G LTE",
@@ -607,11 +611,10 @@ const description = "Deploy wireless security camera systems anywhere with 4G LT
       "@type": "Offer",
       "priceCurrency": "USD",
       "price": "2500",
-      "priceValidUntil": "2024-12-31",
+      "priceValidUntil": priceValidUntil,
       "availability": "https://schema.org/InStock"
     }
-  }
-  </script>
+  })}></script>
 
   <script type="application/ld+json">
   {
