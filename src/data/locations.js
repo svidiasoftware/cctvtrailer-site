@@ -63,6 +63,11 @@ export const locationGroups = [
         angle: "Light-rail, high-rise & infill construction",
       },
       {
+        city: "Bellevue",
+        href: "/bellevue-surveillance-trailer",
+        angle: "Eastside tech corridor & downtown high-rise",
+      },
+      {
         city: "Kent",
         href: "/kent-security-rental",
         angle: "Kent Valley warehouse corridor",
@@ -76,6 +81,17 @@ export const locationGroups = [
         city: "Auburn",
         href: "/auburn-manufacturing-security",
         angle: "Manufacturing + rail-adjacent security",
+      },
+    ],
+  },
+  {
+    label: "North Sound & Snohomish County",
+    slug: "snohomish-county",
+    cities: [
+      {
+        city: "Everett",
+        href: "/everett-mobile-security-trailer",
+        angle: "Aerospace, I-5 corridor & Port of Everett",
       },
     ],
   },

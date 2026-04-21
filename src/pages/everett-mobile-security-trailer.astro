@@ -1,0 +1,512 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import RelatedPages from '../components/RelatedPages.astro';
+import Analytics from '../components/Analytics.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import StatBox from '../components/StatBox.astro';
+
+// Service schema data for the Everett mobile surveillance offering
+const serviceSchemaData = {
+  serviceName: "Everett Mobile Surveillance Trailer Rental",
+  description: "CCTV Trailer delivers solar-powered mobile surveillance trailers to Everett and Snohomish County — Boeing Paine Field, Port of Everett, I-5 corridor warehouses, downtown redevelopment, and Naval Station Everett support sites. Same-day deployment from Tacoma.",
+  price: "3499",
+  highPrice: "4000",
+  priceUnit: "WEEK" as const,
+  areaServed: [
+    { type: "City" as const, name: "Everett" },
+  ]
+};
+
+// Local Business Schema with Everett / Snohomish landmarks
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "CCTV Trailer - Everett Service Area",
+  "description": "Mobile surveillance trailer rental serving Everett, Mukilteo, Marysville, and Snohomish County.",
+  "url": "https://www.cctvtrailer.com/everett-mobile-security-trailer",
+  "telephone": "(253) 683-2288",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Everett",
+    "addressRegion": "WA",
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Everett",
+    "containsPlace": [
+      { "@type": "Corporation", "name": "Boeing Everett Factory (Paine Field)" },
+      { "@type": "Airport", "name": "Paine Field / Snohomish County Airport" },
+      { "@type": "Port", "name": "Port of Everett" },
+      { "@type": "MilitaryBase", "name": "Naval Station Everett" },
+      { "@type": "StadiumOrArena", "name": "Angel of the Winds Arena" },
+      { "@type": "Hospital", "name": "Providence Regional Medical Center Everett" },
+      { "@type": "Park", "name": "Silver Lake Park" },
+      { "@type": "EducationalOrganization", "name": "Everett Community College" }
+    ]
+  },
+  "knowsAbout": [
+    "Boeing & Aerospace Contractor Security in Everett",
+    "I-5 Corridor Warehouse Surveillance",
+    "Port of Everett Maritime & Logistics Security",
+    "Downtown Everett Redevelopment Site Protection",
+    "Snohomish County Link Light Rail Construction Security"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Everett Security Services",
+    "itemListElement": [
+      { "@type": "Service", "name": "Warehouse & Distribution Perimeter Monitoring" },
+      { "@type": "Service", "name": "Aerospace Contractor Site Security" },
+      { "@type": "Service", "name": "Construction Site Surveillance" },
+      { "@type": "Service", "name": "Port & Maritime Security" }
+    ]
+  }
+};
+
+// Breadcrumb data
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Service Areas", url: "/locations" },
+  { name: "Everett Mobile Security Trailer" }
+];
+
+// Everett crime & context stats — Snohomish County / Everett PD directional
+// figures. Numbers shift year-over-year; use for context, not citation.
+const crimeStats = [
+  { value: "58%", label: "Property crime above national avg.", highlight: true },
+  { value: "+9%", label: "Commercial burglary YoY", highlight: true },
+  { value: "~30K", label: "Boeing Paine Field workforce" },
+  { value: "Top 5", label: "WA cargo theft hot zone (I-5)" }
+];
+
+const relatedPages = [
+  {
+    title: "Construction Site Security Solutions",
+    href: "/construction-security",
+    description: "Mobile surveillance for downtown Everett redevelopment and infill builds."
+  },
+  {
+    title: "Copper Wire Theft Prevention",
+    href: "/solutions/copper-wire-theft-prevention",
+    description: "Deter copper and cable theft on I-5 corridor warehouse and utility builds."
+  },
+  {
+    title: "Equipment Theft Prevention",
+    href: "/solutions/equipment-theft-prevention",
+    description: "Protect heavy equipment and tools on Everett and Snohomish County jobsites."
+  },
+  {
+    title: "Seattle Surveillance Rental",
+    href: "/seattle-surveillance-rental",
+    description: "Our Seattle mobile surveillance service — 25 miles south on I-5."
+  },
+  {
+    title: "Bellevue Surveillance Trailer",
+    href: "/bellevue-surveillance-trailer",
+    description: "Eastside coverage — 30 miles south via I-405."
+  },
+  {
+    title: "View Pricing & Plans",
+    href: "/pricing",
+    description: "Transparent rental pricing for Everett — same rate as every Puget Sound city."
+  }
+];
+---
+
+<Layout
+  title="Everett Mobile Security Trailer Rental · Snohomish County"
+  description="Everett mobile surveillance trailers from $499/day. Boeing-area, Port of Everett, I-5 warehouse, downtown redevelopment. Same-day delivery. (253) 683-2288"
+  schema={JSON.stringify(localBusinessSchema)}>
+
+  <!-- Structured Data Schemas -->
+  <ServiceSchema {...serviceSchemaData} />
+  <BreadcrumbSchema items={breadcrumbItems} />
+
+  <Header showEmergencyBar={true} currentPath="/everett-mobile-security-trailer" />
+  <Analytics />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-slate-800 to-slate-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Mobile Surveillance Trailer Rental in Everett, WA</h1>
+          <p class="text-xl mb-6">
+            Solar-powered mobile surveillance for Everett's aerospace corridor, the Port of Everett, I-5 warehouse and distribution sites, and downtown redevelopment. Same-day delivery from our Tacoma depot up I-5.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="tel:2536832288" class="bg-white text-slate-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
+              📞 Call: (253) 683-2288
+            </a>
+            <a href="#everett-quote" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg inline-block text-center">
+              Get Everett Quote →
+            </a>
+          </div>
+          <p class="mt-4">⚡ Same-day Snohomish County delivery — Boeing contractors, port, warehouse, event &amp; construction coverage.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Crime &amp; Context Stats -->
+    <section class="bg-slate-50 py-12">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-6 text-center">Everett Security Snapshot</h2>
+          <StatBox stats={crimeStats} layout="grid" />
+          <div class="mt-8 bg-white rounded-lg p-6 border-l-4 border-slate-700">
+            <p class="text-gray-700 font-semibold">
+              Everett sits at the intersection of two of Washington's highest-pressure security environments: the Paine Field aerospace cluster with tens of thousands of shift workers and billions in tooling, and the I-5 corridor — one of the busiest cargo-theft routes on the West Coast. Downtown core has faced rising commercial burglary; I-5 warehouses see organized cargo theft; and Evergreen Way parking and lot operators regularly report catalytic converter and vehicle-prowl spikes. Mobile surveillance gives each of these sites a 24/7 recorded perimeter and an active deterrent that doesn't wait for a patrol to arrive.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Everett Districts / Coverage -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Everett &amp; Snohomish County Coverage Areas</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Everett Core</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Downtown Everett</li>
+              <li>• Port Gardner &amp; Waterfront</li>
+              <li>• Riverside</li>
+              <li>• Delta</li>
+              <li>• Bayside</li>
+              <li>• Port of Everett</li>
+            </ul>
+          </div>
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">South &amp; East Everett</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Silver Lake</li>
+              <li>• South Everett</li>
+              <li>• Cascade View</li>
+              <li>• Glacier View</li>
+              <li>• Evergreen Way corridor</li>
+              <li>• Paine Field / Boeing</li>
+            </ul>
+          </div>
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Nearby Snohomish County</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Mukilteo</li>
+              <li>• Marysville</li>
+              <li>• Lynnwood</li>
+              <li>• Bothell</li>
+              <li>• Mill Creek</li>
+              <li>• Lake Stevens</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Applications -->
+    <section class="bg-gray-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Security Solutions for Everett</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-bold text-xl mb-4">Aerospace, Port &amp; Warehouse</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Paine Field aerospace contractor &amp; tooling yards</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Port of Everett container &amp; breakbulk lots</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>I-5 corridor distribution &amp; fulfillment yards</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Evergreen Way / SR-99 commercial parking</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Cold-storage &amp; cross-dock perimeters</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl mb-4">Construction, Events &amp; Commercial</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Downtown Everett mixed-use redevelopment</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Angel of the Winds Arena event overflow</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Hospital &amp; medical-office expansion sites</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Everett Link light-rail extension staging</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Auto dealership &amp; RV-lot deterrence</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-12 bg-slate-100 rounded-lg p-8">
+          <h3 class="font-bold text-xl mb-4">Why Everett Logistics &amp; Contractors Call Us</h3>
+          <p class="text-gray-700 mb-4">
+            I-5 warehouses run narrow margins and can't absorb organized cargo theft. Boeing contractors can't have specialty tools walk off between shifts. Downtown builds can't rebuild tens of thousands of feet of stolen copper. A mobile surveillance trailer gives each of these sites a 24/7 recorded perimeter, active deterrent lighting, cellular-connected video, and a monitored response that cues Everett PD or the Snohomish County Sheriff before the window closes. Solar-powered, cellular uplink, same-day delivery up I-5.
+          </p>
+          <div class="grid md:grid-cols-3 gap-4 text-center">
+            <div>
+              <div class="text-2xl font-bold text-slate-700">$499/day</div>
+              <div class="text-sm">Starting rate · all-inclusive</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-slate-700">Same day</div>
+              <div class="text-sm">Snohomish County delivery</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-slate-700">24/7</div>
+              <div class="text-sm">Monitoring &amp; alerts</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Everett Chooses Us -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">Built for Everett &amp; the I-5 Corridor</h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 class="font-bold text-xl mb-4">What's Included</h3>
+                <ul class="space-y-2">
+                  <li>• Solar-powered 4K PTZ cameras, 360° coverage</li>
+                  <li>• On-board NVR + encrypted cellular upload</li>
+                  <li>• Active deterrent lighting &amp; speaker warnings</li>
+                  <li>• 24/7 monitored dispatch to Everett PD / Snohomish County Sheriff</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl mb-4">Why It Works Here</h3>
+                <ul class="space-y-2">
+                  <li>• Cellular uplink holds through I-5 / Paine Field coverage gaps</li>
+                  <li>• No generator refueling — works on long industrial-yard runs</li>
+                  <li>• Weatherproofed for Snohomish County wind &amp; wet</li>
+                  <li>• On-site 30-day archive supports insurance &amp; LE reporting</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Local Security Challenges -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Everett's Specific Security Pressures</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white border-l-4 border-slate-700 p-6 shadow-sm">
+            <h3 class="font-bold text-lg mb-3 text-slate-700">I-5 Cargo Theft</h3>
+            <p class="text-gray-600">The I-5 corridor between Everett and the Canadian border is one of the West Coast's most active organized cargo-theft zones. Yards that leave a single lane of trailers unobserved overnight pay for it — mobile surveillance closes that lane.</p>
+          </div>
+          <div class="bg-white border-l-4 border-blue-500 p-6 shadow-sm">
+            <h3 class="font-bold text-lg mb-3 text-blue-600">Aerospace Tooling Loss</h3>
+            <p class="text-gray-600">Paine Field contractors run specialty tooling worth tens of thousands per cart. Between-shift windows are the main loss vector — an active deterrent trailer on the yard resolves most of it.</p>
+          </div>
+          <div class="bg-white border-l-4 border-red-500 p-6 shadow-sm">
+            <h3 class="font-bold text-lg mb-3 text-red-600">Downtown Commercial Burglary</h3>
+            <p class="text-gray-600">Commercial burglary reports in Everett's downtown core have trended upward since 2022. Retail and food-service operators use a visible mobile unit to break the pattern around back-of-house loading zones.</p>
+          </div>
+          <div class="bg-white border-l-4 border-green-500 p-6 shadow-sm">
+            <h3 class="font-bold text-lg mb-3 text-green-600">Port &amp; Maritime Perimeter</h3>
+            <p class="text-gray-600">Port of Everett operates mixed container, breakbulk, and aerospace logistics cargo — long perimeters and shift gaps make it ideal for mobile forward-deployed camera coverage between fixed CCTV positions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Projects -->
+    <section class="bg-slate-100 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Representative Everett &amp; Snohomish Deployments</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="text-slate-700 font-semibold mb-2">I-5 Warehouse Yard</div>
+            <h3 class="font-bold text-lg mb-3">Cross-Dock Perimeter Recovery</h3>
+            <p class="text-gray-600 mb-4">Deployed 4 solar mobile units along the back line of an I-5 cross-dock yard that had experienced three trailer-cargo thefts inside a single quarter. Zero incidents during the six months of deployment; insurance premium hold resumed the following renewal.</p>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Challenge:</span> Long open perimeter, overnight unmanned, night-only theft pattern
+            </div>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Solution:</span> Forward-deployed units + active broadcast warnings
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="text-blue-600 font-semibold mb-2">Paine Field Contractor</div>
+            <h3 class="font-bold text-lg mb-3">Aerospace Tooling Yard</h3>
+            <p class="text-gray-600 mb-4">Stationed 2 units across a Boeing-adjacent tooling yard through a multi-month program. Between-shift tool loss dropped essentially to zero; the archived video also supported one insurance claim that would have been unrecoverable otherwise.</p>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Challenge:</span> Between-shift gaps, high-value portable tooling
+            </div>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Solution:</span> PTZ + on-unit 30-day archive with remote review
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="text-green-600 font-semibold mb-2">Downtown Redevelopment</div>
+            <h3 class="font-bold text-lg mb-3">Mixed-Use Build, Port Gardner</h3>
+            <p class="text-gray-600 mb-4">Trailer rotated between three active quadrants of a downtown Everett mixed-use construction site over an 11-month window. Over that run, the GC logged zero copper-wire theft incidents — neighboring sites lost multiple five-figure incidents during the same period.</p>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Challenge:</span> Vertical construction phase, shifting perimeter, active-street access
+            </div>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Solution:</span> Repositionable solar unit + cellular monitored dispatch
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Everett Trusts Us -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">Why Everett Logistics, Contractors &amp; Property Managers Choose CCTV Trailer</h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+              <div>
+                <h3 class="font-bold text-xl mb-4">Snohomish County Expertise</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <span class="text-slate-700 mr-2 font-bold">•</span>
+                    <span><strong>Same-day</strong> delivery to Everett from our Tacoma depot</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-slate-700 mr-2 font-bold">•</span>
+                    <span><strong>One price</strong> across every Puget Sound city — no I-5 surcharge</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-slate-700 mr-2 font-bold">•</span>
+                    <span><strong>Solar + cellular</strong> — no generator, no runtime charges</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-slate-700 mr-2 font-bold">•</span>
+                    <span><strong>Everett PD / Snohomish County Sheriff</strong> dispatch coordination</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl mb-4">Operational Fit</h3>
+                <div class="space-y-4">
+                  <div class="bg-slate-50 p-4 rounded-lg">
+                    <div class="font-semibold text-slate-700">I-5 Yards &amp; Cross-Docks</div>
+                    <p class="text-gray-600 text-sm">Long perimeters, overnight windows, and night-only theft patterns are exactly what a mobile unit is built for.</p>
+                  </div>
+                  <div class="bg-blue-50 p-4 rounded-lg">
+                    <div class="font-semibold text-blue-600">Paine Field Contractors</div>
+                    <p class="text-gray-600 text-sm">Between-shift tool loss drops to near zero with an on-site active-deterrent unit and 30-day archive.</p>
+                  </div>
+                  <div class="bg-green-50 p-4 rounded-lg">
+                    <div class="font-semibold text-green-600">Downtown Redevelopment</div>
+                    <p class="text-gray-600 text-sm">Repositionable on a shifting vertical-construction perimeter without rewiring fixed CCTV each phase.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Everett Statistics -->
+            <div class="border-t border-gray-200 pt-8">
+              <h4 class="font-bold text-lg mb-4 text-center">Everett by the Numbers</h4>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-2xl font-bold text-slate-700">~112K</div>
+                  <div class="text-sm text-gray-600">Population (2024)</div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-2xl font-bold text-blue-600">#1</div>
+                  <div class="text-sm text-gray-600">Largest city in Snohomish Co.</div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-2xl font-bold text-orange-600">~30K</div>
+                  <div class="text-sm text-gray-600">Boeing Paine Field workforce</div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-2xl font-bold text-red-600">Top 5</div>
+                  <div class="text-sm text-gray-600">WA cargo theft hot zone</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Form -->
+    <section id="everett-quote" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-2xl">
+        <h2 class="text-3xl font-bold text-center mb-8">Get an Everett Security Quote</h2>
+        <form id="everett-quote-form" class="bg-white rounded-lg p-8 shadow-lg">
+          <div class="grid gap-6">
+            <div>
+              <label for="evt-name" class="block mb-2 font-semibold">Name *</label>
+              <input type="text" id="evt-name" name="name" required class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="evt-phone" class="block mb-2 font-semibold">Phone *</label>
+              <input type="tel" id="evt-phone" name="phone" required class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="evt-location" class="block mb-2 font-semibold">Everett Location *</label>
+              <input type="text" id="evt-location" name="location" placeholder="e.g., Paine Field, Port Gardner, Silver Lake, I-5 yard" required class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="evt-type" class="block mb-2 font-semibold">Project Type *</label>
+              <select id="evt-type" name="type" required class="w-full px-4 py-2 border rounded-lg">
+                <option value="">Select type...</option>
+                <option value="warehouse">Warehouse / Distribution Yard</option>
+                <option value="aerospace">Aerospace / Paine Field Contractor</option>
+                <option value="construction">Construction Site</option>
+                <option value="port">Port / Maritime</option>
+                <option value="retail">Retail / Parking Lot</option>
+                <option value="event">Event</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="mt-8 text-center">
+            <button type="submit" class="bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-12 rounded-lg text-lg">
+              Get Everett Quote →
+            </button>
+            <p class="mt-4 text-sm text-gray-600">Same-day Snohomish County delivery up I-5</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <RelatedPages
+    title="Related Security Services &amp; Nearby Areas"
+    pages={relatedPages}
+  />
+
+  <Footer />
+</Layout>

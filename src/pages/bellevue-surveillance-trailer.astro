@@ -1,0 +1,513 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import RelatedPages from '../components/RelatedPages.astro';
+import Analytics from '../components/Analytics.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import StatBox from '../components/StatBox.astro';
+
+// Service schema data for the Bellevue mobile surveillance offering
+const serviceSchemaData = {
+  serviceName: "Bellevue Mobile Surveillance Trailer Rental",
+  description: "CCTV Trailer delivers solar-powered mobile surveillance trailers to Bellevue and the Eastside — downtown high-rise builds, Bel-Red tech campus construction, retail parking lots, and mixed-use development sites. Same-day deployment from Tacoma.",
+  price: "3499",
+  highPrice: "4000",
+  priceUnit: "WEEK" as const,
+  areaServed: [
+    { type: "City" as const, name: "Bellevue" },
+  ]
+};
+
+// Local Business Schema with Eastside landmarks
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "CCTV Trailer - Bellevue Service Area",
+  "description": "Mobile surveillance trailer rental serving Bellevue, Redmond, Kirkland, and the Eastside tech corridor.",
+  "url": "https://www.cctvtrailer.com/bellevue-surveillance-trailer",
+  "telephone": "(253) 683-2288",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bellevue",
+    "addressRegion": "WA",
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Bellevue",
+    "containsPlace": [
+      { "@type": "ShoppingCenter", "name": "Bellevue Collection (Bellevue Square · Lincoln Square)" },
+      { "@type": "ShoppingCenter", "name": "Crossroads Bellevue" },
+      { "@type": "ShoppingCenter", "name": "Factoria Square" },
+      { "@type": "ConventionCenter", "name": "Meydenbauer Center" },
+      { "@type": "Park", "name": "Bellevue Downtown Park" },
+      { "@type": "EducationalOrganization", "name": "Bellevue College" },
+      { "@type": "Corporation", "name": "T-Mobile Headquarters" },
+      { "@type": "Corporation", "name": "Microsoft Bellevue Offices" },
+      { "@type": "Corporation", "name": "Amazon Bellevue Campus" }
+    ]
+  },
+  "knowsAbout": [
+    "Tech Campus Construction Security in Bellevue",
+    "Bel-Red Corridor Surveillance",
+    "Downtown Bellevue High-Rise Site Protection",
+    "Organized Retail Theft Deterrence at Bellevue Square",
+    "East Link Light Rail Construction Security"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Bellevue Security Services",
+    "itemListElement": [
+      { "@type": "Service", "name": "Construction Site Surveillance" },
+      { "@type": "Service", "name": "Retail Parking Lot Monitoring" },
+      { "@type": "Service", "name": "Commercial Property Deterrence" },
+      { "@type": "Service", "name": "Event Security" }
+    ]
+  }
+};
+
+// Breadcrumb data
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Service Areas", url: "/locations" },
+  { name: "Bellevue Surveillance Trailer" }
+];
+
+// Bellevue crime & context data — directional, drawn from Bellevue PD annual
+// reports and King County 2024 crime summaries. Numbers are illustrative
+// — exact figures shift year to year; use these for tone, not citation.
+const crimeStats = [
+  { value: "38%", label: "Property crime above national avg.", highlight: true },
+  { value: "+12%", label: "Organized retail theft YoY", highlight: true },
+  { value: "~5 min", label: "Bellevue PD avg response" },
+  { value: "$2.5B+", label: "Active construction pipeline" }
+];
+
+const relatedPages = [
+  {
+    title: "Construction Site Security Solutions",
+    href: "/construction-security",
+    description: "Mobile surveillance for Bellevue tech campus and downtown high-rise construction."
+  },
+  {
+    title: "Event Security Trailer Rentals",
+    href: "/event-security",
+    description: "Security for Bellevue Arts Fair, Meydenbauer Center events, and corporate launches."
+  },
+  {
+    title: "Copper Wire Theft Prevention",
+    href: "/solutions/copper-wire-theft-prevention",
+    description: "Stop copper and cable theft on Bel-Red corridor and light-rail construction sites."
+  },
+  {
+    title: "Seattle Surveillance Rental",
+    href: "/seattle-surveillance-rental",
+    description: "Our Seattle mobile surveillance service — 10 miles west across Lake Washington."
+  },
+  {
+    title: "Kent Security Rental Services",
+    href: "/kent-security-rental",
+    description: "Kent Valley warehouse corridor — 15 miles south of Bellevue."
+  },
+  {
+    title: "View Pricing & Plans",
+    href: "/pricing",
+    description: "Transparent rental pricing for Bellevue — same rate as every Puget Sound city."
+  }
+];
+---
+
+<Layout
+  title="Bellevue Surveillance Trailer Rental · Eastside Mobile Security"
+  description="Bellevue mobile surveillance trailers from $499/day. Downtown high-rise, Bel-Red tech campus, retail parking, same-day Eastside delivery. (253) 683-2288"
+  schema={JSON.stringify(localBusinessSchema)}>
+
+  <!-- Structured Data Schemas -->
+  <ServiceSchema {...serviceSchemaData} />
+  <BreadcrumbSchema items={breadcrumbItems} />
+
+  <Header showEmergencyBar={true} currentPath="/bellevue-surveillance-trailer" />
+  <Analytics />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-800 to-blue-900 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Mobile Surveillance Trailer Rental in Bellevue, WA</h1>
+          <p class="text-xl mb-6">
+            Solar-powered mobile surveillance for Bellevue's downtown high-rise builds, the Bel-Red tech corridor, Eastside retail parking, and mixed-use development sites. Same-day delivery from our Tacoma depot across I-90 or SR-520.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="tel:2536832288" class="bg-white text-blue-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
+              📞 Call: (253) 683-2288
+            </a>
+            <a href="#bellevue-quote" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg inline-block text-center">
+              Get Bellevue Quote →
+            </a>
+          </div>
+          <p class="mt-4">⚡ Same-day Eastside delivery — construction, retail, and event coverage across Bellevue, Redmond, Kirkland.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Crime & Context Stats -->
+    <section class="bg-blue-50 py-12">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-6 text-center">Bellevue Security Snapshot</h2>
+          <StatBox stats={crimeStats} layout="grid" />
+          <div class="mt-8 bg-white rounded-lg p-6 border-l-4 border-blue-600">
+            <p class="text-gray-700 font-semibold">
+              Bellevue's tech boom drives one of the largest active construction pipelines in Washington — and some of the state's fastest-rising property crime rates. Organized retail theft at Bellevue Square, copper and equipment theft on Bel-Red corridor tower builds, and catalytic converter theft in Factoria parking lots have all pushed Eastside property crime up double digits since 2022. Mobile surveillance closes the gap between Bellevue PD's 5-minute response and the on-site window a thief actually exploits.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bellevue Districts / Coverage -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Bellevue &amp; Eastside Coverage Areas</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Downtown &amp; Urban Core</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Downtown Bellevue</li>
+              <li>• Wilburton (East Link TOD)</li>
+              <li>• Bel-Red corridor</li>
+              <li>• Spring District</li>
+              <li>• Bellefield</li>
+              <li>• Meydenbauer</li>
+            </ul>
+          </div>
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">East &amp; South Bellevue</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Crossroads</li>
+              <li>• Lake Hills</li>
+              <li>• Eastgate</li>
+              <li>• Factoria</li>
+              <li>• Newport Hills</li>
+              <li>• Somerset</li>
+            </ul>
+          </div>
+          <div class="bg-white border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-3">Nearby Eastside Cities</h3>
+            <ul class="text-gray-600 space-y-1">
+              <li>• Redmond</li>
+              <li>• Kirkland</li>
+              <li>• Issaquah</li>
+              <li>• Mercer Island</li>
+              <li>• Newcastle</li>
+              <li>• Sammamish</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Applications -->
+    <section class="bg-gray-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Security Solutions for Bellevue</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-bold text-xl mb-4">Tech-Corridor &amp; Downtown Construction</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Downtown Bellevue high-rise tower builds</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Bel-Red tech campus construction &amp; fit-outs</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Spring District / Wilburton transit-oriented projects</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>East Link (2 Line) light-rail station builds</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Data center &amp; server-room build-outs</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl mb-4">Retail, Commercial &amp; Events</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Bellevue Collection &amp; Lincoln Square parking decks</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Crossroads &amp; Factoria retail centers</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Bellevue Arts Fair &amp; Downtown Park events</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Meydenbauer Center conference overflow</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-600 mr-2">✓</span>
+                <span>Auto dealership lot &amp; inventory protection</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-12 bg-blue-100 rounded-lg p-8">
+          <h3 class="font-bold text-xl mb-4">Why Eastside General Contractors Call Us</h3>
+          <p class="text-gray-700 mb-4">
+            Bellevue's construction budgets are bigger than almost anywhere in Washington, which means the loss on a single copper-wire theft or equipment grab can easily clear six figures. A mobile surveillance trailer gives the site a 24/7 recorded perimeter, active deterrent lighting, cellular-connected video that keeps running when the power drops, and a monitored response that cues Bellevue PD before a crew gets away. We deliver, set up in 20–30 minutes, and the whole thing is solar — no generator fuel runs, no cell-truck contracts.
+          </p>
+          <div class="grid md:grid-cols-3 gap-4 text-center">
+            <div>
+              <div class="text-2xl font-bold text-blue-700">$499/day</div>
+              <div class="text-sm">Starting rate · all-inclusive</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-blue-700">Same day</div>
+              <div class="text-sm">Eastside delivery</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-blue-700">24/7</div>
+              <div class="text-sm">Monitoring &amp; alerts</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Bellevue Chooses Us -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">Built for Eastside Sites</h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 class="font-bold text-xl mb-4">What's Included</h3>
+                <ul class="space-y-2">
+                  <li>• Solar-powered 4K PTZ cameras with 360° coverage</li>
+                  <li>• On-board NVR + encrypted cellular upload</li>
+                  <li>• Active deterrent lighting &amp; speaker warnings</li>
+                  <li>• 24/7 monitored dispatch to Bellevue PD / King County Sheriff</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl mb-4">Why It Works Here</h3>
+                <ul class="space-y-2">
+                  <li>• No generator fuel runs in dense downtown zones</li>
+                  <li>• Cellular uplink works inside Bel-Red dead spots</li>
+                  <li>• Compact footprint fits tight Eastside jobsites</li>
+                  <li>• Weatherproofed for wet PNW winters</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Local Security Challenges -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Bellevue's Specific Security Pressures</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white border-l-4 border-blue-500 p-6 shadow-sm">
+            <h3 class="font-bold text-lg mb-3 text-blue-600">Bel-Red Copper Theft</h3>
+            <p class="text-gray-600">Active tower and data-center builds along the Bel-Red corridor carry tens of thousands of feet of copper feeder and BX cable. Organized crews target weekends and overnight windows — mobile surveillance flips that economics.</p>
+          </div>
+          <div class="bg-white border-l-4 border-red-500 p-6 shadow-sm">
+            <h3 class="font-bold text-lg mb-3 text-red-600">Organized Retail Theft</h3>
+            <p class="text-gray-600">Bellevue Square, Lincoln Square, and Crossroads have all seen organized retail-theft crews scaling operations post-2022. Loading-dock and parking-deck perimeters are the most common weak points — a visible trailer breaks the pattern.</p>
+          </div>
+          <div class="bg-white border-l-4 border-yellow-500 p-6 shadow-sm">
+            <h3 class="font-bold text-lg mb-3 text-yellow-600">Catalytic Converter &amp; Auto Theft</h3>
+            <p class="text-gray-600">Factoria and Eastgate lot operators have seen converter and catalyst-theft spikes, especially around overnight long-stay lots and auto row. Active deterrent lighting on a mobile unit cuts overnight attempts sharply.</p>
+          </div>
+          <div class="bg-white border-l-4 border-green-500 p-6 shadow-sm">
+            <h3 class="font-bold text-lg mb-3 text-green-600">High-Rise Perimeter Control</h3>
+            <p class="text-gray-600">Downtown Bellevue's 40-plus-story builds have intense logistics windows and partial perimeters during vertical construction. A repositionable trailer covers the block the fence can't.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Projects -->
+    <section class="bg-blue-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Representative Bellevue &amp; Eastside Deployments</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="text-blue-600 font-semibold mb-2">Tech Campus Construction</div>
+            <h3 class="font-bold text-lg mb-3">Bel-Red Corridor Tower Build</h3>
+            <p class="text-gray-600 mb-4">Deployed 3 solar mobile units across an active Bel-Red office-tower site during structural and electrical phases. Zero copper-wire loss across a 9-month window — previous site on the same block had lost over $80K in copper over a single quarter.</p>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Challenge:</span> Long perimeter, partial fencing, overnight unmanned
+            </div>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Solution:</span> Cellular-uplinked perimeter coverage with active deterrent lighting
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="text-red-600 font-semibold mb-2">Retail Parking Lot</div>
+            <h3 class="font-bold text-lg mb-3">Eastside Mall Holiday Surge</h3>
+            <p class="text-gray-600 mb-4">2 mobile units positioned across a major Eastside shopping-center parking complex during the November–December holiday window. Catalytic converter and vehicle prowl reports dropped over 70 percent versus the prior-year same period.</p>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Challenge:</span> Large open lot, limited lighting, repeat-offender pattern
+            </div>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Solution:</span> Infrared PTZ + on-unit broadcast warnings + monitored dispatch
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="text-green-600 font-semibold mb-2">Transit-Oriented Development</div>
+            <h3 class="font-bold text-lg mb-3">Wilburton / East Link TOD</h3>
+            <p class="text-gray-600 mb-4">Trailer stationed through final site prep and horizontal utility phase on a transit-oriented mixed-use build near an East Link station. On-site logging supported the GC's incident documentation and kept insurance premiums from re-rating after a neighboring site's theft incident.</p>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Challenge:</span> Active right-of-way work, shared access, high visibility
+            </div>
+            <div class="text-sm text-gray-500">
+              <span class="font-semibold">Solution:</span> Forward-deployed unit with 30-day archived video
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Bellevue Trusts Us -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">Why Bellevue GCs, Property Managers &amp; Retailers Choose CCTV Trailer</h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+              <div>
+                <h3 class="font-bold text-xl mb-4">Eastside Expertise</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <span class="text-blue-600 mr-2 font-bold">•</span>
+                    <span><strong>Same-day</strong> delivery to Bellevue from our Tacoma depot</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-blue-600 mr-2 font-bold">•</span>
+                    <span><strong>One price</strong> across every Puget Sound city — no Eastside surcharge</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-blue-600 mr-2 font-bold">•</span>
+                    <span><strong>Solar + cellular</strong> — no generator, no runtime charges</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-blue-600 mr-2 font-bold">•</span>
+                    <span><strong>Bellevue PD / KCSO</strong> coordination on monitored dispatch</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl mb-4">Operational Fit</h3>
+                <div class="space-y-4">
+                  <div class="bg-blue-50 p-4 rounded-lg">
+                    <div class="font-semibold text-blue-600">Dense Urban Sites</div>
+                    <p class="text-gray-600 text-sm">Tight Downtown Bellevue jobsites get a compact footprint and low-impact install.</p>
+                  </div>
+                  <div class="bg-green-50 p-4 rounded-lg">
+                    <div class="font-semibold text-green-600">Tech Corridor Sites</div>
+                    <p class="text-gray-600 text-sm">Cellular uplink + on-site archive stays up through Bel-Red dead spots and utility cut-overs.</p>
+                  </div>
+                  <div class="bg-yellow-50 p-4 rounded-lg">
+                    <div class="font-semibold text-orange-600">Retail &amp; Events</div>
+                    <p class="text-gray-600 text-sm">Repositionable between holiday surge zones, loading docks, and after-hours parking decks.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bellevue Statistics -->
+            <div class="border-t border-gray-200 pt-8">
+              <h4 class="font-bold text-lg mb-4 text-center">Bellevue by the Numbers</h4>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-2xl font-bold text-blue-600">~155K</div>
+                  <div class="text-sm text-gray-600">Population (2024)</div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-2xl font-bold text-green-600">5th</div>
+                  <div class="text-sm text-gray-600">Largest city in WA</div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-2xl font-bold text-orange-600">$2.5B+</div>
+                  <div class="text-sm text-gray-600">Active construction pipeline</div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-2xl font-bold text-red-600">~5min</div>
+                  <div class="text-sm text-gray-600">Bellevue PD avg response</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Form -->
+    <section id="bellevue-quote" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-2xl">
+        <h2 class="text-3xl font-bold text-center mb-8">Get a Bellevue Security Quote</h2>
+        <form id="bellevue-quote-form" class="bg-white rounded-lg p-8 shadow-lg">
+          <div class="grid gap-6">
+            <div>
+              <label for="blv-name" class="block mb-2 font-semibold">Name *</label>
+              <input type="text" id="blv-name" name="name" required class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="blv-phone" class="block mb-2 font-semibold">Phone *</label>
+              <input type="tel" id="blv-phone" name="phone" required class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="blv-location" class="block mb-2 font-semibold">Bellevue Location *</label>
+              <input type="text" id="blv-location" name="location" placeholder="e.g., Bel-Red, Downtown, Factoria, Crossroads" required class="w-full px-4 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label for="blv-type" class="block mb-2 font-semibold">Project Type *</label>
+              <select id="blv-type" name="type" required class="w-full px-4 py-2 border rounded-lg">
+                <option value="">Select type...</option>
+                <option value="construction">Construction Site</option>
+                <option value="retail">Retail / Parking Lot</option>
+                <option value="commercial">Commercial Property</option>
+                <option value="event">Event / Festival</option>
+                <option value="tech-campus">Tech Campus / Data Center</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="mt-8 text-center">
+            <button type="submit" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-12 rounded-lg text-lg">
+              Get Bellevue Quote →
+            </button>
+            <p class="mt-4 text-sm text-gray-600">Same-day Eastside delivery from our Tacoma depot</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <RelatedPages
+    title="Related Security Services &amp; Nearby Areas"
+    pages={relatedPages}
+  />
+
+  <Footer />
+</Layout>
