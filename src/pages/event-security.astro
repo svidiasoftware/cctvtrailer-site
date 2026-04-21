@@ -9,6 +9,40 @@ import ServiceSchema from '../components/ServiceSchema.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
 import QuickAnswer from '../components/QuickAnswer.astro';
 import StatBox from '../components/StatBox.astro';
+import RelatedPages from '../components/RelatedPages.astro';
+
+const relatedPages = [
+  {
+    title: "Event Security — Seattle & Tacoma Summer 2026",
+    href: "/blog/event-security-seattle-tacoma-summer-2026",
+    description: "Our planning guide for the 2026 summer event season — major festivals, crowd patterns, and what trailers catch that fixed cameras miss."
+  },
+  {
+    title: "Vandalism Prevention Solutions",
+    href: "/solutions/vandalism-prevention",
+    description: "Protect vendor areas, staging zones, and event infrastructure from theft and vandalism."
+  },
+  {
+    title: "Same-Day Event Security Rental",
+    href: "/same-day-security-rental",
+    description: "Emergency surveillance deployment for events and venues that need coverage in hours, not days."
+  },
+  {
+    title: "Tacoma Public Space Safety",
+    href: "/blog/tacoma-public-space-safety-mobile-surveillance",
+    description: "Public-space crime data for Tacoma and what visible surveillance changes for large gatherings."
+  },
+  {
+    title: "Security Trailer vs Guards",
+    href: "/security-trailer-vs-guards",
+    description: "Cost comparison between mobile surveillance trailers and traditional security guard services for events."
+  },
+  {
+    title: "View Pricing & Plans",
+    href: "/pricing",
+    description: "Weekend event rates, single-day pricing, and multi-day festival packages."
+  }
+];
 
 // Schema data for the construction security service
 const serviceSchemaData = {
@@ -851,6 +885,11 @@ const breadcrumbItems = [
     />
 
   </main>
+
+  <RelatedPages
+    title="Related Event Security Resources"
+    pages={relatedPages}
+  />
 
   <Footer />
 </Layout>

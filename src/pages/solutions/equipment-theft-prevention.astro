@@ -9,6 +9,40 @@ import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
 import QuickAnswer from '../../components/QuickAnswer.astro';
 import StatBox from '../../components/StatBox.astro';
 import LazyImage from '../../components/LazyImage.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+
+const relatedPages = [
+  {
+    title: "Warehouse & Cargo Theft Along the I-5 Corridor",
+    href: "/blog/warehouse-cargo-theft-i5-corridor-seattle-tacoma",
+    description: "How organized rings target warehouses and staging yards between Seattle and Tacoma — and what's stopping them."
+  },
+  {
+    title: "Copper Wire Theft Prevention",
+    href: "/solutions/copper-wire-theft-prevention",
+    description: "Dedicated surveillance for copper, wire, and raw-material theft across construction sites."
+  },
+  {
+    title: "Construction Site Security",
+    href: "/construction-security",
+    description: "Mobile surveillance for construction projects, yards, and staging areas throughout the Puget Sound."
+  },
+  {
+    title: "Auto Dealer Lot Security",
+    href: "/blog/auto-dealer-lot-security-mobile-surveillance",
+    description: "How Pierce and King County dealerships protect high-value vehicle inventory from after-hours theft."
+  },
+  {
+    title: "Security Trailer vs Guards Cost",
+    href: "/security-trailer-vs-guards",
+    description: "Cost analysis comparing mobile surveillance trailers to traditional security guard services."
+  },
+  {
+    title: "View Pricing & Plans",
+    href: "/pricing",
+    description: "Monthly surveillance plans for equipment yards and construction sites — all-inclusive pricing."
+  }
+];
 
 const breadcrumbItems = [
   { name: "Home", url: "/" },
@@ -502,6 +536,11 @@ const faqSchema = JSON.stringify({
       </div>
     </section>
   </main>
+
+  <RelatedPages
+    title="Related Theft-Prevention Resources"
+    pages={relatedPages}
+  />
 
   <Footer />
 
