@@ -4,8 +4,10 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "node scripts/validate-schema.mjs",
     "build": "astro build",
     "preview": "astro preview",
+    "validate:schema": "node scripts/validate-schema.mjs",
     "astro": "astro"
   },
   "dependencies": {
