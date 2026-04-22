@@ -37,9 +37,11 @@ if (ix >= 0) onlyFile = process.argv[ix + 1];
 const PERSON_AUTHOR = `"author": {
     "@type": "Person",
     "name": "Val Zakharov",
-    "description": "15 years of experience in the Pacific Northwest mobile surveillance and security industry, covering construction jobsite, warehouse, and event-security deployments across Pierce, King, Snohomish, and Kitsap counties.",
+    "jobTitle": "Founder & Owner",
+    "description": "Founder and owner of CCTV Trailer with 15 years of experience in the Pacific Northwest mobile surveillance and security industry, covering construction jobsite, warehouse, and event-security deployments across Pierce, King, Snohomish, and Kitsap counties.",
     "knowsAbout": ["Mobile CCTV Surveillance", "Construction Site Security", "Warehouse Security", "Event Security", "Puget Sound Security Operations"],
     "url": "https://www.cctvtrailer.com/about",
+    "sameAs": ["https://www.linkedin.com/in/val-zakharov-293374397"],
     "worksFor": {
       "@type": "Organization",
       "name": "CCTV Trailer",
@@ -47,11 +49,16 @@ const PERSON_AUTHOR = `"author": {
     }
   },`;
 
-// Matches the 5-line Organization author block seen in every post so far.
-// Uses \s+ so variable whitespace (tabs vs spaces, trailing whitespace) does
-// not prevent a match, and \r?\n for cross-platform newlines.
+// Matches the original 5-line Organization author block.
 const ORG_AUTHOR_RE =
   /"author":\s*\{\s*"@type":\s*"Organization",\s*"name":\s*"CCTV Trailer",\s*"url":\s*"https:\/\/www\.cctvtrailer\.com"\s*\},/;
+
+// Matches ANY existing Person author block for Val Zakharov — lets us upgrade
+// a v1 Person (no jobTitle/sameAs) to the current canonical shape without
+// hand-crafted regexes for every intermediate state. Non-greedy across
+// properties, and anchored on the closing `},` after the worksFor Org.
+const PERSON_AUTHOR_RE =
+  /"author":\s*\{\s*"@type":\s*"Person",\s*"name":\s*"Val Zakharov"[\s\S]*?"worksFor":\s*\{\s*"@type":\s*"Organization",\s*"name":\s*"CCTV Trailer",\s*"url":\s*"https:\/\/www\.cctvtrailer\.com"\s*\}\s*\},/;
 
 const IMPORT_LINE =
   "import AuthorBio from '../../components/AuthorBio.astro';";
@@ -72,8 +79,14 @@ for (const f of files) {
   let src = original;
   const changes = [];
 
-  // 1. Replace Organization author → Person
-  if (ORG_AUTHOR_RE.test(src)) {
+  // 1. Normalise the author block to the current canonical Person shape.
+  //    Order matters: try the Person upgrade first (most posts are here now),
+  //    then the original Organization replacement for any greenfield post.
+  if (PERSON_AUTHOR_RE.test(src)) {
+    const before = src;
+    src = src.replace(PERSON_AUTHOR_RE, PERSON_AUTHOR);
+    if (src !== before) changes.push('person-author-upgrade');
+  } else if (ORG_AUTHOR_RE.test(src)) {
     src = src.replace(ORG_AUTHOR_RE, PERSON_AUTHOR);
     changes.push('person-author');
   } else if (!src.includes('"name": "Val Zakharov"')) {
