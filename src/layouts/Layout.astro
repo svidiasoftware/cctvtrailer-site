@@ -10,13 +10,20 @@ export interface Props {
   description?: string;
   schema?: string | string[];
   canonicalURL?: string;
+  /**
+   * Robots meta directive. Defaults to "index,follow".
+   * Use "noindex,follow" for thank-you / success / utility pages we don't want
+   * showing up in search but still want crawlers to follow internal links from.
+   */
+  robots?: string;
 }
 
 const {
   title,
   description = "Mobile surveillance trailer rentals throughout Tacoma and the Puget Sound region. Advanced video technology for construction sites, events, and temporary security needs.",
   schema,
-  canonicalURL
+  canonicalURL,
+  robots = 'index,follow'
 } = Astro.props;
 
 // Generate absolute URL for social media images
@@ -71,6 +78,7 @@ const finalCanonicalURL = canonicalURL || normalizeCanonicalURL(Astro.url.pathna
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content={robots} />
 
     <!-- Geo meta tags for local SEO -->
     <meta name="geo.region" content="US-WA" />

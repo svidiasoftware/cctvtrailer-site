@@ -206,7 +206,7 @@ const breadcrumbSchema = JSON.stringify({
           <h2 class="text-xl font-bold mb-4 text-gray-700 border-b pb-2">ℹ️ Additional Information</h2>
           <ul class="space-y-2">
             <li><a href="/privacy-policy" class="text-blue-600 hover:text-blue-800 hover:underline">Privacy Policy</a></li>
-            <li><a href="/contact-success" class="text-blue-600 hover:text-blue-800 hover:underline">Contact Success Page</a></li>
+            {/* /contact-success intentionally omitted — it's a noindex post-submit thank-you page; linking it here gave Googlebot a discovery path back to a non-canonical URL. */}
           </ul>
           <div class="mt-6 pt-4 border-t">
             <p class="text-sm font-semibold text-gray-700 mb-2">Quick Contact:</p>
