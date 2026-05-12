@@ -95,7 +95,14 @@ const techSpecsSchema = {
     }
   ],
   "category": "Security Equipment",
-  "keywords": "mobile surveillance trailer, security camera trailer, construction site security, S-VIDIA technology, solar powered surveillance"
+  "keywords": "mobile surveillance trailer, security camera trailer, construction site security, S-VIDIA technology, solar powered surveillance",
+  "releaseDate": "2026-05-12",
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Pierce County, WA" },
+    { "@type": "AdministrativeArea", "name": "King County, WA" },
+    { "@type": "AdministrativeArea", "name": "Snohomish County, WA" },
+    { "@type": "AdministrativeArea", "name": "Kitsap County, WA" }
+  ]
 };
 
 // Breadcrumb data
@@ -176,7 +183,8 @@ const definitions = [
   <main>
   <section class="py-16">
       <div class="container mx-auto px-4 max-w-4xl">
-          <h1 class="text-4xl font-bold text-center mb-12">Mobile Security Trailer Systems</h1>
+          <h1 class="text-4xl font-bold text-center mb-4">Mobile Security Trailer Systems</h1>
+          <p class="text-center text-sm text-gray-500 mb-10">Last reviewed: May 2026 &middot; Specs reflect units currently deployed across Pierce, King, Snohomish, and Kitsap counties.</p>
           <p class="text-lg mb-6">
             Our trailers are <strong>specifically designed and manufactured for year-round deployment in the Pacific Northwest climate</strong>.
             Built to withstand rainy and wet conditions that pose challenges for most electronics, our trailers feature
@@ -479,6 +487,101 @@ const definitions = [
               </tbody>
             </table>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2026 Field-Tested Deployments -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-4">2026 Field-Tested Deployments</h2>
+        <p class="text-center text-gray-700 mb-12 max-w-3xl mx-auto">
+          The specifications above aren&rsquo;t theoretical &mdash; every system listed is validated against the conditions and site types our trailers are protecting across the Puget Sound right now. A snapshot of where these specs get tested daily:
+        </p>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <p class="text-xs font-bold text-blue-600 uppercase tracking-wide mb-2">Transit infrastructure</p>
+            <h3 class="font-bold text-lg mb-2">Sound Transit Light Rail jobsites</h3>
+            <p class="text-gray-600 text-sm">Federal Way Link and Tacoma Dome Link extensions stretch the radar-detection and PA-speaker specs &mdash; long linear sites with copper and high-voltage equipment in staging yards through 2026.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <p class="text-xs font-bold text-purple-600 uppercase tracking-wide mb-2">Corporate campus</p>
+            <h3 class="font-bold text-lg mb-2">Amazon Bellevue + Microsoft Redmond builds</h3>
+            <p class="text-gray-600 text-sm">Multi-tower jobsites with active crews on-site through 2026 validate the 360&deg; PTZ coverage and 4G/5G connectivity specs &mdash; dense urban environments where Wi-Fi mesh and cellular backup matter.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <p class="text-xs font-bold text-green-600 uppercase tracking-wide mb-2">Warehouse / distribution</p>
+            <h3 class="font-bold text-lg mb-2">Kent Valley distribution centers</h3>
+            <p class="text-gray-600 text-sm">The #4 U.S. warehouse district stresses license-plate-reader specs and 2-week storage capacity. Cargo theft along the I-5 corridor in 2025-2026 has pushed continuous-recording requirements harder.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <p class="text-xs font-bold text-amber-700 uppercase tracking-wide mb-2">Industrial</p>
+            <h3 class="font-bold text-lg mb-2">Tacoma tideflats &amp; Paine Field</h3>
+            <p class="text-gray-600 text-sm">Port-adjacent industrial and aerospace sites validate the weatherproof construction spec &mdash; salt air, year-round rain, and unprotected staging through 2026 builds.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <p class="text-xs font-bold text-slate-700 uppercase tracking-wide mb-2">Military / naval</p>
+            <h3 class="font-bold text-lg mb-2">JBLM + Naval Base Kitsap perimeter</h3>
+            <p class="text-gray-600 text-sm">Federal construction projects stress the security-construction specs &mdash; reinforced steel, wheel locks, and tamper-resistant mounting matter when the trailer itself is a target.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <p class="text-xs font-bold text-orange-700 uppercase tracking-wide mb-2">Solar / off-grid</p>
+            <h3 class="font-bold text-lg mb-2">Rural and remote jobsites</h3>
+            <p class="text-gray-600 text-sm">PNW winter daylight is short. The solar + battery + generator power management spec is tuned for jobsites where shore power isn&rsquo;t available and December cloud cover lasts weeks at a time.</p>
+          </div>
+        </div>
+
+        <p class="text-center text-sm text-gray-500 mt-10 max-w-2xl mx-auto">
+          For the full regional breakdown of 2026 Puget Sound construction by site type, see our <a href="/blog/puget-sound-construction-boom-map-2026" class="text-blue-600 hover:underline font-medium">Puget Sound construction boom map</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Coverage / Internal Links -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">Related Coverage</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <a href="/blog/puget-sound-construction-boom-map-2026" class="block bg-gray-50 p-6 rounded-lg hover:bg-gray-100 transition-colors">
+            <p class="text-xs font-bold text-blue-600 uppercase tracking-wide mb-2">Regional Map</p>
+            <h3 class="font-bold text-lg mb-2 text-gray-900">2026 Puget Sound Construction Boom Map</h3>
+            <p class="text-gray-600 text-sm">Where the active 2026 builds are across Pierce, King, Snohomish, and Kitsap &mdash; with project markers and theft profile by site type.</p>
+          </a>
+          <a href="/construction-security" class="block bg-gray-50 p-6 rounded-lg hover:bg-gray-100 transition-colors">
+            <p class="text-xs font-bold text-blue-600 uppercase tracking-wide mb-2">Service</p>
+            <h3 class="font-bold text-lg mb-2 text-gray-900">Construction Site Security</h3>
+            <p class="text-gray-600 text-sm">How these specs translate to on-site protection for jobsites across the Puget Sound &mdash; same-day deployment, perimeter coverage, staging-yard monitoring.</p>
+          </a>
+          <a href="/blog/copper-theft-seattle-tacoma-construction-sites" class="block bg-gray-50 p-6 rounded-lg hover:bg-gray-100 transition-colors">
+            <p class="text-xs font-bold text-amber-700 uppercase tracking-wide mb-2">Threat Profile</p>
+            <h3 class="font-bold text-lg mb-2 text-gray-900">Copper Theft at Construction Sites</h3>
+            <p class="text-gray-600 text-sm">Why these radar + PTZ + LED floodlight specs matter for the worst year on record for jobsite copper theft in Washington.</p>
+          </a>
+          <a href="/seattle-construction-security" class="block bg-gray-50 p-6 rounded-lg hover:bg-gray-100 transition-colors">
+            <p class="text-xs font-bold text-purple-600 uppercase tracking-wide mb-2">Service Area</p>
+            <h3 class="font-bold text-lg mb-2 text-gray-900">Seattle Construction Security</h3>
+            <p class="text-gray-600 text-sm">SLU, downtown, Rainier Valley, Ballard, SODO &mdash; the densest crane concentration in the state.</p>
+          </a>
+          <a href="/bellevue-surveillance-trailer" class="block bg-gray-50 p-6 rounded-lg hover:bg-gray-100 transition-colors">
+            <p class="text-xs font-bold text-purple-600 uppercase tracking-wide mb-2">Service Area</p>
+            <h3 class="font-bold text-lg mb-2 text-gray-900">Bellevue Surveillance Trailer</h3>
+            <p class="text-gray-600 text-sm">Coverage for the Amazon multi-tower buildout and Spring District infill on the Eastside.</p>
+          </a>
+          <a href="/tacoma-construction-site-security" class="block bg-gray-50 p-6 rounded-lg hover:bg-gray-100 transition-colors">
+            <p class="text-xs font-bold text-amber-700 uppercase tracking-wide mb-2">Service Area</p>
+            <h3 class="font-bold text-lg mb-2 text-gray-900">Tacoma Construction Site Security</h3>
+            <p class="text-gray-600 text-sm">Tideflats industrial, port-adjacent, and downtown Tacoma jobsite coverage across Pierce County.</p>
+          </a>
         </div>
       </div>
     </div>
