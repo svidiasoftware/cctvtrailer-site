@@ -1,0 +1,35 @@
+---
+import type { CityProfile } from '../data/city-profiles';
+
+export interface CityServiceAreasProps {
+  profile: CityProfile;
+}
+
+const { profile } = Astro.props as CityServiceAreasProps;
+const { serviceAreas } = profile;
+
+const colsClass =
+  serviceAreas.columns.length === 2
+    ? 'grid md:grid-cols-2 gap-6'
+    : serviceAreas.columns.length >= 4
+      ? 'grid md:grid-cols-2 lg:grid-cols-4 gap-6'
+      : 'grid md:grid-cols-3 gap-6';
+---
+
+<section class="py-16">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-8">{serviceAreas.h2}</h2>
+    <div class={colsClass}>
+      {serviceAreas.columns.map((col) => (
+        <div class="bg-white border rounded-lg p-6">
+          <h3 class="font-bold text-lg mb-3">{col.heading}</h3>
+          <ul class="text-gray-600 space-y-1">
+            {col.items.map((item) => (
+              <li>&bull; {item}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

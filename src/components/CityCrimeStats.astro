@@ -1,0 +1,42 @@
+---
+import StatBox from './StatBox.astro';
+import type { CityProfile } from '../data/city-profiles';
+
+export interface CityCrimeStatsProps {
+  profile: CityProfile;
+}
+
+const { profile } = Astro.props as CityCrimeStatsProps;
+
+// This component should only be rendered when profile.crimeStats is present;
+// the dispatcher in CityLanding handles that guard.
+const crime = profile.crimeStats!;
+const sectionBg = profile.theme.crimeSectionBg ?? 'bg-gray-50';
+
+// Shape the stats for StatBox. StatBox auto-emits ClaimReview JSON-LD and
+// renders inline citations + a "Sources:" footer when source is present.
+const statBoxStats = crime.stats.map((s) => ({
+  value: s.value,
+  label: s.label,
+  highlight: s.highlight,
+  icon: s.icon,
+  source: { text: s.source.text, url: s.source.url },
+}));
+---
+
+<section class={`py-12 ${sectionBg}`}>
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6 text-center">{crime.h2}</h2>
+      {crime.intro && (
+        <p class="text-gray-700 text-center mb-8" set:html={crime.intro} />
+      )}
+      <StatBox stats={statBoxStats} layout="grid" schema={true} />
+      {crime.calloutHtml && (
+        <div class="mt-8 bg-white rounded-lg p-6 border-l-4 border-yellow-600">
+          <p class="text-gray-700 font-semibold" set:html={crime.calloutHtml} />
+        </div>
+      )}
+    </div>
+  </div>
+</section>

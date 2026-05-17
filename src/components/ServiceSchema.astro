@@ -8,7 +8,7 @@ export interface ServiceSchemaProps {
   priceCurrency?: string;
   priceUnit?: 'DAY' | 'WEEK' | 'MONTH' | 'YEAR' | 'WEEKEND';
   areaServed?: Array<{
-    type: 'State' | 'City';
+    type: 'State' | 'City' | 'Place' | 'AdministrativeArea';
     name: string;
   }>;
   customProvider?: {

@@ -1,0 +1,73 @@
+---
+import type { CityProfile } from '../data/city-profiles';
+
+export interface CityQuoteFormProps {
+  profile: CityProfile;
+}
+
+const { profile } = Astro.props as CityQuoteFormProps;
+const { quoteForm, theme, cityName } = profile;
+const submitButtonClass = theme.submitButton ?? 'bg-green-600 hover:bg-green-700';
+---
+
+<section id={quoteForm.anchorId} class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4 max-w-2xl">
+    <h2 class="text-3xl font-bold text-center mb-8">{quoteForm.h2}</h2>
+    <form id={`${quoteForm.anchorId}-form`} class="bg-white rounded-lg p-8 shadow-lg">
+      <div class="grid gap-6">
+        <div>
+          <label for={`${quoteForm.anchorId}-name`} class="block mb-2 font-semibold">Name *</label>
+          <input
+            type="text"
+            id={`${quoteForm.anchorId}-name`}
+            name="name"
+            required
+            class="w-full px-4 py-2 border rounded-lg"
+          />
+        </div>
+        <div>
+          <label for={`${quoteForm.anchorId}-phone`} class="block mb-2 font-semibold">Phone *</label>
+          <input
+            type="tel"
+            id={`${quoteForm.anchorId}-phone`}
+            name="phone"
+            required
+            class="w-full px-4 py-2 border rounded-lg"
+          />
+        </div>
+        <div>
+          <label for={`${quoteForm.anchorId}-property`} class="block mb-2 font-semibold">Property Type *</label>
+          <select
+            id={`${quoteForm.anchorId}-property`}
+            name="property"
+            required
+            class="w-full px-4 py-2 border rounded-lg"
+          >
+            <option value="">Select type...</option>
+            {quoteForm.propertyTypes.map((opt) => (
+              <option value={opt.value}>{opt.label}</option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label for={`${quoteForm.anchorId}-size`} class="block mb-2 font-semibold">Property Size</label>
+          <select id={`${quoteForm.anchorId}-size`} name="size" class="w-full px-4 py-2 border rounded-lg">
+            <option value="">Select size...</option>
+            <option value="small">Under 10,000 sq ft</option>
+            <option value="medium">10,000 - 50,000 sq ft</option>
+            <option value="large">50,000 - 200,000 sq ft</option>
+            <option value="xlarge">Over 200,000 sq ft</option>
+          </select>
+        </div>
+      </div>
+      <div class="mt-8 text-center">
+        <button
+          type="submit"
+          class={`text-white font-bold py-3 px-12 rounded-lg text-lg ${submitButtonClass}`}
+        >
+          Get {cityName} Quote &rarr;
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

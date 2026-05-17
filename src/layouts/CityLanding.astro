@@ -1,0 +1,186 @@
+---
+// -----------------------------------------------------------------------------
+// CityLanding.astro
+//
+// Composite layout that renders an entire city landing page from one
+// CityProfile entry. Each city page is now a thin shell that imports its
+// profile and passes it here. Per-city structural variance comes from
+// profile.sectionOrder: SectionKey[] — different ordering across cities
+// defeats Google's near-duplicate template detection.
+//
+// The applications and whyUs section bodies are inlined here (rather than
+// extracted into separate components) because their markup is small and
+// they don't need to be reused elsewhere.
+// -----------------------------------------------------------------------------
+import Layout from './Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import FAQSchema from '../components/FAQSchema.astro';
+import FAQList from '../components/FAQList.astro';
+import RelatedPages from '../components/RelatedPages.astro';
+import CityHero from '../components/CityHero.astro';
+import CityCrimeStats from '../components/CityCrimeStats.astro';
+import CityServiceAreas from '../components/CityServiceAreas.astro';
+import CityQuoteForm from '../components/CityQuoteForm.astro';
+import type { CityProfile, SectionKey } from '../data/city-profiles';
+
+export interface CityLandingProps {
+  profile: CityProfile;
+}
+
+const { profile } = Astro.props as CityLandingProps;
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Locations', url: '/locations' },
+  { name: `${profile.cityName} Security` },
+];
+
+const faqJsonItems = profile.faq.items.map((i) => ({
+  question: i.question,
+  answer: i.answerText,
+}));
+
+// Tailwind-safe column-count selector for the applications grid.
+const applicationsGridClass =
+  profile.applications.groups.length === 3
+    ? 'grid md:grid-cols-3 gap-8'
+    : profile.applications.groups.length === 4
+      ? 'grid md:grid-cols-2 lg:grid-cols-4 gap-8'
+      : 'grid md:grid-cols-2 gap-8';
+
+const whyUsGridClass =
+  profile.whyUs.cards.length === 2
+    ? 'grid md:grid-cols-2 gap-8'
+    : profile.whyUs.cards.length === 4
+      ? 'grid md:grid-cols-2 lg:grid-cols-4 gap-8'
+      : 'grid md:grid-cols-3 gap-8';
+---
+
+<Layout title={profile.pageTitle} description={profile.pageDescription}>
+  <ServiceSchema
+    serviceName={profile.schema.serviceName}
+    description={profile.pageDescription}
+    price={profile.schema.priceLow}
+    highPrice={profile.schema.priceHigh}
+    priceUnit={profile.schema.priceUnit}
+    areaServed={profile.schema.areaServed}
+  />
+  <BreadcrumbSchema items={breadcrumbItems} />
+  <FAQSchema items={faqJsonItems} />
+
+  <Header showEmergencyBar={true} currentPath={`/${profile.slug}`} />
+  <Analytics />
+
+  <main>
+    {profile.expanding && (
+      <section class="bg-amber-50 border-y border-amber-300 py-4">
+        <div
+          class="container mx-auto px-4 text-sm text-amber-900"
+          set:html={profile.expanding.disclosureHtml}
+        />
+      </section>
+    )}
+
+    {profile.sectionOrder.map((key: SectionKey) => {
+      if (key === 'hero') {
+        return <CityHero profile={profile} />;
+      }
+
+      if (key === 'storyAnchor') {
+        return (
+          <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 max-w-4xl">
+              <h2 class="text-3xl md:text-4xl font-bold mb-6">{profile.storyAnchor.h2}</h2>
+              {profile.storyAnchor.paragraphsHtml.map((p) => (
+                <p class="text-lg text-gray-700 mb-4 leading-relaxed" set:html={p} />
+              ))}
+              {profile.storyAnchor.pullquoteHtml && (
+                <blockquote
+                  class="border-l-4 border-gray-400 pl-6 italic text-gray-800 my-6"
+                  set:html={profile.storyAnchor.pullquoteHtml}
+                />
+              )}
+            </div>
+          </section>
+        );
+      }
+
+      if (key === 'crimeStats') {
+        return profile.crimeStats ? <CityCrimeStats profile={profile} /> : null;
+      }
+
+      if (key === 'serviceAreas') {
+        return <CityServiceAreas profile={profile} />;
+      }
+
+      if (key === 'applications') {
+        return (
+          <section class="bg-gray-50 py-16">
+            <div class="container mx-auto px-4">
+              <h2 class="text-3xl font-bold mb-8">{profile.applications.h2}</h2>
+              <div class={applicationsGridClass}>
+                {profile.applications.groups.map((group) => (
+                  <div>
+                    <h3 class="font-bold text-xl mb-4">{group.heading}</h3>
+                    <ul class="space-y-2">
+                      {group.bullets.map((b) => (
+                        <li class="flex items-start">
+                          <span class="text-green-600 mr-2">&#10003;</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      }
+
+      if (key === 'whyUs') {
+        return (
+          <section class="py-16">
+            <div class="container mx-auto px-4">
+              <h2 class="text-3xl font-bold mb-8 text-center">{profile.whyUs.h2}</h2>
+              <div class={whyUsGridClass}>
+                {profile.whyUs.cards.map((card) => (
+                  <div class="text-center">
+                    <div class="text-4xl mb-4">{card.icon}</div>
+                    <h3 class="font-bold text-xl mb-2">{card.title}</h3>
+                    <p class="text-gray-600">{card.body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      }
+
+      if (key === 'faq') {
+        return <FAQList h2={profile.faq.h2} items={profile.faq.items} />;
+      }
+
+      if (key === 'quoteForm') {
+        return <CityQuoteForm profile={profile} />;
+      }
+
+      if (key === 'relatedPages') {
+        return (
+          <RelatedPages
+            title={`Related ${profile.region} Security`}
+            pages={profile.relatedPages}
+          />
+        );
+      }
+
+      return null;
+    })}
+  </main>
+
+  <Footer />
+</Layout>

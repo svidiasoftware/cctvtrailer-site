@@ -138,6 +138,8 @@ const finalCanonicalURL = canonicalURL || normalizeCanonicalURL(Astro.url.pathna
       )
     )}
 
+    <slot name="head" />
+
     <!-- Google Tag Manager Script - Placed in head as per Google's recommendations -->
     <OptimizedScripts />
   </head>

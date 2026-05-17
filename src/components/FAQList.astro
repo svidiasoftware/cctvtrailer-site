@@ -1,0 +1,24 @@
+---
+import type { FAQItem } from '../data/city-profiles';
+
+export interface FAQListProps {
+  h2: string;
+  items: FAQItem[];
+}
+
+const { h2, items } = Astro.props as FAQListProps;
+---
+
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">{h2}</h2>
+    <div class="max-w-3xl mx-auto space-y-6">
+      {items.map((item) => (
+        <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+          <h3 class="font-bold text-lg mb-3">{item.question}</h3>
+          <p class="text-gray-700 leading-relaxed" set:html={item.answerHtml ?? item.answerText} />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
