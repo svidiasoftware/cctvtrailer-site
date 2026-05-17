@@ -11,6 +11,7 @@ import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
 import ComparisonTable from '../components/ComparisonTable.astro';
 import QuickAnswer from '../components/QuickAnswer.astro';
 import StatBox from '../components/StatBox.astro';
+import LazyImage from '../components/LazyImage.astro';
 
 // Schema data for retail parking lot security service
 const serviceSchemaData = {
@@ -86,8 +87,20 @@ const relatedPages = [
 
   <main>
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-purple-900 to-purple-800 text-white py-16">
-      <div class="container mx-auto px-4">
+    <section class="relative text-white py-16 overflow-hidden">
+      <div class="absolute inset-0">
+        <LazyImage
+          src="/images/cities/tacoma-retail-hero.webp"
+          alt="Mobile CCTV surveillance trailer at the edge of a big-box retail center parking lot at dusk with softly lit storefronts and scattered shopping carts"
+          class="w-full h-full object-cover"
+          width="1920"
+          height="1080"
+          loading="eager"
+          fetchPriority="high"
+        />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-purple-900/85 to-purple-900/55"></div>
+      <div class="container mx-auto px-4 relative z-10">
         <div class="max-w-4xl">
           <h1 class="text-4xl md:text-5xl font-bold mb-4">Tacoma Retail Parking Lot Security Solutions</h1>
           <p class="text-xl mb-6">Protect Customers, Reduce Liability & Prevent Vehicle Theft at Your Shopping Center</p>

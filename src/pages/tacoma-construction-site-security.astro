@@ -11,6 +11,7 @@ import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
 import ComparisonTable from '../components/ComparisonTable.astro';
 import QuickAnswer from '../components/QuickAnswer.astro';
 import StatBox from '../components/StatBox.astro';
+import LazyImage from '../components/LazyImage.astro';
 
 // Schema data for Tacoma construction security service
 const serviceSchemaData = {
@@ -88,8 +89,20 @@ const relatedPages = [
 
   <main>
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-orange-800 to-orange-900 text-white py-16">
-      <div class="container mx-auto px-4">
+    <section class="relative text-white py-16 overflow-hidden">
+      <div class="absolute inset-0">
+        <LazyImage
+          src="/images/cities/tacoma-construction-hero.webp"
+          alt="Mobile CCTV surveillance trailer guarding the chain-link perimeter of a Tacoma waterfront mixed-use construction site at dusk with scaffolding and Mount Rainier silhouetted in the distance"
+          class="w-full h-full object-cover"
+          width="1920"
+          height="1080"
+          loading="eager"
+          fetchPriority="high"
+        />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-orange-900/85 to-orange-900/55"></div>
+      <div class="container mx-auto px-4 relative z-10">
         <div class="max-w-4xl">
           <h1 class="text-4xl md:text-5xl font-bold mb-4">Tacoma Construction Site Security Solutions</h1>
           <p class="text-xl mb-6">Protect Equipment, Materials & Tools from Theft at Tacoma Job Sites</p>

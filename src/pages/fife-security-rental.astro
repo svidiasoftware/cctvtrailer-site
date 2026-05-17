@@ -8,6 +8,7 @@ import ServiceSchema from '../components/ServiceSchema.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
 import QuickAnswer from '../components/QuickAnswer.astro';
 import StatBox from '../components/StatBox.astro';
+import LazyImage from '../components/LazyImage.astro';
 
 // Schema data for the construction security service
 const serviceSchemaData = {
@@ -101,8 +102,20 @@ const relatedPages = [
 
   <main>
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-red-800 to-red-900 text-white py-16">
-      <div class="container mx-auto px-4">
+    <section class="relative text-white py-16 overflow-hidden">
+      <div class="absolute inset-0">
+        <LazyImage
+          src="/images/cities/fife-hero.webp"
+          alt="Mobile CCTV surveillance trailer at the entry gate of a Fife trucking freight yard near Interstate 5 in early-morning pre-dawn light with rows of semi-trailers"
+          class="w-full h-full object-cover"
+          width="1920"
+          height="1080"
+          loading="eager"
+          fetchPriority="high"
+        />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-red-900/85 to-red-900/55"></div>
+      <div class="container mx-auto px-4 relative z-10">
         <div class="max-w-4xl">
           <h1 class="text-4xl md:text-5xl font-bold mb-4">Fife Industrial & Warehouse Security</h1>
           <p class="text-xl mb-6"><strong>Critical surveillance for Pierce County's highest-crime industrial corridor.</strong> Protecting Port of Tacoma operations, warehouses, and logistics facilities <strong>24/7</strong>.</p>

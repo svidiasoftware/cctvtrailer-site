@@ -6,6 +6,7 @@ import Analytics from '../components/Analytics.astro';
 import ServiceSchema from '../components/ServiceSchema.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
 import StatBox from '../components/StatBox.astro';
+import LazyImage from '../components/LazyImage.astro';
 
 // Schema data for the construction security service
 const serviceSchemaData = {
@@ -139,8 +140,20 @@ const relatedPages = [
   
   <main>
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-blue-800 to-blue-900 text-white py-16">
-      <div class="container mx-auto px-4">
+    <section class="relative text-white py-16 overflow-hidden">
+      <div class="absolute inset-0">
+        <LazyImage
+          src="/images/cities/seattle-hero.webp"
+          alt="Mobile CCTV surveillance trailer parked on a commercial lot with the Seattle skyline and Space Needle silhouetted against a dusk sky in the background"
+          class="w-full h-full object-cover"
+          width="1920"
+          height="1080"
+          loading="eager"
+          fetchPriority="high"
+        />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-blue-900/85 to-blue-900/55"></div>
+      <div class="container mx-auto px-4 relative z-10">
         <div class="max-w-4xl">
           <h1 class="text-4xl md:text-5xl font-bold mb-4">Mobile Surveillance Trailer Rental in Seattle, WA</h1>
           <p class="text-xl mb-6">Professional security solutions delivered throughout King County. From Capitol Hill to Ballard, we've got Seattle covered.</p>

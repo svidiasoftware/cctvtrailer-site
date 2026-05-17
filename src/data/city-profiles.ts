@@ -107,6 +107,7 @@ export interface CityProfile {
     leadHtml: string;
     ctaPrimaryText: string;
     bullets?: string[];
+    backgroundImage?: { src: string; alt: string };
   };
 
   storyAnchor: {
@@ -201,6 +202,10 @@ const kentProfile: CityProfile = {
       "<strong>Protecting the Pacific Northwest's largest warehouse cluster.</strong> Mobile camera trailers deployed across Kent Valley distribution centers, intermodal yards, and Boeing supplier facilities — same-day rollout from our Tacoma HQ.",
     ctaPrimaryText: 'Get Kent Quote',
     bullets: ["⚡ 30-minute response from Tacoma via I-5 / SR-167"],
+    backgroundImage: {
+      src: '/images/cities/kent-hero.webp',
+      alt: 'CCTV surveillance trailer parked at the perimeter of a Kent Valley warehouse distribution center at dusk, loading docks lit by overhead lights',
+    },
   },
 
   storyAnchor: {

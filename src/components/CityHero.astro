@@ -1,5 +1,6 @@
 ---
 import type { CityProfile } from '../data/city-profiles';
+import LazyImage from './LazyImage.astro';
 
 export interface CityHeroProps {
   profile: CityProfile;
@@ -7,39 +8,95 @@ export interface CityHeroProps {
 
 const { profile } = Astro.props as CityHeroProps;
 const { hero, theme, quoteForm } = profile;
+
+// When a background image is supplied, the brand-color gradient becomes a
+// translucent left-heavy overlay so white text stays legible while the photo
+// remains visible on the right side.
+const heroOverlayGradient = theme.heroGradient
+  .replace(/(from-[\w-]+-)(\d{3})/, '$1900/85')
+  .replace(/(to-[\w-]+-)(\d{3})/, '$1900/55');
 ---
 
-<section class={`text-white py-16 ${theme.heroGradient}`}>
-  <div class="container mx-auto px-4">
-    <div class="max-w-4xl">
-      {hero.eyebrow && (
-        <div class={`inline-block text-sm font-semibold px-4 py-1 rounded-full mb-4 ${theme.eyebrowBadge ?? 'bg-white/10 text-white'}`}>
-          {hero.eyebrow}
-        </div>
-      )}
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">{hero.h1}</h1>
-      <p class="text-xl mb-6" set:html={hero.leadHtml} />
-      <div class="flex flex-col sm:flex-row gap-4">
-        <a
-          href="tel:2536832288"
-          class={`font-bold py-3 px-8 rounded-lg inline-block text-center ${theme.primaryCtaButton ?? 'bg-white text-gray-900 hover:bg-gray-100'}`}
-        >
-          &#128222; Call: (253) 683-2288
-        </a>
-        <a
-          href={`#${quoteForm.anchorId}`}
-          class={`font-bold py-3 px-8 rounded-lg inline-block text-center ${theme.secondaryCtaButton ?? 'bg-green-500 hover:bg-green-600 text-white'}`}
-        >
-          {hero.ctaPrimaryText} &rarr;
-        </a>
-      </div>
-      {hero.bullets && hero.bullets.length > 0 && (
-        <ul class="mt-4 space-y-1">
-          {hero.bullets.map((b) => (
-            <li>{b}</li>
-          ))}
-        </ul>
-      )}
+{hero.backgroundImage ? (
+  <section class="relative text-white py-16 overflow-hidden">
+    <div class="absolute inset-0">
+      <LazyImage
+        src={hero.backgroundImage.src}
+        alt={hero.backgroundImage.alt}
+        class="w-full h-full object-cover"
+        width="1920"
+        height="1080"
+        loading="eager"
+        fetchPriority="high"
+      />
     </div>
-  </div>
-</section>
+    <div class={`absolute inset-0 bg-gradient-to-r ${heroOverlayGradient}`}></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl">
+        {hero.eyebrow && (
+          <div class={`inline-block text-sm font-semibold px-4 py-1 rounded-full mb-4 ${theme.eyebrowBadge ?? 'bg-white/10 text-white'}`}>
+            {hero.eyebrow}
+          </div>
+        )}
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">{hero.h1}</h1>
+        <p class="text-xl mb-6" set:html={hero.leadHtml} />
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="tel:2536832288"
+            class={`font-bold py-3 px-8 rounded-lg inline-block text-center ${theme.primaryCtaButton ?? 'bg-white text-gray-900 hover:bg-gray-100'}`}
+          >
+            &#128222; Call: (253) 683-2288
+          </a>
+          <a
+            href={`#${quoteForm.anchorId}`}
+            class={`font-bold py-3 px-8 rounded-lg inline-block text-center ${theme.secondaryCtaButton ?? 'bg-green-500 hover:bg-green-600 text-white'}`}
+          >
+            {hero.ctaPrimaryText} &rarr;
+          </a>
+        </div>
+        {hero.bullets && hero.bullets.length > 0 && (
+          <ul class="mt-4 space-y-1">
+            {hero.bullets.map((b) => (
+              <li>{b}</li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </div>
+  </section>
+) : (
+  <section class={`text-white py-16 ${theme.heroGradient}`}>
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl">
+        {hero.eyebrow && (
+          <div class={`inline-block text-sm font-semibold px-4 py-1 rounded-full mb-4 ${theme.eyebrowBadge ?? 'bg-white/10 text-white'}`}>
+            {hero.eyebrow}
+          </div>
+        )}
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">{hero.h1}</h1>
+        <p class="text-xl mb-6" set:html={hero.leadHtml} />
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="tel:2536832288"
+            class={`font-bold py-3 px-8 rounded-lg inline-block text-center ${theme.primaryCtaButton ?? 'bg-white text-gray-900 hover:bg-gray-100'}`}
+          >
+            &#128222; Call: (253) 683-2288
+          </a>
+          <a
+            href={`#${quoteForm.anchorId}`}
+            class={`font-bold py-3 px-8 rounded-lg inline-block text-center ${theme.secondaryCtaButton ?? 'bg-green-500 hover:bg-green-600 text-white'}`}
+          >
+            {hero.ctaPrimaryText} &rarr;
+          </a>
+        </div>
+        {hero.bullets && hero.bullets.length > 0 && (
+          <ul class="mt-4 space-y-1">
+            {hero.bullets.map((b) => (
+              <li>{b}</li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </div>
+  </section>
+)}

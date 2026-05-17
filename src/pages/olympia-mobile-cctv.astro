@@ -12,6 +12,7 @@ import QuickAnswer from '../components/QuickAnswer.astro';
 import StatBox from '../components/StatBox.astro';
 import SpeakableSchema from '../components/SpeakableSchema.astro';
 import ReviewSchema from '../components/ReviewSchema.astro';
+import LazyImage from '../components/LazyImage.astro';
 
 // Schema data for the Olympia mobile CCTV service
 const serviceSchemaData = {
@@ -171,8 +172,20 @@ const relatedPages = [
 
   <main>
     <!-- Hero Section: Capitol Building Context -->
-    <section class="bg-gradient-to-br from-emerald-900 via-emerald-800 to-green-900 text-white py-20">
-      <div class="container mx-auto px-4">
+    <section class="relative text-white py-20 overflow-hidden">
+      <div class="absolute inset-0">
+        <LazyImage
+          src="/images/cities/olympia-hero.webp"
+          alt="Mobile CCTV surveillance trailer parked in a commercial lot near the Washington State Capitol campus in Olympia under soft Pacific Northwest afternoon light, the Legislative Building dome visible in the distance"
+          class="w-full h-full object-cover"
+          width="1920"
+          height="1080"
+          loading="eager"
+          fetchPriority="high"
+        />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-br from-emerald-900/85 via-emerald-800/70 to-green-900/55"></div>
+      <div class="container mx-auto px-4 relative z-10">
         <div class="max-w-4xl">
           <div class="inline-block bg-emerald-700 text-emerald-100 text-sm font-semibold px-4 py-1 rounded-full mb-4">
             Washington State Capital -- Thurston County
