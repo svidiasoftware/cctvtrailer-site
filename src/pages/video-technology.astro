@@ -9,8 +9,8 @@ import LazyImage from '../components/LazyImage.astro';
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "headline": "S-VIDIA Video Technology for Mobile Surveillance",
-  "description": "CCTV Trailer is the only local surveillance trailer company using monitoring software specifically developed with mobile security in mind",
+  "headline": "FDC (Flexible Delta Compression) on the S-VIDIA Platform",
+  "description": "FDC is S-VIDIA's proprietary video codec for security footage — up to 60% less storage than H.264/H.265, no hardware compression (no quality loss), watermarked and encrypted frames, true frame-by-frame recording. The CCTV Trailer fleet across the Puget Sound runs on FDC.",
   "author": {
     "@type": "Organization",
     "name": "CCTV Trailer"
@@ -27,8 +27,8 @@ const schema = JSON.stringify({
   },
   "about": {
     "@type": "Thing",
-    "name": "S-VIDIA Video Compression Technology",
-    "description": "Flexible Delta Compression (FDC) video technology designed specifically for security footage"
+    "name": "FDC (Flexible Delta Compression)",
+    "description": "S-VIDIA's proprietary video codec. Records the background of a scene as a static image and the foreground as motion deltas at 8×8-pixel block granularity. No hardware compression, no resolution loss. Frames are watermarked and encrypted at write time. S-VIDIA reports up to 60% less recording space than conventional H.264/H.265 systems."
   }
 });
 
@@ -39,9 +39,9 @@ const breadcrumbItems = [
 ];
 ---
 
-<Layout 
-  title="Video Technology and Mobile Surveillance | CCTV Trailers"
-  description="S-VIDIA video technology: advanced compression, AI analytics, military-grade encryption. The only local company with mobile-specific surveillance software."
+<Layout
+  title="FDC Codec & S-VIDIA Video Technology | CCTV Trailers"
+  description="FDC (Flexible Delta Compression) is S-VIDIA's proprietary codec — up to 60% less storage than H.264/H.265, no hardware compression, watermarked + encrypted frames, true frame-by-frame recording. The only local company running mobile-specific surveillance software."
   schema={schema}>
 
   <BreadcrumbSchema items={breadcrumbItems} /> 
@@ -53,31 +53,34 @@ const breadcrumbItems = [
     <!-- Hero Section with Background -->
     <div class="hero-trailer">
       <div class="hero-overlay">
-        <LazyImage src="/images/tacoma-dome-bg-hero.webp" alt="Advanced S-VIDIA video surveillance technology for mobile security trailers" 
+        <LazyImage src="/images/tacoma-dome-bg-hero.webp" alt="FDC (Flexible Delta Compression) on the S-VIDIA platform — video technology for mobile security trailers"
           class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
       </div>
       <div class="hero-content">
         <div class="hero-text-wrapper">
           <h1 class="hero-heading">VIDEO TECHNOLOGY</h1>
           <p class="hero-paragraph">
-            CCTV Trailer is <strong>the only local surveillance trailer company</strong> using monitoring software <strong>specifically developed with mobile security in mind</strong>.
+            CCTV Trailer is <strong>the only local surveillance trailer company</strong> running <strong>FDC (Flexible Delta Compression)</strong> — S-VIDIA's proprietary codec, built specifically for security footage.
           </p>
         </div>
       </div>
     </div>
 
-    <!-- S-VIDIA Section -->
+    <!-- FDC + S-VIDIA Section -->
     <div class="section-whats-vidia">
       <div class="streaming-wrapper">
         <div class="container-image-text">
           <div class="square-image-div svidia-image-block"></div>
           <div class="column-content-container">
-            <h2 class="heading-2">WHAT IS S-VIDIA?</h2>
+            <h2 class="heading-2">WHAT IS FDC?</h2>
             <p class="body-text">
-              The S-VIDIA system captures the highest picture quality possible while minimizing valuable resource consumption. Conventional video security systems use multimedia video compression such as H.264, which reduces picture quality and accuracy to save space.
+              <strong>FDC (Flexible Delta Compression)</strong> is the video codec inside the S-VIDIA platform. It captures the highest picture quality possible while minimizing storage and bandwidth. Conventional video security systems use multimedia video compression such as H.264 or H.265, which reduce picture quality and accuracy to save space.
             </p>
             <p class="body-text">
-              S-VIDIA uses Flexible Delta Compressions (FDC), a video compression method designed specifically for security footage. FDC separates moving objects from the static background to save the most important movement at higher quality and frequency than the static background. This method allows for greater control over quality, resolution, and recording sensitivity.
+              FDC works differently. It records only what is important and necessary &mdash; changes and movement. The background of a scene is stored separately as a static image; the foreground captures motion at higher quality and frequency. The result: greater control over quality, resolution, and recording sensitivity, with frames retained as separate images for <strong>true frame-by-frame recording</strong>.
+            </p>
+            <p class="body-text">
+              Because FDC does not use hardware compression, no resolution or detail is lost before analytics or playback. Every frame is also <strong>watermarked and encrypted at write time</strong> for evidence integrity.
             </p>
           </div>
         </div>
@@ -87,10 +90,10 @@ const breadcrumbItems = [
           <div class="column-content-container">
             <h2 class="heading-2">SECURE STREAMING</h2>
             <p class="body-text">
-              When a user connects to an S-VIDIA server, video is automatically encrypted using military-grade 256-bit encryption, ensuring the data is tamper-free.
+              When a user connects to an S-VIDIA server, video is automatically transported over a <strong>military-grade 128-bit encrypted connection</strong>, ensuring the data is tamper-free in transit.
             </p>
             <p class="body-text">
-              The S-VIDIA system also employs random interval changes within the decryption key, which increases security.
+              The platform also employs random interval changes within the decryption key, which adds an additional layer of protection against replay and key-recovery attacks.
             </p>
           </div>
         </div>
@@ -100,44 +103,83 @@ const breadcrumbItems = [
     <!-- Key Benefits Section -->
     <div class="py-16 bg-gray-50">
       <div class="container mx-auto px-4 max-w-4xl">
-        <h2 class="text-3xl font-bold text-center mb-8 text-gray-900">Key Advantages of S-VIDIA Technology</h2>
+        <h2 class="text-3xl font-bold text-center mb-8 text-gray-900">Key Advantages of FDC</h2>
         <ul class="space-y-4 bg-white border-2 border-blue-200 rounded-lg p-8">
           <li class="flex items-start">
             <span class="text-blue-600 font-bold mr-3 mt-1">✓</span>
             <div>
-              <strong class="text-gray-900">Superior compression efficiency:</strong>
-              <span class="text-gray-700"> Reduces storage requirements by up to 60% compared to H.264/H.265</span>
+              <strong class="text-gray-900">Superior storage efficiency:</strong>
+              <span class="text-gray-700"> Up to 60% less recording space than conventional H.264/H.265 systems (S-VIDIA published figure).</span>
             </div>
           </li>
           <li class="flex items-start">
             <span class="text-blue-600 font-bold mr-3 mt-1">✓</span>
             <div>
-              <strong class="text-gray-900">Enhanced motion detection:</strong>
-              <span class="text-gray-700"> Prioritizes moving objects while minimizing background data</span>
+              <strong class="text-gray-900">No quality loss:</strong>
+              <span class="text-gray-700"> FDC does not use hardware compression. The exact image the camera produced is what gets stored, analyzed, and played back.</span>
             </div>
           </li>
           <li class="flex items-start">
             <span class="text-blue-600 font-bold mr-3 mt-1">✓</span>
             <div>
-              <strong class="text-gray-900">Military-grade security:</strong>
-              <span class="text-gray-700"> 256-bit encryption with dynamic key rotation</span>
+              <strong class="text-gray-900">True frame-by-frame recording:</strong>
+              <span class="text-gray-700"> Frames are retained as separate images, so incident review jumps directly to any frame with no GOP-dependent decoding tax.</span>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 font-bold mr-3 mt-1">✓</span>
+            <div>
+              <strong class="text-gray-900">Evidence integrity:</strong>
+              <span class="text-gray-700"> Every frame is watermarked and encrypted at write time &mdash; courtroom-ready audit trail.</span>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 font-bold mr-3 mt-1">✓</span>
+            <div>
+              <strong class="text-gray-900">Motion-prioritized recording:</strong>
+              <span class="text-gray-700"> Background stored as a static image; foreground captures movement at higher quality and frequency.</span>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 font-bold mr-3 mt-1">✓</span>
+            <div>
+              <strong class="text-gray-900">Instantaneous evidence retrieval:</strong>
+              <span class="text-gray-700"> Automated movement search jumps directly to motion frames &mdash; no scrubbing through static footage.</span>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 font-bold mr-3 mt-1">✓</span>
+            <div>
+              <strong class="text-gray-900">Military-grade transit security:</strong>
+              <span class="text-gray-700"> 128-bit encrypted connection with dynamic key rotation.</span>
             </div>
           </li>
           <li class="flex items-start">
             <span class="text-blue-600 font-bold mr-3 mt-1">✓</span>
             <div>
               <strong class="text-gray-900">4K resolution recording:</strong>
-              <span class="text-gray-700"> Maintains high-definition quality without excessive storage demands</span>
+              <span class="text-gray-700"> Maintains high-definition quality without excessive storage demands.</span>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 font-bold mr-3 mt-1">✓</span>
+            <div>
+              <strong class="text-gray-900">Camera compatibility:</strong>
+              <span class="text-gray-700"> Analog, HD IP, and Ultra HD IP cameras &mdash; same codec, same archive format.</span>
             </div>
           </li>
           <li class="flex items-start">
             <span class="text-blue-600 font-bold mr-3 mt-1">✓</span>
             <div>
               <strong class="text-gray-900">Noise isolation:</strong>
-              <span class="text-gray-700"> Automatically filters irrelevant pixel motion to reduce file sizes</span>
+              <span class="text-gray-700"> Built-in noise isolation process automatically filters irrelevant pixel motion to reduce file sizes further.</span>
             </div>
           </li>
         </ul>
+        <p class="text-center text-sm text-gray-600 mt-6 max-w-2xl mx-auto">
+          For the full mobile trailer technical spec &mdash; including Vigil AI alert triage and the platform's MCP integration &mdash;
+          see <a href="/technical-specifications" class="text-blue-600 hover:underline font-medium">Technical Specifications</a>.
+        </p>
       </div>
     </div>
 
@@ -150,7 +192,7 @@ const breadcrumbItems = [
             <div class="features-content">
               <h3 class="heading-3">FLEXIBLE DELTA COMPRESSION</h3>
               <p class="body-black">
-                S-VIDIA's Flexible Delta Compression (FDC) feature allows data to be analyzed before it's compressed, eliminating idle footage and prioritizing captured movement.
+                FDC analyzes video data <em>before</em> committing to disk &mdash; eliminating idle footage, prioritizing captured movement, and storing frames as separate images for frame-by-frame review.
               </p>
             </div>
           </div>
@@ -160,7 +202,7 @@ const breadcrumbItems = [
             <div class="features-content">
               <h3 class="heading-3">NOISE ISOLATION PROCESS</h3>
               <p class="body-black">
-                The Flexible Delta Compression method's built-in noise isolation process (NIP) isolates and removes irrelevant video pixel motion, which reduces file size by about 50%.
+                FDC's built-in noise isolation process (NIP) automatically isolates and removes irrelevant video pixel motion, reducing file size by approximately 50% on top of FDC's baseline storage advantage.
               </p>
             </div>
           </div>
@@ -170,7 +212,7 @@ const breadcrumbItems = [
             <div class="features-content">
               <h3 class="heading-3">INTERNAL FILE STORAGE</h3>
               <p class="body-black">
-                S-VIDIA monitoring software allows each high-definition camera to record in 4K resolution without taking up hours of storage space.
+                S-VIDIA monitoring software allows each high-definition camera to record in 4K resolution without taking up hours of storage space. Supports analog, HD IP, and Ultra HD IP cameras &mdash; one codec, one archive format.
               </p>
             </div>
           </div>
@@ -184,7 +226,7 @@ const breadcrumbItems = [
         <div class="content-container-copy">
           <h2 class="heading-2 white center">THE VIDEO TECHNOLOGY</h2>
           <p class="body-white centered">
-            The next-generation S-VIDIA video-based security platform utilizes an unparalleled video compression method that allows for greater quality control.
+            The next-generation S-VIDIA security platform is built around FDC &mdash; an unparalleled video compression method engineered to outperform H.264 and H.265 on storage, image quality, and evidence integrity.
           </p>
           <a href="https://svidia.com/" target="_blank" rel="noopener noreferrer" class="red-button">
             Learn More

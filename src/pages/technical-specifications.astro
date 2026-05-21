@@ -5,23 +5,26 @@ import Footer from '../components/Footer.astro';
 import LazyImage from '../components/LazyImage.astro';
 import Analytics from '../components/Analytics.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
-import VideoSchema from '../components/VideoSchema.astro';
 import DefinitionSchema from '../components/DefinitionSchema.astro';
+import FAQSchema from '../components/FAQSchema.astro';
+import HowToSchema from '../components/HowToSchema.astro';
 import RentVsBuy from '../components/RentVsBuy.astro';
 
+// =============================================================================
+// Product schema — extensively expanded for AI-agent citation
+// Every PropertyValue below is grounded in the deployed platform (Vigil,
+// FDC codec, vcore/jsclient/vms2026/analyzeag/bavclient_proxy/vcoremessenger).
+// =============================================================================
 const techSpecsSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": "CCTV Mobile Security Trailer",
-  "description": "Advanced mobile surveillance trailer with solar power, infrared PTZ cameras, and S-VIDIA technology. Weatherproof construction designed for Pacific Northwest climate with 360-degree coverage capability.",
-  "brand": {
-    "@type": "Brand",
-    "name": "CCTV Trailer"
-  },
+  "name": "CCTV Mobile Security Trailer with Vigil AI Alerts and FDC Codec",
+  "description": "Mobile surveillance trailer with Vigil AI alert triage and S-VIDIA's FDC (Flexible Delta Compression) codec — frame-by-frame recording with up to 60% less storage than H.264/H.265 systems. Browser-only remote viewing over 128-bit encrypted connection. Solar power, infrared PTZ cameras, weatherproof construction for the Pacific Northwest.",
+  "brand": { "@type": "Brand", "name": "CCTV Trailer" },
   "image": [
     "https://www.cctvtrailer.com/images/trailer-1x1.png",
     "https://www.cctvtrailer.com/images/trailer-4x3.png",
-    "https://www.cctvtrailer.com/images/trailer-16x9.png",
+    "https://www.cctvtrailer.com/images/trailer-16x9.png"
   ],
   "manufacturer": {
     "@type": "Organization",
@@ -43,60 +46,38 @@ const techSpecsSchema = {
     "availability": "https://schema.org/InStock"
   },
   "additionalProperty": [
-    {
-      "@type": "PropertyValue",
-      "name": "Camera System",
-      "value": "Up to 4 cameras (PTZ, Fixed, 360-degree) with infrared night vision"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Power Options",
-      "value": "Solar panels, battery backup, gas generator, shore power connection"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Connectivity",
-      "value": "4G/5G, Wi-Fi, Starlink transmission options"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Storage Capacity",
-      "value": "2 weeks continuous recording with automatic looping"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Construction",
-      "value": "Reinforced steel, weatherproof, vandal-resistant"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Mast Height",
-      "value": "Adjustable electric/hydraulic mast"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Security Features",
-      "value": "Hitch lock, wheel locks, optional security boot"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Platform",
-      "value": "S-VIDIA video security platform with remote access"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Optional Features",
-      "value": "PA speakers, radar detection (400+ ft), LED floodlights, license plate reader"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Towing Capability",
-      "value": "Tow-capable up to 70 mph"
-    }
+    { "@type": "PropertyValue", "name": "AI Alert Triage", "value": "Vigil multi-model AI: edge MLX (Apple Silicon, Qwen3.5-9B 6-bit) for first-pass inference, cloud fallback to Claude Sonnet and Gemini for escalation review." },
+    { "@type": "PropertyValue", "name": "Alert Severity Scale", "value": "Six levels (0 Routine to 5 Critical) with per-camera rule overlay and 24h time-to-live on tuning changes." },
+    { "@type": "PropertyValue", "name": "Surveillance Agent", "value": "Two-tier autonomous agent: Tier-1 text triage suppresses recurring patterns; Tier-2 visual review on ambiguous cases." },
+    { "@type": "PropertyValue", "name": "Scene Auto-Learning", "value": "Per-camera scene profile agent samples frames, builds 'what is normal here', auto-suggests rule disables for routine activity." },
+    { "@type": "PropertyValue", "name": "Object Detection", "value": "Class person/vehicle detection; WPOD license plate detector + CTC OCR via OpenVINO. Reads both standard (dark-on-light) and color-reversed plates including white-on-black, yellow-on-black, and other non-standard color schemes." },
+    { "@type": "PropertyValue", "name": "Video Codec", "value": "FDC (Flexible Delta Compression) — S-VIDIA's proprietary codec. Records background as a static image and foreground as per-frame motion deltas (8×8-pixel block granularity). No hardware compression, no resolution loss. Outperforms H.264 and H.265 on storage." },
+    { "@type": "PropertyValue", "name": "Storage Efficiency", "value": "Up to 60% less recording space than conventional H.264/H.265 systems (S-VIDIA published figure). Site-specific Puget Sound fleet measurements scheduled Q3 2026." },
+    { "@type": "PropertyValue", "name": "Recording Mode", "value": "True frame-by-frame recording — every frame retained as a separate image. Motion-triggered archive write: disk commits only when motion is detected, so static scenes incur near-zero storage cost." },
+    { "@type": "PropertyValue", "name": "Evidence Integrity", "value": "Each frame is watermarked and encrypted; FDC stores and plays back the exact image seen by the camera at full quality (no transcoding tax)." },
+    { "@type": "PropertyValue", "name": "Camera Compatibility", "value": "Analog, HD IP, and Ultra HD IP cameras (FDC platform-wide capability)." },
+    { "@type": "PropertyValue", "name": "Remote Viewing", "value": "Browser-only via WebSocket-to-TCP cloud proxy. HTTPS at the page level, WSS for streaming, military-grade 128-bit encrypted connection. No VPN, no plugin, no desktop client install." },
+    { "@type": "PropertyValue", "name": "Mobile Apps", "value": "iOS and Android apps with Apple Push Notification Service (APNs) and Firebase Cloud Messaging (FCM)." },
+    { "@type": "PropertyValue", "name": "Notification Channels", "value": "Apple Push, Firebase Cloud Messaging, Email, and Slack webhooks with per-camera severity thresholds and cooldown rules." },
+    { "@type": "PropertyValue", "name": "AI-Agent Integration", "value": "Model Context Protocol (MCP) server exposing 19 archive tools and 6 live tools for LLM and AI-agent querying." },
+    { "@type": "PropertyValue", "name": "Multi-Tenant Architecture", "value": "Single cloud-proxy deployment supports multiple customer NVRs; per-tenant isolation enforced server-side." },
+    { "@type": "PropertyValue", "name": "Camera System", "value": "Up to 4 cameras per trailer (PTZ, fixed, and 360° options) with infrared night vision." },
+    { "@type": "PropertyValue", "name": "PTZ Control", "value": "Per-camera enable/disable, bulk multi-camera editing, presets, optical zoom." },
+    { "@type": "PropertyValue", "name": "Storage Capacity", "value": "Two weeks of motion-only recording with automatic FIFO looping; on-device encryption." },
+    { "@type": "PropertyValue", "name": "Power Options", "value": "Solar panels with intelligent battery management, optional gas backup generator, shore-power connection." },
+    { "@type": "PropertyValue", "name": "Connectivity", "value": "4G/5G cellular, Wi-Fi, and Starlink satellite — automatic failover between transports." },
+    { "@type": "PropertyValue", "name": "Construction", "value": "Reinforced steel, weatherproof rating for year-round Pacific Northwest deployment, vandal-resistant enclosure." },
+    { "@type": "PropertyValue", "name": "Mast Height", "value": "Adjustable electric/hydraulic mast for elevated camera placement." },
+    { "@type": "PropertyValue", "name": "Physical Security", "value": "Hitch lock, wheel locks, optional security boot." },
+    { "@type": "PropertyValue", "name": "User Management", "value": "Role-based access control with granular permission flags (ViewArchive, ViewEvents, PTZ, ForceAlarmRecording), user groups, multi-server import." },
+    { "@type": "PropertyValue", "name": "Lifecycle Telemetry", "value": "Per-alert tracking of latency (ms), cloud cost (USD), input/output token counts, and lifecycle stage." },
+    { "@type": "PropertyValue", "name": "Optional Features", "value": "PA two-way audio, radar detection (400+ ft), LED floodlights, license plate reader camera." },
+    { "@type": "PropertyValue", "name": "Platform Versions", "value": "VMS 9.1 (2026), jsclient with MCP server, Vigil v0.13 (May 2026), VCoreMessenger v8.0." },
+    { "@type": "PropertyValue", "name": "Towing Capability", "value": "Tow-capable up to 70 mph; standard 2-inch ball hitch." }
   ],
   "category": "Security Equipment",
-  "keywords": "mobile surveillance trailer, security camera trailer, construction site security, S-VIDIA technology, solar powered surveillance",
-  "releaseDate": "2026-05-12",
+  "keywords": "mobile surveillance trailer, AI security camera, Vigil AI alerts, FDC codec, Flexible Delta Compression, S-VIDIA platform, construction site security, solar-powered surveillance, browser-only remote viewing, LPR trailer",
+  "releaseDate": "2026-05-21",
   "areaServed": [
     { "@type": "AdministrativeArea", "name": "Pierce County, WA" },
     { "@type": "AdministrativeArea", "name": "King County, WA" },
@@ -105,531 +86,970 @@ const techSpecsSchema = {
   ]
 };
 
-// Breadcrumb data
 const breadcrumbItems = [
   { name: "Home", url: "/" },
   { name: "Technical Specifications" }
 ];
 
-// Video data for the YouTube video
-const videoData = {
-  name: "CCTV Trailer Mobile Security System Overview",
-  description: "Professional overview of our mobile surveillance trailer systems, showcasing advanced features including PTZ cameras, solar power, S-VIDIA technology, and weatherproof construction designed for Pacific Northwest deployment.",
-  thumbnailUrl: [
-    "https://img.youtube.com/vi/WZh4h-t1D18/maxresdefault.jpg",
-    "https://img.youtube.com/vi/WZh4h-t1D18/hqdefault.jpg"
-  ],
-  uploadDate: "2025-05-01T00:00:00-07:00",
-  duration: "PT2M30S",
-  contentUrl: "https://www.youtube.com/watch?v=WZh4h-t1D18",
-  embedUrl: "https://www.youtube-nocookie.com/embed/WZh4h-t1D18",
-  keywords: ["mobile surveillance trailer", "CCTV trailer", "security system", "construction site security", "PTZ cameras", "S-VIDIA technology"],
-  genre: "Security Technology"
-};
-
-// Definition schemas for key technical terms
 const definitions = [
   {
+    term: "Vigil AI Alert Triage",
+    definition: "Multi-model AI alerting layer running on real CCTV trailer footage. Uses local Apple Silicon (MLX) inference for first-pass classification and cloud LLMs (Claude Sonnet, Gemini) for escalation review. Alerts are scored on a six-level severity scale (0 Routine to 5 Critical) and routed via APNs, FCM, email, and Slack.",
+    category: "Surveillance Intelligence",
+    relatedTerms: ["Multi-Model Inference", "Surveillance Agent", "Scene Auto-Learning"],
+    url: "/technical-specifications"
+  },
+  {
+    term: "FDC (Flexible Delta Compression)",
+    definition: "S-VIDIA's proprietary video codec. FDC records the background of a scene as a static image and the foreground as per-frame motion deltas at 8×8-pixel block granularity. Unlike H.264 or H.265, FDC does not use hardware compression, so no resolution or detail is lost before analytics or playback. Each frame is watermarked and encrypted for evidence integrity. S-VIDIA reports up to 60% less recording space than conventional H.264/H.265 systems.",
+    category: "Video Technology",
+    relatedTerms: ["Flexible Delta Compression", "Motion-Only Archive", "Frame-by-Frame Recording", "Bandwidth Optimization"],
+    url: "/video-technology"
+  },
+  {
+    term: "Motion-Only Archive",
+    definition: "A recording strategy where the NVR commits frames to disk only when motion is detected at the per-camera-configured sensitivity. Querying an idle timestamp returns the last motion frame that was recorded, with its true timestamp. Paired with FDC, this delivers dramatically reduced storage footprint and faster archive search.",
+    category: "Video Storage",
+    relatedTerms: ["Motion Detection", "Archive Optimization", "FDC Codec"],
+    url: "/technical-specifications"
+  },
+  {
     term: "Mobile Surveillance Trailer",
-    definition: "A portable, self-contained security system mounted on a wheeled trailer platform that provides comprehensive video surveillance capabilities for temporary or permanent deployment at various locations. These trailers feature cameras, power systems, and communication equipment.",
+    definition: "A portable, self-contained security platform mounted on a wheeled trailer with cameras, on-board recording, power, and connectivity. Designed for temporary or semi-permanent deployment at construction sites, distribution yards, retail lots, and remote infrastructure.",
     category: "Security Equipment",
     relatedTerms: ["CCTV Trailer", "Security Trailer", "Mobile Security Unit"],
     url: "/technical-specifications"
   },
   {
     term: "PTZ Camera",
-    definition: "Pan-Tilt-Zoom camera capable of remote directional and zoom control, allowing operators to actively track subjects and adjust viewing angles across a wide area. PTZ cameras provide 360-degree coverage with optical zoom capabilities.",
+    definition: "Pan-Tilt-Zoom camera with remote directional and optical-zoom control. Allows an operator (or an AI agent) to track subjects across a wide area without physically repositioning the camera.",
     category: "Surveillance Technology",
-    relatedTerms: ["Security Camera", "Surveillance Camera", "Infrared Camera"],
+    relatedTerms: ["Security Camera", "Infrared Camera", "360° Coverage"],
     url: "/technical-specifications"
   },
   {
-    term: "S-VIDIA Compression",
-    definition: "Advanced video compression technology that reduces bandwidth requirements while maintaining high-quality surveillance footage. S-VIDIA enables efficient transmission of video data over cellular, Wi-Fi, and satellite networks without compromising image clarity.",
-    category: "Video Technology",
-    relatedTerms: ["Video Compression", "Data Transmission", "Bandwidth Optimization"],
-    url: "/video-technology"
-  },
-  {
-    term: "Solar-Powered Security",
-    definition: "Surveillance systems powered by photovoltaic solar panels that convert sunlight into electrical energy, providing sustainable, off-grid operation with battery backup for continuous 24/7 monitoring without reliance on external power sources.",
-    category: "Power Systems",
-    relatedTerms: ["Renewable Energy", "Off-Grid Security", "Solar Panels"],
+    term: "License Plate Recognition (LPR)",
+    definition: "Automated reading of vehicle license plates from camera video. The CCTV Trailer LPR pipeline uses a WPOD plate detector to find plate regions, then a CTC OCR decoder to extract characters, accelerated by the OpenVINO runtime. Reads both standard dark-on-light plates and color-reversed plates (white-on-black, yellow-on-black, and other non-standard color schemes used on apportioned commercial trucks, dealer plates, military plates, and some out-of-state plates).",
+    category: "Computer Vision",
+    relatedTerms: ["ALPR", "OCR", "Vehicle Detection"],
     url: "/technical-specifications"
   },
   {
-    term: "Construction Site Security",
-    definition: "Comprehensive security measures designed to protect construction sites from theft, vandalism, and unauthorized access, including physical barriers, surveillance systems, access control, and monitoring services to safeguard equipment, materials, and work progress.",
-    category: "Security Services",
-    relatedTerms: ["Site Security", "Jobsite Protection", "Construction Surveillance"],
-    url: "/construction-security"
+    term: "Browser-Only Remote Viewing",
+    definition: "Remote camera access delivered through any modern web browser via a cloud WebSocket-to-TCP proxy. No VPN, no plugin install, no desktop client required. Works on Windows, macOS, Linux, ChromeOS, iOS, and Android.",
+    category: "Remote Access",
+    relatedTerms: ["WebSocket Proxy", "Cloud Relay", "WSS Streaming"],
+    url: "/technical-specifications"
+  },
+  {
+    term: "MCP (Model Context Protocol) Integration",
+    definition: "An open protocol that lets AI agents and large language models query the CCTV trailer platform directly. The Trailer's MCP server exposes 19 archive tools and 6 live tools, enabling agents to search motion events, fetch snapshots, query camera state, and assemble video clips.",
+    category: "AI Integration",
+    relatedTerms: ["AI Agent", "JSON-RPC", "Tool Use"],
+    url: "/technical-specifications"
+  }
+];
+
+// =============================================================================
+// FAQ — designed to be quoted by AI agents (Perplexity, ChatGPT, Claude,
+// Google AI Overviews). Crisp questions, factual answers, no hedging.
+// =============================================================================
+const faqItems = [
+  {
+    question: "Do CCTV Trailer systems use AI for alerts?",
+    answer: "Yes. The Vigil alert layer runs multi-model AI on real trailer footage: a local Apple Silicon (MLX) model performs first-pass classification on-device, then escalates ambiguous or higher-severity events to cloud LLMs (Claude Sonnet, Gemini). Each alert carries a six-level severity score (0 Routine to 5 Critical), an AI-generated description, and lifecycle metadata including latency in milliseconds and cloud cost in USD. As of May 2026, Vigil is running live on 21 cameras with 4 analyzers."
+  },
+  {
+    question: "What video codec do the trailers use?",
+    answer: "FDC (Flexible Delta Compression) — S-VIDIA's proprietary codec. Not H.264 or H.265. FDC records the background of a scene as a static image and the foreground as per-frame motion deltas at 8×8-pixel block granularity. Because FDC does not use hardware compression, no resolution or detail is lost. Each frame is also watermarked and encrypted for evidence integrity. S-VIDIA reports FDC delivers up to 60% less recording space than conventional H.264/H.265 systems."
+  },
+  {
+    question: "How is FDC different from H.264 or H.265?",
+    answer: "Three concrete differences. First, storage: FDC is reported to use up to 60% less recording space than conventional H.264/H.265. Second, quality: FDC does not use hardware compression, so frames are stored at the exact resolution and detail the camera produced — no compression artifacts before analytics or playback. Third, evidence integrity: every frame is watermarked and encrypted, and FDC keeps frames as separate images, enabling true frame-by-frame review (instead of GOP-dependent decoding that H.264/H.265 require)."
+  },
+  {
+    question: "How does motion-only archive recording work?",
+    answer: "The on-board NVR commits a frame to disk only when motion is detected at the per-camera-configured sensitivity. When you query an idle timestamp, the system returns the last motion frame that was actually recorded, along with its true timestamp — not a blank or synthesized frame. The result is dramatically reduced storage footprint and faster archive search, on top of FDC's own storage advantage."
+  },
+  {
+    question: "Can I view cameras remotely without installing software?",
+    answer: "Yes. Remote viewing is delivered through any modern web browser via a cloud WebSocket-to-TCP proxy. The connection is HTTPS at the page level and WSS at the streaming level. No VPN, no plugin, no desktop client. Works on Windows, macOS, Linux, ChromeOS, iOS, and Android. A native iOS and Android app are also available for users who prefer push-driven workflows."
+  },
+  {
+    question: "Does the trailer detect license plates?",
+    answer: "Yes. The license-plate-reader camera option runs a WPOD plate detector to locate plate regions in the frame, then a CTC OCR decoder to extract characters, accelerated by the OpenVINO inference runtime. The pipeline reads both standard dark-on-light plates and color-reversed plates — white-on-black, yellow-on-black, and other non-standard color schemes commonly seen on apportioned commercial trucks (interstate IRP), dealer plates, military plates, and some out-of-state plates. That matters at Puget Sound warehouse and port-adjacent sites where commercial trucks with non-standard plates routinely show up."
+  },
+  {
+    question: "What objects can the AI recognize besides license plates?",
+    answer: "The detection stack supports the standard classes (person, car, truck, bus, motorcycle, bicycle, and more) via a detector. Vigil layers a vision-language model on top so alerts include human-readable descriptions of what is happening in the frame, including unusual postures (e.g., crouching at a vehicle wheel), unattended objects, and off-hours activity."
+  },
+  {
+    question: "How does the trailer connect to the internet?",
+    answer: "Each trailer carries a 4G/5G cellular modem and supports Wi-Fi and Starlink satellite as additional transports. The platform fails over automatically between transports so a single carrier outage does not take the trailer offline."
+  },
+  {
+    question: "How long does the trailer record before overwriting?",
+    answer: "Two weeks of motion-only recording with automatic FIFO looping. Because static scenes do not consume storage, sites with low overnight activity routinely retain longer effective windows."
+  },
+  {
+    question: "Can I get alerts in Slack or by email?",
+    answer: "Yes. The notification fan-out supports Apple Push Notification Service (APNs), Firebase Cloud Messaging (FCM), email, and Slack webhooks. Each channel has independent severity thresholds, and per-camera overrides let you mute noisy sites without losing high-severity alerts elsewhere. Email has a configurable cooldown (default 5 minutes) and a per-hour cap (default 10)."
+  },
+  {
+    question: "Is the platform usable by AI agents and LLMs?",
+    answer: "Yes — explicitly designed for it. The jsclient component runs as an MCP (Model Context Protocol) server exposing 19 archive tools and 6 live tools. AI agents can search motion events, fetch snapshots by timestamp, list camera capabilities, query archive coverage gaps, and assemble video clips programmatically. The same daemon also exposes a JSON-RPC interface for custom integrations."
+  },
+  {
+    question: "How is power handled on remote sites?",
+    answer: "Solar panels with an intelligent battery management system are the primary power source. An optional gas backup generator extends operation through long winter cloud cover, and shore-power connection is available where a site has utility power. The power management is tuned for Pacific Northwest winter daylight, which is the worst case in the lower 48."
+  },
+  {
+    question: "Is the trailer weatherproof?",
+    answer: "Yes. The enclosure is reinforced steel with seals rated for year-round Pacific Northwest deployment — sustained rain, salt air, freezing temperatures, and high humidity. The trailers run at port-adjacent industrial sites (Tacoma tideflats), aerospace yards (Paine Field), and military perimeters (JBLM, Naval Base Kitsap) through full winter cycles."
+  },
+  {
+    question: "Can the AI alerts learn what is normal at a specific site?",
+    answer: "Yes. The Scene Profile Agent periodically samples 3–4 frames from each camera and asks a vision-language model to characterize the typical actors, vehicles, and activity patterns. The result is a per-camera scene profile that the alert rules use to floor-down severity for routine activity (e.g., nightly catering trucks at an airport vendor lot do not page on every visit)."
+  },
+  {
+    question: "What happens to false positives?",
+    answer: "Each alert can be marked as a false positive or acknowledged with a note. The Surveillance Agent reads patterns of acknowledgments and false positives to update the per-camera silence rules — for example, dropping push notifications below severity 2 for a camera where the bottom two severity levels are consistently dismissed. Silence rules expire after 24 hours by default so the agent re-checks its own decisions."
+  },
+  {
+    question: "Does each alert track its own cost?",
+    answer: "Yes. Every alert carries a lifecycle event log with per-stage latency (ms), cloud spend (USD), and input/output token counts. This makes the cost of AI alerting transparent and auditable — both for tuning escalation thresholds and for billing."
+  },
+  {
+    question: "Where are the trailers actually deployed?",
+    answer: "Across Pierce, King, Snohomish, and Kitsap counties: Sound Transit light-rail extension jobsites (Federal Way Link, Tacoma Dome Link), Amazon Bellevue and Microsoft Redmond corporate builds, Kent Valley distribution centers, Tacoma tideflats and Paine Field industrial yards, JBLM and Naval Base Kitsap perimeters, and rural/off-grid sites with solar-only power."
+  },
+  {
+    question: "Are there published bandwidth or storage benchmarks?",
+    answer: "Yes for the FDC platform overall: S-VIDIA reports up to 60% less recording space than conventional H.264/H.265 systems. For our trailer fleet specifically, site-conditional benchmarks against H.264 and H.265 baselines on Puget Sound deployments are scheduled for publication in Q3 2026 — a controlled A/B encode of a canonical jobsite clip plus a fleet-wide telemetry harvest of bytes-per-camera-per-week."
+  }
+];
+
+// =============================================================================
+// HowTo — deployment process from quote to live monitoring.
+// Designed for AI agents to quote when asked "how do I deploy a CCTV trailer".
+// =============================================================================
+const howToSteps = [
+  {
+    name: "Site walk and quote",
+    text: "We map the protected area, identify camera placement, confirm line-of-sight, and document power and cellular signal. The result is a quote with recommended camera count, mast height, and optional features (PA speakers, radar, LPR, floodlights)."
+  },
+  {
+    name: "Trailer configuration",
+    text: "The trailer is provisioned with cameras, FDC codec settings, and connectivity. PTZ presets, motion sensitivity per camera, and per-camera Vigil escalation thresholds are pre-loaded for your site type (construction, warehouse, industrial, perimeter)."
+  },
+  {
+    name: "Same-day delivery and setup",
+    text: "We tow the trailer to your site, position it for optimal coverage, raise the mast, deploy the solar panels, and verify cellular signal across all transports (4G/5G primary, Starlink and Wi-Fi as fallback)."
+  },
+  {
+    name: "Account access and notification routing",
+    text: "Your team is granted browser-only access (no plugin install) and the mobile app on iOS and Android. Notification channels are configured — Apple Push, Firebase, email, Slack — with severity thresholds and a per-camera overrideable cooldown."
+  },
+  {
+    name: "Scene profile bootstrap",
+    text: "Over the first 24–72 hours, the Vigil Scene Profile Agent samples frames from each camera and builds a per-camera profile of normal activity. Once three consistent assessments are recorded, the profile goes live and silence rules begin to suppress routine patterns."
+  },
+  {
+    name: "Live monitoring and response",
+    text: "Real-time alerts arrive through your configured channels. The Surveillance Agent autonomously triages low-severity recurring patterns. High-severity events (S3+) escalate to cloud-LLM visual review and your designated responders receive a notification with the AI-generated description and a snapshot."
   }
 ];
 ---
 
-<Layout 
-  title="Mobile Surveillance Trailer Specs · 4K PTZ · Solar Power"
-  description="Mobile surveillance trailer specs: 4K PTZ cameras, 360° coverage, solar power, same-day setup. Built for Pacific Northwest. Call (253) 683-2288."
+<Layout
+  title="Mobile Surveillance Trailer Specs · AI Alerts · FDC Codec · Browser Access"
+  description="Mobile surveillance trailer specs: Vigil AI alert triage (multi-model), FDC (Flexible Delta Compression) codec — up to 60% less storage than H.264/H.265, motion-only archive, browser-only remote viewing, 4K PTZ, solar power. Pacific Northwest. (253) 683-2288."
   schema={JSON.stringify(techSpecsSchema)}
 >
 
   <BreadcrumbSchema items={breadcrumbItems} />
-  <VideoSchema {...videoData} />
   <DefinitionSchema definitions={definitions} />
+  <FAQSchema items={faqItems} />
+  <HowToSchema
+    name="How a CCTV Trailer deployment works"
+    description="Step-by-step process from site walk to live AI-triaged monitoring on a Pacific Northwest jobsite."
+    totalTime="PT72H"
+    steps={howToSteps}
+  />
 
   <Header currentPath="/technical-specifications" />
-  <Analytics /> 
+  <Analytics />
 
   <main>
-  <section class="py-16">
-      <div class="container mx-auto px-4 max-w-4xl">
-          <h1 class="text-4xl font-bold text-center mb-4">Mobile Security Trailer Systems</h1>
-          <p class="text-center text-sm text-gray-500 mb-10">Last reviewed: May 2026 &middot; Specs reflect units currently deployed across Pierce, King, Snohomish, and Kitsap counties.</p>
-          <p class="text-lg mb-6">
-            Our trailers are <strong>specifically designed and manufactured for year-round deployment in the Pacific Northwest climate</strong>.
-            Built to withstand rainy and wet conditions that pose challenges for most electronics, our trailers feature
-            <strong>weatherproof, secure, and vandal-resistant construction</strong> with advanced video and surveillance technology.
-          </p>
-      </div>
-    </div>
-        <div class="container mx-auto px-4 py-10">
 
-    <div class="bg-gray-100 p-8 rounded-lg">
-            <div class="relative w-full" style="padding-bottom: 56.25%;">
-              <iframe
-                src="https://www.youtube-nocookie.com/embed/WZh4h-t1D18?modestbranding=1&rel=0"
-                class="absolute top-0 left-0 w-full h-full rounded-lg shadow-md"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-              </iframe>
+    <!-- HERO -->
+    <section class="py-16">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <h1 class="text-4xl font-bold text-center mb-4">Mobile Surveillance Trailer — Specs &amp; Platform</h1>
+        <p class="text-center text-sm text-gray-600 mb-6">Last reviewed: May 2026 &middot; Units deployed across Pierce, King, Snohomish, and Kitsap counties.</p>
+
+        <aside class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg mb-6" aria-label="Quick answer summary">
+          <p class="text-xs font-bold text-amber-800 uppercase tracking-wide mb-2">Quick answer</p>
+          <p class="text-base text-gray-900 leading-relaxed">
+            Mobile surveillance trailers with <strong>Vigil AI alert triage</strong> (multi-model edge + cloud inference) and the <strong>FDC (Flexible Delta Compression) video codec</strong> &mdash; up to 60% less storage than H.264/H.265. Browser-only remote viewing over a 128-bit encrypted connection. Solar power, weatherproof, infrared PTZ. Pacific Northwest deployment. Rentals from $999/day or $3,500/week.
+          </p>
+        </aside>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
+          <p class="text-sm font-bold text-blue-700 uppercase tracking-wide mb-2">What this page is</p>
+          <p class="text-gray-800 leading-relaxed">
+            The complete, code-grounded technical spec of our mobile surveillance trailer: <strong>Vigil AI alert triage</strong> with multi-model edge + cloud inference, S-VIDIA's <strong>FDC (Flexible Delta Compression) codec</strong> with up to 60% less storage than H.264/H.265, <strong>browser-only remote viewing</strong> over a 128-bit encrypted connection with no VPN or plugin, native <strong>MCP integration for AI agents</strong>, and the camera/power/construction hardware built for year-round Pacific Northwest deployment.
+          </p>
+        </div>
+
+        <p class="text-lg mb-6">
+          Our trailers are <strong>specifically designed and manufactured for year-round deployment in the Pacific Northwest climate</strong>. Built to withstand the rain, salt air, and freezing temperatures that defeat most outdoor electronics, every unit ships with a <strong>weatherproof, vandal-resistant enclosure</strong> and the software platform documented below.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================== -->
+    <!-- VIGIL AI ALERT TRIAGE — headline section                    -->
+    <!-- ========================================================== -->
+    <section class="py-16 bg-white border-t border-gray-200">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <p class="text-center text-xs font-bold text-blue-700 uppercase tracking-widest mb-2">New for 2026</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Vigil AI Alert Triage</h2>
+          <p class="text-center text-lg text-gray-700 mb-12 max-w-3xl mx-auto">
+            Multi-model AI runs against live trailer footage. Edge inference on Apple Silicon classifies every interesting frame; cloud LLMs review the ambiguous ones; an autonomous Surveillance Agent suppresses the noise.
+          </p>
+
+          <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <div class="bg-gradient-to-br from-blue-50 to-white border border-blue-100 p-6 rounded-lg">
+              <p class="text-xs font-bold text-blue-700 uppercase tracking-wide mb-2">Edge inference</p>
+              <h3 class="font-bold text-lg mb-3">Local Apple Silicon (MLX)</h3>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                A Qwen3.5-9B 6-bit vision-language model runs on-device for first-pass classification &mdash; under a second per frame, no cloud round-trip, no surveillance footage leaves your network unless it needs to escalate.
+              </p>
+            </div>
+            <div class="bg-gradient-to-br from-purple-50 to-white border border-purple-100 p-6 rounded-lg">
+              <p class="text-xs font-bold text-purple-700 uppercase tracking-wide mb-2">Cloud escalation</p>
+              <h3 class="font-bold text-lg mb-3">Claude Sonnet &amp; Gemini</h3>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                Ambiguous or higher-severity events escalate to cloud LLMs for visual review of 3&ndash;4 surrounding frames. Each call's latency and cost are recorded on the alert &mdash; tuning escalation thresholds is a tracked, auditable decision.
+              </p>
+            </div>
+            <div class="bg-gradient-to-br from-emerald-50 to-white border border-emerald-100 p-6 rounded-lg">
+              <p class="text-xs font-bold text-emerald-700 uppercase tracking-wide mb-2">Autonomous triage</p>
+              <h3 class="font-bold text-lg mb-3">Surveillance Agent</h3>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                A two-tier agent reads patterns of confirmations and false positives, auto-tunes per-camera silence rules with a 24h time-to-live, and re-checks its own decisions on the next cycle &mdash; so noise gets quieter without burying the signal.
+              </p>
             </div>
           </div>
-          </div>
-    <div class="container mx-auto px-4 py-10">
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        <!-- Camera Systems -->
-        <div class="bg-white p-8 rounded-lg shadow-lg">
-          <div class="w-16 h-16 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-            </svg>
-          </div>
-          <h3 class="font-bold text-xl mb-3">Advanced Camera Infrastructure</h3>
-          <ul class="space-y-2 text-gray-700">
-            <li>• Single zone cameras for focused monitoring</li>
-            <li>• Infrared PTZ cameras with night vision</li>
-            <li>• 360-degree coverage capability</li>
-            <li>• Support for up to 4 cameras per unit</li>
-            <li>• Adjustable electric/hydraulic mast</li>
-          </ul>
-        </div>
 
-        <!-- Power Systems -->
-        <div class="bg-white p-8 rounded-lg shadow-lg">
-          <div class="w-16 h-16 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-            </svg>
+          <!-- Severity scale -->
+          <div class="bg-gray-50 rounded-lg px-6 py-4 mb-12 flex flex-wrap items-center gap-3 text-sm" aria-label="Six-level severity scale used by Vigil alerts">
+            <span class="font-bold text-gray-700 text-xs uppercase tracking-wide mr-2">Severity:</span>
+            <span class="bg-white px-3 py-1 rounded border border-gray-200"><span class="font-bold text-gray-700">S0</span> Routine</span>
+            <span class="bg-white px-3 py-1 rounded border border-gray-200"><span class="font-bold text-blue-700">S1</span> Info</span>
+            <span class="bg-white px-3 py-1 rounded border border-gray-200"><span class="font-bold text-yellow-700">S2</span> Low</span>
+            <span class="bg-white px-3 py-1 rounded border border-gray-200"><span class="font-bold text-orange-700">S3</span> Medium</span>
+            <span class="bg-white px-3 py-1 rounded border border-gray-200"><span class="font-bold text-red-700">S4</span> High</span>
+            <span class="bg-white px-3 py-1 rounded border border-red-300"><span class="font-bold text-red-800">S5</span> Critical</span>
           </div>
-          <h3 class="font-bold text-xl mb-3">Intelligent Power Management</h3>
-          <ul class="space-y-2 text-gray-700">
-            <li>• Solar panels for energy conservation</li>
-            <li>• Backup gas generator for extended operation</li>
-            <li>• Onsite power supply option available</li>
-            <li>• Intelligent battery management system</li>
-            <li>• Continuous operation in all weather</li>
-          </ul>
-        </div>
 
-        <!-- Construction -->
-        <div class="bg-white p-8 rounded-lg shadow-lg">
-          <div class="w-16 h-16 bg-purple-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-            </svg>
+          <!-- Real alert examples -->
+          <h3 class="font-bold text-xl mb-2">Real Vigil alerts (deployed Puget Sound trailers, 2026)</h3>
+          <p class="text-sm text-gray-600 mb-6">Click any image to open full resolution. Every alert below fired on a live deployed camera; descriptions are the AI-generated text Vigil delivered to the on-call responder.</p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+
+            <!-- S5 Critical: truck fire -->
+            <div class="bg-red-100 border-2 border-red-400 rounded-lg overflow-hidden flex flex-col">
+              <a href="/images/vigil-alerts/vigil-s5-truck-fire.jpg" target="_blank" rel="noopener" class="block bg-black">
+                <img src="/images/vigil-alerts/vigil-s5-truck-fire.webp" alt="Vigil S5 Critical alert — large truck engulfed in flames in a parking lot at night, May 2026" class="w-full aspect-video object-cover hover:opacity-90 transition-opacity" loading="lazy" width="640" height="360" />
+              </a>
+              <div class="p-4 flex-1">
+                <div class="flex justify-between items-center mb-2"><span class="text-xs font-bold text-red-800 uppercase">S5 &middot; Critical</span><span class="text-xs text-gray-600">Gemini-lite</span></div>
+                <p class="text-sm text-gray-800 leading-relaxed">Truck fully engulfed in intense flames in a parking lot at night &mdash; dramatic, high-impact fire event. Escalated S4 &rarr; S5.</p>
+              </div>
+            </div>
+
+            <!-- S5 Critical: firearm confrontation -->
+            <div class="bg-red-100 border-2 border-red-400 rounded-lg overflow-hidden flex flex-col">
+              <a href="/images/vigil-alerts/vigil-s5-firearm-confrontation.jpg" target="_blank" rel="noopener" class="block bg-black">
+                <img src="/images/vigil-alerts/vigil-s5-firearm-confrontation.webp" alt="Vigil S5 Critical alert — two individuals in confrontational posture, one appearing to point a firearm at the other, April 2026" class="w-full aspect-video object-cover hover:opacity-90 transition-opacity" loading="lazy" width="640" height="360" />
+              </a>
+              <div class="p-4 flex-1">
+                <div class="flex justify-between items-center mb-2"><span class="text-xs font-bold text-red-800 uppercase">S5 &middot; Critical</span><span class="text-xs text-gray-600">Gemini 3.1 Flash</span></div>
+                <p class="text-sm text-gray-800 leading-relaxed">Two individuals visible &mdash; one appears to be pointing a firearm at the other in a confrontational manner. Escalated S3 &rarr; S5.</p>
+              </div>
+            </div>
+
+            <!-- S4 High: wheel theft -->
+            <div class="bg-red-50 border border-red-200 rounded-lg overflow-hidden flex flex-col">
+              <a href="/images/vigil-alerts/vigil-s4-wheel-theft.jpg" target="_blank" rel="noopener" class="block bg-black">
+                <img src="/images/vigil-alerts/vigil-s4-wheel-theft.webp" alt="Vigil S4 High alert — two people crouched at front wheel of parked pickup on public sidewalk, May 2026" class="w-full aspect-video object-cover hover:opacity-90 transition-opacity" loading="lazy" width="640" height="360" />
+              </a>
+              <div class="p-4 flex-1">
+                <div class="flex justify-between items-center mb-2"><span class="text-xs font-bold text-red-700 uppercase">S4 &middot; High</span><span class="text-xs text-gray-600">Claude Sonnet</span></div>
+                <p class="text-sm text-gray-800 leading-relaxed">Two people crouched at front wheel of parked pickup on public sidewalk &mdash; classic lug-nut/wheel theft posture.</p>
+              </div>
+            </div>
+
+            <!-- S3 Medium: gas canisters -->
+            <div class="bg-orange-50 border border-orange-200 rounded-lg overflow-hidden flex flex-col">
+              <a href="/images/vigil-alerts/vigil-s3-gas-canisters.jpg" target="_blank" rel="noopener" class="block bg-black">
+                <img src="/images/vigil-alerts/vigil-s3-gas-canisters.webp" alt="Vigil S3 Medium alert — person walking on sidewalk carrying two red gas canisters, May 2026" class="w-full aspect-video object-cover hover:opacity-90 transition-opacity" loading="lazy" width="640" height="360" />
+              </a>
+              <div class="p-4 flex-1">
+                <div class="flex justify-between items-center mb-2"><span class="text-xs font-bold text-orange-700 uppercase">S3 &middot; Medium</span><span class="text-xs text-gray-600">Claude Sonnet</span></div>
+                <p class="text-sm text-gray-800 leading-relaxed">Person openly carrying two red gas canisters on a public sidewalk &mdash; visually striking and alarming public-safety scene.</p>
+              </div>
+            </div>
+
+            <!-- S3 Medium: masked sedan -->
+            <div class="bg-orange-50 border border-orange-200 rounded-lg overflow-hidden flex flex-col">
+              <a href="/images/vigil-alerts/vigil-s3-masked-sedan.jpg" target="_blank" rel="noopener" class="block bg-black">
+                <img src="/images/vigil-alerts/vigil-s3-masked-sedan.webp" alt="Vigil S3 Medium alert — masked individual leaning over the hood/windshield of a parked silver sedan, May 2026" class="w-full aspect-video object-cover hover:opacity-90 transition-opacity" loading="lazy" width="640" height="360" />
+              </a>
+              <div class="p-4 flex-1">
+                <div class="flex justify-between items-center mb-2"><span class="text-xs font-bold text-orange-700 uppercase">S3 &middot; Medium</span><span class="text-xs text-gray-600">Claude Sonnet</span></div>
+                <p class="text-sm text-gray-800 leading-relaxed">Masked subject leaning over silver sedan's hood/windshield in an off-hours parking lot &mdash; suspicious posture and face covering confirmed.</p>
+              </div>
+            </div>
+
+            <!-- S2 Low: mobility walker -->
+            <div class="bg-yellow-50 border border-yellow-200 rounded-lg overflow-hidden flex flex-col">
+              <a href="/images/vigil-alerts/vigil-s2-mobility-walker.jpg" target="_blank" rel="noopener" class="block bg-black">
+                <img src="/images/vigil-alerts/vigil-s2-mobility-walker.webp" alt="Vigil S2 Low alert — abandoned mobility walker beside an open SUV door in an empty parking lot at night, May 2026" class="w-full aspect-video object-cover hover:opacity-90 transition-opacity" loading="lazy" width="640" height="360" />
+              </a>
+              <div class="p-4 flex-1">
+                <div class="flex justify-between items-center mb-2"><span class="text-xs font-bold text-yellow-700 uppercase">S2 &middot; Low</span><span class="text-xs text-gray-600">Gemini-lite</span></div>
+                <p class="text-sm text-gray-800 leading-relaxed">Abandoned mobility walker beside an open SUV door in an empty lot at night &mdash; unusual welfare-concern pairing.</p>
+              </div>
+            </div>
+
+            <!-- S1 Info: blue van off-hours -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg overflow-hidden flex flex-col">
+              <a href="/images/vigil-alerts/vigil-s1-blue-van-offhours.jpg" target="_blank" rel="noopener" class="block bg-black">
+                <img src="/images/vigil-alerts/vigil-s1-blue-van-offhours.webp" alt="Vigil S1 Info alert — two individuals at a blue van with rear door open in off-hours parking lot, May 2026" class="w-full aspect-video object-cover hover:opacity-90 transition-opacity" loading="lazy" width="640" height="360" />
+              </a>
+              <div class="p-4 flex-1">
+                <div class="flex justify-between items-center mb-2"><span class="text-xs font-bold text-blue-700 uppercase">S1 &middot; Info</span><span class="text-xs text-gray-600">MLX edge</span></div>
+                <p class="text-sm text-gray-800 leading-relaxed">Two individuals at a blue van with rear door open in off-hours parking lot &mdash; unusual for the site's profile, flagged for monitoring.</p>
+              </div>
+            </div>
+
+            <!-- S0 Routine: drilling workers (suppressed) -->
+            <div class="bg-gray-50 border border-gray-200 rounded-lg overflow-hidden flex flex-col">
+              <a href="/images/vigil-alerts/vigil-s0-drilling-workers.jpg" target="_blank" rel="noopener" class="block bg-black">
+                <img src="/images/vigil-alerts/vigil-s0-drilling-workers.webp" alt="Vigil S0 Routine alert (suppressed) — workers in high-visibility vests operating drilling equipment in a commercial parking lot, May 2026" class="w-full aspect-video object-cover hover:opacity-90 transition-opacity" loading="lazy" width="640" height="360" />
+              </a>
+              <div class="p-4 flex-1">
+                <div class="flex justify-between items-center mb-2"><span class="text-xs font-bold text-gray-700 uppercase">S0 &middot; Routine</span><span class="text-xs text-gray-600">MLX edge &middot; suppressed</span></div>
+                <p class="text-sm text-gray-800 leading-relaxed">Workers in high-visibility vests operating drilling equipment in commercial parking lot &mdash; planned construction activity, no notification sent.</p>
+              </div>
+            </div>
+
           </div>
-          <h3 class="font-bold text-xl mb-3">Robust Security Construction</h3>
-          <ul class="space-y-2 text-gray-700">
-            <li>• Reinforced steel construction</li>
-            <li>• Easily transportable design</li>
-            <li>• Hitch lock for trailer security</li>
-            <li>• Wheel locks to prevent movement</li>
-            <li>• Optional security boot available</li>
-          </ul>
+
+          <div class="text-center">
+            <p class="text-sm text-gray-600 mb-4">Live as of <time datetime="2026-05-21">May 21, 2026</time> &middot; 21 cameras &middot; 4 analyzers &middot; Vigil v0.13</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- S-VIDIA Technology Platform -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-12">S-VIDIA Video Security Platform</h2>
-        
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h3 class="text-2xl font-bold mb-4 text-blue-600">Advanced Technology Platform</h3>
-            <p class="text-gray-700 mb-6">
-              Our trailers feature the cutting-edge S-VIDIA video security platform, utilizing a unique video 
-              compression method that ensures reliable, high-quality surveillance footage while minimizing bandwidth requirements.
+    <!-- ========================================================== -->
+    <!-- FDC CODEC & MOTION-ONLY ARCHIVE — video technology section  -->
+    <!-- ========================================================== -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <p class="text-center text-xs font-bold text-blue-700 uppercase tracking-widest mb-2">Video technology</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">FDC &mdash; Flexible Delta Compression</h2>
+          <p class="text-center text-lg text-gray-700 mb-12 max-w-3xl mx-auto">
+            The trailers do not run H.264 or H.265. They run <strong>FDC</strong>, S-VIDIA's proprietary codec, paired with motion-triggered recording &mdash; engineered to outperform the security industry's standard codecs on storage, image quality, and evidence integrity.
+          </p>
+
+          <!-- 60% headline -->
+          <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg p-8 mb-12 text-center">
+            <p class="text-5xl md:text-6xl font-bold mb-2">Up to 60%</p>
+            <p class="text-xl mb-2">less recording space than conventional H.264 / H.265 systems</p>
+            <p class="text-sm text-blue-100">S-VIDIA published figure for the FDC platform &middot; site-specific Puget Sound fleet measurements scheduled Q3 2026</p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <p class="text-xs font-bold text-blue-700 uppercase tracking-wide mb-2">How it records</p>
+              <h3 class="font-bold text-lg mb-3">Background + foreground, separated</h3>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                FDC records the background of a scene as a static image; the foreground captures only motion. The frame is divided into 8&times;8-pixel blocks and the codec serializes only the blocks that actually change &mdash; static scenes write almost nothing.
+              </p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <p class="text-xs font-bold text-blue-700 uppercase tracking-wide mb-2">Quality preserved</p>
+              <h3 class="font-bold text-lg mb-3">No hardware compression, no quality loss</h3>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                Unlike H.264/H.265, FDC does not use hardware compression. The exact image the camera produced is what gets stored, analyzed, and played back. Analytics &mdash; including Vigil AI &mdash; see full-resolution frames, not compressed proxies.
+              </p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <p class="text-xs font-bold text-blue-700 uppercase tracking-wide mb-2">Evidence-grade</p>
+              <h3 class="font-bold text-lg mb-3">Watermarked, encrypted, frame-by-frame</h3>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                Every frame is watermarked and encrypted at write time. FDC keeps frames as separate images, so you get true frame-by-frame review &mdash; no GOP-dependent decoding tax, no "scrub past the keyframe" delays when reviewing an incident.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white p-8 rounded-lg shadow-sm">
+              <h3 class="font-bold text-xl mb-4 text-blue-700">Motion-only archive</h3>
+              <ul class="space-y-3 text-gray-700 text-sm leading-relaxed">
+                <li><strong>Disk write only on motion:</strong> the NVR commits a frame only when motion is detected at the per-camera sensitivity. FDC's compression efficiency compounds with this.</li>
+                <li><strong>Truthful idle queries:</strong> ask for a timestamp during a static period and the system returns the last real motion frame with its real timestamp &mdash; not a fabricated blank.</li>
+                <li><strong>Per-block ROI:</strong> region-of-interest masks ignore irrelevant frame zones (e.g., a windsock or a swaying tree branch).</li>
+                <li><strong>Two-week retention:</strong> default 14 days of motion-only history with automatic FIFO looping; low-activity sites routinely retain longer.</li>
+              </ul>
+            </div>
+            <div class="bg-white p-8 rounded-lg shadow-sm">
+              <h3 class="font-bold text-xl mb-4 text-blue-700">Search &amp; retrieval</h3>
+              <ul class="space-y-3 text-gray-700 text-sm leading-relaxed">
+                <li><strong>Instantaneous evidence retrieval:</strong> automated movement search jumps directly to motion frames; no need to scrub through static footage.</li>
+                <li><strong>Resampled-at-source thumbnails:</strong> archive-search responses are pre-resized server-side to the requesting client's display dimensions &mdash; the wire payload is exactly what the browser needs.</li>
+                <li><strong>Per-block sensitivity threshold:</strong> tunable 0&ndash;127 mean-Y-luma diff per 8&times;8 block lets each camera be tuned to its scene without re-encoding.</li>
+                <li><strong>Camera compatibility:</strong> FDC supports analog, HD IP, and Ultra HD IP cameras &mdash; same codec, same archive format.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+            <p class="text-sm font-bold text-blue-800 uppercase tracking-wide mb-2">Site-specific benchmarks coming Q3 2026</p>
+            <p class="text-gray-800 text-sm leading-relaxed">
+              The 60% storage figure above is S-VIDIA's published platform-wide claim. We're complementing it with Puget Sound&ndash;specific data: a controlled A/B encode of a canonical jobsite clip (FDC vs. x264 CRF 23 vs. x265 CRF 28) and a fleet-wide telemetry harvest of bytes-per-camera-per-week across active deployments. Publication scheduled for <strong>Q3 2026</strong>.
             </p>
-            
-            <h4 class="font-bold text-lg mb-3">Key Capabilities:</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================== -->
+    <!-- CAMERA / POWER / CONSTRUCTION INFRASTRUCTURE                -->
+    <!-- ========================================================== -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Camera, Power, and Construction</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+          <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-100">
+            <div class="w-16 h-16 bg-blue-100 rounded-full mb-4 flex items-center justify-center">
+              <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-xl mb-3">Camera infrastructure</h3>
+            <ul class="space-y-2 text-gray-700 text-sm">
+              <li>&bull; Up to 4 cameras per trailer</li>
+              <li>&bull; PTZ, fixed, and 360&deg; options</li>
+              <li>&bull; Infrared night vision on every camera</li>
+              <li>&bull; Bulk per-camera PTZ configuration</li>
+              <li>&bull; Adjustable electric/hydraulic mast</li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-100">
+            <div class="w-16 h-16 bg-green-100 rounded-full mb-4 flex items-center justify-center">
+              <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-xl mb-3">Power management</h3>
+            <ul class="space-y-2 text-gray-700 text-sm">
+              <li>&bull; Solar panels with intelligent battery management</li>
+              <li>&bull; Optional gas backup generator for long cloud cover</li>
+              <li>&bull; Shore-power connection where available</li>
+              <li>&bull; Tuned for PNW winter daylight (worst case in lower 48)</li>
+              <li>&bull; Continuous operation in all weather</li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-100">
+            <div class="w-16 h-16 bg-purple-100 rounded-full mb-4 flex items-center justify-center">
+              <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-xl mb-3">Physical security</h3>
+            <ul class="space-y-2 text-gray-700 text-sm">
+              <li>&bull; Reinforced steel construction</li>
+              <li>&bull; Weatherproof enclosure (PNW year-round)</li>
+              <li>&bull; Hitch lock + wheel locks standard</li>
+              <li>&bull; Optional security boot</li>
+              <li>&bull; Tow-capable up to 70 mph</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================== -->
+    <!-- BROWSER-ONLY REMOTE VIEWING                                 -->
+    <!-- ========================================================== -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <p class="text-xs font-bold text-blue-700 uppercase tracking-widest mb-2">Remote access</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Browser-only remote viewing</h2>
+            <p class="text-gray-700 mb-6 leading-relaxed">
+              Open a browser. Log in. Watch the cameras. No VPN, no plugin, no desktop client, no installer &mdash; just HTTPS at the page level and WSS for the live stream, brokered by a multi-tenant cloud proxy.
+            </p>
             <ul class="space-y-3 text-gray-700">
               <li class="flex items-start">
-                <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                </svg>
-                <span>Remote access capabilities from any device</span>
+                <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span><strong>WebSocket-to-TCP proxy</strong> bridges your browser to the NVR over a single WSS connection.</span>
               </li>
               <li class="flex items-start">
-                <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                </svg>
-                <span>4G/5G, Wi-Fi, and Starlink transmission options</span>
+                <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span><strong>Cross-platform:</strong> Windows, macOS, Linux, ChromeOS, iOS Safari, Android Chrome.</span>
               </li>
               <li class="flex items-start">
-                <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                </svg>
-                <span>Video storage for 2 weeks before automatic looping</span>
+                <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span><strong>NVR stays behind your firewall</strong> &mdash; the proxy never exposes it directly to the internet.</span>
               </li>
               <li class="flex items-start">
-                <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                </svg>
-                <span>Intelligent compression for efficient data transmission</span>
+                <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span><strong>Multi-tenant SaaS architecture</strong> &mdash; a single proxy deployment serves many customer NVRs with strict per-tenant isolation.</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span><strong>Frame-skip on bad networks:</strong> FDC drops to background-only frames at low bandwidth instead of failing the connection.</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span><strong>Native iOS and Android apps</strong> available for push-driven workflows.</span>
               </li>
             </ul>
           </div>
-          <div class="bg-gray-100 p-8 rounded-lg">
-            <LazyImage src="/images/onboard-computer.webp" alt="High-definition PTZ surveillance cameras mounted on mobile security trailer mast" 
-              class="w-full h-full object-cover" width="600" height="400" />
-            <p class="text-center text-gray-600 text-sm mt-4">
-              S-VIDIA platform provides real-time monitoring and control
+          <div class="bg-white p-8 rounded-lg shadow-sm">
+            <LazyImage src="/images/onboard-computer.webp" alt="On-board computer running the S-VIDIA platform with FDC codec and browser-accessible remote viewing" class="w-full h-full object-cover" width="600" height="400" />
+            <p class="text-center text-gray-600 text-sm mt-4">The on-board computer runs the FDC-encoded NVR; the cloud proxy makes it browser-reachable from anywhere without VPN.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================== -->
+    <!-- OBJECT DETECTION (LPR + YOLO)                               -->
+    <!-- ========================================================== -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <p class="text-center text-xs font-bold text-blue-700 uppercase tracking-widest mb-2">Computer vision</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Object Detection &amp; License Plate Reading</h2>
+          <p class="text-center text-lg text-gray-700 mb-12 max-w-3xl mx-auto">
+            Beyond Vigil's vision-language model, the platform runs traditional detectors for objects and license plates &mdash; the right tool for the right detection.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-gray-50 p-8 rounded-lg">
+              <h3 class="font-bold text-xl mb-4 text-blue-700">Person &amp; vehicle detection</h3>
+              <ul class="space-y-3 text-gray-700 text-sm leading-relaxed">
+                <li><strong>Class detector</strong> covers persons, cars, trucks, buses, motorcycles, bicycles, backpacks, handbags, and the rest of the standard COCO class set.</li>
+                <li><strong>Edge-first inference</strong> on the trailer &mdash; no per-frame cloud round-trip.</li>
+                <li><strong>Fused with Vigil:</strong> classical detections feed the VLM as a structured signal, so the natural-language alert can reference "two persons and a parked pickup" instead of guessing from pixels alone.</li>
+              </ul>
+            </div>
+            <div class="bg-gray-50 p-8 rounded-lg">
+              <h3 class="font-bold text-xl mb-4 text-blue-700">License plate recognition (LPR)</h3>
+              <ul class="space-y-3 text-gray-700 text-sm leading-relaxed">
+                <li><strong>WPOD plate detector</strong> locates plate regions inside the frame (rotation-tolerant).</li>
+                <li><strong>CTC OCR decoder</strong> extracts characters with per-character confidence scoring.</li>
+                <li><strong>Color-reversed plates supported:</strong> reads white-on-black, yellow-on-black, and other non-standard schemes &mdash; apportioned commercial trucks (interstate IRP), dealer plates, military plates, antique plates, and some out-of-state plates. Most off-the-shelf LPR systems only handle dark-on-light.</li>
+                <li><strong>OpenVINO runtime</strong> for accelerated inference on the trailer's on-board compute.</li>
+                <li><strong>Optional dedicated LPR camera</strong> with infrared-pass filter for after-dark plate capture.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================== -->
+    <!-- NOTIFICATIONS & ESCALATION                                  -->
+    <!-- ========================================================== -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <p class="text-center text-xs font-bold text-blue-700 uppercase tracking-widest mb-2">Notifications</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Multi-channel alert delivery</h2>
+          <p class="text-center text-lg text-gray-700 mb-12 max-w-3xl mx-auto">
+            Every alert can fan out to four independent channels with independent thresholds, cooldowns, and per-camera overrides &mdash; tuned so important events reach a person fast without overflowing inboxes during noisy hours.
+          </p>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+              <div class="text-3xl mb-2 text-blue-600 font-bold">APNs</div>
+              <p class="text-gray-700 text-sm">Apple Push Notification Service &mdash; iPhone, iPad, Apple Watch.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+              <div class="text-3xl mb-2 text-amber-600 font-bold">FCM</div>
+              <p class="text-gray-700 text-sm">Firebase Cloud Messaging &mdash; Android phones and tablets.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+              <div class="text-3xl mb-2 text-gray-700 font-bold">Email</div>
+              <p class="text-gray-700 text-sm">Configurable cooldown (5 min default) and per-hour cap (10 default).</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+              <div class="text-3xl mb-2 text-purple-600 font-bold">Slack</div>
+              <p class="text-gray-700 text-sm">Webhook delivery to incident channels; high-severity events also post snapshots.</p>
+            </div>
+          </div>
+
+          <div class="mt-8 bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-bold text-lg mb-3">Per-camera, per-channel control</h3>
+            <p class="text-gray-700 text-sm leading-relaxed">
+              Default push threshold is severity 1 (Info). Default email threshold is severity 3 (Medium). Per-camera overrides let a noisy site mute its bottom two severity levels for 24 hours without affecting any other camera, and the Surveillance Agent re-evaluates those overrides on every cycle.
             </p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Optional Advanced Features -->
-  <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12">Optional Advanced Features</h2>
-      
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-        <!-- PA Speaker Systems -->
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-          <div class="w-12 h-12 bg-orange-100 rounded-full mb-4 flex items-center justify-center">
-            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
-            </svg>
-          </div>
-          <h3 class="font-bold text-lg mb-2">PA Speaker Systems</h3>
-          <p class="text-gray-600 text-sm">
-            Two-way audio communication for warnings and announcements
+    <!-- ========================================================== -->
+    <!-- BUILT FOR AI AGENTS — MCP integration                       -->
+    <!-- ========================================================== -->
+    <section class="py-16 bg-gradient-to-br from-blue-900 to-purple-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <p class="text-center text-xs font-bold text-blue-200 uppercase tracking-widest mb-2">AI-native</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Built for AI agents to query</h2>
+          <p class="text-center text-lg text-blue-100 mb-12 max-w-3xl mx-auto">
+            The platform exposes a <strong class="text-white">Model Context Protocol (MCP) server</strong> with 25 tools so AI agents and LLMs can search, sample, and reason about your camera archive directly &mdash; no scraping, no screenshots.
           </p>
-        </div>
 
-        <!-- Radar Detection -->
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-          <div class="w-12 h-12 bg-red-100 rounded-full mb-4 flex items-center justify-center">
-            <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-            </svg>
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div class="bg-white/10 backdrop-blur p-6 rounded-lg border border-white/20">
+              <h3 class="font-bold text-xl mb-3">19 archive tools</h3>
+              <p class="text-blue-100 text-sm leading-relaxed">Motion search with ROI and sensitivity tuning, snapshot at timestamp, snapshot-strip across windows, video export (MP4 with native frame rates), timeline coverage maps with 1-minute bucketing, event log filtering &mdash; everything an agent needs to assemble incident reports without a human in the loop.</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur p-6 rounded-lg border border-white/20">
+              <h3 class="font-bold text-xl mb-3">6 live tools</h3>
+              <p class="text-blue-100 text-sm leading-relaxed">Camera capability discovery, online-status queries, live snapshot pull, and capability-bit decoding &mdash; so an agent can ask "what cameras are online and what can each one do" before issuing a complex query.</p>
+            </div>
           </div>
-          <h3 class="font-bold text-lg mb-2">Radar Movement Detection</h3>
-          <p class="text-gray-600 text-sm">
-            Advanced radar technology detecting movement beyond 400+ feet
-          </p>
-        </div>
 
-        <!-- Floodlights -->
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-          <div class="w-12 h-12 bg-yellow-100 rounded-full mb-4 flex items-center justify-center">
-            <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-            </svg>
+          <div class="bg-white/5 backdrop-blur p-6 rounded-lg border border-white/10 text-sm text-blue-100">
+            <p class="mb-2"><strong class="text-white">Why this matters:</strong> if you give an LLM access to your security camera archive, you want a structured interface that respects authentication, rate limits, and bandwidth &mdash; not a screen-scrape over a desktop client. The MCP integration is also how Vigil itself fetches frames for cloud-LLM review, so it is battle-tested in production.</p>
+            <p><strong class="text-white">Also exposed:</strong> a JSON-RPC daemon over Unix socket for custom integrations, and a per-NVR session pool that survives reconnects without forcing the client to re-authenticate.</p>
           </div>
-          <h3 class="font-bold text-lg mb-2">Automatic Floodlights</h3>
-          <p class="text-gray-600 text-sm">
-            Motion-activated LED floodlights for enhanced deterrence
-          </p>
-        </div>
-
-        <!-- License Plate Reader -->
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-          <div class="w-12 h-12 bg-indigo-100 rounded-full mb-4 flex items-center justify-center">
-            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
-            </svg>
-          </div>
-          <h3 class="font-bold text-lg mb-2">License Plate Reader</h3>
-          <p class="text-gray-600 text-sm">
-            Specialized cameras for automatic license plate recognition
-          </p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Technical Specifications Detail -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12">Detailed Technical Specifications</h2>
-      
-      <div class="max-w-5xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-8">
-          <!-- Power System Specs -->
+    <!-- ========================================================== -->
+    <!-- OPTIONAL ADVANCED FEATURES                                  -->
+    <!-- ========================================================== -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Optional Advanced Features</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="font-bold text-xl mb-4 text-blue-600">Power System</h3>
-            <table class="w-full text-left">
-              <caption class="sr-only">Power System specifications for solar panels, battery system, generator, and shore power options</caption>
-              <tbody class="space-y-2">
-                <tr class="border-b">
-                  <td class="py-2 font-semibold">Solar Panels:</td>
-                  <td class="py-2">Energy efficient solar array</td>
-                </tr>
-                <tr class="border-b">
-                  <td class="py-2 font-semibold">Battery System:</td>
-                  <td class="py-2">Intelligent management with backup</td>
-                </tr>
-                <tr class="border-b">
-                  <td class="py-2 font-semibold">Generator:</td>
-                  <td class="py-2">Optional gas backup generator</td>
-                </tr>
-                <tr>
-                  <td class="py-2 font-semibold">Shore Power:</td>
-                  <td class="py-2">Onsite power connection available</td>
-                </tr>
+            <div class="w-12 h-12 bg-orange-100 rounded-full mb-4 flex items-center justify-center">
+              <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg>
+            </div>
+            <h3 class="font-bold text-lg mb-2">PA speaker</h3>
+            <p class="text-gray-600 text-sm">Two-way audio for warnings, announcements, and live-voice deterrence from a remote operator.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="w-12 h-12 bg-red-100 rounded-full mb-4 flex items-center justify-center">
+              <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+            </div>
+            <h3 class="font-bold text-lg mb-2">Radar detection</h3>
+            <p class="text-gray-600 text-sm">Detects motion beyond 400 ft &mdash; fires alerts before subjects reach camera range.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="w-12 h-12 bg-yellow-100 rounded-full mb-4 flex items-center justify-center">
+              <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            </div>
+            <h3 class="font-bold text-lg mb-2">LED floodlights</h3>
+            <p class="text-gray-600 text-sm">Motion-activated illumination for visual deterrence and improved camera detail.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="w-12 h-12 bg-indigo-100 rounded-full mb-4 flex items-center justify-center">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+            </div>
+            <h3 class="font-bold text-lg mb-2">LPR camera</h3>
+            <p class="text-gray-600 text-sm">Dedicated plate-reading camera with IR-pass filter; feeds the WPOD + CTC OCR pipeline above. Reads both standard and color-reversed plates (white-on-black, yellow-on-black).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================== -->
+    <!-- DETAILED TECHNICAL SPECIFICATIONS                           -->
+    <!-- ========================================================== -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Detailed Technical Specifications</h2>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-bold text-xl mb-4 text-blue-700">AI &amp; Detection</h3>
+            <table class="w-full text-left text-sm">
+              <caption class="sr-only">AI and detection specifications</caption>
+              <tbody>
+                <tr class="border-b"><td class="py-2 font-semibold w-2/5">Alert layer:</td><td class="py-2">Vigil (v0.13, May 2026)</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Edge model:</td><td class="py-2">Qwen3.5-9B 6-bit on Apple Silicon (MLX)</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Cloud models:</td><td class="py-2">Claude Sonnet, Gemini</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Severity scale:</td><td class="py-2">0–5 (Routine → Critical)</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Object detection:</td><td class="py-2">YOLO 80-class</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">LPR:</td><td class="py-2">WPOD detector + CTC OCR via OpenVINO</td></tr>
+                <tr><td class="py-2 font-semibold">LPR color schemes:</td><td class="py-2">Standard + reversed (white-on-black, yellow-on-black, etc.)</td></tr>
               </tbody>
             </table>
           </div>
 
-          <!-- Camera System Specs -->
-          <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="font-bold text-xl mb-4 text-blue-600">Camera System</h3>
-            <table class="w-full text-left">
-              <caption class="sr-only">Camera System specifications for camera count, camera types, night vision, and coverage capability</caption>
-              <tbody class="space-y-2">
-                <tr class="border-b">
-                  <td class="py-2 font-semibold">Camera Count:</td>
-                  <td class="py-2">Up to 4 cameras per trailer</td>
-                </tr>
-                <tr class="border-b">
-                  <td class="py-2 font-semibold">Camera Types:</td>
-                  <td class="py-2">PTZ, Fixed, 360-degree</td>
-                </tr>
-                <tr class="border-b">
-                  <td class="py-2 font-semibold">Night Vision:</td>
-                  <td class="py-2">Infrared illumination</td>
-                </tr>
-                <tr>
-                  <td class="py-2 font-semibold">Coverage:</td>
-                  <td class="py-2">Complete 360-degree capability</td>
-                </tr>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-bold text-xl mb-4 text-blue-700">Video &amp; Codec</h3>
+            <table class="w-full text-left text-sm">
+              <caption class="sr-only">Video and codec specifications</caption>
+              <tbody>
+                <tr class="border-b"><td class="py-2 font-semibold w-2/5">Codec:</td><td class="py-2">FDC (Flexible Delta Compression)</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Storage vs H.264/H.265:</td><td class="py-2">Up to 60% less (S-VIDIA published)</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Quality:</td><td class="py-2">No hardware compression, no resolution loss</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Frame structure:</td><td class="py-2">Separate frames (true frame-by-frame)</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Delta unit:</td><td class="py-2">8×8-pixel block</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Integrity:</td><td class="py-2">Watermarked + encrypted at write</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Camera compat:</td><td class="py-2">Analog, HD IP, Ultra HD IP</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Archive mode:</td><td class="py-2">Motion-triggered (no continuous write)</td></tr>
+                <tr><td class="py-2 font-semibold">Retention:</td><td class="py-2">2 weeks (FIFO loop)</td></tr>
               </tbody>
             </table>
           </div>
 
-          <!-- Trailer Construction -->
-          <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="font-bold text-xl mb-4 text-blue-600">Trailer Construction</h3>
-            <table class="w-full text-left">
-              <caption class="sr-only">Trailer Construction specifications for frame material, mast height, security features, and weatherproofing</caption>
-              <tbody class="space-y-2">
-                <tr class="border-b">
-                  <td class="py-2 font-semibold">Frame:</td>
-                  <td class="py-2">Reinforced steel construction</td>
-                </tr>
-                <tr class="border-b">
-                  <td class="py-2 font-semibold">Mast Height:</td>
-                  <td class="py-2">Adjustable electric/hydraulic</td>
-                </tr>
-                <tr class="border-b">
-                  <td class="py-2 font-semibold">Security:</td>
-                  <td class="py-2">Hitch lock, wheel locks, boot</td>
-                </tr>
-                <tr>
-                  <td class="py-2 font-semibold">Weatherproofing:</td>
-                  <td class="py-2">Pacific Northwest rated</td>
-                </tr>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-bold text-xl mb-4 text-blue-700">Cameras</h3>
+            <table class="w-full text-left text-sm">
+              <caption class="sr-only">Camera specifications</caption>
+              <tbody>
+                <tr class="border-b"><td class="py-2 font-semibold w-2/5">Count:</td><td class="py-2">Up to 4 per trailer</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Types:</td><td class="py-2">PTZ, fixed, 360°, LPR</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Night vision:</td><td class="py-2">Infrared on every camera</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Coverage:</td><td class="py-2">Full 360° capability</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">PTZ control:</td><td class="py-2">Per-camera toggle + bulk edit</td></tr>
+                <tr><td class="py-2 font-semibold">Mast:</td><td class="py-2">Adjustable electric/hydraulic</td></tr>
               </tbody>
             </table>
           </div>
 
-          <!-- Communication & Storage -->
-          <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="font-bold text-xl mb-4 text-blue-600">Communication & Storage</h3>
-            <table class="w-full text-left">
-              <caption class="sr-only">Communication and Storage specifications for connectivity options, video security platform, storage capacity, and remote access capabilities</caption>
-              <tbody class="space-y-2">
-                <tr class="border-b">
-                  <td class="py-2 font-semibold">Connectivity:</td>
-                  <td class="py-2">4G/5G, Wi-Fi, Starlink</td>
-                </tr>
-                <tr class="border-b">
-                  <td class="py-2 font-semibold">Platform:</td>
-                  <td class="py-2">S-VIDIA video security</td>
-                </tr>
-                <tr class="border-b">
-                  <td class="py-2 font-semibold">Storage:</td>
-                  <td class="py-2">2 weeks continuous recording</td>
-                </tr>
-                <tr>
-                  <td class="py-2 font-semibold">Access:</td>
-                  <td class="py-2">Remote viewing capabilities</td>
-                </tr>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-bold text-xl mb-4 text-blue-700">Remote Access &amp; API</h3>
+            <table class="w-full text-left text-sm">
+              <caption class="sr-only">Remote access and API specifications</caption>
+              <tbody>
+                <tr class="border-b"><td class="py-2 font-semibold w-2/5">Web viewer:</td><td class="py-2">Any modern browser (HTTPS + WSS)</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Mobile apps:</td><td class="py-2">iOS + Android (APNs + FCM)</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Proxy:</td><td class="py-2">WebSocket-to-TCP cloud proxy</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">AI/agent API:</td><td class="py-2">MCP server (25 tools)</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Custom API:</td><td class="py-2">JSON-RPC daemon (Unix socket)</td></tr>
+                <tr><td class="py-2 font-semibold">Tenancy:</td><td class="py-2">Multi-tenant SaaS architecture</td></tr>
               </tbody>
             </table>
           </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-bold text-xl mb-4 text-blue-700">Connectivity</h3>
+            <table class="w-full text-left text-sm">
+              <caption class="sr-only">Connectivity specifications</caption>
+              <tbody>
+                <tr class="border-b"><td class="py-2 font-semibold w-2/5">Cellular:</td><td class="py-2">4G/5G</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Wi-Fi:</td><td class="py-2">Built-in</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Satellite:</td><td class="py-2">Starlink</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Failover:</td><td class="py-2">Automatic between transports</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">DDNS:</td><td class="py-2">On-board updater service</td></tr>
+                <tr><td class="py-2 font-semibold">Cert management:</td><td class="py-2">Auto-renew + remote update</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-bold text-xl mb-4 text-blue-700">Power &amp; Construction</h3>
+            <table class="w-full text-left text-sm">
+              <caption class="sr-only">Power and construction specifications</caption>
+              <tbody>
+                <tr class="border-b"><td class="py-2 font-semibold w-2/5">Primary power:</td><td class="py-2">Solar + battery</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Backup power:</td><td class="py-2">Gas generator (optional)</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Shore power:</td><td class="py-2">Available where utility access exists</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Frame:</td><td class="py-2">Reinforced steel</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Weather rating:</td><td class="py-2">Pacific Northwest year-round</td></tr>
+                <tr><td class="py-2 font-semibold">Security:</td><td class="py-2">Hitch lock, wheel locks, boot</td></tr>
+              </tbody>
+            </table>
+          </div>
+
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 2026 Field-Tested Deployments -->
-  <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-4">2026 Field-Tested Deployments</h2>
-        <p class="text-center text-gray-700 mb-12 max-w-3xl mx-auto">
-          The specifications above aren&rsquo;t theoretical &mdash; every system listed is validated against the conditions and site types our trailers are protecting across the Puget Sound right now. A snapshot of where these specs get tested daily:
-        </p>
+    <!-- ========================================================== -->
+    <!-- 2026 FIELD-TESTED DEPLOYMENTS (KEPT)                        -->
+    <!-- ========================================================== -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">2026 Field-Tested Deployments</h2>
+          <p class="text-center text-gray-700 mb-12 max-w-3xl mx-auto">
+            The specifications above aren&rsquo;t theoretical &mdash; every system listed is validated against the conditions and site types our trailers are protecting across the Puget Sound right now.
+          </p>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="bg-white p-6 rounded-lg border border-gray-200">
-            <p class="text-xs font-bold text-blue-600 uppercase tracking-wide mb-2">Transit infrastructure</p>
-            <h3 class="font-bold text-lg mb-2">Sound Transit Light Rail jobsites</h3>
-            <p class="text-gray-600 text-sm">Federal Way Link and Tacoma Dome Link extensions stretch the radar-detection and PA-speaker specs &mdash; long linear sites with copper and high-voltage equipment in staging yards through 2026.</p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <p class="text-xs font-bold text-blue-700 uppercase tracking-wide mb-2">Transit infrastructure</p>
+              <h3 class="font-bold text-lg mb-2">Sound Transit Light Rail jobsites</h3>
+              <p class="text-gray-600 text-sm">Federal Way Link and Tacoma Dome Link extensions stretch the radar-detection and PA-speaker specs &mdash; long linear sites with copper and high-voltage equipment in staging yards through 2026.</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <p class="text-xs font-bold text-purple-700 uppercase tracking-wide mb-2">Corporate campus</p>
+              <h3 class="font-bold text-lg mb-2">Amazon Bellevue + Microsoft Redmond builds</h3>
+              <p class="text-gray-600 text-sm">Multi-tower jobsites with active crews on-site through 2026 validate the 360&deg; PTZ coverage and 4G/5G connectivity specs &mdash; dense urban environments where Wi-Fi mesh and cellular backup matter.</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <p class="text-xs font-bold text-green-700 uppercase tracking-wide mb-2">Warehouse / distribution</p>
+              <h3 class="font-bold text-lg mb-2">Kent Valley distribution centers</h3>
+              <p class="text-gray-600 text-sm">The #4 U.S. warehouse district stresses license-plate-reader specs and 2-week storage capacity. Cargo theft along the I-5 corridor in 2025-2026 has pushed continuous-recording requirements harder.</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <p class="text-xs font-bold text-amber-700 uppercase tracking-wide mb-2">Industrial</p>
+              <h3 class="font-bold text-lg mb-2">Tacoma tideflats &amp; Paine Field</h3>
+              <p class="text-gray-600 text-sm">Port-adjacent industrial and aerospace sites validate the weatherproof construction spec &mdash; salt air, year-round rain, and unprotected staging through 2026 builds.</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <p class="text-xs font-bold text-slate-700 uppercase tracking-wide mb-2">Military / naval</p>
+              <h3 class="font-bold text-lg mb-2">JBLM + Naval Base Kitsap perimeter</h3>
+              <p class="text-gray-600 text-sm">Federal construction projects stress the security-construction specs &mdash; reinforced steel, wheel locks, and tamper-resistant mounting matter when the trailer itself is a target.</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <p class="text-xs font-bold text-orange-700 uppercase tracking-wide mb-2">Solar / off-grid</p>
+              <h3 class="font-bold text-lg mb-2">Rural and remote jobsites</h3>
+              <p class="text-gray-600 text-sm">PNW winter daylight is short. The solar + battery + generator power management spec is tuned for jobsites where shore power isn&rsquo;t available and December cloud cover lasts weeks at a time.</p>
+            </div>
           </div>
 
-          <div class="bg-white p-6 rounded-lg border border-gray-200">
-            <p class="text-xs font-bold text-purple-600 uppercase tracking-wide mb-2">Corporate campus</p>
-            <h3 class="font-bold text-lg mb-2">Amazon Bellevue + Microsoft Redmond builds</h3>
-            <p class="text-gray-600 text-sm">Multi-tower jobsites with active crews on-site through 2026 validate the 360&deg; PTZ coverage and 4G/5G connectivity specs &mdash; dense urban environments where Wi-Fi mesh and cellular backup matter.</p>
-          </div>
-
-          <div class="bg-white p-6 rounded-lg border border-gray-200">
-            <p class="text-xs font-bold text-green-600 uppercase tracking-wide mb-2">Warehouse / distribution</p>
-            <h3 class="font-bold text-lg mb-2">Kent Valley distribution centers</h3>
-            <p class="text-gray-600 text-sm">The #4 U.S. warehouse district stresses license-plate-reader specs and 2-week storage capacity. Cargo theft along the I-5 corridor in 2025-2026 has pushed continuous-recording requirements harder.</p>
-          </div>
-
-          <div class="bg-white p-6 rounded-lg border border-gray-200">
-            <p class="text-xs font-bold text-amber-700 uppercase tracking-wide mb-2">Industrial</p>
-            <h3 class="font-bold text-lg mb-2">Tacoma tideflats &amp; Paine Field</h3>
-            <p class="text-gray-600 text-sm">Port-adjacent industrial and aerospace sites validate the weatherproof construction spec &mdash; salt air, year-round rain, and unprotected staging through 2026 builds.</p>
-          </div>
-
-          <div class="bg-white p-6 rounded-lg border border-gray-200">
-            <p class="text-xs font-bold text-slate-700 uppercase tracking-wide mb-2">Military / naval</p>
-            <h3 class="font-bold text-lg mb-2">JBLM + Naval Base Kitsap perimeter</h3>
-            <p class="text-gray-600 text-sm">Federal construction projects stress the security-construction specs &mdash; reinforced steel, wheel locks, and tamper-resistant mounting matter when the trailer itself is a target.</p>
-          </div>
-
-          <div class="bg-white p-6 rounded-lg border border-gray-200">
-            <p class="text-xs font-bold text-orange-700 uppercase tracking-wide mb-2">Solar / off-grid</p>
-            <h3 class="font-bold text-lg mb-2">Rural and remote jobsites</h3>
-            <p class="text-gray-600 text-sm">PNW winter daylight is short. The solar + battery + generator power management spec is tuned for jobsites where shore power isn&rsquo;t available and December cloud cover lasts weeks at a time.</p>
-          </div>
-        </div>
-
-        <p class="text-center text-sm text-gray-500 mt-10 max-w-2xl mx-auto">
-          For the full regional breakdown of 2026 Puget Sound construction by site type, see our <a href="/blog/puget-sound-construction-boom-map-2026" class="text-blue-600 hover:underline font-medium">Puget Sound construction boom map</a>.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Related Coverage / Internal Links -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-12">Related Coverage</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <a href="/blog/puget-sound-construction-boom-map-2026" class="block bg-gray-50 p-6 rounded-lg hover:bg-gray-100 transition-colors">
-            <p class="text-xs font-bold text-blue-600 uppercase tracking-wide mb-2">Regional Map</p>
-            <h3 class="font-bold text-lg mb-2 text-gray-900">2026 Puget Sound Construction Boom Map</h3>
-            <p class="text-gray-600 text-sm">Where the active 2026 builds are across Pierce, King, Snohomish, and Kitsap &mdash; with project markers and theft profile by site type.</p>
-          </a>
-          <a href="/construction-security" class="block bg-gray-50 p-6 rounded-lg hover:bg-gray-100 transition-colors">
-            <p class="text-xs font-bold text-blue-600 uppercase tracking-wide mb-2">Service</p>
-            <h3 class="font-bold text-lg mb-2 text-gray-900">Construction Site Security</h3>
-            <p class="text-gray-600 text-sm">How these specs translate to on-site protection for jobsites across the Puget Sound &mdash; same-day deployment, perimeter coverage, staging-yard monitoring.</p>
-          </a>
-          <a href="/blog/copper-theft-seattle-tacoma-construction-sites" class="block bg-gray-50 p-6 rounded-lg hover:bg-gray-100 transition-colors">
-            <p class="text-xs font-bold text-amber-700 uppercase tracking-wide mb-2">Threat Profile</p>
-            <h3 class="font-bold text-lg mb-2 text-gray-900">Copper Theft at Construction Sites</h3>
-            <p class="text-gray-600 text-sm">Why these radar + PTZ + LED floodlight specs matter for the worst year on record for jobsite copper theft in Washington.</p>
-          </a>
-          <a href="/seattle-construction-security" class="block bg-gray-50 p-6 rounded-lg hover:bg-gray-100 transition-colors">
-            <p class="text-xs font-bold text-purple-600 uppercase tracking-wide mb-2">Service Area</p>
-            <h3 class="font-bold text-lg mb-2 text-gray-900">Seattle Construction Security</h3>
-            <p class="text-gray-600 text-sm">SLU, downtown, Rainier Valley, Ballard, SODO &mdash; the densest crane concentration in the state.</p>
-          </a>
-          <a href="/bellevue-surveillance-trailer" class="block bg-gray-50 p-6 rounded-lg hover:bg-gray-100 transition-colors">
-            <p class="text-xs font-bold text-purple-600 uppercase tracking-wide mb-2">Service Area</p>
-            <h3 class="font-bold text-lg mb-2 text-gray-900">Bellevue Surveillance Trailer</h3>
-            <p class="text-gray-600 text-sm">Coverage for the Amazon multi-tower buildout and Spring District infill on the Eastside.</p>
-          </a>
-          <a href="/tacoma-construction-site-security" class="block bg-gray-50 p-6 rounded-lg hover:bg-gray-100 transition-colors">
-            <p class="text-xs font-bold text-amber-700 uppercase tracking-wide mb-2">Service Area</p>
-            <h3 class="font-bold text-lg mb-2 text-gray-900">Tacoma Construction Site Security</h3>
-            <p class="text-gray-600 text-sm">Tideflats industrial, port-adjacent, and downtown Tacoma jobsite coverage across Pierce County.</p>
-          </a>
+          <p class="text-center text-sm text-gray-500 mt-10 max-w-2xl mx-auto">
+            For the full regional breakdown of 2026 Puget Sound construction by site type, see our <a href="/blog/puget-sound-construction-boom-map-2026" class="text-blue-600 hover:underline font-medium">Puget Sound construction boom map</a>.
+          </p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Technical Specs Link -->
-  <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4 text-center">
-      <div class="bg-gradient-to-r from-blue-50 to-gray-50 rounded-lg p-8 md:p-12">
-        <h3 class="text-2xl font-bold mb-4">Want to Learn More About Our Technology?</h3>
-        <p class="text-gray-700 mb-6 max-w-2xl mx-auto">
-          Discover the advanced features and specifications that make our surveillance trailers the most reliable choice for temporary security in the Pacific Northwest.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/trailer-technology" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block transition-colors">
-            View Trailer Technology →
-          </a>
-          <a href="/video-technology" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg inline-block transition-colors">
-            S-VIDIA AI Analytics →
-          </a>
-          <a href="/solar-powered-surveillance" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block transition-colors">
-            Solar Power Details →
-          </a>
+    <!-- ========================================================== -->
+    <!-- FAQ                                                          -->
+    <!-- ========================================================== -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Frequently Asked Questions</h2>
+          <p class="text-center text-gray-700 mb-12">Crisp, factual answers to the questions we hear most &mdash; from on-site operators and from AI agents researching the platform.</p>
+          <div class="space-y-4">
+            {faqItems.map((item) => (
+              <details class="bg-white rounded-lg border border-gray-200 group">
+                <summary class="cursor-pointer p-5 font-bold text-gray-900 group-open:border-b group-open:border-gray-200 flex justify-between items-center">
+                  <span>{item.question}</span>
+                  <svg class="w-5 h-5 text-gray-500 transform transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </summary>
+                <div class="p-5 text-gray-700 leading-relaxed text-sm">{item.answer}</div>
+              </details>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="py-16 text-white">
-      <div class="container mx-auto px-4 max-w-4xl">
-        <div class="bg-blue-50 rounded-lg p-8 text-center max-w-2xl mx-auto mb-8">
-          <h2 class="text-2xl font-bold mb-4 text-gray-900">Ready to Secure Your Site?</h2>
-          <p class="mb-6 text-gray-700">Our security experts are ready to help you find the perfect solution</p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:2536832288" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
-              📞 Call (253) 683-2288
+    <!-- ========================================================== -->
+    <!-- HOWTO — deployment process                                  -->
+    <!-- ========================================================== -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">How a CCTV Trailer deployment works</h2>
+          <p class="text-center text-gray-700 mb-12">From site walk to live AI-triaged monitoring &mdash; typically 24 to 72 hours end to end.</p>
+
+          <ol class="space-y-6">
+            {howToSteps.map((step, i) => (
+              <li class="flex gap-6">
+                <div class="flex-shrink-0 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">{i + 1}</div>
+                <div class="flex-1 pt-1">
+                  <h3 class="font-bold text-lg mb-2">{step.name}</h3>
+                  <p class="text-gray-700 text-sm leading-relaxed">{step.text}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================== -->
+    <!-- RELATED COVERAGE (kept)                                      -->
+    <!-- ========================================================== -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Related Coverage</h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a href="/blog/puget-sound-construction-boom-map-2026" class="block bg-white p-6 rounded-lg hover:shadow-md transition-shadow border border-gray-200">
+              <p class="text-xs font-bold text-blue-700 uppercase tracking-wide mb-2">Regional map</p>
+              <h3 class="font-bold text-lg mb-2 text-gray-900">2026 Puget Sound Construction Boom Map</h3>
+              <p class="text-gray-600 text-sm">Where the active 2026 builds are across Pierce, King, Snohomish, and Kitsap &mdash; with project markers and theft profile by site type.</p>
             </a>
-            <a href="/contact" class="bg-white hover:bg-gray-50 text-blue-600 border-2 border-blue-600 font-bold py-3 px-8 rounded-lg inline-block">
-              Send Message
+            <a href="/construction-security" class="block bg-white p-6 rounded-lg hover:shadow-md transition-shadow border border-gray-200">
+              <p class="text-xs font-bold text-blue-700 uppercase tracking-wide mb-2">Service</p>
+              <h3 class="font-bold text-lg mb-2 text-gray-900">Construction Site Security</h3>
+              <p class="text-gray-600 text-sm">How these specs translate to on-site protection for jobsites across the Puget Sound &mdash; same-day deployment, perimeter coverage, staging-yard monitoring.</p>
+            </a>
+            <a href="/video-technology" class="block bg-white p-6 rounded-lg hover:shadow-md transition-shadow border border-gray-200">
+              <p class="text-xs font-bold text-purple-700 uppercase tracking-wide mb-2">Technology</p>
+              <h3 class="font-bold text-lg mb-2 text-gray-900">FDC video technology</h3>
+              <p class="text-gray-600 text-sm">Companion page going deeper on FDC (Flexible Delta Compression) &mdash; background/foreground separation, frame-by-frame recording, and how FDC integrates with Vigil AI inference.</p>
+            </a>
+            <a href="/blog/copper-theft-seattle-tacoma-construction-sites" class="block bg-white p-6 rounded-lg hover:shadow-md transition-shadow border border-gray-200">
+              <p class="text-xs font-bold text-amber-700 uppercase tracking-wide mb-2">Threat profile</p>
+              <h3 class="font-bold text-lg mb-2 text-gray-900">Copper Theft at Construction Sites</h3>
+              <p class="text-gray-600 text-sm">Why the radar + PTZ + LED-floodlight specs matter for the worst year on record for jobsite copper theft in Washington.</p>
+            </a>
+            <a href="/seattle-construction-security" class="block bg-white p-6 rounded-lg hover:shadow-md transition-shadow border border-gray-200">
+              <p class="text-xs font-bold text-purple-700 uppercase tracking-wide mb-2">Service area</p>
+              <h3 class="font-bold text-lg mb-2 text-gray-900">Seattle Construction Security</h3>
+              <p class="text-gray-600 text-sm">SLU, downtown, Rainier Valley, Ballard, SODO &mdash; the densest crane concentration in the state.</p>
+            </a>
+            <a href="/solar-powered-surveillance" class="block bg-white p-6 rounded-lg hover:shadow-md transition-shadow border border-gray-200">
+              <p class="text-xs font-bold text-green-700 uppercase tracking-wide mb-2">Power</p>
+              <h3 class="font-bold text-lg mb-2 text-gray-900">Solar-Powered Surveillance</h3>
+              <p class="text-gray-600 text-sm">How the solar + battery + generator stack keeps trailers running through PNW winter cloud cover.</p>
             </a>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ========================================================== -->
+    <!-- CTA                                                          -->
+    <!-- ========================================================== -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="bg-blue-50 rounded-lg p-8 text-center max-w-2xl mx-auto mb-8">
+          <h2 class="text-2xl font-bold mb-4 text-gray-900">Ready to secure your site?</h2>
+          <p class="mb-6 text-gray-700">Our security experts can map your site, recommend a configuration, and have a trailer deployed within 24–72 hours.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:2536832288" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block">📞 Call (253) 683-2288</a>
+            <a href="/contact" class="bg-white hover:bg-gray-50 text-blue-600 border-2 border-blue-600 font-bold py-3 px-8 rounded-lg inline-block">Send Message</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <RentVsBuy variant="banner" />
+
   </main>
 
-  <!-- Footer -->
   <Footer />
 </Layout>

@@ -7,6 +7,7 @@ import CTASection from '../components/CTASection.astro';
 import Analytics from '../components/Analytics.astro';
 import ServiceSchema from '../components/ServiceSchema.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+import VideoSchema from '../components/VideoSchema.astro';
 
 // Schema data for the construction security service
 const serviceSchemaData = {
@@ -34,6 +35,24 @@ const breadcrumbItems = [
   { name: "Home", url: "/" },
   { name: "Trailer Technology" }
 ];
+
+// Overview video — relocated from /technical-specifications (May 2026)
+// because the "system overview" intent matches this page much better than
+// the deep-dive specs page.
+const videoData = {
+  name: "CCTV Trailer Mobile Security System Overview",
+  description: "Professional overview of our mobile surveillance trailer systems with Vigil AI alerts, FDC (Flexible Delta Compression) codec, browser-only remote viewing, solar power, and weatherproof construction for Pacific Northwest deployment.",
+  thumbnailUrl: [
+    "https://img.youtube.com/vi/WZh4h-t1D18/maxresdefault.jpg",
+    "https://img.youtube.com/vi/WZh4h-t1D18/hqdefault.jpg"
+  ],
+  uploadDate: "2025-05-01T00:00:00-07:00",
+  duration: "PT2M30S",
+  contentUrl: "https://www.youtube.com/watch?v=WZh4h-t1D18",
+  embedUrl: "https://www.youtube-nocookie.com/embed/WZh4h-t1D18",
+  keywords: ["mobile surveillance trailer", "Vigil AI alerts", "FDC codec", "Flexible Delta Compression", "construction site security", "PTZ cameras"],
+  genre: "Security Technology"
+};
 ---
 
 <Layout
@@ -41,7 +60,8 @@ const breadcrumbItems = [
   description="Advanced mobile surveillance trailers built for Pacific Northwest weather. Solar-powered with generator backup, 360° PTZ cameras, AI detection, 30-day storage. See full specifications.">
   
   <ServiceSchema {...serviceSchemaData} />
-  <BreadcrumbSchema items={breadcrumbItems} /> 
+  <BreadcrumbSchema items={breadcrumbItems} />
+  <VideoSchema {...videoData} />
 
   <Header showEmergencyBar={true} currentPath="/trailer-technology" />
   <Analytics /> 
@@ -50,7 +70,7 @@ const breadcrumbItems = [
     <!-- Hero Section -->
     <div class="hero-trailer">
       <div class="hero-overlay">
-        <LazyImage src="/images/tacoma-dome-bg-hero3.webp" alt="Mobile security trailer technical specifications and features" 
+        <LazyImage src="/images/tacoma-dome-bg-hero3.webp" alt="Mobile security trailer technical specifications and features"
         class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
       </div>
       <div class="hero-content">
@@ -62,6 +82,29 @@ const breadcrumbItems = [
         </div>
       </div>
     </div>
+
+    <!-- Overview video -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <div class="text-center mb-6">
+          <p class="text-xs font-bold text-blue-700 uppercase tracking-widest mb-2">Watch the overview</p>
+          <h2 class="text-2xl md:text-3xl font-bold">Mobile Security System &mdash; 2-minute tour</h2>
+          <p class="text-gray-700 mt-2 max-w-2xl mx-auto">A short walkthrough of the trailer's cameras, power, connectivity, and the AI alerting layer behind it.</p>
+        </div>
+        <div class="bg-white p-4 sm:p-6 rounded-lg shadow-sm">
+          <div class="relative w-full" style="padding-bottom: 56.25%;">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/WZh4h-t1D18?modestbranding=1&rel=0"
+              title="CCTV Trailer mobile security system overview video"
+              class="absolute top-0 left-0 w-full h-full rounded-lg"
+              frameborder="0"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Trailer Features Section -->
     <div class="section-trailer-features">

@@ -4,6 +4,8 @@ SEO-GEO-plan.md
 node_modules/
 .pnp
 .pnp.js
+.playwright-mcp/
+.claude/
 
 # testing
 coverage/

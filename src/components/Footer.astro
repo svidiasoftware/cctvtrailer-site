@@ -36,7 +36,7 @@ const currentYear = new Date().getFullYear();
           <a href="/locations" class="text-gray-300 hover:text-white font-semibold">All Puget Sound Areas</a>
           {locationGroups.map((group) => (
             <div class="mt-2">
-              <p class="text-xs uppercase tracking-wide text-gray-500 mb-1">{group.label}</p>
+              <p class="text-xs uppercase tracking-wide text-gray-400 mb-1">{group.label}</p>
               {group.cities.map((c) => (
                 <a href={c.href} class="block text-gray-300 hover:text-white text-sm py-0.5">{c.city}</a>
               ))}
