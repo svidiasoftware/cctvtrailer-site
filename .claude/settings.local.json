@@ -88,7 +88,12 @@
       "WebFetch(domain:www.southsoundreport.com)",
       "WebFetch(domain:washingtonretail.org)",
       "WebFetch(domain:sourcingjournal.com)",
-      "WebFetch(domain:www.seattlechamber.com)"
+      "WebFetch(domain:www.seattlechamber.com)",
+      "WebFetch(domain:www.kiro7.com)",
+      "WebFetch(domain:www.wta.org)",
+      "WebFetch(domain:www.hcn.org)",
+      "WebFetch(domain:livingsnoqualmie.com)",
+      "mcp__plugin_playwright_playwright__browser_navigate"
     ],
     "deny": [],
     "ask": []
