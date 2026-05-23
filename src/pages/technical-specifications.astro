@@ -60,8 +60,8 @@ const techSpecsSchema = {
     { "@type": "PropertyValue", "name": "Recording Mode", "value": "True frame-by-frame recording — every frame retained as a separate image. Motion-triggered archive write: disk commits only when motion is detected, so static scenes incur near-zero storage cost." },
     { "@type": "PropertyValue", "name": "Evidence Integrity", "value": "Each frame is watermarked and encrypted; FDC stores and plays back the exact image seen by the camera at full quality (no transcoding tax)." },
     { "@type": "PropertyValue", "name": "Camera Compatibility", "value": "Analog, HD IP, and Ultra HD IP cameras (FDC platform-wide capability)." },
-    { "@type": "PropertyValue", "name": "Remote Viewing", "value": "Browser-only via WebSocket-to-TCP cloud proxy. HTTPS at the page level, WSS for streaming, military-grade 128-bit encrypted connection. No VPN, no plugin, no desktop client install." },
-    { "@type": "PropertyValue", "name": "Mobile Apps", "value": "Native iOS and Android apps for live and archive viewing — calendar-based recorded-footage playback, PTZ control, multi-camera grid layouts, event/alert list, clip export, and multi-NVR connection from a single app. Speak the same FDC TCP protocol and 128-bit encryption as the browser viewer. Push delivery via Apple Push Notification Service (APNs) on iOS and Firebase Cloud Messaging (FCM) on Android. Both apps were included in the May 2026 constrained-link benchmark." },
+    { "@type": "PropertyValue", "name": "Remote Viewing", "value": "Browser-only via WebSocket cloud proxy. HTTPS at the page level, WSS for streaming, military-grade 128-bit encrypted connection. No VPN, no plugin, no desktop client install." },
+    { "@type": "PropertyValue", "name": "Mobile Apps", "value": "Native iOS and Android apps for live and archive viewing — calendar-based recorded-footage playback, PTZ control, multi-camera grid layouts, event/alert list, clip export, and multi-NVR connection from a single app. Speak the same FDC streaming protocol and 128-bit encryption as the browser viewer. Push delivery via Apple Push Notification Service (APNs) on iOS and Firebase Cloud Messaging (FCM) on Android. Both apps were included in the May 2026 constrained-link benchmark." },
     { "@type": "PropertyValue", "name": "Notification Channels", "value": "Apple Push, Firebase Cloud Messaging, Email, and Slack webhooks with per-camera severity thresholds and cooldown rules." },
     { "@type": "PropertyValue", "name": "AI-Agent Integration", "value": "Model Context Protocol (MCP) server exposing 19 archive tools and 6 live tools for LLM and AI-agent querying." },
     { "@type": "PropertyValue", "name": "Multi-Tenant Architecture", "value": "Single cloud-proxy deployment supports multiple customer NVRs; per-tenant isolation enforced server-side." },
@@ -140,7 +140,7 @@ const definitions = [
   },
   {
     term: "Browser-Only Remote Viewing",
-    definition: "Remote camera access delivered through any modern web browser via a cloud WebSocket-to-TCP proxy. No VPN, no plugin install, no desktop client required. Works on Windows, macOS, Linux, ChromeOS, iOS, and Android.",
+    definition: "Remote camera access delivered through any modern web browser via a cloud WebSocket proxy. No VPN, no plugin install, no desktop client required. Works on Windows, macOS, Linux, ChromeOS, iOS, and Android.",
     category: "Remote Access",
     relatedTerms: ["WebSocket Proxy", "Cloud Relay", "WSS Streaming"],
     url: "/technical-specifications"
@@ -177,7 +177,7 @@ const faqItems = [
   },
   {
     question: "Can I view cameras remotely without installing software?",
-    answer: "Yes. The browser viewer is delivered through any modern web browser via a cloud WebSocket-to-TCP proxy — HTTPS at the page level, WSS for the live stream, no VPN, no plugin, no desktop client. Works on Windows, macOS, Linux, ChromeOS, iOS, and Android. Native iOS and Android apps are also available when you want push alerts plus live, calendar-based archive playback, PTZ control, multi-camera grids, and clip export from one app — they speak the same FDC TCP protocol and 128-bit encryption as the browser. Both apps were included in the May 2026 constrained-link benchmark alongside the browser."
+    answer: "Yes. The browser viewer is delivered through any modern web browser via a cloud WebSocket proxy — HTTPS at the page level, WSS for the live stream, no VPN, no plugin, no desktop client. Works on Windows, macOS, Linux, ChromeOS, iOS, and Android. Native iOS and Android apps are also available when you want push alerts plus live, calendar-based archive playback, PTZ control, multi-camera grids, and clip export from one app — they speak the same FDC streaming protocol and 128-bit encryption as the browser. Both apps were included in the May 2026 constrained-link benchmark alongside the browser."
   },
   {
     question: "Does the trailer detect license plates?",
@@ -693,7 +693,7 @@ const howToSteps = [
             <ul class="space-y-3 text-gray-700">
               <li class="flex items-start">
                 <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                <span><strong>WebSocket-to-TCP proxy</strong> bridges your browser to the NVR over a single WSS connection.</span>
+                <span><strong>Secure WebSocket proxy</strong> bridges your browser to the NVR over a single WSS connection.</span>
               </li>
               <li class="flex items-start">
                 <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
@@ -713,7 +713,7 @@ const howToSteps = [
               </li>
               <li class="flex items-start">
                 <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                <span><strong>Native iOS and Android apps</strong> deliver live view, calendar-based archive playback, PTZ control, multi-camera grids, an event/alert list, and clip export &mdash; multiple NVRs from one app, same FDC TCP protocol and 128-bit encryption as the browser. Both platforms were included in the constrained-link benchmark below.</span>
+                <span><strong>Native iOS and Android apps</strong> deliver live view, calendar-based archive playback, PTZ control, multi-camera grids, an event/alert list, and clip export &mdash; multiple NVRs from one app, same FDC streaming protocol and 128-bit encryption as the browser. Both platforms were included in the constrained-link benchmark below.</span>
               </li>
             </ul>
           </div>
@@ -1024,7 +1024,7 @@ const howToSteps = [
               <tbody>
                 <tr class="border-b"><td class="py-2 font-semibold w-2/5">Web viewer:</td><td class="py-2">Any modern browser (HTTPS + WSS)</td></tr>
                 <tr class="border-b"><td class="py-2 font-semibold">Mobile apps:</td><td class="py-2">iOS + Android &mdash; live, archive, PTZ, multi-cam grids, clip export, push (APNs + FCM)</td></tr>
-                <tr class="border-b"><td class="py-2 font-semibold">Proxy:</td><td class="py-2">WebSocket-to-TCP cloud proxy</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Proxy:</td><td class="py-2">WebSocket cloud proxy</td></tr>
                 <tr class="border-b"><td class="py-2 font-semibold">AI/agent API:</td><td class="py-2">MCP server (25 tools)</td></tr>
                 <tr class="border-b"><td class="py-2 font-semibold">Custom API:</td><td class="py-2">JSON-RPC daemon (Unix socket)</td></tr>
                 <tr><td class="py-2 font-semibold">Tenancy:</td><td class="py-2">Multi-tenant SaaS architecture</td></tr>

@@ -51,7 +51,7 @@ const breadcrumbItems = [
 
         <div class="prose prose-blue max-w-none">
           <h2>What this measures</h2>
-          <p>Delivered frames per second and effective wire bandwidth at the receiving client when the network path is constrained to five named tiers, from Slow 3G to uncapped. Three platforms exercised in parallel: a desktop browser (Chrome with DevTools throttling), the iOS native app (running on the iPhone Simulator), and the Android native app (running on the emulator). Both mobile apps speak the same S-VIDIA TCP protocol and were exercised against the same test NVR / cameras as the web run.</p>
+          <p>Delivered frames per second and effective wire bandwidth at the receiving client when the network path is constrained to five named tiers, from Slow 3G to uncapped. Three platforms exercised in parallel: a desktop browser (Chrome with DevTools throttling), the iOS native app (running on the iPhone Simulator), and the Android native app (running on the emulator). Both mobile apps speak the same S-VIDIA streaming protocol and were exercised against the same test NVR / cameras as the web run.</p>
 
           <h2>Cameras and scenes</h2>
           <ul>
@@ -117,7 +117,7 @@ const breadcrumbItems = [
               <tr><td class="py-1 pr-3 font-semibold">E (uncapped)</td><td class="py-1 pr-3">12.6</td><td class="py-1 pr-3">221</td><td class="py-1 pr-3">8.6</td><td class="py-1">84</td></tr>
             </tbody>
           </table>
-          <p>The Android app's lower Quality slider setting (5 of ~20) and lower single-camera FPS request (10 vs iOS's 12) account for most of the per-frame byte difference vs iOS. Both apps speak the same S-VIDIA TCP protocol; the on-wire video format is identical.</p>
+          <p>The Android app's lower Quality slider setting (5 of ~20) and lower single-camera FPS request (10 vs iOS's 12) account for most of the per-frame byte difference vs iOS. Both apps speak the same S-VIDIA streaming protocol; the on-wire video format is identical.</p>
 
           <h2>Limitations / disclosures</h2>
           <ul>
