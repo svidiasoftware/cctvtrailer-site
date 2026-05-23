@@ -52,7 +52,11 @@ const techSpecsSchema = {
     { "@type": "PropertyValue", "name": "Scene Auto-Learning", "value": "Per-camera scene profile agent samples frames, builds 'what is normal here', auto-suggests rule disables for routine activity." },
     { "@type": "PropertyValue", "name": "Object Detection", "value": "Class person/vehicle detection; WPOD license plate detector + CTC OCR via OpenVINO. Reads both standard (dark-on-light) and color-reversed plates including white-on-black, yellow-on-black, and other non-standard color schemes." },
     { "@type": "PropertyValue", "name": "Video Codec", "value": "FDC (Flexible Delta Compression) — S-VIDIA's proprietary codec. Records background as a static image and foreground as per-frame motion deltas (8×8-pixel block granularity). No hardware compression, no resolution loss. Outperforms H.264 and H.265 on storage." },
-    { "@type": "PropertyValue", "name": "Storage Efficiency", "value": "Up to 60% less recording space than conventional H.264/H.265 systems (S-VIDIA published figure). Site-specific Puget Sound fleet measurements scheduled Q3 2026." },
+    { "@type": "PropertyValue", "name": "Storage Efficiency", "value": "Up to 60% less recording space than conventional H.264/H.265 systems (S-VIDIA published platform-wide figure)." },
+    { "@type": "PropertyValue", "name": "Measured Storage (Puget Sound clip, May 2026)", "value": "Controlled 10-minute clip: FDC archive footprint was 54% of x264 CRF 23 (~46% smaller) and 79% of x265 CRF 28 (~21% smaller). SSIM 0.946 / PSNR 35.3 dB in 4:2:0 vs the reference. Clip had 100% motion so the motion-only-archive layer did not engage — codec-only measurement; the S-VIDIA platform 60% figure compounds codec + motion gate." },
+    { "@type": "PropertyValue", "name": "Fleet Storage Footprint (Puget Sound pilot, week of 2026-05-15)", "value": "16 cameras across 4 trailers, 7-day window. Median GB/camera/week by site type: perimeter/secured-yard 442 (p25–p75 379–510), warehouse/distribution 2,453 (1,447–3,418), retail/parking 2,923 (2,753–3,050). Buckets with fewer than 4 cameras omitted. Full N≥8 trailer roll-out scheduled later in 2026." },
+    { "@type": "PropertyValue", "name": "Remote Viewing Performance (May 2026)", "value": "Chrome DevTools throttled, 60s steady-state per tier. Slow 3G (~500 kbps + 2s RTT): dynamic intersection ~1 fps, static parking ~0.4 fps with every frame sharp. Fast 4G: 11.4 fps / 45.5 kbps on dynamic; 7.7 fps / 30.5 kbps on static. Uncapped baseline: 14.8 fps / 139 kbps. iOS and Android native-app sweeps measured ~2 fps at the 256 kbps cap." },
+    { "@type": "PropertyValue", "name": "Live Remote-View Uplink Cost (Puget Sound, May 2026)", "value": "One 2688x1520 camera. Mean kbps: 1,425 via FDC-over-NVR vs 2,626 via direct RTSP H.264 — ~46% uplink savings (about 13 GB/cam/day off the LTE/5G link). N=2 samples per path, range within 19.2% of mean. Storage 60% figure and uplink 46% figure are related (same codec property) but not interchangeable." },
     { "@type": "PropertyValue", "name": "Recording Mode", "value": "True frame-by-frame recording — every frame retained as a separate image. Motion-triggered archive write: disk commits only when motion is detected, so static scenes incur near-zero storage cost." },
     { "@type": "PropertyValue", "name": "Evidence Integrity", "value": "Each frame is watermarked and encrypted; FDC stores and plays back the exact image seen by the camera at full quality (no transcoding tax)." },
     { "@type": "PropertyValue", "name": "Camera Compatibility", "value": "Analog, HD IP, and Ultra HD IP cameras (FDC platform-wide capability)." },
@@ -225,7 +229,19 @@ const faqItems = [
   },
   {
     question: "Are there published bandwidth or storage benchmarks?",
-    answer: "Yes for the FDC platform overall: S-VIDIA reports up to 60% less recording space than conventional H.264/H.265 systems. For our trailer fleet specifically, site-conditional benchmarks against H.264 and H.265 baselines on Puget Sound deployments are scheduled for publication in Q3 2026 — a controlled A/B encode of a canonical jobsite clip plus a fleet-wide telemetry harvest of bytes-per-camera-per-week."
+    answer: "Yes for the FDC platform overall: S-VIDIA reports up to 60% less recording space than conventional H.264/H.265 systems. We complement that platform-wide figure with first-party Puget Sound measurements. A controlled May 2026 codec A/B on one outdoor clip showed FDC at 54% the file size of x264 CRF 23 and 79% of x265 CRF 28 — that clip ran at 100% motion so the motion-only-archive layer did not engage, leaving the codec itself as the only saver. A fleet pilot across 4 trailers / 16 cameras (week of 2026-05-15) measured median GB/camera/week at 442 (perimeter/secured-yard), 2,453 (warehouse/distribution), and 2,923 (retail/parking). Full methodology, side-by-side stills, and per-site-type ranges are published in the Video Technology section above."
+  },
+  {
+    question: "How much storage does each camera actually use in practice?",
+    answer: "Measured across our Puget Sound fleet pilot (week of 2026-05-15, 4 trailers / 16 cameras): median GB/camera/week was 442 on perimeter/secured-yard sites (29.5% motion density), 2,453 on warehouse/distribution sites (44% motion), and 2,923 on retail/parking sites (46% motion). Numbers are derived from per-trailer disk allocation, divided per camera by motion-minute share over the 7-day window. Buckets below 4 cameras (construction jobsite, port-industrial, corporate-campus, off-grid-rural) are omitted from the pilot rather than zero-filled, and the full N≥8 trailer roll-out is scheduled for later in 2026. S-VIDIA's platform-wide claim of up to 60% less recording space than H.264/H.265 is what makes these per-camera footprints achievable."
+  },
+  {
+    question: "Does remote viewing still work on bad cellular signal?",
+    answer: "Yes. Measured against a Puget Sound test stream (May 2026, Chrome DevTools throttled): on Slow 3G (~500 kbps cap + 2s added RTT), a dynamic outdoor intersection delivered ~1 fps with every frame sharp and license plates readable; a static parking scene rode every tier at sub-1-fps because the FDC codec emits almost nothing when little is changing. On Fast 4G the dynamic camera recovered to 11.4 fps; the uncapped baseline ran at 14.8 fps for ~139 kbps. Image quality stayed constant across every tier — the codec degrades by dropping frames, not by reducing per-frame quality. iOS and Android native apps measured similarly (~2 fps at the 256 kbps cap). Synthetic throttling is a clean cap; real LTE/5G adds jitter and burstiness, so these numbers should be read as best-case at that nominal cap."
+  },
+  {
+    question: "How much LTE/5G uplink does live remote viewing actually consume?",
+    answer: "Measured against a Puget Sound trailer (May 2026), live remote view via FDC-over-NVR consumed mean 1,425 kbps for one 2688×1520 camera — about 46% less than pulling the camera's native RTSP H.264 directly (2,626 kbps mean). On a 24-hour basis that's roughly 15.4 GB/camera/day via FDC vs 28.4 GB/camera/day via direct RTSP — about 13 GB/day off the cellular link. Two 120-second samples per path interleaved A-B-A-B; range within 19.2% of mean. The block-delta property that saves disk also saves uplink — same codec mechanic. The platform-wide up-to-60% claim is for storage; the ~46% figure here is for live uplink — related but distinct."
   }
 ];
 
@@ -473,7 +489,7 @@ const howToSteps = [
           <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg p-8 mb-12 text-center">
             <p class="text-5xl md:text-6xl font-bold mb-2">Up to 60%</p>
             <p class="text-xl mb-2">less recording space than conventional H.264 / H.265 systems</p>
-            <p class="text-sm text-blue-100">S-VIDIA published figure for the FDC platform &middot; site-specific Puget Sound fleet measurements scheduled Q3 2026</p>
+            <p class="text-sm text-blue-100">S-VIDIA published figure for the FDC platform &middot; <a href="#fleet-measured" class="underline hover:text-white">site-specific Puget Sound fleet measurements below</a></p>
           </div>
 
           <div class="grid md:grid-cols-3 gap-6 mb-12">
@@ -521,10 +537,82 @@ const howToSteps = [
             </div>
           </div>
 
-          <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
-            <p class="text-sm font-bold text-blue-800 uppercase tracking-wide mb-2">Site-specific benchmarks coming Q3 2026</p>
-            <p class="text-gray-800 text-sm leading-relaxed">
-              The 60% storage figure above is S-VIDIA's published platform-wide claim. We're complementing it with Puget Sound&ndash;specific data: a controlled A/B encode of a canonical jobsite clip (FDC vs. x264 CRF 23 vs. x265 CRF 28) and a fleet-wide telemetry harvest of bytes-per-camera-per-week across active deployments. Publication scheduled for <strong>Q3 2026</strong>.
+          <!-- Measured comparison (Bundle 01: FDC codec A/B test, May 2026) -->
+          <div id="fdc-codec" class="bg-white border border-blue-200 rounded-lg p-8 mb-8">
+            <p class="text-xs font-bold text-blue-700 uppercase tracking-wide mb-2">Measured &middot; first-party</p>
+            <h3 class="font-bold text-xl mb-1">FDC vs. x264 / x265 on a 10-minute outdoor clip <span class="text-sm font-normal text-gray-600">(<time datetime="2026-05-22">May 2026</time>)</span></h3>
+            <p class="text-sm text-gray-600 mb-4">Same source clip (2688&times;1520, 10&nbsp;fps, 600&nbsp;s) re-encoded by all three codecs from a once-decoded YUV 4:2:0 reference. FDC runs through the production NVR pipeline (motion-gated encode). Fidelity measured against the YUV reference, not uncompressed ground truth &mdash; the camera itself never emits uncompressed video.</p>
+            <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm">
+              <caption class="sr-only">FDC vs x264 vs x265 measured comparison on a 10-minute outdoor clip, May 2026</caption>
+              <thead><tr class="border-b bg-gray-50">
+                <th class="py-2 px-2">Codec</th>
+                <th class="py-2 px-2">File size</th>
+                <th class="py-2 px-2">GB / cam / 24h</th>
+                <th class="py-2 px-2">GB / cam / week</th>
+                <th class="py-2 px-2">SSIM</th>
+                <th class="py-2 px-2">PSNR (dB)</th>
+              </tr></thead>
+              <tbody>
+                <tr class="border-b bg-blue-50/40"><td class="py-2 px-2 font-semibold">FDC (production gate ON)</td><td class="py-2 px-2">255&nbsp;MB</td><td class="py-2 px-2">38.5</td><td class="py-2 px-2">269.8</td><td class="py-2 px-2">0.946</td><td class="py-2 px-2">35.3</td></tr>
+                <tr class="border-b"><td class="py-2 px-2">x264 CRF&nbsp;23</td><td class="py-2 px-2">471&nbsp;MB</td><td class="py-2 px-2">71.1</td><td class="py-2 px-2">497.8</td><td class="py-2 px-2">0.988</td><td class="py-2 px-2">44.2</td></tr>
+                <tr><td class="py-2 px-2">x265 CRF&nbsp;28</td><td class="py-2 px-2">322&nbsp;MB</td><td class="py-2 px-2">48.6</td><td class="py-2 px-2">340.0</td><td class="py-2 px-2">0.978</td><td class="py-2 px-2">40.7</td></tr>
+              </tbody>
+            </table>
+            </div>
+            <p class="text-sm font-semibold mt-4">On this clip, FDC's archive footprint was <strong>54%</strong> of x264 CRF&nbsp;23 (~46% smaller) and <strong>79%</strong> of x265 CRF&nbsp;28 (~21% smaller).</p>
+            <p class="text-xs text-gray-600 mt-3 leading-relaxed">
+              <strong>Why this clip is a conservative test of FDC:</strong> the source had detected motion in <strong>100% of frames</strong>, so the motion-only-archive layer that compounds with the codec in real deployments did not engage. The S-VIDIA platform-wide <strong>up to 60%</strong> claim assumes typical mixed-motion content where the motion gate also saves disk; on a fully-active clip only the codec itself contributes. The <a class="text-blue-600 hover:underline" href="#fleet-measured">fleet telemetry below</a> shows what mixed-motion looks like at deployment scale.
+            </p>
+            <p class="text-xs text-gray-600 mt-2">Method: x264 <code>-preset medium -crf 23</code>; x265 <code>-preset medium -crf 28</code>; FDC vcore9 <code>libcommon</code> production defaults (dct=tmj, simd-mode=128, quality=19, motion-zone=8). Fidelity in 4:2:0. See <a href="/docs/benchmarks/01-fdc-ab-methodology" class="text-blue-600 hover:underline">full methodology</a>. Complements S-VIDIA's published 60% platform-wide figure; does not replace it.</p>
+          </div>
+
+          <!-- Side-by-side stills gallery (Bundle 01) -->
+          <div class="mb-12">
+            <p class="text-xs font-bold text-blue-700 uppercase tracking-wide mb-2">Side-by-side stills</p>
+            <h3 class="font-bold text-lg mb-3">Visual comparison at three timestamps</h3>
+            <p class="text-sm text-gray-600 mb-4">Click any thumbnail for full-resolution 400&times;400 centre-crop. License plate is intentionally pixelated; otherwise the frames are unaltered. Same scene through each codec round-trip at <time>t=02:00</time>, <time>05:00</time>, <time>08:00</time>.</p>
+            <div class="grid grid-cols-3 gap-2">
+              <div class="text-xs text-center font-semibold text-gray-700">FDC (production)</div>
+              <div class="text-xs text-center font-semibold text-gray-700">x264 CRF&nbsp;23</div>
+              <div class="text-xs text-center font-semibold text-gray-700">x265 CRF&nbsp;28</div>
+              <a href="/images/fdc-ab/fdc-t02m00s.jpg" target="_blank" rel="noopener" class="block"><img src="/images/fdc-ab/fdc-t02m00s.webp" alt="FDC codec reconstruction at t=2m, outdoor parking scene with parked GMC (license plate pixelated)" class="w-full hover:opacity-90 transition-opacity rounded" loading="lazy" width="400" height="400" /></a>
+              <a href="/images/fdc-ab/x264-crf23-t02m00s.jpg" target="_blank" rel="noopener" class="block"><img src="/images/fdc-ab/x264-crf23-t02m00s.webp" alt="x264 CRF 23 reconstruction at t=2m" class="w-full hover:opacity-90 transition-opacity rounded" loading="lazy" width="400" height="400" /></a>
+              <a href="/images/fdc-ab/x265-crf28-t02m00s.jpg" target="_blank" rel="noopener" class="block"><img src="/images/fdc-ab/x265-crf28-t02m00s.webp" alt="x265 CRF 28 reconstruction at t=2m" class="w-full hover:opacity-90 transition-opacity rounded" loading="lazy" width="400" height="400" /></a>
+              <a href="/images/fdc-ab/fdc-t05m00s.jpg" target="_blank" rel="noopener" class="block"><img src="/images/fdc-ab/fdc-t05m00s.webp" alt="FDC codec reconstruction at t=5m" class="w-full hover:opacity-90 transition-opacity rounded" loading="lazy" width="400" height="400" /></a>
+              <a href="/images/fdc-ab/x264-crf23-t05m00s.jpg" target="_blank" rel="noopener" class="block"><img src="/images/fdc-ab/x264-crf23-t05m00s.webp" alt="x264 CRF 23 reconstruction at t=5m" class="w-full hover:opacity-90 transition-opacity rounded" loading="lazy" width="400" height="400" /></a>
+              <a href="/images/fdc-ab/x265-crf28-t05m00s.jpg" target="_blank" rel="noopener" class="block"><img src="/images/fdc-ab/x265-crf28-t05m00s.webp" alt="x265 CRF 28 reconstruction at t=5m" class="w-full hover:opacity-90 transition-opacity rounded" loading="lazy" width="400" height="400" /></a>
+              <a href="/images/fdc-ab/fdc-t08m00s.jpg" target="_blank" rel="noopener" class="block"><img src="/images/fdc-ab/fdc-t08m00s.webp" alt="FDC codec reconstruction at t=8m" class="w-full hover:opacity-90 transition-opacity rounded" loading="lazy" width="400" height="400" /></a>
+              <a href="/images/fdc-ab/x264-crf23-t08m00s.jpg" target="_blank" rel="noopener" class="block"><img src="/images/fdc-ab/x264-crf23-t08m00s.webp" alt="x264 CRF 23 reconstruction at t=8m" class="w-full hover:opacity-90 transition-opacity rounded" loading="lazy" width="400" height="400" /></a>
+              <a href="/images/fdc-ab/x265-crf28-t08m00s.jpg" target="_blank" rel="noopener" class="block"><img src="/images/fdc-ab/x265-crf28-t08m00s.webp" alt="x265 CRF 28 reconstruction at t=8m" class="w-full hover:opacity-90 transition-opacity rounded" loading="lazy" width="400" height="400" /></a>
+            </div>
+          </div>
+
+          <!-- Real-world fleet consumption (Bundle 02 pilot, week of 2026-05-15) -->
+          <div id="fleet-measured" class="bg-white border border-blue-200 rounded-lg p-8">
+            <p class="text-xs font-bold text-blue-700 uppercase tracking-wide mb-2">Real-world fleet &middot; pilot</p>
+            <h3 class="font-bold text-xl mb-1">Bytes per camera per week across the Puget Sound fleet
+              <span class="text-sm font-normal text-gray-600">(week of <time datetime="2026-05-15">2026-05-15</time> &mdash; <time datetime="2026-05-22">2026-05-22</time>)</span></h3>
+            <p class="text-sm text-gray-600 mb-4">A 7-day window across 4 trailers / 16 cameras. This is the codec + motion-only-archive layer together, as the trailers actually consume disk in the field.</p>
+            <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm">
+              <caption class="sr-only">Per-camera-per-week storage by site type, pilot week of 2026-05-15</caption>
+              <thead><tr class="border-b bg-gray-50">
+                <th class="py-2 px-2">Site type</th>
+                <th class="py-2 px-2">N cameras</th>
+                <th class="py-2 px-2">Median GB / cam / wk</th>
+                <th class="py-2 px-2">p25 &ndash; p75</th>
+                <th class="py-2 px-2">Mean motion density</th>
+              </tr></thead>
+              <tbody>
+                <tr class="border-b"><td class="py-2 px-2 font-semibold">Perimeter / secured yard</td><td class="py-2 px-2">4</td><td class="py-2 px-2">442</td><td class="py-2 px-2">379 &ndash; 510</td><td class="py-2 px-2">29.5%</td></tr>
+                <tr class="border-b"><td class="py-2 px-2 font-semibold">Warehouse / distribution</td><td class="py-2 px-2">8</td><td class="py-2 px-2">2,453</td><td class="py-2 px-2">1,447 &ndash; 3,418</td><td class="py-2 px-2">44.0%</td></tr>
+                <tr><td class="py-2 px-2 font-semibold">Retail / parking</td><td class="py-2 px-2">4</td><td class="py-2 px-2">2,923</td><td class="py-2 px-2">2,753 &ndash; 3,050</td><td class="py-2 px-2">45.9%</td></tr>
+              </tbody>
+            </table>
+            </div>
+            <p class="text-xs text-gray-600 mt-4 leading-relaxed">
+              Method: trailer-level disk-allocation snapshot from the fleet's pre-allocated VDB config, allocated per camera by motion-minute share over the window. Buckets with fewer than 4 cameras (jobsite-construction, port-industrial, corporate-campus, off-grid-rural) omitted from the pilot &mdash; not zero-filled. This is the codec + motion-only-archive in production, not codec alone &mdash; the codec A/B above isolates the codec arm. <strong>Pilot sample &mdash; full N&geq;8 trailer roll-out scheduled later in 2026.</strong> See <a href="/docs/benchmarks/02-fleet-telemetry-methodology" class="text-blue-600 hover:underline">full methodology</a>.
             </p>
           </div>
         </div>
@@ -632,6 +720,94 @@ const howToSteps = [
           <div class="bg-white p-8 rounded-lg shadow-sm">
             <LazyImage src="/images/onboard-computer.webp" alt="On-board computer running the S-VIDIA platform with FDC codec and browser-accessible remote viewing" class="w-full h-full object-cover" width="600" height="400" />
             <p class="text-center text-gray-600 text-sm mt-4">The on-board computer runs the FDC-encoded NVR; the cloud proxy makes it browser-reachable from anywhere without VPN.</p>
+          </div>
+        </div>
+
+        <!-- ========================================================== -->
+        <!-- Bundle 03 — constrained-link remote viewing (web)          -->
+        <!-- ========================================================== -->
+        <div id="remote-bandwidth" class="max-w-6xl mx-auto mt-12">
+          <div class="bg-white border border-blue-200 rounded-lg p-8">
+            <p class="text-xs font-bold text-blue-700 uppercase tracking-wide mb-2">Measured &middot; throttled browser</p>
+            <h3 class="font-bold text-xl mb-1">Remote viewing on constrained networks <span class="text-sm font-normal text-gray-600">(<time datetime="2026-05-22">May 2026</time>)</span></h3>
+            <p class="text-sm text-gray-600 mb-4">Chrome DevTools network throttling, single-camera live view, 60-second steady-state measurement per tier. Two cameras: a dynamic outdoor intersection (1920&times;1080) and a static outdoor parking scene (2560&times;1448) &mdash; FDC's wire cost tracks scene change, not resolution.</p>
+            <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm">
+              <caption class="sr-only">Per-tier delivered fps and effective throughput on a throttled browser viewer</caption>
+              <thead><tr class="border-b bg-gray-50">
+                <th class="py-2 px-2">Tier</th>
+                <th class="py-2 px-2">Chrome preset cap</th>
+                <th class="py-2 px-2">Dynamic cam fps</th>
+                <th class="py-2 px-2">Dynamic kbps</th>
+                <th class="py-2 px-2">Static cam fps</th>
+                <th class="py-2 px-2">Static kbps</th>
+              </tr></thead>
+              <tbody>
+                <tr class="border-b"><td class="py-2 px-2 font-semibold">A &middot; Slow 3G</td><td class="py-2 px-2">500 / 500 kbps, +2000 ms</td><td class="py-2 px-2">1.0</td><td class="py-2 px-2">3.8</td><td class="py-2 px-2">0.4</td><td class="py-2 px-2">1.8</td></tr>
+                <tr class="border-b"><td class="py-2 px-2 font-semibold">B &middot; Fast 3G</td><td class="py-2 px-2">1600 / 750 kbps, +562 ms</td><td class="py-2 px-2">3.5</td><td class="py-2 px-2">14.0</td><td class="py-2 px-2">0.4</td><td class="py-2 px-2">1.6</td></tr>
+                <tr class="border-b"><td class="py-2 px-2 font-semibold">C &middot; Slow 4G</td><td class="py-2 px-2">1600 / 750 kbps, +150 ms</td><td class="py-2 px-2">2.8</td><td class="py-2 px-2">11.0</td><td class="py-2 px-2">0.2</td><td class="py-2 px-2">0.7</td></tr>
+                <tr class="border-b"><td class="py-2 px-2 font-semibold">D &middot; Fast 4G</td><td class="py-2 px-2">9000 / 9000 kbps, +170 ms</td><td class="py-2 px-2">11.4</td><td class="py-2 px-2">45.5</td><td class="py-2 px-2">7.7</td><td class="py-2 px-2">30.5</td></tr>
+                <tr><td class="py-2 px-2 font-semibold">E &middot; uncapped</td><td class="py-2 px-2">no emulation</td><td class="py-2 px-2">14.8</td><td class="py-2 px-2">139.0</td><td class="py-2 px-2">9.9</td><td class="py-2 px-2">140.2</td></tr>
+              </tbody>
+            </table>
+            </div>
+            <p class="text-sm font-semibold mt-4">Even on Slow&nbsp;3G (~500 kbps + 2&nbsp;s RTT), the dynamic intersection stayed at ~1&nbsp;fps with every frame sharp and plates readable; the static scene rode every tier at 1 fps or below because the codec emits almost nothing when nothing changes.</p>
+            <p class="text-xs text-gray-600 mt-2 leading-relaxed">Method: <code>performance_start_trace</code> over each (camera, tier) for 60&nbsp;s after a 30&nbsp;s settle; bytes/fps parsed from raw WebSocket events. Chrome's named throttle presets approximate the playbook's idealized caps. <strong>Synthetic throttle &ne; real cellular</strong> &mdash; real LTE/5G adds jitter and burstiness this method cannot reproduce. iOS and Android native-app sweeps measured similarly at tier A (both delivered ~2&nbsp;fps at the 256&nbsp;kbps cap); see <a href="/docs/benchmarks/03-remote-viewing-methodology" class="text-blue-600 hover:underline">full methodology</a> for the per-platform breakdown.</p>
+          </div>
+
+          <!-- Bundle 03 screenshot gallery -->
+          <div class="mt-8">
+            <p class="text-xs font-bold text-blue-700 uppercase tracking-wide mb-2">Screenshots &middot; what each tier looks like</p>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+              <div>
+                <a href="/images/remote-viewing-bench/cam9-tier-a.png" target="_blank" rel="noopener" class="block"><img src="/images/remote-viewing-bench/cam9-tier-a.webp" alt="Dynamic intersection camera at Slow 3G tier (256 kbps, ~1 fps) — individual frame sharp, motion choppy" class="w-full hover:opacity-90 transition-opacity rounded" loading="lazy" width="800" height="324" /></a>
+                <p class="text-xs text-center text-gray-600 mt-1">Dynamic &middot; tier A</p>
+              </div>
+              <div>
+                <a href="/images/remote-viewing-bench/cam9-tier-d.png" target="_blank" rel="noopener" class="block"><img src="/images/remote-viewing-bench/cam9-tier-d.webp" alt="Dynamic intersection camera at Fast 4G tier (~45 kbps delivered, 11 fps) — near real-time" class="w-full hover:opacity-90 transition-opacity rounded" loading="lazy" width="800" height="324" /></a>
+                <p class="text-xs text-center text-gray-600 mt-1">Dynamic &middot; tier D</p>
+              </div>
+              <div>
+                <a href="/images/remote-viewing-bench/cam9-tier-e.png" target="_blank" rel="noopener" class="block"><img src="/images/remote-viewing-bench/cam9-tier-e.webp" alt="Dynamic intersection camera uncapped (~139 kbps, 15 fps) — full quality baseline" class="w-full hover:opacity-90 transition-opacity rounded" loading="lazy" width="800" height="324" /></a>
+                <p class="text-xs text-center text-gray-600 mt-1">Dynamic &middot; tier E</p>
+              </div>
+              <div>
+                <a href="/images/remote-viewing-bench/cam8-tier-a.png" target="_blank" rel="noopener" class="block"><img src="/images/remote-viewing-bench/cam8-tier-a.webp" alt="Static parking camera at Slow 3G tier — codec near-idle, identical to uncapped frame" class="w-full hover:opacity-90 transition-opacity rounded" loading="lazy" width="800" height="324" /></a>
+                <p class="text-xs text-center text-gray-600 mt-1">Static &middot; tier A</p>
+              </div>
+              <div>
+                <a href="/images/remote-viewing-bench/cam8-tier-e.png" target="_blank" rel="noopener" class="block"><img src="/images/remote-viewing-bench/cam8-tier-e.webp" alt="Static parking camera uncapped — same scene, ~140 kbps baseline" class="w-full hover:opacity-90 transition-opacity rounded" loading="lazy" width="800" height="324" /></a>
+                <p class="text-xs text-center text-gray-600 mt-1">Static &middot; tier E</p>
+              </div>
+            </div>
+            <p class="text-xs text-gray-600 mt-3 text-center">Click any thumbnail for full resolution. Frames are unaltered &mdash; quality is consistent across every tier; only frame rate degrades on constrained links.</p>
+          </div>
+
+          <!-- ====================================================== -->
+          <!-- Bundle 05 — live-stream uplink (FDC vs direct RTSP)    -->
+          <!-- ====================================================== -->
+          <div id="live-bandwidth" class="mt-8 bg-white border border-blue-200 rounded-lg p-8">
+            <p class="text-xs font-bold text-blue-700 uppercase tracking-wide mb-2">Measured uplink</p>
+            <h3 class="font-bold text-xl mb-1">What live remote viewing costs the trailer's LTE/5G uplink
+              <span class="text-sm font-normal text-gray-600">(<time datetime="2026-05-22">May 2026</time>, one Puget Sound camera, 2688&times;1520)</span></h3>
+            <p class="text-sm text-gray-600 mb-4">Sequential A-B-A-B captures at the camera's native resolution &mdash; same scene window, two delivery paths, wire bytes measured per consumer process.</p>
+            <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm">
+              <caption class="sr-only">Live-stream uplink kbps and GB/24h for direct RTSP vs FDC-over-NVR</caption>
+              <thead><tr class="border-b bg-gray-50">
+                <th class="py-2 px-2">Delivery path</th>
+                <th class="py-2 px-2">Mean kbps</th>
+                <th class="py-2 px-2">GB / cam / 24h</th>
+                <th class="py-2 px-2">Sample range</th>
+              </tr></thead>
+              <tbody>
+                <tr class="border-b"><td class="py-2 px-2">Direct camera RTSP (H.264)</td><td class="py-2 px-2">2,626</td><td class="py-2 px-2">28.4</td><td class="py-2 px-2">&plusmn;0.4% across N=2</td></tr>
+                <tr><td class="py-2 px-2">FDC live via NVR <a class="text-blue-600 hover:underline" href="#fdc-codec">(see codec)</a></td><td class="py-2 px-2">1,425</td><td class="py-2 px-2">15.4</td><td class="py-2 px-2">&plusmn;19.2% across N=2</td></tr>
+              </tbody>
+            </table>
+            </div>
+            <p class="text-sm font-semibold mt-4">FDC delivery saved <strong>~46% of uplink bytes</strong> vs direct RTSP for the same scene &mdash; about 13&nbsp;GB / camera / day off the cellular link.</p>
+            <p class="text-xs text-gray-600 mt-3 leading-relaxed">Method: two 120-second samples per path interleaved A-B-A-B, with per-process wire bytes measured via <code>nettop</code>. Both <code>range_pct_of_mean</code> figures fell within the bundle's 25% scene-drift threshold. The block-delta property that saves disk is what saves uplink &mdash; same codec mechanic. Note the S-VIDIA platform-wide <strong>up to 60%</strong> claim is for <em>storage</em>; the ~46% figure here is for <em>live uplink</em>. They are related (same codec property) but not interchangeable. Single-camera / single-window sample &mdash; multi-camera follow-up implied. See <a href="/docs/benchmarks/05-live-bandwidth-methodology" class="text-blue-600 hover:underline">full methodology</a>.</p>
           </div>
         </div>
       </div>
@@ -814,7 +990,7 @@ const howToSteps = [
               <caption class="sr-only">Video and codec specifications</caption>
               <tbody>
                 <tr class="border-b"><td class="py-2 font-semibold w-2/5">Codec:</td><td class="py-2">FDC (Flexible Delta Compression)</td></tr>
-                <tr class="border-b"><td class="py-2 font-semibold">Storage vs H.264/H.265:</td><td class="py-2">Up to 60% less (S-VIDIA published)</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Storage vs H.264/H.265:</td><td class="py-2">Up to 60% less (S-VIDIA published); see <a href="#fdc-codec" class="text-blue-600 hover:underline">measured comparison</a></td></tr>
                 <tr class="border-b"><td class="py-2 font-semibold">Quality:</td><td class="py-2">No hardware compression, no resolution loss</td></tr>
                 <tr class="border-b"><td class="py-2 font-semibold">Frame structure:</td><td class="py-2">Separate frames (true frame-by-frame)</td></tr>
                 <tr class="border-b"><td class="py-2 font-semibold">Delta unit:</td><td class="py-2">8×8-pixel block</td></tr>

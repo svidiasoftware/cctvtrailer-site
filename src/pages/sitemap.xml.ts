@@ -121,6 +121,12 @@ const overrides: Record<string, Override> = {
     },
   },
 
+  // Benchmark methodology pages (deep, citation-worthy reference material)
+  '/docs/benchmarks/01-fdc-ab-methodology': { priority: '0.6', changefreq: 'yearly' },
+  '/docs/benchmarks/02-fleet-telemetry-methodology': { priority: '0.6', changefreq: 'yearly' },
+  '/docs/benchmarks/03-remote-viewing-methodology': { priority: '0.6', changefreq: 'yearly' },
+  '/docs/benchmarks/05-live-bandwidth-methodology': { priority: '0.6', changefreq: 'yearly' },
+
   // Supporting content
   '/about': { priority: '0.7', changefreq: 'monthly' },
   '/faq': { priority: '0.7', changefreq: 'monthly' },

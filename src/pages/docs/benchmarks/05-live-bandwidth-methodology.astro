@@ -1,0 +1,91 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import BreadcrumbSchema from '../../../components/BreadcrumbSchema.astro';
+
+const techArticleSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Live-Stream Uplink Bandwidth — Methodology",
+  "description": "May 2026 methodology for measuring live-stream wire-bytes consumption: FDC-over-NVR vs direct camera RTSP H.264 for one 2688×1520 Puget Sound camera. Sequential A-B-A-B captures, per-process TCP bytes via macOS nettop. FDC delivery used ~46% less wire bandwidth than direct RTSP for this scene — same block-delta property that saves disk also saves the LTE/5G uplink.",
+  "datePublished": "2026-05-22",
+  "author": { "@type": "Organization", "name": "CCTV Trailer" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CCTV Trailer",
+    "logo": { "@type": "ImageObject", "url": "https://www.cctvtrailer.com/images/cctv-trailer-logo.png", "width": 512, "height": 512 }
+  },
+  "about": [
+    { "@type": "Thing", "name": "Surveillance trailer live-stream uplink", "description": "LTE/5G bytes consumed by a remote viewer pulling one camera's live stream from a deployed surveillance trailer." },
+    { "@type": "Thing", "name": "FDC vs RTSP H.264", "description": "Comparison of S-VIDIA's FDC block-delta live encoding against the camera's native RTSP H.264 output for the same scene window." }
+  ],
+  "isPartOf": { "@type": "WebPage", "url": "https://www.cctvtrailer.com/technical-specifications" },
+  "spatialCoverage": { "@type": "Place", "name": "Puget Sound region, Washington" }
+});
+
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Technical Specifications", url: "/technical-specifications" },
+  { name: "Live Bandwidth Methodology" }
+];
+---
+
+<Layout
+  title="Methodology — Live-Stream Uplink Bandwidth (May 2026) | CCTV Trailer"
+  description="Methodology for the May 2026 live-stream uplink benchmark: FDC-over-NVR vs direct camera RTSP H.264 for the same scene, wire bytes measured per consumer process."
+  schema={techArticleSchema}
+>
+  <BreadcrumbSchema items={breadcrumbItems} />
+  <Header />
+  <main>
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <nav class="text-sm text-gray-600 mb-6">
+          <a href="/technical-specifications" class="text-blue-600 hover:underline">Technical specifications</a>
+          <span class="mx-2">/</span>
+          <span>Live-stream bandwidth methodology</span>
+        </nav>
+        <h1 class="text-3xl md:text-4xl font-bold mb-2">Live-Stream Uplink Bandwidth &mdash; Methodology</h1>
+        <p class="text-sm text-gray-600 mb-8"><time datetime="2026-05-22">May 2026</time> &middot; bundle 05</p>
+
+        <div class="prose prose-blue max-w-none">
+          <h2>What this measures</h2>
+          <p>Live-stream wire bytes consumed by a viewing process for the same 2688&times;1520 camera scene, delivered two ways:</p>
+          <ul>
+            <li><strong>Path A &mdash; direct RTSP-TCP from camera</strong>: <code>ffmpeg -rtsp_transport tcp -allowed_media_types video -c copy</code> against the camera's native RTSP endpoint. H.264 High Profile, ~10 fps declared.</li>
+            <li><strong>Path B &mdash; FDC live via NVR</strong>: a live-stream client requests the same camera through the S-VIDIA NVR at the camera's native resolution and frame rate. The NVR delivers VComp packets &mdash; per-frame block-delta payloads of changed 8&times;8-pixel blocks.</li>
+          </ul>
+          <p>The wire-byte counter is identical in both paths: per-process TCP <code>bytes_in</code> via macOS <code>nettop -P -m tcp</code>, snapshotted ~1 s before the consumer process exits while its sockets are still open. Both consumers start fresh per sample, so the snapshot equals the bytes consumed during the window.</p>
+
+          <h2>Alternation and noise control</h2>
+          <p>Two 120-second samples per path interleaved A-B-A-B (four samples total). With <code>n=2</code> per path, the report shows mean and range; if the range exceeded 25% of the mean, the alternation would have detected scene drift and the result would be re-run rather than averaged blindly.</p>
+
+          <h2>Results</h2>
+          <table class="w-full text-left text-sm border-collapse">
+            <thead><tr class="border-b"><th class="py-1 pr-3">Path</th><th class="py-1 pr-3">N</th><th class="py-1 pr-3">Mean kbps</th><th class="py-1 pr-3">Range (min &ndash; max)</th><th class="py-1 pr-3">Range %</th><th class="py-1">GB / cam / 24h</th></tr></thead>
+            <tbody>
+              <tr class="border-b"><td class="py-1 pr-3 font-semibold">A &middot; direct RTSP H.264</td><td class="py-1 pr-3">2</td><td class="py-1 pr-3">2,626</td><td class="py-1 pr-3">2,620 &ndash; 2,632</td><td class="py-1 pr-3">0.4%</td><td class="py-1">28.36</td></tr>
+              <tr><td class="py-1 pr-3 font-semibold">B &middot; FDC live via NVR</td><td class="py-1 pr-3">2</td><td class="py-1 pr-3">1,425</td><td class="py-1 pr-3">1,288 &ndash; 1,561</td><td class="py-1 pr-3">19.2%</td><td class="py-1">15.39</td></tr>
+            </tbody>
+          </table>
+          <p>FDC delivery used 45.7% less wire bandwidth than direct RTSP for this scene. Both range figures fall within the 25% scene-drift threshold; means are fair.</p>
+
+          <h2>Caveats &mdash; do not bury</h2>
+          <ul>
+            <li><strong>Motion-% used in the bundle is from archive-frame-presence</strong> (a gap-scan of recorded archive frames), which is not the same as live-stream block churn. A static scene with imperceptible micro-motion can produce zero archive frames yet still churn enough 8&times;8 blocks on the live wire to register.</li>
+            <li><strong>Single-camera / single-window sample.</strong> A multi-camera multi-window follow-up is implied future work to capture day/night and seasonal variation.</li>
+            <li><strong>The S-VIDIA platform-wide 60% claim is for storage; the ~46% figure here is for live uplink.</strong> They are related (same codec block-delta property) but they are not the same number &mdash; do not present them as interchangeable.</li>
+            <li><strong>Capture path used a transcontinental VPN</strong> between the operator and the trailer's network. Sequential A-B-A-B captures avoid VPN-bottleneck contention; <code>nettop</code> on the operator host measures user-space bytes consumed by the consumer process &mdash; independent of the VPN's encrypted-payload overhead, this is the inner flow's wire size that the trailer's LTE/5G uplink would carry.</li>
+          </ul>
+
+          <h2>Per-sample motion vs bandwidth</h2>
+          <p>At <code>n=2</code> per path, the sample-level numbers do not show the "more motion &rarr; more Path B bandwidth" pattern one would naively expect from FDC's block-delta property. The most plausible explanations are (in order): n=2 is too small to establish a trend; archive-frame-presence is not block churn; first-frame sync overhead in the live consumer dominates at 120 s windows. A publishable bandwidth-vs-motion scatter requires <code>n&geq;4</code> per path across quiet and active windows.</p>
+
+          <p class="mt-8"><a href="/technical-specifications#live-bandwidth" class="text-blue-600 hover:underline">&larr; Back to live-uplink table on /technical-specifications</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

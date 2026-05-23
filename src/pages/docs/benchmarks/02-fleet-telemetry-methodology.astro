@@ -1,0 +1,112 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import BreadcrumbSchema from '../../../components/BreadcrumbSchema.astro';
+
+const techArticleSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Fleet Storage Telemetry — Methodology",
+  "description": "May 2026 Puget Sound fleet telemetry pilot methodology: 16 cameras across 4 surveillance trailers measured over the week of 2026-05-15. Median GB / camera / week by site type — perimeter/secured-yard 442, warehouse/distribution 2,453, retail/parking 2,923. Codec + motion-only-archive layer together, as the trailers actually consume disk in the field.",
+  "datePublished": "2026-05-22",
+  "author": { "@type": "Organization", "name": "CCTV Trailer" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CCTV Trailer",
+    "logo": { "@type": "ImageObject", "url": "https://www.cctvtrailer.com/images/cctv-trailer-logo.png", "width": 512, "height": 512 }
+  },
+  "about": [
+    { "@type": "Thing", "name": "Surveillance trailer storage footprint", "description": "Per-camera-per-week disk consumption across a deployed mobile-surveillance fleet, broken down by site-type bucket." },
+    { "@type": "Thing", "name": "FDC (Flexible Delta Compression)", "description": "S-VIDIA's proprietary video codec — the codec + motion-only-archive combination that makes the measured per-camera footprints achievable." }
+  ],
+  "isPartOf": { "@type": "WebPage", "url": "https://www.cctvtrailer.com/technical-specifications" },
+  "spatialCoverage": { "@type": "Place", "name": "Puget Sound region, Washington" }
+});
+
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Technical Specifications", url: "/technical-specifications" },
+  { name: "Fleet Telemetry Methodology" }
+];
+---
+
+<Layout
+  title="Methodology — Fleet Storage Telemetry Pilot (May 2026) | CCTV Trailer"
+  description="Methodology for the May 2026 fleet-wide telemetry pilot measuring bytes per camera per week across deployed Puget Sound surveillance trailers."
+  schema={techArticleSchema}
+>
+  <BreadcrumbSchema items={breadcrumbItems} />
+  <Header />
+  <main>
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <nav class="text-sm text-gray-600 mb-6">
+          <a href="/technical-specifications" class="text-blue-600 hover:underline">Technical specifications</a>
+          <span class="mx-2">/</span>
+          <span>Fleet telemetry methodology</span>
+        </nav>
+        <h1 class="text-3xl md:text-4xl font-bold mb-2">Fleet Storage Telemetry — Methodology</h1>
+        <p class="text-sm text-gray-600 mb-8">Week of <time datetime="2026-05-15">2026-05-15</time> &middot; pilot &middot; bundle 02</p>
+
+        <div class="prose prose-blue max-w-none">
+          <h2>Sample window</h2>
+          <p>2026-05-15T00:00:00Z &rarr; 2026-05-22T00:00:00Z &mdash; one full week. Per-trailer windows clipped to each trailer's actual archive range (one trailer had 154 of the 168 hours; the rest had the full 168).</p>
+
+          <h2>Sample size</h2>
+          <ul>
+            <li><strong>Trailers:</strong> 4 (below the playbook's N&geq;8 bar &mdash; explicit pilot).</li>
+            <li><strong>Cameras:</strong> 16 total.</li>
+            <li>Site-type buckets with fewer than 4 cameras are marked insufficient and omit percentiles (not zero-filled).</li>
+          </ul>
+
+          <h2>Site-type taxonomy</h2>
+          <p>Each trailer was classified by visual inspection of one live frame per camera (full-native-resolution JPEG, no playback). The classifier uses a 7-bucket scheme:</p>
+          <ul>
+            <li><code>perimeter-secure</code> &mdash; chain-link / razor-wire perimeters, secured yards, locked utility cabinets</li>
+            <li><code>warehouse-distribution</code> &mdash; loading bays, roll-up doors, forklift activity, fleet-vehicle staging</li>
+            <li><code>retail-parking</code> &mdash; commercial parking lots, painted parking spaces, mixed pedestrian / vehicle activity</li>
+            <li><code>jobsite-construction</code>, <code>port-industrial</code>, <code>corporate-campus</code>, <code>off-grid-rural</code> &mdash; (zero cameras in this pilot window)</li>
+          </ul>
+          <p>Customer brands, deployment addresses, and trailer identifiers are excluded from this published methodology.</p>
+
+          <h2>Byte estimation</h2>
+          <h3>Headline: trailer-disk-allocation derivation</h3>
+          <p>Source: the fleet's pre-allocated VDB-slot configuration as of 2026-05-22T13:56:21Z. Each entry carries the trailer's pre-allocated VDB slot size (~6.9 TB &mdash; total disk allocation, not bytes written this week) plus an externally-computed <code>usage GB/day</code> figure (pre-allocated / retention-days). The <code>usage GB/day</code> field is the load-bearing input.</p>
+          <ul>
+            <li>Per-trailer headline: <code>gb_per_trailer_per_week = gb_per_day &times; 7</code>.</li>
+            <li>Per-camera allocation: <code>gb_per_camera_per_week = gb_per_trailer_per_week &times; (recorded_minutes_camera / sum_recorded_minutes_trailer)</code>. When the trailer captured no motion in the window, fall back to uniform <code>/ n_cameras</code>.</li>
+          </ul>
+          <p>This is not a true two-timestamp byte delta &mdash; only one VDB snapshot was taken &mdash; but on motion-only NVRs with FDC's temporal compression it is materially closer to real archive consumption than the snapshot-sampling alternative described below.</p>
+
+          <h3>Cross-check: snapshot sampling</h3>
+          <p>For each trailer, archive timeline coverage was queried at 1-minute resolution to derive <code>recordedSeconds</code> per camera; then ~100 native-resolution JPEG snapshots were pulled per trailer and the mean frame byte size was multiplied by an assumed 900 frames/minute (15 fps &times; 60 s).</p>
+          <p><strong>Why this is a cross-check, not the headline:</strong> these NVRs record on motion only and FDC archive uses temporal compression. Multiplying a full-size JPEG snapshot byte count by a continuous-recording rate materially over-states the on-disk cost &mdash; the pilot saw snapshot-sampling at roughly 3&times; the disk-allocation figure for one trailer. Published as calibration only.</p>
+
+          <h2>Results</h2>
+          <table class="w-full text-left text-sm border-collapse">
+            <thead><tr class="border-b"><th class="py-1 pr-3">Site type</th><th class="py-1 pr-3">N cameras</th><th class="py-1 pr-3">Median GB/cam/wk</th><th class="py-1 pr-3">p25 &ndash; p75</th><th class="py-1">Motion density</th></tr></thead>
+            <tbody>
+              <tr class="border-b"><td class="py-1 pr-3 font-semibold">Perimeter / secured</td><td class="py-1 pr-3">4</td><td class="py-1 pr-3">442</td><td class="py-1 pr-3">379 &ndash; 510</td><td class="py-1">29.5%</td></tr>
+              <tr class="border-b"><td class="py-1 pr-3 font-semibold">Warehouse / distribution</td><td class="py-1 pr-3">8</td><td class="py-1 pr-3">2,453</td><td class="py-1 pr-3">1,447 &ndash; 3,418</td><td class="py-1">44.0%</td></tr>
+              <tr><td class="py-1 pr-3 font-semibold">Retail / parking</td><td class="py-1 pr-3">4</td><td class="py-1 pr-3">2,923</td><td class="py-1 pr-3">2,753 &ndash; 3,050</td><td class="py-1">45.9%</td></tr>
+            </tbody>
+          </table>
+
+          <h2>Privacy / publication rules</h2>
+          <ul>
+            <li>No per-trailer rows are published.</li>
+            <li>Trailer identifiers, hostnames, IP addresses, and customer brands are excluded.</li>
+            <li>Camera snapshot JPEGs from the site-tagging pass are kept out of published artifacts &mdash; only aggregate frame-size statistics inform the cross-check.</li>
+          </ul>
+
+          <h2>Excluded buckets</h2>
+          <p>Site-type buckets with fewer than 4 cameras (jobsite-construction, port-industrial, corporate-campus, off-grid-rural in this pilot window) are omitted rather than zero-filled. The full N&geq;8 trailer roll-out scheduled later in 2026 will cover more buckets.</p>
+
+          <p class="mt-8"><a href="/technical-specifications#fleet-measured" class="text-blue-600 hover:underline">&larr; Back to fleet telemetry table on /technical-specifications</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
