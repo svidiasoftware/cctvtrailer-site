@@ -311,12 +311,17 @@ const howToSteps = [
           </p>
         </aside>
 
-        <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
-          <p class="text-sm font-bold text-blue-700 uppercase tracking-wide mb-2">What this page is</p>
-          <p class="text-gray-800 leading-relaxed">
-            The complete, code-grounded technical spec of our mobile surveillance trailer: <strong>Vigil AI alert triage</strong> with multi-model edge + cloud inference, S-VIDIA's <strong>FDC (Flexible Delta Compression) codec</strong> with up to 60% less storage than H.264/H.265, <strong>browser-only remote viewing</strong> over a military-grade encrypted connection with no VPN or plugin, native <strong>MCP integration for AI agents</strong>, and the camera/power/construction hardware built for year-round Pacific Northwest deployment.
-          </p>
-        </div>
+        <nav class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8" aria-label="On this page">
+          <p class="text-sm font-bold text-blue-700 uppercase tracking-wide mb-3">On this page</p>
+          <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-2 text-sm text-gray-800">
+            <li><a href="#vigil" class="text-blue-700 hover:underline">Vigil AI alert triage</a> &mdash; multi-model edge + cloud inference, 0&ndash;5 severity scale, autonomous noise suppression</li>
+            <li><a href="#fdc" class="text-blue-700 hover:underline">FDC codec &amp; storage</a> &mdash; the S-VIDIA codec plus first-party measured A/B vs x264/x265 and the Puget Sound fleet pilot</li>
+            <li><a href="#remote-viewing" class="text-blue-700 hover:underline">Remote viewing</a> &mdash; browser + native iOS/Android apps, with measured constrained-link &amp; live-uplink benchmarks</li>
+            <li><a href="#hardware" class="text-blue-700 hover:underline">Camera, power &amp; construction</a> &mdash; PTZ optics, solar + battery + optional generator, weatherproof enclosure</li>
+            <li><a href="#mcp" class="text-blue-700 hover:underline">AI-agent integration</a> &mdash; Model Context Protocol (MCP) server with 25 tools for direct LLM querying</li>
+            <li><a href="#spec-tables" class="text-blue-700 hover:underline">Detailed spec tables</a> &mdash; everything as numbers, plus <a href="#faq" class="text-blue-700 hover:underline">FAQ</a> grounded in deployed-code behavior</li>
+          </ul>
+        </nav>
 
         <p class="text-lg mb-6">
           Our trailers are <strong>specifically designed and manufactured for year-round deployment in the Pacific Northwest climate</strong>. Built to withstand the rain, salt air, and freezing temperatures that defeat most outdoor electronics, every unit ships with a <strong>weatherproof, vandal-resistant enclosure</strong> and the software platform documented below.
@@ -327,7 +332,7 @@ const howToSteps = [
     <!-- ========================================================== -->
     <!-- VIGIL AI ALERT TRIAGE — headline section                    -->
     <!-- ========================================================== -->
-    <section class="py-16 bg-white border-t border-gray-200">
+    <section id="vigil" class="py-16 bg-white border-t border-gray-200">
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto">
           <p class="text-center text-xs font-bold text-blue-700 uppercase tracking-widest mb-2">New for 2026</p>
@@ -476,7 +481,7 @@ const howToSteps = [
     <!-- ========================================================== -->
     <!-- FDC CODEC & MOTION-ONLY ARCHIVE — video technology section  -->
     <!-- ========================================================== -->
-    <section class="py-16 bg-gray-50">
+    <section id="fdc" class="py-16 bg-gray-50">
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto">
           <p class="text-center text-xs font-bold text-blue-700 uppercase tracking-widest mb-2">Video technology</p>
@@ -622,7 +627,7 @@ const howToSteps = [
     <!-- ========================================================== -->
     <!-- CAMERA / POWER / CONSTRUCTION INFRASTRUCTURE                -->
     <!-- ========================================================== -->
-    <section class="py-16 bg-white">
+    <section id="hardware" class="py-16 bg-white">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Camera, Power, and Construction</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -681,7 +686,7 @@ const howToSteps = [
     <!-- ========================================================== -->
     <!-- BROWSER-ONLY REMOTE VIEWING                                 -->
     <!-- ========================================================== -->
-    <section class="py-16 bg-gray-50">
+    <section id="remote-viewing" class="py-16 bg-gray-50">
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div>
@@ -893,7 +898,7 @@ const howToSteps = [
     <!-- ========================================================== -->
     <!-- BUILT FOR AI AGENTS — MCP integration                       -->
     <!-- ========================================================== -->
-    <section class="py-16 bg-gradient-to-br from-blue-900 to-purple-900 text-white">
+    <section id="mcp" class="py-16 bg-gradient-to-br from-blue-900 to-purple-900 text-white">
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
           <p class="text-center text-xs font-bold text-blue-200 uppercase tracking-widest mb-2">AI-native</p>
@@ -963,7 +968,7 @@ const howToSteps = [
     <!-- ========================================================== -->
     <!-- DETAILED TECHNICAL SPECIFICATIONS                           -->
     <!-- ========================================================== -->
-    <section class="py-16 bg-gray-50">
+    <section id="spec-tables" class="py-16 bg-gray-50">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Detailed Technical Specifications</h2>
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
@@ -1120,7 +1125,7 @@ const howToSteps = [
     <!-- ========================================================== -->
     <!-- FAQ                                                          -->
     <!-- ========================================================== -->
-    <section class="py-16 bg-gray-50">
+    <section id="faq" class="py-16 bg-gray-50">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
           <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Frequently Asked Questions</h2>
