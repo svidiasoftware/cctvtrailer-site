@@ -95,6 +95,9 @@ const breadcrumbItems = [
             <p class="body-text">
               The platform also employs random interval changes within the decryption key, which adds an additional layer of protection against replay and key-recovery attacks.
             </p>
+            <p class="body-text">
+              The same block-delta property that saves disk also saves uplink bytes: a May 2026 measurement showed FDC live delivery at ~46% the kbps of direct RTSP H.264 for the same camera. See the <a href="/docs/benchmarks/05-live-bandwidth-methodology" class="text-blue-600 hover:underline">live-stream uplink methodology</a> and the <a href="/docs/benchmarks/03-remote-viewing-methodology" class="text-blue-600 hover:underline">constrained-link remote viewing methodology</a>.
+            </p>
           </div>
         </div>
       </div>
@@ -109,7 +112,7 @@ const breadcrumbItems = [
             <span class="text-blue-600 font-bold mr-3 mt-1">✓</span>
             <div>
               <strong class="text-gray-900">Superior storage efficiency:</strong>
-              <span class="text-gray-700"> Up to 60% less recording space than conventional H.264/H.265 systems (S-VIDIA published figure).</span>
+              <span class="text-gray-700"> Up to 60% less recording space than conventional H.264/H.265 systems (S-VIDIA published figure). First-party measurement on a Puget Sound clip showed FDC at 54% the size of x264 CRF&nbsp;23 and 79% of x265 CRF&nbsp;28 &mdash; see the <a href="/docs/benchmarks/01-fdc-ab-methodology" class="text-blue-600 hover:underline">codec A/B methodology</a> and the <a href="/docs/benchmarks/02-fleet-telemetry-methodology" class="text-blue-600 hover:underline">fleet telemetry methodology</a>.</span>
             </div>
           </li>
           <li class="flex items-start">
