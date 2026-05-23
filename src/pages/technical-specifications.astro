@@ -19,7 +19,7 @@ const techSpecsSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "CCTV Mobile Security Trailer with Vigil AI Alerts and FDC Codec",
-  "description": "Mobile surveillance trailer with Vigil AI alert triage and S-VIDIA's FDC (Flexible Delta Compression) codec — frame-by-frame recording with up to 60% less storage than H.264/H.265 systems. Browser-only remote viewing over a military-grade encrypted connection. Solar power, infrared PTZ cameras, weatherproof construction for the Pacific Northwest.",
+  "description": "Mobile surveillance trailer with Vigil AI alert triage and S-VIDIA's FDC (Flexible Delta Compression) codec — frame-by-frame recording with up to 60% less storage than H.264/H.265 systems. No-install browser viewer, native Windows desktop app, and native iOS / Android apps — all over a military-grade encrypted connection. Solar power, infrared PTZ cameras, weatherproof construction for the Pacific Northwest.",
   "brand": { "@type": "Brand", "name": "CCTV Trailer" },
   "image": [
     "https://www.cctvtrailer.com/images/trailer-1x1.png",
@@ -60,8 +60,9 @@ const techSpecsSchema = {
     { "@type": "PropertyValue", "name": "Recording Mode", "value": "True frame-by-frame recording — every frame retained as a separate image. Motion-triggered archive write: disk commits only when motion is detected, so static scenes incur near-zero storage cost." },
     { "@type": "PropertyValue", "name": "Evidence Integrity", "value": "Each frame is watermarked and encrypted; FDC stores and plays back the exact image seen by the camera at full quality (no transcoding tax)." },
     { "@type": "PropertyValue", "name": "Camera Compatibility", "value": "Analog, HD IP, and Ultra HD IP cameras (FDC platform-wide capability)." },
-    { "@type": "PropertyValue", "name": "Remote Viewing", "value": "Browser-only via WebSocket cloud proxy. HTTPS at the page level, WSS for streaming, military-grade end-to-end encryption. No VPN, no plugin, no desktop client install." },
-    { "@type": "PropertyValue", "name": "Mobile Apps", "value": "Native iOS and Android apps for live and archive viewing — calendar-based recorded-footage playback, PTZ control, multi-camera grid layouts, event/alert list, clip export, and multi-NVR connection from a single app. Speak the same FDC streaming protocol with military-grade end-to-end encryption, like the browser viewer. Push delivery via Apple Push Notification Service (APNs) on iOS and Firebase Cloud Messaging (FCM) on Android. Both apps were included in the May 2026 constrained-link benchmark." },
+    { "@type": "PropertyValue", "name": "Remote Access", "value": "Three clients sharing one cloud proxy: no-install browser viewer via WebSocket, native Windows desktop app for the surveillance-center workflow, and native iOS / Android apps for live + archive + PTZ + clip export on the go. HTTPS at the page level, WSS for streaming, military-grade end-to-end encryption. No VPN, no plugin required." },
+    { "@type": "PropertyValue", "name": "Desktop App", "value": "Native Windows desktop client (.NET) for the surveillance-center workflow: multi-monitor live view, archive playback and export, events and alarms tabs, and integration with the platform's vehicle-detection, facial-recognition, and license-plate analytics. Same FDC streaming protocol and military-grade end-to-end encryption as the browser viewer." },
+    { "@type": "PropertyValue", "name": "Mobile Apps", "value": "Native iOS and Android apps for live and archive viewing — calendar-based recorded-footage playback, PTZ control, multi-camera grid layouts, event/alert list, clip export, and multi-NVR connection from a single app. Same FDC streaming protocol with military-grade end-to-end encryption as the browser. Push delivery via Apple Push Notification Service (APNs) on iOS and Firebase Cloud Messaging (FCM) on Android. Both apps were included in the May 2026 constrained-link benchmark." },
     { "@type": "PropertyValue", "name": "Notification Channels", "value": "Apple Push, Firebase Cloud Messaging, Email, and Slack webhooks with per-camera severity thresholds and cooldown rules." },
     { "@type": "PropertyValue", "name": "AI-Agent Integration", "value": "Model Context Protocol (MCP) server exposing 19 archive tools and 6 live tools for LLM and AI-agent querying." },
     { "@type": "PropertyValue", "name": "Multi-Tenant Architecture", "value": "Single cloud-proxy deployment supports multiple customer NVRs; per-tenant isolation enforced server-side." },
@@ -80,7 +81,7 @@ const techSpecsSchema = {
     { "@type": "PropertyValue", "name": "Towing Capability", "value": "Tow-capable up to 70 mph; standard 2-inch ball hitch." }
   ],
   "category": "Security Equipment",
-  "keywords": "mobile surveillance trailer, AI security camera, Vigil AI alerts, FDC codec, Flexible Delta Compression, S-VIDIA platform, construction site security, solar-powered surveillance, browser-only remote viewing, LPR trailer",
+  "keywords": "mobile surveillance trailer, AI security camera, Vigil AI alerts, FDC codec, Flexible Delta Compression, S-VIDIA platform, construction site security, solar-powered surveillance, browser-based remote viewing, surveillance desktop app Windows, surveillance mobile app iOS Android, LPR trailer",
   "releaseDate": "2026-05-21",
   "areaServed": [
     { "@type": "AdministrativeArea", "name": "Pierce County, WA" },
@@ -139,8 +140,8 @@ const definitions = [
     url: "/technical-specifications"
   },
   {
-    term: "Browser-Only Remote Viewing",
-    definition: "Remote camera access delivered through any modern web browser via a cloud WebSocket proxy. No VPN, no plugin install, no desktop client required. Works on Windows, macOS, Linux, ChromeOS, iOS, and Android.",
+    term: "Remote Access (Browser, Desktop, and Mobile)",
+    definition: "Remote camera access delivered three ways: a no-install browser viewer via a cloud WebSocket proxy, a native Windows desktop app for the surveillance-center workflow (multi-monitor live view, archive playback, events / alarms, analytics), and native iOS / Android apps for live view, archive playback, PTZ control, multi-camera grids, and clip export. Browser viewer runs on Windows, macOS, Linux, ChromeOS, iOS, and Android — no VPN, no plugin install required.",
     category: "Remote Access",
     relatedTerms: ["WebSocket Proxy", "Cloud Relay", "WSS Streaming"],
     url: "/technical-specifications"
@@ -177,7 +178,7 @@ const faqItems = [
   },
   {
     question: "Can I view cameras remotely without installing software?",
-    answer: "Yes. The browser viewer is delivered through any modern web browser via a cloud WebSocket proxy — HTTPS at the page level, WSS for the live stream, no VPN, no plugin, no desktop client. Works on Windows, macOS, Linux, ChromeOS, iOS, and Android. Native iOS and Android apps are also available when you want push alerts plus live, calendar-based archive playback, PTZ control, multi-camera grids, and clip export from one app — they speak the same FDC streaming protocol with military-grade end-to-end encryption. Both apps were included in the May 2026 constrained-link benchmark alongside the browser."
+    answer: "Yes — through the browser viewer. It's delivered through any modern web browser via a cloud WebSocket proxy: HTTPS at the page level, WSS for the live stream, no VPN, no plugin, no installer. Works on Windows, macOS, Linux, ChromeOS, iOS, and Android. If you want a thicker client, a native Windows desktop app covers the surveillance-center workflow (multi-monitor live view, archive playback, events / alarms, vehicle / face / LPR analytics), and native iOS / Android apps cover the on-the-go workflow with push alerts, calendar-based archive playback, PTZ control, multi-camera grids, and clip export. All three clients speak the same FDC streaming protocol with military-grade end-to-end encryption. The browser and mobile apps were included in the May 2026 constrained-link benchmark."
   },
   {
     question: "Does the trailer detect license plates?",
@@ -264,7 +265,7 @@ const howToSteps = [
   },
   {
     name: "Account access and notification routing",
-    text: "Your team is granted browser-only access (no plugin install) and the mobile app on iOS and Android. Notification channels are configured — Apple Push, Firebase, email, Slack — with severity thresholds and a per-camera overrideable cooldown."
+    text: "Your team is granted plugin-free browser access, the native Windows desktop app, and the native iOS / Android apps. Notification channels are configured — Apple Push, Firebase, email, Slack — with severity thresholds and a per-camera overrideable cooldown."
   },
   {
     name: "Scene profile bootstrap",
@@ -279,7 +280,7 @@ const howToSteps = [
 
 <Layout
   title="Mobile Surveillance Trailer Specs · AI Alerts · FDC Codec · Browser Access"
-  description="Mobile surveillance trailer specs: Vigil AI alert triage (multi-model), FDC (Flexible Delta Compression) codec — up to 60% less storage than H.264/H.265, motion-only archive, browser-only remote viewing, 4K PTZ, solar power. Pacific Northwest. (253) 683-2288."
+  description="Mobile surveillance trailer specs: Vigil AI alert triage (multi-model), FDC (Flexible Delta Compression) codec — up to 60% less storage than H.264/H.265, motion-only archive, no-install browser viewer plus native Windows desktop and iOS / Android apps, 4K PTZ, solar power. Pacific Northwest. (253) 683-2288."
   schema={JSON.stringify(techSpecsSchema)}
 >
 
@@ -307,7 +308,7 @@ const howToSteps = [
         <aside class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg mb-6" aria-label="Quick answer summary">
           <p class="text-xs font-bold text-amber-800 uppercase tracking-wide mb-2">Quick answer</p>
           <p class="text-base text-gray-900 leading-relaxed">
-            Mobile surveillance trailers with <strong>Vigil AI alert triage</strong> (multi-model edge + cloud inference) and the <strong>FDC (Flexible Delta Compression) video codec</strong> &mdash; up to 60% less storage than H.264/H.265. Browser-only remote viewing over a military-grade encrypted connection. Solar power, weatherproof, infrared PTZ. Pacific Northwest deployment. Rentals from $999/day or $3,500/week.
+            Mobile surveillance trailers with <strong>Vigil AI alert triage</strong> (multi-model edge + cloud inference) and the <strong>FDC (Flexible Delta Compression) video codec</strong> &mdash; up to 60% less storage than H.264/H.265. No-install browser viewer plus native Windows desktop and iOS / Android apps, all over a military-grade encrypted connection. Solar power, weatherproof, infrared PTZ. Pacific Northwest deployment. Rentals from $999/day or $3,500/week.
           </p>
         </aside>
 
@@ -316,7 +317,7 @@ const howToSteps = [
           <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-2 text-sm text-gray-800">
             <li><a href="#vigil" class="text-blue-700 hover:underline">Vigil AI alert triage</a> &mdash; multi-model edge + cloud inference, 0&ndash;5 severity scale, autonomous noise suppression</li>
             <li><a href="#fdc" class="text-blue-700 hover:underline">FDC codec &amp; storage</a> &mdash; the S-VIDIA codec plus first-party measured A/B vs x264/x265 and the Puget Sound fleet pilot</li>
-            <li><a href="#remote-viewing" class="text-blue-700 hover:underline">Remote viewing</a> &mdash; browser + native iOS/Android apps, with measured constrained-link &amp; live-uplink benchmarks</li>
+            <li><a href="#remote-viewing" class="text-blue-700 hover:underline">Remote access</a> &mdash; browser, Windows desktop app, iOS / Android apps, with measured constrained-link &amp; live-uplink benchmarks</li>
             <li><a href="#hardware" class="text-blue-700 hover:underline">Camera, power &amp; construction</a> &mdash; PTZ optics, solar + battery + optional generator, weatherproof enclosure</li>
             <li><a href="#mcp" class="text-blue-700 hover:underline">AI-agent integration</a> &mdash; Model Context Protocol (MCP) server with 25 tools for direct LLM querying</li>
             <li><a href="#spec-tables" class="text-blue-700 hover:underline">Detailed spec tables</a> &mdash; everything as numbers, plus <a href="#faq" class="text-blue-700 hover:underline">FAQ</a> grounded in deployed-code behavior</li>
@@ -684,16 +685,16 @@ const howToSteps = [
     </section>
 
     <!-- ========================================================== -->
-    <!-- BROWSER-ONLY REMOTE VIEWING                                 -->
+    <!-- REMOTE ACCESS — BROWSER + NATIVE iOS / ANDROID APPS         -->
     <!-- ========================================================== -->
     <section id="remote-viewing" class="py-16 bg-gray-50">
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div>
             <p class="text-xs font-bold text-blue-700 uppercase tracking-widest mb-2">Remote access</p>
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Remote viewing &mdash; browser-first, with native mobile apps</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Remote access &mdash; browser, desktop, and mobile</h2>
             <p class="text-gray-700 mb-6 leading-relaxed">
-              Open a browser. Log in. Watch the cameras. No VPN, no plugin, no desktop client, no installer &mdash; just HTTPS at the page level and WSS for the live stream, brokered by a multi-tenant cloud proxy. Prefer a phone? Native iOS and Android apps cover the same live + archive workflow with push alerts on top.
+              Open a browser. Log in. Watch the cameras. No VPN, no plugin, no installer &mdash; just HTTPS at the page level and WSS for the live stream, brokered by a multi-tenant cloud proxy. Prefer a thicker client? A native Windows desktop app covers the power-user workflow (deep config, analytics, multi-monitor playback), and native iOS / Android apps cover the on-the-go live + archive workflow with push alerts on top.
             </p>
             <ul class="space-y-3 text-gray-700">
               <li class="flex items-start">
@@ -715,6 +716,10 @@ const howToSteps = [
               <li class="flex items-start">
                 <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
                 <span><strong>Frame-skip on bad networks:</strong> FDC drops to background-only frames at low bandwidth instead of failing the connection.</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span><strong>Native Windows desktop app</strong> for the surveillance-center workflow: multi-monitor live view, archive playback &amp; export, events / alarms tabs, and integration with the platform's vehicle, facial-recognition, and license-plate analytics &mdash; same FDC streaming protocol and encryption as the browser.</span>
               </li>
               <li class="flex items-start">
                 <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
@@ -1027,7 +1032,8 @@ const howToSteps = [
             <table class="w-full text-left text-sm">
               <caption class="sr-only">Remote access and API specifications</caption>
               <tbody>
-                <tr class="border-b"><td class="py-2 font-semibold w-2/5">Web viewer:</td><td class="py-2">Any modern browser (HTTPS + WSS)</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold w-2/5">Web viewer:</td><td class="py-2">Any modern browser (HTTPS + WSS) &mdash; no install</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Desktop app:</td><td class="py-2">Windows (.NET) &mdash; multi-monitor live + playback, events / alarms, analytics integration</td></tr>
                 <tr class="border-b"><td class="py-2 font-semibold">Mobile apps:</td><td class="py-2">iOS + Android &mdash; live, archive, PTZ, multi-cam grids, clip export, push (APNs + FCM)</td></tr>
                 <tr class="border-b"><td class="py-2 font-semibold">Proxy:</td><td class="py-2">WebSocket cloud proxy</td></tr>
                 <tr class="border-b"><td class="py-2 font-semibold">AI/agent API:</td><td class="py-2">MCP server (25 tools)</td></tr>
