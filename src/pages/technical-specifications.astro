@@ -68,7 +68,7 @@ const techSpecsSchema = {
     { "@type": "PropertyValue", "name": "Multi-Tenant Architecture", "value": "Single cloud-proxy deployment supports multiple customer NVRs; per-tenant isolation enforced server-side." },
     { "@type": "PropertyValue", "name": "Camera System", "value": "Up to 4 cameras per trailer (PTZ, fixed, and 360° options) with infrared night vision." },
     { "@type": "PropertyValue", "name": "PTZ Control", "value": "Per-camera enable/disable, bulk multi-camera editing, presets, optical zoom." },
-    { "@type": "PropertyValue", "name": "Storage Capacity", "value": "Two weeks of motion-only recording with automatic FIFO looping; on-device encryption." },
+    { "@type": "PropertyValue", "name": "Storage Capacity", "value": "Two weeks of motion-only recording with automatic FIFO looping by default; optional archive day cap (footage older than the set number of days is deleted automatically); on-device encryption." },
     { "@type": "PropertyValue", "name": "Power Options", "value": "Solar panels with intelligent battery management, optional gas backup generator, shore-power connection." },
     { "@type": "PropertyValue", "name": "Connectivity", "value": "4G/5G cellular, Wi-Fi, and Starlink satellite — automatic failover between transports." },
     { "@type": "PropertyValue", "name": "Construction", "value": "Reinforced steel, weatherproof rating for year-round Pacific Northwest deployment, vandal-resistant enclosure." },
@@ -194,7 +194,7 @@ const faqItems = [
   },
   {
     question: "How long does the trailer record before overwriting?",
-    answer: "Two weeks of motion-only recording with automatic FIFO looping. Because static scenes do not consume storage, sites with low overnight activity routinely retain longer effective windows."
+    answer: "Two weeks of motion-only recording with automatic FIFO looping by default. Because static scenes do not consume storage, sites with low overnight activity routinely retain longer effective windows. When a policy requires a hard limit, the archive can be capped at a set number of days (for example 21 or 30); once the archive spans longer than the cap, the oldest footage is deleted automatically."
   },
   {
     question: "Can I get alerts in Slack or by email?",
@@ -529,7 +529,7 @@ const howToSteps = [
                 <li><strong>Disk write only on motion:</strong> the NVR commits a frame only when motion is detected at the per-camera sensitivity. FDC's compression efficiency compounds with this.</li>
                 <li><strong>Truthful idle queries:</strong> ask for a timestamp during a static period and the system returns the last real motion frame with its real timestamp &mdash; not a fabricated blank.</li>
                 <li><strong>Per-block ROI:</strong> region-of-interest masks ignore irrelevant frame zones (e.g., a windsock or a swaying tree branch).</li>
-                <li><strong>Two-week retention:</strong> default 14 days of motion-only history with automatic FIFO looping; low-activity sites routinely retain longer.</li>
+                <li><strong>Two-week retention:</strong> default 14 days of motion-only history with automatic FIFO looping; low-activity sites routinely retain longer. An optional day cap limits the archive to a set number of days when a retention policy requires it.</li>
               </ul>
             </div>
             <div class="bg-white p-8 rounded-lg shadow-sm">
@@ -1007,7 +1007,7 @@ const howToSteps = [
                 <tr class="border-b"><td class="py-2 font-semibold">Integrity:</td><td class="py-2">Watermarked + encrypted at write</td></tr>
                 <tr class="border-b"><td class="py-2 font-semibold">Camera compat:</td><td class="py-2">Analog, HD IP, Ultra HD IP</td></tr>
                 <tr class="border-b"><td class="py-2 font-semibold">Archive mode:</td><td class="py-2">Motion-triggered (no continuous write)</td></tr>
-                <tr><td class="py-2 font-semibold">Retention:</td><td class="py-2">2 weeks (FIFO loop)</td></tr>
+                <tr><td class="py-2 font-semibold">Retention:</td><td class="py-2">2 weeks (FIFO loop); optional day cap</td></tr>
               </tbody>
             </table>
           </div>

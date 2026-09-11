@@ -57,7 +57,7 @@ const videoData = {
 
 <Layout
   title="Mobile Security Trailer Technology & Specifications | CCTV Trailers WA"
-  description="Advanced mobile surveillance trailers built for Pacific Northwest weather. Solar-powered with generator backup, 360° PTZ cameras, AI detection, 30-day storage. See full specifications.">
+  description="Advanced mobile surveillance trailers built for Pacific Northwest weather. Solar-powered with generator backup, 360° PTZ cameras, AI detection, motion-only archive with a configurable day cap. See full specifications.">
   
   <ServiceSchema {...serviceSchemaData} />
   <BreadcrumbSchema items={breadcrumbItems} />
@@ -127,7 +127,7 @@ const videoData = {
           <div class="feature-block">
             <h3 class="feature-heading">INSIDE SPECS</h3>
             <p class="feature-text">
-              Intel i7 onboard computer with 32GB RAM runs S-VIDIA AI analytics locally. LiFePO4 battery bank (14.4kWh) with intelligent BMS ensures seamless power transitions. 8-16TB onboard storage captures 30+ days of 4K footage.
+              Intel i7 onboard computer with 32GB RAM runs S-VIDIA AI analytics locally. LiFePO4 battery bank (14.4kWh) with intelligent BMS ensures seamless power transitions. 8-16TB onboard storage keeps two weeks of motion-only recording by default, and the archive can be capped at a set number of days.
             </p>
           </div>
         </div>
@@ -160,7 +160,7 @@ const videoData = {
           <div class="content-container-copy">
             <h2 class="heading-2 white center">AI-POWERED VIDEO ANALYTICS</h2>
             <p class="body-white centered">
-              S-VIDIA's next-generation AI platform delivers real-time threat detection, facial recognition, license plate reading, and intelligent alerts - processing everything locally for instant response.
+              S-VIDIA's AI platform delivers person and vehicle detection, license plate reading, and Vigil AI alert triage that ranks every event from routine to critical, with first-pass classification on local hardware and cloud review for ambiguous events.
             </p>
             <a href="/video-technology" class="red-button">
               Learn More
@@ -283,7 +283,7 @@ const videoData = {
             <h3 class="text-xl font-bold mb-4 text-red-600">Storage & Processing</h3>
             <ul class="space-y-2 text-sm">
               <li class="flex justify-between"><span>Onboard Storage</span><span class="font-semibold">8-16 TB</span></li>
-              <li class="flex justify-between"><span>Recording</span><span class="font-semibold">14-30+ days @ 4K</span></li>
+              <li class="flex justify-between"><span>Archive</span><span class="font-semibold">2 weeks default; day cap optional</span></li>
               <li class="flex justify-between"><span>Processor</span><span class="font-semibold">Intel i7</span></li>
               <li class="flex justify-between"><span>RAM</span><span class="font-semibold">32 GB DDR4</span></li>
               <li class="flex justify-between"><span>GPU</span><span class="font-semibold">AI ready</span></li>
@@ -298,11 +298,11 @@ const videoData = {
             <ul class="space-y-2 text-sm">
               <li class="flex justify-between"><span>Motion Detection</span><span class="font-semibold">AI-enhanced</span></li>
               <li class="flex justify-between"><span>Object Classification</span><span class="font-semibold">Person/Vehicle/Animal</span></li>
-              <li class="flex justify-between"><span>Facial Recognition</span><span class="font-semibold">Optional</span></li>
+              <li class="flex justify-between"><span>AI Alert Triage</span><span class="font-semibold">Vigil, severity 0&ndash;5</span></li>
               <li class="flex justify-between"><span>License Plate</span><span class="font-semibold">Custom-developed LPR</span></li>
               <li class="flex justify-between"><span>Thermal Imaging</span><span class="font-semibold">Optional FLIR</span></li>
               <li class="flex justify-between"><span>Radar Range</span><span class="font-semibold">400+ feet</span></li>
-              <li class="flex justify-between"><span>Audio Analytics</span><span class="font-semibold">Gunshot detection</span></li>
+              <li class="flex justify-between"><span>Audio Analytics</span><span class="font-semibold">Camera-based gunshot detection (optional)</span></li>
             </ul>
           </div>
         </div>
@@ -345,7 +345,7 @@ const videoData = {
             <div class="feature-card-content">
               <h3 class="feature-card-title">VIDEO STORAGE</h3>
               <p class="feature-card-text">
-                8-16TB onboard storage retains 30+ days of 4K footage with intelligent retention policies. Automatic cloud backup options available for critical events. Evidence-grade recording with tamper-proof encryption.
+                8-16TB onboard storage keeps two weeks of motion-only recording by default on a rolling loop. Need a hard limit? The archive can be capped at a set number of days, such as 21 days or a 30-day records schedule, and footage older than the cap is deleted automatically. Automatic cloud backup options available for critical events. Frames are watermarked and encrypted for evidence.
               </p>
             </div>
           </div>
@@ -375,7 +375,8 @@ const videoData = {
             <div class="feature-card-content">
               <h3 class="feature-card-title">LICENSE PLATE READER</h3>
               <p class="feature-card-text">
-                Custom-developed license plate recognition (LPR) technology captures plates at high speeds, in both daylight and low-light conditions. Seamless database integration enables real-time alerts for vehicles of interest, enhancing law enforcement operations across Pierce and King Counties.              </p>
+                Custom-developed license plate recognition (LPR) reads standard and color-reversed plates, with an optional IR-pass LPR camera for after-dark capture. Plates can be matched against named watchlists you manage on the recorder, so you get an alert when a listed vehicle shows up, or when a car that isn't on your list pulls up to the gate. Public agencies: Washington's Driver Privacy Act (chapter 10.130 RCW) limits plate readers to law enforcement, parking, and transportation uses, with 21-day retention in most cases, and the recorder's archive can be capped to match. <a href="/blog/washington-security-camera-laws-audio-license-plate-readers-2026" class="text-blue-600 hover:text-blue-800 font-semibold">What the law means for your site →</a>
+              </p>
             </div>
           </div>
         </div>
@@ -438,14 +439,14 @@ const videoData = {
 
             <!-- Compliance & Certifications -->
             <div class="bg-white p-6 rounded-lg shadow">
-              <h3 class="text-xl font-bold mb-4 text-blue-600">Compliance & Certifications</h3>
+              <h3 class="text-xl font-bold mb-4 text-blue-600">Compliance & Privacy</h3>
               <ul class="space-y-3">
                 <li class="flex items-start">
                   <svg class="w-5 h-5 text-blue-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                   </svg>
                   <div>
-                    <strong>FCC Part 15:</strong> Class A certified
+                    <strong>Audio:</strong> PA two-way audio and camera-based gunshot detection are optional; plan any audio use around Washington&rsquo;s all-party consent law (RCW 9.73.030)
                   </div>
                 </li>
                 <li class="flex items-start">
@@ -453,7 +454,7 @@ const videoData = {
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                   </svg>
                   <div>
-                    <strong>UL Listed:</strong> Security equipment standards
+                    <strong>License plate reading:</strong> Optional; public-agency use governed by chapter 10.130 RCW
                   </div>
                 </li>
                 <li class="flex items-start">
@@ -461,7 +462,7 @@ const videoData = {
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                   </svg>
                   <div>
-                    <strong>NDAA Compliant:</strong> No banned components
+                    <strong>NDAA Section 889:</strong> Camera and component details available for your compliance review
                   </div>
                 </li>
                 <li class="flex items-start">
@@ -469,7 +470,7 @@ const videoData = {
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                   </svg>
                   <div>
-                    <strong>OSHA Compliant:</strong> Safety standards met
+                    <strong>OSHA/DOSH:</strong> Recorded video can support your site&rsquo;s safety documentation
                   </div>
                 </li>
                 <li class="flex items-start">
@@ -477,7 +478,15 @@ const videoData = {
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                   </svg>
                   <div>
-                    <strong>GDPR/CCPA:</strong> Privacy compliant
+                    <strong>Evidence integrity:</strong> Watermarked, encrypted frames
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-blue-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <div>
+                    <strong>Retention &amp; access:</strong> Archive can be capped at your required number of days; per-user limits on how far back each viewer can see
                   </div>
                 </li>
               </ul>
