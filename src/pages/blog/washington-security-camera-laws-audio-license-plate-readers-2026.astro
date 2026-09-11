@@ -1,0 +1,658 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import CTASection from '../../components/CTASection.astro';
+import Analytics from '../../components/Analytics.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import LazyImage from '../../components/LazyImage.astro';
+import QuickAnswer from '../../components/QuickAnswer.astro';
+import StatBox from '../../components/StatBox.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import SpeakableSchema from '../../components/SpeakableSchema.astro';
+import FAQSchema from '../../components/FAQSchema.astro';
+import AuthorBio from '../../components/AuthorBio.astro';
+
+const slug = 'washington-security-camera-laws-audio-license-plate-readers-2026';
+
+// Speakable sections for voice search
+const speakableSections = [
+  { cssSelector: ".quick-answer-content" },
+  { cssSelector: ".blog-content h2, .blog-content p" },
+  { cssSelector: ".stat-box" }
+];
+
+const faqs = [
+  {
+    question: "Is it legal to record audio on security cameras in Washington State?",
+    answer: "Only with care. Under RCW 9.73.030, any person, business, or agency needs the consent of everyone in a private conversation before recording or transmitting it, so a live listen-in microphone counts too. Consent can come from an announcement that is itself recorded. Violations are a gross misdemeanor and can bring civil damages plus attorney fees. For most jobsite and parking-lot cameras, the safe default is video only with speaker-only warnings."
+  },
+  {
+    question: "Do I need signs for security cameras in Washington?",
+    answer: "Not for video-only cameras. Washington has no general signage statute, though MRSC recommends signs as good public policy and a deterrent. If audio is in use, signs help show notice, but the Privacy Act's consent-by-announcement rule contemplates an announcement that is itself recorded, so don't rely on a sign alone. Only post what is actually running."
+  },
+  {
+    question: "Does SB 6002 apply to private businesses that use license plate readers?",
+    answer: "Not directly. The Driver Privacy Act (ESSB 6002, Chapter 239, Laws of 2026) regulates state and local agencies, their agents, and vendors that contract with them. It still matters to private operators: agencies may obtain privately held plate reader data only with a court-issued probable cause warrant, and vendors may not sell or give unauthorized parties access to plate data. The law's 'any person' criminal penalty is best read as targeting misuse of agency systems, though no court has ruled on it."
+  },
+  {
+    question: "How long can license plate reader data be kept in Washington?",
+    answer: "For agencies, 21 days in most cases, effective March 30, 2026. Exceptions cover data held under a warrant, subpoena, or court order; parking cases (12 hours after final disposition); traffic studies (30 days); commercial vehicle enforcement (six months); and evidence of the crimes the law lists. Audit trail data must be kept for two years. On a surveillance trailer, the recorder's archive can be capped at 21 days to match."
+  },
+  {
+    question: "Can police get my security camera footage without a warrant in Washington?",
+    answer: "Police can ask for ordinary video, and a private owner can choose to share it. License plate reader data is different: under Section 5(4) of the Driver Privacy Act, an agency may obtain privately held plate reader data only with a valid, court-issued, probable cause warrant. Talk to your attorney about where your video ends and plate reader data begins."
+  },
+  {
+    question: "Will Seattle police respond to a security camera alert?",
+    answer: "Since October 1, 2024, Seattle police dispatch on alarm-company calls only with supporting evidence such as audio, video, a panic alarm, or an eyewitness showing someone illegally entering or trying to enter a property. Sensor or motion activations alone don't qualify. Tacoma requires alarm companies to verify before calling police, except when live video or audio shows a crime in progress."
+  },
+  {
+    question: "Can a city, port, or school district rent a surveillance trailer with a license plate reader?",
+    answer: "Only law enforcement, parking enforcement, and transportation agencies have authorized purposes for plate readers under the Driver Privacy Act, so a parks department, school district, or housing authority should rent without plate reading. No agency, including police, may collect plate data at K-12 schools, places of worship, courts, food banks, protected health care facilities, or immigration facilities, or their adjacent parking lots."
+  },
+  {
+    question: "Is security camera footage a public record in Washington?",
+    answer: "Footage held by a state or local agency generally is, and anyone can request it. In November 2025 a Skagit County judge ruled Flock camera images were public records even though a vendor stored them, and Stanwood and Sedro-Woolley later settled for $80,000. SB 6002 exempts agency plate reader data from disclosure, but not ordinary video. Footage held by a private business isn't subject to the Public Records Act."
+  }
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Washington Security Camera Laws in 2026: Audio, License Plate Readers, and What's Legal on Your Site",
+  "datePublished": "2026-09-11",
+  "dateModified": "2026-09-12",
+  "author": {
+    "@type": "Person",
+    "name": "Val Zakharov",
+    "jobTitle": "Founder & Owner",
+    "description": "Founder and owner of CCTV Trailer with 15 years of experience in the Pacific Northwest mobile surveillance and security industry, covering construction jobsite, warehouse, parking lot, public-agency, and event-security deployments across Pierce, King, Snohomish, and Kitsap counties.",
+    "knowsAbout": ["Mobile CCTV Surveillance", "Washington Surveillance Camera Law", "License Plate Recognition", "Security Camera Audio Recording", "Puget Sound Security Operations"],
+    "url": "https://www.cctvtrailer.com/about",
+    "sameAs": ["https://www.linkedin.com/in/val-zakharov-293374397"],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "CCTV Trailer",
+      "url": "https://www.cctvtrailer.com"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CCTV Trailer",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.cctvtrailer.com/images/cctv-trailer-logo.png"
+    }
+  },
+  "description": "A plain-English 2026 guide to Washington State security camera law for jobsites, parking lots, and public agencies: video and privacy limits, the all-party consent rule for audio (RCW 9.73.030), the new Driver Privacy Act regulating license plate readers (ESSB 6002), signage, public records, and handing footage to police in Seattle and Tacoma.",
+  "image": [
+    "https://www.cctvtrailer.com/images/washington-camera-laws-hero.webp",
+    "https://www.cctvtrailer.com/images/washington-camera-laws-audio-signage.webp",
+    "https://www.cctvtrailer.com/images/washington-camera-laws-lpr-yard-gate.webp",
+    "https://www.cctvtrailer.com/images/washington-camera-laws-evidence-export.webp"
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://www.cctvtrailer.com/blog/${slug}`
+  },
+  "wordCount": 4900,
+  "about": [
+    { "@type": "Legislation", "name": "Driver Privacy Act (ESSB 6002, Chapter 239, Laws of 2026)", "legislationJurisdiction": "Washington State", "url": "https://app.leg.wa.gov/billsummary?BillNumber=6002&Year=2026" },
+    { "@type": "Legislation", "name": "RCW 9.73.030 — Intercepting, recording, or divulging private communication", "legislationJurisdiction": "Washington State", "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=9.73.030" }
+  ],
+  "keywords": [
+    "Washington security camera laws",
+    "Washington security camera laws 2026",
+    "is it legal to record audio on security cameras in Washington",
+    "Washington two-party consent security camera",
+    "RCW 9.73.030 security camera audio",
+    "SB 6002 license plate reader",
+    "Washington Driver Privacy Act ALPR",
+    "license plate reader law Washington private business",
+    "security camera signs Washington",
+    "sharing surveillance footage with police Washington",
+    "Seattle verified alarm response policy",
+    "Tacoma alarm verification",
+    "mobile surveillance trailer audio talk-down legal",
+    "Flock camera public records Washington"
+  ]
+});
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Blog', url: '/blog' },
+  { name: 'Washington Security Camera Laws in 2026', url: `/blog/${slug}` }
+];
+
+const relatedPages = [
+  {
+    title: "Cargo Theft Along the I-5 Corridor",
+    href: "/blog/warehouse-cargo-theft-i5-corridor-seattle-tacoma",
+    description: "Where license plate reading earns its keep: truck yards and distribution centers in Fife, Kent, and the Tacoma tideflats."
+  },
+  {
+    title: "CCTV Network Security and Network Separation",
+    href: "/blog/cctv-network-security-design-network-separation",
+    description: "The other half of camera compliance: keeping recorders, cameras, and footage off networks where they don't belong."
+  },
+  {
+    title: "Technical Specifications",
+    href: "/technical-specifications",
+    description: "Optional PA two-way audio, the LPR camera, two-week motion-only retention, and how footage is watermarked and encrypted."
+  },
+  {
+    title: "Apartment Security in the Puget Sound",
+    href: "/blog/apartment-complex-security-seattle-tacoma-package-theft-car-prowls",
+    description: "Parking-lot cameras around people's homes, where aiming, signage, and privacy lines matter most."
+  },
+  {
+    title: "Insurance Security Requirements",
+    href: "/insurance-security-requirements",
+    description: "What carriers and builder's-risk policies typically expect from jobsite surveillance in Washington."
+  },
+  {
+    title: "Tacoma's Public Space Safety Problem",
+    href: "/blog/tacoma-public-space-safety-mobile-surveillance",
+    description: "Cameras on public property, and why agencies face public-records and retention rules private sites don't."
+  },
+  {
+    title: "Security Trailer vs Guards",
+    href: "/security-trailer-vs-guards",
+    description: "Cost and coverage comparison for sites weighing patrol hours against live, verifiable video."
+  },
+  {
+    title: "Construction Site Security",
+    href: "/construction-security",
+    description: "Mobile surveillance deployments for Puget Sound jobsites, from site walk to pickup."
+  }
+];
+---
+
+<Layout
+  title="Washington Security Camera Laws 2026: Audio, License Plate Readers & SB 6002 | CCTV Trailer"
+  description="Is it legal to record audio on security cameras in Washington? What does SB 6002 mean for license plate readers? A plain-English 2026 guide for jobsites, lots, and agencies."
+  schema={schema}>
+
+  <Header currentPath="/blog" showEmergencyBar={true} />
+  <Analytics />
+  <BreadcrumbSchema items={breadcrumbs} />
+  <SpeakableSchema sections={speakableSections} />
+  <FAQSchema items={faqs} />
+
+  <article>
+    <!-- Hero Section -->
+    <section class="hero-section-blog relative py-20 px-6 text-white">
+      <div class="hero-overlay">
+        <LazyImage src="/images/washington-camera-laws-hero.webp" alt="A solar-powered CCTV Trailer mobile surveillance unit parked inside the fence of a Tacoma-area construction site at dusk, next to a posted sign reading Notice: This Site Is Monitored by Video Surveillance"
+          class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
+      </div>
+      <div class="absolute inset-0 z-[3] bg-gradient-to-r from-black/70 to-black/40"></div>
+      <div class="container mx-auto max-w-4xl relative z-10">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          Washington Security Camera Laws in 2026: Audio, License Plate Readers, and What's Legal on Your Site
+        </h1>
+        <div class="flex items-center text-lg mb-8">
+          <time datetime="2026-09-11">September 11, 2026</time>
+          <span class="mx-4">&bull;</span>
+          <span>19 min read</span>
+        </div>
+        <p class="text-xl leading-relaxed">
+          On delivery day, the question we hear most isn't about solar panels. It's "does that speaker record?" In Washington, that's a fair thing to ask. The state requires everyone's consent before a private conversation is recorded, and 2026 made camera law a lot more complicated. In March, Governor Bob Ferguson signed the <strong>Driver Privacy Act</strong>, Washington's first real rulebook for license plate readers. Within days Seattle and Kent police paused their mobile plate readers and Pierce County switched its system off. In August, two Skagit County cities agreed to pay <strong>$80,000</strong> over camera records. If you run cameras on a jobsite, a parking lot, or public property in the Puget Sound, here's what the law says right now about video, audio, plate reading, signs, and handing footage to police.
+        </p>
+      </div>
+    </section>
+
+    <!-- Quick Answer Section -->
+    <QuickAnswer
+      question="Is it legal to use security cameras with audio and license plate readers in Washington State in 2026?"
+      answer="Mostly yes, within limits. Video of areas open to view is generally lawful if cameras avoid places where people expect privacy, like restrooms. Audio is stricter: under RCW 9.73.030, recording or transmitting a private conversation without everyone's consent is a gross misdemeanor, though a recorded announcement counts as consent. License plate readers fall under the Driver Privacy Act (ESSB 6002), effective March 30, 2026, which regulates state and local agencies, not private businesses. Agencies may use plate readers only for listed police, parking, and transportation purposes, must delete most data after 21 days, and need a court-issued warrant to obtain privately held plate data. Practical defaults for private sites: video only, speaker-only warnings, plate reading off without a written plan, honest signs, and prompt export of incident footage. General information, not legal advice."
+    />
+
+    <!-- Main Content -->
+    <section class="py-16">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <div class="blog-content prose prose-lg max-w-none">
+
+          <!-- Stats Section -->
+          <div class="mb-12">
+            <StatBox
+              layout="grid"
+              stats={[
+                {
+                  value: "21 days",
+                  label: "Maximum retention for most agency license plate reader data under the 2026 Driver Privacy Act",
+                  icon: "🗓️",
+                  highlight: true,
+                  source: {
+                    text: "ESSB 6002, Sec. 4 — Washington State Legislature",
+                    url: "https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Session%20Laws/Senate/6002-S.SL.pdf"
+                  }
+                },
+                {
+                  value: "All parties",
+                  label: "Must consent before a private conversation is recorded or transmitted in Washington",
+                  icon: "🎙️",
+                  highlight: true,
+                  source: {
+                    text: "RCW 9.73.030",
+                    url: "https://app.leg.wa.gov/rcw/default.aspx?cite=9.73.030"
+                  }
+                },
+                {
+                  value: "$80,000",
+                  label: "Paid by Stanwood and Sedro-Woolley to settle a Flock camera public-records case",
+                  icon: "📂",
+                  highlight: false,
+                  source: {
+                    text: "HeraldNet, Aug. 14, 2026",
+                    url: "https://www.heraldnet.com/2026/08/14/stanwood-sedro-woolley-settle-flock-records-case-for-80k/"
+                  }
+                },
+                {
+                  value: "~4%",
+                  label: "Share of Seattle's roughly 13,000 alarm-company calls in 2023 tied to a confirmed crime",
+                  icon: "🚓",
+                  highlight: false,
+                  source: {
+                    text: "SPD figures via BOS Security",
+                    url: "https://www.bossecurity.com/2024/10/08/seattle-implements-alarm-verification-requirements/"
+                  }
+                }
+              ]}
+            />
+          </div>
+
+          <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 mb-10">
+            <p class="font-semibold text-yellow-900 mb-2">Not legal advice</p>
+            <p class="text-yellow-900">
+              We deploy surveillance trailers; we aren't lawyers. This article summarizes Washington statutes, rulings, and reporting as of September 11, 2026, with links to the primary sources. Before you turn on audio or plate reading, talk to your attorney, or your city or county attorney if you're a public agency.
+            </p>
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6">Why Everyone Is Suddenly Asking About Camera Law</h2>
+
+            <p>
+              For most of the last decade, "is this camera legal?" was a question people in Washington rarely asked out loud. That changed in October 2025, when the University of Washington Center for Human Rights published <a href="https://jsis.washington.edu/humanrights/2025/10/21/leaving-the-door-wide-open/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">"Leaving the Door Wide Open"</a>. Working from records of 31 law enforcement agencies, it found that at least eight Washington agencies, including the Auburn and Lakewood police departments, had enabled direct sharing of license plate reader data with U.S. Border Patrol. Border Patrol also had apparent "back door" access to at least ten more, among them Black Diamond, Eatonville, and Renton.
+            </p>
+            <br>
+
+            <p>
+              The Legislature responded. <a href="https://app.leg.wa.gov/billsummary?BillNumber=6002&Year=2026" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Engrossed Substitute Senate Bill 6002</a>, sponsored by Senator Yasmin Trudeau of Tacoma, passed the House 84&ndash;10 on March 5 and the Senate 39&ndash;10 on March 10. Governor Bob Ferguson signed it on March 30, 2026. Because it carried an emergency clause, it took effect the same day.
+            </p>
+            <br>
+
+            <p>
+              The fallout was immediate. KUOW reported on April 3 that the <a href="https://www.kuow.org/law/2026-04-03/police-pause-license-plate-readers-to-comply-with-new-wa-state-restrictions" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Seattle and Kent police departments had suspended their mobile plate readers</a>. Kent Police Chief Rafael Padilla explained that the department "could not ensure that they wouldn't incidentally capture license plates in those restricted, protected areas." Pierce County Sheriff Keith Swank went further and <a href="https://mynorthwest.com/mynorthwest-politics/flock-cameras-pierce/4223326" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">deactivated the department's entire system</a>, telling MyNorthwest that complying manually was "not possible." In Seattle, Mayor Katie Wilson had already <a href="https://wilson.seattle.gov/2026/03/19/mayor-wilson-announces-next-steps-on-surveillance-pilot-project/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">paused expansion of the police CCTV pilot</a> on March 19, pending a privacy audit by NYU's Policing Project, and temporarily paused all city use of plate readers.
+            </p>
+            <br>
+
+            <p>
+              Some agencies are coming back online. Bonney Lake <a href="https://www.spokesman.com/stories/2026/sep/02/youre-back-on-camera-when-you-drive-through-this-e/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">reactivated its 22 Flock cameras on August 31</a> after keeping them dark since mid-December. "I wanted to wait to see the new legislation," Police Chief Mark Berry told The News Tribune.
+            </p>
+            <br>
+
+            <p>
+              Meanwhile the courts and the public have been busy. In November 2025, a Skagit County Superior Court judge ruled that <a href="https://www.eff.org/deeplinks/2025/11/washington-court-rules-data-captured-flock-safety-cameras-are-public-records" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Flock camera images are public records</a> because they "are created and used to further a governmental purpose," even when a vendor stores them. Stanwood and Sedro-Woolley <a href="https://www.heraldnet.com/2026/08/14/stanwood-sedro-woolley-settle-flock-records-case-for-80k/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">settled that case in August for $80,000</a>, split evenly. And on August 28, FOX 13 reported a wave of <a href="https://www.fox13seattle.com/news/wa-flock-cameras-targeted-online-deflock" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">vandalism against plate-reader cameras</a>, including four juveniles arrested in Covington for firing fireworks at one. Volunteer maps cited in the story count more than 2,100 plate readers statewide.
+            </p>
+            <br>
+
+            <p>
+              Almost all of that is aimed at government. But the questions land on private sites too, from neighbors, tenants, and crews who've read the headlines. And the audio law has applied to everybody for decades.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">Video: The Part That's Mostly Settled</h2>
+
+            <p>
+              Washington has no statute that requires consent to video record areas that are open to view. MRSC, the nonprofit research center that advises Washington local governments, puts the principle plainly in its <a href="https://mrsc.org/stay-informed/mrsc-insight/december-2022/use-of-security-cameras-on-government-property" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">guidance on security cameras</a>: "individuals do not have a reasonable expectation of privacy in public areas." It was written for local governments, but the same logic lets a contractor watch a fenced equipment yard or a property manager cover a parking lot.
+            </p>
+            <br>
+
+            <p>
+              The line is places where people <em>do</em> expect privacy. Washington's voyeurism statute, <a href="https://app.leg.wa.gov/rcw/default.aspx?cite=9A.44.115" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">RCW 9A.44.115</a>, describes one as a place "where a reasonable person would believe that he or she could disrobe in privacy" or "where one may reasonably expect to be safe from casual or hostile intrusion or surveillance." The crime requires a sexual purpose or intent to distribute, so it's rarely a criminal question for a security camera, but it's still the line to respect. On a jobsite, that means no angle on the portable toilets, the changing area in the site trailer, or the windows of the occupied building next door. Check those before you settle on mast height and pan limits.
+            </p>
+            <br>
+
+            <p>
+              <strong>Signs aren't legally required for video-only systems.</strong> MRSC notes that public notice "is not required for security footage that records video only," but calls signs good public policy and "a double deterrent to crime." They're also the cheapest deterrent you'll ever buy. Just sign what's true. A sign promising surveillance that went home with last month's rental is worse than no sign.
+            </p>
+            <br>
+
+            <p>
+              <strong>If employees are on camera, check your labor agreements.</strong> MRSC notes that for public employers, video monitoring of unionized employees for discipline is a mandatory subject of bargaining. Private-sector union contracts can have their own camera clauses.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">Audio: Where Washington Is Stricter Than Most States</h2>
+
+            <p>
+              Here's the sentence that matters, from <a href="https://app.leg.wa.gov/rcw/default.aspx?cite=9.73.030" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">RCW 9.73.030(1)(b)</a>. It is unlawful for "any individual, partnership, corporation, association, or the state of Washington, its agencies, and political subdivisions" to intercept or record any "private conversation, by any device electronic or otherwise designed to record or transmit such conversation regardless how the device is powered or actuated without first obtaining the consent of all the persons engaged in the conversation."
+            </p>
+            <br>
+
+            <p>
+              <strong>It applies to everyone, and "transmit" counts.</strong> There's no exemption for security purposes. A microphone that streams live audio to a phone or a monitoring screen is covered even if nothing is ever saved. People assume the risk is the recording. In Washington, the listening is enough.
+            </p>
+            <br>
+
+            <p>
+              <strong>It only covers <em>private</em> conversations, and "private" depends on the facts.</strong> In <a href="https://www.courts.wa.gov/opinions/pdf/880832.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline"><em>State v. Kipp</em>, 179 Wn.2d 718 (2014)</a>, the Washington Supreme Court held that a secretly recorded conversation about a sensitive family matter in a home kitchen was private, and reversed the conviction. The court weighed "the duration and subject matter of the communication, the location of the communication and the presence or potential presence of third parties, and the role of the nonconsenting party and his or her relationship to the consenting party." In <em>State v. Clark</em>, 129 Wn.2d 211 (1996), by contrast, street drug sales offered openly to strangers weren't private. A trailer microphone at 2 a.m. on an empty, fenced jobsite is probably closer to <em>Clark</em>. The same microphone at 10 a.m., a few feet from where the crew eats lunch, is not.
+            </p>
+            <br>
+
+            <p>
+              <strong>Consent can come from an announcement, with a catch.</strong> Under RCW 9.73.030(3), consent is obtained when one party announces "in any reasonably effective manner" that the conversation "is about to be recorded or transmitted." The catch: "if the conversation is to be recorded that said announcement shall also be recorded."
+            </p>
+            <br>
+
+            <p>
+              <strong>The penalties are real.</strong> A violation is a gross misdemeanor (<a href="https://app.leg.wa.gov/rcw/default.aspx?cite=9.73.080" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">RCW 9.73.080</a>). Anyone injured can sue for actual damages, or $100 a day up to $1,000, plus attorney fees (<a href="https://app.leg.wa.gov/rcw/default.aspx?cite=9.73.060" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">RCW 9.73.060</a>). No wonder MRSC calls audio "much more problematic under state law" and doesn't recommend it for local government security programs.
+            </p>
+
+            <!-- Supporting image: signage -->
+            <figure class="my-10">
+              <LazyImage src="/images/washington-camera-laws-audio-signage.webp"
+                alt="A rain-beaded construction fence sign reading 24-Hour Video Surveillance and Audio Recording in Use, with a muddy Pacific Northwest jobsite and portable toilet out of focus behind it"
+                class="w-full rounded-lg shadow-lg" width="1600" height="900" loading="lazy" />
+              <figcaption class="text-sm text-gray-600 mt-2 italic text-center">
+                Signs help establish notice, but Washington's consent-by-announcement rule specifically contemplates an announcement that is itself recorded. If audio isn't running, don't put it on the sign.
+              </figcaption>
+            </figure>
+
+            <h3 class="text-2xl font-semibold mb-4">Speakers and microphones are two different legal questions</h3>
+            <p>
+              This is where most of the confusion about mobile surveillance trailers comes from. A <strong>speaker</strong> broadcasts. A pre-recorded "You are on camera, leave the property now," or a live warning from someone watching the feed, doesn't intercept or record anyone's conversation. A <strong>microphone</strong> is the part the Privacy Act cares about, because two-way audio means the trailer is transmitting whatever it hears.
+            </p>
+            <br>
+
+            <p>
+              PA two-way audio on our trailers is an optional add-on, not a default. When a customer wants it, these are the settings we'd suggest they run past their attorney:
+            </p>
+            <br>
+
+            <ul class="list-disc pl-6 space-y-2 mb-6">
+              <li><strong>No continuous audio recording.</strong> Record video around the clock and leave audio off.</li>
+              <li><strong>Speaker-only warnings by default.</strong> A floodlight and a loud "leave the property now" don't require anyone on the other end to talk back.</li>
+              <li><strong>Announce before any two-way exchange.</strong> Start with something like "This site is under video surveillance and this conversation is being recorded." If the exchange is recorded, make sure the announcement is on the recording.</li>
+              <li><strong>Keep microphones away from people's normal conversations.</strong> That means break areas, the site office, and the neighbor's back patio.</li>
+              <li><strong>Put audio on the signs only if audio is actually in use.</strong> A sign helps show notice, but don't assume it satisfies the recorded-announcement rule by itself.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">License Plate Readers: What the Driver Privacy Act Actually Says</h2>
+
+            <p>
+              A lot of the coverage of SB 6002 has been secondhand, and some of it is wrong. There's no 500-foot rule in it, for one. The <a href="https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Session%20Laws/Senate/6002-S.SL.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">enrolled session law</a>, now codified as <a href="https://app.leg.wa.gov/RCW/default.aspx?cite=10.130" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">chapter 10.130 RCW</a>, runs ten pages. Here's what matters for anyone running cameras.
+            </p>
+            <br>
+
+            <p>
+              <strong>It regulates agencies (Sec. 2).</strong> That means state and local agencies: every county, city, town, municipal and quasi-municipal corporation, special purpose district, and local housing authority, "including their respective employees and agents." A plate reader system is anything "used to convert images of license plates into computer-readable data."
+            </p>
+            <br>
+
+            <p>
+              <strong>Only three kinds of agencies may use one (Sec. 3).</strong> <em>Law enforcement agencies</em> can check reads against state and federal databases, or search for a vehicle that is stolen, tied to a missing or endangered person, registered to someone with an outstanding felony or gross misdemeanor warrant, or involved in a felony or gross misdemeanor. <em>Parking enforcement agencies</em> can enforce parking rules and impound ordinances. <em>Transportation agencies</em> can provide traffic information, run traffic studies, and enforce commercial vehicle rules. For every other agency, use is unlawful. No agency may use plate readers for immigration enforcement, protected health care services, or tracking First Amendment activity, and a match alone isn't reasonable suspicion for a traffic stop.
+            </p>
+            <br>
+
+            <p>
+              <strong>Some places are off-limits.</strong> No agency may collect plate data at facilities that provide protected health care, facilities conducting immigration matters, K-12 schools, places of worship, courts, or food banks. That includes "any immediately adjacent parking lots" used primarily for those purposes.
+            </p>
+            <br>
+
+            <p>
+              <strong>Data expires in 21 days (Sec. 4).</strong> Longer retention is allowed only under a court-issued warrant, subpoena, or court order; for parking cases (12 hours after final disposition); for traffic studies (30 days); for commercial vehicle enforcement (six months); or as evidence of the listed crimes.
+            </p>
+            <br>
+
+            <p>
+              <strong>Sharing is locked down (Sec. 5).</strong> Agencies may not share plate data "except as required in a judicial proceeding." They can give system access only to other authorized agencies, and to vendors only as far as an authorized purpose requires. They may not buy or sell the data. Agency plate data is exempt from the Public Records Act. Vendors must block unauthorized access, including by federal civil immigration enforcement, and ship with sharing turned off. Vendors that contract with agencies can also face claims under the Consumer Protection Act.
+            </p>
+            <br>
+
+            <p>
+              <strong>It has teeth (Sec. 6, 10, 11).</strong> Willful misuse is a gross misdemeanor. People harmed can sue for damages and attorney fees. Evidence from a knowing violation of the use rules is inadmissible.
+            </p>
+            <br>
+
+            <p>
+              <strong>The paperwork runs into 2027.</strong> Agencies must register their systems with the Attorney General's Office. According to the <a href="https://wacities.org/advocacy/News/advocacy-news/2026/06/12/bills-regulating-automated-license-plate-readers-introduced" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Association of Washington Cities</a>, the registration forms became available in August and there's no fixed registration date. Audit trails must be kept for two years. The AG's model policies are due July 1, 2027. Agency policies and public annual reports, including camera locations, are due December 1, 2027.
+            </p>
+
+            <!-- Supporting image: LPR at yard gate -->
+            <figure class="my-10">
+              <LazyImage src="/images/washington-camera-laws-lpr-yard-gate.webp"
+                alt="A solar-powered CCTV Trailer surveillance unit beside the entrance gate of a Kent Valley truck yard at night, with a pickup and a box truck approaching under LED yard lights"
+                class="w-full rounded-lg shadow-lg" width="1600" height="900" loading="lazy" />
+              <figcaption class="text-sm text-gray-600 mt-2 italic text-center">
+                A private truck yard is exactly where plate reading earns its keep, and it's also where the line between ordinary video and "plate reader data" starts to matter.
+              </figcaption>
+            </figure>
+
+            <h3 class="text-2xl font-semibold mb-4">If you're a private business, contractor, or HOA</h3>
+            <p>
+              You aren't the "agency" this law regulates, so the 21-day clock, the registration forms, and the purpose limits don't apply to you directly. But three parts of it still reach private sites.
+            </p>
+            <br>
+
+            <p>
+              <strong>Police need a warrant for your plate data.</strong> Under Section 5(4), "an agency may obtain privately held automated license plate reader data only pursuant to a valid, court-issued, probable cause warrant." A detective can no longer simply ask a retailer or warehouse operator for its plate-read log.
+            </p>
+            <br>
+
+            <p>
+              <strong>Ordinary video probably isn't "plate reader data."</strong> The law ties that term to systems that convert plate images into computer-readable data. It even excludes dashboard and body camera video unless that video is converted into plate characters or indexed by plate. By that logic, a video clip of someone cutting your fence is a different thing from an exported list of every plate that passed your gate this month. No court has tested the distinction, so ask your lawyer before you share anything that came out of a plate-reading module.
+            </p>
+            <br>
+
+            <p>
+              <strong>The criminal penalty says "any person," but it's aimed at misuse of government systems.</strong> Section 10 (now RCW 10.130.100) makes it a gross misdemeanor for "any person" to willfully use a plate reader system "for a purpose not specifically authorized under this chapter." Out of context, that could seem to reach a store's own camera. In context, it's hard to get there. The operating rules are addressed to agencies, and Section 5(4) assumes private plate data exists and only limits how agencies get it. The House also stripped recordkeeping duties that earlier drafts placed on "ALPR operators," calling them duplicative of the agency audit rules. "Any person" is how a criminal statute reaches the individual officer, employee, or contractor who misuses an agency's system. No court has ruled on it yet. For private sites, the provision more likely to matter is Section 5(7): plate reader vendors may not sell or give access to plate data to anyone unauthorized, and that text isn't limited to agency data. Don't sell or broker plate data, and ask your vendor who else can see yours.
+            </p>
+            <br>
+
+            <h3 class="text-2xl font-semibold mb-4">If you're a public agency renting a trailer</h3>
+            <p>
+              <strong>If you aren't police, parking enforcement, or a transportation agency, rent without plate reading.</strong> A parks department covering a trailhead lot, a school district securing a summer construction project, or a housing authority watching a parking area has no authorized purpose under Section 3, and "agency" includes your agents. Even police can't collect plate data at a K-12 school.
+            </p>
+            <br>
+
+            <p>
+              <strong>Your footage is a public record.</strong> MRSC is blunt: "anyone can submit a public records request to inspect or obtain a copy of the video footage from a security camera." The Skagit County ruling applied the same logic to images a vendor stored for the city. SB 6002 shields agency <em>plate reader</em> data from disclosure. Regular video isn't covered by that exemption.
+            </p>
+            <br>
+
+            <p>
+              <strong>Know your retention schedule.</strong> According to MRSC, routine surveillance video is kept 30 days, or until it's determined no security incident occurred, whichever is sooner. Footage tied to an incident is kept six years after the matter is resolved. Our trailers keep two weeks of motion-only history on a rolling loop by default, and the archive can be capped at a set number of days to match your schedule. Incident clips still need to be exported and filed on your side.
+            </p>
+            <br>
+
+            <p>
+              <strong>In Seattle, check the Surveillance Ordinance first.</strong> Under SMC 14.18, city departments need Council approval before acquiring surveillance technology, subject to the ordinance's own definitions and exemptions. Talk to the city's privacy team before scheduling a delivery.
+            </p>
+          </section>
+
+          <!-- At-a-glance comparison -->
+          <div class="my-12">
+            <ComparisonTable
+              title="Washington Camera Rules at a Glance (2026)"
+              description="How Washington law treats video, audio, and license plate reading on security cameras and mobile surveillance trailers"
+              headers={["Video", "Audio", "License plate reading"]}
+              rows={[
+                {
+                  feature: "Main law",
+                  values: ["No general consent statute; privacy-place limits (see RCW 9A.44.115)", "Privacy Act, RCW 9.73.030", "Driver Privacy Act, ESSB 6002 (2026)"]
+                },
+                {
+                  feature: "Who it binds",
+                  values: ["Everyone", "Everyone: individuals, businesses, and government", "State and local agencies, their agents, and vendors that contract with them"]
+                },
+                {
+                  feature: "Consent needed?",
+                  values: ["No, for areas open to view", "Yes, from all parties to a private conversation (a recorded announcement counts)", "Not a consent law; agency use limited to listed purposes"]
+                },
+                {
+                  feature: "Key limits",
+                  values: ["Keep restrooms, changing areas, and private interiors out of frame", "Covers live transmission, not just recording", "21-day retention; no collection at schools, places of worship, courts, food banks, protected health care, or immigration facilities"]
+                },
+                {
+                  feature: "Penalties",
+                  values: ["Criminal only in voyeurism-type cases", "Gross misdemeanor; civil damages plus attorney fees", "Gross misdemeanor for willful misuse; civil action; tainted evidence excluded"]
+                },
+                {
+                  feature: "Sensible default on a rental trailer",
+                  values: [{ text: "Perimeter, gates, equipment, materials; post honest signs", highlight: true }, { text: "Mic off; speaker-only warnings; announce before any two-way exchange", highlight: true }, { text: "Off unless there's a lawful purpose, a written data plan, and legal sign-off", highlight: true }]
+                }
+              ]}
+            />
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">Handing Footage to Police, and Getting Them to Show Up</h2>
+
+            <p>
+              Legal footage only matters if it leads somewhere. In the Puget Sound's two biggest cities, the rules now reward <em>verified</em> activity over raw alarms.
+            </p>
+            <br>
+
+            <p>
+              <strong>Seattle.</strong> Since October 1, 2024, the Seattle Police Department has dispatched officers to alarm-company calls only when there's supporting evidence, which <a href="https://tma.us/seattle-issues-new-response-parameters/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">The Monitoring Association</a> quoted as "audio, video, panic alarms or eyewitness evidence that a person is illegally entering or attempting to enter a residence or commercial property." Sensor or motion activations alone no longer get a response. The reason: of roughly 13,000 intrusion alarm calls in 2023, only about 4% were tied to a confirmed crime that produced a report or arrest, according to SPD figures reported by <a href="https://www.bossecurity.com/2024/10/08/seattle-implements-alarm-verification-requirements/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">BOS Security</a>.
+            </p>
+            <br>
+
+            <p>
+              <strong>Tacoma.</strong> The city's <a href="https://tacoma.gov/government/departments/finance/taxes-and-licenses/business-licensing/alarms/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">alarm program</a> requires monitoring companies to verify an alarm before requesting police. Verification is "not needed if the system has live video/audio showing a crime in progress or if someone on-site reports a crime." False alarms cost $115 each for the first two, rising to $315 from the seventh on. More than four in twelve months can earn a "No Response" designation for up to a year.
+            </p>
+            <br>
+
+            <p>
+              <strong>Why the difference matters.</strong> A June 9, 2026 <a href="https://seattle.legistar.com/View.ashx?GUID=6DEE3F7F-0A7C-42AB-B1A7-374AB23CCC2A&ID=15563419&M=F" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Seattle City Council staff report</a> put SPD's first-quarter 2026 median response at 7 minutes for Priority 1 calls, 24.3 minutes for Priority 2, and 75.7 minutes for Priority 3. The same report said the number of patrol officers "has consistently hovered at 490 since 2023," down from 694 in September 2020. With patrol that thin, "people are cutting the fence right now, I'm watching them" is a very different call from "the motion sensor went off."
+            </p>
+            <br>
+
+            <p>
+              On a trailer, the sequence goes like this. An AI alert fires. Whoever is watching the site pulls up the live view and confirms what's happening, then triggers a speaker warning or the floodlights. If the intruders stay, they call 911 and describe what they're watching. That's the kind of call both cities' rules prioritize, and sometimes the warning ends it before anyone has to make it.
+            </p>
+
+            <!-- Supporting image: evidence export -->
+            <figure class="my-10">
+              <LazyImage src="/images/washington-camera-laws-evidence-export.webp"
+                alt="A laptop in a construction site office at night showing four surveillance camera views of a dark jobsite, next to a USB drive, a handwritten incident log, and a hard hat"
+                class="w-full rounded-lg shadow-lg" width="1600" height="900" loading="lazy" />
+              <figcaption class="text-sm text-gray-600 mt-2 italic text-center">
+                The unglamorous part of evidence is exporting the clip the morning after, writing down what happened and when, and keeping the original.
+              </figcaption>
+            </figure>
+
+            <h3 class="text-2xl font-semibold mb-4">Evidence handling that holds up</h3>
+            <p>
+              <strong>Export the clip right away, and write it down.</strong> Our trailers keep two weeks of motion-only history on a rolling loop by default (less if the archive is capped), and then it's gone. The morning after an incident, export the video, save it somewhere that isn't the trailer, and note the camera, the times, what you saw, and the police report number. Keep the original and hand over a copy. The S-VIDIA platform our trailers run watermarks and encrypts recorded frames and stores them as separate images, which lets you step through an incident frame by frame and helps show the footage wasn't altered.
+            </p>
+            <br>
+
+            <p>
+              <strong>Treat plate-read logs as their own category.</strong> A video clip of a break-in is one thing. Plate reader data is another. Under Section 5(4), expect the agency to need a warrant for it, and involve your attorney.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">A Pre-Deployment Checklist for Washington Sites</h2>
+
+            <p>
+              Work through this before any trailer, ours or anyone else's, goes up on a Washington site.
+            </p>
+            <br>
+
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-6">
+              <ol class="list-decimal pl-6 space-y-3 text-blue-900">
+                <li><strong>Write down the purpose</strong> (theft, trespass, safety, evidence). It drives every setting below.</li>
+                <li><strong>Walk the camera angles.</strong> Cover the perimeter, gates, equipment, and materials. Keep restrooms, portable toilets, changing areas, and neighbors' windows out of frame.</li>
+                <li><strong>Decide on audio before delivery:</strong> speaker-only warnings, or two-way audio with a written announcement script. No continuous audio recording.</li>
+                <li><strong>Decide on plate reading.</strong> Private sites need a clear use and legal sign-off. Agencies other than police, parking, or transportation should leave it off, and so should anyone at a school, place of worship, court, food bank, health care facility, or immigration facility.</li>
+                <li><strong>Post signs that match reality.</strong> Mention audio only where it's actually in use.</li>
+                <li><strong>Set export and retention rules:</strong> who can export, where exports live, and how many days the archive keeps. Cap it at your required period.</li>
+                <li><strong>Limit viewer access</strong> to people who need it, each with their own login.</li>
+                <li><strong>Plan the police handoff:</strong> who calls 911, what they describe, and who exports footage the next morning.</li>
+                <li><strong>Public agencies:</strong> confirm your records retention schedule, Public Records Act process, bargaining obligations, and (in Seattle) SMC 14.18 review.</li>
+              </ol>
+            </div>
+
+            <p>
+              Comparing vendors? Ask whether audio and plate reading can be switched off completely, who at the vendor can see your footage, and how long the recorder keeps history. Public agencies should also get in writing that plate-reader sharing defaults are off, as Section 5(8) requires.
+            </p>
+          </section>
+
+          <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
+            <p class="font-semibold text-blue-900 mb-2">How We Set Up Trailers in Washington</p>
+            <p class="text-blue-800">
+              Every CCTV Trailer deployment starts with a site walk. We map camera angles, confirm cellular signal, and decide with you which optional features belong on the site: PA two-way audio, the dedicated license plate reader camera, radar, and LED floodlights. None of them is a default. If a feature doesn't fit your site or your legal situation, it stays off. We can also cap the archive at the number of days your policy or retention schedule requires, and footage older than that is deleted automatically. See the <a href="/technical-specifications" class="text-blue-700 hover:underline font-semibold">technical specifications</a> for what each option does, or the <a href="/pricing" class="text-blue-700 hover:underline font-semibold">pricing page</a> for standard rates.
+            </p>
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">Frequently Asked Questions</h2>
+            <div class="space-y-6">
+              {faqs.map((faq) => (
+                <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h3 class="text-xl font-semibold mb-3">{faq.question}</h3>
+                  <p class="text-gray-700 leading-relaxed">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">The Bottom Line</h2>
+
+            <p>
+              Washington's camera rules come down to three different questions, and most mistakes happen when people treat them as one. <strong>Video</strong> of areas open to view is generally fine, as long as you keep private spaces out of frame and your signs tell the truth. <strong>Audio</strong> is governed by one of the country's stricter consent laws, which covers live listening as well as recording. The safe default is speaker-only warnings, with any two-way conversation starting with a recorded announcement. <strong>License plate reading</strong> became a regulated, government-focused technology on March 30, 2026. Agencies outside police, parking, and transportation shouldn't run it at all, and private operators should treat it as a deliberate decision with a written plan, not a feature that comes bundled with the rental.
+            </p>
+            <br>
+
+            <p>
+              None of this makes cameras less useful. If anything, 2026 has made verified video more valuable. Seattle and Tacoma both put live, confirmed activity at the front of the line, and lawfully captured, carefully handled footage is what holds up afterward. Legislators will keep arguing about surveillance next session. For a contractor with a copper-stuffed jobsite or a property manager with a lot full of cars, the question is simpler: are your cameras aimed, configured, and documented so they help when something happens?
+            </p>
+            <br>
+
+            <p>
+              If you're planning a deployment and want to talk through camera angles, audio settings, and whether plate reading belongs on your site at all, we're glad to walk it with you. <a href="/contact" class="text-blue-600 hover:underline font-semibold">Get in touch</a> or call us at <a href="tel:2536832288" class="text-blue-600 hover:underline font-semibold">(253) 683-2288</a>.
+            </p>
+          </section>
+
+          <!-- About Section -->
+          <div class="bg-gray-50 border border-gray-200 rounded-lg p-8 mt-12">
+            <h3 class="text-xl font-bold mb-4">About CCTV Trailer</h3>
+            <p class="text-gray-700 mb-4">
+              CCTV Trailer provides mobile surveillance solutions across the Puget Sound region, headquartered in Tacoma with same-day deployment capability throughout Pierce, King, Snohomish, and Kitsap counties. Our solar-powered trailers carry PTZ cameras with AI-powered alerts, 4G/5G connectivity with automatic failover, and optional PA two-way audio, license plate reading, radar, and LED floodlights, configured to the site rather than bundled by default.
+            </p>
+            <p class="text-gray-700">
+              We work with general contractors, property managers, warehouse operators, event organizers, and public agencies to provide flexible surveillance coverage without the cost and timeline of permanent camera installations. <a href="/about" class="text-blue-600 hover:underline">Learn more about our team and technology</a>.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <CTASection
+      title="Want Cameras That Help and Hold Up?"
+      description="Get a free site walk. We'll map camera angles, keep private spaces out of frame, and set up audio, plate reading, and signage to fit your site. Same-day deployment available across Pierce, King, Snohomish, and Kitsap counties."
+      features={["✓ Video-First, Audio Optional", "✓ LPR Only Where It Belongs", "✓ Export-Ready Evidence"]}
+    />
+
+    <!-- Related Pages -->
+    <RelatedPages pages={relatedPages} />
+
+  <AuthorBio />
+
+  </article>
+
+  <Footer />
+</Layout>
