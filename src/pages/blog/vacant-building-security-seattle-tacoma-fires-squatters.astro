@@ -1,0 +1,596 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import CTASection from '../../components/CTASection.astro';
+import Analytics from '../../components/Analytics.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import LazyImage from '../../components/LazyImage.astro';
+import QuickAnswer from '../../components/QuickAnswer.astro';
+import StatBox from '../../components/StatBox.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import SpeakableSchema from '../../components/SpeakableSchema.astro';
+import FAQSchema from '../../components/FAQSchema.astro';
+import AuthorBio from '../../components/AuthorBio.astro';
+
+const slug = 'vacant-building-security-seattle-tacoma-fires-squatters';
+
+// Speakable sections for voice search
+const speakableSections = [
+  { cssSelector: ".quick-answer-content" },
+  { cssSelector: ".blog-content h2, .blog-content p" },
+  { cssSelector: ".stat-box" }
+];
+
+const faqs = [
+  {
+    question: "How do I secure a vacant building in Seattle?",
+    answer: "Seattle's Department of Construction and Inspections requires vacant buildings to be secured from unauthorized entry and protected from the weather, with grounds kept free of junk and overgrowth (SMC 22.206.200). Buildings that draw a complaint or are in the development process go into the Vacant Building Monitoring Program, which inspects monthly for $271.85 to $542.60 per month. Violations start at $150 a day. In practice that means closing every opening, clearing out combustible junk, inspecting on a schedule and adding monitoring that works without building power."
+  },
+  {
+    question: "How many vacant building fires does Seattle have?",
+    answer: "City figures released in April 2024 counted 130 vacant building fires in 2023, up from 77 in 2021, with three deaths in 2023. Seattle Fire Department data reported by KOMO in March 2025 showed 61 for 2023 and 51 for 2024, so 2023 totals differ by source. In 2025 the department brought 62 dangerous buildings into compliance, 38 by demolition and 24 by restoration."
+  },
+  {
+    question: "Can police remove squatters in Washington State?",
+    answer: "Yes, for residential property, under RCW 9A.52.105 (2017). The owner or an authorized agent signs a declaration under penalty of perjury stating, among other things, that the occupants entered without permission, that they are not current or recent tenants, that they were told to leave and didn't, and that the premises were not abandoned or open to the public when they entered. Police can then remove them or order them off under threat of arrest for criminal trespass, after giving them a reasonable chance to show evidence they are legal occupants. Former tenants within the last twelve months require an eviction instead."
+  },
+  {
+    question: "Does insurance cover a vacant building in Washington?",
+    answer: "Often only partly. Under the standard commercial property vacancy condition, once a building has been vacant more than 60 consecutive days the insurer will not pay for vandalism, sprinkler leakage, building glass breakage, water damage, theft or attempted theft, and it reduces other covered losses, fire included, by 15%. Some endorsements restrict coverage from the first day of vacancy, as in Lui v. Essex Insurance Co. (Wash. 2016). Tell your agent when the building empties and ask about a vacancy permit endorsement or a vacant-building policy."
+  },
+  {
+    question: "What happens if Seattle decides my vacant building is dangerous?",
+    answer: "Under emergency legislation signed in June 2024, the Seattle Fire Department can order a dangerous vacant building repaired or demolished and, if the owner doesn't act, do the work itself and recover the cost, including through a lien on the property. KOMO reported demolition costs of $350,000 to $500,000 per building at the time."
+  },
+  {
+    question: "Does a security camera trailer work at a building with no power?",
+    answer: "Yes. A solar surveillance trailer runs on solar panels and a battery bank, with an optional backup generator for long winter overcast and optional shore power where it's available. It connects over 4G/5G cellular with automatic failover, so nothing has to be wired into the vacant building."
+  },
+  {
+    question: "Will Seattle or Tacoma police respond to a camera alert at a vacant building?",
+    answer: "Live video helps. Since October 1, 2024, Seattle police respond to alarm-company calls only when there's supporting evidence such as video or an eyewitness, and sensor activations alone no longer qualify. Tacoma requires alarm companies to verify alarms before calling police, but verification isn't needed when live video or audio shows a crime in progress."
+  },
+  {
+    question: "How much does it cost to put a surveillance trailer on a vacant property?",
+    answer: "At CCTV Trailer's standard rates, a monthly rental runs $8,000 to $10,000 depending on setup, and a week runs $3,499 to $4,000. Short rentals are $999 for the first day and $499 for each additional day. Delivery and setup are included within 30 miles of Tacoma, and support is available 24/7."
+  }
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Fires and Squatters in Vacant Buildings: Protecting Empty Property in Seattle and Tacoma This Winter",
+  "datePublished": "2026-10-04",
+  "dateModified": "2026-10-04",
+  "author": {
+    "@type": "Person",
+    "name": "Val Zakharov",
+    "jobTitle": "Founder & Owner",
+    "description": "Founder and owner of CCTV Trailer with 15 years of experience in the Pacific Northwest mobile surveillance and security industry, covering construction jobsite, warehouse, parking lot, vacant property, and event-security deployments across Pierce, King, Snohomish, and Kitsap counties.",
+    "knowsAbout": ["Mobile CCTV Surveillance", "Vacant Property Security", "Off-Grid Solar Surveillance", "Washington Property Security Law", "Puget Sound Security Operations"],
+    "url": "https://www.cctvtrailer.com/about",
+    "sameAs": ["https://www.linkedin.com/in/val-zakharov-293374397"],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "CCTV Trailer",
+      "url": "https://www.cctvtrailer.com"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CCTV Trailer",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.cctvtrailer.com/images/cctv-trailer-logo.png"
+    }
+  },
+  "description": "A practical 2026 guide for owners of vacant buildings in Seattle, Tacoma, and Pierce County: why empty buildings burn, Seattle's Vacant Building Monitoring Program and 2024 demolition law, Washington's squatter removal statute (RCW 9A.52.105), the 60-day insurance vacancy clause, a first-month security plan, and where off-grid surveillance trailers help.",
+  "image": [
+    "https://www.cctvtrailer.com/images/vacant-building-security-hero.webp",
+    "https://www.cctvtrailer.com/images/vacant-building-fire-aftermath.webp",
+    "https://www.cctvtrailer.com/images/vacant-building-inspection-documentation.webp",
+    "https://www.cctvtrailer.com/images/vacant-commercial-building-trailer-night.webp"
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://www.cctvtrailer.com/blog/${slug}`
+  },
+  "wordCount": 3500,
+  "about": [
+    { "@type": "Legislation", "name": "RCW 9A.52.105: Removal of unauthorized persons from premises", "legislationJurisdiction": "Washington State", "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=9A.52.105" },
+    { "@type": "Legislation", "name": "SMC 22.206.200: Vacant building standards", "legislationJurisdiction": "Seattle, Washington", "url": "https://www.seattle.gov/sdci/codes/common-code-questions/vacant-buildings" }
+  ],
+  "keywords": [
+    "vacant building security Seattle",
+    "vacant property security Tacoma",
+    "vacant building fires Seattle",
+    "Seattle Vacant Building Monitoring Program",
+    "how to secure a vacant building",
+    "squatters Washington State law",
+    "RCW 9A.52.105 squatter declaration",
+    "vacant building insurance 60 day vacancy clause",
+    "Lui v. Essex Insurance vacancy",
+    "Pierce County vacant property maintenance",
+    "Tacoma derelict building",
+    "solar security camera trailer vacant property",
+    "off-grid surveillance for buildings without power"
+  ]
+});
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Blog', url: '/blog' },
+  { name: 'Vacant Buildings in Seattle and Tacoma', url: `/blog/${slug}` }
+];
+
+const relatedPages = [
+  {
+    title: "Washington Security Camera Laws in 2026",
+    href: "/blog/washington-security-camera-laws-audio-license-plate-readers-2026",
+    description: "Audio consent rules and how verified video gets a police response in Seattle and Tacoma."
+  },
+  {
+    title: "Standalone Hybrid Power System",
+    href: "/trailer-standalone-hybrid-power-architecture",
+    description: "How a trailer keeps running through a Puget Sound winter with no grid connection at all."
+  },
+  {
+    title: "Insurance Security Requirements",
+    href: "/insurance-security-requirements",
+    description: "What carriers typically expect from surveillance on Washington properties."
+  },
+  {
+    title: "Vandalism Prevention",
+    href: "/solutions/vandalism-prevention",
+    description: "Stopping graffiti and break-ins on sites nobody is watching."
+  },
+  {
+    title: "Emergency Surveillance",
+    href: "/emergency-surveillance",
+    description: "Same-day trailer deployment after a break-in or a sudden vacancy."
+  },
+  {
+    title: "Apartment Security in the Puget Sound",
+    href: "/blog/apartment-complex-security-seattle-tacoma-package-theft-car-prowls",
+    description: "Parking garages and the gap between 'secure' and actually watched."
+  }
+];
+---
+
+<Layout
+  title="Vacant Building Security in Seattle & Tacoma (2026): Fires and Squatters | CCTV Trailer"
+  description="A boarded-up Tacoma house burned on Oct 2. A plain guide for Seattle and Tacoma owners of empty buildings: squatter law, the 60-day insurance clause, city rules and security that works."
+  schema={schema}>
+
+  <Header currentPath="/blog" showEmergencyBar={true} />
+  <Analytics />
+  <BreadcrumbSchema items={breadcrumbs} />
+  <SpeakableSchema sections={speakableSections} />
+  <FAQSchema items={faqs} />
+
+  <article>
+    <!-- Hero Section -->
+    <section class="hero-section-blog relative py-20 px-6 text-white">
+      <div class="hero-overlay">
+        <LazyImage src="/images/vacant-building-security-hero.webp" alt="A solar-powered CCTV Trailer mobile surveillance unit parked inside a chain-link fence beside a vacant, boarded-up two-story house in a Tacoma neighborhood at dusk"
+          class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
+      </div>
+      <div class="absolute inset-0 z-[3] bg-gradient-to-r from-black/70 to-black/40"></div>
+      <div class="container mx-auto max-w-4xl relative z-10">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          Fires and Squatters in Vacant Buildings: Protecting Empty Property in Seattle and Tacoma This Winter
+        </h1>
+        <div class="flex items-center text-lg mb-8">
+          <time datetime="2026-10-04">October 4, 2026</time>
+          <span class="mx-4">&bull;</span>
+          <span>16 min read</span>
+        </div>
+        <p class="text-xl leading-relaxed">
+          Just after midnight on Friday, October 2, Tacoma Fire crews pulled up to a boarded-up house in the 600 block of East 32nd Street and found it fully engulfed. They fought it from outside first and evacuated nearby homes as a precaution. Crews stayed through the night chasing hot spots. Nobody was hurt. One neighbor's siding got damaged, and the cause is still under investigation. That block is about a mile from our office on East 26th. Empty buildings burning barely makes news in Seattle or Tacoma anymore, which is kind of the problem. Winter is coming and clocks fall back November 1, so here is what owners of vacant property in the Puget Sound actually need to know: what the cities expect, what Washington law says about squatters, the insurance clause that quietly shrinks your coverage after 60 days, and where cameras help.
+        </p>
+      </div>
+    </section>
+
+    <!-- Quick Answer Section -->
+    <QuickAnswer
+      question="How do you keep a vacant building in Seattle or Tacoma from being broken into or burned?"
+      answer="Close every opening so it can't be entered, which Seattle's vacant building code and the fire code Washington adopts statewide both require, and keep the lot clear of junk and dry trash. Tell your insurer the day the building goes empty, because standard commercial property policies stop paying for vandalism and theft after 60 consecutive vacant days and cut other claims by 15%. Inspect on a schedule and keep dated photos. In Washington, police can remove squatters from residential property under RCW 9A.52.105 only after the owner signs a declaration that, among other things, the premises were not abandoned when the person entered. Then add monitoring that doesn't depend on the building's power, such as a solar surveillance trailer on cellular, so somebody sees a break-in while it is still only a trespass. Seattle and Tacoma police both give weight to calls backed by live video. General information only, so check specifics with your attorney and insurance agent."
+    />
+
+    <!-- Main Content -->
+    <section class="py-16">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <div class="blog-content prose prose-lg max-w-none">
+
+          <!-- Stats Section -->
+          <div class="mb-12">
+            <StatBox
+              layout="grid"
+              stats={[
+                {
+                  value: "130",
+                  label: "Vacant building fires in Seattle in 2023, up from 77 in 2021, by the city's count",
+                  icon: "🔥",
+                  highlight: true,
+                  source: {
+                    text: "Seattle Fire Department, Fire Line, April 2024",
+                    url: "https://fireline.seattle.gov/2024/04/26/as-fires-surge-in-vacant-buildings-mayor-harrell-proposes-emergency-legislation-for-faster-demolition-and-remediation-of-risks/"
+                  }
+                },
+                {
+                  value: "50%",
+                  label: "Share of U.S. vacant building fires that were intentionally set in 2011-2015, vs. 10% of all structure fires",
+                  icon: "🧯",
+                  highlight: true,
+                  source: {
+                    text: "NFPA, Fires in Vacant Buildings (2018), via NC Dept. of Insurance",
+                    url: "https://www.ncdoi.gov/news/press-releases/2018/05/08/office-state-fire-marshal-recognizes-national-arson-awareness-week"
+                  }
+                },
+                {
+                  value: "60 days",
+                  label: "Vacancy after which standard commercial property policies drop vandalism and theft coverage and cut other losses 15%",
+                  icon: "📄",
+                  highlight: false,
+                  source: {
+                    text: "Adjusters International",
+                    url: "https://www.adjustersinternational.com/pubs/adjusting-today/vacancy-occupancy-clauses-protective-safeguards-endorsements/"
+                  }
+                },
+                {
+                  value: "62",
+                  label: "Dangerous Seattle buildings brought into compliance in 2025: 38 demolished and 24 restored",
+                  icon: "🏚️",
+                  highlight: false,
+                  source: {
+                    text: "Seattle Fire Department 2025 Annual Report",
+                    url: "https://www.seattle.gov/documents/Departments/Fire/About/2025%20Annual%20Report_FINAL_Web.pdf"
+                  }
+                }
+              ]}
+            />
+          </div>
+
+          <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 mb-10">
+            <p class="font-semibold text-yellow-900 mb-2">Not legal or insurance advice</p>
+            <p class="text-yellow-900">
+              We rent and set up surveillance trailers. We aren't lawyers or insurance agents. This article sums up Washington law, local code, court rulings and news reports as of October 4, 2026, with links to the sources. Read your own policy with your agent, and talk to an attorney before acting on a squatter situation.
+            </p>
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6">1. An empty house on East 32nd, and a lot like it</h2>
+
+            <p>
+              The <a href="https://mynorthwest.com/local/vacant-tacoma-house-fire/4282359" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">fire on East 32nd</a> fits a pattern firefighters on both ends of I-5 know well. Building boarded up, nobody living there, at least officially. <a href="https://komonews.com/news/local/tacoma-homes-evacuated-fire-vacant-house-firefighters-flames-engulfed-no-injuries-or-damage-tacoma-fire-department-investigation" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">KOMO's report</a> has crews attacking it from outside while they kept flames off the houses next door, and only moving inside once it was safe.
+            </p>
+            <br>
+
+            <p>
+              Seattle and it's fire department put numbers on the problem in April 2024, when Mayor Bruce Harrell asked for emergency powers over dangerous vacant buildings. According to the <a href="https://fireline.seattle.gov/2024/04/26/as-fires-surge-in-vacant-buildings-mayor-harrell-proposes-emergency-legislation-for-faster-demolition-and-remediation-of-risks/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Seattle Fire Department</a>, the city had 77 vacant building fires in 2021 and 130 in 2023. Three people died in vacant, dangerous building fires in 2023. A three-alarm fire at a vacant apartment building on First Hill in early 2024 took more than 100 firefighters.
+            </p>
+            <br>
+
+            <p>
+              Counts depend on who's counting. Seattle Fire data reported by <a href="https://komonews.com/news/local/another-vacant-house-fire-seattle-city-derelict-building-ordinance-building-fire-south-walker-street-demolish-firefighter-plans" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">KOMO in March 2025</a> put 2023 at 61 and 2024 at 51. Both sources agree on 91 for 2022, but the two counts doesn't agree on 2023, and we couldn't find an explanation. So treat 2023 as somewhere between 61 and 130 depending on definitions. Even the lower 2024 number works out to roughly one vacant building fire a week.
+            </p>
+            <br>
+
+            <p>
+              The legislation passed unanimously, and Harrell <a href="https://fireline.seattle.gov/2024/06/06/mayor-harrell-signs-legislation-to-expedite-demolition-and-remediation-of-dangerous-vacant-buildings-in-seattle/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">signed it on June 6, 2024</a>. It lets the fire department order a dangerous vacant building fixed or torn down. If the owner won't do it, the city can do the work and put a lien on the property. Those demolitions cost <a href="https://komonews.com/news/local/at-350000-500000-each-who-will-pay-to-demolish-unsafe-vacant-buildings-in-seattle" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">$350,000 to $500,000 per building</a>, KOMO reported at the time. By the department's <a href="https://www.seattle.gov/documents/Departments/Fire/About/2025%20Annual%20Report_FINAL_Web.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">2025 annual report</a>, 62 buildings were brought into compliance that year, 38 demolished and 24 restored.
+            </p>
+            <br>
+
+            <p>
+              Fires kept happening anyway. The same report lists a two-alarm defensive fire in a vacant Northgate apartment building on September 6, 2025. Citywide, its investigators looked at more than 280 incidents in 2025 and ruled 125 of them intentionally set. And empty buildings rarely stay empty. On August 6, 2026, Seattle police answering a trespass call at a house in the 4400 block of 8th Avenue NE, a property that had sat empty for years, <a href="https://hoodline.com/2026/08/police-bust-north-seattle-squat-house-seize-rifles-drugs-and-eight-dogs/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">removed 14 people and arrested five</a>. Officers seized four rifles along with stolen e-bikes.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">2. Why empty buildings burn</h2>
+
+            <p>
+              Nationally the picture is the same, only bigger. The National Fire Protection Association's 2018 report <em>Fires in Vacant Buildings</em> estimated that U.S. fire departments responded to an average of 30,200 vacant building fires a year in 2011-2015. Those fires caused an average of 60 civilian deaths and $710 million in direct property damage per year. Half were intentionally set, compared with 10% of structure fires overall, and an estimated 3,310 firefighters a year were injured at them (<a href="https://www.ncdoi.gov/news/press-releases/2018/05/08/office-state-fire-marshal-recognizes-national-arson-awareness-week" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">NFPA figures, summarized by the North Carolina Department of Insurance</a>).
+            </p>
+            <br>
+
+            <p>
+              Arson is only part of it. When Seattle asked for its demolition powers, city officials explained that "without access to safe heating sources, unauthorized occupants have been known to set unsafe fires for warmth inside," as <a href="https://www.theurbanist.org/2024/04/25/seattle-aims-to-tamp-down-vacant-building-fires/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">The Urbanist reported</a>. That's why the next few months matter. Somebody sleeping inside a boarded house in January is going to try to stay warm, and the building usually has no heat and alot of dry junk lying around. People with nowhere warm to go end up in these places, and the building can turn into a trap for them and for the firefighters who go in after them.
+            </p>
+            <br>
+
+            <p>
+              Securing the building does help. An earlier NFPA study covering 2003-2006 found that 57% of fires in unsecured vacant buildings were intentionally set, against 31% in buildings that had been secured. The same report made a point every owner should sit with for a minute: "Often these fires have time to grow before they are discovered and reported" (<a href="https://firerescue1.com/fire-products/press-releases/nfpa-releases-new-report-on-vacant-building-fires-n2yDT4RfJvnTH4ia" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">NFPA release, 2009</a>).
+            </p>
+            <br>
+
+            <p>
+              Inside, it gets worse. Seattle Fire Chief Harold Scoggins said that when buildings stay derelict, firefighters "often observe holes in the floor, missing stairwells, structural instability, and other hazardous conditions." That's why so many of these get fought from outside, the way Tacoma crews started on East 32nd. By the time a building is being fought from the street, there usually isn't much left to save.
+            </p>
+
+            <!-- Supporting image: fire aftermath -->
+            <figure class="my-10">
+              <LazyImage src="/images/vacant-building-fire-aftermath.webp"
+                alt="A vacant two-story wood-frame house in Seattle the morning after a fire, with charred siding above plywood-covered windows, a pried-loose board at a side door, and a fire hose on the wet lawn"
+                class="w-full rounded-lg shadow-lg" width="1600" height="900" loading="lazy" />
+              <figcaption class="text-sm text-gray-600 mt-2 italic text-center">
+                The usual sequence: one board pried loose, weeks of nobody noticing, then a 911 call for smoke. On East 32nd, the house next door lost some siding too.
+              </figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">3. What local codes expect from owners</h2>
+
+            <p>
+              <strong>Seattle.</strong> The Department of Construction and Inspections (SDCI) wants a vacant building kept "secured from unauthorized entry" and out of the weather, with grounds kept clear of junk and overgrown brush (<a href="https://www.seattle.gov/sdci/codes/common-code-questions/vacant-buildings" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">SDCI vacant buildings page</a>, SMC 22.206.200). A building lands in the Vacant Building Monitoring Program after a complaint, including one from SPD or SFD, or simply because the property is in the development process. Developers, take note: if you bought an old house to tear down for townhomes, you may already be in it. Once in, the city inspects every month and charges $271.85 to $542.60 per month for it, depending on condition. Violations start at $150 a day. You get out after three clean monthly inspections in a row. If the city ends up boarding or demolishing the building itself, it bills the owner and can put a lien on the property.
+            </p>
+            <br>
+
+            <p>
+              <strong>Tacoma.</strong> The city handles derelict and substandard buildings through code compliance under its Minimum Building and Structures Code, TMC chapter 2.01. Neighbors report open or derelict buildings through TacomaFirst 311, and the <a href="https://tacoma.gov/government/departments/planning-and-development-services/help-with-graffiti-litter-and-other-code-compliance-services/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Code Compliance team</a> takes it from there. Tacoma's alarm rules matter for vacant property too, more on that in section 7.
+            </p>
+            <br>
+
+            <p>
+              <strong>Pierce County.</strong> The county's <a href="https://www.piercecountywa.gov/7792/Vacant-Property-Maintenance" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">vacant property maintenance page</a> reads like a list of what goes wrong when nobody's watching: trash and junk vehicles, overgrown vegetation, unsecured structures, graffiti, trespassing and even tree theft. Under <a href="https://pierce.county.codes/PCC/17C.80.080" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Pierce County Code chapter 17C.80</a>, an owner whose building is boarded up for future repair has to follow an approved property maintenance plan for the whole time it's boarded, including periodic inspection by the owner or the owner's agent. Boarding generally can't last more than a year without the building official's approval.
+            </p>
+            <br>
+
+            <p>
+              <strong>Statewide.</strong> Washington adopts the International Fire Code as its <a href="https://app.leg.wa.gov/wac/default.aspx?cite=51-54A" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">state fire code</a>. Its vacant premises section (311.2.1) says openings "shall be boarded, locked, blocked or otherwise protected to prevent entry by unauthorized individuals." In other words, an open building is a code problem before it's anything else.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">4. Squatters: what Washington law lets you do</h2>
+
+            <p>
+              Since 2017 Washington has had a faster route than eviction for people who were never tenants. Under <a href="https://app.leg.wa.gov/rcw/default.aspx?cite=9A.52.105" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">RCW 9A.52.105</a>, the owner or an authorized agent signs a declaration under penalty of perjury, on the form set out in RCW 9A.52.115. A peace officer can then remove the people, with or without arrest, and order them to stay off the premises or face arrest for criminal trespass. Among other things, the declaration has to state:
+            </p>
+            <br>
+
+            <ul class="pl-6 space-y-2 mb-6" style="list-style-type: '- ';">
+              <li>the occupants aren't tenants and haven't been tenants, or homeowners on title, at the property within the last twelve months</li>
+              <li>you demanded that they leave and they didn't</li>
+              <li>the premises were not abandoned when they entered</li>
+              <li>the premises weren't open to the public at that time</li>
+            </ul>
+
+            <p>
+              You also acknowledge that a person removed this way can sue you for damages and attorney fees if anything in the declaration is false.
+            </p>
+            <br>
+
+            <p>
+              Two catches. The statute ties the officer's arrest authority to buildings that count as residential real property, so a vacant warehouse or old storefront usually means an ordinary criminal trespass call instead. And the officer must give the occupants a reasonable chance to show evidence that they're lawfully there, as tenants or guests, and has to consider it. An occupant waving a lease, real or not, can slow everything down.
+            </p>
+            <br>
+
+            <p>
+              Now read that "not abandoned" line again. It's the reason dated inspection photos and recorded video matter so much on an empty property. They show the place was being kept up and watched, and they can show when somebody got in. If the person turns out to be a former tenant, this route is closed and you're into an eviction, which is a job for your attorney.
+            </p>
+            <br>
+
+            <p>
+              Lawmakers have talked about going further. <a href="https://app.leg.wa.gov/billsummary?BillNumber=5250&Year=2025" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">SB 5250</a>, "Improving legal processes to deter squatters," was referred to the Senate Law &amp; Justice Committee in January 2025 and retained there for the 2026 session without moving. For now the 2017 law is the tool you have.
+            </p>
+
+            <!-- Supporting image: inspection documentation -->
+            <figure class="my-10">
+              <LazyImage src="/images/vacant-building-inspection-documentation.webp"
+                alt="A property manager in a rain jacket photographing a padlocked hasp on a plywood-covered back door of a vacant commercial building, with an inspection checklist under one arm"
+                class="w-full rounded-lg shadow-lg" width="1600" height="900" loading="lazy" />
+              <figcaption class="text-sm text-gray-600 mt-2 italic text-center">
+                Same door, same angle, every visit, with the date. Boring, and exactly what an adjuster or a police officer will want to see.
+              </figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">5. The insurance clause most owners forget</h2>
+
+            <p>
+              This one costs real money. Commercial property policies built on the standard ISO form carry a vacancy condition. If the building has been vacant for more than 60 consecutive days before a loss, the insurer won't pay for any of these, even when they'd otherwise be covered (<a href="https://www.adjustersinternational.com/pubs/adjusting-today/vacancy-occupancy-clauses-protective-safeguards-endorsements/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Adjusters International</a>):
+            </p>
+            <br>
+
+            <ul class="pl-6 space-y-2 mb-6" style="list-style-type: '- ';">
+              <li>vandalism</li>
+              <li>sprinkler leakage</li>
+              <li>building glass breakage</li>
+              <li>water damage</li>
+              <li>theft or attempted theft</li>
+            </ul>
+
+            <p>
+              For everything else, fire included, the payment drops by 15%. So vandalism and theft, the two things most likely to happen to an empty building, are exactly what you can loose coverage for first.
+            </p>
+            <br>
+
+            <p>
+              "Vacant" is also defined tighter than people expect. For an owner, a building counts as vacant unless at least 31% of its total square footage is rented and used for the tenant's customary operations, or used by the owner for its own. A strip center that's down to one small tenant can qualify.
+            </p>
+            <br>
+
+            <p>
+              Washington courts enforce these clauses as written. In <em>Lui v. Essex Insurance Co.</em> (2016), the owners evicted their tenant and didn't tell the insurer the building was empty. A sprinkler pipe froze and burst. Essex paid $293,598.05 before learning the building had been unoccupied for almost 60 days, then denied further coverage, because the policy's vacancy endorsement limited covered causes of loss from the first day of vacancy. The Washington Supreme Court ruled for the insurer, unanimously (<a href="https://www.cozen.com/news-resources/publications/2016/unanimous-washington-supreme-court-no-coverage-for-water-damage-to-vacant-building" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Cozen O'Connor summary</a>).
+            </p>
+            <br>
+
+            <p>
+              So call your agent the week building empties out. Ask whether the policy has a vacancy clause and how it defines vacant. Then ask what security the carrier wants to see, and read for a protective safeguards endorsement, since those can make coverage depend on things like a working alarm. A vacancy permit endorsement or a separate vacant-building policy may be worth pricing too. Then winterize the plumbing or keep enough heat on. A frozen pipe in December is the kind of claim that sinks you.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">6. A first-month plan for an empty building</h2>
+
+            <p>
+              Most of this costs little. The point is to do it in the first few weeks, before day 60 and before the building gets a reputation on the street.
+            </p>
+            <br>
+
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-6">
+              <ul class="pl-6 space-y-3 text-blue-900" style="list-style-type: '- ';">
+                <li>Call your insurance agent before the building empties if you can, and by day 60 at the latest. Get the vacancy terms in writing.</li>
+                <li>Winterize the water, or keep enough heat to protect pipes and any sprinkler system.</li>
+                <li>Close every opening. Doors and ground-floor windows first, then anything someone can reach from a fence or a dumpster.</li>
+                <li>Get the junk out. Old mattresses and trash are fuel, and code inspectors look for them too.</li>
+                <li>Fence where you can, and post No Trespassing signs where people actually approach, usually the alley and the back door.</li>
+                <li>Pick an inspection schedule and stick to it. Photograph the same spots every visit, with the date.</li>
+                <li>Give one neighbor on each side your phone number. They'll notice things before anyone else does.</li>
+                <li>Decide how you'll find out about a break-in at 2 a.m., and who is going to check on it.</li>
+              </ul>
+            </div>
+
+            <p>
+              That last item is the one people skip. Plywood and a padlock definately slow people down. They don't tell you anything.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">7. Where cameras help on a vacant property, and where they don't</h2>
+
+            <p>
+              The gap on a vacant property is time. NFPA's line about fires having time to grow describes it exactly. Nobody's home to notice the first night somebody pries a sheet loose, so by the time a neighbor calls 911 about smoke, a trespass has already turned into a fire.
+            </p>
+            <br>
+
+            <p>
+              Most vacant buildings add one more problem: the power is off, or about to be. A solar trailer doesn't need it. Ours run on solar panels and a battery bank, with an optional backup generator for long stretches of winter overcast, and they connect over 4G/5G cellular with automatic failover. Nothing gets wired into building you might be demolishing next spring. Our <a href="/trailer-standalone-hybrid-power-architecture" class="text-blue-600 hover:underline">power system page</a> covers how that holds up through a Puget Sound December.
+            </p>
+            <br>
+
+            <p>
+              When somebody walks the back of an empty building at 2 a.m., the AI alerts flag a person on camera and push a notification with a severity level. Whoever is watching pulls up the live view. From there the options are simple. Optional LED floodlights and a warning through the optional PA speaker send most people back over the fence. If they stay, you call 911 and describe what you're watching.
+            </p>
+            <br>
+
+            <p>
+              That matters more now than it used to. Since October 1, 2024, Seattle police respond to alarm-company calls only with supporting evidence such as video or an eyewitness, and sensor activations alone don't qualify. Tacoma requires alarm companies to verify before calling police, unless live video or audio shows a crime in progress. We went through both policies in our <a href="/blog/washington-security-camera-laws-audio-license-plate-readers-2026" class="text-blue-600 hover:underline">Washington security camera laws guide</a>, along with what you can and can't do with audio.
+            </p>
+            <br>
+
+            <p>
+              The recording does a second job. By default the trailer's recorder keeps two weeks of motion-only history on a rolling loop, and frames are watermarked and encrypted. On a vacant property that recording is your proof the place was watched and kept up, and it can show the date somebody first got in. That's the kind of question both the squatter declaration and an insurance adjuster will raise. Export clips the morning after anything happens, though, because the archive loops.
+            </p>
+
+            <!-- Supporting image: trailer at night at vacant commercial building -->
+            <figure class="my-10">
+              <LazyImage src="/images/vacant-commercial-building-trailer-night.webp"
+                alt="A solar-powered CCTV Trailer surveillance unit at night in the rain, parked at the corner of an empty parking lot beside a closed, plywood-covered former restaurant building in a Seattle neighborhood, with the Space Needle in the distance"
+                class="w-full rounded-lg shadow-lg" width="1600" height="900" loading="lazy" />
+              <figcaption class="text-sm text-gray-600 mt-2 italic text-center">
+                Parked on the diagonal, one mast covers two sides of the building. No building power needed and nothing to tear out when the demolition crew shows up.
+              </figcaption>
+            </figure>
+
+            <h3 class="text-2xl font-semibold mb-4">A few setup lessons from empty buildings</h3>
+
+            <ul class="pl-6 space-y-2 mb-6" style="list-style-type: '- ';">
+              <li>Park at a corner, on the diagonal, so one mast sees two sides. A long building may need a second trailer or a camera aimed down the far wall.</li>
+              <li>Watch the approaches people really use. On most vacant houses that's the alley and the back door. A front porch facing a busy street gets less traffic than you'd think.</li>
+              <li>Set PTZ presets so the cameras sweep your building and leave neighbors' windows and yards out of it.</li>
+              <li>Keep the trailer visible from the street. Half the value is somebody deciding to try a different building.</li>
+            </ul>
+
+            <p>
+              Where cameras don't help is inside. A trailer watches the outside of the building and the lot around it. If people are already living inside, the camera documents it, but getting them out is the RCW 9A.52.105 process or an eviction. That's why the first weeks matter so much. Most of the time their is nobody watching an empty building during exactly the hours that count.
+            </p>
+            <br>
+
+            <p>
+              On cost: for a building that'll sit empty for a few months while permits or a sale work through, a monthly rental usually makes the most sense. Our standard monthly rate runs $8,000 to $10,000 depending on setup, with delivery and setup included within 30 miles of Tacoma (see <a href="/pricing" class="text-blue-600 hover:underline">pricing</a>). Weigh that against a fire claim cut by 15% after day 60, or a city-ordered demolition billed back to you.
+            </p>
+          </section>
+
+          <!-- At-a-glance comparison -->
+          <div class="my-12">
+            <ComparisonTable
+              title="Ways to Protect a Vacant Building"
+              description="How common approaches compare on the things that matter for an empty building in the Puget Sound"
+              headers={["Boarding and fencing only", "Owner inspections", "Security patrol", "Mobile surveillance trailer"]}
+              rows={[
+                {
+                  feature: "How you hear about a break-in",
+                  values: ["From a neighbor or the fire department", "At the next visit, days or weeks later", "Only if the patrol is there at the time", "Phone alert when a person is detected, with live video"]
+                },
+                {
+                  feature: "Needs building power",
+                  values: ["No", "No", "No", "No: solar and battery, optional generator"]
+                },
+                {
+                  feature: "Evidence you end up with",
+                  values: ["None", "Dated photos", "Patrol logs", "Recorded, timestamped video"]
+                },
+                {
+                  feature: "Can interrupt an entry in progress",
+                  values: ["Slows it down", "No", "Sometimes", "Floodlights and PA warning (optional), plus a verified 911 call"]
+                },
+                {
+                  feature: "Required anyway",
+                  values: [{ text: "Closing openings is, by code", highlight: true }, { text: "Yes in Pierce County while a building is boarded", highlight: true }, "No", "No"]
+                }
+              ]}
+            />
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">Frequently Asked Questions</h2>
+            <div class="space-y-6">
+              {faqs.map((faq) => (
+                <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h3 class="text-xl font-semibold mb-3">{faq.question}</h3>
+                  <p class="text-gray-700 leading-relaxed">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">The Bottom Line</h2>
+
+            <p>
+              An empty building in Seattle or Tacoma can go wrong a few different ways, and nearly all of them start the same: somebody gets in, and nobody knows for a while. The fire department will notice eventually, and so will your insurer. Close the building up properly and tell your agent before day 60. Clear out the junk. Keep dated records. Then make sure you're the first one to know when someone gets in, long before anyone dials 911 about smoke.
+            </p>
+            <br>
+
+            <p>
+              If you've got a vacant house or commercial building in Pierce, King, Snohomish or Kitsap County and want a second set of eyes on it, we're glad to walk it with you and tell you straight whether a trailer fits. <a href="/contact" class="text-blue-600 hover:underline font-semibold">Get in touch</a> or call us at <a href="tel:2536832288" class="text-blue-600 hover:underline font-semibold">(253) 683-2288</a>. We cover <a href="/tacoma-security-trailer" class="text-blue-600 hover:underline">Tacoma</a> and <a href="/seattle-surveillance-rental" class="text-blue-600 hover:underline">Seattle</a> and everything in between.
+            </p>
+          </section>
+
+          <!-- About Section -->
+          <div class="bg-gray-50 border border-gray-200 rounded-lg p-8 mt-12">
+            <h3 class="text-xl font-bold mb-4">About CCTV Trailer</h3>
+            <p class="text-gray-700 mb-4">
+              CCTV Trailer provides mobile surveillance across the Puget Sound region from Tacoma, with same-day deployment available throughout Pierce, King, Snohomish, and Kitsap counties. Our solar-powered trailers carry PTZ cameras with AI-powered alerts and 4G/5G connectivity with automatic failover. Optional PA two-way audio, license plate reading, radar, and LED floodlights get added site by site, only where they fit.
+            </p>
+            <p class="text-gray-700">
+              We work with developers, property managers, general contractors and public agencies that need coverage without the cost and timeline of permanent camera installations. <a href="/about" class="text-blue-600 hover:underline">Learn more about our team and technology</a>.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <CTASection
+      title="Got a Building Sitting Empty?"
+      description="Free site walk. We'll look at how people get in and where cameras should go, then tell you honestly whether a trailer makes sense for how long the building will sit. Same-day deployment available across Pierce, King, Snohomish, and Kitsap counties."
+      features={["✓ No Building Power Needed", "✓ Monthly Rentals for Long Vacancies"]}
+    />
+
+    <!-- Related Pages -->
+    <RelatedPages pages={relatedPages} />
+
+  <AuthorBio />
+
+  </article>
+
+  <Footer />
+</Layout>
