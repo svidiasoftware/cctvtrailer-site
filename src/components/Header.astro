@@ -79,7 +79,7 @@ const serviceAreasActive = locationGroups.some((g) =>
                 </div>
               ))}
               <div class="service-areas-footer">
-                <a href="/locations" class="text-sm text-blue-400 hover:text-blue-300">All Puget Sound service areas →</a>
+                <a href="/locations" class="text-sm text-blue-400 hover:text-blue-300">All Puget Sound service areas ></a>
               </div>
             </div>
           </div>
@@ -119,7 +119,7 @@ const serviceAreasActive = locationGroups.some((g) =>
               ))}
             </div>
           ))}
-          <a href="/locations" class="mobile-accordion-link mobile-accordion-hub">All Puget Sound service areas →</a>
+          <a href="/locations" class="mobile-accordion-link mobile-accordion-hub">All Puget Sound service areas ></a>
         </div>
       </div>
 
@@ -342,7 +342,7 @@ const serviceAreasActive = locationGroups.some((g) =>
     });
   }
 
-  // Desktop dropdown — keyboard access (Enter/Space opens, Esc closes)
+  // Desktop dropdown - keyboard access (Enter/Space opens, Esc closes)
   document.querySelectorAll('.service-areas-dropdown').forEach((dd) => {
     const trigger = dd.querySelector('.service-areas-trigger');
     if (!trigger) return;

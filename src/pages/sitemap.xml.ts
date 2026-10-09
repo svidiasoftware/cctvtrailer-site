@@ -10,7 +10,7 @@ import path from 'node:path';
 // file's mtime, so sitemap entries move automatically when content is edited.
 //
 // When a new page is added under src/pages/ (that isn't in `excludePaths`),
-// it is included in the sitemap on next build — no manual sitemap edits
+// it is included in the sitemap on next build - no manual sitemap edits
 // required. Per CLAUDE.md's "keep sitemap updated" rule.
 //
 // If you need to override priority/changefreq for a route, add it to
@@ -96,7 +96,7 @@ const overrides: Record<string, Override> = {
   '/video-technology': { priority: '0.8', changefreq: 'monthly' },
   '/security-cost-calculator': { priority: '0.8', changefreq: 'monthly' },
 
-  // /technical-specifications has an embedded YouTube video → video sitemap
+  // /technical-specifications has an embedded YouTube video > video sitemap
   '/technical-specifications': {
     priority: '0.9',
     changefreq: 'monthly',

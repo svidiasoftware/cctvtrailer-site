@@ -7,8 +7,8 @@ import BreadcrumbSchema from '../../../components/BreadcrumbSchema.astro';
 const techArticleSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "headline": "Constrained-Link Remote Viewing — Methodology",
-  "description": "May 2026 methodology for measuring delivered frame rate and effective wire bandwidth of a CCTV trailer remote viewer on constrained cellular-equivalent networks. Three platforms — Chrome browser (DevTools throttling), iOS native app (iPhone Simulator), Android native app (emulator) — across five tiers from Slow 3G to uncapped. Dynamic intersection scene and static parking scene; image quality stayed constant across every tier, only frame rate degraded.",
+  "headline": "Constrained-Link Remote Viewing - Methodology",
+  "description": "May 2026 methodology for measuring delivered frame rate and effective wire bandwidth of a CCTV trailer remote viewer on constrained cellular-equivalent networks. Three platforms - Chrome browser (DevTools throttling), iOS native app (iPhone Simulator), Android native app (emulator) - across five tiers from Slow 3G to uncapped. Dynamic intersection scene and static parking scene; image quality stayed constant across every tier, only frame rate degraded.",
   "datePublished": "2026-05-22",
   "author": { "@type": "Organization", "name": "CCTV Trailer" },
   "publisher": {
@@ -32,7 +32,7 @@ const breadcrumbItems = [
 ---
 
 <Layout
-  title="Methodology — Constrained-Link Remote Viewing (May 2026) | CCTV Trailer"
+  title="Methodology - Constrained-Link Remote Viewing (May 2026) | CCTV Trailer"
   description="Methodology for the May 2026 constrained-link remote-viewing benchmarks: throttled browser viewer + iOS / Android native apps over emulated slow networks."
   schema={techArticleSchema}
 >
@@ -46,7 +46,7 @@ const breadcrumbItems = [
           <span class="mx-2">/</span>
           <span>Constrained-link remote viewing methodology</span>
         </nav>
-        <h1 class="text-3xl md:text-4xl font-bold mb-2">Constrained-Link Remote Viewing &mdash; Methodology</h1>
+        <h1 class="text-3xl md:text-4xl font-bold mb-2">Constrained-Link Remote Viewing - Methodology</h1>
         <p class="text-sm text-gray-600 mb-8"><time datetime="2026-05-22">May 2026</time> &middot; bundle 03 &middot; three platforms</p>
 
         <div class="prose prose-blue max-w-none">
@@ -55,8 +55,8 @@ const breadcrumbItems = [
 
           <h2>Cameras and scenes</h2>
           <ul>
-            <li><strong>Dynamic scene</strong> &mdash; Samsung PTZ outdoor camera, 1920&times;1080 native, intersection with passing vehicles. Continuous block-delta churn.</li>
-            <li><strong>Static scene</strong> &mdash; fixed outdoor camera, 2688&times;1520 native, parking-lot view with low scene change. Tests the codec's idle floor.</li>
+            <li><strong>Dynamic scene</strong> - Samsung PTZ outdoor camera, 1920&times;1080 native, intersection with passing vehicles. Continuous block-delta churn.</li>
+            <li><strong>Static scene</strong> - fixed outdoor camera, 2688&times;1520 native, parking-lot view with low scene change. Tests the codec's idle floor.</li>
           </ul>
           <p>Camera operating labels and deployment locations are excluded from this published methodology.</p>
 
@@ -71,14 +71,14 @@ const breadcrumbItems = [
               <tr><td class="py-1 pr-3 font-semibold">E</td><td class="py-1 pr-3">unlimited / unlimited / 0 ms</td><td class="py-1">no emulation</td></tr>
             </tbody>
           </table>
-          <p>The mobile sweeps applied the idealized caps directly through a userspace TCP throttling proxy (token bucket + injected RTT) because Chrome's named presets are coarser than the playbook target. macOS pf+dummynet kernel throttling was tested and proven empirically non-functional on the run host (rules matched, but bandwidth was not enforced) &mdash; the userspace proxy is the wire and its byte counter is the ground truth.</p>
+          <p>The mobile sweeps applied the idealized caps directly through a userspace TCP throttling proxy (token bucket + injected RTT) because Chrome's named presets are coarser than the playbook target. macOS pf+dummynet kernel throttling was tested and proven empirically non-functional on the run host (rules matched, but bandwidth was not enforced) - the userspace proxy is the wire and its byte counter is the ground truth.</p>
 
           <h2>Per-window protocol</h2>
-          <p>For each (camera, tier) pair, in order E &rarr; A &rarr; B &rarr; C &rarr; D per camera:</p>
+          <p>For each (camera, tier) pair, in order E > A > B > C > D per camera:</p>
           <ol>
             <li>Apply throttling.</li>
             <li>Wait 30 s for the FDC codec at the proxy + client buffer to settle on a steady-state delivery rate.</li>
-            <li>Measure for 60 s &mdash; counting WebSocket frames (web) or proxy-observed frame deliveries (mobile).</li>
+            <li>Measure for 60 s - counting WebSocket frames (web) or proxy-observed frame deliveries (mobile).</li>
             <li>Take a screenshot at the end of the measurement window.</li>
           </ol>
 
@@ -128,7 +128,7 @@ const breadcrumbItems = [
             <li><strong>Per-tier numbers are point-in-time</strong>, not averaged across multiple runs. Outdoor intersection scene drift across tiers contributed some of the mobile-platform variance.</li>
           </ul>
 
-          <p class="mt-8"><a href="/technical-specifications#remote-bandwidth" class="text-blue-600 hover:underline">&larr; Back to constrained-link table on /technical-specifications</a></p>
+          <p class="mt-8"><a href="/technical-specifications#remote-bandwidth" class="text-blue-600 hover:underline">&lt; Back to constrained-link table on /technical-specifications</a></p>
         </div>
       </div>
     </section>

@@ -180,7 +180,7 @@ const kentProfile: CityProfile = {
   region: 'Kent Valley',
   pageTitle: 'Kent Security Camera Rental | Mobile Surveillance Kent Valley WA',
   pageDescription:
-    "Security camera trailer rentals across the Kent Valley warehouse corridor — Boeing suppliers, REI distribution, intermodal yards. Same-day deployment from Tacoma HQ: (253) 683-2288",
+    "Security camera trailer rentals across the Kent Valley warehouse corridor - Boeing suppliers, REI distribution, intermodal yards. Same-day deployment from Tacoma HQ: (253) 683-2288",
 
   theme: {
     heroGradient: 'bg-gradient-to-r from-purple-800 to-purple-900',
@@ -194,11 +194,11 @@ const kentProfile: CityProfile = {
 
   hero: {
     eyebrow: 'King County · Kent Valley',
-    h1: 'Kent Valley Warehouse Surveillance — Mobile Camera Trailer Rentals',
+    h1: 'Kent Valley Warehouse Surveillance - Mobile Camera Trailer Rentals',
     leadHtml:
-      "<strong>Protecting the Pacific Northwest's largest warehouse cluster.</strong> Mobile camera trailers deployed across Kent Valley distribution centers, intermodal yards, and Boeing supplier facilities — same-day rollout from our Tacoma HQ.",
+      "<strong>Protecting the Pacific Northwest's largest warehouse cluster.</strong> Mobile camera trailers deployed across Kent Valley distribution centers, intermodal yards, and Boeing supplier facilities - same-day rollout from our Tacoma HQ.",
     ctaPrimaryText: 'Get Kent Quote',
-    bullets: ["⚡ ~30 minutes from Tacoma via I-5 / SR-167 — same-day delivery available"],
+    bullets: ["⚡ ~30 minutes from Tacoma via I-5 / SR-167 - same-day delivery available"],
     backgroundImage: {
       src: '/images/cities/kent-hero.webp',
       alt: 'CCTV surveillance trailer parked at the perimeter of a Kent Valley warehouse distribution center at dusk, loading docks lit by overhead lights',
@@ -208,16 +208,16 @@ const kentProfile: CityProfile = {
   storyAnchor: {
     h2: 'Why Kent Valley Has a Different Security Problem',
     paragraphsHtml: [
-      "Kent Valley is the warehouse capital of the Pacific Northwest — more than 70 million square feet of distribution, fulfillment, and light-manufacturing footprint sandwiched between the Green River and SR-167. The corridor stretches from Boeing's longest-tenured supplier ecosystem in the north (Renton/Tukwila edge) down through the REI distribution hub off South 212th, the BNSF intermodal yard, and out toward Auburn's Green River Valley industrial parks.",
+      "Kent Valley is the warehouse capital of the Pacific Northwest - more than 70 million square feet of distribution, fulfillment, and light-manufacturing footprint sandwiched between the Green River and SR-167. The corridor stretches from Boeing's longest-tenured supplier ecosystem in the north (Renton/Tukwila edge) down through the REI distribution hub off South 212th, the BNSF intermodal yard, and out toward Auburn's Green River Valley industrial parks.",
       "That density creates a security profile most cities never see: <strong>multi-acre lots with thousands of feet of perimeter fencing</strong>, single-shift weekend gaps when entire campuses sit unattended, and a steady flow of high-value freight (electronics, sporting goods, automotive parts, aerospace components) moving through the I-5/SR-167 corridor day and night. A fixed CCTV install on a property like this can run six figures, with months of permitting and conduit work before a single camera goes live.",
       "Mobile surveillance trailers solve a different problem than a fixed install: we deploy in a single afternoon, cover the most active perimeter of a 200,000+ sq ft facility from one elevated pole, and relocate when the threat profile shifts (new construction phase, seasonal inventory peak, post-incident hardening). For property managers running multiple Kent Valley buildings, that flexibility is the whole point.",
     ],
   },
 
   crimeStats: {
-    h2: 'Kent Crime Trends — Public Data 2024',
+    h2: 'Kent Crime Trends - Public Data 2024',
     intro:
-      'Kent Police Department publishes year-over-year crime statistics for the city. The 2024 numbers show real progress on the headline categories that affect logistics tenants — vehicle theft and robbery — but a worrying climb in assault that property managers in busy retail/employment hubs need to factor into security planning.',
+      'Kent Police Department publishes year-over-year crime statistics for the city. The 2024 numbers show real progress on the headline categories that affect logistics tenants - vehicle theft and robbery - but a worrying climb in assault that property managers in busy retail/employment hubs need to factor into security planning.',
     stats: [
       {
         value: '27%',
@@ -254,7 +254,7 @@ const kentProfile: CityProfile = {
       },
     ],
     calloutHtml:
-      "Mixed signal for 2024: <strong>property crime trending down</strong>, but personal-safety incidents climbing. For employers running multi-shift warehouse operations, that means lit, monitored parking and end-of-shift overwatch are no longer optional — they're a workplace-safety expectation.",
+      "Mixed signal for 2024: <strong>property crime trending down</strong>, but personal-safety incidents climbing. For employers running multi-shift warehouse operations, that means lit, monitored parking and end-of-shift overwatch are no longer optional - they're a workplace-safety expectation.",
   },
 
   serviceAreas: {
@@ -312,12 +312,12 @@ const kentProfile: CityProfile = {
       {
         icon: "\u{1F3ED}",
         title: 'Built for Industrial Scale',
-        body: 'Pole-mount 20+ ft cameras with PTZ optics designed for multi-acre warehouse yards — not retrofit consumer gear.',
+        body: 'Pole-mount 20+ ft cameras with PTZ optics designed for multi-acre warehouse yards - not retrofit consumer gear.',
       },
       {
         icon: "\u{1F69A}",
         title: '30 Minutes from Tacoma HQ',
-        body: 'Our headquarters at 222 E 26th St is 20 miles south of Kent on I-5. Same-day deployment is available — call (253) 683-2288 to check availability.',
+        body: 'Our headquarters at 222 E 26th St is 20 miles south of Kent on I-5. Same-day deployment is available - call (253) 683-2288 to check availability.',
       },
       {
         icon: "⏰",
@@ -328,14 +328,14 @@ const kentProfile: CityProfile = {
   },
 
   faq: {
-    h2: 'Kent Valley Surveillance — Frequently Asked Questions',
+    h2: 'Kent Valley Surveillance - Frequently Asked Questions',
     items: [
       {
         question: 'How fast can a surveillance trailer be deployed to a Kent Valley warehouse?',
         answerText:
-          "Deployments to Kent typically run same-day or next-day from our Tacoma HQ at 222 E 26th St — about 20 miles south on I-5/SR-167. Same-day emergency deployment for active-incident response is available. Setup takes 20-30 minutes once the trailer is on site. Call (253) 683-2288 to check availability.",
+          "Deployments to Kent typically run same-day or next-day from our Tacoma HQ at 222 E 26th St - about 20 miles south on I-5/SR-167. Same-day emergency deployment for active-incident response is available. Setup takes 20-30 minutes once the trailer is on site. Call (253) 683-2288 to check availability.",
         answerHtml:
-          "Deployments to Kent typically run same-day or next-day from our Tacoma HQ at 222 E 26th St — about 20 miles south on I-5/SR-167. Same-day emergency deployment for active-incident response is available. Setup takes 20-30 minutes once the trailer is on site. Call <a href=\"tel:2536832288\" class=\"text-purple-700 font-semibold\">(253) 683-2288</a> to check availability.",
+          "Deployments to Kent typically run same-day or next-day from our Tacoma HQ at 222 E 26th St - about 20 miles south on I-5/SR-167. Same-day emergency deployment for active-incident response is available. Setup takes 20-30 minutes once the trailer is on site. Call <a href=\"tel:2536832288\" class=\"text-purple-700 font-semibold\">(253) 683-2288</a> to check availability.",
       },
       {
         question: 'Do you serve the Boeing supplier corridor and other access-controlled industrial parks in Kent?',
@@ -345,17 +345,17 @@ const kentProfile: CityProfile = {
       {
         question: "What's the right camera-trailer count for a 200,000+ sq ft warehouse?",
         answerText:
-          "One pole-mounted PTZ trailer can cover the active perimeter of a single 200,000-300,000 sq ft warehouse if positioned correctly — typically at the dominant fence-line or the main loading-dock cluster. Properties beyond that size, or campuses with multiple buildings and separated parking, usually need two units to avoid blind spots.",
+          "One pole-mounted PTZ trailer can cover the active perimeter of a single 200,000-300,000 sq ft warehouse if positioned correctly - typically at the dominant fence-line or the main loading-dock cluster. Properties beyond that size, or campuses with multiple buildings and separated parking, usually need two units to avoid blind spots.",
       },
       {
         question: 'Can you cover an intermodal yard or BNSF-adjacent container facility?',
         answerText:
-          "Yes — open container yards are one of the use cases mobile trailers are best suited for. Fixed installs struggle with the dynamic container topology (stacks move daily). A relocatable trailer with a PTZ optic and license-plate-read software handles entry/exit lanes, the lay-down area, and any portion of the rail-adjacent fence-line that the site security team flags.",
+          "Yes - open container yards are one of the use cases mobile trailers are best suited for. Fixed installs struggle with the dynamic container topology (stacks move daily). A relocatable trailer with a PTZ optic and license-plate-read software handles entry/exit lanes, the lay-down area, and any portion of the rail-adjacent fence-line that the site security team flags.",
       },
       {
         question: 'How do you handle Maple Valley, Covington, and the unincorporated areas outside Kent city limits?',
         answerText:
-          "We serve all of South King County, including Maple Valley, Covington, Black Diamond, and the unincorporated stretch between Kent and Auburn. Same Tacoma-HQ team, with same-day delivery available — call (253) 683-2288 for a quote on your property.",
+          "We serve all of South King County, including Maple Valley, Covington, Black Diamond, and the unincorporated stretch between Kent and Auburn. Same Tacoma-HQ team, with same-day delivery available - call (253) 683-2288 for a quote on your property.",
       },
       {
         question: 'What does a Kent Valley security trailer rental cost?',
@@ -400,12 +400,12 @@ const kentProfile: CityProfile = {
     {
       title: 'Auburn Manufacturing & Logistics Security',
       href: '/auburn-manufacturing-security',
-      description: 'Green River Valley industrial corridor coverage — 8 miles south of Kent.',
+      description: 'Green River Valley industrial corridor coverage - 8 miles south of Kent.',
     },
     {
       title: 'Federal Way Surveillance',
       href: '/federal-way-surveillance',
-      description: 'Pacific Hwy S retail corridor — 10 miles north of Kent.',
+      description: 'Pacific Hwy S retail corridor - 10 miles north of Kent.',
     },
     {
       title: 'Construction Site Security Solutions',

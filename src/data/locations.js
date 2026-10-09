@@ -1,6 +1,6 @@
 // Canonical list of Puget Sound service-area pages.
 // Used by the Header dropdown, Footer column, /locations hub, sitemap, and
-// LocalBusiness schemas. Keep this file as the single source of truth — when
+// LocalBusiness schemas. Keep this file as the single source of truth - when
 // a new city page is added, add it here and every surface updates.
 //
 // Groups are ordered by population density × click value (Pierce Co. first
@@ -17,17 +17,17 @@ export const locationGroups = [
         angle: "Citywide mobile surveillance trailer rental",
       },
       {
-        city: "Tacoma — Construction",
+        city: "Tacoma - Construction",
         href: "/tacoma-construction-site-security",
         angle: "Active Tacoma construction site security",
       },
       {
-        city: "Tacoma — Auto Dealers",
+        city: "Tacoma - Auto Dealers",
         href: "/tacoma-auto-dealer-security",
         angle: "Dealership lot + inventory surveillance",
       },
       {
-        city: "Tacoma — Retail & Parking",
+        city: "Tacoma - Retail & Parking",
         href: "/tacoma-retail-parking-lot-security",
         angle: "Retail center + parking-lot deterrence",
       },
@@ -53,12 +53,12 @@ export const locationGroups = [
     slug: "king-county",
     cities: [
       {
-        city: "Seattle — Surveillance Rental",
+        city: "Seattle - Surveillance Rental",
         href: "/seattle-surveillance-rental",
         angle: "Citywide mobile surveillance rental",
       },
       {
-        city: "Seattle — Construction",
+        city: "Seattle - Construction",
         href: "/seattle-construction-security",
         angle: "Light-rail, high-rise & infill construction",
       },

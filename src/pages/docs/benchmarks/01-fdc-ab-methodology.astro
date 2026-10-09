@@ -7,7 +7,7 @@ import BreadcrumbSchema from '../../../components/BreadcrumbSchema.astro';
 const techArticleSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "headline": "FDC vs x264 / x265 — Codec A/B Methodology",
+  "headline": "FDC vs x264 / x265 - Codec A/B Methodology",
   "description": "First-party May 2026 codec A/B benchmark methodology: FDC (Flexible Delta Compression) vs x264 CRF 23 vs x265 CRF 28 on a 10-minute 2688×1520 outdoor clip. SSIM/PSNR measured in 4:2:0 against a once-decoded YUV reference. FDC archive footprint was 54% of x264 CRF 23 and 79% of x265 CRF 28 on this clip.",
   "datePublished": "2026-05-22",
   "author": { "@type": "Organization", "name": "CCTV Trailer" },
@@ -17,7 +17,7 @@ const techArticleSchema = JSON.stringify({
     "logo": { "@type": "ImageObject", "url": "https://www.cctvtrailer.com/images/cctv-trailer-logo.png", "width": 512, "height": 512 }
   },
   "about": [
-    { "@type": "Thing", "name": "FDC (Flexible Delta Compression)", "description": "S-VIDIA's proprietary video codec — block-delta motion encoding at 8×8-pixel granularity, watermarked + encrypted frames, no hardware compression." },
+    { "@type": "Thing", "name": "FDC (Flexible Delta Compression)", "description": "S-VIDIA's proprietary video codec - block-delta motion encoding at 8×8-pixel granularity, watermarked + encrypted frames, no hardware compression." },
     { "@type": "Thing", "name": "Video codec benchmarking", "description": "Controlled A/B encode of one source clip across multiple codecs with SSIM, PSNR, and file-size measurement." }
   ],
   "isPartOf": { "@type": "WebPage", "url": "https://www.cctvtrailer.com/technical-specifications" },
@@ -32,7 +32,7 @@ const breadcrumbItems = [
 ---
 
 <Layout
-  title="Methodology — FDC vs x264 / x265 codec A/B (May 2026) | CCTV Trailer"
+  title="Methodology - FDC vs x264 / x265 codec A/B (May 2026) | CCTV Trailer"
   description="Methodology for the May 2026 first-party A/B encoding benchmark comparing FDC (Flexible Delta Compression) against x264 CRF 23 and x265 CRF 28 on a 10-minute outdoor clip."
   schema={techArticleSchema}
 >
@@ -46,12 +46,12 @@ const breadcrumbItems = [
           <span class="mx-2">/</span>
           <span>FDC codec A/B methodology</span>
         </nav>
-        <h1 class="text-3xl md:text-4xl font-bold mb-2">FDC vs x264 / x265 — Codec A/B Methodology</h1>
+        <h1 class="text-3xl md:text-4xl font-bold mb-2">FDC vs x264 / x265 - Codec A/B Methodology</h1>
         <p class="text-sm text-gray-600 mb-8"><time datetime="2026-05-22">May 2026</time> &middot; first-party measurement &middot; bundle 01</p>
 
         <div class="prose prose-blue max-w-none">
           <h2>What this measures</h2>
-          <p>A single 10-minute clip captured directly from one outdoor camera, encoded three different ways, with file sizes and reconstructed-frame fidelity reported per codec. The FDC arm runs the <strong>production S-VIDIA NVR pipeline</strong> &mdash; motion detection followed by motion-gated encoding &mdash; using the FDC reference encoder's <code>libcommon</code> defaults verbatim.</p>
+          <p>A single 10-minute clip captured directly from one outdoor camera, encoded three different ways, with file sizes and reconstructed-frame fidelity reported per codec. The FDC arm runs the <strong>production S-VIDIA NVR pipeline</strong> - motion detection followed by motion-gated encoding - using the FDC reference encoder's <code>libcommon</code> defaults verbatim.</p>
 
           <h2>Source clip</h2>
           <table class="w-full text-left text-sm border-collapse">
@@ -68,9 +68,9 @@ const breadcrumbItems = [
           <p class="text-sm text-gray-700"><strong>Source camera:</strong> lab / dev camera (Samsung ONVIF Profile S). Not a deployed customer-site camera.</p>
 
           <h2>Fairness boundary</h2>
-          <p>All codecs encode from a <strong>once-decoded YUV 4:2:0 reference</strong> derived from the camera's H.264 RTSP stream. SSIM and PSNR are measured in 4:2:0 space against that reference, <strong>not</strong> against an uncompressed ground truth &mdash; the camera itself never emits uncompressed video.</p>
-          <p>x264 and x265 read the YUV 4:2:0 reference directly. The FDC arm requires YUY2 (4:2:2) input, so its source is a deterministic 4:2:0 &rarr; 4:2:2 chroma-upsample of the same reference. The FDC roundtrip is then decoded back to YUY2 and re-converted to 4:2:0 before measurement, so all three codecs are graded in the same colour space.</p>
-          <p>The FDC encoder is configured with the <strong>production motion gate ON</strong> &mdash; the same configuration deployed S-VIDIA NVRs run. On no-motion frames the encoder emits a 32-byte skip marker; the decoder repeats the previous good decoded frame at that index so the output stream stays time-aligned with the source for SSIM/PSNR. This compounds two effects in the file-size number &mdash; the codec itself and the motion-only-archive strategy &mdash; but that is <strong>how the product actually consumes disk in the field</strong>, which is the question the benchmark is built to answer. Because this clip ran at 100% motion, the motion-gate layer contributed nothing here; the savings shown reflect codec mechanics alone.</p>
+          <p>All codecs encode from a <strong>once-decoded YUV 4:2:0 reference</strong> derived from the camera's H.264 RTSP stream. SSIM and PSNR are measured in 4:2:0 space against that reference, <strong>not</strong> against an uncompressed ground truth - the camera itself never emits uncompressed video.</p>
+          <p>x264 and x265 read the YUV 4:2:0 reference directly. The FDC arm requires YUY2 (4:2:2) input, so its source is a deterministic 4:2:0 > 4:2:2 chroma-upsample of the same reference. The FDC roundtrip is then decoded back to YUY2 and re-converted to 4:2:0 before measurement, so all three codecs are graded in the same colour space.</p>
+          <p>The FDC encoder is configured with the <strong>production motion gate ON</strong> - the same configuration deployed S-VIDIA NVRs run. On no-motion frames the encoder emits a 32-byte skip marker; the decoder repeats the previous good decoded frame at that index so the output stream stays time-aligned with the source for SSIM/PSNR. This compounds two effects in the file-size number - the codec itself and the motion-only-archive strategy - but that is <strong>how the product actually consumes disk in the field</strong>, which is the question the benchmark is built to answer. Because this clip ran at 100% motion, the motion-gate layer contributed nothing here; the savings shown reflect codec mechanics alone.</p>
 
           <h2>Codec parameters</h2>
           <table class="w-full text-left text-sm border-collapse">
@@ -85,7 +85,7 @@ const breadcrumbItems = [
           <h2>Pipeline</h2>
           <ol>
             <li>Capture <code>capture.mkv</code> from the source camera; decode once to <code>source.yuv420p</code> and upsample to <code>source.yuy2</code>.</li>
-            <li>Encode &rarr; <code>x264-crf23.mp4</code>, <code>x265-crf28.mp4</code>, <code>fdc-motion.fdc</code> (+ per-frame stats for the FDC arm).</li>
+            <li>Encode > <code>x264-crf23.mp4</code>, <code>x265-crf28.mp4</code>, <code>fdc-motion.fdc</code> (+ per-frame stats for the FDC arm).</li>
             <li>Decode each encoded artifact back to <code>*.rt.yuv420p</code>.</li>
             <li>Measure: <code>ffmpeg -lavfi ssim/psnr</code> against the reference; file sizes via filesystem; extrapolate GB/24h and GB/week from the clip-length encoded byte count.</li>
             <li>Stills: 3 timestamps &times; 3 codecs &times; 400&times;400 centre-crop JPEGs from each round-tripped stream.</li>
@@ -111,7 +111,7 @@ const breadcrumbItems = [
             <li>GB/24h and GB/week are linear extrapolations from a single clip; scenes with different motion characteristics will differ.</li>
           </ul>
 
-          <p class="mt-8"><a href="/technical-specifications#fdc-codec" class="text-blue-600 hover:underline">&larr; Back to measured codec table on /technical-specifications</a></p>
+          <p class="mt-8"><a href="/technical-specifications#fdc-codec" class="text-blue-600 hover:underline">&lt; Back to measured codec table on /technical-specifications</a></p>
         </div>
       </div>
     </section>

@@ -9,7 +9,7 @@ import SpeakableSchema from '../components/SpeakableSchema.astro';
 import { locationGroups, allLocations } from '../data/locations.js';
 
 const title = "Service Areas | Mobile Surveillance Trailer Rental Across Puget Sound";
-const description = "CCTV Trailer rents mobile surveillance trailers throughout the Puget Sound region — Tacoma, Seattle, Kent, Federal Way, Olympia, Bremerton, and every city in between. Same-day delivery across Pierce, King, Kitsap, and Thurston counties.";
+const description = "CCTV Trailer rents mobile surveillance trailers throughout the Puget Sound region - Tacoma, Seattle, Kent, Federal Way, Olympia, Bremerton, and every city in between. Same-day delivery across Pierce, King, Kitsap, and Thurston counties.";
 
 const breadcrumbItems = [
   { name: "Home", url: "/" },
@@ -48,7 +48,7 @@ const localBusinessSchema = JSON.stringify({
   },
   "areaServed": allLocations.map((l) => ({
     "@type": "City",
-    "name": l.city.split("—")[0].trim(),
+    "name": l.city.split(" - ")[0].trim(),
     "containedInPlace": { "@type": "State", "name": "Washington" }
   }))
 });
@@ -74,7 +74,7 @@ const faqSchema = JSON.stringify({
       "name": "Which Puget Sound cities does CCTV Trailer serve?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We deliver mobile surveillance trailers throughout Pierce, King, Kitsap, and Thurston counties. Core service areas include Tacoma, Seattle, Kent, Federal Way, Auburn, Puyallup, Fife, Lakewood/JBLM, Olympia, and Bremerton. Other Puget Sound cities are served on request — call (253) 683-2288 to check availability."
+        "text": "We deliver mobile surveillance trailers throughout Pierce, King, Kitsap, and Thurston counties. Core service areas include Tacoma, Seattle, Kent, Federal Way, Auburn, Puyallup, Fife, Lakewood/JBLM, Olympia, and Bremerton. Other Puget Sound cities are served on request - call (253) 683-2288 to check availability."
       }
     },
     {
@@ -90,7 +90,7 @@ const faqSchema = JSON.stringify({
       "name": "How fast can you deploy a surveillance trailer in my area?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Standard deployment is same day or next business day for Pierce and South King County. Same-day emergency deployment is available across the Puget Sound region — call (253) 683-2288 to check availability. On-site setup typically takes 20–30 minutes."
+        "text": "Standard deployment is same day or next business day for Pierce and South King County. Same-day emergency deployment is available across the Puget Sound region - call (253) 683-2288 to check availability. On-site setup typically takes 20-30 minutes."
       }
     },
     {
@@ -120,7 +120,7 @@ const faqSchema = JSON.stringify({
       <div class="container mx-auto px-4 text-center">
         <h1 class="text-4xl md:text-5xl font-bold mb-4">Puget Sound Service Areas</h1>
         <p class="text-xl text-gray-200 max-w-3xl mx-auto">
-          Mobile surveillance trailers with 24/7 self-monitoring, delivered across Pierce, King, Kitsap, and Thurston counties. Same-day delivery available — call for a quote.
+          Mobile surveillance trailers with 24/7 self-monitoring, delivered across Pierce, King, Kitsap, and Thurston counties. Same-day delivery available - call for a quote.
         </p>
         <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
           <a href="tel:2536832288" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
@@ -160,7 +160,7 @@ const faqSchema = JSON.stringify({
       <div class="container mx-auto px-4 max-w-4xl">
         <h2 class="text-3xl font-bold mb-4 text-gray-900">Coverage you can count on</h2>
         <p class="text-lg text-gray-700 leading-relaxed mb-4">
-          CCTV Trailer has been locally owned in Tacoma since 2009. Over that time we have delivered and set up surveillance trailers at construction sites, retail parking lots, events, and industrial facilities across every corner of the Puget Sound. Every service area on this page has a dedicated page with local context, landmarks, and crime data — pick your city below to see how we deploy there.
+          CCTV Trailer has been locally owned in Tacoma since 2009. Over that time we have delivered and set up surveillance trailers at construction sites, retail parking lots, events, and industrial facilities across every corner of the Puget Sound. Every service area on this page has a dedicated page with local context, landmarks, and crime data - pick your city below to see how we deploy there.
         </p>
         <p class="text-lg text-gray-700 leading-relaxed">
           Don't see your exact city? We routinely dispatch to <strong>Gig Harbor, Renton, Kirkland, Redmond, Sammamish, Lacey, and Bellingham</strong> and can deliver anywhere reachable on I-5, I-405, or SR-16. Call to check availability at <a href="tel:2536832288" class="text-red-600 hover:text-red-700 font-semibold">(253) 683-2288</a>.
@@ -197,7 +197,7 @@ const faqSchema = JSON.stringify({
       <div class="container mx-auto px-4 max-w-4xl text-center">
         <h2 class="text-2xl font-bold mb-4">Get a quote for your city</h2>
         <p class="text-lg text-gray-700 mb-6">
-          Pricing depends on rental length, site, and configuration — call <a href="tel:2536832288" class="text-red-600 hover:text-red-700 font-semibold">(253) 683-2288</a> or request a quote. Rental options and what's included:
+          Pricing depends on rental length, site, and configuration - call <a href="tel:2536832288" class="text-red-600 hover:text-red-700 font-semibold">(253) 683-2288</a> or request a quote. Rental options and what's included:
         </p>
         <a href="/pricing" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
           Rental Options &amp; Quotes
@@ -213,7 +213,7 @@ const faqSchema = JSON.stringify({
         <div class="space-y-6">
           <div class="bg-white rounded-lg p-6 shadow-sm">
             <h3 class="font-semibold text-lg mb-2">Which Puget Sound cities does CCTV Trailer serve?</h3>
-            <p class="text-gray-700">We deliver mobile surveillance trailers throughout Pierce, King, Kitsap, and Thurston counties. Core service areas include Tacoma, Seattle, Kent, Federal Way, Auburn, Puyallup, Fife, Lakewood/JBLM, Olympia, and Bremerton. Other Puget Sound cities are served on request — call (253) 683-2288 to check availability.</p>
+            <p class="text-gray-700">We deliver mobile surveillance trailers throughout Pierce, King, Kitsap, and Thurston counties. Core service areas include Tacoma, Seattle, Kent, Federal Way, Auburn, Puyallup, Fife, Lakewood/JBLM, Olympia, and Bremerton. Other Puget Sound cities are served on request - call (253) 683-2288 to check availability.</p>
           </div>
           <div class="bg-white rounded-lg p-6 shadow-sm">
             <h3 class="font-semibold text-lg mb-2">Is there a travel or delivery fee outside Tacoma?</h3>
@@ -221,7 +221,7 @@ const faqSchema = JSON.stringify({
           </div>
           <div class="bg-white rounded-lg p-6 shadow-sm">
             <h3 class="font-semibold text-lg mb-2">How fast can you deploy a surveillance trailer in my area?</h3>
-            <p class="text-gray-700">Standard deployment is same day or next business day for Pierce and South King County. Same-day emergency deployment is available across the Puget Sound region — call (253) 683-2288 to check availability. On-site setup typically takes 20–30 minutes.</p>
+            <p class="text-gray-700">Standard deployment is same day or next business day for Pierce and South King County. Same-day emergency deployment is available across the Puget Sound region - call (253) 683-2288 to check availability. On-site setup typically takes 20-30 minutes.</p>
           </div>
           <div class="bg-white rounded-lg p-6 shadow-sm">
             <h3 class="font-semibold text-lg mb-2">What does a rental cost in my city?</h3>
@@ -233,7 +233,7 @@ const faqSchema = JSON.stringify({
 
     <CTASection
       title="Need a trailer in your city?"
-      description="Tell us where and when — we'll confirm availability and quote inside the hour."
+      description="Tell us where and when - we'll confirm availability and quote inside the hour."
       features={["✓ Same-day Puget Sound delivery", "✓ Professional delivery and setup available", "✓ 24/7 technical support"]}
     />
   </main>

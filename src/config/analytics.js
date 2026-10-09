@@ -32,7 +32,7 @@ export const analyticsConfig = {
     },
     
     // Conversion events to track. Names MUST match what is registered as a
-    // Key event in GA4 Admin → Events. GA4's recommended event name is
+    // Key event in GA4 Admin > Events. GA4's recommended event name is
     // `form_submit` (snake_case verb, singular), not `form_submission`.
     conversionEvents: [
       'form_submit',
