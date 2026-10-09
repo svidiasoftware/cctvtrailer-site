@@ -24,7 +24,7 @@ const schema = JSON.stringify({
   "@type": "BlogPosting",
   "headline": "OSHA & DOSH Compliance Checklist for Washington Construction Sites",
   "datePublished": "2025-09-22",
-  "dateModified": "2026-02-12",
+  "dateModified": "2026-10-09",
   "author": {
     "@type": "Person",
     "name": "Val Zakharov",
@@ -87,7 +87,7 @@ const faqSchema = JSON.stringify({
       "name": "What are DOSH penalty amounts for construction violations in Washington?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "DOSH penalties in Washington include up to $7,000 per serious violation and up to $70,000 per willful or repeat violation. Failure-to-abate penalties can reach $7,000 per day. Penalty amounts are adjusted based on employer size, good faith efforts, and violation history. DOSH can also issue immediate restraint orders to shut down work that poses imminent danger."
+        "text": "DOSH penalties in Washington include up to $16,550 per serious violation and up to $165,514 per willful or repeat violation (2026 maximums, which WAC 296-900-14010 and 296-900-14020 tie to the federal OSHA maximums). Failure-to-abate penalties can reach $16,550 per day. Penalty amounts are adjusted based on employer size, good faith efforts, and violation history. DOSH can also issue immediate restraint orders to shut down work that poses imminent danger."
       }
     },
     {
@@ -203,7 +203,7 @@ const relatedPages = [
     <!-- Quick Answer Section -->
     <QuickAnswer
       what="Washington-specific OSHA/DOSH compliance checklist for construction sites"
-      cost="DOSH penalties: up to $7,000/serious violation, $70,000/willful violation"
+      cost="DOSH penalties (2026): up to $16,550 per serious violation, $165,514 per willful or repeat violation"
       time="DOSH inspections can happen with zero advance notice"
       coverage="WAC 296-155 covers all WA construction safety standards"
       availability="Mobile surveillance documents compliance 24/7"
@@ -223,14 +223,16 @@ const relatedPages = [
               layout="grid"
               stats={[
                 {
-                  value: "$7K",
-                  label: "Max DOSH penalty per serious violation",
-                  highlight: true
+                  value: "$16,550",
+                  label: "Max DOSH penalty per serious violation (2026)",
+                  highlight: true,
+                  source: { text: "WAC 296-900-14010 / 29 CFR 1903.15", url: "https://app.leg.wa.gov/WAC/default.aspx?cite=296-900-14010" }
                 },
                 {
-                  value: "$70K",
-                  label: "Max DOSH penalty per willful violation",
-                  highlight: false
+                  value: "$165,514",
+                  label: "Max DOSH penalty per willful or repeat violation (2026)",
+                  highlight: false,
+                  source: { text: "WAC 296-900-14020 / 29 CFR 1903.15", url: "https://app.leg.wa.gov/WAC/default.aspx?cite=296-900-14020" }
                 },
                 {
                   value: "4 ft",
@@ -351,7 +353,7 @@ const relatedPages = [
                     <th class="border px-4 py-2 text-left">Rank</th>
                     <th class="border px-4 py-2 text-left">Violation Category</th>
                     <th class="border px-4 py-2 text-left">WA Standard</th>
-                    <th class="border px-4 py-2 text-left">Penalty Range</th>
+                    <th class="border px-4 py-2 text-left">Max Penalty (serious, 2026)</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -359,61 +361,61 @@ const relatedPages = [
                     <td class="border px-4 py-2">1</td>
                     <td class="border px-4 py-2">Fall protection (general)</td>
                     <td class="border px-4 py-2">WAC 296-155-24510</td>
-                    <td class="border px-4 py-2 text-red-600 font-semibold">$1,000-$7,000</td>
+                    <td class="border px-4 py-2 text-red-600 font-semibold">Up to $16,550</td>
                   </tr>
                   <tr class="bg-gray-50">
                     <td class="border px-4 py-2">2</td>
                     <td class="border px-4 py-2">Scaffolding deficiencies</td>
                     <td class="border px-4 py-2">WAC 296-874</td>
-                    <td class="border px-4 py-2 text-red-600 font-semibold">$1,000-$7,000</td>
+                    <td class="border px-4 py-2 text-red-600 font-semibold">Up to $16,550</td>
                   </tr>
                   <tr>
                     <td class="border px-4 py-2">3</td>
                     <td class="border px-4 py-2">Ladder safety violations</td>
                     <td class="border px-4 py-2">WAC 296-876</td>
-                    <td class="border px-4 py-2 text-red-600 font-semibold">$1,000-$7,000</td>
+                    <td class="border px-4 py-2 text-red-600 font-semibold">Up to $16,550</td>
                   </tr>
                   <tr class="bg-gray-50">
                     <td class="border px-4 py-2">4</td>
                     <td class="border px-4 py-2">Excavation/trenching</td>
                     <td class="border px-4 py-2">WAC 296-155-657</td>
-                    <td class="border px-4 py-2 text-red-600 font-semibold">$1,000-$7,000</td>
+                    <td class="border px-4 py-2 text-red-600 font-semibold">Up to $16,550</td>
                   </tr>
                   <tr>
                     <td class="border px-4 py-2">5</td>
                     <td class="border px-4 py-2">Hazard communication</td>
                     <td class="border px-4 py-2">WAC 296-901</td>
-                    <td class="border px-4 py-2 text-orange-600 font-semibold">$500-$7,000</td>
+                    <td class="border px-4 py-2 text-orange-600 font-semibold">Up to $16,550</td>
                   </tr>
                   <tr class="bg-gray-50">
                     <td class="border px-4 py-2">6</td>
                     <td class="border px-4 py-2">Crane safety</td>
                     <td class="border px-4 py-2">WAC 296-155-53100</td>
-                    <td class="border px-4 py-2 text-red-600 font-semibold">$1,000-$7,000</td>
+                    <td class="border px-4 py-2 text-red-600 font-semibold">Up to $16,550</td>
                   </tr>
                   <tr>
                     <td class="border px-4 py-2">7</td>
                     <td class="border px-4 py-2">Electrical (wiring/GFCI)</td>
                     <td class="border px-4 py-2">WAC 296-155-426</td>
-                    <td class="border px-4 py-2 text-orange-600 font-semibold">$500-$7,000</td>
+                    <td class="border px-4 py-2 text-orange-600 font-semibold">Up to $16,550</td>
                   </tr>
                   <tr class="bg-gray-50">
                     <td class="border px-4 py-2">8</td>
                     <td class="border px-4 py-2">PPE violations</td>
                     <td class="border px-4 py-2">WAC 296-155-200</td>
-                    <td class="border px-4 py-2 text-orange-600 font-semibold">$500-$7,000</td>
+                    <td class="border px-4 py-2 text-orange-600 font-semibold">Up to $16,550</td>
                   </tr>
                   <tr>
                     <td class="border px-4 py-2">9</td>
                     <td class="border px-4 py-2">Struck-by hazards</td>
                     <td class="border px-4 py-2">WAC 296-155-305</td>
-                    <td class="border px-4 py-2 text-orange-600 font-semibold">$500-$7,000</td>
+                    <td class="border px-4 py-2 text-orange-600 font-semibold">Up to $16,550</td>
                   </tr>
                   <tr class="bg-gray-50">
                     <td class="border px-4 py-2">10</td>
                     <td class="border px-4 py-2">Accident prevention program gaps</td>
                     <td class="border px-4 py-2">WAC 296-800-140</td>
-                    <td class="border px-4 py-2 text-orange-600 font-semibold">$500-$7,000</td>
+                    <td class="border px-4 py-2 text-orange-600 font-semibold">Up to $16,550</td>
                   </tr>
                 </tbody>
               </table>
@@ -422,12 +424,13 @@ const relatedPages = [
             <div class="bg-red-50 border-l-4 border-red-500 p-6 my-8">
               <p class="font-semibold text-red-900 mb-2">DOSH Penalty Structure</p>
               <p class="text-red-800 mb-3">
-                <strong>Serious violations:</strong> Up to $7,000 per violation. These involve hazards that could cause death or serious physical harm.<br>
-                <strong>Willful violations:</strong> Up to $70,000 per violation. Applied when the employer knowingly ignores safety requirements.<br>
-                <strong>Repeat violations:</strong> Up to $70,000 per violation. For employers cited for the same or similar hazard within 3 years.<br>
-                <strong>Failure to abate:</strong> Up to $7,000 per day beyond the abatement deadline.<br>
+                <strong>Serious violations:</strong> Up to $16,550 per violation. These involve hazards that could cause death or serious physical harm.<br>
+                <strong>Willful violations:</strong> Up to $165,514 per violation. Applied when the employer knowingly ignores safety requirements.<br>
+                <strong>Repeat violations:</strong> Up to $165,514 per violation. For employers cited for the same or similar hazard within 3 years.<br>
+                <strong>Failure to abate:</strong> Up to $16,550 per day beyond the abatement deadline.<br>
                 <strong>Imminent danger:</strong> DOSH can issue an immediate restraint order, shutting down all work until the hazard is corrected.
               </p>
+              <p class="text-sm text-red-700">Maximums apply to penalties assessed after January 15, 2026. Under <a href="https://app.leg.wa.gov/WAC/default.aspx?cite=296-900-14010" target="_blank" rel="noopener noreferrer" class="underline">WAC 296-900-14010</a> and <a href="https://app.leg.wa.gov/WAC/default.aspx?cite=296-900-14020" target="_blank" rel="noopener noreferrer" class="underline">WAC 296-900-14020</a>, the DOSH maximum is the federal OSHA maximum under 29 C.F.R. 1903.15 (see <a href="https://www.osha.gov/penalties/" target="_blank" rel="noopener noreferrer" class="underline">OSHA penalties</a>) or the state amount, whichever is more. DOSH base penalties before adjustments run from $1,070 to $7,491 depending on gravity (<a href="https://lawfilesext.leg.wa.gov/law/wsr/2026/03/26-03-048.htm" target="_blank" rel="noopener noreferrer" class="underline">WSR 26-03-048</a>).</p>
               <p class="text-red-800 text-sm">
                 Penalties are adjusted based on employer size, good faith efforts (including documented safety programs), and violation history.
               </p>
@@ -568,10 +571,10 @@ const relatedPages = [
                 <div>
                   <h5 class="font-semibold text-lg mb-3">Direct DOSH Penalties</h5>
                   <ul class="space-y-2">
-                    <li>Single serious violation: up to $7,000</li>
+                    <li>Single serious violation: up to $16,550</li>
                     <li>Multiple citations: penalties add up per violation</li>
-                    <li>Willful violation: up to $70,000 each</li>
-                    <li>Failure to abate: $7,000/day</li>
+                    <li>Willful violation: up to $165,514 each</li>
+                    <li>Failure to abate: up to $16,550/day</li>
                   </ul>
                 </div>
 
@@ -591,7 +594,7 @@ const relatedPages = [
                   Mobile surveillance for compliance documentation: call (253) 683-2288 for a quote
                 </p>
                 <p class="text-center text-sm text-gray-600 mt-2">
-                  Weigh that quote against a single willful violation penalty of up to $70,000.
+                  Weigh that quote against a single willful violation penalty of up to $165,514.
                   For detailed insurance savings analysis, see our <a href="/insurance-security-requirements" class="text-blue-600 hover:underline">insurance security requirements guide</a>.
                 </p>
               </div>
@@ -612,7 +615,7 @@ const relatedPages = [
               <div class="faq-item">
                 <h3 class="text-xl font-semibold mb-3">What are DOSH penalty amounts for construction violations in Washington?</h3>
                 <p class="mb-6">
-                  DOSH penalties include up to $7,000 per serious violation and up to $70,000 per willful or repeat violation. Failure-to-abate penalties can reach $7,000 per day. Penalty amounts are adjusted based on employer size, good faith efforts, and violation history. DOSH can also issue immediate restraint orders to shut down work that poses imminent danger.
+                  DOSH penalties in Washington include up to $16,550 per serious violation and up to $165,514 per willful or repeat violation (2026 maximums, which WAC 296-900-14010 and 296-900-14020 tie to the federal OSHA maximums). Failure-to-abate penalties can reach $16,550 per day. Penalty amounts are adjusted based on employer size, good faith efforts, and violation history. DOSH can also issue immediate restraint orders to shut down work that poses imminent danger.
                 </p>
               </div>
 
