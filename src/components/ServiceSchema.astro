@@ -3,6 +3,9 @@ export interface ServiceSchemaProps {
   serviceName: string;
   description: string;
   images?: string[];
+  // DEPRECATED (Oct 2026): rental prices were removed from the site.
+  // These props are still accepted so older callers don't break, but they
+  // are ignored — the component never emits Offer/AggregateOffer/price data.
   price?: string;
   highPrice?: string;
   priceCurrency?: string;
@@ -31,10 +34,7 @@ const {
     "https://www.cctvtrailer.com/images/trailer-4x3.png",
     "https://www.cctvtrailer.com/images/trailer-16x9.png",
   ],
-  price,
-  priceCurrency = 'USD',
-  priceUnit,
-  highPrice,
+  // price / highPrice / priceCurrency / priceUnit intentionally not read (deprecated, ignored)
   areaServed = [],
   customProvider
 } = Astro.props as ServiceSchemaProps;
@@ -92,7 +92,7 @@ const defaultProvider = {
       "dayOfWeek": "Sunday",
       "opens": "00:00",
       "closes": "00:00",
-      "description": "Emergency service available 24/7"
+      "description": "24/7 technical support by phone"
     }
   ],
   "sameAs": [
@@ -103,7 +103,7 @@ const defaultProvider = {
     "@type": "Person",
     "name": "Val Zakharov"
   },
-  "foundingDate": "2020",
+  "foundingDate": "2009",
   "priceRange": "$$",
   "paymentAccepted": ["Cash", "Check", "Credit Card", "Invoice"],
   "currenciesAccepted": "USD",
@@ -159,43 +159,10 @@ if (areaServed.length > 0) {
   }));
 }
 
-// Add pricing information if provided
-if (price) {
-  if (highPrice) {
-    schemaObject.offers = {
-        "@type": "AggregateOffer",
-        "offerCount": 2,
-        "lowPrice": price,
-        "highPrice": highPrice,
-        "unitText": priceUnit,
-        "priceCurrency": priceCurrency,
-        "availability": "https://schema.org/InStock",
-        "seller": {
-          "@type": "Organization",
-          "name": defaultProvider.name
-        }
-      };  
-  } else {
-    schemaObject.offers = {
-      "@type": "Offer",
-      "offerCount": 2,
-      "price": price,
-      "priceCurrency": priceCurrency
-    };
-  }
+// No Offer / price output: rental pricing is quote-based (call or /contact).
+// Any price props passed by callers are ignored on purpose.
 
-  if (priceUnit) {
-    schemaObject.offers.priceSpecification = {
-      "@type": "UnitPriceSpecification",
-      "price": price,
-      "priceCurrency": priceCurrency,
-      "unitText": priceUnit
-    };
-  }
-}
-
-
-// Default pricing range
+// Generic price-range indicator (no digits)
 schemaObject.priceRange = "$$";
 
 const schema = JSON.stringify(schemaObject);

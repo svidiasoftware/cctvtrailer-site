@@ -12,10 +12,7 @@ import LazyImage from '../components/LazyImage.astro';
 // Schema data for the construction security service
 const serviceSchemaData = {
   serviceName: "Mobile Surveillance Trailer Rental in Tacoma",
-  description: "CCTV Trailer - Locally owned surveillance security company in Tacoma since 2009. Professional CCTV systems and mobile trailer rentals. Immediate availability for construction sites, events, and emergency needs.",
-  price: "3499",
-  highPrice: "4000",
-  priceUnit: "WEEK" as const,
+  description: "CCTV Trailer - Locally owned surveillance security company in Tacoma since 2009. Professional CCTV systems and mobile trailer rentals. Same-day deployment available for construction sites, events, and emergency needs.",
   areaServed: [
     { type: "City" as const, name: "Tacoma" },
   ]
@@ -61,10 +58,10 @@ const localBusinessSchema = {
     "@type": "OfferCatalog",
     "name": "Tacoma Security Services",
     "itemListElement": [
-      { "@type": "Service", "name": "Construction Site Monitoring" },
+      { "@type": "Service", "name": "Construction Site Surveillance" },
       { "@type": "Service", "name": "Event Security" },
       { "@type": "Service", "name": "Port Security" },
-      { "@type": "Service", "name": "Emergency Response" }
+      { "@type": "Service", "name": "Emergency Surveillance Deployment" }
     ]
   }
 };
@@ -116,9 +113,9 @@ const relatedPages = [
     description: "Off-grid solar surveillance systems designed for Pacific Northwest weather conditions."
   },
   {
-    title: "View Pricing & Plans",
+    title: "Rental Options & Quotes",
     href: "/pricing",
-    description: "Transparent pricing for Tacoma area security trailer rentals with local delivery."
+    description: "Rental options for Tacoma area sites — call (253) 683-2288 or request a quote."
   }
 ];
 ---
@@ -139,14 +136,14 @@ const relatedPages = [
     <!-- Hero Section -->
     <section class="hero-trailer">
       <div class="hero-overlay">
-        <LazyImage src="/images/tacoma-hero.webp" alt="Mobile surveillance trailer with Tacoma Dome in background - Security rental pricing" 
+        <LazyImage src="/images/tacoma-hero.webp" alt="Mobile surveillance trailer with Tacoma Dome in background - Tacoma security trailer rental" 
           class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
       </div>
       <div class="hero-content">
         <div class="hero-text-wrapper">
           <h1 class="hero-heading">Tacoma's Local Security Trailer Rental Company</h1>
           <p class="text-xl mb-6 text-white">
-            Proudly serving Pierce County with mobile surveillance solutions. Based right here in Tacoma - fastest response times guaranteed!
+            Proudly serving Pierce County with mobile surveillance solutions. Based right here in Tacoma - same-day delivery available!
           </p>
           <div class="hero-buttons">
             <a href="tel:2536832288" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
@@ -185,13 +182,13 @@ const relatedPages = [
           <div class="grid md:grid-cols-3 gap-6">
             <div class="bg-white p-6 rounded-lg shadow">
               <div class="text-3xl mb-3">⚡</div>
-              <h3 class="font-bold mb-2">30-Minute Response</h3>
-              <p class="text-gray-600">Emergency deployment within Tacoma city limits</p>
+              <h3 class="font-bold mb-2">Same-Day Deployment</h3>
+              <p class="text-gray-600">Emergency deployment within Tacoma city limits &mdash; call to check availability</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow">
-              <div class="text-3xl mb-3">💳</div>
-              <h3 class="font-bold mb-2">No Delivery Fees</h3>
-              <p class="text-gray-600">Free delivery throughout Tacoma and nearby areas</p>
+              <div class="text-3xl mb-3">🚚</div>
+              <h3 class="font-bold mb-2">Delivery &amp; Setup</h3>
+              <p class="text-gray-600">Professional delivery and setup available throughout Tacoma and nearby areas</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow">
               <div class="text-3xl mb-3">🤝</div>
@@ -321,7 +318,7 @@ const relatedPages = [
               <div>
                 <h3 class="font-bold text-xl mb-4">Local Knowledge</h3>
                 <ul class="space-y-2">
-                  <li>• 15+ years serving Tacoma</li>
+                  <li>• Serving Tacoma since 2009</li>
                   <li>• Know local regulations</li>
                   <li>• Understand Tacoma weather</li>
                   <li>• Community relationships</li>
@@ -332,7 +329,7 @@ const relatedPages = [
                 <ul class="space-y-2">
                   <li>• Trailers stored locally</li>
                   <li>• Same-day setup</li>
-                  <li>• Emergency response 24/7</li>
+                  <li>• 24/7 technical support</li>
                   <li>• On-site support available</li>
                 </ul>
               </div>
@@ -391,7 +388,7 @@ const relatedPages = [
               <span class="font-semibold">Challenge:</span> High-value vintage cars, large crowds, multiple display areas
             </div>
             <div class="text-sm text-gray-500">
-              <span class="font-semibold">Solution:</span> Strategic placement with 24/7 monitoring during event
+              <span class="font-semibold">Solution:</span> Strategic placement with 24/7 recording, real-time alerts, and remote live view during event
             </div>
           </div>
           <!-- <div class="bg-white rounded-lg shadow-lg p-6">
@@ -402,7 +399,7 @@ const relatedPages = [
               <span class="font-semibold">Challenge:</span> Massive crowds, temporary vendor setups
             </div>
             <div class="text-sm text-gray-500">
-              <span class="font-semibold">Solution:</span> 15 strategic units with live monitoring
+              <span class="font-semibold">Solution:</span> 15 strategic units with real-time alerts and remote live view
             </div>
           </div> -->
           <!-- <div class="bg-white rounded-lg shadow-lg p-6">
@@ -436,11 +433,11 @@ const relatedPages = [
                   </li>
                   <li class="flex items-start">
                     <span class="text-green-600 mr-2 font-bold">•</span>
-                    <span><strong>15-minute</strong> average response time within Tacoma</span>
+                    <span><strong>20-30 minute</strong> setup once the trailer is on site</span>
                   </li>
                   <li class="flex items-start">
                     <span class="text-green-600 mr-2 font-bold">•</span>
-                    <span><strong>Zero</strong> delivery fees for Tacoma metro area</span>
+                    <span><strong>Professional</strong> delivery and setup available across the Tacoma metro area</span>
                   </li>
                   <li class="flex items-start">
                     <span class="text-green-600 mr-2 font-bold">•</span>
@@ -461,7 +458,7 @@ const relatedPages = [
                   </div>
                   <div class="bg-yellow-50 p-4 rounded-lg">
                     <div class="font-semibold text-orange-600">Military Support</div>
-                    <p class="text-gray-600 text-sm">Local company with special rates for JBLM contractors and military families.</p>
+                    <p class="text-gray-600 text-sm">Local company experienced with JBLM contractors and military families &mdash; call for a quote.</p>
                   </div>
                 </div>
               </div>

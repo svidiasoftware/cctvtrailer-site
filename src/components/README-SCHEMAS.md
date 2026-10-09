@@ -21,8 +21,6 @@ const serviceData = {
     "https://www.cctvtrailer.com/images/trailer-4x3.png",
     "https://www.cctvtrailer.com/images/trailer-16x9.png",
   ],
-  price: "8000",
-  priceUnit: "MONTH", // Options: DAY, WEEK, MONTH, YEAR, HOUR
   areaServed: [
     { type: "State", name: "Washington" },
     { type: "City", name: "Tacoma" },
@@ -38,11 +36,9 @@ const serviceData = {
 - `serviceName` (string, required): Name of the service
 - `description` (string, required): Service description
 - `images` (string[], optional): Array of image URLs
-- `price` (string, optional): Price value
-- `priceCurrency` (string, optional, default: "USD"): Currency code
-- `priceUnit` (string, optional): Unit of pricing (DAY, WEEK, MONTH, YEAR, HOUR)
 - `areaServed` (array, optional): Areas where service is available
 - `customProvider` (object, optional): Override default business info
+- `price`, `highPrice`, `priceCurrency`, `priceUnit` — **deprecated, ignored.** Rental prices are not published on the site (quote-based: call (253) 683-2288 or /contact). The component never emits `offers` / `Offer` / `AggregateOffer` / price data; only a generic `"priceRange": "$$"` indicator. Don't pass these props in new pages.
 
 ### BreadcrumbSchema.astro
 
@@ -85,9 +81,7 @@ import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
 
 const serviceData = {
   serviceName: "Event Security Trailer Rental",
-  description: "Mobile surveillance for events...",
-  price: "500",
-  priceUnit: "DAY"
+  description: "Mobile surveillance for events..."
 };
 
 const breadcrumbs = [

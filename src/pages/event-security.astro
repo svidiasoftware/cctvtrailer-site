@@ -38,9 +38,9 @@ const relatedPages = [
     description: "Cost comparison between mobile surveillance trailers and traditional security guard services for events."
   },
   {
-    title: "View Pricing & Plans",
+    title: "Rental Options & Quotes",
     href: "/pricing",
-    description: "Weekend event rates, single-day pricing, and multi-day festival packages."
+    description: "Single-day, weekend, and multi-day festival rental options — call (253) 683-2288 or request a quote."
   }
 ];
 
@@ -48,8 +48,6 @@ const relatedPages = [
 const serviceSchemaData = {
   serviceName: "Event Surveillance Trailer Rental",
   description: "CCTV Trailer - Locally owned surveillance security company since 2009. Professional CCTV systems and mobile trailer rentals for events, festivals, and concerts. Rapid deployment with flexible terms.",
-  price: "1900",
-  priceUnit: "WEEKEND" as const,
   areaServed: [
     { type: "State" as const, name: "Washington" },
     { type: "City" as const, name: "Tacoma" },
@@ -69,7 +67,7 @@ const breadcrumbItems = [
 
 <Layout 
   title="Event Security Trailer Rental · Tacoma–Seattle Mobile CCTV"
-  description="Event security trailer rental for Tacoma-Seattle festivals, concerts, fairs. 24/7 mobile surveillance, rapid setup, crowd monitoring. (253) 683-2288">
+  description="Event security trailer rental for Tacoma-Seattle festivals, concerts, fairs. 24/7 self-monitoring, rapid setup, crowd surveillance. (253) 683-2288">
 
   <!-- Structured Data Schemas -->
   <ServiceSchema {...serviceSchemaData} />
@@ -93,7 +91,7 @@ const breadcrumbItems = [
               Get Event Quote →
             </a>
           </div>
-          <p class="mt-4 text-yellow-300">⚡ Last-minute event? We offer 24-hour emergency deployment!</p>
+          <p class="mt-4 text-yellow-300">⚡ Last-minute event? Same-day emergency deployment — call to check availability.</p>
         </div>
       </div>
     </section>
@@ -103,17 +101,15 @@ const breadcrumbItems = [
       <div class="container mx-auto px-4">
         <QuickAnswer
           what="Mobile surveillance trailers for festivals, concerts, fairs, and outdoor events"
-          cost="Weekend: $1,900 | Weekly: $3,500 | Multi-week discounts available"
-          time="Setup 2-4 hours before gates open, takedown after crowd disperses"
+          time="20-30 minute setup, completed before gates open; takedown after crowd disperses"
           coverage="Entrance/exit monitoring, crowd surveillance, parking lot security"
-          availability="Pre-book for guaranteed availability, 24-hour emergency deployment"
+          availability="Call to inquire — book early for peak event season"
           includes={[
-            "Crowd monitoring cameras",
-            "Parking lot surveillance",
-            "Vendor area protection",
-            "VIP area security",
-            "Evidence for incidents",
-            "24/7 remote access"
+            "4 cameras (1 fixed fisheye + 3 PTZ 25x zoom with IR)",
+            "Equipment training",
+            "24/7 technical support",
+            "Solar power/generator included",
+            "Remote viewing access on your mobile devices or computer"
           ]}
         />
       </div>
@@ -272,46 +268,41 @@ const breadcrumbItems = [
             <h3 class="text-xl font-bold mb-6 text-green-600">Security Investment</h3>
             <div class="space-y-3">
               <div class="flex justify-between">
-                <span>Weekend rental:</span>
-                <span class="font-bold">$1,900</span>
+                <span>Event rental:</span>
+                <span class="font-bold">Quoted per event</span>
               </div>
               <div class="flex justify-between">
-                <span>Setup/removal:</span>
-                <span class="font-bold">Included</span>
+                <span>Delivery &amp; setup:</span>
+                <span class="font-bold">Professional service available</span>
               </div>
               <div class="flex justify-between">
-                <span>24/7 monitoring:</span>
-                <span class="font-bold">Optional $500</span>
+                <span>Monitoring:</span>
+                <span class="font-bold">24/7 self-monitoring</span>
               </div>
               <div class="flex justify-between">
-                <span>Insurance discount:</span>
-                <span class="font-bold text-green-600">-$1,000</span>
-              </div>
-              <div class="flex justify-between">
-                <span>Multi-day discount:</span>
-                <span class="font-bold text-green-600">-10%</span>
+                <span>Incident evidence:</span>
+                <span class="font-bold">Recorded video</span>
               </div>
               <div class="pt-3 border-t mt-3 flex justify-between font-bold">
-                <span>Total Investment:</span>
-                <span class="text-green-600">$1,400-2,400</span>
+                <span>Your quote:</span>
+                <span class="text-green-600"><a href="tel:2536832288" class="hover:underline">(253) 683-2288</a></span>
               </div>
             </div>
+            <p class="text-sm text-gray-600 mt-4">Pricing depends on rental length, site, and configuration.</p>
           </div>
         </div>
 
-        <!-- Event Size Pricing Table -->
+        <!-- Event Size Sizing Guide -->
         <div class="bg-white rounded-lg shadow-lg p-8 max-w-6xl mx-auto">
-          <h3 class="text-2xl font-bold mb-6 text-center">Event Security Pricing by Size</h3>
+          <h3 class="text-2xl font-bold mb-6 text-center">Event Security Sizing Guide</h3>
           <div class="overflow-x-auto">
             <table class="w-full">
-              <caption class="sr-only">Event Security Pricing by Size</caption>
+              <caption class="sr-only">Event Security Sizing Guide</caption>
               <thead>
                 <tr class="bg-purple-100">
                   <th class="p-3 text-left">Event Size</th>
                   <th class="p-3 text-center">Attendance</th>
                   <th class="p-3 text-center">Trailers Needed</th>
-                  <th class="p-3 text-center">Weekend Rate</th>
-                  <th class="p-3 text-center">Weekly Rate</th>
                 </tr>
               </thead>
               <tbody>
@@ -319,34 +310,26 @@ const breadcrumbItems = [
                   <td class="p-3 font-semibold">Small Event</td>
                   <td class="p-3 text-center">< 1,000</td>
                   <td class="p-3 text-center">1</td>
-                  <td class="p-3 text-center">$1,900</td>
-                  <td class="p-3 text-center">$3,500</td>
                 </tr>
                 <tr class="border-b bg-gray-50">
                   <td class="p-3 font-semibold">Medium Event</td>
                   <td class="p-3 text-center">1,000-5,000</td>
                   <td class="p-3 text-center">2</td>
-                  <td class="p-3 text-center">$3,600</td>
-                  <td class="p-3 text-center">$6,650</td>
                 </tr>
                 <tr class="border-b">
                   <td class="p-3 font-semibold">Large Festival</td>
                   <td class="p-3 text-center">5,000-10,000</td>
                   <td class="p-3 text-center">3-4</td>
-                  <td class="p-3 text-center">$5,100-6,800</td>
-                  <td class="p-3 text-center">$9,450-12,600</td>
                 </tr>
                 <tr class="border-b bg-gray-50">
                   <td class="p-3 font-semibold">Major Event</td>
                   <td class="p-3 text-center">10,000+</td>
-                  <td class="p-3 text-center">Custom</td>
-                  <td class="p-3 text-center text-purple-600 font-bold">Call for Quote</td>
-                  <td class="p-3 text-center text-purple-600 font-bold">Volume Discount</td>
+                  <td class="p-3 text-center">Custom plan</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p class="text-sm text-gray-600 mt-4 text-center">* Multi-trailer discounts: 2 units = 5% off, 3+ units = 10% off</p>
+          <p class="text-sm text-gray-600 mt-4 text-center">* Every event gets a custom coverage plan with its quote — call <a href="tel:2536832288" class="text-purple-600 hover:underline">(253) 683-2288</a>.</p>
         </div>
       </div>
     </section>
@@ -469,7 +452,7 @@ const breadcrumbItems = [
               <span class="text-3xl">📹</span>
             </div>
             <h3 class="font-bold text-lg mb-3">4K PTZ Cameras</h3>
-            <p class="text-gray-600">360° coverage with 30x optical zoom for crowd monitoring and incident documentation</p>
+            <p class="text-gray-600">1 fixed fisheye for a 360° overview + 3 PTZ cameras with 25x optical zoom and IR for crowd monitoring and incident documentation</p>
           </div>
           <div class="text-center">
             <div class="bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -518,7 +501,7 @@ const breadcrumbItems = [
           <div class="grid md:grid-cols-3 gap-6">
             <div class="bg-white rounded-lg shadow-lg p-6">
               <h3 class="text-xl font-bold mb-4 text-purple-800">Single Day Events</h3>
-              <p class="text-3xl font-bold mb-4">$999<span class="text-lg font-normal">/day</span></p>
+              <p class="text-3xl font-bold mb-4">1<span class="text-lg font-normal"> day</span></p>
               <ul class="space-y-2 text-gray-600">
                 <li>✓ Perfect for one-day festivals</li>
                 <li>✓ Setup morning of event</li>
@@ -529,17 +512,17 @@ const breadcrumbItems = [
             <div class="bg-purple-100 rounded-lg shadow-lg p-6 border-2 border-purple-600">
               <div class="bg-purple-600 text-white text-sm font-bold px-2 py-1 rounded inline-block mb-2">MOST POPULAR</div>
               <h3 class="text-xl font-bold mb-4 text-purple-800">Weekend Events</h3>
-              <p class="text-3xl font-bold mb-4">$1999<span class="text-lg font-normal">/3 days</span></p>
+              <p class="text-3xl font-bold mb-4">3<span class="text-lg font-normal"> days</span></p>
               <ul class="space-y-2 text-gray-600">
                 <li>✓ Friday through Sunday</li>
                 <li>✓ Setup Thursday PM</li>
-                <li>✓ Continuous monitoring</li>
+                <li>✓ 24/7 self-monitoring</li>
                 <li>✓ Monday removal</li>
               </ul>
             </div>
             <div class="bg-white rounded-lg shadow-lg p-6">
               <h3 class="text-xl font-bold mb-4 text-purple-800">Multi-Day Festivals</h3>
-              <p class="text-3xl font-bold mb-4">$3,499<span class="text-lg font-normal">/week</span></p>
+              <p class="text-3xl font-bold mb-4">7+<span class="text-lg font-normal"> days</span></p>
               <ul class="space-y-2 text-gray-600">
                 <li>✓ 7-day coverage</li>
                 <li>✓ Multiple camera angles</li>
@@ -548,7 +531,7 @@ const breadcrumbItems = [
               </ul>
             </div>
           </div>
-          <p class="text-center mt-8 text-gray-600">* Custom pricing available for events longer than 7 days</p>
+          <p class="text-center mt-8 text-gray-600">* Pricing depends on rental length, site, and configuration — <a href="#event-quote" class="text-purple-700 hover:underline">request an event quote</a>.</p>
         </div>
       </div>
     </section>
@@ -573,7 +556,7 @@ const breadcrumbItems = [
               <div class="text-4xl mr-4">🎵</div>
               <div>
                 <h3 class="font-bold text-xl mb-2">Summer Music Festival - Tacoma Dome</h3>
-                <p class="text-gray-600 mb-3">Provided perimeter security for 3-day outdoor music festival with 25,000 daily attendance. Live monitoring helped manage crowd flow and prevent gate-crashing.</p>
+                <p class="text-gray-600 mb-3">Provided perimeter security for 3-day outdoor music festival with 25,000 daily attendance. Live video helped manage crowd flow and prevent gate-crashing.</p>
                 <p class="text-purple-600 font-bold">Result: Successful event with improved crowd control</p>
               </div>
             </div>
@@ -609,7 +592,7 @@ const breadcrumbItems = [
             <a href="tel:2536832288" class="bg-yellow-500 text-purple-900 hover:bg-yellow-400 font-bold py-3 px-6 rounded-lg block text-center">
               📞 Emergency: (253) 683-2288
             </a>
-            <p class="text-sm text-purple-200 mt-2 text-center">24-hour deployment available</p>
+            <p class="text-sm text-purple-200 mt-2 text-center">Call to check availability</p>
           </div>
 
           <div class="bg-white/10 backdrop-blur rounded-lg p-6">
@@ -629,7 +612,7 @@ const breadcrumbItems = [
             <a href="/contact" class="bg-white text-purple-800 hover:bg-purple-100 font-bold py-3 px-6 rounded-lg block text-center">
               Partner With Us →
             </a>
-            <p class="text-sm text-purple-200 mt-2 text-center">Volume discounts available</p>
+            <p class="text-sm text-purple-200 mt-2 text-center">Multi-event quotes available</p>
           </div>
         </div>
 
@@ -663,7 +646,7 @@ const breadcrumbItems = [
                 <span class="text-2xl font-bold">4</span>
               </div>
               <h4 class="font-semibold mb-2">Event Protection</h4>
-              <p class="text-sm text-purple-100">24/7 monitoring throughout your event duration</p>
+              <p class="text-sm text-purple-100">24/7 self-monitoring with real-time alerts throughout your event</p>
             </div>
           </div>
 
@@ -685,12 +668,12 @@ const breadcrumbItems = [
           <div class="text-center">
             <div class="text-5xl mb-4">⚡</div>
             <h3 class="font-bold text-lg mb-2">Rapid Deployment</h3>
-            <p class="text-purple-200">24-hour emergency setup for last-minute security needs</p>
+            <p class="text-purple-200">Same-day emergency deployment for last-minute needs, subject to availability</p>
           </div>
           <div class="text-center">
             <div class="text-5xl mb-4">💰</div>
-            <h3 class="font-bold text-lg mb-2">Event Pricing</h3>
-            <p class="text-purple-200">Special rates for single-day and weekend events</p>
+            <h3 class="font-bold text-lg mb-2">Event Quotes</h3>
+            <p class="text-purple-200">Custom quotes for single-day, weekend, and multi-day events</p>
           </div>
           <div class="text-center">
             <div class="text-5xl mb-4">🎯</div>
@@ -728,7 +711,7 @@ const breadcrumbItems = [
         <div class="max-w-3xl mx-auto space-y-6">
           <div class="bg-white rounded-lg shadow p-6">
             <h3 class="font-bold text-lg mb-3">How far in advance should we book for our event?</h3>
-            <p class="text-gray-600">We recommend booking 2-4 weeks in advance for best availability, especially during peak event season (May-October). However, we do offer 24-hour emergency deployment for last-minute needs.</p>
+            <p class="text-gray-600">We recommend booking 2-4 weeks in advance for best availability, especially during peak event season (May-October). For last-minute needs, same-day emergency deployment may be available — call (253) 683-2288 to check availability.</p>
           </div>
           <div class="bg-white rounded-lg shadow p-6">
             <h3 class="font-bold text-lg mb-3">Can the trailers operate in bad weather?</h3>
@@ -736,11 +719,11 @@ const breadcrumbItems = [
           </div>
           <div class="bg-white rounded-lg shadow p-6">
             <h3 class="font-bold text-lg mb-3">Do you provide operators for the surveillance system?</h3>
-            <p class="text-gray-600">We offer both self-monitored and professionally monitored options. Our team can provide 24/7 live monitoring or train your security staff to operate the system.</p>
+            <p class="text-gray-600">Our trailers are built for 24/7 self-monitoring: you get real-time alerts and live view on your mobile devices or computer. We train your security staff to operate the system and back you with 24/7 technical support.</p>
           </div>
           <div class="bg-white rounded-lg shadow p-6">
             <h3 class="font-bold text-lg mb-3">Can we get multiple trailers for large events?</h3>
-            <p class="text-gray-600">Absolutely! We have a fleet of trailers and can deploy multiple units for large venues. We'll create a custom security plan based on your venue layout and attendance.</p>
+            <p class="text-gray-600">Absolutely! We can deploy multiple units for large venues — call to check availability for your dates. We'll create a custom security plan based on your venue layout and attendance.</p>
           </div>
           <div class="bg-white rounded-lg shadow p-6">
             <h3 class="font-bold text-lg mb-3">What if our event gets cancelled?</h3>
@@ -880,7 +863,7 @@ const breadcrumbItems = [
       phoneText="📞 Event Line: (253) 683-2288"
       quoteText="Reserve for Your Event →"
       quoteLink="#event-quote"
-      features={["✓ Flexible rental terms", "✓ 24-hour emergency deployment", "✓ Experienced event security team"]}
+      features={["✓ Flexible rental terms", "✓ Same-day deployment — call to check availability", "✓ Experienced event security team"]}
       bgColor="bg-purple-900"
     />
 

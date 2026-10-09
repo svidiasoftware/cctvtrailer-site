@@ -55,7 +55,7 @@ const breadcrumbItems = [
 
 <Layout
   title="Security ROI Calculator | Mobile Surveillance Cost Savings Analysis"
-  description="Calculate your security ROI instantly. Compare mobile surveillance costs vs guards & theft losses. Most sites see 210-383% ROI within 6 months."
+  description="Calculate your security ROI instantly. Compare mobile surveillance vs guards & theft losses using the trailer rental rate from your own quote."
   schema={schema}>
 
   <BreadcrumbSchema items={breadcrumbItems} />
@@ -94,13 +94,13 @@ const breadcrumbItems = [
       <div class="container mx-auto px-4">
         <QuickAnswer
           what="Interactive ROI calculator for mobile surveillance investment"
-          cost="<strong>Average ROI: 210-383% within 6 months</strong>"
-          time="<strong>2-minute calculation</strong> for complete analysis"
+          cost="Uses the trailer rental rate from your own quote"
+          time="2-minute calculation for complete analysis"
           coverage="Factors in theft, guards, insurance, and operational costs"
           availability="Free tool, no registration required"
           customFields={[
-            { label: "Typical Savings", value: "60-75% vs security guards" },
-            { label: "Break-even", value: "Usually 2-3 months" }
+            { label: "Typical Savings", value: "Typically a fraction of the cost of round-the-clock guards" },
+            { label: "Break-even", value: "Calculated from your quoted rate" }
           ]}
         />
       </div>
@@ -254,6 +254,20 @@ const breadcrumbItems = [
                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       placeholder="e.g., 15000" value="0" />
                   </div>
+                </div>
+              </div>
+
+              <!-- Trailer Quote -->
+              <div class="border-b pb-6">
+                <h3 class="text-xl font-semibold mb-4">Mobile Surveillance Quote</h3>
+                <div>
+                  <label for="trailer-rate" class="block text-sm font-medium text-gray-700 mb-2">
+                    Your quoted trailer rental ($/month)
+                  </label>
+                  <input type="number" id="trailer-rate" name="trailer-rate" min="0"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="From your CCTV Trailer quote" />
+                  <p class="text-sm text-gray-500 mt-2">Don't have a quote? Call <a href="tel:2536832288" class="text-blue-600 underline">(253) 683-2288</a></p>
                 </div>
               </div>
 
@@ -416,7 +430,7 @@ const breadcrumbItems = [
     <!-- Case Studies Section -->
     <section class="py-16 bg-white">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">Real-World ROI Examples</h2>
+        <h2 class="text-3xl font-bold text-center mb-12">What's at Stake: Real-World Examples</h2>
         <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <div class="bg-gradient-to-br from-green-50 to-white rounded-lg p-6 border border-green-200">
             <div class="text-4xl mb-4">🏗️</div>
@@ -426,21 +440,9 @@ const breadcrumbItems = [
                 <span class="text-gray-600">Project Value:</span>
                 <span class="font-semibold">$12M</span>
               </div>
-              <div class="flex justify-between">
-                <span class="text-gray-600">Previous Losses:</span>
-                <span class="font-semibold">$180K/year</span>
-              </div>
-              <div class="flex justify-between">
-                <span class="text-gray-600">Security Investment:</span>
-                <span class="font-semibold">$96K/year</span>
-              </div>
               <div class="flex justify-between pt-2 border-t">
-                <span class="text-gray-600">Net Savings:</span>
-                <span class="font-bold text-green-600">$84K/year</span>
-              </div>
-              <div class="flex justify-between">
-                <span class="text-gray-600">ROI:</span>
-                <span class="font-bold text-green-600">287%</span>
+                <span class="text-gray-600">Previous Losses:</span>
+                <span class="font-bold text-green-600">$180K/year</span>
               </div>
             </div>
           </div>
@@ -453,21 +455,9 @@ const breadcrumbItems = [
                 <span class="text-gray-600">Project Value:</span>
                 <span class="font-semibold">$8M</span>
               </div>
-              <div class="flex justify-between">
-                <span class="text-gray-600">Guard Costs:</span>
-                <span class="font-semibold">$180K/year</span>
-              </div>
-              <div class="flex justify-between">
-                <span class="text-gray-600">Trailer Costs:</span>
-                <span class="font-semibold">$72K/year</span>
-              </div>
               <div class="flex justify-between pt-2 border-t">
-                <span class="text-gray-600">Net Savings:</span>
-                <span class="font-bold text-green-600">$108K/year</span>
-              </div>
-              <div class="flex justify-between">
-                <span class="text-gray-600">ROI:</span>
-                <span class="font-bold text-green-600">350%</span>
+                <span class="text-gray-600">Guard Costs:</span>
+                <span class="font-bold text-green-600">$180K/year</span>
               </div>
             </div>
           </div>
@@ -484,21 +474,16 @@ const breadcrumbItems = [
                 <span class="text-gray-600">Copper Theft Risk:</span>
                 <span class="font-semibold">$500K</span>
               </div>
-              <div class="flex justify-between">
-                <span class="text-gray-600">3 Trailers Cost:</span>
-                <span class="font-semibold">$144K/year</span>
-              </div>
               <div class="flex justify-between pt-2 border-t">
                 <span class="text-gray-600">Losses Prevented:</span>
                 <span class="font-bold text-green-600">$475K</span>
               </div>
-              <div class="flex justify-between">
-                <span class="text-gray-600">ROI:</span>
-                <span class="font-bold text-green-600">430%</span>
-              </div>
             </div>
           </div>
         </div>
+        <p class="text-center text-gray-600 mt-8 max-w-3xl mx-auto">
+          Enter your quoted trailer rental in the <a href="#calculator" class="text-blue-600 underline">calculator above</a> to see net savings and ROI for a site like yours.
+        </p>
       </div>
     </section>
 
@@ -557,8 +542,10 @@ const breadcrumbItems = [
         const totalAtRisk = equipmentValue + materialValue;
         const annualTheftRisk = totalAtRisk * theftRiskRate;
 
-        // Mobile surveillance costs (from pricing page)
-        const monthlyTrailerCost = 8000; // Average monthly rate
+        // Mobile surveillance cost comes from the visitor's own quote
+        const trailerRate = parseFloat(document.getElementById('trailer-rate').value);
+        const hasQuote = trailerRate > 0;
+        const monthlyTrailerCost = hasQuote ? trailerRate : 0;
         const annualTrailerCost = monthlyTrailerCost * 12;
 
         // Current security annual cost
@@ -583,16 +570,22 @@ const breadcrumbItems = [
         const paybackPeriod = annualTrailerCost / (totalAnnualSavings / 12);
 
         // Update results
-        document.getElementById('roi-percentage').textContent = roi + '%';
-        document.getElementById('monthly-savings').textContent = '$' + monthlySavings.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-        document.getElementById('payback-period').textContent = Math.max(1, Math.ceil(paybackPeriod)) + ' months';
+        // Trailer-dependent results: show the number when a quote is entered, otherwise a prompt
+        const setTrailerResult = (id, text) => {
+          const el = document.getElementById(id);
+          el.textContent = hasQuote ? text : 'Enter your quote to compare';
+          el.style.fontSize = hasQuote ? '' : '1rem';
+        };
+        setTrailerResult('roi-percentage', roi + '%');
+        setTrailerResult('monthly-savings', '$' + monthlySavings.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+        setTrailerResult('payback-period', Math.max(1, Math.ceil(paybackPeriod)) + ' months');
 
         document.getElementById('theft-risk').textContent = '$' + annualTheftRisk.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
         document.getElementById('current-annual-cost').textContent = '$' + currentAnnualCost.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-        document.getElementById('surveillance-annual-cost').textContent = '$' + annualTrailerCost.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        setTrailerResult('surveillance-annual-cost', '$' + annualTrailerCost.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ','));
         document.getElementById('insurance-savings').textContent = '$' + annualInsuranceSavings.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
         document.getElementById('theft-prevention-savings').textContent = '$' + theftPreventionSavings.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-        document.getElementById('total-annual-savings').textContent = '$' + totalAnnualSavings.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        setTrailerResult('total-annual-savings', '$' + totalAnnualSavings.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ','));
 
         // Generate recommendations
         const recommendations = document.getElementById('recommendations');
@@ -602,10 +595,10 @@ const breadcrumbItems = [
           recHTML += '<li class="flex items-start"><span class="text-green-600 mr-2">✓</span> Multiple trailer units recommended for comprehensive coverage</li>';
         }
         if (locationRisk === 'high' || locationRisk === 'remote') {
-          recHTML += '<li class="flex items-start"><span class="text-green-600 mr-2">✓</span> 24/7 live monitoring service highly recommended</li>';
+          recHTML += '<li class="flex items-start"><span class="text-green-600 mr-2">✓</span> 24/7 self-monitoring with real-time alerts to your phone</li>';
         }
         if (materialValue > 200000) {
-          recHTML += '<li class="flex items-start"><span class="text-green-600 mr-2">✓</span> Thermal cameras for copper theft prevention</li>';
+          recHTML += '<li class="flex items-start"><span class="text-green-600 mr-2">✓</span> PTZ cameras with 25x optical zoom and IR night vision covering copper and material storage</li>';
         }
         recHTML += '<li class="flex items-start"><span class="text-green-600 mr-2">✓</span> Solar-powered units for continuous operation</li>';
         recHTML += '<li class="flex items-start"><span class="text-green-600 mr-2">✓</span> Insurance documentation package for premium reduction</li>';
@@ -613,8 +606,12 @@ const breadcrumbItems = [
 
         recommendations.innerHTML = recHTML;
 
-        // Draw ROI chart
-        drawROIChart(annualTrailerCost, totalAnnualSavings, projectDuration);
+        // Draw ROI chart (needs the quoted trailer rate)
+        if (hasQuote) {
+          drawROIChart(annualTrailerCost, totalAnnualSavings, projectDuration);
+        } else {
+          drawChartPrompt();
+        }
 
         // Show results
         resultsSection.classList.remove('hidden');
@@ -627,6 +624,8 @@ const breadcrumbItems = [
 
         // Clear canvas
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.setLineDash([]);
+        ctx.lineWidth = 1;
 
         // Simple line chart
         const months = Math.min(duration, 12);
@@ -667,6 +666,18 @@ const breadcrumbItems = [
         ctx.moveTo(padding, height/2);
         ctx.lineTo(width - padding, height/2);
         ctx.stroke();
+      }
+
+      function drawChartPrompt() {
+        const canvas = document.getElementById('roi-chart');
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#6b7280';
+        ctx.font = '14px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('Enter your quoted trailer rental', canvas.width / 2, canvas.height / 2 - 10);
+        ctx.fillText('to see your ROI timeline', canvas.width / 2, canvas.height / 2 + 12);
+        ctx.textAlign = 'start';
       }
 
       // Copy embed code

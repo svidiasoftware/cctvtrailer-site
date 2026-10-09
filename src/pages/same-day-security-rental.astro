@@ -17,9 +17,7 @@ const breadcrumbItems = [
 
 const serviceSchemaData = {
   serviceName: "Same Day Security Trailer Rental - Emergency Deployment",
-  description: "Emergency same-day security trailer rental and deployment. 2-hour response time, 30-minute setup. Available 24/7 for urgent security needs in Tacoma and Seattle area.",
-  price: "999",
-  priceUnit: "DAY" as const,
+  description: "Emergency same-day security trailer rental and deployment, subject to availability. 20-30 minute setup and 24/7 self-monitoring for urgent security needs in the Tacoma and Seattle area.",
   areaServed: [
     { type: "State" as const, name: "Washington" },
     { type: "City" as const, name: "Tacoma" },
@@ -41,7 +39,7 @@ const faqSchema = JSON.stringify({
       "name": "How fast can you deploy a security trailer?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We guarantee 2-4 hour emergency response time for same-day security needs within our service area. Setup takes just 30 minutes once on-site. For extreme emergencies, we can deploy within 90 minutes."
+        "text": "Same-day deployment is available within our service area, subject to availability. Call (253) 683-2288 to check availability for your site. Setup takes just 20-30 minutes once on-site."
       }
     },
     {
@@ -49,7 +47,7 @@ const faqSchema = JSON.stringify({
       "name": "Is same-day security rental available 24/7?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, our emergency deployment team is available 24/7/365. We maintain ready-to-deploy trailers specifically for urgent security needs, including nights, weekends, and holidays."
+        "text": "You can reach our hotline 24/7, including nights, weekends, and holidays. Same-day deployment depends on trailer availability, so call (253) 683-2288 to check availability for your site."
       }
     },
     {
@@ -65,8 +63,8 @@ const faqSchema = JSON.stringify({
 ---
 
 <Layout
-  title="Same Day Security Rental | Emergency Surveillance Deployment 24/7"
-  description="Need security TODAY? Same-day trailer deployment in 2-4 hours. 24/7 emergency response for theft, vandalism, events. Setup in 30 minutes. Call now!"
+  title="Same Day Security Rental | Emergency Surveillance Deployment"
+  description="Need security TODAY? Same-day surveillance trailer deployment for theft, vandalism, events — call to check availability. 20-30 minute setup, 24/7 self-monitoring. (253) 683-2288"
   schema={[faqSchema]}>
 
   <ServiceSchema {...serviceSchemaData} />
@@ -80,10 +78,10 @@ const faqSchema = JSON.stringify({
       <div class="container mx-auto px-4">
         <div class="max-w-4xl">
           <div class="bg-yellow-500 text-black inline-block px-4 py-2 rounded-lg font-bold mb-4 animate-pulse">
-            🚨 EMERGENCY DEPLOYMENT AVAILABLE NOW
+            🚨 SAME-DAY EMERGENCY DEPLOYMENT
           </div>
           <h1 class="text-4xl md:text-5xl font-bold mb-4">Same Day Security Trailer Rental - Deployed in Hours</h1>
-          <p class="text-xl mb-6">Just had a theft? Event starting today? Guard didn't show? We deploy security trailers TODAY with 2-hour emergency response.</p>
+          <p class="text-xl mb-6">Just had a theft? Event starting today? Guard didn't show? We can deploy security trailers the same day — call to check availability.</p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="tel:2536832288" class="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-10 rounded-lg inline-block text-center text-xl">
               📞 CALL NOW: (253) 683-2288
@@ -93,7 +91,7 @@ const faqSchema = JSON.stringify({
             </a>
           </div>
           <div class="mt-6 p-4 bg-red-700 rounded-lg">
-            <p class="text-yellow-300 font-bold">⚡ Current Response Time: 2-4 hours • Trailers ready NOW</p>
+            <p class="text-yellow-300 font-bold">⚡ Same-day deployment • Call (253) 683-2288 to check availability</p>
           </div>
         </div>
       </div>
@@ -103,17 +101,16 @@ const faqSchema = JSON.stringify({
     <section class="py-8 bg-gray-50">
       <div class="container mx-auto px-4">
         <QuickAnswer
-          what="Emergency same-day deployment of mobile surveillance trailers"
-          response="2-4 hour delivery, 30-minute setup, operational immediately"
-          availability="24/7/365 including nights, weekends, and holidays"
+          what="Emergency same-day deployment of mobile surveillance trailers with 24/7 self-monitoring"
+          time="20-30 minute setup, same-day delivery"
+          availability="Call to inquire: (253) 683-2288"
           coverage="Tacoma, Seattle, Federal Way, Kent, Auburn, entire Puget Sound"
-          cost="$999/day emergency rate, standard rates after first week"
           includes={[
-            "Immediate dispatch from ready inventory",
-            "Professional delivery and setup",
-            "24/7 monitoring activation",
-            "Emergency response coordination",
-            "Direct line to security team"
+            "4 cameras (1 fixed fisheye + 3 PTZ 25x zoom with IR)",
+            "Equipment training",
+            "24/7 technical support",
+            "Solar power/generator included",
+            "Remote viewing access on your mobile devices or computer"
           ]}
         />
       </div>
@@ -136,22 +133,22 @@ const faqSchema = JSON.stringify({
                 <div class="bg-red-600 text-white rounded-full w-16 h-16 flex items-center justify-center font-bold z-10">NOW</div>
                 <div class="ml-8 bg-red-50 rounded-lg p-4 flex-1">
                   <h3 class="font-bold text-lg">You Call Our Emergency Line</h3>
-                  <p class="text-gray-700">24/7 hotline answered immediately. Security expert assesses your urgent needs.</p>
+                  <p class="text-gray-700">Call our 24/7 hotline. A security expert assesses your urgent needs and checks trailer availability.</p>
                 </div>
               </div>
 
               <!-- Dispatch -->
               <div class="flex items-center">
-                <div class="bg-orange-600 text-white rounded-full w-16 h-16 flex items-center justify-center font-bold z-10">15min</div>
+                <div class="bg-orange-600 text-white rounded-full w-16 h-16 flex items-center justify-center font-bold z-10">NEXT</div>
                 <div class="ml-8 bg-orange-50 rounded-lg p-4 flex-1">
                   <h3 class="font-bold text-lg">Trailer Dispatched</h3>
-                  <p class="text-gray-700">Ready trailer loaded and deployment team dispatched to your location.</p>
+                  <p class="text-gray-700">When a trailer is available, it is loaded and our deployment team heads to your location.</p>
                 </div>
               </div>
 
               <!-- Arrival -->
               <div class="flex items-center">
-                <div class="bg-yellow-600 text-white rounded-full w-16 h-16 flex items-center justify-center font-bold z-10">2-4hr</div>
+                <div class="bg-yellow-600 text-white rounded-full w-16 h-16 flex items-center justify-center font-bold z-10">TODAY</div>
                 <div class="ml-8 bg-yellow-50 rounded-lg p-4 flex-1">
                   <h3 class="font-bold text-lg">On-Site Arrival</h3>
                   <p class="text-gray-700">Professional team arrives with fully equipped surveillance trailer.</p>
@@ -162,8 +159,8 @@ const faqSchema = JSON.stringify({
               <div class="flex items-center">
                 <div class="bg-green-600 text-white rounded-full w-16 h-16 flex items-center justify-center font-bold z-10">30min</div>
                 <div class="ml-8 bg-green-50 rounded-lg p-4 flex-1">
-                  <h3 class="font-bold text-lg">Operational & Monitoring</h3>
-                  <p class="text-gray-700">System activated, cameras recording, 24/7 monitoring begins immediately.</p>
+                  <h3 class="font-bold text-lg">Operational & Self-Monitoring</h3>
+                  <p class="text-gray-700">System activated, cameras recording, and your 24/7 self-monitoring begins immediately with real-time alerts on your phone or computer.</p>
                 </div>
               </div>
             </div>
@@ -171,8 +168,8 @@ const faqSchema = JSON.stringify({
 
           <!-- Total time highlight -->
           <div class="mt-12 bg-green-100 border-2 border-green-300 rounded-lg p-6 text-center">
-            <p class="text-3xl font-bold text-green-800">Protected in Under 4 Hours</p>
-            <p class="text-gray-700 mt-2">From your call to full protection - faster than any other security solution</p>
+            <p class="text-3xl font-bold text-green-800">Protected the Same Day</p>
+            <p class="text-gray-700 mt-2">From your call to full protection, subject to availability - faster than hiring guards or installing fixed cameras</p>
           </div>
         </div>
       </div>
@@ -196,7 +193,7 @@ const faqSchema = JSON.stringify({
               <li>✓ Catch returning criminals</li>
             </ul>
             <div class="mt-4 p-3 bg-red-50 rounded">
-              <p class="text-sm font-semibold text-red-800">Deploy within 2 hours of incident</p>
+              <p class="text-sm font-semibold text-red-800">Same-day deployment after an incident</p>
             </div>
           </div>
 
@@ -225,7 +222,7 @@ const faqSchema = JSON.stringify({
               <li>✓ No-show replacement</li>
               <li>✓ Better coverage than guards</li>
               <li>✓ No liability issues</li>
-              <li>✓ Immediate deployment</li>
+              <li>✓ Same-day deployment</li>
             </ul>
             <div class="mt-4 p-3 bg-yellow-50 rounded">
               <p class="text-sm font-semibold text-yellow-800">Replace guards same day</p>
@@ -256,7 +253,7 @@ const faqSchema = JSON.stringify({
             <ul class="text-sm space-y-2 text-gray-600">
               <li>✓ Protect immediately</li>
               <li>✓ Document delivery</li>
-              <li>✓ 24/7 monitoring</li>
+              <li>✓ 24/7 self-monitoring</li>
               <li>✓ Theft deterrence</li>
             </ul>
             <div class="mt-4 p-3 bg-green-50 rounded">
@@ -272,7 +269,7 @@ const faqSchema = JSON.stringify({
             <ul class="text-sm space-y-2 text-gray-600">
               <li>✓ Immediate protection</li>
               <li>✓ Evidence collection</li>
-              <li>✓ Police coordination</li>
+              <li>✓ Video evidence for police</li>
               <li>✓ Peace of mind</li>
             </ul>
             <div class="mt-4 p-3 bg-purple-50 rounded">
@@ -293,8 +290,8 @@ const faqSchema = JSON.stringify({
             <div class="flex items-start">
               <div class="bg-green-600 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold mr-4">✓</div>
               <div>
-                <h3 class="font-bold text-lg mb-2">Ready-to-Deploy Fleet</h3>
-                <p class="text-gray-700">We maintain pre-configured trailers specifically for emergencies. Fully charged, equipped, and ready to roll 24/7.</p>
+                <h3 class="font-bold text-lg mb-2">Pre-Configured Trailers</h3>
+                <p class="text-gray-700">Our trailers are pre-configured, charged, and fully equipped, so an available unit can roll quickly. Call to check availability.</p>
               </div>
             </div>
 
@@ -309,8 +306,8 @@ const faqSchema = JSON.stringify({
             <div class="flex items-start">
               <div class="bg-green-600 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold mr-4">✓</div>
               <div>
-                <h3 class="font-bold text-lg mb-2">24/7 Deployment Teams</h3>
-                <p class="text-gray-700">On-call crews ready nights, weekends, and holidays. No waiting until Monday morning.</p>
+                <h3 class="font-bold text-lg mb-2">Nights, Weekends & Holidays</h3>
+                <p class="text-gray-700">After-hours deployments are possible when a trailer is available. Call our 24/7 hotline instead of waiting until Monday morning.</p>
               </div>
             </div>
           </div>
@@ -327,8 +324,8 @@ const faqSchema = JSON.stringify({
             <div class="flex items-start">
               <div class="bg-green-600 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold mr-4">✓</div>
               <div>
-                <h3 class="font-bold text-lg mb-2">Instant Monitoring</h3>
-                <p class="text-gray-700">Professional monitoring center activates immediately upon setup. No delay in protection.</p>
+                <h3 class="font-bold text-lg mb-2">Instant Self-Monitoring</h3>
+                <p class="text-gray-700">Real-time alerts and live view on your mobile devices or computer start immediately upon setup. No delay in protection.</p>
               </div>
             </div>
 
@@ -350,7 +347,7 @@ const faqSchema = JSON.stringify({
             <!-- Our Service -->
             <div class="flex items-center">
               <div class="w-32 font-semibold">CCTV Trailer:</div>
-              <div class="flex-1 bg-green-600 text-white px-4 py-2 rounded-r" style="width: 20%">2-4 hours</div>
+              <div class="flex-1 bg-green-600 text-white px-4 py-2 rounded-r" style="width: 20%">Same day</div>
             </div>
 
             <!-- Security Guards -->
@@ -376,12 +373,12 @@ const faqSchema = JSON.stringify({
 
         <div class="max-w-5xl mx-auto">
           <div class="bg-white rounded-lg shadow-lg p-8">
-            <h3 class="text-xl font-bold mb-6 text-center">Guaranteed Response Times by Location</h3>
+            <h3 class="text-xl font-bold mb-6 text-center">Where We Deploy Same-Day</h3>
 
             <div class="grid md:grid-cols-2 gap-6">
-              <!-- 2-Hour Response -->
+              <!-- Core Service Area -->
               <div class="bg-green-50 rounded-lg p-6">
-                <h4 class="font-bold text-green-800 mb-4">⚡ 2-Hour Emergency Response</h4>
+                <h4 class="font-bold text-green-800 mb-4">⚡ Core Service Area</h4>
                 <ul class="space-y-2 text-gray-700">
                   <li>📍 Tacoma (all areas)</li>
                   <li>📍 Lakewood</li>
@@ -392,9 +389,9 @@ const faqSchema = JSON.stringify({
                 </ul>
               </div>
 
-              <!-- 4-Hour Response -->
+              <!-- Extended Service Area -->
               <div class="bg-yellow-50 rounded-lg p-6">
-                <h4 class="font-bold text-yellow-800 mb-4">⏱️ 4-Hour Rapid Response</h4>
+                <h4 class="font-bold text-yellow-800 mb-4">⏱️ Extended Service Area</h4>
                 <ul class="space-y-2 text-gray-700">
                   <li>📍 Seattle</li>
                   <li>📍 Kent</li>
@@ -407,61 +404,32 @@ const faqSchema = JSON.stringify({
             </div>
 
             <div class="mt-6 p-4 bg-blue-50 rounded-lg text-center">
-              <p class="text-gray-700"><strong>Outside these areas?</strong> Call us - we often can accommodate rush deployments throughout Western Washington.</p>
+              <p class="text-gray-700"><strong>Same-day deployment is subject to availability.</strong> Call (253) 683-2288 to check. Outside these areas? We often can accommodate rush deployments throughout Western Washington.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Pricing Section -->
+    <!-- Emergency Quote Section -->
     <section class="py-16 bg-white">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">Emergency Deployment Pricing</h2>
+        <h2 class="text-3xl font-bold text-center mb-12">Emergency Deployment Quotes</h2>
 
-        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <!-- Emergency Rate -->
-          <div class="bg-red-50 border-2 border-red-300 rounded-lg p-6">
-            <h3 class="text-xl font-bold mb-4">Emergency Same-Day</h3>
-            <div class="text-3xl font-bold text-red-700 mb-2">$999</div>
-            <p class="text-gray-600 mb-4">Per day (first 3 days)</p>
-            <ul class="space-y-2 text-sm">
-              <li>✓ 2-4 hour deployment</li>
-              <li>✓ 24/7 availability</li>
-              <li>✓ Priority response</li>
-              <li>✓ Immediate monitoring</li>
-            </ul>
-          </div>
-
-          <!-- Weekly Rate -->
-          <div class="bg-blue-50 border-2 border-blue-300 rounded-lg p-6">
-            <h3 class="text-xl font-bold mb-4">After First Week</h3>
-            <div class="text-3xl font-bold text-blue-700 mb-2">$3,500</div>
-            <p class="text-gray-600 mb-4">Per week</p>
-            <ul class="space-y-2 text-sm">
-              <li>✓ Standard weekly rate</li>
-              <li>✓ Continued monitoring</li>
-              <li>✓ Maintenance included</li>
-              <li>✓ Relocate as needed</li>
-            </ul>
-          </div>
-
-          <!-- Monthly Rate -->
-          <div class="bg-green-50 border-2 border-green-300 rounded-lg p-6">
-            <h3 class="text-xl font-bold mb-4">Monthly Rate</h3>
-            <div class="text-3xl font-bold text-green-700 mb-2">$8,000</div>
-            <p class="text-gray-600 mb-4">Per month</p>
-            <ul class="space-y-2 text-sm">
-              <li>✓ Best value</li>
-              <li>✓ Full service</li>
-              <li>✓ Priority support</li>
-              <li>✓ Insurance discounts</li>
-            </ul>
-          </div>
+        <div class="bg-red-50 border-2 border-red-300 rounded-lg p-6 max-w-3xl mx-auto">
+          <p class="text-gray-700 mb-4 text-center">Pricing depends on rental length, site, and configuration. Start with a short emergency rental and extend week-to-week or month-to-month as needed.</p>
+          <h3 class="text-xl font-bold mb-4 text-center">Every rental includes:</h3>
+          <ul class="space-y-2 text-sm max-w-md mx-auto">
+            <li>✓ 4 cameras (1 fixed fisheye + 3 PTZ with 25x optical zoom and IR)</li>
+            <li>✓ Equipment training</li>
+            <li>✓ 24/7 technical support</li>
+            <li>✓ Solar power/generator included</li>
+            <li>✓ Remote viewing access on your mobile devices or computer</li>
+          </ul>
         </div>
 
         <div class="mt-8 text-center">
-          <p class="text-gray-700 mb-4">All emergency deployments include delivery, setup, training, and 24/7 monitoring</p>
+          <p class="text-gray-700 mb-4">Professional delivery and setup available</p>
           <a href="tel:2536832288" class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg inline-block text-xl">
             Get Emergency Quote Now: (253) 683-2288
           </a>
@@ -542,12 +510,12 @@ const faqSchema = JSON.stringify({
         <div class="max-w-3xl mx-auto space-y-6">
           <div class="bg-gray-50 rounded-lg p-6">
             <h3 class="font-bold text-lg mb-2">How fast can you deploy a security trailer?</h3>
-            <p class="text-gray-700">We guarantee 2-4 hour emergency response time for same-day security needs within our service area. Setup takes just 30 minutes once on-site. For extreme emergencies, we can deploy within 90 minutes.</p>
+            <p class="text-gray-700">Same-day deployment is available within our service area, subject to availability. Call (253) 683-2288 to check availability for your site. Setup takes just 20-30 minutes once on-site.</p>
           </div>
 
           <div class="bg-gray-50 rounded-lg p-6">
             <h3 class="font-bold text-lg mb-2">Is same-day security rental available 24/7?</h3>
-            <p class="text-gray-700">Yes, our emergency deployment team is available 24/7/365. We maintain ready-to-deploy trailers specifically for urgent security needs, including nights, weekends, and holidays.</p>
+            <p class="text-gray-700">You can reach our hotline 24/7, including nights, weekends, and holidays. Same-day deployment depends on trailer availability, so call (253) 683-2288 to check availability for your site.</p>
           </div>
 
           <div class="bg-gray-50 rounded-lg p-6">
@@ -562,7 +530,7 @@ const faqSchema = JSON.stringify({
 
           <div class="bg-gray-50 rounded-lg p-6">
             <h3 class="font-bold text-lg mb-2">What if I only need security for one night?</h3>
-            <p class="text-gray-700">We offer daily rentals starting at $999 for emergency needs. Many clients start with daily rental then convert to weekly or monthly for continued protection.</p>
+            <p class="text-gray-700">We offer short-term daily rentals for emergency needs, quoted based on rental length, site, and configuration. Many clients start with a daily rental then extend to weekly or monthly for continued protection.</p>
           </div>
         </div>
       </div>
@@ -581,15 +549,15 @@ const faqSchema = JSON.stringify({
           <div class="grid md:grid-cols-3 gap-4 text-sm">
             <div>
               <div class="text-2xl mb-2">⚡</div>
-              <p>2-4 Hour Response</p>
+              <p>Same-Day Deployment</p>
             </div>
             <div>
               <div class="text-2xl mb-2">🚚</div>
-              <p>Trailers Ready Now</p>
+              <p>Call to Check Availability</p>
             </div>
             <div>
               <div class="text-2xl mb-2">✓</div>
-              <p>Setup in 30 Minutes</p>
+              <p>Setup in 20-30 Minutes</p>
             </div>
           </div>
         </div>
@@ -606,7 +574,7 @@ const faqSchema = JSON.stringify({
     <section id="emergency-form" class="py-16 bg-white">
       <div class="container mx-auto px-4 max-w-4xl">
         <h2 class="text-3xl font-bold text-center mb-4">Request Emergency Deployment</h2>
-        <p class="text-center text-gray-700 mb-8">Fill this out and we'll call you within 10 minutes, or call us directly at (253) 683-2288</p>
+        <p class="text-center text-gray-700 mb-8">Fill this out and we'll get back to you as soon as possible. Urgent? Call (253) 683-2288 for the fastest response.</p>
 
         <QuoteForm
           showTitle={false}

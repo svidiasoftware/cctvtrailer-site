@@ -58,7 +58,7 @@ const howToData = {
     },
     {
       name: "Determine Security Investment Cost",
-      text: "Get quotes for security solutions. Professional CCTV trailer rental typically costs $7,999/month including monitoring. Calculate annual cost: Monthly Rate × 12 months = Annual Investment."
+      text: "Get quotes for security solutions. CCTV trailer rental pricing depends on rental length, site, and configuration, so use the monthly rate from your own quote. Calculate annual cost: Monthly Rate × 12 months = Annual Investment."
     },
     {
       name: "Apply Theft Reduction Factor",
@@ -70,15 +70,15 @@ const howToData = {
     },
     {
       name: "Determine ROI Percentage",
-      text: "Calculate return on investment percentage. Formula: (Net Annual Benefit ÷ Annual Security Cost) × 100 = ROI%. Industry average ROI is 200-400%."
+      text: "Calculate return on investment percentage. Formula: (Net Annual Benefit ÷ Annual Security Cost) × 100 = ROI%."
     },
     {
       name: "Calculate Payback Period",
-      text: "Determine how quickly security investment pays for itself. Formula: Annual Security Cost ÷ Monthly Savings = Payback Period in Months. Most systems pay for themselves in 2-4 months."
+      text: "Determine how quickly security investment pays for itself. Formula: Annual Security Cost ÷ Monthly Savings = Payback Period in Months."
     },
     {
       name: "Project Multi-Year Returns",
-      text: "Extend calculations over project lifetime. Include cumulative savings, avoided incidents, and reputation protection value. 3-year ROI often exceeds 1000% when all factors considered."
+      text: "Extend calculations over project lifetime. Include cumulative savings, avoided incidents, and reputation protection value."
     }
   ],
   image: "/images/roi-calculator.webp"
@@ -92,7 +92,7 @@ const breadcrumbItems = [
 
 const quickAnswerData = {
   question: "What's the average ROI for construction site security?",
-  answer: "Professional mobile surveillance typically delivers <strong>200-400% ROI annually</strong>. With <strong>theft reduction of 85%</strong>, <strong>insurance savings of 10-20%</strong>, and prevention of just one major incident, most systems <strong>pay for themselves within 2-4 months</strong>.",
+  answer: "Security ROI = (Prevented Losses + Insurance Savings + Productivity Gains − Security Cost) ÷ Security Cost × 100. Mobile surveillance drives returns through theft reduction of about 85%, insurance savings of 10-20%, and avoided project delays. Your exact ROI and payback period depend on your site's loss exposure and the rental rate in your quote.",
   callToAction: {
     text: "Get ROI Analysis",
     href: "tel:2536832288"
@@ -100,9 +100,9 @@ const quickAnswerData = {
 };
 
 const statBoxData = [
-  { value: "200-400%", label: "Average Annual ROI" },
   { value: "85%", label: "Theft Reduction" },
-  { value: "2-4mo", label: "Payback Period" },
+  { value: "10-20%", label: "Insurance Savings" },
+  { value: "3-7 days", label: "Delay per Theft Incident" },
   { value: "$300K+", label: "Avg Annual Savings" }
 ];
 ---
@@ -256,21 +256,22 @@ const statBoxData = [
               <div class="space-y-3">
                 <div class="flex justify-between">
                   <span>Annual Security Investment:</span>
-                  <span class="font-bold">$95,988</span>
+                  <span class="font-bold text-right">Your quoted monthly rate × 12</span>
                 </div>
                 <div class="flex justify-between text-xl font-bold border-t pt-3">
                   <span>Net Annual Benefit:</span>
-                  <span class="text-green-600">$224,512</span>
+                  <span class="text-green-600 text-right text-base">$320,500 − annual investment</span>
                 </div>
                 <div class="flex justify-between text-2xl font-bold text-purple-600 border-t pt-3">
                   <span>ROI Percentage:</span>
-                  <span>234%</span>
+                  <span class="text-right text-base">Net benefit ÷ investment × 100</span>
                 </div>
                 <div class="flex justify-between text-lg font-semibold">
                   <span>Payback Period:</span>
-                  <span class="text-green-600">3.6 months</span>
+                  <span class="text-green-600 text-right text-base">Investment ÷ monthly savings</span>
                 </div>
               </div>
+              <p class="text-sm text-gray-600 mt-4">Plug in the rental rate from your quote to finish the math. Pricing depends on rental length, site, and configuration. Call <a href="tel:2536832288" class="text-purple-700 underline">(253) 683-2288</a> or <a href="/contact" class="text-purple-700 underline">request a quote</a>.</p>
             </div>
           </div>
         </div>
@@ -318,48 +319,38 @@ const statBoxData = [
 
           <div class="overflow-x-auto">
             <table class="w-full border-collapse bg-white rounded-lg shadow-sm">
-              <caption class="sr-only">Quick ROI Reference Table comparing project sizes with typical loss risk, security cost, expected savings, and ROI percentages</caption>
+              <caption class="sr-only">Quick ROI Reference Table comparing project sizes with typical loss risk and expected savings</caption>
               <thead>
                 <tr class="bg-purple-600 text-white">
                   <th class="border p-4 text-left">Project Size</th>
                   <th class="border p-4 text-left">Typical Loss Risk</th>
-                  <th class="border p-4 text-left">Security Cost</th>
                   <th class="border p-4 text-left">Expected Savings</th>
-                  <th class="border p-4 text-left">ROI %</th>
                 </tr>
               </thead>
               <tbody>
                 <tr class="border-b">
                   <td class="p-4 font-semibold">$1-5M</td>
                   <td class="p-4">$50-150K/year</td>
-                  <td class="p-4">$96K/year</td>
                   <td class="p-4 text-green-600 font-semibold">$125K/year</td>
-                  <td class="p-4 font-bold">130%</td>
                 </tr>
                 <tr class="border-b bg-gray-50">
                   <td class="p-4 font-semibold">$5-10M</td>
                   <td class="p-4">$150-300K/year</td>
-                  <td class="p-4">$96K/year</td>
                   <td class="p-4 text-green-600 font-semibold">$255K/year</td>
-                  <td class="p-4 font-bold">266%</td>
                 </tr>
                 <tr class="border-b">
                   <td class="p-4 font-semibold">$10-25M</td>
                   <td class="p-4">$300-750K/year</td>
-                  <td class="p-4">$96K/year</td>
                   <td class="p-4 text-green-600 font-semibold">$525K/year</td>
-                  <td class="p-4 font-bold">547%</td>
                 </tr>
                 <tr class="border-b bg-gray-50">
                   <td class="p-4 font-semibold">$25M+</td>
                   <td class="p-4">$750K+/year</td>
-                  <td class="p-4">$192K/year*</td>
                   <td class="p-4 text-green-600 font-semibold">$850K+/year</td>
-                  <td class="p-4 font-bold">442%+</td>
                 </tr>
               </tbody>
             </table>
-            <p class="text-sm text-gray-600 mt-2">*Multiple units for larger sites</p>
+            <p class="text-sm text-gray-600 mt-2">ROI % = (Expected Savings − annual security cost) ÷ annual security cost × 100. Use the rental rate from your quote; larger sites may need multiple units.</p>
           </div>
         </div>
       </div>

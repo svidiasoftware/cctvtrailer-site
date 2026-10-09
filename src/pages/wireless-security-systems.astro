@@ -9,11 +9,6 @@ import ComparisonTable from '../components/ComparisonTable.astro';
 
 const title = "Wireless Security Systems | 4G LTE Surveillance Camera Rental";
 const description = "Deploy wireless security camera systems anywhere with 4G LTE connectivity. No power lines or internet required. Rapid deployment for construction sites and remote locations.";
-
-// Rolling 12-month priceValidUntil so Product/Offer rich results stay valid.
-const priceValidUntil = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)
-  .toISOString()
-  .split('T')[0];
 ---
 
 <Layout title={title} description={description}>
@@ -157,13 +152,11 @@ const priceValidUntil = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)
             { feature: "Deployment Time", values: [{ text: "30 minutes", highlight: true }, "2-4 weeks", "3-6 weeks"] },
             { feature: "Infrastructure Required", values: [{ text: "None", highlight: true }, "Internet + Power", "Full cabling"] },
             { feature: "Location Flexibility", values: [{ text: "Anywhere with cell signal", highlight: true }, "Near existing services", "Limited to buildings"] },
-            { feature: "Initial Cost", values: [{ text: "$3,000-5,000", highlight: true }, "$10,000-25,000", "$15,000-40,000"] },
-            { feature: "Monthly Operating Cost", values: ["$200-400", "$100-200", "$50-100"] },
+            { feature: "Initial Cost", values: [{ text: "No installation cost — call for a quote", highlight: true }, "$10,000-25,000", "$15,000-40,000"] },
             { feature: "Scalability", values: [{ text: "Instant", highlight: true }, "Requires planning", "Major construction"] },
             { feature: "Relocation Capability", values: [{ text: "Same day", highlight: true }, "New installation", "Not practical"] },
             { feature: "Weather Resilience", values: [{ text: "Excellent", highlight: true }, "Cable dependent", "Cable vulnerable"] },
-            { feature: "Maintenance", values: [{ text: "Remote updates", highlight: true }, "On-site required", "Regular on-site"] },
-            { feature: "ROI Period", values: [{ text: "1-2 months", highlight: true }, "6-12 months", "12-24 months"] }
+            { feature: "Maintenance", values: [{ text: "Remote updates", highlight: true }, "On-site required", "Regular on-site"] }
           ]}
         />
 
@@ -306,7 +299,7 @@ const priceValidUntil = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)
                 </svg>
                 <div>
                   <strong>Emergency Response</strong>
-                  <p class="text-gray-600">Deploy security after incidents in under 30 minutes</p>
+                  <p class="text-gray-600">Deploy security after incidents &mdash; about 30 minutes to set up once on site</p>
                 </div>
               </li>
               <li class="flex items-start">
@@ -395,6 +388,10 @@ const priceValidUntil = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)
             <h3 class="text-lg font-bold mb-4">Camera Specifications</h3>
             <ul class="space-y-2 text-sm">
               <li class="flex justify-between">
+                <span>Cameras</span>
+                <span class="font-semibold">1 fixed fisheye + 3 PTZ</span>
+              </li>
+              <li class="flex justify-between">
                 <span>Resolution</span>
                 <span class="font-semibold">4K (8MP)</span>
               </li>
@@ -412,7 +409,7 @@ const priceValidUntil = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)
               </li>
               <li class="flex justify-between">
                 <span>Optical Zoom</span>
-                <span class="font-semibold">30x</span>
+                <span class="font-semibold">25x (PTZ)</span>
               </li>
               <li class="flex justify-between">
                 <span>Weather Rating</span>
@@ -456,7 +453,7 @@ const priceValidUntil = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)
             <ul class="space-y-2 text-sm">
               <li class="flex justify-between">
                 <span>Storage</span>
-                <span class="font-semibold">30 days onboard</span>
+                <span class="font-semibold">2 weeks onboard (extendable)</span>
               </li>
               <li class="flex justify-between">
                 <span>Cloud Backup</span>
@@ -509,7 +506,7 @@ const priceValidUntil = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)
               </h3>
               <div>
                 <p class="text-gray-600">
-                  The system continues recording locally with 30+ days of onboard storage. Once connectivity returns, footage automatically syncs to the cloud. Critical alerts can be sent via satellite backup if configured.
+                  The system continues recording locally, with two weeks of motion-only onboard storage by default (extendable in special cases). Once connectivity returns, footage automatically syncs to the cloud. Critical alerts can be sent via satellite backup if configured.
                 </p>
               </div>
             </div>
@@ -600,19 +597,12 @@ const priceValidUntil = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)
 
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": "Service",
     "name": "Wireless Security System with 4G LTE",
     "description": "Deploy wireless security camera systems anywhere with 4G LTE connectivity. No power lines or internet required.",
     "brand": {
       "@type": "Brand",
       "name": "CCTV Trailer"
-    },
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "USD",
-      "price": "2500",
-      "priceValidUntil": priceValidUntil,
-      "availability": "https://schema.org/InStock"
     }
   })}></script>
 
@@ -634,7 +624,7 @@ const priceValidUntil = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)
         "name": "What happens if cellular service is temporarily unavailable?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The system continues recording locally with 30+ days of onboard storage. Once connectivity returns, footage automatically syncs to the cloud. Critical alerts can be sent via satellite backup if configured."
+          "text": "The system continues recording locally, with two weeks of motion-only onboard storage by default (extendable in special cases). Once connectivity returns, footage automatically syncs to the cloud. Critical alerts can be sent via satellite backup if configured."
         }
       },
       {

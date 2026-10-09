@@ -46,7 +46,7 @@ const overrides: Record<string, Override> = {
 
   // Top-tier commercial pages
   '/services': { priority: '0.9', changefreq: 'monthly' },
-  '/pricing': { priority: '0.9', changefreq: 'weekly' },
+  '/pricing': { priority: '0.9', changefreq: 'weekly' }, // "Rental Options & Quotes" page (no prices; URL unchanged)
   '/contact': { priority: '0.8', changefreq: 'monthly' },
   '/locations': { priority: '0.9', changefreq: 'monthly' },
   '/same-day-security-rental': { priority: '0.95', changefreq: 'weekly' },

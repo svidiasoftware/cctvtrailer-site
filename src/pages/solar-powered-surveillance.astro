@@ -12,13 +12,8 @@ import RelatedPages from '../components/RelatedPages.astro';
 import SpeakableSchema from '../components/SpeakableSchema.astro';
 import RentVsBuy from '../components/RentVsBuy.astro';
 
-const title = "Solar Powered Security Trailer | Eco-Friendly Off-Grid Surveillance";
-const description = "Deploy solar powered security trailers for sustainable, off-grid surveillance in Tacoma, Seattle, and the Pacific Northwest. Zero emissions, no power costs, and reliable 24/7 operation in remote locations without infrastructure.";
-
-// Rolling 12-month priceValidUntil so Product/Offer rich results stay valid.
-const priceValidUntil = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)
-  .toISOString()
-  .split('T')[0];
+const title = "Solar Surveillance Trailer Rental | Solar Security Camera Trailer, WA";
+const description = "Solar-powered surveillance trailer rental in Tacoma, Seattle & the Puget Sound, WA: 4 cameras, solar with generator backup, 24/7 self-monitoring from your phone. Off-grid, no power hookup.";
 
 const breadcrumbItems = [
   { name: "Home", url: "/" },
@@ -32,7 +27,7 @@ const relatedPages = [
   { title: "Standalone Hybrid Power", href: "/trailer-standalone-hybrid-power-architecture", description: "Learn about our hybrid solar-battery-generator power architecture designed for Pacific Northwest conditions." },
   { title: "Technical Specifications", href: "/technical-specifications", description: "Detailed specs on cameras, solar panels, battery systems, and connectivity for our surveillance trailers." },
   { title: "How to Setup Security Trailer", href: "/how-to-setup-security-trailer", description: "Step-by-step guide to deploying and configuring your mobile security trailer on-site in under 30 minutes." },
-  { title: "Pricing", href: "/pricing", description: "Transparent rental pricing for mobile surveillance trailers. Monthly and long-term options available." }
+  { title: "Rental Options & Quotes", href: "/pricing", description: "Short-term and long-term rental options for mobile surveillance trailers. Call or request a quote." }
 ];
 ---
 
@@ -157,7 +152,7 @@ const relatedPages = [
         <ComparisonTable
           headers={["Solar Powered", "Grid Connected", "Generator Powered"]}
           rows={[
-            { feature: "Initial Setup Cost", values: ["$8,000-12,000", "$5,000-15,000", "$3,000-5,000"] },
+            { feature: "Initial Setup Cost", values: [{ text: "Solar power included with rental", highlight: true }, "$5,000-15,000", "$3,000-5,000"] },
             { feature: "Monthly Operating Cost", values: [{ text: "$0", highlight: true }, "$300-500", "$1,500-2,500"] },
             { feature: "Deployment Time", values: [{ text: "2-4 hours", highlight: true }, "2-4 weeks", "4-6 hours"] },
             { feature: "Location Flexibility", values: [{ text: "Anywhere", highlight: true }, "Near power lines", "Anywhere (with fuel)"] },
@@ -233,7 +228,7 @@ const relatedPages = [
                 <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11 4a1 1 0 10-2 0v4a1 1 0 102 0V7zm-3 1a1 1 0 10-2 0v3a1 1 0 102 0V8zM8 9a1 1 0 00-2 0v2a1 1 0 102 0V9z" clip-rule="evenodd"/>
               </svg>
             </div>
-            <h3 class="text-xl font-bold mb-3">Remote Monitoring</h3>
+            <h3 class="text-xl font-bold mb-3">Remote Power Monitoring</h3>
             <p class="text-gray-600">
               Real-time power generation and consumption monitoring via web dashboard, with alerts for any system issues.
             </p>
@@ -799,7 +794,7 @@ const relatedPages = [
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Product",
+        "@type": "Service",
         "name": "Solar Powered Security Trailer",
         "description": "Eco-friendly solar powered security surveillance trailer with zero emissions and off-grid capability, configured for Pacific Northwest conditions",
         "image": [
@@ -810,13 +805,6 @@ const relatedPages = [
         "brand": {
           "@type": "Brand",
           "name": "CCTV Trailer"
-        },
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "USD",
-          "price": "7999",
-          "priceValidUntil": priceValidUntil,
-          "availability": "https://schema.org/InStock"
         }
       },
       {

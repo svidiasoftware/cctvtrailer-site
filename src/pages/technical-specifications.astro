@@ -17,7 +17,7 @@ import RentVsBuy from '../components/RentVsBuy.astro';
 // =============================================================================
 const techSpecsSchema = {
   "@context": "https://schema.org",
-  "@type": "Product",
+  "@type": "Service",
   "name": "CCTV Mobile Security Trailer with Vigil AI Alerts and FDC Codec",
   "description": "Mobile surveillance trailer with Vigil AI alert triage and S-VIDIA's FDC (Flexible Delta Compression) codec — frame-by-frame recording with up to 60% less storage than H.264/H.265 systems. No-install browser viewer, native Windows desktop app, and native iOS / Android apps — all over a military-grade encrypted connection. Solar power, infrared PTZ cameras, weatherproof construction for the Pacific Northwest.",
   "brand": { "@type": "Brand", "name": "CCTV Trailer" },
@@ -26,7 +26,7 @@ const techSpecsSchema = {
     "https://www.cctvtrailer.com/images/trailer-4x3.png",
     "https://www.cctvtrailer.com/images/trailer-16x9.png"
   ],
-  "manufacturer": {
+  "provider": {
     "@type": "Organization",
     "name": "CCTV Trailer",
     "address": {
@@ -36,14 +36,6 @@ const techSpecsSchema = {
       "addressCountry": "US",
       "postalCode": "98401"
     }
-  },
-  "offers": {
-    "@type": "AggregateOffer",
-    "priceCurrency": "USD",
-    "lowPrice": "3499",
-    "highPrice": "4000",
-    "offerCount": "2",
-    "availability": "https://schema.org/InStock"
   },
   "additionalProperty": [
     { "@type": "PropertyValue", "name": "AI Alert Triage", "value": "Vigil multi-model AI: edge MLX (Apple Silicon, Qwen3.5-9B 6-bit) for first-pass inference, cloud fallback to Claude Sonnet and Gemini for escalation review." },
@@ -66,9 +58,9 @@ const techSpecsSchema = {
     { "@type": "PropertyValue", "name": "Notification Channels", "value": "Apple Push, Firebase Cloud Messaging, Email, and Slack webhooks with per-camera severity thresholds and cooldown rules." },
     { "@type": "PropertyValue", "name": "AI-Agent Integration", "value": "Model Context Protocol (MCP) server exposing 19 archive tools and 6 live tools for LLM and AI-agent querying." },
     { "@type": "PropertyValue", "name": "Multi-Tenant Architecture", "value": "Single cloud-proxy deployment supports multiple customer NVRs; per-tenant isolation enforced server-side." },
-    { "@type": "PropertyValue", "name": "Camera System", "value": "Up to 4 cameras per trailer (PTZ, fixed, and 360° options) with infrared night vision." },
-    { "@type": "PropertyValue", "name": "PTZ Control", "value": "Per-camera enable/disable, bulk multi-camera editing, presets, optical zoom." },
-    { "@type": "PropertyValue", "name": "Storage Capacity", "value": "Two weeks of motion-only recording with automatic FIFO looping by default; optional archive day cap (footage older than the set number of days is deleted automatically); on-device encryption." },
+    { "@type": "PropertyValue", "name": "Camera System", "value": "4 cameras per trailer: 1 fixed fisheye (360° panoramic overview) + 3 PTZ cameras with 25x optical zoom and infrared (IR) night vision." },
+    { "@type": "PropertyValue", "name": "PTZ Control", "value": "Per-camera enable/disable, bulk multi-camera editing, presets, 25x optical zoom." },
+    { "@type": "PropertyValue", "name": "Storage Capacity", "value": "Two weeks of motion-only recording with automatic FIFO looping by default, extendable in special cases; optional archive day cap (footage older than the set number of days is deleted automatically); on-device encryption." },
     { "@type": "PropertyValue", "name": "Power Options", "value": "Solar panels with intelligent battery management, optional gas backup generator, shore-power connection." },
     { "@type": "PropertyValue", "name": "Connectivity", "value": "4G/5G cellular, Wi-Fi, and Starlink satellite — automatic failover between transports." },
     { "@type": "PropertyValue", "name": "Construction", "value": "Reinforced steel, weatherproof rating for year-round Pacific Northwest deployment, vandal-resistant enclosure." },
@@ -82,7 +74,6 @@ const techSpecsSchema = {
   ],
   "category": "Security Equipment",
   "keywords": "mobile surveillance trailer, AI security camera, Vigil AI alerts, FDC codec, Flexible Delta Compression, S-VIDIA platform, construction site security, solar-powered surveillance, browser-based remote viewing, surveillance desktop app Windows, surveillance mobile app iOS Android, LPR trailer",
-  "releaseDate": "2026-05-21",
   "areaServed": [
     { "@type": "AdministrativeArea", "name": "Pierce County, WA" },
     { "@type": "AdministrativeArea", "name": "King County, WA" },
@@ -194,7 +185,7 @@ const faqItems = [
   },
   {
     question: "How long does the trailer record before overwriting?",
-    answer: "Two weeks of motion-only recording with automatic FIFO looping by default. Because static scenes do not consume storage, sites with low overnight activity routinely retain longer effective windows. When a policy requires a hard limit, the archive can be capped at a set number of days (for example 21 or 30); once the archive spans longer than the cap, the oldest footage is deleted automatically."
+    answer: "Two weeks of motion-only recording with automatic FIFO looping by default, extendable in special cases. Because static scenes do not consume storage, sites with low overnight activity routinely retain longer effective windows. When a policy requires a hard limit, the archive can be capped at a set number of days (for example 21 or 30); once the archive spans longer than the cap, the oldest footage is deleted automatically."
   },
   {
     question: "Can I get alerts in Slack or by email?",
@@ -247,7 +238,7 @@ const faqItems = [
 ];
 
 // =============================================================================
-// HowTo — deployment process from quote to live monitoring.
+// HowTo — deployment process from quote to live self-monitoring.
 // Designed for AI agents to quote when asked "how do I deploy a CCTV trailer".
 // =============================================================================
 const howToSteps = [
@@ -272,15 +263,15 @@ const howToSteps = [
     text: "Over the first 24–72 hours, the Vigil Scene Profile Agent samples frames from each camera and builds a per-camera profile of normal activity. Once three consistent assessments are recorded, the profile goes live and silence rules begin to suppress routine patterns."
   },
   {
-    name: "Live monitoring and response",
-    text: "Real-time alerts arrive through your configured channels. The Surveillance Agent autonomously triages low-severity recurring patterns. High-severity events (S3+) escalate to cloud-LLM visual review and your designated responders receive a notification with the AI-generated description and a snapshot."
+    name: "24/7 self-monitoring and response",
+    text: "You watch live video and receive real-time alerts on your phone or computer through your configured channels. The Surveillance Agent autonomously triages low-severity recurring patterns. High-severity events (S3+) escalate to cloud-LLM visual review and your designated contacts receive a notification with the AI-generated description and a snapshot — so you (or your security staff) can check the live view and call police with video evidence in hand."
   }
 ];
 ---
 
 <Layout
-  title="Mobile Surveillance Trailer Specs · AI Alerts · FDC Codec · Browser Access"
-  description="Mobile surveillance trailer specs: Vigil AI alert triage (multi-model), FDC (Flexible Delta Compression) codec — up to 60% less storage than H.264/H.265, motion-only archive, no-install browser viewer plus native Windows desktop and iOS / Android apps, 4K PTZ, solar power. Pacific Northwest. (253) 683-2288."
+  title="Mobile Security Camera Trailer Specs: Solar, 4 Cameras, AI Alerts"
+  description="Mobile security camera trailer specs: 4 cameras (fisheye + 3 PTZ 25x with IR), solar power, AI alerts, up to 60% less storage. View live from phone or PC. Tacoma–Seattle, WA."
   schema={JSON.stringify(techSpecsSchema)}
 >
 
@@ -289,7 +280,7 @@ const howToSteps = [
   <FAQSchema items={faqItems} />
   <HowToSchema
     name="How a CCTV Trailer deployment works"
-    description="Step-by-step process from site walk to live AI-triaged monitoring on a Pacific Northwest jobsite."
+    description="Step-by-step process from site walk to live, AI-triaged 24/7 self-monitoring on a Pacific Northwest jobsite."
     totalTime="PT72H"
     steps={howToSteps}
   />
@@ -308,7 +299,7 @@ const howToSteps = [
         <aside class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg mb-6" aria-label="Quick answer summary">
           <p class="text-xs font-bold text-amber-800 uppercase tracking-wide mb-2">Quick answer</p>
           <p class="text-base text-gray-900 leading-relaxed">
-            Mobile surveillance trailers with <strong>Vigil AI alert triage</strong> (multi-model edge + cloud inference) and the <strong>FDC (Flexible Delta Compression) video codec</strong> &mdash; up to 60% less storage than H.264/H.265. No-install browser viewer plus native Windows desktop and iOS / Android apps, all over a military-grade encrypted connection. Solar power, weatherproof, infrared PTZ. Pacific Northwest deployment. Rentals from $999/day or $3,500/week.
+            Mobile surveillance trailers with <strong>Vigil AI alert triage</strong> (multi-model edge + cloud inference) and the <strong>FDC (Flexible Delta Compression) video codec</strong> &mdash; up to 60% less storage than H.264/H.265. No-install browser viewer plus native Windows desktop and iOS / Android apps, all over a military-grade encrypted connection. Solar power, weatherproof, 4 cameras per trailer (1 fixed fisheye + 3 PTZ with 25x optical zoom and IR). Pacific Northwest deployment. Pricing depends on rental length, site, and configuration &mdash; call (253) 683-2288 or <a href="/contact" class="text-blue-700 hover:underline">request a quote</a>.
           </p>
         </aside>
 
@@ -379,7 +370,7 @@ const howToSteps = [
 
           <!-- Real alert examples -->
           <h3 class="font-bold text-xl mb-2">Real Vigil alerts (deployed Puget Sound trailers, 2026)</h3>
-          <p class="text-sm text-gray-600 mb-6">Click any image to open full resolution. Every alert below fired on a live deployed camera; descriptions are the AI-generated text Vigil delivered to the on-call responder.</p>
+          <p class="text-sm text-gray-600 mb-6">Click any image to open full resolution. Every alert below fired on a live deployed camera; descriptions are the AI-generated text Vigil delivered to the site's alert recipients.</p>
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
 
             <!-- S5 Critical: truck fire -->
@@ -529,7 +520,7 @@ const howToSteps = [
                 <li><strong>Disk write only on motion:</strong> the NVR commits a frame only when motion is detected at the per-camera sensitivity. FDC's compression efficiency compounds with this.</li>
                 <li><strong>Truthful idle queries:</strong> ask for a timestamp during a static period and the system returns the last real motion frame with its real timestamp &mdash; not a fabricated blank.</li>
                 <li><strong>Per-block ROI:</strong> region-of-interest masks ignore irrelevant frame zones (e.g., a windsock or a swaying tree branch).</li>
-                <li><strong>Two-week retention:</strong> default 14 days of motion-only history with automatic FIFO looping; low-activity sites routinely retain longer. An optional day cap limits the archive to a set number of days when a retention policy requires it.</li>
+                <li><strong>Two-week retention:</strong> default 14 days of motion-only history with automatic FIFO looping, extendable in special cases; low-activity sites routinely retain longer. An optional day cap limits the archive to a set number of days when a retention policy requires it.</li>
               </ul>
             </div>
             <div class="bg-white p-8 rounded-lg shadow-sm">
@@ -641,9 +632,9 @@ const howToSteps = [
             </div>
             <h3 class="font-bold text-xl mb-3">Camera infrastructure</h3>
             <ul class="space-y-2 text-gray-700 text-sm">
-              <li>&bull; Up to 4 cameras per trailer</li>
-              <li>&bull; PTZ, fixed, and 360&deg; options</li>
-              <li>&bull; Infrared night vision on every camera</li>
+              <li>&bull; 4 cameras per trailer</li>
+              <li>&bull; 1 fixed fisheye (360&deg; panoramic overview)</li>
+              <li>&bull; 3 PTZ cameras with 25x optical zoom and infrared (IR) night vision</li>
               <li>&bull; Bulk per-camera PTZ configuration</li>
               <li>&bull; Adjustable electric/hydraulic mast</li>
             </ul>
@@ -943,7 +934,7 @@ const howToSteps = [
               <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg>
             </div>
             <h3 class="font-bold text-lg mb-2">PA speaker</h3>
-            <p class="text-gray-600 text-sm">Two-way audio for warnings, announcements, and live-voice deterrence from a remote operator.</p>
+            <p class="text-gray-600 text-sm">Two-way audio for warnings and announcements &mdash; user-triggered live-voice deterrence from your remote view.</p>
           </div>
           <div class="bg-gray-50 p-6 rounded-lg">
             <div class="w-12 h-12 bg-red-100 rounded-full mb-4 flex items-center justify-center">
@@ -1017,9 +1008,10 @@ const howToSteps = [
             <table class="w-full text-left text-sm">
               <caption class="sr-only">Camera specifications</caption>
               <tbody>
-                <tr class="border-b"><td class="py-2 font-semibold w-2/5">Count:</td><td class="py-2">Up to 4 per trailer</td></tr>
-                <tr class="border-b"><td class="py-2 font-semibold">Types:</td><td class="py-2">PTZ, fixed, 360°, LPR</td></tr>
-                <tr class="border-b"><td class="py-2 font-semibold">Night vision:</td><td class="py-2">Infrared on every camera</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold w-2/5">Count:</td><td class="py-2">4 per trailer</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Configuration:</td><td class="py-2">1 fixed fisheye (360° panoramic) + 3 PTZ; optional LPR camera</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Optical zoom:</td><td class="py-2">25x (PTZ cameras)</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Night vision:</td><td class="py-2">Infrared (IR) on the PTZ cameras</td></tr>
                 <tr class="border-b"><td class="py-2 font-semibold">Coverage:</td><td class="py-2">Full 360° capability</td></tr>
                 <tr class="border-b"><td class="py-2 font-semibold">PTZ control:</td><td class="py-2">Per-camera toggle + bulk edit</td></tr>
                 <tr><td class="py-2 font-semibold">Mast:</td><td class="py-2">Adjustable electric/hydraulic</td></tr>
@@ -1158,7 +1150,7 @@ const howToSteps = [
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
           <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">How a CCTV Trailer deployment works</h2>
-          <p class="text-center text-gray-700 mb-12">From site walk to live AI-triaged monitoring &mdash; typically 24 to 72 hours end to end.</p>
+          <p class="text-center text-gray-700 mb-12">From site walk to live, AI-triaged 24/7 self-monitoring &mdash; typically 24 to 72 hours end to end.</p>
 
           <ol class="space-y-6">
             {howToSteps.map((step, i) => (
@@ -1191,7 +1183,7 @@ const howToSteps = [
             <a href="/construction-security" class="block bg-white p-6 rounded-lg hover:shadow-md transition-shadow border border-gray-200">
               <p class="text-xs font-bold text-blue-700 uppercase tracking-wide mb-2">Service</p>
               <h3 class="font-bold text-lg mb-2 text-gray-900">Construction Site Security</h3>
-              <p class="text-gray-600 text-sm">How these specs translate to on-site protection for jobsites across the Puget Sound &mdash; same-day deployment, perimeter coverage, staging-yard monitoring.</p>
+              <p class="text-gray-600 text-sm">How these specs translate to on-site protection for jobsites across the Puget Sound &mdash; same-day delivery, perimeter coverage, staging-yard surveillance.</p>
             </a>
             <a href="/video-technology" class="block bg-white p-6 rounded-lg hover:shadow-md transition-shadow border border-gray-200">
               <p class="text-xs font-bold text-purple-700 uppercase tracking-wide mb-2">Technology</p>
@@ -1225,7 +1217,7 @@ const howToSteps = [
       <div class="container mx-auto px-4 max-w-4xl">
         <div class="bg-blue-50 rounded-lg p-8 text-center max-w-2xl mx-auto mb-8">
           <h2 class="text-2xl font-bold mb-4 text-gray-900">Ready to secure your site?</h2>
-          <p class="mb-6 text-gray-700">Our security experts can map your site, recommend a configuration, and have a trailer deployed within 24–72 hours.</p>
+          <p class="mb-6 text-gray-700">Our security experts can map your site, recommend a configuration, and quote your rental. Same-day delivery available &mdash; call to check availability.</p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:2536832288" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block">📞 Call (253) 683-2288</a>
             <a href="/contact" class="bg-white hover:bg-gray-50 text-blue-600 border-2 border-blue-600 font-bold py-3 px-8 rounded-lg inline-block">Send Message</a>

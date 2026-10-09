@@ -17,8 +17,6 @@ import LazyImage from '../components/LazyImage.astro';
 const serviceSchemaData = {
   serviceName: "Retail Parking Lot Security - Tacoma Shopping Centers",
   description: "Mobile surveillance for Tacoma retail parking lots and shopping centers. Prevent vehicle theft, protect customers, reduce liability. Serving Tacoma Mall, South Tacoma Way, and Lakewood retailers.",
-  price: "8000",
-  priceUnit: "MONTH" as const,
   areaServed: [
     { type: "City" as const, name: "Tacoma" },
     { type: "City" as const, name: "Lakewood" },
@@ -59,12 +57,12 @@ const relatedPages = [
   {
     title: "Technical Specifications",
     href: "/technical-specifications",
-    description: "Advanced surveillance features for 24/7 parking lot monitoring and customer safety."
+    description: "Advanced surveillance features for 24/7 parking lot self-monitoring and customer safety."
   },
   {
-    title: "View Pricing & Plans",
+    title: "Rental Options & Quotes",
     href: "/pricing",
-    description: "Monthly rental plans for retail parking lot security - reduce liability insurance premiums."
+    description: "Rental options for retail parking lot security — call (253) 683-2288 or request a quote."
   },
   {
     title: "Washington Retail Theft Crisis & Organized Crime",
@@ -161,18 +159,17 @@ const relatedPages = [
     <section class="py-8 bg-gray-50">
       <div class="container mx-auto px-4">
         <QuickAnswer
-          what="24/7 mobile surveillance for retail parking lots and shopping centers"
-          cost="$8,000-10,000/month - Less than 1 liability claim settlement"
-          time="Same-day deployment, 30-minute setup for Tacoma retailers"
-          coverage="Complete parking lot coverage with PTZ cameras and motion detection"
-          availability="Emergency response for retailers experiencing crime incidents"
+          what="Mobile surveillance trailers with 24/7 self-monitoring for retail parking lots and shopping centers"
+          time="20-30 minute setup, same-day delivery for Tacoma retailers"
+          coverage="Complete parking lot coverage: 1 fixed fisheye + 3 PTZ cameras (25x optical zoom, IR) with motion detection"
+          availability="Call to inquire — same-day emergency deployment available for retailers experiencing crime incidents"
           includes={[
-            "Customer safety and vehicle protection",
-            "License plate recognition for all vehicles",
-            "Incident documentation for liability protection",
-            "Remote viewing for security managers",
-            "Motion-activated lighting and alerts",
-            "HD video for police reports and insurance"
+            "4 cameras (1 fixed fisheye + 3 PTZ with 25x optical zoom and IR)",
+            "Equipment training",
+            "24/7 technical support",
+            "Solar power/generator included",
+            "Remote viewing access on your mobile devices or computer",
+            "Incident documentation for liability protection"
           ]}
         />
       </div>
@@ -269,7 +266,7 @@ const relatedPages = [
               <li class="flex items-start">
                 <span class="text-green-600 mr-3">✓</span>
                 <div>
-                  <strong>Complete Parking Lot Coverage:</strong> 360° PTZ cameras monitor every parking space, entrance, and exit point
+                  <strong>Complete Parking Lot Coverage:</strong> A fixed 360° fisheye plus 3 PTZ cameras (25x optical zoom, IR) cover every parking space, entrance, and exit point
                 </div>
               </li>
               <li class="flex items-start">
@@ -299,7 +296,7 @@ const relatedPages = [
               <li class="flex items-start">
                 <span class="text-green-600 mr-3">✓</span>
                 <div>
-                  <strong>Two-Way Audio:</strong> Live voice warnings to deter loitering and suspicious behavior
+                  <strong>Speaker Warnings:</strong> Automated, motion-triggered voice warnings (optional two-way PA audio) deter loitering and suspicious behavior
                 </div>
               </li>
             </ul>
@@ -340,7 +337,7 @@ const relatedPages = [
               <li class="flex items-start">
                 <span class="text-blue-600 mr-3">📱</span>
                 <div>
-                  <strong>Remote Monitoring:</strong> Security managers view parking lot from anywhere via smartphone
+                  <strong>Remote Viewing:</strong> Security managers view the parking lot on their mobile devices or computer
                 </div>
               </li>
             </ul>
@@ -354,7 +351,7 @@ const relatedPages = [
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-4">Parking Lot Liability: The Hidden Cost of No Security</h2>
         <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-          One lawsuit costs more than 25 years of mobile surveillance
+          One premises-liability claim can cost millions &mdash; get a quote and compare
         </p>
 
         <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto mb-12">
@@ -390,31 +387,35 @@ const relatedPages = [
           </div>
 
           <div class="bg-white rounded-lg p-8 shadow-lg">
-            <h3 class="text-2xl font-bold mb-6 text-green-600">Your Security Investment</h3>
+            <h3 class="text-2xl font-bold mb-6 text-green-600">Included With Your Rental</h3>
             <div class="space-y-3">
               <div class="flex justify-between pb-2 border-b">
-                <span class="text-gray-700">Monthly surveillance cost:</span>
-                <span class="font-bold text-green-600">$8,000</span>
-              </div>
-              <div class="flex justify-between pb-2 border-b">
-                <span class="text-gray-700">Annual protection:</span>
-                <span class="font-bold text-green-600">$96,000</span>
-              </div>
-              <div class="flex justify-between pb-2 border-b">
-                <span class="text-gray-700">Setup & installation:</span>
-                <span class="font-bold text-green-600">FREE</span>
-              </div>
-              <div class="flex justify-between pb-2 border-b">
-                <span class="text-gray-700">24/7 monitoring & support:</span>
+                <span class="text-gray-700">4 cameras (1 fixed fisheye + 3 PTZ, 25x zoom, IR):</span>
                 <span class="font-bold text-green-600">Included</span>
               </div>
               <div class="flex justify-between pb-2 border-b">
-                <span class="text-gray-700">Insurance discount (est 10%):</span>
-                <span class="font-bold text-green-600">-$15,000/yr</span>
+                <span class="text-gray-700">Equipment training:</span>
+                <span class="font-bold text-green-600">Included</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">24/7 technical support:</span>
+                <span class="font-bold text-green-600">Included</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Solar power/generator:</span>
+                <span class="font-bold text-green-600">Included</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Remote viewing on your mobile devices or computer:</span>
+                <span class="font-bold text-green-600">Included</span>
+              </div>
+              <div class="flex justify-between pb-2 border-b">
+                <span class="text-gray-700">Professional delivery and setup:</span>
+                <span class="font-bold text-green-600">Available</span>
               </div>
               <div class="flex justify-between pt-3 text-lg">
-                <span class="font-bold">NET ANNUAL COST:</span>
-                <span class="font-bold text-green-600 text-xl">$81,000</span>
+                <span class="font-bold">YOUR PRICE:</span>
+                <span class="font-bold text-green-600 text-xl">Call for a quote</span>
               </div>
             </div>
             <p class="text-sm text-gray-500 mt-4">* Plus liability protection and customer confidence benefits</p>
@@ -422,9 +423,9 @@ const relatedPages = [
         </div>
 
         <div class="bg-purple-600 text-white rounded-lg p-8 max-w-4xl mx-auto text-center">
-          <h3 class="text-3xl font-bold mb-4">Avoid ONE Lawsuit = 42 Years of Free Security</h3>
-          <p class="text-xl mb-4">Annual Security: $81,000 | One Liability Claim: $3,425,000+</p>
-          <p class="text-2xl font-bold bg-white text-purple-600 inline-block px-6 py-3 rounded-lg">ROI: 4,229% Risk Mitigation</p>
+          <h3 class="text-3xl font-bold mb-4">One Liability Claim: $3,425,000+ in Total Impact</h3>
+          <p class="text-xl mb-4">Pricing depends on rental length, lot size, and configuration &mdash; get a quote and compare it to the cost of a single claim.</p>
+          <a href="tel:2536832288" class="text-2xl font-bold bg-white text-purple-600 inline-block px-6 py-3 rounded-lg">Call for a Quote: (253) 683-2288</a>
           <p class="text-sm mt-4 text-purple-100">Video surveillance is your strongest defense in premises liability cases</p>
         </div>
       </div>
@@ -441,7 +442,7 @@ const relatedPages = [
             {
               feature: "Monthly Cost",
               values: [
-                { text: "$8,000-10,000", highlight: true },
+                { text: "A fraction of guard cost — call for a quote", highlight: true },
                 "$20,000-30,000",
                 "$1,000 + $15,000 install"
               ]
@@ -449,7 +450,7 @@ const relatedPages = [
             {
               feature: "Deployment Speed",
               values: [
-                { text: "30 minutes", highlight: true },
+                { text: "20-30 minute setup", highlight: true },
                 "Immediate",
                 "1-2 weeks installation"
               ]
@@ -457,7 +458,7 @@ const relatedPages = [
             {
               feature: "Coverage Area",
               values: [
-                { text: "360° PTZ - flexible", highlight: true },
+                { text: "360° fisheye + 3 PTZ - flexible", highlight: true },
                 "Limited patrol path",
                 "Fixed angles only"
               ]
@@ -497,7 +498,7 @@ const relatedPages = [
             {
               feature: "Relocatable",
               values: [
-                { text: "Yes - free moves", highlight: true },
+                { text: "Yes - reposition as needed", highlight: true },
                 "N/A",
                 "No - permanent"
               ]
@@ -511,10 +512,10 @@ const relatedPages = [
               ]
             },
             {
-              feature: "ROI Timeline",
+              feature: "Protection Starts",
               values: [
-                { text: "Immediate", highlight: true },
-                "Variable",
+                { text: "Same day", highlight: true },
+                "After hiring",
                 "After installation"
               ]
             }
@@ -559,7 +560,7 @@ const relatedPages = [
           <div class="bg-white/10 backdrop-blur rounded-lg p-6">
             <div class="text-4xl mb-4">🚨</div>
             <h3 class="text-xl font-bold mb-2">Recent Incident?</h3>
-            <p class="text-purple-100 mb-4">Just had a break-in, assault, or customer complaint? Emergency deployment within 2 hours.</p>
+            <p class="text-purple-100 mb-4">Just had a break-in, assault, or customer complaint? Same-day emergency deployment available &mdash; call to check availability.</p>
             <a href="tel:2536832288" class="bg-white text-purple-800 hover:bg-purple-100 font-bold py-2 px-6 rounded-lg inline-block w-full text-center">
               Emergency: (253) 683-2288
             </a>
@@ -577,9 +578,9 @@ const relatedPages = [
           <div class="bg-white/10 backdrop-blur rounded-lg p-6">
             <div class="text-4xl mb-4">🏢</div>
             <h3 class="text-xl font-bold mb-2">Multi-Location Retailers</h3>
-            <p class="text-purple-100 mb-4">Own multiple stores? Get volume pricing and priority service.</p>
+            <p class="text-purple-100 mb-4">Own multiple stores? Get one quote covering all of your locations.</p>
             <a href="/contact" class="bg-white text-purple-800 hover:bg-purple-100 font-bold py-2 px-6 rounded-lg inline-block w-full text-center">
-              Multi-Store Pricing
+              Multi-Store Quote
             </a>
           </div>
         </div>
@@ -628,7 +629,7 @@ const relatedPages = [
           </div>
           <div class="bg-white rounded-lg shadow p-6">
             <h3 class="font-bold text-lg mb-3">How quickly can you respond to an incident?</h3>
-            <p class="text-gray-600">For emergency situations (recent assault, lawsuit threat), we deploy within 2 hours in Tacoma/Pierce County. Standard deployment is 24-48 hours.</p>
+            <p class="text-gray-600">For emergency situations (recent assault, lawsuit threat), same-day deployment is available in Tacoma/Pierce County &mdash; call (253) 683-2288 to check availability. Standard deployment is 24-48 hours.</p>
           </div>
         </div>
       </div>
@@ -641,7 +642,7 @@ const relatedPages = [
       phoneText="📞 24/7 Retail Hotline: (253) 683-2288"
       quoteText="Secure Your Parking Lot →"
       quoteLink="#retail-quote"
-      features={["✓ Prevent customer safety incidents", "✓ Defend against liability claims", "✓ Insurance premium discounts", "✓ Market as safest location to shop"]}
+      features={["✓ Prevent customer safety incidents", "✓ Defend against liability claims", "✓ Supports insurance premium discounts", "✓ Market as safest location to shop"]}
       bgColor="bg-purple-900"
     />
 

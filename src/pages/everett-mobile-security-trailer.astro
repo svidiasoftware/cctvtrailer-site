@@ -13,9 +13,6 @@ import LazyImage from '../components/LazyImage.astro';
 const serviceSchemaData = {
   serviceName: "Everett Mobile Surveillance Trailer Rental",
   description: "CCTV Trailer delivers solar-powered mobile surveillance trailers to Everett and Snohomish County — Boeing Paine Field, Port of Everett, I-5 corridor warehouses, downtown redevelopment, and Naval Station Everett support sites. Same-day deployment from Tacoma.",
-  price: "3499",
-  highPrice: "4000",
-  priceUnit: "WEEK" as const,
   areaServed: [
     { type: "City" as const, name: "Everett" },
   ]
@@ -60,7 +57,7 @@ const localBusinessSchema = {
     "@type": "OfferCatalog",
     "name": "Everett Security Services",
     "itemListElement": [
-      { "@type": "Service", "name": "Warehouse & Distribution Perimeter Monitoring" },
+      { "@type": "Service", "name": "Warehouse & Distribution Perimeter Surveillance" },
       { "@type": "Service", "name": "Aerospace Contractor Site Security" },
       { "@type": "Service", "name": "Construction Site Surveillance" },
       { "@type": "Service", "name": "Port & Maritime Security" }
@@ -111,16 +108,16 @@ const relatedPages = [
     description: "Eastside coverage — 30 miles south via I-405."
   },
   {
-    title: "View Pricing & Plans",
+    title: "Rental Options & Quotes",
     href: "/pricing",
-    description: "Transparent rental pricing for Everett — same rate as every Puget Sound city."
+    description: "Rental options for Everett sites — call (253) 683-2288 or request a quote."
   }
 ];
 ---
 
 <Layout
   title="Everett Mobile Security Trailer Rental · Snohomish County"
-  description="Everett mobile surveillance trailers from $499/day. Boeing-area, Port of Everett, I-5 warehouse, downtown redevelopment. Same-day delivery. (253) 683-2288"
+  description="Everett mobile surveillance trailers with 24/7 self-monitoring. Boeing-area, Port of Everett, I-5 warehouse, downtown redevelopment. Same-day delivery. Call for a quote: (253) 683-2288"
   schema={JSON.stringify(localBusinessSchema)}>
 
   <!-- Structured Data Schemas -->
@@ -281,12 +278,12 @@ const relatedPages = [
         <div class="mt-12 bg-slate-100 rounded-lg p-8">
           <h3 class="font-bold text-xl mb-4">Why Everett Logistics &amp; Contractors Call Us</h3>
           <p class="text-gray-700 mb-4">
-            I-5 warehouses run narrow margins and can't absorb organized cargo theft. Boeing contractors can't have specialty tools walk off between shifts. Downtown builds can't rebuild tens of thousands of feet of stolen copper. A mobile surveillance trailer gives each of these sites a 24/7 recorded perimeter, active deterrent lighting, cellular-connected video, and a monitored response that cues Everett PD or the Snohomish County Sheriff before the window closes. Solar-powered, cellular uplink, same-day delivery up I-5.
+            I-5 warehouses run narrow margins and can't absorb organized cargo theft. Boeing contractors can't have specialty tools walk off between shifts. Downtown builds can't rebuild tens of thousands of feet of stolen copper. A mobile surveillance trailer gives each of these sites a 24/7 recorded perimeter, active deterrent lighting, cellular-connected video, and real-time alerts to your phone so you can call Everett PD or the Snohomish County Sheriff with video evidence before the window closes. Solar-powered, cellular uplink, same-day delivery up I-5.
           </p>
           <div class="grid md:grid-cols-3 gap-4 text-center">
             <div>
-              <div class="text-2xl font-bold text-slate-700">$499/day</div>
-              <div class="text-sm">Starting rate · all-inclusive</div>
+              <div class="text-2xl font-bold text-slate-700">Quote</div>
+              <div class="text-sm">Call (253) 683-2288</div>
             </div>
             <div>
               <div class="text-2xl font-bold text-slate-700">Same day</div>
@@ -294,7 +291,7 @@ const relatedPages = [
             </div>
             <div>
               <div class="text-2xl font-bold text-slate-700">24/7</div>
-              <div class="text-sm">Monitoring &amp; alerts</div>
+              <div class="text-sm">Self-monitoring &amp; alerts</div>
             </div>
           </div>
         </div>
@@ -311,10 +308,12 @@ const relatedPages = [
               <div>
                 <h3 class="font-bold text-xl mb-4">What's Included</h3>
                 <ul class="space-y-2">
-                  <li>• Solar-powered 4K PTZ cameras, 360° coverage</li>
+                  <li>• 4 cameras (1 fixed fisheye + 3 PTZ with 25x optical zoom and IR)</li>
+                  <li>• Equipment training</li>
+                  <li>• 24/7 technical support</li>
+                  <li>• Solar power/generator included</li>
+                  <li>• Remote viewing access on your mobile devices or computer</li>
                   <li>• On-board NVR + encrypted cellular upload</li>
-                  <li>• Active deterrent lighting &amp; speaker warnings</li>
-                  <li>• 24/7 monitored dispatch to Everett PD / Snohomish County Sheriff</li>
                 </ul>
               </div>
               <div>
@@ -323,7 +322,7 @@ const relatedPages = [
                   <li>• Cellular uplink holds through I-5 / Paine Field coverage gaps</li>
                   <li>• No generator refueling — works on long industrial-yard runs</li>
                   <li>• Weatherproofed for Snohomish County wind &amp; wet</li>
-                  <li>• On-site 30-day archive supports insurance &amp; LE reporting</li>
+                  <li>• On-site archive (2 weeks by default, extendable in special cases) supports insurance &amp; LE reporting</li>
                 </ul>
               </div>
             </div>
@@ -370,7 +369,7 @@ const relatedPages = [
               <span class="font-semibold">Challenge:</span> Long open perimeter, overnight unmanned, night-only theft pattern
             </div>
             <div class="text-sm text-gray-500">
-              <span class="font-semibold">Solution:</span> Forward-deployed units + active broadcast warnings
+              <span class="font-semibold">Solution:</span> Forward-deployed units + motion-triggered broadcast warnings
             </div>
           </div>
           <div class="bg-white rounded-lg shadow-lg p-6">
@@ -381,7 +380,7 @@ const relatedPages = [
               <span class="font-semibold">Challenge:</span> Between-shift gaps, high-value portable tooling
             </div>
             <div class="text-sm text-gray-500">
-              <span class="font-semibold">Solution:</span> PTZ + on-unit 30-day archive with remote review
+              <span class="font-semibold">Solution:</span> PTZ + on-unit archive with remote review
             </div>
           </div>
           <div class="bg-white rounded-lg shadow-lg p-6">
@@ -392,7 +391,7 @@ const relatedPages = [
               <span class="font-semibold">Challenge:</span> Vertical construction phase, shifting perimeter, active-street access
             </div>
             <div class="text-sm text-gray-500">
-              <span class="font-semibold">Solution:</span> Repositionable solar unit + cellular monitored dispatch
+              <span class="font-semibold">Solution:</span> Repositionable solar unit + real-time alerts and remote live view
             </div>
           </div>
         </div>
@@ -415,7 +414,7 @@ const relatedPages = [
                   </li>
                   <li class="flex items-start">
                     <span class="text-slate-700 mr-2 font-bold">•</span>
-                    <span><strong>One price</strong> across every Puget Sound city — no I-5 surcharge</span>
+                    <span><strong>Professional delivery and setup</strong> available across Snohomish County</span>
                   </li>
                   <li class="flex items-start">
                     <span class="text-slate-700 mr-2 font-bold">•</span>
@@ -423,7 +422,7 @@ const relatedPages = [
                   </li>
                   <li class="flex items-start">
                     <span class="text-slate-700 mr-2 font-bold">•</span>
-                    <span><strong>Everett PD / Snohomish County Sheriff</strong> dispatch coordination</span>
+                    <span><strong>Real-time alerts</strong> to your phone — call Everett PD / Snohomish County Sheriff with video evidence in hand</span>
                   </li>
                 </ul>
               </div>
@@ -436,7 +435,7 @@ const relatedPages = [
                   </div>
                   <div class="bg-blue-50 p-4 rounded-lg">
                     <div class="font-semibold text-blue-600">Paine Field Contractors</div>
-                    <p class="text-gray-600 text-sm">Between-shift tool loss drops to near zero with an on-site active-deterrent unit and 30-day archive.</p>
+                    <p class="text-gray-600 text-sm">Between-shift tool loss drops to near zero with an on-site active-deterrent unit and on-unit archive.</p>
                   </div>
                   <div class="bg-green-50 p-4 rounded-lg">
                     <div class="font-semibold text-green-600">Downtown Redevelopment</div>

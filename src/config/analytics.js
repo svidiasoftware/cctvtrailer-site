@@ -38,8 +38,7 @@ export const analyticsConfig = {
       'form_submit',
       'phone_click',
       'quote_request',
-      'contact_form',
-      'pricing_calculator_use'
+      'contact_form'
     ]
   }
 };

@@ -128,21 +128,6 @@
       });
     });
 
-    // Track pricing calculator usage
-    const pricingInputs = document.querySelectorAll('#calc-duration, #calc-units, #calc-location, #calc-urgent');
-    pricingInputs.forEach(input => {
-      input.addEventListener('change', () => {
-        if (typeof window.dataLayer !== 'undefined') {
-          window.dataLayer.push({
-            'event': 'pricing_calculator_interaction',
-            'event_category': 'calculator',
-            'event_label': input.id,
-            'value': input.value
-          });
-        }
-      });
-    });
-
     // Track outbound links
     const externalLinks = document.querySelectorAll('a[href^="http"]:not([href*="cctvtrailer.com"])');
     externalLinks.forEach(link => {

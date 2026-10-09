@@ -12,9 +12,6 @@ import LazyImage from '../components/LazyImage.astro';
 const serviceSchemaData = {
   serviceName: "Mobile Surveillance Trailer Rental in Seattle",
   description: "CCTV Trailer serving Seattle - Locally owned surveillance security company since 2009. Professional CCTV systems and mobile trailer rentals for construction sites, events, and emergency response.",
-  price: "3499",
-  highPrice: "4000",
-  priceUnit: "WEEK" as const,
   areaServed: [
     { type: "City" as const, name: "Seattle" },
   ]
@@ -54,10 +51,10 @@ const localBusinessSchema = {
     "@type": "OfferCatalog",
     "name": "Seattle Security Services",
     "itemListElement": [
-      { "@type": "Service", "name": "Construction Site Monitoring" },
+      { "@type": "Service", "name": "Construction Site Surveillance" },
       { "@type": "Service", "name": "Event Security" },
       { "@type": "Service", "name": "Parking Lot Surveillance" },
-      { "@type": "Service", "name": "Emergency Response" }
+      { "@type": "Service", "name": "Emergency Surveillance Deployment" }
     ]
   }
 };
@@ -119,9 +116,9 @@ const relatedPages = [
     description: "Solar-powered security systems that work through Seattle's cloudy weather and rain."
   },
   {
-    title: "View Pricing & Plans",
+    title: "Rental Options & Quotes",
     href: "/pricing",
-    description: "Transparent pricing for Seattle area mobile surveillance trailer rentals."
+    description: "Rental options for Seattle area sites — call (253) 683-2288 or request a quote."
   }
 ];
 ---
@@ -349,7 +346,7 @@ const relatedPages = [
               <span class="font-semibold">Challenge:</span> Massive crowds, limited staffing
             </div>
             <div class="text-sm text-gray-500">
-              <span class="font-semibold">Solution:</span> Strategic placement with live monitoring
+              <span class="font-semibold">Solution:</span> Strategic placement with real-time alerts and remote live view
             </div>
           </div>
           <div class="bg-white rounded-lg shadow-lg p-6">
@@ -360,7 +357,7 @@ const relatedPages = [
               <span class="font-semibold">Challenge:</span> High-security requirements, media attention
             </div>
             <div class="text-sm text-gray-500">
-              <span class="font-semibold">Solution:</span> Premium monitoring with backup power systems
+              <span class="font-semibold">Solution:</span> Real-time alerts, remote live view, and backup power systems
             </div>
           </div>
         </div>
@@ -383,7 +380,7 @@ const relatedPages = [
                   </li>
                   <li class="flex items-start">
                     <span class="text-blue-600 mr-2 font-bold">•</span>
-                    <span><strong>98%</strong> of Seattle deployments within 2 hours</span>
+                    <span><strong>Same-day</strong> deployment available — call to check availability</span>
                   </li>
                   <li class="flex items-start">
                     <span class="text-blue-600 mr-2 font-bold">•</span>
@@ -391,7 +388,7 @@ const relatedPages = [
                   </li>
                   <li class="flex items-start">
                     <span class="text-blue-600 mr-2 font-bold">•</span>
-                    <span><strong>24/7</strong> coordination with Seattle Police Department</span>
+                    <span><strong>24/7</strong> self-monitoring — real-time alerts so you can call Seattle Police with video evidence in hand</span>
                   </li>
                 </ul>
               </div>
@@ -441,33 +438,36 @@ const relatedPages = [
       </div>
     </section>
 
-    <!-- Seattle-Specific Pricing -->
+    <!-- Seattle Rental Options & Quotes -->
     <section class="bg-blue-50 py-16">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
-          <h2 class="text-3xl font-bold mb-4">Seattle Area Pricing</h2>
-          <p class="text-xl mb-8">Competitive rates with free delivery to most Seattle locations</p>
+          <h2 class="text-3xl font-bold mb-4">Seattle Area Rental Options &amp; Quotes</h2>
+          <p class="text-xl mb-8">Pricing depends on rental length, site, and configuration — call <a href="tel:2536832288" class="font-bold text-blue-700">(253) 683-2288</a> or request a quote.</p>
           <div class="bg-white rounded-lg shadow-lg p-8">
             <div class="grid md:grid-cols-2 gap-8 mb-8">
               <div>
-                <div class="text-2xl font-bold text-blue-600 mb-2">Daily Rentals</div>
-                <div class="text-3xl font-bold">$999</div>
-                <div class="text-gray-600">First day</div>
-                <div class="text-2xl mt-2">$499/day</div>
-                <div class="text-gray-600">Additional days</div>
+                <div class="text-2xl font-bold text-blue-600 mb-2">Included With Every Rental</div>
+                <ul class="text-left space-y-2">
+                  <li>• 4 cameras (1 fixed fisheye + 3 PTZ with 25x optical zoom and IR)</li>
+                  <li>• Equipment training</li>
+                  <li>• 24/7 technical support</li>
+                  <li>• Solar power/generator included</li>
+                  <li>• Remote viewing access on your mobile devices or computer</li>
+                </ul>
               </div>
               <div>
-                <div class="text-2xl font-bold text-green-600 mb-2">Long-Term Savings</div>
+                <div class="text-2xl font-bold text-green-600 mb-2">Flexible Rental Terms</div>
                 <ul class="text-left space-y-2">
-                  <li>• Weekly rates available</li>
-                  <li>• Monthly discounts</li>
-                  <li>• Multi-unit packages</li>
-                  <li>• Free delivery in Seattle</li>
+                  <li>• Short-term and long-term rentals</li>
+                  <li>• Multi-unit deployments</li>
+                  <li>• Professional delivery and setup available</li>
+                  <li>• Same-day delivery — call to check availability</li>
                 </ul>
               </div>
             </div>
             <a href="/pricing" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
-              View Full Pricing →
+              Rental Options &amp; Quotes →
             </a>
           </div>
         </div>

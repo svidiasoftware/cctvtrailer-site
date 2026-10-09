@@ -16,95 +16,37 @@ import RentVsBuy from '../components/RentVsBuy.astro';
 // Speakable sections for voice search
 const speakableSections = [
   { cssSelector: ".quick-answer-content" },
-  { cssSelector: "#pricing-table" },
+  { cssSelector: "#rental-terms h2, #rental-terms p" },
   { cssSelector: "#whats-included h2, #whats-included ul" },
   { cssSelector: ".comparison-table" },
-  { cssSelector: ".stat-box" },
-  { cssSelector: "#pricing-faq h2, #pricing-faq div" }
+  { cssSelector: "#rental-faq h2, #rental-faq div" }
 ];
-
-// Rolling 12-month priceValidUntil so Product/Offer rich results never
-// expire between releases (Google drops Offer rich results when the date
-// is in the past). Re-computed at every build.
-const priceValidUntil = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)
-  .toISOString()
-  .split('T')[0];
 
 const schemas = [
   JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Security Trailer Rental",
-    "description": "CCTV Trailer - Locally owned surveillance security company since 2009. Professional CCTV systems and mobile trailer rentals with advanced S-VIDIA technology for construction sites, events, and emergency response.",
-    "brand": {
-      "@type": "Brand",
-      "name": "CCTV Trailer"
-    },
-    "priceRange": "$$",
+    "@type": "Service",
+    "name": "Mobile Surveillance Trailer Rental",
+    "serviceType": "Security trailer rental",
+    "description": "Daily, weekly, and monthly mobile surveillance trailer rentals with 24/7 self-monitoring. Each trailer carries 4 cameras (1 fixed fisheye + 3 PTZ with 25x optical zoom and IR), solar power/generator, equipment training, 24/7 technical support, and remote viewing on your mobile devices or computer. Professional delivery and setup available. Pricing is quoted per project.",
     "image": [
       "https://www.cctvtrailer.com/images/trailer-1x1.png",
       "https://www.cctvtrailer.com/images/trailer-4x3.png",
-      "https://www.cctvtrailer.com/images/trailer-16x9.png",
+      "https://www.cctvtrailer.com/images/trailer-16x9.png"
     ],
-  "offers": [
-    {
-      "@type": "Offer",
-      "name": "Daily Security Trailer Rental - First Day",
-      "offerCount": 2,
-      "price": "999",
-      "priceCurrency": "USD",
-      "priceValidUntil": priceValidUntil,
-      "availability": "https://schema.org/InStock",
-      "unitCode": "DAY",
-      "description": "First day rental rate for mobile surveillance trailer"
-    },
-    {
-      "@type": "Offer",
-      "name": "Daily Security Trailer Rental - Additional Days",
-      "offerCount": 2,
-      "price": "499",
-      "priceCurrency": "USD",
-      "priceValidUntil": priceValidUntil,
-      "availability": "https://schema.org/InStock",
-      "unitCode": "DAY",
-      "description": "Additional day rental rate for mobile surveillance trailer"
-    },
-    {
-      "@type": "AggregateOffer",
-      "name": "Weekly Security Trailer Rental",
-      "offerCount": 2,
-      "lowPrice": "3499",
-      "highPrice": "4000",
-      "priceCurrency": "USD",
-      "priceValidUntil": priceValidUntil,
-      "availability": "https://schema.org/InStock",
-      "unitCode": "WEEK",
-      "description": "Weekly rental rates with 10% discount"
-    },
-    {
-      "@type": "AggregateOffer",
-      "name": "Monthly Security Trailer Rental",
-      "offerCount": 2,
-      "lowPrice": "7999",
-      "highPrice": "10000",
-      "priceCurrency": "USD",
-      "priceValidUntil": priceValidUntil,
-      "availability": "https://schema.org/InStock",
-      "description": "Monthly rental rates with 20% discount"
-    }
-  ],
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "CCTV Trailer",
-    "telephone": "(253) 683-2288",
-    "email": "info@cctvtrailer.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Tacoma",
-      "streetAddress": "222 E 26th St",
-      "postalCode": "98421",
-      "addressRegion": "WA",
-      "addressCountry": "US",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "CCTV Trailer",
+      "telephone": "(253) 683-2288",
+      "email": "info@cctvtrailer.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tacoma",
+        "streetAddress": "222 E 26th St",
+        "postalCode": "98421",
+        "addressRegion": "WA",
+        "addressCountry": "US"
+      }
     },
     "areaServed": [
       {
@@ -117,22 +59,6 @@ const schemas = [
         "geoRadius": "30 miles"
       }
     ]
-  },
-  "shippingDetails": {
-  "@type": "OfferShippingDetails",
-  "shippingRate": {
-    "@type": "MonetaryAmount",
-    "value": "0",
-    "currency": "USD"
-  },
-  "shippingDestination": [
-    {
-      "@type": "DefinedRegion",
-      "addressCountry": "US",
-      "addressRegion": ["WA"]
-    }
-  ]
-}
   }),
   JSON.stringify({
     "@context": "https://schema.org",
@@ -143,31 +69,23 @@ const schemas = [
         "name": "How much does it cost to rent a security trailer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Daily rates: $999 first day, $499 per additional day. Weekly rental: $3,500 (10% discount). Monthly rental: $8,000 (20% discount). All rates include professional delivery, setup, 24/7 support, and solar power or generator."
+          "text": "Pricing depends on rental length, number of trailers, site location, and configuration, so we quote each project individually. Call (253) 683-2288 or request a quote online."
         }
       },
       {
         "@type": "Question",
-        "name": "Are there any hidden fees or additional costs?",
+        "name": "What is included with a rental?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No hidden fees. Our pricing includes delivery within 30 miles of Tacoma, professional setup and training, 24/7 technical support, solar power or generator, and all necessary equipment. Additional delivery distance fees may apply beyond 30 miles."
+          "text": "Every rental includes 4 cameras (1 fixed fisheye + 3 PTZ with 25x optical zoom and IR), equipment training, 24/7 technical support, solar power/generator, and remote viewing access on your mobile devices or computer. Professional delivery and setup are available."
         }
       },
       {
         "@type": "Question",
-        "name": "Do you offer volume discounts for multiple trailers?",
+        "name": "Who monitors the cameras?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes! We offer 10% discount for weekly rentals and 20% discount for monthly rentals. Contact us at (253) 683-2288 for custom quotes on multiple trailer deployments or long-term projects."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is included in the rental price?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "All rentals include: professional delivery and setup, equipment training, 24/7 technical support, solar power or backup generator, PTZ cameras with S-VIDIA technology, remote viewing access, weatherproof construction, and motion-activated recording."
+          "text": "Our trailers are 24/7 self-monitored: you watch live video, review recorded footage, and receive real-time motion alerts on your phone or computer. We train your team on the system and provide 24/7 technical support."
         }
       },
       {
@@ -175,7 +93,15 @@ const schemas = [
         "name": "Is there a minimum rental period?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Minimum rental is 1 day at $999. We offer flexible rental periods including daily, weekly, and monthly options. Same-day emergency deployment is available for urgent situations."
+          "text": "The minimum rental period is 1 day (24 hours). Daily, weekly, and monthly rentals are available, and longer terms are quoted at better rates."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast can you deploy a trailer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Same-day delivery is available, and setup takes 20-30 minutes. Call (253) 683-2288 to check availability."
         }
       }
     ]
@@ -185,13 +111,13 @@ const schemas = [
 // Breadcrumb data
 const breadcrumbItems = [
   { name: "Home", url: "/" },
-  { name: "Pricing" }
+  { name: "Rental Options" }
 ];
 ---
 
 <Layout
-  title="Security Trailer Rental Pricing | CCTV Trailer Tacoma"
-  description="Security trailer rental pricing: $499-999/day, $3,500/week, $8,000/month. Volume discounts, free setup, no hidden fees. Get instant quote: (253) 683-2288"
+  title="Security Trailer Rental Options & Quotes | CCTV Trailer Tacoma"
+  description="Daily, weekly & monthly security trailer rentals in Tacoma & Seattle. 4 cameras, solar power, 24/7 self-monitoring from your phone. Call (253) 683-2288 for a quote."
   schema={schemas}>
 
   <BreadcrumbSchema items={breadcrumbItems} />
@@ -204,39 +130,45 @@ const breadcrumbItems = [
     <!-- Hero Section -->
     <section class="hero-trailer">
       <div class="hero-overlay">
-        <LazyImage src="/images/tacoma-dome-bg-hero4.webp" alt="Mobile surveillance trailer with Tacoma Dome in background - Security rental pricing" 
+        <LazyImage src="/images/tacoma-dome-bg-hero4.webp" alt="Mobile surveillance trailer with Tacoma Dome in background - Security trailer rental options" 
           class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
       </div>
       <div class="hero-content">
         <div class="hero-text-wrapper">
-          <h1 class="hero-heading"><strong>Simple, Transparent Pricing</strong></h1>
+          <h1 class="hero-heading"><strong>Rental Options &amp; Quotes</strong></h1>
           <p class="hero-paragraph">
-            <strong>Professional mobile surveillance solutions</strong> at competitive rates with <strong>no hidden fees</strong>
+            <strong>Daily, weekly, and monthly</strong> mobile surveillance trailer rentals, <strong>quoted for your site</strong>
           </p>
           <div class="hero-buttons">
             <a href="tel:2536832288" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
-              📞 Call for Custom Quote
+              📞 Call for a Quote
             </a>
-            <a href="/security-cost-calculator" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
-              Cost Calculator
+            <a href="/contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
+              Request a Quote Online
             </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Quick Answer Box for Pricing -->
+    <!-- Quick Answer Box -->
     <section class="py-8 bg-gray-50">
       <div class="container mx-auto px-4">
         <QuickAnswer
-          what="Transparent pricing for mobile surveillance trailer rentals"
-          cost="$499-999/day | $3,500-4,000/week | $8,000-10,000/month"
-          time="Same-day delivery available, 20-30 minute setup"
-          coverage="Free delivery within 30 miles of Tacoma"
-          availability="Multiple units in fleet, volume discounts available"
+          what="Mobile surveillance trailer rentals with 24/7 self-monitoring"
+          time="20-30 minute setup, same-day delivery"
+          coverage="Tacoma, Seattle, Olympia, Federal Way, entire Puget Sound"
+          availability="Call to inquire"
+          includes={[
+            "4 cameras (1 fixed fisheye + 3 PTZ 25x zoom with IR)",
+            "Equipment training",
+            "24/7 technical support",
+            "Solar power/generator included",
+            "Remote viewing access on your mobile devices or computer"
+          ]}
           customFields={[
-            { label: "No Hidden Fees", value: "Setup, delivery, pickup included" },
-            { label: "Flexible Terms", value: "Daily, weekly, monthly options" }
+            { label: "Flexible Terms", value: "Daily, weekly, monthly options" },
+            { label: "Delivery & Setup", value: "Professional delivery and setup available" }
           ]}
         />
       </div>
@@ -246,33 +178,32 @@ const breadcrumbItems = [
     <section class="py-12 bg-white">
       <div class="container mx-auto px-4">
         <StatBox
-          title="Why Our Pricing Makes Sense"
-          description="Compare the value against alternatives"
+          title="What Every Rental Gets You"
+          description="One trailer, ready to protect your site"
           layout="grid"
           stats={[
             {
-              value: "$0",
-              label: "Setup Fees",
-              icon: "✅",
+              value: "4",
+              label: "Cameras per Trailer",
+              icon: "📹",
               highlight: true
             },
             {
-              value: "75%",
-              label: "Less Than Guards",
-              icon: "💰",
-              highlight: true,
-              source: { text: "vs 24/7 security guards" }
+              value: "20-30 min",
+              label: "Setup Time",
+              icon: "⏱️",
+              highlight: true
             },
             {
-              value: "100%",
-              label: "Price Transparency",
-              icon: "📊",
+              value: "24/7",
+              label: "Self-Monitoring",
+              icon: "📱",
               highlight: false
             },
             {
-              value: "30%",
-              label: "Multi-Unit Discount",
-              icon: "🎯",
+              value: "24/7",
+              label: "Technical Support",
+              icon: "🛠️",
               highlight: true
             }
           ]}
@@ -280,114 +211,95 @@ const breadcrumbItems = [
       </div>
     </section>
 
-    <!-- Main Pricing Section -->
-    <section class="py-16 bg-white">
+    <!-- Rental Terms Section -->
+    <section id="rental-terms" class="py-16 bg-white">
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
-          <!-- Daily Rates - Featured Card -->
-          <div class="relative mb-12">
-            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-              <span class="bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-semibold">
-                MOST POPULAR
-              </span>
-            </div>
-            <div class="bg-white border-2 border-blue-600 rounded-lg shadow-2xl p-8 pt-12">
-              <h2 class="text-3xl font-bold text-center mb-2">Daily Rental Rates</h2>
-              <p class="text-center text-gray-600 mb-8"><strong>Perfect for short-term projects and events</strong></p>
-              
-              <div class="grid md:grid-cols-2 gap-8 mb-8">
-                <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-white rounded-lg border border-blue-200">
-                  <div class="text-lg font-semibold text-gray-700 mb-2">First Day</div>
-                  <div class="flex items-center justify-center gap-1">
-                    <span class="text-2xl text-gray-600">$</span>
-                    <span class="text-5xl font-bold text-blue-600">999</span>
-                  </div>
-                  <div class="text-gray-600 mt-2">/day</div>
-                  <p class="text-sm text-gray-500 mt-3"><strong>Includes delivery & setup</strong></p>
-                </div>
-
-                <div class="text-center p-6 bg-gradient-to-br from-green-50 to-white rounded-lg border border-green-200">
-                  <div class="text-lg font-semibold text-gray-700 mb-2">Additional Days</div>
-                  <div class="flex items-center justify-center gap-1">
-                    <span class="text-2xl text-gray-600">$</span>
-                    <span class="text-5xl font-bold text-green-600">499</span>
-                  </div>
-                  <div class="text-gray-600 mt-2">/day</div>
-                  <p class="text-sm text-gray-500 mt-3"><strong>50% savings</strong> after day one</p>
-                </div>
-              </div>
-
-              <div class="text-center">
-                <a href="tel:2536832288" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-12 rounded-lg inline-block text-lg shadow-lg transition-all hover:shadow-xl">
-                  📞 Call (253) 683-2288 to Book
-                </a>
-                <p class="text-sm text-gray-500 mt-3">Available 24/7 for emergency deployments</p>
-              </div>
-            </div>
+          <div class="bg-white border-2 border-blue-600 rounded-lg shadow-2xl p-8 mb-12 text-center">
+            <h2 class="text-3xl font-bold mb-2">Get a Quote for Your Site</h2>
+            <p class="text-gray-600 mb-6"><strong>Pricing depends on rental length, number of trailers, site location, and configuration</strong> &mdash; tell us about your project and we'll quote it.</p>
+            <a href="tel:2536832288" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-12 rounded-lg inline-block text-lg shadow-lg transition-all hover:shadow-xl">
+              📞 Call (253) 683-2288
+            </a>
+            <p class="text-sm text-gray-500 mt-3">Same-day delivery &mdash; call to check availability</p>
           </div>
 
-          <!-- Volume Discounts Grid -->
+          <!-- Rental Terms Grid -->
           <div class="mb-12">
-            <h3 class="text-2xl font-bold text-center mb-8">Volume & Long-Term Discounts</h3>
-            <div class="grid md:grid-cols-3 gap-6">
+            <h2 class="text-2xl font-bold text-center mb-8">Flexible Rental Terms</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div class="bg-gradient-to-br from-green-50 to-white rounded-lg p-6 border border-green-200 hover:shadow-lg transition-shadow">
+                <div class="text-center mb-4">
+                  <span class="text-4xl">🗓️</span>
+                </div>
+                <h3 class="font-semibold text-lg mb-2 text-center">Daily Rentals</h3>
+                <p class="text-gray-600 text-center mb-3">1+ days</p>
+                <div class="text-center">
+                  <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
+                    Short-term
+                  </span>
+                </div>
+                <p class="text-sm text-gray-500 text-center mt-3">Events, emergencies, and short projects</p>
+              </div>
+
               <div class="bg-gradient-to-br from-purple-50 to-white rounded-lg p-6 border border-purple-200 hover:shadow-lg transition-shadow">
                 <div class="text-center mb-4">
                   <span class="text-4xl">📅</span>
                 </div>
-                <h4 class="font-semibold text-lg mb-2 text-center">Weekly Rentals</h4>
+                <h3 class="font-semibold text-lg mb-2 text-center">Weekly Rentals</h3>
                 <p class="text-gray-600 text-center mb-3">7+ days</p>
                 <div class="text-center">
                   <span class="inline-block bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold">
-                    Save 10-15%
+                    Better rates
                   </span>
                 </div>
-                <p class="text-sm text-gray-500 text-center mt-3">$3,500 - $4,000/week</p>
+                <p class="text-sm text-gray-500 text-center mt-3">Phased work and multi-day events</p>
               </div>
 
               <div class="bg-gradient-to-br from-blue-50 to-white rounded-lg p-6 border border-blue-200 hover:shadow-lg transition-shadow">
                 <div class="text-center mb-4">
                   <span class="text-4xl">📆</span>
                 </div>
-                <h4 class="font-semibold text-lg mb-2 text-center">Monthly Rentals</h4>
+                <h3 class="font-semibold text-lg mb-2 text-center">Monthly Rentals</h3>
                 <p class="text-gray-600 text-center mb-3">30+ days</p>
                 <div class="text-center">
                   <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
-                    Save 20-30%
+                    Best rates
                   </span>
                 </div>
-                <p class="text-sm text-gray-500 text-center mt-3">$8,000 - $10,000/month</p>
+                <p class="text-sm text-gray-500 text-center mt-3">Construction projects and long-term sites</p>
               </div>
 
               <div class="bg-gradient-to-br from-green-50 to-white rounded-lg p-6 border border-green-200 hover:shadow-lg transition-shadow">
                 <div class="text-center mb-4">
                   <span class="text-4xl">📦📦📦</span>
                 </div>
-                <h4 class="font-semibold text-lg mb-2 text-center">Multiple Units</h4>
+                <h3 class="font-semibold text-lg mb-2 text-center">Multiple Units</h3>
                 <p class="text-gray-600 text-center mb-3">2+ trailers</p>
                 <div class="text-center">
                   <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
-                    Custom Pricing
+                    Custom quote
                   </span>
                 </div>
-                <p class="text-sm text-gray-500 text-center mt-3">Volume discounts available</p>
+                <p class="text-sm text-gray-500 text-center mt-3">Large sites and multi-location projects</p>
               </div>
             </div>
           </div>
 
           <!-- What's Included Section -->
-          <div class="bg-gray-50 rounded-lg p-8 mb-12">
-            <h3 class="text-2xl font-bold mb-6 text-center"><strong>Everything You Need Included</strong></h3>
-            <div class="grid md:grid-cols-3 gap-6">
+          <div id="whats-included" class="bg-gray-50 rounded-lg p-8 mb-12">
+            <h2 class="text-2xl font-bold mb-6 text-center"><strong>What's Included</strong></h2>
+            <div class="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 class="font-semibold mb-3 text-blue-600">Setup & Support</h4>
+                <h3 class="font-semibold mb-3 text-blue-600">Included With Every Rental</h3>
                 <ul class="space-y-2">
                   <li class="flex items-start">
                     <span class="text-green-600 mr-2 mt-1">✓</span>
-                    <span class="text-gray-700">Professional delivery</span>
+                    <span class="text-gray-700">4 cameras (1 fixed fisheye + 3 PTZ 25x zoom with IR)</span>
                   </li>
                   <li class="flex items-start">
                     <span class="text-green-600 mr-2 mt-1">✓</span>
-                    <span class="text-gray-700"><a href="/how-to-setup-security-trailer" class="text-blue-600 hover:text-blue-800 hover:underline">Quick setup (minutes)</a></span>
+                    <span class="text-gray-700">Equipment training</span>
                   </li>
                   <li class="flex items-start">
                     <span class="text-green-600 mr-2 mt-1">✓</span>
@@ -395,47 +307,33 @@ const breadcrumbItems = [
                   </li>
                   <li class="flex items-start">
                     <span class="text-green-600 mr-2 mt-1">✓</span>
-                    <span class="text-gray-700">Pickup when complete</span>
+                    <span class="text-gray-700">Solar power/generator included</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-green-600 mr-2 mt-1">✓</span>
+                    <span class="text-gray-700">Remote viewing access on your mobile devices or computer</span>
                   </li>
                 </ul>
               </div>
 
               <div>
-                <h4 class="font-semibold mb-3 text-blue-600">Technology</h4>
+                <h3 class="font-semibold mb-3 text-blue-600">Built In</h3>
                 <ul class="space-y-2">
+                  <li class="flex items-start">
+                    <span class="text-green-600 mr-2 mt-1">✓</span>
+                    <span class="text-gray-700">24/7 self-monitoring with real-time alerts</span>
+                  </li>
                   <li class="flex items-start">
                     <span class="text-green-600 mr-2 mt-1">✓</span>
                     <span class="text-gray-700">S-VIDIA video system</span>
                   </li>
                   <li class="flex items-start">
                     <span class="text-green-600 mr-2 mt-1">✓</span>
-                    <span class="text-gray-700">4K HD cameras</span>
+                    <span class="text-gray-700"><a href="/how-to-setup-security-trailer" class="text-blue-600 hover:text-blue-800 hover:underline">Quick setup (minutes)</a>, no installation required</span>
                   </li>
                   <li class="flex items-start">
                     <span class="text-green-600 mr-2 mt-1">✓</span>
-                    <span class="text-gray-700">Night vision capability</span>
-                  </li>
-                  <li class="flex items-start">
-                    <span class="text-green-600 mr-2 mt-1">✓</span>
-                    <span class="text-gray-700">Remote monitoring</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 class="font-semibold mb-3 text-blue-600">Features</h4>
-                <ul class="space-y-2">
-                  <li class="flex items-start">
-                    <span class="text-green-600 mr-2 mt-1">✓</span>
-                    <span class="text-gray-700">Weather-resistant</span>
-                  </li>
-                  <li class="flex items-start">
-                    <span class="text-green-600 mr-2 mt-1">✓</span>
-                    <span class="text-gray-700">Solar + generator power</span>
-                  </li>
-                  <li class="flex items-start">
-                    <span class="text-green-600 mr-2 mt-1">✓</span>
-                    <span class="text-gray-700">Tow-capable 70 mph</span>
+                    <span class="text-gray-700">Weather-resistant, built for the Pacific Northwest</span>
                   </li>
                   <li class="flex items-start">
                     <span class="text-green-600 mr-2 mt-1">✓</span>
@@ -448,39 +346,30 @@ const breadcrumbItems = [
 
           <!-- Service Area -->
           <div class="bg-blue-50 rounded-lg p-6 text-center">
-            <h4 class="font-semibold text-lg mb-2">Service Area & Delivery</h4>
+            <h3 class="font-semibold text-lg mb-2">Service Area &amp; Delivery</h3>
             <p class="text-gray-700 mb-2">
-              <span class="font-semibold text-green-600"><strong>FREE delivery</strong></span> within <strong>30 miles of Tacoma, WA</strong>
+              <strong>Professional delivery and setup available</strong> throughout the Puget Sound
             </p>
             <p class="text-gray-600 text-sm">
-              Extended delivery available to Seattle, Olympia, Federal Way, Kent, Auburn, and surrounding areas<br>
-              <span class="text-xs">(Additional fees may apply for locations beyond 30 miles)</span>
+              Tacoma, Seattle, Olympia, Federal Way, Kent, Auburn, and surrounding areas &mdash; delivery is quoted based on your site location
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Pricing Comparison Table -->
+    <!-- Comparison Table -->
     <section class="py-16 bg-white">
       <div class="container mx-auto px-4">
         <ComparisonTable
-          title="Security Options Cost Comparison"
+          title="Security Options Compared"
           description="See how mobile surveillance trailers compare to other security solutions"
           headers={["Mobile Trailers", "Security Guards", "Fixed Cameras"]}
           rows={[
             {
-              feature: "Monthly Cost",
-              values: [
-                { text: "$8,000-10,000", highlight: true },
-                "$15,000-20,000",
-                "$500 + $5,000 install"
-              ]
-            },
-            {
               feature: "Setup Time",
               values: [
-                { text: "30 minutes", highlight: true },
+                { text: "20-30 minutes", highlight: true },
                 "Immediate",
                 "2-5 days"
               ]
@@ -540,14 +429,6 @@ const breadcrumbItems = [
                 "Usually",
                 "Yes"
               ]
-            },
-            {
-              feature: "ROI",
-              values: [
-                { text: "Immediate", highlight: true },
-                "Variable",
-                "12-18 months"
-              ]
             }
           ]}
         />
@@ -559,10 +440,10 @@ const breadcrumbItems = [
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center text-white">
           <div class="text-5xl mb-4">🧮</div>
-          <h2 class="text-3xl font-bold mb-4">Calculate Your Security Savings</h2>
+          <h2 class="text-3xl font-bold mb-4">Compare Your Quote Against Guards</h2>
           <p class="text-xl mb-8">
-            Use our interactive calculator to compare costs between mobile surveillance and traditional security guards.
-            See your potential ROI and savings instantly.
+            Once you have a quote, plug it into our calculator to compare mobile surveillance against traditional security guards
+            and estimate your ROI.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
             <a href="/security-cost-calculator" class="bg-white text-blue-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-lg inline-block text-lg shadow-lg transition-all hover:shadow-xl">
@@ -576,28 +457,36 @@ const breadcrumbItems = [
             </a>
           </div>
           <p class="text-sm mt-6 text-blue-100">
-            Average savings: 60-70% compared to security guards • ROI in 2-3 months. See our <a href="/case-studies" class="text-white underline hover:text-blue-200">case studies</a> for real deployments.
+            See our <a href="/case-studies" class="text-white underline hover:text-blue-200">case studies</a> for real deployments.
           </p>
         </div>
       </div>
     </section>
 
     <!-- FAQ Section -->
-    <section class="py-16 bg-gray-100">
+    <section id="rental-faq" class="py-16 bg-gray-100">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
         <div class="max-w-3xl mx-auto grid gap-6">
           <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="font-semibold text-lg mb-2">How much does it cost to rent a security trailer?</h3>
+            <p class="text-gray-600">Pricing depends on <strong>rental length, number of trailers, site location, and configuration</strong>, so we quote each project individually. Call <a href="tel:2536832288" class="text-blue-600 hover:underline">(253) 683-2288</a> or <a href="/contact" class="text-blue-600 hover:underline">request a quote online</a>.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="font-semibold text-lg mb-2">What is included with a rental?</h3>
+            <p class="text-gray-600">Every rental includes <strong>4 cameras (1 fixed fisheye + 3 PTZ with 25x optical zoom and IR)</strong>, equipment training, 24/7 technical support, solar power/generator, and remote viewing access on your mobile devices or computer. Professional delivery and setup are available.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="font-semibold text-lg mb-2">Who monitors the cameras?</h3>
+            <p class="text-gray-600">Our trailers are <strong>24/7 self-monitored</strong>: you watch live video, review recorded footage, and receive real-time motion alerts on your phone or computer. We train your team on the system and provide 24/7 technical support.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-6">
             <h3 class="font-semibold text-lg mb-2">Is there a minimum rental period?</h3>
-            <p class="text-gray-600">Yes, our <strong>minimum rental period is 1 day (24 hours)</strong>. For events less than 24 hours, the daily rate still applies.</p>
+            <p class="text-gray-600">The <strong>minimum rental period is 1 day (24 hours)</strong>. Daily, weekly, and monthly rentals are available, and longer terms are quoted at better rates.</p>
           </div>
           <div class="bg-white rounded-lg shadow-md p-6">
-            <h3 class="font-semibold text-lg mb-2">Do you offer 24/7 emergency deployment?</h3>
-            <p class="text-gray-600"><strong>Yes!</strong> We provide <strong>emergency deployment services 24/7</strong>. Call us anytime at (253) 683-2288 for immediate assistance.</p>
-          </div>
-          <div class="bg-white rounded-lg shadow-md p-6">
-            <h3 class="font-semibold text-lg mb-2">Are there any hidden fees?</h3>
-            <p class="text-gray-600"><strong>No hidden fees!</strong> Our pricing includes delivery, setup, pickup, and technical support. Additional fees only apply for extended delivery areas.</p>
+            <h3 class="font-semibold text-lg mb-2">How fast can you deploy a trailer?</h3>
+            <p class="text-gray-600"><strong>Same-day delivery is available</strong>, and setup takes 20-30 minutes. Call (253) 683-2288 to check availability.</p>
           </div>
         </div>
       </div>
@@ -609,7 +498,7 @@ const breadcrumbItems = [
     <CTASection
       title="Ready to Secure Your Property?"
       description="Get a custom quote tailored to your specific security needs"
-      features={["✓ Same Day Delivery", "✓ No Setup Fees", "✓ 24/7 Support", "✓ No Contracts Required"]}
+      features={["✓ Same Day Delivery", "✓ 24/7 Self-Monitoring", "✓ 24/7 Support", "✓ No Contracts Required"]}
     />
   </main>
 

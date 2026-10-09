@@ -8,7 +8,7 @@ import StatBox from '../components/StatBox.astro';
 import ComparisonTable from '../components/ComparisonTable.astro';
 
 const title = "Security Trailer vs Security Guards | Cost & Effectiveness Comparison";
-const description = "Compare mobile surveillance trailers vs security guards for construction sites. See actual cost savings of 88%, 24/7 coverage benefits, and ROI analysis for Washington state projects.";
+const description = "Compare mobile surveillance trailers vs security guards for construction sites. See real guard costs, 24/7 coverage benefits, and ROI analysis for Washington state projects.";
 ---
 
 <Layout title={title} description={description}>
@@ -25,7 +25,7 @@ const description = "Compare mobile surveillance trailers vs security guards for
         <div class="hero-text-wrapper">
           <h1 class="hero-heading">Security Trailer vs Security Guards</h1>
           <p class="hero-paragraph">
-            Save up to 62% on security costs while getting superior 24/7 coverage. See why Washington construction companies are switching to mobile surveillance.
+            Cut security costs while getting superior 24/7 coverage. See why Washington construction companies are switching to mobile surveillance.
           </p>
           <a href="/contact" class="red-button mt-6">Get Cost Comparison</a>
         </div>
@@ -45,8 +45,8 @@ const description = "Compare mobile surveillance trailers vs security guards for
 
         <StatBox
           stats={[
-            { value: "62%", label: "Cost Savings", subtext: "vs. security guards", color: "green" },
-            { value: "$8,000+", label: "Monthly Trailer Cost", subtext: "Professional monitoring", color: "blue" },
+            { value: "20-30 min", label: "Setup Time", subtext: "No installation required", color: "green" },
+            { value: "24/7", label: "Self-Monitoring", subtext: "Real-time alerts to your phone", color: "blue" },
             { value: "$20,800", label: "Monthly Guard Cost", subtext: "2 guards, 24/7", color: "red" },
             { value: "85%", label: "Crime Prevention", subtext: "With surveillance", color: "purple" }
           ]}
@@ -84,6 +84,11 @@ const description = "Compare mobile surveillance trailers vs security guards for
                 <option value="annual">Annual</option>
               </select>
             </div>
+            <div class="md:col-span-2">
+              <label for="trailerRate" class="block text-sm font-medium text-gray-700 mb-2">Your quoted trailer rental ($/month)</label>
+              <input type="number" id="trailerRate" min="0" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="From your CCTV Trailer quote">
+              <p class="text-xs text-gray-500 mt-1">Don't have a quote? Call <a href="tel:2536832288" class="text-blue-600 underline">(253) 683-2288</a></p>
+            </div>
           </div>
 
           <div class="mt-8 p-6 bg-white rounded-lg">
@@ -96,17 +101,17 @@ const description = "Compare mobile surveillance trailers vs security guards for
               </div>
               <div>
                 <p class="text-sm text-gray-600">Surveillance Trailer Cost</p>
-                <p class="text-2xl font-bold text-green-600" id="trailerCost">$8,000/mo</p>
-                <p class="text-xs text-gray-500">Professional monitoring included</p>
+                <p class="text-2xl font-bold text-green-600" id="trailerCost">-</p>
+                <p class="text-xs text-gray-500">24/7 self-monitoring with real-time alerts</p>
               </div>
               <div>
                 <p class="text-sm text-gray-600">Your Savings</p>
-                <p class="text-2xl font-bold text-blue-600" id="monthlySavings">$12,800/mo</p>
-                <p class="text-xs text-gray-500">62% reduction</p>
+                <p class="text-2xl font-bold text-blue-600" id="monthlySavings">-</p>
+                <p class="text-xs text-gray-500" id="savingsPercent">vs. security guards</p>
               </div>
             </div>
             <div class="mt-4 p-4 bg-green-50 rounded">
-              <p class="text-lg font-semibold">Annual Savings: <span id="annualSavings" class="text-green-600">$153,600</span></p>
+              <p class="text-lg font-semibold">Annual Savings: <span id="annualSavings" class="text-green-600">-</span></p>
             </div>
           </div>
         </div>
@@ -122,11 +127,11 @@ const description = "Compare mobile surveillance trailers vs security guards for
         <ComparisonTable
           headers={["Security Guards", "Mobile Surveillance Trailer"]}
           rows={[
-            { feature: "Monthly Cost (24/7)", values: ["$20,800 (2 guards)", { text: "$8,000-$12,000", highlight: true }] },
+            { feature: "Monthly Cost (24/7)", values: ["$20,800 (2 guards)", { text: "Typically a fraction of guard costs (call for a quote)", highlight: true }] },
             { feature: "Coverage Area", values: ["Limited patrol radius", { text: "360° complete coverage", highlight: true }] },
             { feature: "Response Time", values: ["Varies by location", { text: "Instant AI detection", highlight: true }] },
             { feature: "Weather Impact", values: ["Reduced effectiveness", { text: "All-weather operation", highlight: true }] },
-            { feature: "Recording Capability", values: ["Body cam only", { text: "30-60 day storage", highlight: true }] },
+            { feature: "Recording Capability", values: ["Body cam only", { text: "2-week archive (extendable)", highlight: true }] },
             { feature: "False Alarms", values: ["Human error prone", { text: "AI reduces by 95%", highlight: true }] },
             { feature: "Insurance Discount", values: ["0-5%", { text: "10-20% reduction", highlight: true }] },
             { feature: "Deployment Time", values: ["24-48 hours", { text: "2-4 hours", highlight: true }] },
@@ -258,33 +263,33 @@ const description = "Compare mobile surveillance trailers vs security guards for
               <ul class="space-y-2">
                 <li class="flex justify-between">
                   <span>Surveillance Trailer</span>
-                  <span class="font-semibold">$8,000/mo</span>
+                  <span class="font-semibold">Per your quote</span>
                 </li>
                 <li class="flex justify-between">
-                  <span>Professional Monitoring</span>
+                  <span>24/7 Self-Monitoring</span>
+                  <span class="font-semibold">Live view + alerts on your phone</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Equipment Training & 24/7 Tech Support</span>
                   <span class="font-semibold">Included</span>
                 </li>
                 <li class="flex justify-between">
-                  <span>Maintenance & Support</span>
-                  <span class="font-semibold">Included</span>
-                </li>
-                <li class="flex justify-between">
-                  <span>Insurance Included</span>
+                  <span>Guard Liability Insurance</span>
                   <span class="font-semibold">$0/mo</span>
                 </li>
                 <li class="border-t pt-2 flex justify-between font-bold">
                   <span>Monthly Total</span>
-                  <span>$8,000</span>
+                  <span>Your quoted rate</span>
                 </li>
                 <li class="flex justify-between font-bold text-green-600">
                   <span>6-Month Project Cost</span>
-                  <span>$48,000</span>
+                  <span>Your quoted rate × 6</span>
                 </li>
               </ul>
             </div>
           </div>
           <div class="mt-6 p-4 bg-green-100 rounded-lg text-center">
-            <p class="text-2xl font-bold">Total Savings: $116,520 (71% reduction)</p>
+            <p class="text-2xl font-bold">Typically a fraction of the $164,520 guard cost. Call (253) 683-2288 for a quote.</p>
             <p class="text-gray-600 mt-2">Plus 10-20% insurance premium reduction worth $3,000-$6,000</p>
           </div>
         </div>
@@ -292,7 +297,7 @@ const description = "Compare mobile surveillance trailers vs security guards for
         <div class="grid md:grid-cols-3 gap-6">
           <div class="bg-blue-50 p-6 rounded-lg text-center">
             <h4 class="font-bold mb-2">Break-Even Point</h4>
-            <p class="text-3xl font-bold text-blue-600">8 Days</p>
+            <p class="text-3xl font-bold text-blue-600">Fast</p>
             <p class="text-sm text-gray-600">Trailer pays for itself in prevented theft</p>
           </div>
           <div class="bg-green-50 p-6 rounded-lg text-center">
@@ -323,7 +328,7 @@ const description = "Compare mobile surveillance trailers vs security guards for
               </h3>
               <div>
                 <p class="text-gray-600">
-                  A professional mobile surveillance trailer costs $8,000-$12,000 per month including 24/7 monitoring. Security guards for the same coverage cost $20,800+ per month (2 guards at $20/hour), representing a 62% cost savings with the trailer option.
+                  Mobile surveillance trailer pricing depends on rental length, site, and configuration; call (253) 683-2288 for a quote. Security guards for the same 24/7 coverage cost $20,800+ per month (2 guards at $20/hour), so a trailer with 24/7 self-monitoring is typically a fraction of the cost of round-the-clock guards.
                 </p>
               </div>
             </div>
@@ -390,7 +395,10 @@ const description = "Compare mobile surveillance trailers vs security guards for
 
       // Base costs
       let guardHourlyRate = 20;
-      let trailerMonthly = 8000;
+      // Trailer cost comes from the visitor's own quote
+      const trailerRate = parseFloat(document.getElementById('trailerRate').value);
+      const hasQuote = trailerRate > 0;
+      const trailerMonthly = hasQuote ? trailerRate : 0;
 
       // Adjust for coverage hours
       let hoursPerMonth = coverage === '24/7' ? 720 : coverage === 'night' ? 360 : 360;
@@ -399,7 +407,6 @@ const description = "Compare mobile surveillance trailers vs security guards for
       // Adjust for site size
       if (siteSize > 100000) {
         guardsNeeded = Math.ceil(guardsNeeded * 1.5);
-        trailerMonthly += 2000;
       }
 
       // Calculate guard costs
@@ -407,9 +414,8 @@ const description = "Compare mobile surveillance trailers vs security guards for
       // Add overhead (benefits, insurance, management)
       guardMonthlyCost *= 1.3;
 
-      // Add contract discounts
+      // Add contract discounts (guards; the trailer quote already reflects contract length)
       if (contract === 'annual') {
-        trailerMonthly *= 0.9;
         guardMonthlyCost *= 0.95;
       }
 
@@ -423,11 +429,20 @@ const description = "Compare mobile surveillance trailers vs security guards for
 
       // Update display
       document.getElementById('guardsCost').textContent = `$${Math.round(guardMonthlyCost).toLocaleString()}/mo`;
-      document.getElementById('trailerCost').textContent = `$${Math.round(trailerMonthly).toLocaleString()}/mo`;
 
+      // Trailer-dependent results: show the number when a quote is entered, otherwise a prompt
+      const setTrailerResult = (id, text) => {
+        const el = document.getElementById(id);
+        el.textContent = hasQuote ? text : 'Enter your quote to compare';
+        el.style.fontSize = hasQuote ? '' : '1rem';
+      };
       const savings = guardMonthlyCost - trailerMonthly;
-      document.getElementById('monthlySavings').textContent = `$${Math.round(Math.abs(savings)).toLocaleString()}/mo`;
-      document.getElementById('annualSavings').textContent = `$${Math.round(Math.abs(savings * 12)).toLocaleString()}`;
+      setTrailerResult('trailerCost', `$${Math.round(trailerMonthly).toLocaleString()}/mo`);
+      setTrailerResult('monthlySavings', `$${Math.round(Math.abs(savings)).toLocaleString()}/mo`);
+      setTrailerResult('annualSavings', `$${Math.round(Math.abs(savings * 12)).toLocaleString()}`);
+      document.getElementById('savingsPercent').textContent = hasQuote
+        ? `${Math.round((savings / guardMonthlyCost) * 100)}% vs. security guards`
+        : 'vs. security guards';
     }
 
     // Add event listeners
@@ -435,6 +450,7 @@ const description = "Compare mobile surveillance trailers vs security guards for
     document.getElementById('coverageHours').addEventListener('change', calculateCosts);
     document.getElementById('securityType').addEventListener('change', calculateCosts);
     document.getElementById('contractLength').addEventListener('change', calculateCosts);
+    document.getElementById('trailerRate').addEventListener('input', calculateCosts);
 
     // Initial calculation
     calculateCosts();
@@ -473,7 +489,7 @@ const description = "Compare mobile surveillance trailers vs security guards for
         "name": "How much does a security trailer cost compared to guards?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A professional mobile surveillance trailer costs $8,000-$12,000 per month including 24/7 monitoring. Security guards for the same coverage cost $20,800+ per month (2 guards at $20/hour), representing a 62% cost savings with the trailer option."
+          "text": "Mobile surveillance trailer pricing depends on rental length, site, and configuration; call (253) 683-2288 for a quote. Security guards for the same 24/7 coverage cost $20,800+ per month (2 guards at $20/hour), so a trailer with 24/7 self-monitoring is typically a fraction of the cost of round-the-clock guards."
         }
       },
       {

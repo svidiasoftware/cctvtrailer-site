@@ -19,8 +19,6 @@ const breadcrumbItems = [
 const serviceSchemaData = {
   serviceName: "Mobile vs Fixed Camera System Comparison",
   description: "Compare mobile surveillance trailers vs fixed security cameras for construction sites and businesses. Installation costs, flexibility, ROI analysis, and effectiveness comparison.",
-  price: "7999",
-  priceUnit: "MONTH" as const,
   areaServed: [
     { type: "State" as const, name: "Washington" },
     { type: "City" as const, name: "Tacoma" },
@@ -36,7 +34,7 @@ const comparisonData = {
     {
       feature: "Installation Cost",
       values: [
-        { text: "$0 (included)", highlight: true },
+        { text: "No installation required", highlight: true },
         "$10,000-50,000+"
       ]
     },
@@ -140,7 +138,7 @@ const faqSchema = JSON.stringify({
 
 <Layout
   title="Mobile vs Fixed Surveillance Systems | Complete Comparison Guide 2025"
-  description="Compare mobile surveillance trailers vs fixed security cameras. Zero installation cost, deploy in 30 minutes, solar powered. Interactive cost calculator and real deployment data for Tacoma-Seattle area."
+  description="Compare mobile surveillance trailers vs fixed security cameras. No installation required, deploy in 30 minutes, solar powered. Interactive cost calculator and real deployment data for Tacoma-Seattle area."
   schema={[faqSchema]}>
 
   <ServiceSchema {...serviceSchemaData} />
@@ -173,15 +171,15 @@ const faqSchema = JSON.stringify({
         <QuickAnswer
           what="Self-contained mobile surveillance units vs permanent camera installations"
           deployment="30 minutes vs 2-4 weeks installation"
-          cost="$0 setup vs $10,000-50,000+ installation"
+          cost="Trailer rental by quote (no installation) vs $10,000-50,000+ fixed installation"
           power="Solar/battery powered vs electrical infrastructure required"
           flexibility="Relocate anytime vs permanent fixed position"
           includes={[
-            "No installation or permits needed",
-            "Works without power or internet",
-            "Professional monitoring included",
-            "Maintenance handled by provider",
-            "Scale up or down instantly"
+            "4 cameras (1 fixed fisheye + 3 PTZ with 25x optical zoom and IR)",
+            "Equipment training",
+            "24/7 technical support",
+            "Solar power/generator included",
+            "Remote viewing access on your mobile devices or computer"
           ]}
         />
       </div>
@@ -316,9 +314,9 @@ const faqSchema = JSON.stringify({
                   <div>
                     <span class="text-green-600 font-semibold">Mobile Surveillance:</span>
                     <ul class="mt-2 space-y-1 text-sm">
-                      <li>Rental: $8,000 x 3 = $24,000</li>
-                      <li>Setup: $0</li>
-                      <li class="font-bold">Total: $24,000</li>
+                      <li>Rental: your quoted monthly rate x 3</li>
+                      <li>No installation, equipment purchase, or removal</li>
+                      <li class="font-bold">Total: per your quote</li>
                     </ul>
                   </div>
                   <div>
@@ -332,7 +330,7 @@ const faqSchema = JSON.stringify({
                   </div>
                 </div>
                 <div class="mt-3 p-3 bg-green-50 rounded">
-                  <span class="font-bold text-green-700">Mobile Saves: $21,000 (47%)</span>
+                  <span class="font-bold text-green-700">Mobile is usually the lower-cost option for short projects</span>
                 </div>
               </div>
 
@@ -343,9 +341,9 @@ const faqSchema = JSON.stringify({
                   <div>
                     <span class="text-green-600 font-semibold">Mobile Surveillance:</span>
                     <ul class="mt-2 space-y-1 text-sm">
-                      <li>Rental: $8,000 x 12 = $96,000</li>
-                      <li>Setup: $0</li>
-                      <li class="font-bold">Total: $96,000</li>
+                      <li>Rental: your quoted monthly rate x 12</li>
+                      <li>No installation or equipment purchase</li>
+                      <li class="font-bold">Total: per your quote</li>
                     </ul>
                   </div>
                   <div>
@@ -370,9 +368,9 @@ const faqSchema = JSON.stringify({
                   <div>
                     <span class="text-green-600 font-semibold">Mobile Surveillance:</span>
                     <ul class="mt-2 space-y-1 text-sm">
-                      <li>Rental: $8,000 x 60 = $480,000</li>
-                      <li>Setup: $0</li>
-                      <li class="font-bold">Total: $480,000</li>
+                      <li>Rental: your quoted monthly rate x 60</li>
+                      <li>Ongoing rental for the life of the site</li>
+                      <li class="font-bold">Total: per your quote</li>
                     </ul>
                   </div>
                   <div>
@@ -387,7 +385,7 @@ const faqSchema = JSON.stringify({
                   </div>
                 </div>
                 <div class="mt-3 p-3 bg-blue-50 rounded">
-                  <span class="font-bold text-blue-700">Fixed Saves: $395,000 long-term</span>
+                  <span class="font-bold text-blue-700">Fixed cameras win on long-term cost</span>
                 </div>
               </div>
             </div>
@@ -431,16 +429,30 @@ const faqSchema = JSON.stringify({
 
                 <div>
                   <label for="tcoMonitoring" class="block text-sm font-medium text-gray-700 mb-2">
-                    Professional Monitoring
+                    Fixed-System Monitoring Service
                   </label>
                   <select
                     id="tcoMonitoring"
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-purple-500 focus:border-purple-500"
                   >
-                    <option value="yes" selected>Yes - 24/7 monitoring</option>
+                    <option value="yes" selected>Yes - 24/7 third-party monitoring</option>
                     <option value="no">No - self-monitored</option>
                   </select>
                 </div>
+              </div>
+
+              <div>
+                <label for="tcoTrailerRate" class="block text-sm font-medium text-gray-700 mb-2">
+                  Your quoted trailer rental ($/month per trailer)
+                </label>
+                <input
+                  type="number"
+                  id="tcoTrailerRate"
+                  min="0"
+                  placeholder="From your CCTV Trailer quote"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-purple-500 focus:border-purple-500"
+                />
+                <p class="text-sm text-gray-500 mt-2">Don't have a quote? Call <a href="tel:2536832288" class="text-purple-700 underline">(253) 683-2288</a></p>
               </div>
 
               <button
@@ -465,11 +477,11 @@ const faqSchema = JSON.stringify({
                     </div>
                     <div class="flex justify-between">
                       <span class="text-gray-600">Setup/delivery:</span>
-                      <span class="font-semibold">$0</span>
+                      <span class="font-semibold">Available, see quote</span>
                     </div>
                     <div class="flex justify-between">
                       <span class="text-gray-600">Monitoring:</span>
-                      <span class="font-semibold">Included</span>
+                      <span class="font-semibold">24/7 self-monitoring</span>
                     </div>
                     <div class="flex justify-between">
                       <span class="text-gray-600">Maintenance:</span>
@@ -521,7 +533,7 @@ const faqSchema = JSON.stringify({
                 <p class="text-sm text-gray-500 mt-1">The month where fixed cameras become cheaper than mobile on a cumulative cost basis</p>
               </div>
 
-              <p class="text-xs text-gray-400 mt-4">Calculator uses $8,000-$10,000/month mobile rental. Fixed camera estimates based on average PNW installation costs. <a href="/pricing" class="underline">See full pricing details</a>.</p>
+              <p class="text-xs text-gray-400 mt-4">Mobile cost uses the monthly rental from your quote. Fixed camera estimates based on average PNW installation costs. <a href="/pricing" class="underline">Rental options &amp; quotes</a>.</p>
             </div>
           </div>
         </div>
@@ -611,7 +623,7 @@ const faqSchema = JSON.stringify({
                     </li>
                     <li class="flex items-start">
                       <span class="text-green-500 mr-2 mt-0.5 font-bold">&#10003;</span>
-                      <span><strong>24/7 monitoring included</strong> - no need to hire separate security guards</span>
+                      <span><strong>24/7 self-monitoring</strong> - real-time alerts to the contractor's phones, no need to hire separate security guards</span>
                     </li>
                     <li class="flex items-start">
                       <span class="text-green-500 mr-2 mt-0.5 font-bold">&#10003;</span>
@@ -623,15 +635,15 @@ const faqSchema = JSON.stringify({
                     </li>
                   </ul>
                   <div class="mt-4 p-3 bg-green-50 rounded text-center">
-                    <span class="font-bold text-green-700">Total Mobile Cost: $72,000</span>
-                    <p class="text-xs text-green-600 mt-1">$8,000/month x 9 months, everything included</p>
+                    <span class="font-bold text-green-700">Total Mobile Cost: Less Than the Fixed Route</span>
+                    <p class="text-xs text-green-600 mt-1">One monthly rental for 9 months, no install, guard, or decommissioning costs</p>
                   </div>
                 </div>
               </div>
 
               <!-- Net Result -->
               <div class="bg-gradient-to-r from-green-50 to-green-100 border-2 border-green-300 rounded-lg p-6 text-center">
-                <h4 class="font-bold text-lg mb-2 text-green-800">Net Result: Mobile Saved Over $3,000 AND Prevented $35,000 in Theft</h4>
+                <h4 class="font-bold text-lg mb-2 text-green-800">Net Result: Mobile Cost Less AND Prevented $35,000 in Theft</h4>
                 <p class="text-gray-700">Even though the monthly mobile cost was higher than a fixed system's monitoring fees, the <strong>zero security gaps</strong>, <strong>instant deployment</strong>, and <strong>relocation flexibility</strong> made it the clear winner for this temporary project. The contractor now uses mobile surveillance for all job sites and keeps fixed cameras only at their permanent yard.</p>
                 <p class="text-sm text-gray-500 mt-3">Need <a href="/construction-security" class="text-green-700 underline font-semibold">construction site security</a>? We deploy across the Tacoma-Seattle corridor.</p>
               </div>
@@ -754,7 +766,7 @@ const faqSchema = JSON.stringify({
                 <span class="text-green-600 mr-3 mt-1">&#10003;</span>
                 <div>
                   <strong>Emergency Response After Break-ins</strong>
-                  <p class="text-gray-600">A site gets hit overnight and needs surveillance by morning. We deploy same-day across the Tacoma-Seattle corridor so the next attempt is caught on camera.</p>
+                  <p class="text-gray-600">A site gets hit overnight and needs surveillance by morning. Same-day deployment is often available across the Tacoma-Seattle corridor (call (253) 683-2288 to check availability) so the next attempt is caught on camera.</p>
                 </div>
               </li>
               <li class="flex items-start">
@@ -851,7 +863,7 @@ const faqSchema = JSON.stringify({
             <div class="bg-gradient-to-br from-blue-50 to-white rounded-lg p-6 border border-blue-200">
               <div class="text-3xl mb-3 text-center">&#128279;</div>
               <h3 class="font-bold text-lg mb-2 text-center">Connected: Single Dashboard</h3>
-              <p class="text-gray-600 text-sm">Both systems feed into remote monitoring platforms. Your project manager can check the yard cameras and every active job site from a single phone app, anywhere in Washington.</p>
+              <p class="text-gray-600 text-sm">Both systems feed into remote viewing platforms. Your project manager can check the yard cameras and every active job site from a single phone app, anywhere in Washington.</p>
             </div>
           </div>
 
@@ -974,12 +986,12 @@ const faqSchema = JSON.stringify({
 
           <div class="bg-gray-50 rounded-lg p-6 shadow">
             <h3 class="font-bold text-lg mb-2">How quickly can I get mobile surveillance deployed?</h3>
-            <p class="text-gray-700">Mobile surveillance can be delivered and operational within 2-4 hours for emergency situations, or same-day for standard requests in the Tacoma-Seattle area. <a href="/how-to-setup-security-trailer" class="text-purple-700 underline">Setup takes only 30 minutes</a> once on-site.</p>
+            <p class="text-gray-700">Same-day delivery is often available in the Tacoma-Seattle area, including emergency deployments. Call (253) 683-2288 to check availability. <a href="/how-to-setup-security-trailer" class="text-purple-700 underline">Setup takes only 30 minutes</a> once on-site.</p>
           </div>
 
           <div class="bg-gray-50 rounded-lg p-6 shadow">
             <h3 class="font-bold text-lg mb-2">What happens if my security needs change?</h3>
-            <p class="text-gray-700">Mobile surveillance offers complete flexibility - add more units, relocate to new areas, or return units when no longer needed. Fixed systems require new installation for any changes. See our <a href="/pricing" class="text-purple-700 underline">pricing page</a> for flexible rental terms.</p>
+            <p class="text-gray-700">Mobile surveillance offers complete flexibility - add more units, relocate to new areas, or return units when no longer needed. Fixed systems require new installation for any changes. See <a href="/pricing" class="text-purple-700 underline">rental options &amp; quotes</a> for flexible rental terms.</p>
           </div>
         </div>
       </div>
@@ -1028,9 +1040,11 @@ const faqSchema = JSON.stringify({
       if (duration > 120) duration = 120;
 
       // Mobile cost calculation
-      // Base: $8,000/month per trailer (4 cameras per trailer)
+      // Per-trailer rate comes from the visitor's own quote (4 cameras per trailer)
       var trailersNeeded = Math.ceil(cameras / 4);
-      var mobileMonthlyPerTrailer = 8000;
+      var trailerRate = parseFloat(document.getElementById('tcoTrailerRate').value);
+      var hasQuote = trailerRate > 0;
+      var mobileMonthlyPerTrailer = hasQuote ? trailerRate : 0;
       var mobileMonthly = trailersNeeded * mobileMonthlyPerTrailer;
       var mobileTotal = mobileMonthly * duration;
 
@@ -1068,7 +1082,9 @@ const faqSchema = JSON.stringify({
       var fixedUpfront = fixedInstallTotal + fixedRemoval;
       var breakeven;
 
-      if (mobileMonthly <= fixedOngoing) {
+      if (!hasQuote) {
+        breakeven = 'Enter your quote to compare';
+      } else if (mobileMonthly <= fixedOngoing) {
         breakeven = 'Never (mobile is always cheaper)';
       } else {
         var breakevenMonth = Math.ceil(fixedUpfront / (mobileMonthly - fixedOngoing));
@@ -1086,10 +1102,14 @@ const faqSchema = JSON.stringify({
       var savings = Math.abs(fixedTotal - mobileTotal);
       var savingsFormatted = '$' + savings.toLocaleString();
 
-      if (mobileTotal < fixedTotal) {
+      if (!hasQuote) {
+        recDiv.className = 'p-6 rounded-lg mb-4 bg-yellow-50 border-2 border-yellow-400';
+        recDiv.innerHTML = '<h4 class="font-bold text-lg text-yellow-800 mb-2">Enter Your Quote to Compare</h4>' +
+          '<p class="text-gray-700">Your fixed-camera estimate for a <strong>' + duration + '-month project</strong> with <strong>' + cameras + ' cameras</strong> is shown above. Enter the monthly trailer rental from your quote to see which option costs less. Don\'t have a quote? <a href="tel:2536832288" class="text-purple-700 underline font-semibold">Call (253) 683-2288</a>.</p>';
+      } else if (mobileTotal < fixedTotal) {
         recDiv.className = 'p-6 rounded-lg mb-4 bg-green-50 border-2 border-green-400';
         recDiv.innerHTML = '<h4 class="font-bold text-lg text-green-800 mb-2">Recommendation: Mobile Surveillance</h4>' +
-          '<p class="text-gray-700">For a <strong>' + duration + '-month project</strong> with <strong>' + cameras + ' cameras</strong>, mobile surveillance saves you <strong class="text-green-700">' + savingsFormatted + '</strong> compared to a fixed installation. You also avoid installation delays, get same-day deployment, and can relocate as needed.</p>';
+          '<p class="text-gray-700">For a <strong>' + duration + '-month project</strong> with <strong>' + cameras + ' cameras</strong>, mobile surveillance saves you <strong class="text-green-700">' + savingsFormatted + '</strong> compared to a fixed installation. You also avoid installation delays, can often get same-day deployment, and can relocate as needed.</p>';
       } else if (fixedTotal < mobileTotal) {
         recDiv.className = 'p-6 rounded-lg mb-4 bg-blue-50 border-2 border-blue-400';
         recDiv.innerHTML = '<h4 class="font-bold text-lg text-blue-800 mb-2">Recommendation: Fixed Camera System</h4>' +
@@ -1102,8 +1122,17 @@ const faqSchema = JSON.stringify({
       }
 
       // Update display values
-      document.getElementById('tcoMobileMonthly').textContent = '$' + mobileMonthly.toLocaleString() + '/mo (' + trailersNeeded + ' trailer' + (trailersNeeded > 1 ? 's' : '') + ')';
-      document.getElementById('tcoMobileTotal').textContent = '$' + mobileTotal.toLocaleString();
+      var mobileMonthlyEl = document.getElementById('tcoMobileMonthly');
+      var mobileTotalEl = document.getElementById('tcoMobileTotal');
+      if (hasQuote) {
+        mobileMonthlyEl.textContent = '$' + mobileMonthly.toLocaleString() + '/mo (' + trailersNeeded + ' trailer' + (trailersNeeded > 1 ? 's' : '') + ')';
+        mobileTotalEl.textContent = '$' + mobileTotal.toLocaleString();
+        mobileTotalEl.style.fontSize = '';
+      } else {
+        mobileMonthlyEl.textContent = 'Enter your quote (' + trailersNeeded + ' trailer' + (trailersNeeded > 1 ? 's' : '') + ')';
+        mobileTotalEl.textContent = 'Enter your quote to compare';
+        mobileTotalEl.style.fontSize = '1rem';
+      }
       document.getElementById('tcoFixedInstall').textContent = '$' + fixedInstallTotal.toLocaleString();
       document.getElementById('tcoFixedMonthly').textContent = monitoring === 'yes' ? '$' + fixedMonitoringMonthly.toLocaleString() + '/mo' : 'Self-monitored ($0)';
       document.getElementById('tcoFixedMaint').textContent = '$' + fixedMaintenance.toLocaleString();

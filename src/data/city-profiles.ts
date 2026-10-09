@@ -153,9 +153,6 @@ export interface CityProfile {
 
   schema: {
     serviceName: string;
-    priceLow: string;
-    priceHigh: string;
-    priceUnit: 'WEEK' | 'MONTH';
     areaServed: AreaServedEntry[];
   };
 
@@ -201,7 +198,7 @@ const kentProfile: CityProfile = {
     leadHtml:
       "<strong>Protecting the Pacific Northwest's largest warehouse cluster.</strong> Mobile camera trailers deployed across Kent Valley distribution centers, intermodal yards, and Boeing supplier facilities — same-day rollout from our Tacoma HQ.",
     ctaPrimaryText: 'Get Kent Quote',
-    bullets: ["⚡ 30-minute response from Tacoma via I-5 / SR-167"],
+    bullets: ["⚡ ~30 minutes from Tacoma via I-5 / SR-167 — same-day delivery available"],
     backgroundImage: {
       src: '/images/cities/kent-hero.webp',
       alt: 'CCTV surveillance trailer parked at the perimeter of a Kent Valley warehouse distribution center at dusk, loading docks lit by overhead lights',
@@ -319,8 +316,8 @@ const kentProfile: CityProfile = {
       },
       {
         icon: "\u{1F69A}",
-        title: '30-Minute Response from Tacoma',
-        body: 'Our headquarters at 222 E 26th St is 20 miles south of Kent on I-5. Same-day deployments are routine; emergency rollouts run sub-hour.',
+        title: '30 Minutes from Tacoma HQ',
+        body: 'Our headquarters at 222 E 26th St is 20 miles south of Kent on I-5. Same-day deployment is available — call (253) 683-2288 to check availability.',
       },
       {
         icon: "⏰",
@@ -336,9 +333,9 @@ const kentProfile: CityProfile = {
       {
         question: 'How fast can a surveillance trailer be deployed to a Kent Valley warehouse?',
         answerText:
-          "Standard deployments to Kent run same-day or next-day from our Tacoma HQ at 222 E 26th St — about 20 miles south on I-5/SR-167. Emergency rollouts for active-incident response can be sub-hour. We pre-stage two units specifically for the Kent / Auburn corridor demand spikes.",
+          "Deployments to Kent typically run same-day or next-day from our Tacoma HQ at 222 E 26th St — about 20 miles south on I-5/SR-167. Same-day emergency deployment for active-incident response is available. Setup takes 20-30 minutes once the trailer is on site. Call (253) 683-2288 to check availability.",
         answerHtml:
-          "Standard deployments to Kent run same-day or next-day from our Tacoma HQ at 222 E 26th St — about 20 miles south on I-5/SR-167. Emergency rollouts for active-incident response can be sub-hour. We pre-stage two units specifically for the Kent / Auburn corridor demand spikes. Call <a href=\"tel:2536832288\" class=\"text-purple-700 font-semibold\">(253) 683-2288</a> for current availability.",
+          "Deployments to Kent typically run same-day or next-day from our Tacoma HQ at 222 E 26th St — about 20 miles south on I-5/SR-167. Same-day emergency deployment for active-incident response is available. Setup takes 20-30 minutes once the trailer is on site. Call <a href=\"tel:2536832288\" class=\"text-purple-700 font-semibold\">(253) 683-2288</a> to check availability.",
       },
       {
         question: 'Do you serve the Boeing supplier corridor and other access-controlled industrial parks in Kent?',
@@ -358,14 +355,14 @@ const kentProfile: CityProfile = {
       {
         question: 'How do you handle Maple Valley, Covington, and the unincorporated areas outside Kent city limits?',
         answerText:
-          "We serve all of South King County, including Maple Valley, Covington, Black Diamond, and the unincorporated stretch between Kent and Auburn. Same Tacoma-HQ dispatch, same pricing — there's no separate \"out-of-city\" surcharge for properties within 30 miles of our base.",
+          "We serve all of South King County, including Maple Valley, Covington, Black Diamond, and the unincorporated stretch between Kent and Auburn. Same Tacoma-HQ team, with same-day delivery available — call (253) 683-2288 for a quote on your property.",
       },
       {
         question: 'What does a Kent Valley security trailer rental cost?',
         answerText:
-          "Weekly rates start at $3,499 with most multi-week and monthly contracts landing in the $3,499-$4,000/week range, depending on camera count, monitoring level, and project duration. Pricing includes delivery, setup, solar power, remote viewing access, 24/7 technical support, and equipment training. Call (253) 683-2288 for a written quote against your specific site plan.",
+          "Pricing depends on rental length, number of trailers, your site, and configuration, so every Kent Valley project is quoted individually. Each rental includes 4 cameras (1 fixed fisheye + 3 PTZ with 25x optical zoom and IR), equipment training, 24/7 technical support, solar power/generator, and remote viewing access on your mobile devices or computer. Professional delivery and setup available. Call (253) 683-2288 for a written quote against your specific site plan.",
         answerHtml:
-          "Weekly rates start at $3,499 with most multi-week and monthly contracts landing in the $3,499-$4,000/week range, depending on camera count, monitoring level, and project duration. Pricing includes delivery, setup, solar power, remote viewing access, 24/7 technical support, and equipment training. See our <a href=\"/pricing\" class=\"text-purple-700 underline hover:text-purple-900\">full pricing page</a> or call (253) 683-2288 for a written quote against your specific site plan.",
+          "Pricing depends on rental length, number of trailers, your site, and configuration, so every Kent Valley project is quoted individually. Each rental includes 4 cameras (1 fixed fisheye + 3 PTZ with 25x optical zoom and IR), equipment training, 24/7 technical support, solar power/generator, and remote viewing access on your mobile devices or computer. Professional delivery and setup available. See our <a href=\"/pricing\" class=\"text-purple-700 underline hover:text-purple-900\">rental options &amp; quotes page</a> or call (253) 683-2288 for a written quote against your specific site plan.",
       },
     ],
   },
@@ -416,17 +413,14 @@ const kentProfile: CityProfile = {
       description: 'Mobile surveillance for Kent Valley warehouse expansions and tenant fit-outs.',
     },
     {
-      title: 'View Pricing & Plans',
+      title: 'Rental Options & Quotes',
       href: '/pricing',
-      description: 'Transparent weekly and monthly rates for Kent Valley industrial sites.',
+      description: 'Request a written quote for Kent Valley industrial sites.',
     },
   ],
 
   schema: {
     serviceName: 'Kent Valley Security Camera Trailer Rental',
-    priceLow: '3499',
-    priceHigh: '4000',
-    priceUnit: 'WEEK',
     areaServed: [
       { type: 'City', name: 'Kent' },
       { type: 'City', name: 'Covington' },

@@ -23,7 +23,7 @@ const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "CCTV Trailer - Seattle Construction Security",
-  "description": "Construction site security in Seattle, WA. Mobile surveillance trailers for construction projects. Same-day deployment, 24/7 monitoring. Serving downtown, South Lake Union, Capitol Hill.",
+  "description": "Construction site security in Seattle, WA. Mobile surveillance trailers for construction projects. Same-day deployment, 24/7 self-monitoring. Serving downtown, South Lake Union, Capitol Hill.",
   "url": "https://www.cctvtrailer.com/seattle-construction-security",
   "telephone": "(253) 683-2288",
   "address": {
@@ -77,7 +77,7 @@ const schema = JSON.stringify({
         "itemOffered": {
           "@type": "Service",
           "name": "Construction Site Mobile Surveillance",
-          "description": "24/7 monitored security trailers for Seattle construction sites"
+          "description": "24/7 self-monitored security trailers for Seattle construction sites"
         }
       }
     ]
@@ -128,9 +128,9 @@ const relatedPages = [
     description: "Weather-proof mobile surveillance trailers built for Seattle's climate and urban construction sites."
   },
   {
-    title: "View Pricing & Plans",
+    title: "Rental Options & Quotes",
     href: "/pricing",
-    description: "Transparent pricing for Seattle area construction security with contractor volume discounts."
+    description: "Rental options for Seattle construction sites — call (253) 683-2288 or request a quote."
   }
 ];
 ---
@@ -176,10 +176,16 @@ const relatedPages = [
       <div class="container mx-auto px-4">
         <QuickAnswer
           what="Mobile surveillance trailers for Seattle construction sites"
-          cost="$10,000-12,000/month | Multi-site discounts available"
-          time="3-5 hour deployment to Seattle locations"
+          time="20-30 minute setup, same-day delivery to Seattle locations"
           coverage="Serving all Seattle neighborhoods and suburbs"
-          availability="Fleet ready for immediate Seattle deployment"
+          availability="Call to inquire — (253) 683-2288"
+          includes={[
+            "4 cameras (1 fixed fisheye + 3 PTZ with 25x optical zoom and IR)",
+            "Equipment training",
+            "24/7 technical support",
+            "Solar power/generator included",
+            "Remote viewing access on your mobile devices or computer"
+          ]}
           customFields={[
             { label: "High-Demand Areas", value: "Downtown, SLU, Capitol Hill, Ballard" },
             { label: "Response Time", value: "Rush deployment available" }
@@ -434,8 +440,8 @@ const relatedPages = [
                 <li class="flex items-start">
                   <span class="text-green-600 mr-2 mt-1">✓</span>
                   <div>
-                    <strong>Seattle PD Integration</strong>
-                    <p class="text-sm text-gray-600 mt-1">Direct connection for priority response</p>
+                    <strong>Evidence-Ready Alerts</strong>
+                    <p class="text-sm text-gray-600 mt-1">Real-time alerts to your phone &mdash; call Seattle PD with video evidence in hand</p>
                   </div>
                 </li>
                 <li class="flex items-start">
@@ -470,7 +476,7 @@ const relatedPages = [
             {
               feature: "Monthly Cost",
               values: [
-                { text: "$10,000-12,000", highlight: true },
+                { text: "A fraction of guard cost — call for a quote", highlight: true },
                 "$25,000-35,000",
                 "$800 + $8,000 install"
               ]
@@ -518,7 +524,7 @@ const relatedPages = [
             {
               feature: "Multi-Site Management",
               values: [
-                { text: "Central monitoring", highlight: true },
+                { text: "All sites in one app", highlight: true },
                 "Separate teams",
                 "Individual systems"
               ]
@@ -558,7 +564,7 @@ const relatedPages = [
             <h3 class="font-semibold mb-2">Swedish Medical Expansion</h3>
             <p class="text-sm text-gray-600 mb-3">First Hill campus</p>
             <div class="text-sm space-y-1">
-              <div class="text-green-600 font-semibold">✓ 70% guard cost reduction</div>
+              <div class="text-green-600 font-semibold">✓ Overnight guard shifts replaced</div>
               <div class="text-gray-600">24/7 coverage achieved</div>
             </div>
           </div>

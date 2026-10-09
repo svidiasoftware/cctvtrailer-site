@@ -41,7 +41,7 @@ const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Mobile Surveillance Trailer Rental Services",
-  "description": "Locally owned surveillance security company serving the Pacific Northwest since 2009. Professional CCTV systems and mobile trailer rentals for construction sites, events, and emergency response with 24/7 monitoring.",
+  "description": "Locally owned surveillance security company serving the Pacific Northwest since 2009. Professional CCTV systems and mobile trailer rentals for construction sites, events, and emergency response with 24/7 self-monitoring.",
   "provider": {
     "@type": "LocalBusiness",
     "name": "CCTV Trailer",
@@ -98,7 +98,7 @@ const schema = JSON.stringify({
         "itemOffered": {
           "@type": "Service",
           "name": "Short-Term Security Trailer Rental",
-          "description": "Ideal for weekend events, festivals, construction site security, emergency response situations, and special events monitoring"
+          "description": "Ideal for weekend events, festivals, construction site security, emergency response situations, and special events surveillance"
         }
       },
       {
@@ -106,15 +106,15 @@ const schema = JSON.stringify({
         "itemOffered": {
           "@type": "Service",
           "name": "Long-Term Security Trailer Rental",
-          "description": "Perfect for ongoing construction projects, seasonal business security, property development sites, and extended facility monitoring"
+          "description": "Perfect for ongoing construction projects, seasonal business security, property development sites, and extended facility surveillance"
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "24/7 Remote Monitoring",
-          "description": "Continuous surveillance with real-time alerts and remote viewing capabilities"
+          "name": "24/7 Self-Monitoring",
+          "description": "Live video and real-time motion and intrusion alerts on your mobile devices or computer, 24/7"
         }
       },
       {
@@ -122,7 +122,7 @@ const schema = JSON.stringify({
         "itemOffered": {
           "@type": "Service",
           "name": "Emergency Deployment",
-          "description": "Rapid response deployment within 2 hours for urgent security needs"
+          "description": "Same-day emergency deployment for urgent security needs — call (253) 683-2288 to check availability"
         }
       }
     ]
@@ -144,7 +144,7 @@ const faqSchema = JSON.stringify({
       "name": "What types of surveillance services do you offer?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We offer mobile surveillance trailer rentals for construction sites, special events, emergency response, and temporary security needs. Services include 24/7 monitoring, PTZ cameras, solar power systems, and same-day deployment throughout the Tacoma and Seattle area."
+        "text": "We offer mobile surveillance trailer rentals for construction sites, special events, emergency response, and temporary security needs. Every rental includes 4 cameras (1 fixed fisheye + 3 PTZ with 25x optical zoom and IR), solar power/generator, and remote viewing on your mobile devices or computer for 24/7 self-monitoring. Same-day delivery is available throughout the Tacoma and Seattle area."
       }
     },
     {
@@ -152,7 +152,7 @@ const faqSchema = JSON.stringify({
       "name": "How quickly can you set up a surveillance trailer?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Standard setup takes 20-30 minutes. We offer same-day emergency deployment and maintain 2 trailers ready for immediate dispatch. Our service covers the entire Puget Sound region including Tacoma, Seattle, Olympia, and surrounding cities."
+        "text": "Standard setup takes 20-30 minutes. Same-day emergency deployment is available — call (253) 683-2288 to check availability. Professional delivery and setup are available. Our service covers the entire Puget Sound region including Tacoma, Seattle, Olympia, and surrounding cities."
       }
     },
     {
@@ -160,7 +160,7 @@ const faqSchema = JSON.stringify({
       "name": "Do you provide monitoring services or just equipment rental?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We provide complete solutions including equipment rental with 24/7 remote monitoring capabilities, real-time alerts, and technical support. You can access live feeds remotely and receive instant notifications of any activity."
+        "text": "Our trailers are built for 24/7 self-monitoring: you watch live video and receive real-time AI motion and intrusion alerts on your phone or computer (browser, Windows desktop app, iOS and Android apps), and can call police with video evidence in hand. We provide the equipment, equipment training, and 24/7 technical support; professional delivery and setup are available."
       }
     },
     {
@@ -168,7 +168,7 @@ const faqSchema = JSON.stringify({
       "name": "What makes your trailers suitable for construction sites?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Our trailers are solar-powered with backup generators, weatherproof, require no existing infrastructure, and feature PTZ cameras with night vision. They're mobile, easy to relocate as projects progress, and designed specifically for harsh construction environments."
+        "text": "Our trailers are solar-powered with backup generators, weatherproof, require no existing infrastructure, and carry 4 cameras (1 fixed fisheye + 3 PTZ cameras with 25x optical zoom and IR night vision). They're mobile, easy to relocate as projects progress, and designed specifically for harsh construction environments."
       }
     },
     {
@@ -185,7 +185,7 @@ const faqSchema = JSON.stringify({
 
 <Layout
   title="Mobile Surveillance Trailer Services | CCTV Rental Tacoma"
-  description="Mobile surveillance trailer rentals for construction, events & emergencies. 24/7 monitoring, solar-powered, rapid deployment across Puget Sound. Since 2009."
+  description="Mobile surveillance trailer rentals for construction, events & emergencies. 24/7 self-monitoring, solar-powered, rapid deployment across Puget Sound. Since 2009."
   schema={[breadcrumbSchema, schema, faqSchema]}>
 
   <SpeakableSchema sections={speakableSections} />
@@ -202,7 +202,7 @@ const faqSchema = JSON.stringify({
         <div class="hero-text-wrapper">
           <h1 class="hero-heading">Our Services</h1>
           <p class="hero-paragraph">
-            <strong>Professional mobile surveillance trailer services</strong> for construction sites, events, and temporary security needs with <strong>24/7 monitoring</strong> throughout Tacoma and Seattle.
+            <strong>Professional mobile surveillance trailer services</strong> for construction sites, events, and temporary security needs with <strong>24/7 self-monitoring</strong> throughout Tacoma and Seattle.
           </p>
           <div class="hero-buttons">
             <a href="tel:2536832288" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
@@ -218,10 +218,16 @@ const faqSchema = JSON.stringify({
       <div class="container mx-auto px-4">
         <QuickAnswer
           what="Complete mobile surveillance solutions for any security need"
-          cost="Daily: $499-999 | Weekly: $3,500-4,000 | <strong>Monthly: $8,000-10,000</strong>"
-          time="<strong>20-30 minute setup</strong>, <strong>same-day emergency deployment</strong> available"
+          time="20-30 minute setup, same-day emergency deployment available"
           coverage="Tacoma, Seattle, Olympia, Federal Way - entire Puget Sound region"
-          availability="24/7 emergency response, multiple trailers in fleet"
+          availability="Call to inquire"
+          includes={[
+            "4 cameras (1 fixed fisheye + 3 PTZ 25x zoom with IR)",
+            "Equipment training",
+            "24/7 technical support",
+            "Solar power/generator included",
+            "Remote viewing access on your mobile devices or computer"
+          ]}
           customFields={[
             { label: "Services", value: "Construction, Events, Emergency, Parking, Industrial" },
             { label: "Technology", value: "S-VIDIA compression, Solar power, PTZ cameras" }
@@ -235,7 +241,7 @@ const faqSchema = JSON.stringify({
       <div class="container mx-auto px-4">
         <StatBox
           title="Proven Security Results"
-          description="Real impact from 15+ years protecting Pacific Northwest sites"
+          description="Real impact from protecting Pacific Northwest sites since 2009"
           layout="grid"
           stats={[
             {
@@ -253,7 +259,7 @@ const faqSchema = JSON.stringify({
             },
             {
               value: "24/7",
-              label: "Monitoring",
+              label: "Self-Monitoring",
               icon: "👁️",
               highlight: false
             },
@@ -292,7 +298,7 @@ const faqSchema = JSON.stringify({
               </li>
               <li class="flex items-start">
                 <span class="text-green-600 mr-2 mt-1">✓</span>
-                <span>Special events monitoring</span>
+                <span>Special events surveillance</span>
               </li>
             </ul>
             <div class="mt-6 pt-6 border-t border-gray-200">
@@ -320,7 +326,7 @@ const faqSchema = JSON.stringify({
               </li>
               <li class="flex items-start">
                 <span class="text-green-600 mr-2 mt-1">✓</span>
-                <span>Extended facility monitoring</span>
+                <span>Extended facility surveillance</span>
               </li>
             </ul>
             <div class="mt-6 pt-6 border-t border-gray-200">
@@ -353,7 +359,7 @@ const faqSchema = JSON.stringify({
             <a href="/emergency-surveillance" class="bg-white rounded-lg p-6 hover:shadow-lg transition-shadow block">
               <div class="text-3xl mb-3">🚨</div>
               <h4 class="font-bold text-lg mb-2">Emergency Response</h4>
-              <p class="text-gray-600 text-sm">Rapid deployment for urgent security needs, available 24/7</p>
+              <p class="text-gray-600 text-sm">Rapid deployment for urgent security needs — call to check availability</p>
               <p class="text-red-600 font-semibold mt-3">Get Help Now →</p>
             </a>
           </div>
@@ -387,7 +393,7 @@ const faqSchema = JSON.stringify({
               </div>
               <div>
                 <h4 class="font-semibold mb-2">4. Remote Intervention</h4>
-                <p class="text-gray-600">Two-way audio allows security personnel to warn off intruders in real-time, preventing incidents before they occur.</p>
+                <p class="text-gray-600">Watching live from your phone or computer, you (or your security staff) can warn off intruders through optional on-site speakers or call police with video evidence in hand.</p>
               </div>
             </div>
           </div>
@@ -408,8 +414,8 @@ const faqSchema = JSON.stringify({
                 <p class="text-gray-600">Insurance industry data reveals sites with mobile surveillance save an average of $50,000 in theft prevention and receive 15-20% premium reductions.</p>
               </div>
               <div class="border-l-4 border-orange-600 pl-4">
-                <p class="font-semibold">Response Time Statistics</p>
-                <p class="text-gray-600">Mobile surveillance with live monitoring achieves 3-minute average response times versus 12 minutes for traditional alarm systems.</p>
+                <p class="font-semibold">Faster Response</p>
+                <p class="text-gray-600">Real-time alerts and live video let site managers verify activity and call police while an incident is still in progress, instead of discovering losses the next morning.</p>
               </div>
             </div>
             <div class="mt-6 p-4 bg-gray-50 rounded-lg">
@@ -454,11 +460,11 @@ const faqSchema = JSON.stringify({
         <div class="grid md:grid-cols-3 gap-8 mb-12">
           <div class="bg-white rounded-lg p-6 shadow-lg">
             <div class="text-4xl mb-4 text-green-600">💰</div>
-            <h3 class="text-xl font-bold mb-3">Average ROI: 340%</h3>
+            <h3 class="text-xl font-bold mb-3">Strong Return on Investment</h3>
             <p class="text-gray-600 mb-4">Based on prevented theft, reduced insurance premiums, and eliminated guard costs</p>
             <ul class="text-sm text-gray-600 space-y-2">
               <li>• Prevent $50,000+ in theft losses</li>
-              <li>• Save $6,000/month vs security guards</li>
+              <li>• Typically a fraction of the cost of round-the-clock guards</li>
               <li>• Reduce insurance by 15-20%</li>
             </ul>
           </div>
@@ -481,7 +487,7 @@ const faqSchema = JSON.stringify({
             <ul class="text-sm text-gray-600 space-y-2">
               <li>• 85% reduction in theft incidents</li>
               <li>• 92% customer retention rate</li>
-              <li>• Zero security breaches at monitored sites</li>
+              <li>• Zero security breaches at protected sites</li>
             </ul>
           </div>
         </div>
@@ -504,7 +510,7 @@ const faqSchema = JSON.stringify({
               <tbody>
                 <tr class="border-b">
                   <td class="p-3 font-semibold">Mobile Surveillance Trailer</td>
-                  <td class="p-3 text-center text-green-600 font-bold">$8,000</td>
+                  <td class="p-3 text-center text-green-600 font-bold">Fraction of guard cost &mdash; call for a quote</td>
                   <td class="p-3 text-center">30 minutes</td>
                   <td class="p-3 text-center">360° view, 300ft range</td>
                   <td class="p-3 text-center text-green-600">85% theft reduction</td>
@@ -567,19 +573,11 @@ const faqSchema = JSON.stringify({
               ]
             },
             {
-              feature: "Pricing",
-              values: [
-                "$499-999/day",
-                { text: "$8,000/month", highlight: true },
-                "Premium rates"
-              ]
-            },
-            {
               feature: "Setup Time",
               values: [
                 "Same/Next day",
                 "Scheduled delivery",
-                { text: "2 hours", highlight: true }
+                { text: "Same-day (call to check availability)", highlight: true }
               ]
             },
             {
@@ -593,9 +591,9 @@ const faqSchema = JSON.stringify({
             {
               feature: "Monitoring",
               values: [
-                "Self or optional pro",
-                { text: "Included options", highlight: true },
-                "Priority support"
+                "24/7 self-monitoring",
+                { text: "24/7 self-monitoring", highlight: true },
+                "24/7 self-monitoring"
               ]
             },
             {
@@ -609,17 +607,9 @@ const faqSchema = JSON.stringify({
             {
               feature: "Support",
               values: [
-                "Business hours",
-                { text: "24/7 included", highlight: true },
-                "Dedicated team"
-              ]
-            },
-            {
-              feature: "Discounts",
-              values: [
-                "3+ days save 10%",
-                { text: "Up to 30% off", highlight: true },
-                "Case-by-case"
+                "24/7 technical support",
+                { text: "24/7 technical support", highlight: true },
+                "24/7 technical support"
               ]
             },
             {
@@ -679,8 +669,8 @@ const faqSchema = JSON.stringify({
             <div class="flex items-start">
               <span class="text-blue-600 mr-3 text-xl">✓</span>
               <div>
-                <h4 class="font-semibold mb-1">24/7 Monitoring</h4>
-                <p class="text-sm text-gray-600">Round-the-clock security</p>
+                <h4 class="font-semibold mb-1">24/7 Self-Monitoring</h4>
+                <p class="text-sm text-gray-600">Live view &amp; alerts on your phone or computer</p>
               </div>
             </div>
             <div class="flex items-start">
@@ -715,15 +705,15 @@ const faqSchema = JSON.stringify({
             <div class="bg-blue-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
               <span class="text-3xl">📡</span>
             </div>
-            <h3 class="text-xl font-semibold mb-2">Remote Monitoring</h3>
-            <p class="text-gray-600">Access live feeds from anywhere with our secure mobile app and web portal</p>
+            <h3 class="text-xl font-semibold mb-2">Remote Viewing</h3>
+            <p class="text-gray-600">Live view and real-time alerts on your mobile devices or computer: browser, Windows desktop app, and iOS/Android apps</p>
           </div>
           <div class="text-center">
             <div class="bg-blue-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
               <span class="text-3xl">🚨</span>
             </div>
-            <h3 class="text-xl font-semibold mb-2">24/7 Emergency Support</h3>
-            <p class="text-gray-600">Same-day deployment available for urgent security needs 24/7</p>
+            <h3 class="text-xl font-semibold mb-2">24/7 Technical Support</h3>
+            <p class="text-gray-600">Round-the-clock technical support, plus same-day emergency deployment — call to check availability</p>
           </div>
           <div class="text-center">
             <div class="bg-blue-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
@@ -764,7 +754,7 @@ const faqSchema = JSON.stringify({
               <span class="text-2xl font-bold">3</span>
             </div>
             <h4 class="text-xl font-bold mb-2">Get Same-Day Setup</h4>
-            <p class="text-blue-100">We deliver, set up, and train your team - protection starts immediately</p>
+            <p class="text-blue-100">Professional delivery and setup available, and we train your team on the equipment - protection starts immediately</p>
           </div>
         </div>
 
@@ -778,7 +768,7 @@ const faqSchema = JSON.stringify({
               <a href="tel:2536832288" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg block text-center">
                 📞 Call Now: (253) 683-2288
               </a>
-              <p class="text-sm text-gray-600 mt-2 text-center">2-hour emergency response available</p>
+              <p class="text-sm text-gray-600 mt-2 text-center">Same-day emergency deployment available — call to check availability</p>
             </div>
 
             <div class="bg-white rounded-lg p-6 text-gray-800">
@@ -794,7 +784,7 @@ const faqSchema = JSON.stringify({
           <div class="mt-8 p-4 bg-white/5 rounded-lg">
             <p class="text-center text-sm">
               <strong>No Contracts Required for Short-Term Rentals</strong><br>
-              Simple rental agreement • Cancel anytime • No hidden fees
+              Simple rental agreement • Cancel anytime • Clear, upfront quotes
             </p>
           </div>
         </div>
@@ -842,12 +832,12 @@ const faqSchema = JSON.stringify({
         <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto mb-12">
           <a href="/seattle-surveillance-rental" class="bg-white border-2 border-gray-200 rounded-lg p-4 hover:border-blue-500 hover:shadow-lg transition-all">
             <h4 class="font-bold text-lg text-blue-700">Seattle Security Rental</h4>
-            <p class="text-gray-600 text-sm mt-1">King County theft prevention • 2hr deployment</p>
+            <p class="text-gray-600 text-sm mt-1">King County theft prevention • Same-day deployment</p>
           </a>
 
           <a href="/tacoma-security-trailer" class="bg-white border-2 border-gray-200 rounded-lg p-4 hover:border-blue-500 hover:shadow-lg transition-all">
             <h4 class="font-bold text-lg text-blue-700">Tacoma Mobile Surveillance</h4>
-            <p class="text-gray-600 text-sm mt-1">Pierce County equipment protection HQ • 1hr response</p>
+            <p class="text-gray-600 text-sm mt-1">Pierce County equipment protection HQ • Same-day deployment</p>
           </a>
 
           <a href="/federal-way-surveillance" class="bg-white border-2 border-gray-200 rounded-lg p-4 hover:border-blue-500 hover:shadow-lg transition-all">
@@ -972,7 +962,7 @@ const faqSchema = JSON.stringify({
               S-VIDIA AI Analytics →
             </a>
             <a href="/pricing" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block transition-colors">
-              See Pricing →
+              Rental Options &amp; Quotes →
             </a>
           </div>
         </div>

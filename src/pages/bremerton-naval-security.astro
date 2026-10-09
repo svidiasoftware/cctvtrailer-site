@@ -13,9 +13,6 @@ import Analytics from '../components/Analytics.astro';
 const serviceSchemaData = {
   serviceName: "Bremerton Security Camera Rental",
   description: "Security camera trailer rental in Bremerton, WA. Specialized in naval base contractor support, shipyard security, and waterfront protection. Serving Kitsap County.",
-  price: "3499",
-  highPrice: "4000",
-  priceUnit: "WEEK" as const,
   areaServed: [
     { type: "City" as const, name: "Bremerton" },
   ]
@@ -63,16 +60,16 @@ const relatedPages = [
     description: "Military-grade mobile security trailers serving naval base contractors."
   },
   {
-    title: "View Pricing & Plans",
+    title: "Rental Options & Quotes",
     href: "/pricing",
-    description: "Transparent pricing for Bremerton and Kitsap County security rentals."
+    description: "Rental options for Bremerton and Kitsap County sites — call (253) 683-2288 or request a quote."
   }
 ];
 ---
 
 <Layout 
   title="Bremerton Security Trailer Rental | Naval Base & Shipyard Surveillance"
-  description="Mobile security trailer rentals in Bremerton, Silverdale, Port Orchard. Naval shipyard, waterfront monitoring, contractor support. (253) 683-2288">
+  description="Mobile security trailer rentals in Bremerton, Silverdale, Port Orchard. Naval shipyard, waterfront surveillance, contractor support. (253) 683-2288">
   
     <!-- Structured Data Schemas -->
   <ServiceSchema {...serviceSchemaData} />
@@ -399,7 +396,7 @@ const relatedPages = [
             <button type="submit" class="bg-blue-900 hover:bg-blue-950 text-white font-bold py-3 px-12 rounded-lg text-lg">
               Get Bremerton Quote →
             </button>
-            <p class="mt-4 text-sm text-gray-600">Naval contractor discounts available</p>
+            <p class="mt-4 text-sm text-gray-600">Serving naval contractors across Kitsap County — call (253) 683-2288 for a quote</p>
           </div>
         </form>
       </div>

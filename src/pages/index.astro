@@ -59,7 +59,7 @@ const schemas = [
         "name": "How quickly can you deploy a mobile surveillance trailer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We offer same-day deployment for emergency situations. Standard setup takes 20-30 minutes, and we maintain 2 trailers ready for immediate dispatch. Our service area covers Tacoma, Seattle, Olympia, and throughout the Puget Sound region."
+          "text": "We offer same-day delivery, including for emergency situations. Standard setup takes 20-30 minutes, and professional delivery and setup are available. Call (253) 683-2288 to check availability. Our service area covers Tacoma, Seattle, Olympia, and throughout the Puget Sound region."
         }
       },
       {
@@ -67,7 +67,7 @@ const schemas = [
         "name": "How much does it cost to rent a security trailer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Rental rates range from $499-999 per day, $3,500 per week, and $8,000 per month. Pricing includes professional delivery, setup, equipment training, 24/7 technical support, and solar power or generator. Contact us at (253) 683-2288 for a custom quote."
+          "text": "Pricing depends on rental length, site, and configuration, so we quote each project individually. Every rental includes 4 cameras (1 fixed fisheye + 3 PTZ with 25x optical zoom and IR), equipment training, 24/7 technical support, solar power/generator, and remote viewing on your mobile devices or computer. Professional delivery and setup are available. Call (253) 683-2288 for a quote."
         }
       },
       {
@@ -75,7 +75,7 @@ const schemas = [
         "name": "What areas do you serve for mobile surveillance rentals?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We serve Tacoma, Seattle, Olympia, Federal Way, Kent, Fife, Auburn, Lakewood, Puyallup, Bremerton, and the entire Puget Sound region. We've been locally owned and operating since 2009 with 24/7 emergency response availability."
+          "text": "We serve Tacoma, Seattle, Olympia, Federal Way, Kent, Fife, Auburn, Lakewood, Puyallup, Bremerton, and the entire Puget Sound region. We've been locally owned and operating since 2009. Call (253) 683-2288 to check availability."
         }
       },
       {
@@ -136,7 +136,7 @@ const reviewData = {
 
 <Layout
   title="CCTV Trailer | Mobile Surveillance Trailer Rental Tacoma"
-  description="Mobile surveillance trailer rentals in Tacoma & Seattle. 24/7 monitoring, same-day setup for construction & events. Local since 2009. (253) 683-2288"
+  description="Mobile surveillance trailer rentals in Tacoma & Seattle. 24/7 self-monitoring, same-day setup for construction & events. Local since 2009. (253) 683-2288"
   schema={schemas}>
   <Header showEmergencyBar={true} currentPath="/" />
 
@@ -168,17 +168,16 @@ const reviewData = {
     <section class="py-8 bg-gray-50">
       <div class="container mx-auto px-4">
         <QuickAnswer
-          what="Mobile surveillance trailer rentals with 24/7 monitoring"
-          cost="$499-999/day, $3,500/week, $8,000/month"
+          what="Mobile surveillance trailer rentals with 24/7 self-monitoring"
           time="20-30 minute setup, same-day delivery"
           coverage="Tacoma, Seattle, Olympia, Federal Way, entire Puget Sound"
-          availability="24/7 emergency response, 2 trailers always ready"
+          availability="Call to inquire"
           includes={[
-            "Professional delivery and setup",
+            "4 cameras (1 fixed fisheye + 3 PTZ 25x zoom with IR)",
             "Equipment training",
             "24/7 technical support",
             "Solar power/generator included",
-            "Remote viewing access"
+            "Remote viewing access on your mobile devices or computer"
           ]}
         />
       </div>
@@ -190,10 +189,10 @@ const reviewData = {
         <div class="grid md:grid-cols-3 gap-8">
           <div class="text-center">
             <h3 class="text-xl font-semibold mb-2"><a href="/technical-specifications" class="hover:text-blue-600 transition-colors">Quick Setup</a></h3>
-            <p class="text-gray-600"><strong>Deploy in minutes</strong>, no installation required</p>
+            <p class="text-gray-600"><strong>Deploy in minutes</strong>, no installation required (professional delivery and setup available)</p>
           </div>
           <div class="text-center">
-            <h3 class="text-xl font-semibold mb-2"><a href="/video-technology" class="hover:text-blue-600 transition-colors">24/7 Monitoring</a></h3>
+            <h3 class="text-xl font-semibold mb-2"><a href="/video-technology" class="hover:text-blue-600 transition-colors">24/7 Self-Monitoring</a></h3>
             <p class="text-gray-600"><strong>Advanced video technology</strong> protects your assets</p>
           </div>
           <div class="text-center">
@@ -347,13 +346,13 @@ const reviewData = {
         </div>
         
         <div class="mt-12 text-center">
-          <p class="text-gray-700 mb-6">Every industry has unique security challenges. Compare our <a href="/pricing" class="text-blue-600 hover:underline font-semibold">rental pricing and plans</a> or use the <a href="/security-cost-calculator" class="text-blue-600 hover:underline font-semibold">security cost calculator</a> to estimate your project.</p>
+          <p class="text-gray-700 mb-6">Every industry has unique security challenges. See our <a href="/pricing" class="text-blue-600 hover:underline font-semibold">rental options</a>, use the <a href="/security-cost-calculator" class="text-blue-600 hover:underline font-semibold">security cost calculator</a> to compare against guards, or call (253) 683-2288 for a quote.</p>
           <div class="flex flex-wrap justify-center gap-4">
             <a href="/services" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
               Explore All Services →
             </a>
             <a href="/pricing" class="bg-gray-800 hover:bg-gray-900 text-white font-bold py-3 px-8 rounded-lg inline-block">
-              View Pricing & Plans
+              Rental Options &amp; Quotes
             </a>
             <a href="/emergency-surveillance" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
               🚨 Emergency Deployment
@@ -368,7 +367,7 @@ const reviewData = {
       <div class="container mx-auto px-4 max-w-5xl">
         <h2 class="text-3xl font-bold text-center mb-6">Local Coverage Across the Puget Sound</h2>
         <p class="text-lg text-gray-700 text-center mb-10 max-w-3xl mx-auto">
-          We deliver and deploy mobile surveillance trailers throughout Western Washington — same-day in the Tacoma–Seattle corridor, next-day across the broader region. Pick your city for local response times, deployment examples, and pricing context.
+          We deliver and deploy mobile surveillance trailers throughout Western Washington — same-day in the Tacoma–Seattle corridor, next-day across the broader region. Pick your city for local response times and deployment examples.
         </p>
         <div class="grid md:grid-cols-3 gap-6 text-center">
           <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
@@ -392,6 +391,53 @@ const reviewData = {
         </div>
         <p class="text-center mt-8 text-gray-600">
           Don't see your city? See <a href="/locations" class="text-blue-600 hover:underline font-semibold">all Puget Sound service areas →</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Security Guides -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <h2 class="text-3xl font-bold text-center mb-4">Security Guides for Puget Sound Sites</h2>
+        <p class="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+          Local research on theft trends, Washington law, and compliance &mdash; written for contractors, property managers, and business owners.
+        </p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <a href="/blog/washington-security-camera-laws-audio-license-plate-readers-2026" class="block bg-white rounded-lg p-5 shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="font-semibold text-gray-900 mb-1">Washington Security Camera Laws in 2026</h3>
+            <p class="text-sm text-gray-600">Audio, license plate readers, and what's legal on your site</p>
+          </a>
+          <a href="/blog/holiday-construction-site-theft-prevention-guide" class="block bg-white rounded-lg p-5 shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="font-semibold text-gray-900 mb-1">Holiday Construction Site Security</h3>
+            <p class="text-sm text-gray-600">Why theft spikes between Thanksgiving and New Year's</p>
+          </a>
+          <a href="/blog/meeting-osha-security-requirements-mobile-surveillance" class="block bg-white rounded-lg p-5 shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="font-semibold text-gray-900 mb-1">OSHA &amp; DOSH Compliance Checklist</h3>
+            <p class="text-sm text-gray-600">For Washington construction sites</p>
+          </a>
+          <a href="/blog/warehouse-cargo-theft-i5-corridor-seattle-tacoma" class="block bg-white rounded-lg p-5 shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="font-semibold text-gray-900 mb-1">Cargo Theft Along the I-5 Corridor</h3>
+            <p class="text-sm text-gray-600">Why Fife, Kent, and Tacoma warehouses keep getting hit</p>
+          </a>
+          <a href="/blog/apartment-complex-security-seattle-tacoma-package-theft-car-prowls" class="block bg-white rounded-lg p-5 shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="font-semibold text-gray-900 mb-1">Apartment Security in the Puget Sound</h3>
+            <p class="text-sm text-gray-600">Package theft, car prowls, and parking</p>
+          </a>
+          <a href="/blog/trailhead-car-prowls-western-washington-recreation-security" class="block bg-white rounded-lg p-5 shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="font-semibold text-gray-900 mb-1">Trailhead Car Prowls in Western Washington</h3>
+            <p class="text-sm text-gray-600">The data, the hotspots, and what works</p>
+          </a>
+          <a href="/blog/cannabis-security-compliance" class="block bg-white rounded-lg p-5 shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="font-semibold text-gray-900 mb-1">Cannabis Security &amp; I-502 Compliance</h3>
+            <p class="text-sm text-gray-600">Mobile surveillance for Washington producers</p>
+          </a>
+          <a href="/blog/event-security-seattle-tacoma-summer-2026" class="block bg-white rounded-lg p-5 shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="font-semibold text-gray-900 mb-1">Event Security in Seattle &amp; Tacoma</h3>
+            <p class="text-sm text-gray-600">Planning surveillance for festivals and markets</p>
+          </a>
+        </div>
+        <p class="text-center mt-8">
+          <a href="/blog" class="text-blue-600 hover:underline font-semibold">All security articles →</a>
         </p>
       </div>
     </section>

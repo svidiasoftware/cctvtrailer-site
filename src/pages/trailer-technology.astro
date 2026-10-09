@@ -13,9 +13,6 @@ import VideoSchema from '../components/VideoSchema.astro';
 const serviceSchemaData = {
   serviceName: "Mobile Security Trailers Weekly Rentals",
   description: "Professional mobile security trailers with advanced video surveillance technology for the Pacific Northwest",
-  price: "3499",
-  highPrice: "4000",
-  priceUnit: "WEEK" as const,
   areaServed: [
     { type: "State" as const, name: "Washington" },
     { type: "City" as const, name: "Tacoma" },
@@ -113,7 +110,7 @@ const videoData = {
           <div class="feature-block">
             <h2 class="feature-heading">CAMERAS</h2>
             <p class="feature-text">
-              Each mobile security trailer features S-VIDIA AI-enabled 4K PTZ cameras with 30x optical zoom, infrared night vision up to 300 feet, and true 360-degree coverage for complete site surveillance.
+              Each mobile security trailer carries 4 S-VIDIA AI-enabled cameras: 1 fixed fisheye for a true 360-degree panoramic overview, plus 3 4K PTZ cameras with 25x optical zoom and infrared night vision up to 300 feet &mdash; complete site surveillance.
             </p>
           </div>
           
@@ -127,7 +124,7 @@ const videoData = {
           <div class="feature-block">
             <h3 class="feature-heading">INSIDE SPECS</h3>
             <p class="feature-text">
-              Intel i7 onboard computer with 32GB RAM runs S-VIDIA AI analytics locally. LiFePO4 battery bank (14.4kWh) with intelligent BMS ensures seamless power transitions. 8-16TB onboard storage keeps two weeks of motion-only recording by default, and the archive can be capped at a set number of days.
+              Intel i7 onboard computer with 32GB RAM runs S-VIDIA AI analytics locally. LiFePO4 battery bank (14.4kWh) with intelligent BMS ensures seamless power transitions. 8-16TB onboard storage keeps two weeks of motion-only recording by default (extendable in special cases), and the archive can be capped at a set number of days.
             </p>
           </div>
         </div>
@@ -140,7 +137,7 @@ const videoData = {
           <div class="feature-block">
             <h3 class="feature-heading">ADJUSTABLE MAST</h3>
             <p class="feature-text">
-              Electric or hydraulic telescoping mast extends 20-30 feet high, supporting up to four cameras for optimal coverage. Wind-rated to 80mph sustained, 100mph gusts - engineered for Washington State's severe weather events.
+              Electric or hydraulic telescoping mast extends 20-30 feet high, carrying all four cameras (1 fixed fisheye + 3 PTZ) for optimal coverage. Wind-rated to 80mph sustained, 100mph gusts - engineered for Washington State's severe weather events.
             </p>
           </div>
 
@@ -184,7 +181,7 @@ const videoData = {
           <div class="content-container">
             <h3 class="section-heading">AUDIO DETERRENCE</h3>
             <p class="section-text">
-              120dB PA speakers with pre-recorded and live audio warnings activate upon intrusion detection, enabling remote security teams to intervene immediately and prevent incidents before they occur.            </p>
+              120dB PA speakers play pre-recorded audio warnings automatically upon intrusion detection, and you (or your security staff) can trigger live audio warnings remotely to intervene immediately and prevent incidents before they occur.            </p>
           </div>
         </div>
 
@@ -193,7 +190,7 @@ const videoData = {
           <div class="content-container">
             <h3 class="section-heading">MULTI-PATH CONNECTIVITY</h3>
             <p class="section-text">
-              Redundant connectivity through 5G/4G LTE (multi-carrier), Starlink satellite, and local WiFi ensures uninterrupted monitoring. Real-time HD streaming to anywhere worldwide.
+              Redundant connectivity through 5G/4G LTE (multi-carrier), Starlink satellite, and local WiFi ensures uninterrupted remote viewing and alerts on your mobile devices or computer. Real-time HD streaming to anywhere worldwide.
             </p>
           </div>
         </div>
@@ -224,9 +221,10 @@ const videoData = {
           <div class="bg-gray-50 p-6 rounded-lg">
             <h3 class="text-xl font-bold mb-4 text-blue-600">Camera Systems</h3>
             <ul class="space-y-2 text-sm">
+              <li class="flex justify-between"><span>Cameras</span><span class="font-semibold">1 fixed fisheye + 3 PTZ</span></li>
               <li class="flex justify-between"><span>Resolution</span><span class="font-semibold">2K/4K Ultra HD</span></li>
               <li class="flex justify-between"><span>PTZ Range</span><span class="font-semibold">360° pan, 90° tilt</span></li>
-              <li class="flex justify-between"><span>Optical Zoom</span><span class="font-semibold">30x optical, 12x digital</span></li>
+              <li class="flex justify-between"><span>Optical Zoom</span><span class="font-semibold">25x optical (PTZ)</span></li>
               <li class="flex justify-between"><span>Night Vision</span><span class="font-semibold">300ft IR range</span></li>
               <li class="flex justify-between"><span>Frame Rate</span><span class="font-semibold">30 fps @ 4K</span></li>
               <li class="flex justify-between"><span>Analytics</span><span class="font-semibold">AI-powered detection</span></li>
@@ -283,7 +281,7 @@ const videoData = {
             <h3 class="text-xl font-bold mb-4 text-red-600">Storage & Processing</h3>
             <ul class="space-y-2 text-sm">
               <li class="flex justify-between"><span>Onboard Storage</span><span class="font-semibold">8-16 TB</span></li>
-              <li class="flex justify-between"><span>Archive</span><span class="font-semibold">2 weeks default; day cap optional</span></li>
+              <li class="flex justify-between"><span>Archive</span><span class="font-semibold">2 weeks default (extendable); day cap optional</span></li>
               <li class="flex justify-between"><span>Processor</span><span class="font-semibold">Intel i7</span></li>
               <li class="flex justify-between"><span>RAM</span><span class="font-semibold">32 GB DDR4</span></li>
               <li class="flex justify-between"><span>GPU</span><span class="font-semibold">AI ready</span></li>
@@ -345,7 +343,7 @@ const videoData = {
             <div class="feature-card-content">
               <h3 class="feature-card-title">VIDEO STORAGE</h3>
               <p class="feature-card-text">
-                8-16TB onboard storage keeps two weeks of motion-only recording by default on a rolling loop. Need a hard limit? The archive can be capped at a set number of days, such as 21 days or a 30-day records schedule, and footage older than the cap is deleted automatically. Automatic cloud backup options available for critical events. Frames are watermarked and encrypted for evidence.
+                8-16TB onboard storage keeps two weeks of motion-only recording by default on a rolling loop, extendable in special cases. Need a hard limit? The archive can be capped at a set number of days, such as 21 days or a 30-day records schedule, and footage older than the cap is deleted automatically. Automatic cloud backup options available for critical events. Frames are watermarked and encrypted for evidence.
               </p>
             </div>
           </div>
@@ -508,11 +506,11 @@ const videoData = {
             <div class="space-y-4">
               <a href="/construction-security" class="block bg-white border rounded-lg p-4 hover:shadow-lg transition-shadow">
                 <h4 class="font-bold text-lg text-blue-700">Construction Site Security</h4>
-                <p class="text-gray-600 text-sm mt-1">24/7 autonomous monitoring of equipment and materials</p>
+                <p class="text-gray-600 text-sm mt-1">24/7 self-monitoring of equipment and materials with real-time alerts</p>
               </a>
               <a href="/event-security" class="block bg-white border rounded-lg p-4 hover:shadow-lg transition-shadow">
                 <h4 class="font-bold text-lg text-blue-700">Event & Festival Surveillance</h4>
-                <p class="text-gray-600 text-sm mt-1">Crowd monitoring with AI-powered analytics</p>
+                <p class="text-gray-600 text-sm mt-1">Crowd surveillance with AI-powered analytics</p>
               </a>
               <a href="/emergency-surveillance" class="block bg-white border rounded-lg p-4 hover:shadow-lg transition-shadow">
                 <h4 class="font-bold text-lg text-blue-700">Emergency Response</h4>
@@ -556,7 +554,7 @@ const videoData = {
               Deploy Advanced Security Within 24 Hours
             </h2>
             <p class="body-black-copy">
-              From construction sites in Tacoma to events in Seattle, our mobile surveillance trailers deliver enterprise-grade protection anywhere in Washington State. Expert consultation available to match technology to your specific security requirements.
+              From construction sites in Tacoma to events in Seattle, our mobile surveillance trailers deliver enterprise-grade protection anywhere in Washington State. Expert consultation available to match technology to your specific security requirements. Call (253) 683-2288 to check availability.
             </p>
             <a href="/contact" class="clear-outline-button">CONTACT US</a>
           </div>

@@ -14,10 +14,6 @@ const howToData = {
   name: "How to Set Up a Mobile Security Trailer for Maximum Coverage",
   description: "Step-by-step guide to properly position and configure a mobile CCTV security trailer for optimal surveillance coverage at construction sites, events, and commercial properties.",
   totalTime: "PT30M",
-  estimatedCost: {
-    value: "0",
-    currency: "USD"
-  },
   supply: [
     "Mobile CCTV trailer unit",
     "Site map or layout plan",
@@ -59,23 +55,23 @@ const howToData = {
     },
     {
       name: "Configure Camera Angles",
-      text: "Power on the system and access the camera controls via the mobile app or onboard monitor. Adjust each PTZ camera to cover designated zones. Set preset positions for critical areas like gates, equipment storage, and perimeter points."
+      text: "Power on the system and access the camera controls via the mobile app or onboard monitor. Adjust each of the 3 PTZ cameras (25x optical zoom) to cover designated zones and confirm the fixed fisheye camera's 360° overview. Set preset positions for critical areas like gates, equipment storage, and perimeter points."
     },
     {
       name: "Test Night Vision",
-      text: "Wait until dusk or simulate darkness to test infrared and thermal imaging capabilities. Adjust IR intensity and thermal sensitivity settings. Ensure all critical areas are clearly visible in complete darkness."
+      text: "Wait until dusk or simulate darkness to test the PTZ cameras' infrared (IR) night vision. Adjust IR intensity settings. Ensure all critical areas are clearly visible in complete darkness."
     },
     {
       name: "Set Motion Detection Zones",
       text: "Define specific motion detection areas for each camera, avoiding high-traffic zones during operational hours. Configure sensitivity levels to minimize false alarms from animals or weather while maintaining security effectiveness."
     },
     {
-      name: "Connect Remote Monitoring",
-      text: "Establish internet connectivity via 4G/5G cellular or WiFi connection. Configure cloud storage settings and test remote viewing access. Set up user accounts for authorized personnel and verify mobile app functionality."
+      name: "Connect Remote Viewing",
+      text: "Establish internet connectivity via 4G/5G cellular or WiFi connection. Configure cloud storage settings and test remote viewing access on your mobile devices or computer. Set up user accounts for authorized personnel and verify the mobile app, browser, and Windows desktop app access."
     },
     {
       name: "Configure Alerts",
-      text: "Set up real-time alerts for motion detection, system tampering, and power issues. Configure notification methods (SMS, email, app push). Test alert system to ensure proper delivery to all designated recipients."
+      text: "Set up real-time alerts for motion detection, system tampering, and power issues. Configure notification methods (SMS, email, app push). Test alert system to ensure proper delivery to all designated recipients so they can self-monitor the site 24/7."
     },
     {
       name: "Final Testing",
@@ -93,7 +89,7 @@ const breadcrumbItems = [
 
 const quickAnswerData = {
   question: "How long does it take to set up a security trailer?",
-  answer: "A professional mobile CCTV trailer can be <strong>fully operational in 30 minutes</strong>. This includes positioning, leveling, camera configuration, and connectivity setup. Our Tacoma-based technicians handle setup at no extra cost with every rental in the Pacific Northwest region.",
+  answer: "A professional mobile CCTV trailer can be fully operational in 20-30 minutes. This includes positioning, leveling, camera configuration, and connectivity setup. Professional delivery and setup by our Tacoma-based technicians is available with every rental in the Pacific Northwest region.",
   callToAction: {
     text: "Get Professional Setup",
     href: "tel:2536832288"
@@ -110,15 +106,13 @@ const statBoxData = [
 
 <Layout
   title="How to Set Up a Security Trailer | Mobile CCTV Installation Guide - Tacoma & Seattle"
-  description="Professional security trailer setup guide for the Pacific Northwest. Learn optimal positioning, camera configuration, and PNW-specific tips. Free setup included with rental. (253) 683-2288">
+  description="Security trailer setup guide for the Pacific Northwest: positioning, camera configuration, and PNW-specific tips. Professional setup available. (253) 683-2288">
 
   <HowToSchema {...howToData} />
   <BreadcrumbSchema items={breadcrumbItems} />
   <ServiceSchema
     serviceName="Mobile Security Trailer Professional Setup Service"
-    description="Professional on-site setup and configuration of mobile CCTV security trailers for construction sites, events, and commercial properties throughout the Tacoma-Seattle corridor and greater Pacific Northwest. Setup is included free with all trailer rentals."
-    price="0"
-    priceUnit={"MONTH" as const}
+    description="Professional on-site setup and configuration of mobile CCTV security trailers for construction sites, events, and commercial properties throughout the Tacoma-Seattle corridor and greater Pacific Northwest. Professional delivery and setup available with trailer rentals; call (253) 683-2288 for a quote."
     areaServed={[
       { type: "City" as const, name: "Tacoma" },
       { type: "City" as const, name: "Seattle" },
@@ -143,13 +137,13 @@ const statBoxData = [
         <div class="max-w-4xl">
           <h1 class="text-4xl md:text-5xl font-bold mb-4">How to Set Up a Mobile Security Trailer in the Pacific Northwest</h1>
           <p class="text-xl mb-3"><strong>Professional Installation Guide</strong> for Maximum Surveillance Coverage in the Tacoma-Seattle Area</p>
-          <p class="text-lg mb-6 text-green-200">Our technicians have deployed trailers across Western Washington since 2009. Setup is <strong>free with every rental</strong> -- but here is what goes into getting it right.</p>
+          <p class="text-lg mb-6 text-green-200">Our technicians have deployed trailers across Western Washington since 2009. <strong>Professional delivery and setup are available</strong> -- and here is what goes into getting it right.</p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="tel:2536832288" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-lg inline-block text-center">
               Get Professional Help: (253) 683-2288
             </a>
             <a href="/pricing" class="bg-white hover:bg-gray-100 text-green-900 font-bold py-3 px-8 rounded-lg inline-block text-center">
-              View Setup Pricing
+              Rental Options &amp; Quotes
             </a>
             <a href="#setup-steps" class="border-2 border-white hover:bg-white/10 text-white font-bold py-3 px-8 rounded-lg inline-block text-center">
               View Setup Steps
@@ -233,7 +227,7 @@ const statBoxData = [
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
           <h2 class="text-3xl font-bold mb-4">Washington State Setup Requirements</h2>
-          <p class="text-gray-600 mb-8">Deploying a mobile security trailer in the Tacoma-Seattle corridor involves specific local considerations that out-of-state providers often miss. Our team handles all of these details as part of every deployment.</p>
+          <p class="text-gray-600 mb-8">Deploying a mobile security trailer in the Tacoma-Seattle corridor involves specific local considerations that out-of-state providers often miss. When we handle delivery and setup, our team takes care of all of these details.</p>
 
           <div class="grid md:grid-cols-2 gap-8 mb-8">
             <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
@@ -248,7 +242,7 @@ const statBoxData = [
 
             <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-600">
               <h3 class="text-xl font-semibold mb-3 text-green-800">Cellular Coverage</h3>
-              <p class="text-gray-600"><strong>T-Mobile and Verizon</strong> provide the best coverage across Pierce and King Counties for remote monitoring connectivity. Some rural areas of Thurston County have coverage gaps -- we always perform a signal test before committing to a position. See our <a href="/technical-specifications" class="text-green-700 underline font-semibold">technical specifications</a> for connectivity details.</p>
+              <p class="text-gray-600"><strong>T-Mobile and Verizon</strong> provide the best coverage across Pierce and King Counties for remote viewing and alert connectivity. Some rural areas of Thurston County have coverage gaps -- we always perform a signal test before committing to a position. See our <a href="/technical-specifications" class="text-green-700 underline font-semibold">technical specifications</a> for connectivity details.</p>
             </div>
 
             <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-600">
@@ -292,12 +286,12 @@ const statBoxData = [
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
           <h2 class="text-3xl font-bold mb-4">Professional vs DIY Setup Comparison</h2>
-          <p class="text-gray-600 mb-8">Every CCTV Trailer rental in the Tacoma-Seattle area includes free professional setup by our experienced technicians. Here is why that matters for your site security.</p>
+          <p class="text-gray-600 mb-8">Professional delivery and setup by our experienced technicians is available with every CCTV Trailer rental in the Tacoma-Seattle area. Here is why that matters for your site security.</p>
 
           <div class="grid md:grid-cols-2 gap-8 mb-8">
             <div class="bg-green-50 border-2 border-green-500 rounded-lg p-6">
               <h3 class="text-2xl font-bold text-green-800 mb-4">Professional Setup</h3>
-              <p class="text-green-700 text-sm font-semibold mb-4">INCLUDED FREE WITH RENTAL</p>
+              <p class="text-green-700 text-sm font-semibold mb-4">AVAILABLE WITH EVERY RENTAL</p>
               <ul class="space-y-3 text-gray-700">
                 <li class="flex items-start">
                   <span class="text-green-600 mr-2 font-bold">&#10003;</span>
@@ -325,8 +319,8 @@ const statBoxData = [
                 </li>
               </ul>
               <div class="mt-6 bg-green-100 rounded-lg p-4 text-center">
-                <span class="text-green-800 font-bold text-xl">$0</span>
-                <span class="text-green-700 ml-2">Setup is free with every rental</span>
+                <span class="text-green-800 font-bold text-xl">Get a quote</span>
+                <span class="text-green-700 ml-2">for professional delivery and setup</span>
               </div>
             </div>
 
@@ -367,7 +361,7 @@ const statBoxData = [
           </div>
 
           <div class="bg-yellow-50 border border-yellow-300 rounded-lg p-6 text-center">
-            <p class="text-yellow-900 font-semibold text-lg">Why risk your $50,000+ in equipment and materials to save on setup? Professional installation is included free with every <a href="/pricing" class="text-yellow-800 underline font-bold">trailer rental</a> at $8,000-$10,000/month.</p>
+            <p class="text-yellow-900 font-semibold text-lg">Why risk your $50,000+ in equipment and materials to save on setup? Professional delivery and setup is available with every <a href="/pricing" class="text-yellow-800 underline font-bold">trailer rental</a> &mdash; call (253) 683-2288 for a quote.</p>
           </div>
         </div>
       </div>
@@ -431,7 +425,7 @@ const statBoxData = [
 
             <div class="bg-white p-6 rounded-lg shadow-md">
               <h3 class="text-xl font-semibold mb-3 text-blue-800">Fog and Low Visibility</h3>
-              <p class="text-gray-600">Western Washington fog is a frequent challenge, particularly in the Puyallup Valley, along the Nisqually corridor, and near the waterfront. Our <strong>thermal imaging cameras</strong> are essential in these conditions -- they detect body heat through fog that renders standard cameras useless. This is a critical advantage for PNW deployments that <a href="/mobile-vs-fixed-surveillance" class="text-blue-700 underline font-semibold">fixed camera installations</a> often lack.</p>
+              <p class="text-gray-600">Western Washington fog is a frequent challenge, particularly in the Puyallup Valley, along the Nisqually corridor, and near the waterfront. Fog shortens every camera's useful range, so set PTZ presets on the nearest entry points and critical assets, where the <strong>25x optical zoom and infrared (IR) night vision</strong> stay most effective. Because the trailer is mobile, it can also be moved closer to critical assets in fog-prone spots, an advantage <a href="/mobile-vs-fixed-surveillance" class="text-blue-700 underline font-semibold">fixed camera installations</a> often lack.</p>
             </div>
 
             <div class="bg-white p-6 rounded-lg shadow-md">
@@ -551,7 +545,7 @@ const statBoxData = [
 
             <div class="bg-red-50 border border-red-200 rounded-lg p-6">
               <h3 class="font-semibold text-red-900 mb-2">Skipping Cellular Coverage Test</h3>
-              <p class="text-red-700">Rural areas of <strong>Pierce and Thurston Counties have known coverage gaps</strong>, particularly in the foothills east of Eatonville and areas south of Olympia. Always perform a signal strength test at the exact deployment position before committing. A trailer without reliable connectivity cannot send alerts or enable remote monitoring.</p>
+              <p class="text-red-700">Rural areas of <strong>Pierce and Thurston Counties have known coverage gaps</strong>, particularly in the foothills east of Eatonville and areas south of Olympia. Always perform a signal strength test at the exact deployment position before committing. A trailer without reliable connectivity cannot send alerts or enable remote viewing.</p>
             </div>
           </div>
         </div>
@@ -563,13 +557,13 @@ const statBoxData = [
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
           <h2 class="text-3xl font-bold mb-4">Request Professional Setup</h2>
-          <p class="text-xl mb-3">Free setup is included with all trailer rentals in the Tacoma-Seattle area and throughout Western Washington.</p>
-          <p class="text-lg mb-8 text-blue-200">Our technicians handle site assessment, positioning, camera configuration, connectivity, and testing -- typically in under 30 minutes. Monthly rentals start at <strong>$8,000-$10,000/month</strong> with setup included at no additional cost.</p>
+          <p class="text-xl mb-3">Professional delivery and setup are available with all trailer rentals in the Tacoma-Seattle area and throughout Western Washington.</p>
+          <p class="text-lg mb-8 text-blue-200">Our technicians handle site assessment, positioning, camera configuration, connectivity, and testing -- typically in under 30 minutes. Pricing depends on rental length, site, and configuration &mdash; call (253) 683-2288 for a quote.</p>
           <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-8 max-w-2xl mx-auto">
             <div class="grid sm:grid-cols-3 gap-4 text-center">
               <div>
-                <div class="text-2xl font-bold text-yellow-400">FREE</div>
-                <div class="text-sm">Professional Setup</div>
+                <div class="text-2xl font-bold text-yellow-400">Same-Day</div>
+                <div class="text-sm">Delivery Available</div>
               </div>
               <div>
                 <div class="text-2xl font-bold text-yellow-400">30 min</div>
@@ -618,8 +612,8 @@ const statBoxData = [
                 <div>Support</div>
               </div>
               <div>
-                <div class="text-3xl font-bold text-yellow-400">Free</div>
-                <div>Repositioning</div>
+                <div class="text-3xl font-bold text-yellow-400">25x</div>
+                <div>PTZ Optical Zoom</div>
               </div>
             </div>
           </div>
@@ -628,7 +622,7 @@ const statBoxData = [
               (253) 683-2288 - Schedule Setup
             </a>
             <a href="/pricing" class="bg-white hover:bg-gray-100 text-green-900 font-bold py-4 px-8 rounded-lg inline-block text-lg">
-              View Rental Pricing
+              Rental Options &amp; Quotes
             </a>
           </div>
           <p class="mt-4 text-yellow-300">Professional technicians available 7 days a week across the Tacoma-Seattle corridor</p>
