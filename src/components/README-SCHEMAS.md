@@ -38,7 +38,7 @@ const serviceData = {
 - `images` (string[], optional): Array of image URLs
 - `areaServed` (array, optional): Areas where service is available
 - `customProvider` (object, optional): Override default business info
-- `price`, `highPrice`, `priceCurrency`, `priceUnit` — **deprecated, ignored.** Rental prices are not published on the site (quote-based: call (253) 683-2288 or /contact). The component never emits `offers` / `Offer` / `AggregateOffer` / price data; only a generic `"priceRange": "$$"` indicator. Don't pass these props in new pages.
+- `price`, `highPrice`, `priceCurrency`, `priceUnit` - **deprecated, ignored.** Rental prices are not published on the site (quote-based: call (253) 683-2288 or /contact). The component never emits `offers` / `Offer` / `AggregateOffer` / price data; only a generic `"priceRange": "$$"` indicator. Don't pass these props in new pages.
 
 ### BreadcrumbSchema.astro
 

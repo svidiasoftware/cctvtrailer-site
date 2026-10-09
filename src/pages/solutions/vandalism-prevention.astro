@@ -17,7 +17,7 @@ const breadcrumbItems = [
 
 const serviceSchemaData = {
   serviceName: "Construction Site Vandalism Prevention",
-  description: "Stop vandalism and graffiti with 24/7 surveillance and self-monitoring. Prevent $25,000+ damage costs and project delays. HD cameras, instant alerts, proven deterrence.",
+  description: "Stop vandalism and graffiti with 24/7 surveillance and self-monitoring. HD cameras and instant alerts help prevent $25,000+ damage costs and the project delays that follow.",
   areaServed: [
     { type: "State" as const, name: "Washington" },
     { type: "City" as const, name: "Tacoma" },
@@ -51,7 +51,7 @@ const faqSchema = JSON.stringify({
       "name": "How effective is surveillance at preventing vandalism?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sites with visible surveillance experience 75-90% reduction in vandalism. Real-time alerts and motion-triggered audio warnings stop most vandals immediately, while recorded evidence ensures prosecution."
+        "text": "Sites with visible surveillance experience 75-90% reduction in vandalism. Real-time alerts and motion-triggered audio warnings stop most vandals immediately, and the recorded video gives police evidence for prosecution."
       }
     }
   ]
@@ -60,7 +60,7 @@ const faqSchema = JSON.stringify({
 
 <Layout
   title="Vandalism Prevention for Construction Sites | Stop Graffiti & Damage"
-  description="Prevent vandalism with 24/7 surveillance. Stop graffiti, property damage, and arson. Save $25,000+ per incident. Proven 90% reduction."
+  description="Prevent vandalism with 24/7 surveillance. Graffiti and property damage average $25,000+ per incident, and monitored sites see a proven 90% reduction."
   schema={[faqSchema]}>
 
   <ServiceSchema {...serviceSchemaData} />
@@ -77,7 +77,7 @@ const faqSchema = JSON.stringify({
             ⚠️ ONE NIGHT OF VANDALISM = WEEKS OF DELAYS
           </div>
           <h1 class="text-4xl md:text-5xl font-bold mb-4">Stop Vandalism Before It Destroys Your Progress</h1>
-          <p class="text-xl mb-6">$25,000+ average damage. Graffiti, arson, sabotage. Protect your site with proven surveillance that stops vandals in their tracks.</p>
+          <p class="text-xl mb-6">The average incident runs $25,000+, whether it's graffiti, arson or sabotaged equipment. Proven surveillance stops vandals before they get that far.</p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="tel:2536832288" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block text-center">
               🚨 24/7 Hotline: (253) 683-2288
@@ -94,7 +94,7 @@ const faqSchema = JSON.stringify({
     <section class="py-8 bg-gray-50">
       <div class="container mx-auto px-4">
         <QuickAnswer
-          what="Comprehensive vandalism prevention using HD surveillance and 24/7 self-monitoring"
+          what="Vandalism prevention using HD surveillance and 24/7 self-monitoring"
           problem="$3 billion annual vandalism damage, 60% of sites hit at least once"
           solution="24/7 self-monitoring with motion detection, automated audio warnings, and instant alerts to your phone or computer"
           effectiveness="75-90% reduction in vandalism, 95% prosecution rate with video"
@@ -393,7 +393,7 @@ const faqSchema = JSON.stringify({
                 <div class="bg-green-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4">4</div>
                 <h3 class="text-xl font-bold">Evidence & Prosecution</h3>
               </div>
-              <p class="text-gray-700 mb-3">4K HD recording ensures identification and conviction</p>
+              <p class="text-gray-700 mb-3">4K HD recording clear enough for identification and conviction</p>
               <div class="grid md:grid-cols-2 gap-4">
                 <ul class="text-sm space-y-1">
                   <li>✓ Facial recognition quality</li>
@@ -594,12 +594,12 @@ const faqSchema = JSON.stringify({
 
           <div class="bg-white rounded-lg p-6 shadow">
             <h3 class="font-bold text-lg mb-2">How effective is surveillance at preventing vandalism?</h3>
-            <p class="text-gray-700">Sites with visible surveillance experience 75-90% reduction in vandalism. Real-time alerts and motion-triggered audio warnings stop most vandals immediately, while recorded evidence ensures prosecution.</p>
+            <p class="text-gray-700">Sites with visible surveillance experience 75-90% reduction in vandalism. Real-time alerts and motion-triggered audio warnings stop most vandals immediately, and the recorded video gives police evidence for prosecution.</p>
           </div>
 
           <div class="bg-white rounded-lg p-6 shadow">
             <h3 class="font-bold text-lg mb-2">Can surveillance cameras work in complete darkness?</h3>
-            <p class="text-gray-700">Yes, our PTZ cameras use infrared (IR) night vision to detect and record clearly in zero light conditions. Vandals can't hide in darkness.</p>
+            <p class="text-gray-700">Yes, our PTZ cameras use infrared (IR) night vision to detect and record clearly in zero light conditions.</p>
           </div>
 
           <div class="bg-white rounded-lg p-6 shadow">
@@ -623,7 +623,7 @@ const faqSchema = JSON.stringify({
             Get Protected Now >
           </a>
         </div>
-        <p class="mt-6 text-indigo-200">Same-day deployment • Weekend coverage • Zero vandalism tolerance</p>
+        <p class="mt-6 text-indigo-200">Same-day deployment • Weekend coverage</p>
       </div>
     </section>
 
@@ -682,7 +682,7 @@ const faqSchema = JSON.stringify({
         colorClass = "text-red-600";
         bgClass = "bg-red-50 border-2 border-red-200";
         description = "Your site WILL be vandalized without immediate protection. Multiple incidents likely.";
-        action = "<strong>CRITICAL:</strong> Comprehensive surveillance needed TODAY. Every day of delay increases risk.";
+        action = "<strong>CRITICAL:</strong> Full site surveillance needed TODAY. Every day of delay increases risk.";
       }
 
       levelDisplay.textContent = level;

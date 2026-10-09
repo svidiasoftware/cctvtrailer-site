@@ -104,7 +104,7 @@ const overrides: Record<string, Override> = {
       thumbnail_loc: 'https://i.ytimg.com/vi/WZh4h-t1D18/maxresdefault.jpg',
       title: 'Mobile Surveillance Trailer Technical Specifications | CCTV Trailer',
       description:
-        'Explore the technical specifications and features of our advanced mobile surveillance trailers, including PTZ cameras, S-VIDIA technology, and solar power systems.',
+        'A walkthrough of the technical specifications of our mobile surveillance trailers, including PTZ cameras, S-VIDIA technology, and solar power systems.',
       content_loc: 'https://www.youtube.com/watch?v=WZh4h-t1D18',
       player_loc: 'https://www.youtube-nocookie.com/embed/WZh4h-t1D18',
       duration: 150,

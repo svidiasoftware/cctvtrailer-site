@@ -104,7 +104,7 @@ const definitions = [
   },
   {
     term: "Motion-Only Archive",
-    definition: "A recording strategy where the NVR commits frames to disk only when motion is detected at the per-camera-configured sensitivity. Querying an idle timestamp returns the last motion frame that was recorded, with its true timestamp. Paired with FDC, this delivers dramatically reduced storage footprint and faster archive search.",
+    definition: "A recording strategy where the NVR commits frames to disk only when motion is detected at the per-camera-configured sensitivity. Querying an idle timestamp returns the last motion frame that was recorded, with its true timestamp. Paired with FDC, this sharply reduces storage footprint and speeds up archive search.",
     category: "Video Storage",
     relatedTerms: ["Motion Detection", "Archive Optimization", "FDC Codec"],
     url: "/technical-specifications"
@@ -157,7 +157,7 @@ const faqItems = [
   },
   {
     question: "What video codec do the trailers use?",
-    answer: "FDC (Flexible Delta Compression) - S-VIDIA's proprietary codec. Not H.264 or H.265. FDC records the background of a scene as a static image and the foreground as per-frame motion deltas at 8×8-pixel block granularity. Because FDC does not use hardware compression, no resolution or detail is lost. Each frame is also watermarked and encrypted for evidence integrity. S-VIDIA reports FDC delivers up to 60% less recording space than conventional H.264/H.265 systems."
+    answer: "The trailers use FDC (Flexible Delta Compression), S-VIDIA's proprietary codec, instead of H.264 or H.265. FDC records the background of a scene as a static image and the foreground as per-frame motion deltas at 8×8-pixel block granularity. Because FDC does not use hardware compression, no resolution or detail is lost. Each frame is also watermarked and encrypted for evidence integrity. S-VIDIA reports FDC delivers up to 60% less recording space than conventional H.264/H.265 systems."
   },
   {
     question: "How is FDC different from H.264 or H.265?",
@@ -165,7 +165,7 @@ const faqItems = [
   },
   {
     question: "How does motion-only archive recording work?",
-    answer: "The on-board NVR commits a frame to disk only when motion is detected at the per-camera-configured sensitivity. When you query an idle timestamp, the system returns the last motion frame that was actually recorded, along with its true timestamp - not a blank or synthesized frame. The result is dramatically reduced storage footprint and faster archive search, on top of FDC's own storage advantage."
+    answer: "The on-board NVR commits a frame to disk only when motion is detected at the per-camera-configured sensitivity. When you query an idle timestamp, the system returns the last motion frame that was actually recorded, along with its true timestamp - not a blank or synthesized frame. That sharply reduces storage footprint and speeds up archive search, on top of FDC's own storage advantage."
   },
   {
     question: "Can I view cameras remotely without installing software?",
@@ -330,7 +330,7 @@ const howToSteps = [
           <p class="text-center text-xs font-bold text-blue-700 uppercase tracking-widest mb-2">New for 2026</p>
           <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Vigil AI Alert Triage</h2>
           <p class="text-center text-lg text-gray-700 mb-12 max-w-3xl mx-auto">
-            Multi-model AI runs against live trailer footage. Edge inference on Apple Silicon classifies every interesting frame; cloud LLMs review the ambiguous ones; an autonomous Surveillance Agent suppresses the noise.
+            Multi-model AI runs against live trailer footage. Edge inference on Apple Silicon classifies every interesting frame and hands the ambiguous ones to cloud LLMs for review. An autonomous Surveillance Agent then suppresses the noise.
           </p>
 
           <div class="grid md:grid-cols-3 gap-6 mb-12">
@@ -338,21 +338,21 @@ const howToSteps = [
               <p class="text-xs font-bold text-blue-700 uppercase tracking-wide mb-2">Edge inference</p>
               <h3 class="font-bold text-lg mb-3">Local Apple Silicon (MLX)</h3>
               <p class="text-gray-700 text-sm leading-relaxed">
-                A Qwen3.5-9B 6-bit vision-language model runs on-device for first-pass classification - under a second per frame, no cloud round-trip, no surveillance footage leaves your network unless it needs to escalate.
+                A Qwen3.5-9B 6-bit vision-language model runs on-device for first-pass classification in under a second per frame. There's no cloud round-trip, and no surveillance footage leaves your network unless an event needs to escalate.
               </p>
             </div>
             <div class="bg-gradient-to-br from-purple-50 to-white border border-purple-100 p-6 rounded-lg">
               <p class="text-xs font-bold text-purple-700 uppercase tracking-wide mb-2">Cloud escalation</p>
               <h3 class="font-bold text-lg mb-3">Claude Sonnet &amp; Gemini</h3>
               <p class="text-gray-700 text-sm leading-relaxed">
-                Ambiguous or higher-severity events escalate to cloud LLMs for visual review of 3-4 surrounding frames. Each call's latency and cost are recorded on the alert - tuning escalation thresholds is a tracked, auditable decision.
+                Ambiguous or higher-severity events escalate to cloud LLMs for visual review of 3-4 surrounding frames. Each call's latency and cost are recorded on the alert, so every change to escalation thresholds is tracked and auditable.
               </p>
             </div>
             <div class="bg-gradient-to-br from-emerald-50 to-white border border-emerald-100 p-6 rounded-lg">
               <p class="text-xs font-bold text-emerald-700 uppercase tracking-wide mb-2">Autonomous triage</p>
               <h3 class="font-bold text-lg mb-3">Surveillance Agent</h3>
               <p class="text-gray-700 text-sm leading-relaxed">
-                A two-tier agent reads patterns of confirmations and false positives, auto-tunes per-camera silence rules with a 24h time-to-live, and re-checks its own decisions on the next cycle - so noise gets quieter without burying the signal.
+                A two-tier agent reads patterns of confirmations and false positives, auto-tunes per-camera silence rules with a 24h time-to-live, and re-checks its own decisions on the next cycle. Recurring noise gets muted while high-severity events still come through.
               </p>
             </div>
           </div>
@@ -479,7 +479,7 @@ const howToSteps = [
           <p class="text-center text-xs font-bold text-blue-700 uppercase tracking-widest mb-2">Video technology</p>
           <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">FDC - Flexible Delta Compression</h2>
           <p class="text-center text-lg text-gray-700 mb-12 max-w-3xl mx-auto">
-            The trailers do not run H.264 or H.265. They run <strong>FDC</strong>, S-VIDIA's proprietary codec, paired with motion-triggered recording - engineered to outperform the security industry's standard codecs on storage, image quality, and evidence integrity.
+            The trailers run <strong>FDC</strong>, S-VIDIA's proprietary codec, instead of H.264 or H.265, and pair it with motion-triggered recording. FDC is engineered to outperform the security industry's standard codecs on storage, image quality, and evidence integrity.
           </p>
 
           <!-- 60% headline -->
@@ -501,7 +501,7 @@ const howToSteps = [
               <p class="text-xs font-bold text-blue-700 uppercase tracking-wide mb-2">Quality preserved</p>
               <h3 class="font-bold text-lg mb-3">No hardware compression, no quality loss</h3>
               <p class="text-gray-700 text-sm leading-relaxed">
-                Unlike H.264/H.265, FDC does not use hardware compression. The exact image the camera produced is what gets stored, analyzed, and played back. Analytics - including Vigil AI - see full-resolution frames, not compressed proxies.
+                Unlike H.264/H.265, FDC does not use hardware compression. The exact image the camera produced is what gets stored, analyzed, and played back. Analytics, including Vigil AI, work on full-resolution frames rather than compressed proxies.
               </p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-sm">
@@ -685,7 +685,7 @@ const howToSteps = [
             <p class="text-xs font-bold text-blue-700 uppercase tracking-widest mb-2">Remote access</p>
             <h2 class="text-3xl md:text-4xl font-bold mb-4">Remote access - browser, desktop, and mobile</h2>
             <p class="text-gray-700 mb-6 leading-relaxed">
-              Open a browser. Log in. Watch the cameras. No VPN, no plugin, no installer - just HTTPS at the page level and WSS for the live stream, brokered by a multi-tenant cloud proxy. Prefer a thicker client? A native Windows desktop app covers the power-user workflow (deep config, analytics, multi-monitor playback), and native iOS / Android apps cover the on-the-go live + archive workflow with push alerts on top.
+              Log in from any browser and watch the cameras. There's nothing to install and no VPN: the page loads over HTTPS and the live stream runs over WSS, brokered by a multi-tenant cloud proxy. If you prefer a thicker client, a native Windows desktop app covers the power-user workflow (deep config, analytics, multi-monitor playback), and native iOS / Android apps cover the on-the-go live + archive workflow with push alerts on top.
             </p>
             <ul class="space-y-3 text-gray-700">
               <li class="flex items-start">
@@ -823,7 +823,7 @@ const howToSteps = [
           <p class="text-center text-xs font-bold text-blue-700 uppercase tracking-widest mb-2">Computer vision</p>
           <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Object Detection &amp; License Plate Reading</h2>
           <p class="text-center text-lg text-gray-700 mb-12 max-w-3xl mx-auto">
-            Beyond Vigil's vision-language model, the platform runs traditional detectors for objects and license plates - the right tool for the right detection.
+            Alongside Vigil's vision-language model, the platform runs traditional detectors for objects and license plates.
           </p>
 
           <div class="grid md:grid-cols-2 gap-8">
@@ -900,7 +900,7 @@ const howToSteps = [
           <p class="text-center text-xs font-bold text-blue-200 uppercase tracking-widest mb-2">AI-native</p>
           <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Built for AI agents to query</h2>
           <p class="text-center text-lg text-blue-100 mb-12 max-w-3xl mx-auto">
-            The platform exposes a <strong class="text-white">Model Context Protocol (MCP) server</strong> with 25 tools so AI agents and LLMs can search, sample, and reason about your camera archive directly - no scraping, no screenshots.
+            The platform exposes a <strong class="text-white">Model Context Protocol (MCP) server</strong> with 25 tools, so AI agents and LLMs can query your camera archive directly instead of scraping screenshots.
           </p>
 
           <div class="grid md:grid-cols-2 gap-8 mb-8">
@@ -915,7 +915,7 @@ const howToSteps = [
           </div>
 
           <div class="bg-white/5 backdrop-blur p-6 rounded-lg border border-white/10 text-sm text-blue-100">
-            <p class="mb-2"><strong class="text-white">Why this matters:</strong> if you give an LLM access to your security camera archive, you want a structured interface that respects authentication, rate limits, and bandwidth - not a screen-scrape over a desktop client. The MCP integration is also how Vigil itself fetches frames for cloud-LLM review, so it is battle-tested in production.</p>
+            <p class="mb-2"><strong class="text-white">Why this matters:</strong> if you give an LLM access to your security camera archive, you want a structured interface that respects authentication, rate limits, and bandwidth, rather than a screen-scrape over a desktop client. The MCP integration is also how Vigil itself fetches frames for cloud-LLM review, so it already runs in production.</p>
             <p><strong class="text-white">Also exposed:</strong> a JSON-RPC daemon over Unix socket for custom integrations, and a per-NVR session pool that survives reconnects without forcing the client to re-authenticate.</p>
           </div>
         </div>
@@ -1077,7 +1077,7 @@ const howToSteps = [
         <div class="max-w-5xl mx-auto">
           <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">2026 Field-Tested Deployments</h2>
           <p class="text-center text-gray-700 mb-12 max-w-3xl mx-auto">
-            The specifications above aren't theoretical - every system listed is validated against the conditions and site types our trailers are protecting across the Puget Sound right now.
+            Every system listed above is validated against the conditions and site types our trailers are protecting across the Puget Sound right now.
           </p>
 
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -1127,7 +1127,7 @@ const howToSteps = [
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
           <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Frequently Asked Questions</h2>
-          <p class="text-center text-gray-700 mb-12">Crisp, factual answers to the questions we hear most - from on-site operators and from AI agents researching the platform.</p>
+          <p class="text-center text-gray-700 mb-12">Answers to the questions we hear most, from on-site operators and from AI agents researching the platform.</p>
           <div class="space-y-4">
             {faqItems.map((item) => (
               <details class="bg-white rounded-lg border border-gray-200 group">
@@ -1217,7 +1217,7 @@ const howToSteps = [
       <div class="container mx-auto px-4 max-w-4xl">
         <div class="bg-blue-50 rounded-lg p-8 text-center max-w-2xl mx-auto mb-8">
           <h2 class="text-2xl font-bold mb-4 text-gray-900">Ready to secure your site?</h2>
-          <p class="mb-6 text-gray-700">Our security experts can map your site, recommend a configuration, and quote your rental. Same-day delivery available - call to check availability.</p>
+          <p class="mb-6 text-gray-700">Our team will walk your site and quote a rental with the right configuration. Same-day delivery available - call to check availability.</p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:2536832288" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-block">📞 Call (253) 683-2288</a>
             <a href="/contact" class="bg-white hover:bg-gray-50 text-blue-600 border-2 border-blue-600 font-bold py-3 px-8 rounded-lg inline-block">Send Message</a>

@@ -196,7 +196,7 @@ const kentProfile: CityProfile = {
     eyebrow: 'King County · Kent Valley',
     h1: 'Kent Valley Warehouse Surveillance - Mobile Camera Trailer Rentals',
     leadHtml:
-      "<strong>Protecting the Pacific Northwest's largest warehouse cluster.</strong> Mobile camera trailers deployed across Kent Valley distribution centers, intermodal yards, and Boeing supplier facilities - same-day rollout from our Tacoma HQ.",
+      "<strong>Camera coverage for the Pacific Northwest's largest warehouse cluster.</strong> We deploy mobile camera trailers to Kent Valley distribution centers, intermodal yards, and Boeing supplier facilities, with same-day rollout from our Tacoma HQ.",
     ctaPrimaryText: 'Get Kent Quote',
     bullets: ["⚡ ~30 minutes from Tacoma via I-5 / SR-167 - same-day delivery available"],
     backgroundImage: {
@@ -209,8 +209,8 @@ const kentProfile: CityProfile = {
     h2: 'Why Kent Valley Has a Different Security Problem',
     paragraphsHtml: [
       "Kent Valley is the warehouse capital of the Pacific Northwest - more than 70 million square feet of distribution, fulfillment, and light-manufacturing footprint sandwiched between the Green River and SR-167. The corridor stretches from Boeing's longest-tenured supplier ecosystem in the north (Renton/Tukwila edge) down through the REI distribution hub off South 212th, the BNSF intermodal yard, and out toward Auburn's Green River Valley industrial parks.",
-      "That density creates a security profile most cities never see: <strong>multi-acre lots with thousands of feet of perimeter fencing</strong>, single-shift weekend gaps when entire campuses sit unattended, and a steady flow of high-value freight (electronics, sporting goods, automotive parts, aerospace components) moving through the I-5/SR-167 corridor day and night. A fixed CCTV install on a property like this can run six figures, with months of permitting and conduit work before a single camera goes live.",
-      "Mobile surveillance trailers solve a different problem than a fixed install: we deploy in a single afternoon, cover the most active perimeter of a 200,000+ sq ft facility from one elevated pole, and relocate when the threat profile shifts (new construction phase, seasonal inventory peak, post-incident hardening). For property managers running multiple Kent Valley buildings, that flexibility is the whole point.",
+      "That density brings security problems most cities never deal with. Many sites are <strong>multi-acre lots with thousands of feet of perimeter fencing</strong>. Entire campuses sit unattended during single-shift weekend gaps, while high-value freight (electronics, sporting goods, automotive parts, aerospace components) moves through the I-5/SR-167 corridor day and night. A fixed CCTV install on a property like this can run six figures, with months of permitting and conduit work before a single camera goes live.",
+      "A mobile surveillance trailer goes up in a single afternoon and covers the most active perimeter of a 200,000+ sq ft facility from one elevated pole. When the threat profile shifts with a new construction phase, a seasonal inventory peak, or hardening after an incident, we move it. That flexibility matters most to property managers running several Kent Valley buildings.",
     ],
   },
 
@@ -254,7 +254,7 @@ const kentProfile: CityProfile = {
       },
     ],
     calloutHtml:
-      "Mixed signal for 2024: <strong>property crime trending down</strong>, but personal-safety incidents climbing. For employers running multi-shift warehouse operations, that means lit, monitored parking and end-of-shift overwatch are no longer optional - they're a workplace-safety expectation.",
+      "2024 sent a mixed signal: <strong>property crime trending down</strong>, but personal-safety incidents climbing. Employers running multi-shift warehouse operations are now expected to provide lit, monitored parking and end-of-shift overwatch as a basic part of workplace safety.",
   },
 
   serviceAreas: {
@@ -312,7 +312,7 @@ const kentProfile: CityProfile = {
       {
         icon: "\u{1F3ED}",
         title: 'Built for Industrial Scale',
-        body: 'Pole-mount 20+ ft cameras with PTZ optics designed for multi-acre warehouse yards - not retrofit consumer gear.',
+        body: 'Cameras sit on a 20+ ft pole, with PTZ optics designed for multi-acre warehouse yards.',
       },
       {
         icon: "\u{1F69A}",
@@ -321,7 +321,7 @@ const kentProfile: CityProfile = {
       },
       {
         icon: "⏰",
-        title: 'No Permits, No Conduit, No Months of Wait',
+        title: 'Skip the Permits and Conduit Work',
         body: 'A fixed CCTV install at a Kent Valley facility is a 90+ day project. A trailer is deployed in an afternoon and pulled back the same way.',
       },
     ],
@@ -395,7 +395,7 @@ const kentProfile: CityProfile = {
     {
       title: 'Copper Theft at Construction Sites',
       href: '/blog/copper-theft-seattle-tacoma-construction-sites',
-      description: 'Active 2026 data on the copper-theft surge and the deterrence approach that actually works.',
+      description: 'Active 2026 data on the copper-theft surge and the deterrence approach that works.',
     },
     {
       title: 'Auburn Manufacturing & Logistics Security',

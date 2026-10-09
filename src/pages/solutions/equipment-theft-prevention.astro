@@ -52,7 +52,7 @@ const breadcrumbItems = [
 
 const serviceSchemaData = {
   serviceName: "Construction Equipment Theft Prevention Solution",
-  description: "Prevent equipment theft with mobile surveillance. $1 billion in construction equipment stolen annually. 24/7 self-monitoring, instant alerts, proven 85% theft reduction.",
+  description: "Prevent equipment theft with mobile surveillance. $1 billion in construction equipment is stolen every year, and sites with 24/7 self-monitoring and instant alerts see a proven 85% theft reduction.",
   areaServed: [
     { type: "State" as const, name: "Washington" },
     { type: "City" as const, name: "Tacoma" },
@@ -78,7 +78,7 @@ const faqSchema = JSON.stringify({
       "name": "What equipment is most commonly stolen from construction sites?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Most commonly stolen equipment includes: skid steers, excavators, generators, tools, copper wire, lumber, and fuel. These items are targeted due to high resale value and difficulty tracking."
+        "text": "Most commonly stolen equipment includes: skid steers, excavators, generators, tools, copper wire, lumber, and fuel. Thieves go after them because they resell well and are hard to trace."
       }
     },
     {
@@ -95,7 +95,7 @@ const faqSchema = JSON.stringify({
 
 <Layout
   title="Construction Equipment Theft Prevention | Stop Theft Before It Happens"
-  description="Prevent equipment theft with proven surveillance solutions. $1B stolen annually - protect your assets with 24/7 self-monitoring and instant alerts. Proven 85% theft reduction."
+  description="Prevent equipment theft with mobile surveillance. $1B in equipment is stolen every year - protect yours with 24/7 self-monitoring and instant alerts for a proven 85% theft reduction."
   schema={[faqSchema]}>
 
   <ServiceSchema {...serviceSchemaData} />
@@ -112,7 +112,7 @@ const faqSchema = JSON.stringify({
             ⚠️ CRITICAL THREAT TO YOUR BUSINESS
           </div>
           <h1 class="text-4xl md:text-5xl font-bold mb-4">Stop Equipment Theft Before It Devastates Your Project</h1>
-          <p class="text-xl mb-6">$1 billion in construction equipment stolen annually. Average loss: $50,000 per incident. Recovery rate: Less than 25%.</p>
+          <p class="text-xl mb-6">$1 billion in construction equipment is stolen every year. The average incident costs $50,000, and less than 25% of stolen equipment is ever recovered.</p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="tel:2536832288" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block text-center">
               🚨 Emergency: (253) 683-2288
@@ -129,7 +129,7 @@ const faqSchema = JSON.stringify({
     <section class="py-8 bg-gray-50">
       <div class="container mx-auto px-4">
         <QuickAnswer
-          what="Comprehensive equipment theft prevention using mobile surveillance technology"
+          what="Equipment theft prevention using mobile surveillance trailers"
           problem="$1 billion annual construction equipment theft, 75% never recovered"
           solution="24/7 self-monitoring with motion detection and instant alerts to your phone or computer"
           effectiveness="85% reduction in theft incidents at sites with surveillance"
@@ -318,7 +318,7 @@ const faqSchema = JSON.stringify({
               <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">4</div>
               <div class="flex-1">
                 <h3 class="text-xl font-bold mb-2">You Call Police With Video Evidence</h3>
-                <p class="text-gray-700 mb-3">You (or your security staff) call police with live video in hand, giving real-time suspect descriptions and location for a verified crime in progress, not an unverified alarm.</p>
+                <p class="text-gray-700 mb-3">You (or your security staff) call police with live video in hand, giving real-time suspect descriptions and location. Police hear about a verified crime in progress instead of an unverified alarm.</p>
                 <div class="bg-red-50 border-l-4 border-red-600 p-4">
                   <p class="font-semibold">Result: Higher arrest rates, equipment recovery</p>
                 </div>
@@ -330,7 +330,7 @@ const faqSchema = JSON.stringify({
               <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">5</div>
               <div class="flex-1">
                 <h3 class="text-xl font-bold mb-2">Evidence & Prosecution</h3>
-                <p class="text-gray-700 mb-3">HD video evidence ensures successful prosecution and insurance claims, plus deters future attempts.</p>
+                <p class="text-gray-700 mb-3">HD video gives you evidence for prosecution and insurance claims, and it discourages repeat attempts.</p>
                 <div class="bg-blue-50 border-l-4 border-blue-600 p-4">
                   <p class="font-semibold">Result: Full accountability and compensation</p>
                 </div>
@@ -485,7 +485,7 @@ const faqSchema = JSON.stringify({
 
           <div class="bg-white rounded-lg p-6 shadow">
             <h3 class="font-bold text-lg mb-2">What equipment is most commonly stolen from construction sites?</h3>
-            <p class="text-gray-700">Most commonly stolen equipment includes: skid steers, excavators, generators, tools, copper wire, lumber, and fuel. These items are targeted due to high resale value and difficulty tracking.</p>
+            <p class="text-gray-700">Most commonly stolen equipment includes: skid steers, excavators, generators, tools, copper wire, lumber, and fuel. Thieves go after them because they resell well and are hard to trace.</p>
           </div>
 
           <div class="bg-white rounded-lg p-6 shadow">
@@ -566,7 +566,7 @@ const faqSchema = JSON.stringify({
         level = "MODERATE RISK";
         color = "text-yellow-600";
         message = "Your site faces significant theft risk. Without protection, you have a 40% chance of experiencing theft.";
-        recommendation = "Recommended: 1-2 surveillance trailers with 24/7 self-monitoring for comprehensive coverage.";
+        recommendation = "Recommended: 1-2 surveillance trailers with 24/7 self-monitoring for full coverage.";
       } else if (totalRisk <= 14) {
         level = "HIGH RISK";
         color = "text-orange-600";
@@ -575,8 +575,8 @@ const faqSchema = JSON.stringify({
       } else {
         level = "CRITICAL RISK";
         color = "text-red-600";
-        message = "Your site is at extreme risk. Theft is not a matter of if, but when. Immediate action required.";
-        recommendation = "CRITICAL: Deploy comprehensive surveillance system today. Every day of delay increases risk exponentially.";
+        message = "Your site is at extreme risk. Without protection, expect a theft sooner rather than later. Immediate action required.";
+        recommendation = "CRITICAL: Deploy full site surveillance today. Every day of delay increases risk exponentially.";
       }
 
       levelDiv.textContent = level;
