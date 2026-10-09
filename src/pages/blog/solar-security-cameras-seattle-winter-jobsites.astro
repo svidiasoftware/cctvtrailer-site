@@ -1,0 +1,653 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import CTASection from '../../components/CTASection.astro';
+import Analytics from '../../components/Analytics.astro';
+import BreadcrumbSchema from '../../components/BreadcrumbSchema.astro';
+import LazyImage from '../../components/LazyImage.astro';
+import QuickAnswer from '../../components/QuickAnswer.astro';
+import StatBox from '../../components/StatBox.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import SpeakableSchema from '../../components/SpeakableSchema.astro';
+import FAQSchema from '../../components/FAQSchema.astro';
+import AuthorBio from '../../components/AuthorBio.astro';
+
+const slug = 'solar-security-cameras-seattle-winter-jobsites';
+
+// Speakable sections for voice search
+const speakableSections = [
+  { cssSelector: ".quick-answer-content" },
+  { cssSelector: ".blog-content h2, .blog-content p" },
+  { cssSelector: ".stat-box" }
+];
+
+// NASA POWER all-sky surface shortwave, 2001-2020, kWh per square meter per day (Seattle grid cell)
+const solarByMonth = [
+  { month: "January", value: "1.03" },
+  { month: "February", value: "1.92" },
+  { month: "March", value: "2.85" },
+  { month: "April", value: "4.15" },
+  { month: "May", value: "5.25" },
+  { month: "June", value: "5.73" },
+  { month: "July", value: "6.33" },
+  { month: "August", value: "5.40" },
+  { month: "September", value: "3.91" },
+  { month: "October", value: "2.28" },
+  { month: "November", value: "1.22" },
+  { month: "December", value: "0.85" }
+];
+
+const faqs = [
+  {
+    question: "Do solar security cameras work on cloudy days in Seattle?",
+    answer: "Yes, at reduced output. Solar panels still produce power under cloud, just less of it. NASA satellite data for 2001-2020 puts average December sunlight on flat ground around Seattle at 0.85 kWh per square meter per day, about half the clear-sky figure and about a seventh of July's. That's why a winter-ready solar camera relies on a battery to carry it through gray stretches and on a generator or shore power for the longest ones."
+  },
+  {
+    question: "How long can a solar camera trailer run without sun?",
+    answer: "It depends on usable battery capacity and on how much power the cameras, infrared lights, recorder and modem draw. Ask the vendor how many days the exact configuration runs with no sun at its December load, with infrared on all night, and what recharges it after that. For a Puget Sound winter, a good answer includes a generator or shore power, not only a bigger battery."
+  },
+  {
+    question: "Will a solar surveillance trailer keep recording during a power outage?",
+    answer: "Yes. A solar trailer runs on its own panels and battery, so a utility outage doesn't shut it down. That matters here: on September 25, 2026, Puget Sound Energy had 51,235 customers without power at 5:30 p.m., mostly around Olympia. Cameras running off a jobsite's temporary power stop when the grid does unless they have their own battery backup. Live view and alerts still depend on the cellular network staying up."
+  },
+  {
+    question: "What happens to the footage if cell service goes down?",
+    answer: "The recorder on the trailer keeps recording as long as the trailer has power. What you lose during a cellular outage is live view and alerts, until the connection comes back. After a storm, check the trailer and export any clips you need before the recorder's retention window loops over them. CCTV Trailer units keep two weeks of motion-only recording by default."
+  },
+  {
+    question: "Does cold weather affect solar camera batteries in Western Washington?",
+    answer: "It affects charging more than running. Lithium iron phosphate batteries shouldn't be charged when they're cold: Battle Born puts the limit at about 25 degrees F without internal heating, and Victron's Smart lithium batteries stop charging below 41 degrees F. By NOAA's 1991-2020 normals, Olympia averages 77 nights a year at or below freezing and Sea-Tac 25. On a cold morning an unheated battery may not accept a charge until it warms up."
+  },
+  {
+    question: "Where should I park a solar camera trailer on a winter jobsite?",
+    answer: "Where it has open sky to the south and a clear view of what you're protecting. At noon on December 21 the sun is only about 19 degrees above the horizon in Seattle, so a 100-foot fir on the south side throws a shadow roughly 290 feet long. Pick firm, drained ground that a truck can still reach after weeks of rain, and keep the trailer out from under trees that could come down in a windstorm."
+  },
+  {
+    question: "How much does it cost to rent a solar surveillance trailer for the winter?",
+    answer: "Pricing depends on rental length, site and configuration, so every job gets its own quote. For a project that runs through the winter, a monthly rental usually makes the most sense. Call CCTV Trailer at (253) 683-2288 or request a quote. Professional delivery and setup are available, and every rental includes equipment training and 24/7 technical support."
+  },
+  {
+    question: "Do you deliver surveillance trailers to Olympia?",
+    answer: "Yes. CCTV Trailer is based in Tacoma and serves Thurston County, including Olympia, along with Pierce, King, Snohomish and Kitsap counties. Call (253) 683-2288 to check availability for your site and dates. For a winter job, we can talk through where the trailer should sit and how it will stay powered before it ever leaves the yard."
+  }
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Do Solar Security Cameras Work in a Seattle Winter? A Jobsite Guide for Tacoma, Seattle and Olympia",
+  "datePublished": "2026-10-09",
+  "dateModified": "2026-10-09",
+  "author": {
+    "@type": "Person",
+    "name": "Val Zakharov",
+    "jobTitle": "Founder & Owner",
+    "description": "Founder and owner of CCTV Trailer, in the Pacific Northwest mobile surveillance and security industry since 2009, covering construction jobsite, warehouse, parking lot, vacant property, and event-security deployments across Pierce, King, Snohomish, and Kitsap counties.",
+    "knowsAbout": ["Mobile CCTV Surveillance", "Vacant Property Security", "Off-Grid Solar Surveillance", "Washington Property Security Law", "Puget Sound Security Operations"],
+    "url": "https://www.cctvtrailer.com/about",
+    "sameAs": ["https://www.linkedin.com/in/val-zakharov-293374397"],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "CCTV Trailer",
+      "url": "https://www.cctvtrailer.com"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CCTV Trailer",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.cctvtrailer.com/images/cctv-trailer-logo.png"
+    }
+  },
+  "description": "A winter guide for contractors in Tacoma, Seattle and Olympia: how short days, low sun, cloud, freezing mornings and storm outages affect solar security cameras, what to ask about battery and backup power, what keeps recording when the grid or cell network fails, where to park a trailer, and a winter jobsite checklist.",
+  "image": [
+    "https://www.cctvtrailer.com/images/solar-winter-hero.webp",
+    "https://www.cctvtrailer.com/images/solar-winter-fir-shadows.webp",
+    "https://www.cctvtrailer.com/images/solar-winter-outage-night.webp",
+    "https://www.cctvtrailer.com/images/solar-winter-olympia-placement.webp"
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://www.cctvtrailer.com/blog/${slug}`
+  },
+  "wordCount": 3500,
+  "about": [
+    { "@type": "Place", "name": "Seattle, Washington" },
+    { "@type": "Place", "name": "Tacoma, Washington" },
+    { "@type": "Place", "name": "Olympia, Washington" }
+  ],
+  "keywords": [
+    "solar security cameras Seattle winter",
+    "do solar security cameras work in winter",
+    "solar security camera cloudy days",
+    "winter construction site security Tacoma",
+    "mobile surveillance trailer Olympia",
+    "solar surveillance trailer Seattle",
+    "solar camera trailer battery winter",
+    "LiFePO4 battery cold charging",
+    "jobsite security power outage Washington",
+    "winter jobsite security checklist",
+    "solar trailer placement shade",
+    "Puget Sound winter daylight hours"
+  ]
+});
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Blog', url: '/blog' },
+  { name: 'Solar Security Cameras in a Seattle Winter', url: `/blog/${slug}` }
+];
+
+const relatedPages = [
+  {
+    title: "Standalone Hybrid Power System",
+    href: "/trailer-standalone-hybrid-power-architecture",
+    description: "How solar, battery and generator work together on a trailer with no grid connection."
+  },
+  {
+    title: "Solar Powered Surveillance",
+    href: "/solar-powered-surveillance",
+    description: "Solar surveillance trailer rental across Tacoma, Seattle and the Puget Sound."
+  },
+  {
+    title: "Olympia Mobile CCTV",
+    href: "/olympia-mobile-cctv",
+    description: "Surveillance trailers for jobsites and properties in Olympia and Thurston County."
+  },
+  {
+    title: "Holiday Construction Site Security",
+    href: "/blog/holiday-construction-site-theft-prevention-guide",
+    description: "Covering the Thanksgiving-to-New-Year stretch when crews are off."
+  },
+  {
+    title: "How to Set Up a Security Trailer",
+    href: "/how-to-setup-security-trailer",
+    description: "Positioning, mast height and camera aiming on a new site."
+  },
+  {
+    title: "Copper Theft at Seattle and Tacoma Construction Sites",
+    href: "/blog/copper-theft-seattle-tacoma-construction-sites",
+    description: "What thieves go after on Puget Sound jobsites, and what helps."
+  }
+];
+---
+
+<Layout
+  title="Do Solar Security Cameras Work in a Seattle Winter? (Jobsite Guide) | CCTV Trailer"
+  description="Do solar security cameras work in a Seattle winter? What short days, cloud, cold and storm outages do to a jobsite trailer in Tacoma, Seattle or Olympia."
+  schema={schema}>
+
+  <Header currentPath="/blog" showEmergencyBar={true} />
+  <Analytics />
+  <BreadcrumbSchema items={breadcrumbs} />
+  <SpeakableSchema sections={speakableSections} />
+  <FAQSchema items={faqs} />
+
+  <article>
+    <!-- Hero Section -->
+    <section class="hero-section-blog relative py-20 px-6 text-white">
+      <div class="hero-overlay">
+        <LazyImage src="/images/solar-winter-hero.webp" alt="A solar-powered CCTV Trailer mobile surveillance unit parked beside the chain-link fence of a Tacoma-area construction site at dusk on a rainy December afternoon, with a framed building, an excavator and stacked lumber behind it"
+          class="w-full h-full object-cover" width="1920" height="1080" fetchPriority="high" loading="eager" />
+      </div>
+      <div class="absolute inset-0 z-[3] bg-gradient-to-r from-black/70 to-black/40"></div>
+      <div class="container mx-auto max-w-4xl relative z-10">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          Do Solar Security Cameras Work in a Seattle Winter? A Jobsite Guide for Tacoma, Seattle and Olympia
+        </h1>
+        <div class="flex items-center text-lg mb-8">
+          <time datetime="2026-10-09">October 9, 2026</time>
+          <span class="mx-4">&bull;</span>
+          <span>18 min read</span>
+        </div>
+        <p class="text-xl leading-relaxed">
+          On Friday, September 25, an early-season windstorm came through the South Sound. Olympia recorded a 54 mph gust, and at 5:30 that afternoon Puget Sound Energy still had 51,235 customers without power, most of them around Olympia, Tumwater, Lacey and Yelm. Tacoma Public Utilities had another 2,389. Any jobsite camera running off a temporary power pole in those neighborhoods lost power along with everything else, unless it had a battery of its own. Clocks fall back on November 1, and by December 21 Seattle gets 8 hours and 25 minutes of daylight. So it's fair to ask whether solar security cameras actually keep working through a Seattle winter. They can. This guide covers what decides it: short days and a low sun, the fifth gray day in a row, freezing mornings, cell outages and where to park the trailer, plus a winter checklist for the rest of the site.
+        </p>
+      </div>
+    </section>
+
+    <!-- Quick Answer Section -->
+    <QuickAnswer
+      question="Do solar security cameras work through a Seattle, Tacoma or Olympia winter?"
+      answer="Yes, if the whole power setup is built for December rather than July. Around Seattle, a flat surface gets about 0.85 kWh of sunlight per square meter on an average December day, roughly a seventh of July, and daylight drops to about 8.5 hours. A battery carries the cameras through long nights and gray stretches, and a generator or shore power covers the longest ones. Park the trailer clear of tree shade, keep the panels clean, and know what a cell outage does: the trailer keeps recording, but live view and alerts wait for the connection to come back."
+    />
+
+    <!-- Main Content -->
+    <section class="py-16">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <div class="blog-content prose prose-lg max-w-none">
+
+          <!-- Stats Section -->
+          <div class="mb-12">
+            <StatBox
+              layout="grid"
+              stats={[
+                {
+                  value: "8 h 25 min",
+                  label: "Daylight in Seattle on December 21, 2026: sunrise 7:55 a.m., sunset 4:20 p.m.",
+                  icon: "🌒",
+                  highlight: true,
+                  source: {
+                    text: "U.S. Naval Observatory",
+                    url: "https://aa.usno.navy.mil/calculated/rstt/oneday?date=2026-12-21&lat=47.61&lon=-122.33&label=Seattle%2C+WA&tz=8.00&tz_sign=-1&tz_label=false&dst=true&submit=Get+Data"
+                  }
+                },
+                {
+                  value: "0.85",
+                  label: "kWh of sunlight per square meter per day on flat ground near Seattle in December, vs. 6.33 in July (2001-2020 average)",
+                  icon: "☁️",
+                  highlight: true,
+                  source: {
+                    text: "NASA POWER climatology",
+                    url: "https://power.larc.nasa.gov/api/temporal/climatology/point?parameters=ALLSKY_SFC_SW_DWN,CLRSKY_SFC_SW_DWN&community=RE&longitude=-122.33&latitude=47.61&format=JSON"
+                  }
+                },
+                {
+                  value: "77",
+                  label: "Nights a year at or below freezing at Olympia Airport, vs. 25 at Sea-Tac (1991-2020 normals)",
+                  icon: "❄️",
+                  highlight: false,
+                  source: {
+                    text: "NOAA NCEI U.S. Climate Normals",
+                    url: "https://www.ncei.noaa.gov/access/us-climate-normals/#dataset=normals-annualseasonal&timeframe=30&station=USW00024227"
+                  }
+                },
+                {
+                  value: "51,235",
+                  label: "Puget Sound Energy customers without power at 5:30 p.m. on September 25, 2026, mostly around Olympia",
+                  icon: "⚡",
+                  highlight: false,
+                  source: {
+                    text: "FOX 13 Seattle",
+                    url: "https://www.fox13seattle.com/news/power-outages-washington-gusty-winds"
+                  }
+                }
+              ]}
+            />
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6">1. Short days, a low sun and a lot of cloud</h2>
+
+            <p>
+              Start with the daylight. By the <a href="https://aa.usno.navy.mil/calculated/rstt/oneday?date=2026-12-21&lat=47.61&lon=-122.33&label=Seattle%2C+WA&tz=8.00&tz_sign=-1&tz_label=false&dst=true&submit=Get+Data" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">U.S. Naval Observatory's tables</a>, the sun rises in Seattle at 7:55 a.m. on December 21, 2026 and sets at 4:20 p.m. That's 8 hours and 25 minutes of daylight, against 15 hours and 59 minutes on June 21. Tacoma and Olympia, a little farther south, get a few more minutes in December: 8 hours 28 minutes and 8 hours 30 minutes. Daylight saving time ends at 2 a.m. on November 1, <a href="https://www.nist.gov/pml/time-and-frequency-division/popular-links/daylight-saving-time-dst" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">per NIST</a>, and on Monday, November 2, the Seattle sunset is at 4:50 p.m. From about November 17 until the first days of January, the sun is down in Seattle before 4:30 p.m.
+            </p>
+            <br>
+
+            <p>
+              The sun is also low. At solar noon on December 21 it stands about 19 degrees above the southern horizon in Seattle, by the Naval Observatory's numbers. In June it's about 66 degrees. Light coming in that low spreads thinner across the ground and travels through more atmosphere on the way. It also throws long shadows, which decides where a trailer should park (section 4).
+            </p>
+            <br>
+
+            <p>
+              Then there's the cloud. NASA's <a href="https://power.larc.nasa.gov/api/temporal/climatology/point?parameters=ALLSKY_SFC_SW_DWN,CLRSKY_SFC_SW_DWN&community=RE&longitude=-122.33&latitude=47.61&format=JSON" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">POWER climate data</a>, built from satellite measurements for 2001-2020, puts the average daily sunlight reaching flat ground around Seattle at 0.85 kWh per square meter in December and 6.33 in July. December gets about a seventh of July. On a clear December day the same spot would get about 1.66, so cloud takes roughly half of what little December sunlight there is. NASA's data doesn't separate Olympia from Seattle at this resolution, so the numbers are the same for both.
+            </p>
+
+            <!-- Chart: monthly solar energy, NASA POWER -->
+            <figure class="my-10">
+              <div class="bg-white border border-gray-200 rounded-lg p-4 md:p-6">
+                <p class="font-semibold text-gray-900 mb-1">Average daily sunlight on flat ground near Seattle, by month</p>
+                <p class="text-sm text-gray-600 mb-4">kWh per square meter per day, 2001-2020. Darker bars: November to January.</p>
+                <div>
+                  <svg class="solar-chart" viewBox="0 0 720 300" role="img" aria-labelledby="solar-chart-title solar-chart-desc">
+                    <title id="solar-chart-title">Average daily sunlight near Seattle by month</title>
+                    <desc id="solar-chart-desc">Column chart. Sunlight on flat ground averages 6.33 kWh per square meter per day in July and 0.85 in December. November is 1.22 and January 1.03.</desc>
+                    <line x1="48" x2="712" y1="66.3" y2="66.3" stroke="#e5e7eb" stroke-width="1" /><text x="40" y="70.3" text-anchor="end" class="chart-axis">6</text>
+                    <line x1="48" x2="712" y1="134.9" y2="134.9" stroke="#e5e7eb" stroke-width="1" /><text x="40" y="138.9" text-anchor="end" class="chart-axis">4</text>
+                    <line x1="48" x2="712" y1="203.4" y2="203.4" stroke="#e5e7eb" stroke-width="1" /><text x="40" y="207.4" text-anchor="end" class="chart-axis">2</text>
+                    <line x1="48" x2="712" y1="272.0" y2="272.0" stroke="#d1d5db" stroke-width="1" /><text x="40" y="276.0" text-anchor="end" class="chart-axis">0</text>
+                    <g class="bar"><title>January: 1.03 kWh per square meter per day</title><rect x="48.0" y="32" width="55.3" height="240" fill="transparent" /><path d="M63.7,272 V240.7 Q63.7,236.7 67.7,236.7 H83.7 Q87.7,236.7 87.7,240.7 V272 Z" fill="#1e40af" /></g>
+                    <text x="75.7" y="292" text-anchor="middle" class="chart-axis">Jan</text>
+                    <g class="bar"><title>February: 1.92 kWh per square meter per day</title><rect x="103.3" y="32" width="55.3" height="240" fill="transparent" /><path d="M119.0,272 V210.2 Q119.0,206.2 123.0,206.2 H139.0 Q143.0,206.2 143.0,210.2 V272 Z" fill="#3b82f6" /></g>
+                    <text x="131.0" y="292" text-anchor="middle" class="chart-axis">Feb</text>
+                    <g class="bar"><title>March: 2.85 kWh per square meter per day</title><rect x="158.7" y="32" width="55.3" height="240" fill="transparent" /><path d="M174.3,272 V178.3 Q174.3,174.3 178.3,174.3 H194.3 Q198.3,174.3 198.3,178.3 V272 Z" fill="#3b82f6" /></g>
+                    <text x="186.3" y="292" text-anchor="middle" class="chart-axis">Mar</text>
+                    <g class="bar"><title>April: 4.15 kWh per square meter per day</title><rect x="214.0" y="32" width="55.3" height="240" fill="transparent" /><path d="M229.7,272 V133.7 Q229.7,129.7 233.7,129.7 H249.7 Q253.7,129.7 253.7,133.7 V272 Z" fill="#3b82f6" /></g>
+                    <text x="241.7" y="292" text-anchor="middle" class="chart-axis">Apr</text>
+                    <g class="bar"><title>May: 5.25 kWh per square meter per day</title><rect x="269.3" y="32" width="55.3" height="240" fill="transparent" /><path d="M285.0,272 V96.0 Q285.0,92.0 289.0,92.0 H305.0 Q309.0,92.0 309.0,96.0 V272 Z" fill="#3b82f6" /></g>
+                    <text x="297.0" y="292" text-anchor="middle" class="chart-axis">May</text>
+                    <g class="bar"><title>June: 5.73 kWh per square meter per day</title><rect x="324.7" y="32" width="55.3" height="240" fill="transparent" /><path d="M340.3,272 V79.5 Q340.3,75.5 344.3,75.5 H360.3 Q364.3,75.5 364.3,79.5 V272 Z" fill="#3b82f6" /></g>
+                    <text x="352.3" y="292" text-anchor="middle" class="chart-axis">Jun</text>
+                    <g class="bar"><title>July: 6.33 kWh per square meter per day</title><rect x="380.0" y="32" width="55.3" height="240" fill="transparent" /><path d="M395.7,272 V59.0 Q395.7,55.0 399.7,55.0 H415.7 Q419.7,55.0 419.7,59.0 V272 Z" fill="#3b82f6" /></g>
+                    <text x="407.7" y="292" text-anchor="middle" class="chart-axis">Jul</text>
+                    <text x="407.7" y="47.0" text-anchor="middle" class="chart-value">6.33</text>
+                    <g class="bar"><title>August: 5.40 kWh per square meter per day</title><rect x="435.3" y="32" width="55.3" height="240" fill="transparent" /><path d="M451.0,272 V90.9 Q451.0,86.9 455.0,86.9 H471.0 Q475.0,86.9 475.0,90.9 V272 Z" fill="#3b82f6" /></g>
+                    <text x="463.0" y="292" text-anchor="middle" class="chart-axis">Aug</text>
+                    <g class="bar"><title>September: 3.91 kWh per square meter per day</title><rect x="490.7" y="32" width="55.3" height="240" fill="transparent" /><path d="M506.3,272 V141.9 Q506.3,137.9 510.3,137.9 H526.3 Q530.3,137.9 530.3,141.9 V272 Z" fill="#3b82f6" /></g>
+                    <text x="518.3" y="292" text-anchor="middle" class="chart-axis">Sep</text>
+                    <g class="bar"><title>October: 2.28 kWh per square meter per day</title><rect x="546.0" y="32" width="55.3" height="240" fill="transparent" /><path d="M561.7,272 V197.8 Q561.7,193.8 565.7,193.8 H581.7 Q585.7,193.8 585.7,197.8 V272 Z" fill="#3b82f6" /></g>
+                    <text x="573.7" y="292" text-anchor="middle" class="chart-axis">Oct</text>
+                    <g class="bar"><title>November: 1.22 kWh per square meter per day</title><rect x="601.3" y="32" width="55.3" height="240" fill="transparent" /><path d="M617.0,272 V234.2 Q617.0,230.2 621.0,230.2 H637.0 Q641.0,230.2 641.0,234.2 V272 Z" fill="#1e40af" /></g>
+                    <text x="629.0" y="292" text-anchor="middle" class="chart-axis">Nov</text>
+                    <g class="bar"><title>December: 0.85 kWh per square meter per day</title><rect x="656.7" y="32" width="55.3" height="240" fill="transparent" /><path d="M672.3,272 V246.9 Q672.3,242.9 676.3,242.9 H692.3 Q696.3,242.9 696.3,246.9 V272 Z" fill="#1e40af" /></g>
+                    <text x="684.3" y="292" text-anchor="middle" class="chart-axis">Dec</text>
+                    <text x="684.3" y="234.9" text-anchor="middle" class="chart-value">0.85</text>
+                  </svg>
+                </div>
+                <details class="mt-4 text-sm text-gray-700">
+                  <summary class="cursor-pointer font-semibold">Show the numbers</summary>
+                  <table class="w-full mt-3 border-collapse">
+                    <caption class="sr-only">Average daily sunlight on flat ground near Seattle by month, kWh per square meter per day, 2001-2020</caption>
+                    <thead>
+                      <tr class="border-b border-gray-300">
+                        <th class="text-left py-1 pr-4">Month</th>
+                        <th class="text-right py-1">kWh per square meter per day</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {solarByMonth.map((row) => (
+                        <tr class="border-b border-gray-100">
+                          <td class="py-1 pr-4">{row.month}</td>
+                          <td class="py-1 text-right tabular-nums">{row.value}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </details>
+              </div>
+              <figcaption class="text-sm text-gray-600 mt-2 italic text-center">
+                Source: NASA POWER, all-sky surface shortwave climatology for the Seattle area, 2001-2020. Tilted panels catch more than flat ground in winter, but the shape of the year doesn't change.
+              </figcaption>
+            </figure>
+
+            <p>
+              It's wet, too. NOAA's 1991-2020 <a href="https://www.ncei.noaa.gov/access/us-climate-normals/#dataset=normals-monthly&timeframe=30&station=USW00024233" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">climate normals for Sea-Tac Airport</a> come to 39.34 inches of precipitation a year, about 75% of it falling October through March. A typical December brings measurable precipitation on 18 of its 31 days. <a href="https://www.ncei.noaa.gov/access/us-climate-normals/#dataset=normals-monthly&timeframe=30&station=USW00024227" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Olympia Airport</a> is wetter: 50.62 inches a year, 78% of it October through March, and about 20 days with measurable precipitation in a typical December.
+            </p>
+            <br>
+
+            <p>
+              This winter may lean drier than that. NOAA's <a href="https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Climate Prediction Center</a> said on October 8 that a strong to very strong El Niño is likely through January-March 2027. Deputy State Climatologist Karin Bumbaco told the <a href="https://environment.uw.edu/news/2026/08/what-to-expect-from-a-very-strong-el-nino-in-the-pacific-northwest/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">UW College of the Environment</a> in August that El Niño years usually bring "lower precipitation than normal, particularly west of the Cascades," and added, "We're definitely not guaranteed to see the same thing this winter." A drier winter would help a solar panel a little. It does nothing for the day length or the angle of the sun, and those two set the ceiling.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">2. What happens on the fifth gray day in a row</h2>
+
+            <p>
+              A solar trailer runs like a bank account. The panels are the income and the battery is the balance. The cameras, infrared lights, recorder and cellular modem are the spending, and they spend around the clock. In July the income beats the spending and the battery refills every day. In December, on a lot of days, it doesn't, so the balance drops a little each day until the sun comes back or something else adds to it.
+            </p>
+            <br>
+
+            <p>
+              Here's a worked example with round, hypothetical numbers, not a spec for our trailers or anyone else's. Say the equipment draws an average of 100 watts, day and night. That's 2.4 kWh a day. Give it 1,000 watts of panels. On NASA's average December day of 0.85 kWh per square meter on flat ground, those panels collect a bit under 1 kWh before wiring and charging losses. Even if tilting them toward the south doubled that, it still wouldn't cover 2.4 kWh. So the battery makes up the difference, about 1.5 kWh on an average December day and more on a dark one. With 10 kWh of usable battery, that's roughly six average December days from full, and fewer if the stretch is darker than average. In July the same panels collect about 6.3 kWh a day, more than twice what the equipment uses.
+            </p>
+            <br>
+
+            <p>
+              Long nights add to the load. On December 21 there are more than 15 and a half hours between sunset and sunrise in Seattle, and infrared night vision runs the whole time. Winter is when the cameras work hardest and the panels work least.
+            </p>
+            <br>
+
+            <p>
+              Cold adds a less obvious problem. If the battery bank is lithium iron phosphate (LiFePO4), a common choice for off-grid solar, it shouldn't be charged when it's too cold. <a href="https://battlebornbatteries.com/blogs/academy/understanding-temperature-limits-of-lifepo4-batteries-the-battle-born-educational-series" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Battle Born Batteries</a> says its LiFePO4 batteries shouldn't be charged below about 25 degrees F unless they have internal heating, and that the battery management system blocks charging outside safe limits. Victron's Smart lithium batteries have a higher floor: a <a href="https://www.victronenergy.com/blog/2018/11/28/victronconnect-now-with-smart-lithium-update/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">2018 Victron update</a> blocks charging below 5 degrees C (41 degrees F). Discharging is fine at much lower temperatures, down to about -4 degrees F by Battle Born's figure, so the cameras keep running. What you lose is charging time.
+            </p>
+            <br>
+
+            <p>
+              That matters more the farther south you go on I-5. NOAA's normals give Olympia 77 nights a year at or below freezing and a normal December low of 32.8 degrees F. Sea-Tac averages 25 freezing nights a year, and its December normal low of 37.1 degrees is still under Victron's 41-degree floor. On a frosty Olympia morning, an unheated battery in a cold enclosure may not take a charge until it warms up, and in December the useful sun only lasts a few hours.
+            </p>
+            <br>
+
+            <p>
+              None of this means solar doesn't work here. It means a winter-ready setup has backup charging that doesn't depend on the sun, usually a generator, or shore power (a plug-in to the site's electrical service) where there is one. It also needs someone who can see the battery level before it turns into a problem.
+            </p>
+
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
+              <p class="font-semibold text-blue-900 mb-3">Questions to ask before a solar camera goes on a winter site</p>
+              <p class="text-blue-900 mb-3">Ask these of any vendor, us included.</p>
+              <ul class="pl-6 space-y-3 text-blue-900" style="list-style-type: '- ';">
+                <li>How many days does this exact configuration run with no sun at its December load, with infrared on all night?</li>
+                <li>What charges the battery when the panels can't: a generator, shore power or nothing? Does the generator start on its own, and how often does it need fuel?</li>
+                <li>Who watches the battery level, and what happens when it gets low?</li>
+                <li>Is the battery heated or insulated, and what does it do on a 25-degree morning?</li>
+                <li>When power gets tight, what shuts off first, and does recording stay on?</li>
+                <li>How long does the recorder keep footage, and how do I export a clip?</li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">3. Power out, cell network down: what keeps recording</h2>
+
+            <p>
+              When people ask whether a camera "works," they usually mean three things: it's recording, you can watch it live, and it tells you when something happens. Each of those depends on different pieces, and in a storm they fail separately.
+            </p>
+            <br>
+
+            <p>
+              Recording happens on the trailer. As long as the trailer has power, the recorder keeps writing video, with or without a cellular connection. Live view needs the trailer, the cellular network and your phone all working. Alerts need all of that plus the service that sends them.
+            </p>
+            <br>
+
+            <p>
+              A trailer on its own solar and battery doesn't care whether the grid is up. Cameras plugged into a jobsite's temporary power do, unless they have their own battery backup. The November 2024 bomb cyclone is the reference case around here. Outages across the region topped 640,000 on the night of November 19, <a href="https://www.kuow.org/stories/2-killed-more-than-600-000-without-power-western-washington-bomb-cyclone" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">KUOW reported</a>, and three days later Puget Sound Energy still had more than 166,000 customers affected (<a href="https://www.knkx.org/environment/2024-11-22/seattle-washingon-wind-storm-weather-november-power-outages" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">KNKX, from the Associated Press</a>).
+            </p>
+            <br>
+
+            <p>
+              The cellular network is a different story, because cell sites need power too. During that storm, <a href="https://www.verizon.com/about/news/verizon-relief-pacific-northwest-storm" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Verizon said</a> "massive refueling operations continue to ensure those sites without commercial power remain in service." That's the carriers doing their job, and a reminder that part of the network was running on generators. If the nearest cell site goes down or gets overloaded, a solar trailer keeps recording, but live view and alerts wait until the connection comes back. A trailer that can fail over between cellular networks narrows that gap.
+            </p>
+            <br>
+
+            <p>
+              Two habits follow from this. After any storm, check the trailer and pull the clips you need instead of assuming an alert would have told you. And know your recorder's retention, because footage from a cell outage only helps if you get to it before the archive loops over it.
+            </p>
+
+            <!-- Supporting image: dark jobsite during a storm outage -->
+            <figure class="my-10">
+              <LazyImage src="/images/solar-winter-outage-night.webp"
+                alt="A Western Washington construction site at night during a windstorm power outage, with rain blowing sideways, Douglas firs bending, an unlit floodlight on a temporary power pole and dark houses in the background"
+                class="w-full rounded-lg shadow-lg" width="1600" height="900" loading="lazy" />
+              <figcaption class="text-sm text-gray-600 mt-2 italic text-center">
+                When the utility goes down, everything on the temporary power pole goes with it: site lights, the job trailer's heat, and any camera without its own battery.
+              </figcaption>
+            </figure>
+
+            <div class="my-12">
+              <ComparisonTable
+                title="What Keeps Working When Something Fails"
+                description="For a solar trailer with an onboard recorder and a cellular connection"
+                headers={["Recording on the trailer", "Live view on your phone", "Alerts"]}
+                rows={[
+                  {
+                    feature: "Utility power out in the area",
+                    values: [{ text: "Yes", highlight: true }, "Yes, if the cell network is up", "Yes, if the cell network is up"]
+                  },
+                  {
+                    feature: "Cell network down or overloaded",
+                    values: [{ text: "Yes", highlight: true }, "No, until the connection returns", "No, until the connection returns"]
+                  },
+                  {
+                    feature: "Trailer battery runs flat with no backup charging",
+                    values: ["No", "No", "No"]
+                  },
+                  {
+                    feature: "Lens covered by rain, frost or a spider web",
+                    values: ["Yes, with a degraded picture", "Yes, with the same degraded picture", "False or missed alerts possible"]
+                  }
+                ]}
+              />
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">4. Where to park a solar trailer for a Puget Sound winter</h2>
+
+            <p>
+              Placement is the part you control. A spot that looked sunny on an August walk-through can sit in shade all day in December.
+            </p>
+            <br>
+
+            <p>
+              The geometry explains it. With the sun about 19 degrees up at noon on December 21, anything on the south side of the trailer casts a shadow about three times its height. A 100-foot Douglas fir throws a shadow around 290 feet long at noon. At 9 a.m., with the sun about 7 degrees up in the southeast, that shadow runs well over 700 feet. At noon in June, the same tree's shadow is about 45 feet. (Those lengths come from the Naval Observatory's sun positions for Seattle and simple trigonometry.)
+            </p>
+            <br>
+
+            <p>
+              So look south. Stand where you plan to park and check what's between you and the southern sky: firs, the building next door, stacked materials, and the building you're putting up. A four-story frame on the south side of the lot in October can have the trailer in its shadow by January.
+            </p>
+
+            <!-- Supporting image: long fir shadows across a jobsite -->
+            <figure class="my-10">
+              <LazyImage src="/images/solar-winter-fir-shadows.webp"
+                alt="A muddy construction site in Western Washington with a low winter sun shining through a row of tall Douglas firs, throwing long shadows across the wet gravel toward a skid steer and stacked materials"
+                class="w-full rounded-lg shadow-lg" width="1600" height="900" loading="lazy" />
+              <figcaption class="text-sm text-gray-600 mt-2 italic text-center">
+                Low winter sun through a stand of firs. Shadows like these sweep across a site for hours on a December day, and a panel sitting in one gets only a fraction of the light.
+              </figcaption>
+            </figure>
+
+            <h3 class="text-2xl font-semibold mb-4">The rest of the winter setup</h3>
+
+            <ul class="pl-6 space-y-3 mb-6" style="list-style-type: '- ';">
+              <li><strong>Firm, drained ground.</strong> A trailer on soft fill or in a low spot can settle or end up standing in water. Put it on gravel or pavement, level, somewhere a truck can still reach after a week of rain.</li>
+              <li><strong>Access for fuel and service.</strong> If the trailer has a generator, somebody has to get to it. Don't let material deliveries box it in.</li>
+              <li><strong>Wind and trees.</strong> The September 25 storm brought a 54 mph gust to Olympia, and meteorologist Scott Sistek noted in his <a href="https://emeraldcityweather.com/northwest-windstorm-101-mph-gust-mount-rainier-seattle-weather/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Emerald City Weather write-up</a> that with trees still in leaf, it took less wind than usual to knock out power. Keep the trailer out from under trees that could come down, and follow the manufacturer's wind guidance for mast height.</li>
+              <li><strong>Clean panels.</strong> Rain rinses them, but fir needles, moss and mud thrown up by equipment stay put. Add the panels to the weekly site walk. Snow is less common in the lowlands, with normals of 6.3 inches a year at Sea-Tac and 3.9 at Olympia, but a covered panel produces almost nothing until the snow slides off or gets brushed off.</li>
+              <li><strong>Camera views.</strong> Rain beads on a dome and blurs the picture. Low winter sun shines straight into cameras facing southeast in the morning and southwest in the afternoon. Site lights flare in the rain. And a spider web across a lens lights up under infrared and can set off motion alerts all night. Aim with that in mind, and wipe the domes when you clean the panels.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">5. A winter checklist for Tacoma, Seattle and Olympia jobsites</h2>
+
+            <p>
+              Power is only part of it. Here's the rest of a winter list, short enough to actually use.
+            </p>
+
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-6">
+              <ul class="pl-6 space-y-3 text-blue-900" style="list-style-type: '- ';">
+                <li><strong>Gates and fence.</strong> Chain and lock every gate at the end of the day, including the one the last sub uses. Walk the fence line after every windstorm, because a tree across the fence works like an open gate.</li>
+                <li><strong>Materials.</strong> Lock up wire, tools and small equipment, or stage them where a camera can see them. Our <a href="/blog/copper-theft-seattle-tacoma-construction-sites" class="text-blue-700 hover:underline">copper theft guide</a> covers what thieves go after on Puget Sound jobsites.</li>
+                <li><strong>Lighting.</strong> Put site lights on a photocell instead of a timer set in September. From November 1 through most of January the sun sets before 5 p.m., and a timer that still thinks it's summer leaves the first hours of the night dark.</li>
+                <li><strong>Equipment.</strong> Park machines inside the fence and inside a camera's view, take the keys, and disable what you can.</li>
+                <li><strong>After-hours contacts.</strong> Decide who gets the alerts, who calls 911 and who drives out, and write down the backups for holiday weeks. Our <a href="/blog/holiday-construction-site-theft-prevention-guide" class="text-blue-700 hover:underline">holiday construction site security guide</a> covers the Thanksgiving-to-New-Year stretch.</li>
+                <li><strong>Storm warnings.</strong> When a wind or winter storm warning goes out, check the trailer's battery and fuel the day before, not the morning after.</li>
+                <li><strong>Night views.</strong> Once a month as the days shorten, look at each camera's night picture and re-aim anything that has lost its view to a new wall or a stack of materials.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">6. Where cameras help on a winter site, and where they don't</h2>
+
+            <p>
+              Winter stretches the hours nobody is on site. From mid-November into the first days of January, a crew that leaves at 4:30 walks out after sunset, and nobody is back until morning. Cameras cover exactly those hours. They tell you when someone is inside the fence, give police a call backed by live video, and leave a record for the insurance claim. Our <a href="/blog/washington-security-camera-laws-audio-license-plate-readers-2026" class="text-blue-600 hover:underline">Washington security camera laws guide</a> explains how Seattle and Tacoma police treat video-verified calls, and why audio recording needs care.
+            </p>
+            <br>
+
+            <p>
+              They don't lock a gate, and they won't stop someone determined who figures nobody will show up in time. Heavy rain and fog cut how far they can see. And a camera on a dead battery records nothing, which is why the first four sections of this guide are about power.
+            </p>
+            <br>
+
+            <p>
+              Our trailers run on solar with a generator for backup, so they don't need site power. Each one carries 4 cameras: 1 fixed fisheye and 3 PTZ cameras with 25x optical zoom and infrared. They connect over 4G/5G with automatic failover, and you monitor them yourself, 24/7, from your phone or computer; there's no staffed monitoring center. The recorder on the trailer keeps two weeks of motion-only footage by default, extendable in special cases. Equipment training and 24/7 technical support come with every rental, and professional delivery and setup are available. How a trailer handles December depends on the site, the camera settings and the weather, so tell us where the job is and how long it runs, and we'll talk through how the power setup will cope. Our <a href="/trailer-standalone-hybrid-power-architecture" class="text-blue-600 hover:underline">power system page</a> shows how solar, battery and generator fit together.
+            </p>
+            <br>
+
+            <p>
+              Pricing depends on rental length, site and configuration. Call <a href="tel:2536832288" class="text-blue-600 hover:underline">(253) 683-2288</a> for a quote, or see <a href="/pricing" class="text-blue-600 hover:underline">rental options &amp; quotes</a>.
+            </p>
+
+            <!-- Supporting image: trailer placed in the open at an Olympia-area site -->
+            <figure class="my-10">
+              <LazyImage src="/images/solar-winter-olympia-placement.webp"
+                alt="A solar-powered CCTV Trailer surveillance unit parked in an open, unshaded part of a gravel construction lot near Olympia, Washington, on an overcast November day, with Douglas firs only along the far edge of the site"
+                class="w-full rounded-lg shadow-lg" width="1600" height="900" loading="lazy" />
+              <figcaption class="text-sm text-gray-600 mt-2 italic text-center">
+                Open sky above the panels, firm gravel underneath, and the tall trees well away. On a December site, that spot is worth more than a slightly better camera angle.
+              </figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">Frequently Asked Questions</h2>
+            <div class="space-y-6">
+              {faqs.map((faq) => (
+                <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h3 class="text-xl font-semibold mb-3">{faq.question}</h3>
+                  <p class="text-gray-700 leading-relaxed">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold mb-6 mt-12">Plan for December, Not July</h2>
+
+            <p>
+              A solar camera that runs fine in August tells you very little about December 21, when Seattle gets eight and a half hours of daylight, the sun peaks at 19 degrees, and rain falls on most days of the month. Ask what the setup does on the fifth gray day, where the backup charging comes from and who is watching the battery. Park it in the open with a clear view of the southern sky. Then give the rest of the site the same attention: gates, lights on photocells, materials put away, and a call list that covers the holidays.
+            </p>
+            <br>
+
+            <p>
+              Planning winter construction in Tacoma, Seattle or Olympia? <a href="/contact" class="text-blue-600 hover:underline font-semibold">Request a surveillance trailer quote</a> or call us at <a href="tel:2536832288" class="text-blue-600 hover:underline font-semibold">(253) 683-2288</a>. We're glad to walk the site with you, including where the trees and the new building will throw shade by January. We cover <a href="/tacoma-security-trailer" class="text-blue-600 hover:underline">Tacoma</a>, <a href="/seattle-surveillance-rental" class="text-blue-600 hover:underline">Seattle</a>, <a href="/olympia-mobile-cctv" class="text-blue-600 hover:underline">Olympia</a> and everything in between.
+            </p>
+          </section>
+
+          <!-- About Section -->
+          <div class="bg-gray-50 border border-gray-200 rounded-lg p-8 mt-12">
+            <h3 class="text-xl font-bold mb-4">About CCTV Trailer</h3>
+            <p class="text-gray-700 mb-4">
+              CCTV Trailer provides mobile surveillance across the Puget Sound region from Tacoma, with same-day delivery available throughout Pierce, King, Snohomish, and Kitsap counties (call (253) 683-2288 to check availability). Our solar-powered trailers carry 4 cameras (1 fixed fisheye + 3 PTZ with 25x optical zoom and IR) with AI-powered alerts for 24/7 self-monitoring, remote viewing on your mobile devices or computer, and 4G/5G connectivity with automatic failover. Optional PA two-way audio, license plate reading, radar, and LED floodlights get added site by site, only where they fit.
+            </p>
+            <p class="text-gray-700">
+              We work with developers, property managers, general contractors and public agencies that need coverage without the cost and timeline of permanent camera installations. <a href="/about" class="text-blue-600 hover:underline">Learn more about our team and technology</a>.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <CTASection
+      title="Planning Winter Construction in Tacoma, Seattle or Olympia?"
+      description="Request a surveillance trailer quote for your site. We'll talk through where the trailer should sit for winter sun, how it stays powered when the sun doesn't cooperate, and who gets the alerts. Same-day delivery available across Pierce, King, Snohomish, and Kitsap counties, with service to Olympia and Thurston County - call to check availability."
+      features={["✓ Solar Power with Generator Backup", "✓ No Site Power Needed"]}
+    />
+
+    <!-- Related Pages -->
+    <RelatedPages pages={relatedPages} />
+
+  <AuthorBio />
+
+  </article>
+
+  <Footer />
+</Layout>
+
+<style>
+  .solar-chart {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .solar-chart .chart-axis {
+    font-size: 14px;
+    fill: #4b5563;
+  }
+  .solar-chart .chart-value {
+    font-size: 15px;
+    font-weight: 600;
+    fill: #111827;
+  }
+  .solar-chart .bar path {
+    transition: opacity 0.15s ease;
+  }
+  .solar-chart .bar:hover path {
+    opacity: 0.75;
+  }
+  @media (max-width: 640px) {
+    .solar-chart .chart-axis {
+      font-size: 24px;
+    }
+    .solar-chart .chart-value {
+      font-size: 26px;
+    }
+  }
+</style>
