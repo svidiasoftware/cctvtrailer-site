@@ -61,7 +61,7 @@ const techSpecsSchema = {
     { "@type": "PropertyValue", "name": "Camera System", "value": "4 cameras per trailer: 1 fixed fisheye (360° panoramic overview) + 3 PTZ cameras with 25x optical zoom and infrared (IR) night vision." },
     { "@type": "PropertyValue", "name": "PTZ Control", "value": "Per-camera enable/disable, bulk multi-camera editing, presets, 25x optical zoom." },
     { "@type": "PropertyValue", "name": "Storage Capacity", "value": "Two weeks of motion-only recording with automatic FIFO looping by default, extendable in special cases; optional archive day cap (footage older than the set number of days is deleted automatically); on-device encryption." },
-    { "@type": "PropertyValue", "name": "Power Options", "value": "Solar panels with intelligent battery management, optional gas backup generator, shore-power connection." },
+    { "@type": "PropertyValue", "name": "Power Options", "value": "Solar panels with heated batteries and intelligent battery management, included gas backup generator that starts automatically on low battery voltage, shore-power connection." },
     { "@type": "PropertyValue", "name": "Connectivity", "value": "4G/5G cellular, Wi-Fi, and Starlink satellite - automatic failover between transports." },
     { "@type": "PropertyValue", "name": "Construction", "value": "Reinforced steel, weatherproof rating for year-round Pacific Northwest deployment, vandal-resistant enclosure." },
     { "@type": "PropertyValue", "name": "Mast Height", "value": "Adjustable electric/hydraulic mast for elevated camera placement." },
@@ -197,7 +197,7 @@ const faqItems = [
   },
   {
     question: "How is power handled on remote sites?",
-    answer: "Solar panels with an intelligent battery management system are the primary power source. An optional gas backup generator extends operation through long winter cloud cover, and shore-power connection is available where a site has utility power. The power management is tuned for short Pacific Northwest winter days."
+    answer: "Solar panels with an intelligent battery management system are the primary power source. A gas backup generator, included with every rental, starts automatically when battery voltage drops and extends operation through long winter cloud cover, and shore-power connection is available where a site has utility power. The power management is tuned for short Pacific Northwest winter days."
   },
   {
     question: "Is the trailer weatherproof?",
@@ -309,7 +309,7 @@ const howToSteps = [
             <li><a href="#vigil" class="text-blue-700 hover:underline">Vigil AI alert triage</a> - multi-model edge + cloud inference, 0-5 severity scale, autonomous noise suppression</li>
             <li><a href="#fdc" class="text-blue-700 hover:underline">FDC codec &amp; storage</a> - the S-VIDIA codec plus first-party measured A/B vs x264/x265 and the Puget Sound fleet pilot</li>
             <li><a href="#remote-viewing" class="text-blue-700 hover:underline">Remote access</a> - browser, Windows desktop app, iOS / Android apps, with measured constrained-link &amp; live-uplink benchmarks</li>
-            <li><a href="#hardware" class="text-blue-700 hover:underline">Camera, power &amp; construction</a> - PTZ optics, solar + battery + optional generator, weatherproof enclosure</li>
+            <li><a href="#hardware" class="text-blue-700 hover:underline">Camera, power &amp; construction</a> - PTZ optics, solar + heated battery + included backup generator, weatherproof enclosure</li>
             <li><a href="#mcp" class="text-blue-700 hover:underline">AI-agent integration</a> - Model Context Protocol (MCP) server with 25 tools for direct LLM querying</li>
             <li><a href="#spec-tables" class="text-blue-700 hover:underline">Detailed spec tables</a> - everything as numbers, plus <a href="#faq" class="text-blue-700 hover:underline">FAQ</a> grounded in deployed-code behavior</li>
           </ul>
@@ -649,7 +649,7 @@ const howToSteps = [
             <h3 class="font-bold text-xl mb-3">Power management</h3>
             <ul class="space-y-2 text-gray-700 text-sm">
               <li>&bull; Solar panels with intelligent battery management</li>
-              <li>&bull; Optional gas backup generator for long cloud cover</li>
+              <li>&bull; Included gas backup generator for long cloud cover, auto-start on low battery voltage</li>
               <li>&bull; Shore-power connection where available</li>
               <li>&bull; Tuned for short PNW winter daylight</li>
               <li>&bull; Continuous operation in all weather</li>
@@ -1056,7 +1056,7 @@ const howToSteps = [
               <caption class="sr-only">Power and construction specifications</caption>
               <tbody>
                 <tr class="border-b"><td class="py-2 font-semibold w-2/5">Primary power:</td><td class="py-2">Solar + battery</td></tr>
-                <tr class="border-b"><td class="py-2 font-semibold">Backup power:</td><td class="py-2">Gas generator (optional)</td></tr>
+                <tr class="border-b"><td class="py-2 font-semibold">Backup power:</td><td class="py-2">Gas generator (included, auto-start)</td></tr>
                 <tr class="border-b"><td class="py-2 font-semibold">Shore power:</td><td class="py-2">Available where utility access exists</td></tr>
                 <tr class="border-b"><td class="py-2 font-semibold">Frame:</td><td class="py-2">Reinforced steel</td></tr>
                 <tr class="border-b"><td class="py-2 font-semibold">Weather rating:</td><td class="py-2">Pacific Northwest year-round</td></tr>
