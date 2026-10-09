@@ -45,10 +45,10 @@ const description = "Complete guide to meeting OSHA construction site security r
 
         <StatBox
           stats={[
-            { value: "$1-2B", label: "Annual Theft Losses", subtext: "Equipment & materials", color: "red" },
-            { value: "10-20%", label: "Premium Reduction", subtext: "With security", color: "green" },
-            { value: "89%", label: "Sites Experience Theft", subtext: "Industry average", color: "blue" },
-            { value: "7%", label: "Recovery Rate", subtext: "Stolen equipment", color: "purple" }
+            { value: "29 CFR 1926", label: "OSHA Construction Standards", subtext: "Federal safety rules", color: "red" },
+            { value: "WAC 296-155", label: "WA Construction Safety", subtext: "L&I standards", color: "green" },
+            { value: "24/7", label: "Self-Monitoring", subtext: "Real-time alerts to your phone", color: "blue" },
+            { value: "2 weeks", label: "Video Retention", subtext: "Default archive, extendable", color: "purple" }
           ]}
         />
 
@@ -147,38 +147,38 @@ const description = "Complete guide to meeting OSHA construction site security r
         </h2>
 
         <div class="bg-white p-8 rounded-lg shadow-lg mb-8">
-          <h3 class="text-2xl font-bold mb-6">How Security Reduces Your Insurance Costs</h3>
+          <h3 class="text-2xl font-bold mb-6">How Security Can Affect Your Insurance Costs</h3>
 
           <ComparisonTable
             headers={["Without Security", "With Mobile Surveillance"]}
             rows={[
-              { feature: "Base Premium Rate", values: ["100%", { text: "80-90%", highlight: true }] },
-              { feature: "Theft Deductible", values: ["$25,000", { text: "$10,000", highlight: true }] },
-              { feature: "Equipment Coverage Limit", values: ["$500,000", { text: "$1,000,000", highlight: true }] },
+              { feature: "Base Premium Rate", values: ["Standard rate", { text: "May qualify for a discount", highlight: true }] },
+              { feature: "Theft Deductible", values: ["Set by your policy", { text: "Ask about lower deductibles", highlight: true }] },
+              { feature: "Equipment Coverage Limit", values: ["Standard limits", { text: "Ask about higher limits", highlight: true }] },
               { feature: "Vandalism Coverage", values: ["Limited", { text: "Full Coverage", highlight: true }] },
               { feature: "Liability Protection", values: ["Standard", { text: "Enhanced", highlight: true }] },
-              { feature: "Claims Processing", values: ["30-45 days", { text: "7-14 days", highlight: true }] },
+              { feature: "Claims Processing", values: ["Slower without evidence", { text: "Faster with video evidence", highlight: true }] },
               { feature: "Risk Assessment Score", values: ["High Risk", { text: "Low-Medium Risk", highlight: true }] },
-              { feature: "Annual Review Adjustment", values: ["+5-10%", { text: "-5-10%", highlight: true }] }
+              { feature: "Annual Review Adjustment", values: ["Increases likely after losses", { text: "Documented security supports your rate", highlight: true }] }
             ]}
           />
         </div>
 
         <div class="grid md:grid-cols-3 gap-6">
           <div class="bg-white p-6 rounded-lg shadow">
-            <div class="text-3xl font-bold text-green-600 mb-2">5-15%</div>
-            <h4 class="font-semibold mb-2">General Liability Reduction</h4>
-            <p class="text-gray-600">Typical premium reduction with a full security system in place</p>
+            <div class="text-3xl font-bold text-green-600 mb-2">Ask</div>
+            <h4 class="font-semibold mb-2">General Liability</h4>
+            <p class="text-gray-600">Some carriers discount premiums when a full security system is in place</p>
           </div>
           <div class="bg-white p-6 rounded-lg shadow">
-            <div class="text-3xl font-bold text-green-600 mb-2">10-20%</div>
+            <div class="text-3xl font-bold text-green-600 mb-2">Document</div>
             <h4 class="font-semibold mb-2">Builder's Risk Insurance</h4>
-            <p class="text-gray-600">Premium reduction with monitored surveillance systems</p>
+            <p class="text-gray-600">Monitored surveillance gives underwriters something concrete to evaluate</p>
           </div>
           <div class="bg-white p-6 rounded-lg shadow">
-            <div class="text-3xl font-bold text-green-600 mb-2">$3K-10K</div>
-            <h4 class="font-semibold mb-2">Annual Savings</h4>
-            <p class="text-gray-600">Average savings per $100K in premiums</p>
+            <div class="text-3xl font-bold text-green-600 mb-2">Evidence</div>
+            <h4 class="font-semibold mb-2">Claims Support</h4>
+            <p class="text-gray-600">Timestamped footage helps document what happened when you file a claim</p>
           </div>
         </div>
       </div>
@@ -337,7 +337,7 @@ const description = "Complete guide to meeting OSHA construction site security r
               </h3>
               <div>
                 <p class="text-gray-600">
-                  Construction sites with a full security system typically see a 5-15% reduction in general liability premiums and 10-20% savings on builder's risk insurance. Average annual losses from theft range from $1-2 billion nationally, with 89% of sites experiencing theft.
+                  It depends on your carrier and policy. Some insurers offer discounts on general liability or builder's risk premiums when a site has a full security system with monitored surveillance. Ask your carrier what qualifies and what documentation they want to see.
                 </p>
               </div>
             </div>
@@ -359,7 +359,7 @@ const description = "Complete guide to meeting OSHA construction site security r
               </h3>
               <div>
                 <p class="text-gray-600">
-                  Most construction sites can achieve full compliance within 4 weeks: Week 1 for assessment, Week 2 for system deployment, Week 3 for documentation and training, and Week 4 for certification and insurance review.
+                  A typical site can work through compliance in about 4 weeks: Week 1 for assessment, Week 2 for system deployment, Week 3 for documentation and training, and Week 4 for certification and insurance review.
                 </p>
               </div>
             </div>
@@ -370,7 +370,7 @@ const description = "Complete guide to meeting OSHA construction site security r
               </h3>
               <div>
                 <p class="text-gray-600">
-                  24/7 monitoring is typically required by insurance carriers for high-value projects, sites with equipment over $500,000, or high-crime areas. While not mandated by OSHA, continuous monitoring can significantly reduce theft losses and insurance premiums. Depending on the carrier, 24/7 monitoring can mean self-monitoring with real-time alerts to your phone or computer, or a third-party monitoring service, so confirm what your policy accepts.
+                  Insurance carriers often require 24/7 monitoring for high-value projects, sites with expensive equipment, or high-crime areas. While not mandated by OSHA, continuous monitoring can help reduce theft losses and may help with insurance premiums. Depending on the carrier, 24/7 monitoring can mean self-monitoring with real-time alerts to your phone or computer, or a third-party monitoring service, so confirm what your policy accepts.
                 </p>
               </div>
             </div>
@@ -425,7 +425,7 @@ const description = "Complete guide to meeting OSHA construction site security r
         "name": "How much can I save on insurance with proper security?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Construction sites with a full security system typically see a 5-15% reduction in general liability premiums and 10-20% savings on builder's risk insurance. Average annual losses from theft range from $1-2 billion nationally, with 89% of sites experiencing theft."
+          "text": "It depends on your carrier and policy. Some insurers offer discounts on general liability or builder's risk premiums when a site has a full security system with monitored surveillance. Ask your carrier what qualifies and what documentation they want to see."
         }
       },
       {
@@ -441,7 +441,7 @@ const description = "Complete guide to meeting OSHA construction site security r
         "name": "How quickly can I achieve compliance?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Most construction sites can achieve full compliance within 4 weeks: Week 1 for assessment, Week 2 for system deployment, Week 3 for documentation and training, and Week 4 for certification and insurance review."
+          "text": "A typical site can work through compliance in about 4 weeks: Week 1 for assessment, Week 2 for system deployment, Week 3 for documentation and training, and Week 4 for certification and insurance review."
         }
       },
       {
@@ -449,7 +449,7 @@ const description = "Complete guide to meeting OSHA construction site security r
         "name": "Do I need 24/7 monitoring for compliance?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "24/7 monitoring is typically required by insurance carriers for high-value projects, sites with equipment over $500,000, or high-crime areas. While not mandated by OSHA, continuous monitoring can significantly reduce theft losses and insurance premiums. Depending on the carrier, 24/7 monitoring can mean self-monitoring with real-time alerts to your phone or computer, or a third-party monitoring service, so confirm what your policy accepts."
+          "text": "Insurance carriers often require 24/7 monitoring for high-value projects, sites with expensive equipment, or high-crime areas. While not mandated by OSHA, continuous monitoring can help reduce theft losses and may help with insurance premiums. Depending on the carrier, 24/7 monitoring can mean self-monitoring with real-time alerts to your phone or computer, or a third-party monitoring service, so confirm what your policy accepts."
         }
       }
     ]

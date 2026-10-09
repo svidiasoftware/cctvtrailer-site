@@ -24,12 +24,12 @@ const breadcrumbItems = [
   { name: "Puyallup Security" }
 ];
 
-// Crime statistics data
+// At-a-glance service facts (no unsourced crime figures)
 const crimeStats = [
-  { value: "1 in 19", label: "Property Crime Risk", highlight: true },
-  { value: "1 in 57", label: "Vehicle Theft Risk", highlight: true },
-  { value: "57", label: "Crimes per 1,000 Residents" },
-  { value: "96%", label: "WA Cities Safer Than Puyallup" }
+  { value: "Same-Day", label: "Delivery to Puyallup", highlight: true },
+  { value: "4 Cameras", label: "1 Fisheye + 3 PTZ with IR", highlight: true },
+  { value: "20-30 Min", label: "On-Site Setup" },
+  { value: "24/7", label: "Technical Support" }
 ];
 
 const relatedPages = [
@@ -113,11 +113,11 @@ const relatedPages = [
     <section class="bg-red-50 py-12">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-bold mb-6 text-center text-red-900">Puyallup Crime Statistics</h2>
+          <h2 class="text-3xl font-bold mb-6 text-center text-red-900">Puyallup Site Security at a Glance</h2>
           <StatBox stats={crimeStats} layout="grid" />
           <div class="mt-8 bg-white rounded-lg p-6 border-l-4 border-red-600">
             <p class="text-gray-700 font-semibold">
-              Vehicle theft runs especially high in Puyallup, which puts fairgrounds parking, farm equipment and business lots at risk. And 96% of Washington cities are safer than Puyallup, so sites here need a real security plan.
+              Vehicle and equipment theft are a real concern for fairgrounds parking, farm equipment and business lots in Puyallup, so sites here benefit from a real security plan.
             </p>
           </div>
         </div>
@@ -238,12 +238,12 @@ const relatedPages = [
           </p>
           <div class="grid md:grid-cols-3 gap-4 text-center mb-6">
             <div>
-              <div class="text-2xl font-bold text-green-600">50+</div>
-              <div class="text-sm">Fair Events Secured</div>
+              <div class="text-2xl font-bold text-green-600">Since 2009</div>
+              <div class="text-sm">Serving Puget Sound Events</div>
             </div>
             <div>
-              <div class="text-2xl font-bold text-green-600">1M+ sq ft</div>
-              <div class="text-sm">Event Space Covered</div>
+              <div class="text-2xl font-bold text-green-600">Same-Day</div>
+              <div class="text-sm">Delivery Available</div>
             </div>
             <div>
               <div class="text-2xl font-bold text-green-600">24/7</div>

@@ -5,7 +5,6 @@ import RelatedPages from '../components/RelatedPages.astro';
 import Analytics from '../components/Analytics.astro';
 import ServiceSchema from '../components/ServiceSchema.astro';
 import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
-import StatBox from '../components/StatBox.astro';
 import LazyImage from '../components/LazyImage.astro';
 
 // Schema data for the construction security service
@@ -64,14 +63,6 @@ const breadcrumbItems = [
   { name: "Home", url: "/" },
   { name: "Locations", url: "/about" },
   { name: "Seattle Security" }
-];
-
-// Crime statistics data
-const crimeStats = [
-  { value: "172.9%", label: "Above National Crime Average", highlight: true },
-  { value: "184.5%", label: "Above National Property Crime", highlight: true },
-  { value: "1 in 17", label: "Chance of Property Crime" },
-  { value: "#4", label: "Worst Crime Among Major US Cities" }
 ];
 
 const relatedPages = [
@@ -167,16 +158,15 @@ const relatedPages = [
       </div>
     </section>
 
-    <!-- Crime Statistics Alert -->
+    <!-- Security Challenge -->
     <section class="bg-red-50 py-12">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-bold mb-6 text-center text-red-900">Seattle's Security Challenge: The Statistics</h2>
-          <StatBox stats={crimeStats} layout="grid" />
-          <div class="mt-8 bg-white rounded-lg p-6 border-l-4 border-red-600">
+          <h2 class="text-3xl font-bold mb-6 text-center text-red-900">Seattle's Security Challenge</h2>
+          <div class="bg-white rounded-lg p-6 border-l-4 border-red-600">
             <p class="text-gray-700 font-semibold">
-              With property crime rates nearly double the national average and ranking 4th worst among major US cities,
-              Seattle businesses and construction sites carry real risk. Our surveillance trailers are a proven deterrent, and they record the evidence you need when something does happen.
+              Property crime is a constant concern for Seattle businesses and construction sites.
+              Our surveillance trailers are a visible deterrent, and they record the evidence you need when something does happen.
             </p>
           </div>
         </div>
@@ -304,7 +294,7 @@ const relatedPages = [
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="bg-white border-l-4 border-red-500 p-6 shadow-sm">
             <h3 class="font-bold text-lg mb-3 text-red-600">Construction Site Theft</h3>
-            <p class="text-gray-600">Seattle's $20+ billion construction boom attracts theft rings targeting tools and materials, especially in South Lake Union and Belltown development zones.</p>
+            <p class="text-gray-600">Seattle's construction boom attracts theft rings targeting tools and materials, especially in South Lake Union and Belltown development zones.</p>
           </div>
           <div class="bg-white border-l-4 border-orange-500 p-6 shadow-sm">
             <h3 class="font-bold text-lg mb-3 text-orange-600">Homeless Encampments</h3>
@@ -330,7 +320,7 @@ const relatedPages = [
           <div class="bg-white rounded-lg shadow-lg p-6">
             <div class="text-blue-600 font-semibold mb-2">Capitol Hill Mixed-Use Development</div>
             <h3 class="font-bold text-lg mb-3">15th Ave E Construction Site</h3>
-            <p class="text-gray-600 mb-4">Secured 18-month construction project for 200-unit apartment complex. Prevented $500K+ in tool theft and eliminated unauthorized access incidents.</p>
+            <p class="text-gray-600 mb-4">Secured an 18-month construction project for a 200-unit apartment complex. Tool theft and unauthorized access dropped off after the trailers went up.</p>
             <div class="text-sm text-gray-500">
               <span class="font-semibold">Challenge:</span> High foot traffic area with multiple access points
             </div>
@@ -341,7 +331,7 @@ const relatedPages = [
           <div class="bg-white rounded-lg shadow-lg p-6">
             <div class="text-green-600 font-semibold mb-2">Mariners Playoff Series</div>
             <h3 class="font-bold text-lg mb-3">SODO Parking Lot Security</h3>
-            <p class="text-gray-600 mb-4">Deployed 12 mobile units across parking facilities during October playoffs. Managed 40,000+ visitors per game with zero security incidents.</p>
+            <p class="text-gray-600 mb-4">Deployed 12 mobile units across parking facilities during the October playoffs to cover the lots through large game-day crowds.</p>
             <div class="text-sm text-gray-500">
               <span class="font-semibold">Challenge:</span> Massive crowds, limited staffing
             </div>
@@ -376,7 +366,7 @@ const relatedPages = [
                 <ul class="space-y-3">
                   <li class="flex items-start">
                     <span class="text-blue-600 mr-2 font-bold">•</span>
-                    <span><strong>200+</strong> Seattle construction sites secured since 2018</span>
+                    <span><strong>Since 2009</strong> protecting Puget Sound construction sites, Seattle included</span>
                   </li>
                   <li class="flex items-start">
                     <span class="text-blue-600 mr-2 font-bold">•</span>
@@ -384,7 +374,7 @@ const relatedPages = [
                   </li>
                   <li class="flex items-start">
                     <span class="text-blue-600 mr-2 font-bold">•</span>
-                    <span><strong>$2.5M+</strong> in theft prevented across King County</span>
+                    <span><strong>20-30 minute</strong> setup once the trailer is on site</span>
                   </li>
                   <li class="flex items-start">
                     <span class="text-blue-600 mr-2 font-bold">•</span>
@@ -405,7 +395,7 @@ const relatedPages = [
                   </div>
                   <div class="bg-white p-4 rounded-lg">
                     <div class="font-semibold text-purple-600">Weather Resilience</div>
-                    <p class="text-gray-600 text-sm">Equipment rated for Seattle's 150+ annual rain days and Pacific Northwest wind conditions.</p>
+                    <p class="text-gray-600 text-sm">Equipment rated for Seattle's long rainy season and Pacific Northwest wind conditions.</p>
                   </div>
                 </div>
               </div>
@@ -413,23 +403,23 @@ const relatedPages = [
             
             <!-- Seattle Statistics -->
             <div class="border-t border-gray-200 pt-8">
-              <h4 class="font-bold text-lg mb-4 text-center">Seattle Security Facts</h4>
+              <h4 class="font-bold text-lg mb-4 text-center">Seattle Rental Quick Facts</h4>
               <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 <div class="bg-white p-4 rounded-lg">
-                  <div class="text-2xl font-bold text-red-600">35%</div>
-                  <div class="text-sm text-gray-600">Construction theft increase 2023</div>
+                  <div class="text-2xl font-bold text-red-600">25x</div>
+                  <div class="text-sm text-gray-600">Optical zoom on each PTZ camera</div>
                 </div>
                 <div class="bg-white p-4 rounded-lg">
-                  <div class="text-2xl font-bold text-blue-600">$85K</div>
-                  <div class="text-sm text-gray-600">Average theft per construction site</div>
+                  <div class="text-2xl font-bold text-blue-600">2 weeks</div>
+                  <div class="text-sm text-gray-600">Default footage retention, extendable</div>
                 </div>
                 <div class="bg-white p-4 rounded-lg">
-                  <div class="text-2xl font-bold text-green-600">800+</div>
-                  <div class="text-sm text-gray-600">Active construction permits</div>
+                  <div class="text-2xl font-bold text-green-600">Solar</div>
+                  <div class="text-sm text-gray-600">Power with no hookup needed</div>
                 </div>
                 <div class="bg-white p-4 rounded-lg">
-                  <div class="text-2xl font-bold text-purple-600">15min</div>
-                  <div class="text-sm text-gray-600">SPD average response time</div>
+                  <div class="text-2xl font-bold text-purple-600">IR</div>
+                  <div class="text-sm text-gray-600">Night vision on PTZ cameras</div>
                 </div>
               </div>
             </div>

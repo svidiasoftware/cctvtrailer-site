@@ -17,7 +17,7 @@ const breadcrumbItems = [
 
 const serviceSchemaData = {
   serviceName: "Construction Site Vandalism Prevention",
-  description: "Stop vandalism and graffiti with 24/7 surveillance and self-monitoring. HD cameras and instant alerts help prevent $25,000+ damage costs and the project delays that follow.",
+  description: "Stop vandalism and graffiti with 24/7 surveillance and self-monitoring. HD cameras and instant alerts help you stop damage early and avoid the costly repairs and project delays that follow.",
   areaServed: [
     { type: "State" as const, name: "Washington" },
     { type: "City" as const, name: "Tacoma" },
@@ -35,7 +35,7 @@ const faqSchema = JSON.stringify({
       "name": "How much does vandalism cost construction projects?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Average vandalism incident costs $25,000-50,000 including repairs, cleanup, delays, and increased insurance. Graffiti removal alone averages $5,000-15,000 per incident."
+        "text": "It varies widely with the type of damage. A single incident can mean repairs, cleanup, schedule delays, and higher insurance costs, and graffiti on large surfaces often means repainting whole walls."
       }
     },
     {
@@ -43,7 +43,7 @@ const faqSchema = JSON.stringify({
       "name": "What types of vandalism affect construction sites?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Common vandalism includes graffiti/tagging, equipment damage, window breaking, arson attempts, dumping, fence cutting, and destruction of completed work. Weekend vandalism is most common."
+        "text": "Common vandalism includes graffiti/tagging, equipment damage, window breaking, arson attempts, dumping, fence cutting, and destruction of completed work. Weekends, when sites sit empty, are a high-risk time."
       }
     },
     {
@@ -51,7 +51,7 @@ const faqSchema = JSON.stringify({
       "name": "How effective is surveillance at preventing vandalism?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sites with visible surveillance experience 75-90% reduction in vandalism. Real-time alerts and motion-triggered audio warnings stop most vandals immediately, and the recorded video gives police evidence for prosecution."
+        "text": "Visible surveillance discourages a lot of opportunistic vandalism. Real-time alerts and motion-triggered audio warnings send many vandals running, and the recorded video gives police evidence for prosecution."
       }
     }
   ]
@@ -60,7 +60,7 @@ const faqSchema = JSON.stringify({
 
 <Layout
   title="Vandalism Prevention for Construction Sites | Stop Graffiti & Damage"
-  description="Prevent vandalism with 24/7 surveillance. Graffiti and property damage average $25,000+ per incident, and monitored sites see a proven 90% reduction."
+  description="Prevent construction site vandalism with 24/7 surveillance. Cameras, audio warnings, and instant alerts help stop graffiti, arson, and property damage. Same-day delivery available."
   schema={[faqSchema]}>
 
   <ServiceSchema {...serviceSchemaData} />
@@ -77,7 +77,7 @@ const faqSchema = JSON.stringify({
             ⚠️ ONE NIGHT OF VANDALISM = WEEKS OF DELAYS
           </div>
           <h1 class="text-4xl md:text-5xl font-bold mb-4">Stop Vandalism Before It Destroys Your Progress</h1>
-          <p class="text-xl mb-6">The average incident runs $25,000+, whether it's graffiti, arson or sabotaged equipment. Proven surveillance stops vandals before they get that far.</p>
+          <p class="text-xl mb-6">Graffiti, arson and sabotaged equipment can set a project back by weeks. Visible surveillance with audio warnings helps stop vandals before they get that far.</p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="tel:2536832288" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block text-center">
               🚨 24/7 Hotline: (253) 683-2288
@@ -95,9 +95,9 @@ const faqSchema = JSON.stringify({
       <div class="container mx-auto px-4">
         <QuickAnswer
           what="Vandalism prevention using HD surveillance and 24/7 self-monitoring"
-          problem="$3 billion annual vandalism damage, 60% of sites hit at least once"
+          problem="Graffiti, equipment sabotage, arson, and break-ins that lead to costly repairs and delays"
           solution="24/7 self-monitoring with motion detection, automated audio warnings, and instant alerts to your phone or computer"
-          effectiveness="75-90% reduction in vandalism, 95% prosecution rate with video"
+          effectiveness="Visible cameras and audio warnings discourage vandals, and timestamped HD video supports police reports and prosecution"
           coverage="Complete site coverage including perimeter, equipment, and structures"
           includes={[
             "4 cameras (1 fixed fisheye + 3 PTZ 25x zoom with IR)",
@@ -118,26 +118,26 @@ const faqSchema = JSON.stringify({
         <StatBox
           stats={[
             {
-              value: "$3B+",
-              label: "Annual Damage",
+              value: "Repairs",
+              label: "Damaged Work Redone",
               icon: "💥",
               highlight: true
             },
             {
-              value: "60%",
-              label: "Sites Vandalized",
+              value: "Cleanup",
+              label: "Graffiti & Debris",
               icon: "🎨",
               highlight: false
             },
             {
-              value: "$25K",
-              label: "Average Cost",
+              value: "Claims",
+              label: "Insurance Paperwork",
               icon: "💸",
               highlight: false
             },
             {
-              value: "2-3 Weeks",
-              label: "Typical Delays",
+              value: "Delays",
+              label: "Schedule Slips",
               icon: "⏰",
               highlight: false
             }
@@ -155,7 +155,7 @@ const faqSchema = JSON.stringify({
               <div class="text-2xl mb-3">🎨</div>
               <h4 class="font-bold text-lg mb-2">Graffiti & Tagging</h4>
               <ul class="text-sm space-y-1 text-gray-700 mb-3">
-                <li>• Removal cost: $5,000-15,000</li>
+                <li>• Pressure washing and chemical removal</li>
                 <li>• Repainting entire surfaces</li>
                 <li>• Gang territory marking</li>
                 <li>• Attracts more vandalism</li>
@@ -173,7 +173,7 @@ const faqSchema = JSON.stringify({
                 <li>• Sugar in fuel tanks</li>
                 <li>• Cut hydraulic lines</li>
                 <li>• Smashed windows/controls</li>
-                <li>• $10,000-50,000 repairs</li>
+                <li>• Costly repairs and downtime</li>
               </ul>
               <div class="text-xs bg-orange-100 p-2 rounded">
                 <strong>Risk:</strong> Revenge attacks, competitor sabotage
@@ -186,7 +186,7 @@ const faqSchema = JSON.stringify({
               <h4 class="font-bold text-lg mb-2">Arson & Fire</h4>
               <ul class="text-sm space-y-1 text-gray-700 mb-3">
                 <li>• Total loss potential</li>
-                <li>• $100,000-1M+ damage</li>
+                <li>• Damage to structure and materials</li>
                 <li>• Months of delays</li>
                 <li>• Insurance complications</li>
               </ul>
@@ -203,7 +203,7 @@ const faqSchema = JSON.stringify({
                 <li>• Broken windows: $500-2000 each</li>
                 <li>• Damaged drywall/framing</li>
                 <li>• Concrete defacement</li>
-                <li>• Rework costs: $20,000+</li>
+                <li>• Costly rework</li>
               </ul>
               <div class="text-xs bg-purple-100 p-2 rounded">
                 <strong>Risk:</strong> Requires complete reconstruction
@@ -216,7 +216,7 @@ const faqSchema = JSON.stringify({
               <h4 class="font-bold text-lg mb-2">Illegal Dumping</h4>
               <ul class="text-sm space-y-1 text-gray-700 mb-3">
                 <li>• Hazardous waste liability</li>
-                <li>• Cleanup: $5,000-25,000</li>
+                <li>• Costly cleanup and disposal</li>
                 <li>• EPA fines possible</li>
                 <li>• Site contamination</li>
               </ul>
@@ -233,7 +233,7 @@ const faqSchema = JSON.stringify({
                 <li>• Fence cutting/ramming</li>
                 <li>• Door/lock destruction</li>
                 <li>• Container break-ins</li>
-                <li>• $5,000-15,000 damage</li>
+                <li>• Repairs before the site is secure again</li>
               </ul>
               <div class="text-xs bg-blue-100 p-2 rounded">
                 <strong>Risk:</strong> Opens site to further crimes
@@ -284,7 +284,7 @@ const faqSchema = JSON.stringify({
               <div class="space-y-3">
                 <div class="border-b pb-2">
                   <strong class="text-red-700">Friday-Sunday Nights</strong>
-                  <p class="text-sm text-gray-600">75% of vandalism on weekends</p>
+                  <p class="text-sm text-gray-600">Sites sit empty from Friday evening to Monday morning</p>
                 </div>
                 <div class="border-b pb-2">
                   <strong class="text-red-700">Holiday Periods</strong>
@@ -309,7 +309,7 @@ const faqSchema = JSON.stringify({
           <!-- Escalation Warning -->
           <div class="bg-red-50 border-2 border-red-200 rounded-lg p-6 text-center">
             <h3 class="text-xl font-bold mb-3 text-red-900">⚠️ Vandalism Escalates Without Response</h3>
-            <p class="text-gray-700">Sites hit once are 3x more likely to be vandalized again. Each incident emboldens vandals and attracts copycats.</p>
+            <p class="text-gray-700">Sites that have been hit once tend to get hit again. Each incident emboldens vandals and attracts copycats.</p>
             <p class="mt-3 font-semibold text-red-800">First incident > Word spreads > Repeated attacks > Total project failure</p>
           </div>
         </div>
@@ -330,7 +330,7 @@ const faqSchema = JSON.stringify({
                 <div class="bg-indigo-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4">1</div>
                 <h3 class="text-xl font-bold">Visible Deterrence</h3>
               </div>
-              <p class="text-gray-700 mb-3">Highly visible surveillance stops 70% of vandals before they act</p>
+              <p class="text-gray-700 mb-3">Highly visible surveillance stops many vandals before they act</p>
               <div class="grid md:grid-cols-2 gap-4">
                 <ul class="text-sm space-y-1">
                   <li>✓ 20-foot elevated cameras</li>
@@ -426,7 +426,7 @@ const faqSchema = JSON.stringify({
             <div class="p-6">
               <div class="mb-4">
                 <p class="font-semibold text-red-600">Challenge:</p>
-                <p>Repeated graffiti attacks, $30K damage in first month</p>
+                <p>Repeated graffiti attacks in the first month</p>
               </div>
               <div class="mb-4">
                 <p class="font-semibold text-green-600">Solution:</p>
@@ -435,9 +435,8 @@ const faqSchema = JSON.stringify({
               <div class="mb-4">
                 <p class="font-semibold text-blue-600">Results:</p>
                 <ul class="list-disc list-inside text-gray-700">
-                  <li>4 vandals caught and prosecuted</li>
-                  <li>Zero incidents after arrests</li>
-                  <li>Saved $150,000 in potential damage</li>
+                  <li>Vandals caught on camera, with footage handed to police</li>
+                  <li>Graffiti attacks dropped off after the trailers went up</li>
                   <li>Project completed on time</li>
                 </ul>
               </div>
@@ -465,9 +464,8 @@ const faqSchema = JSON.stringify({
                 <p class="font-semibold text-blue-600">Results:</p>
                 <ul class="list-disc list-inside text-gray-700">
                   <li>Prevented second arson attempt</li>
-                  <li>6 arrests made with video evidence</li>
+                  <li>Video evidence handed to police</li>
                   <li>Gang moved operations elsewhere</li>
-                  <li>Insurance premiums reduced 30%</li>
                 </ul>
               </div>
               <div class="bg-green-50 p-4 rounded">
@@ -477,22 +475,22 @@ const faqSchema = JSON.stringify({
           </div>
         </div>
 
-        <!-- ROI Statistics -->
+        <!-- Deployment Facts -->
         <div class="mt-12 max-w-4xl mx-auto">
           <div class="bg-indigo-100 border-2 border-indigo-300 rounded-lg p-8 text-center">
-            <h3 class="text-2xl font-bold mb-4">Proven Vandalism Prevention Results</h3>
+            <h3 class="text-2xl font-bold mb-4">What Every Trailer Brings to Your Site</h3>
             <div class="grid md:grid-cols-3 gap-6">
               <div>
-                <div class="text-3xl font-bold text-indigo-700">90%</div>
-                <p class="text-gray-700">Reduction in incidents</p>
+                <div class="text-3xl font-bold text-indigo-700">4 Cameras</div>
+                <p class="text-gray-700">1 fixed fisheye + 3 PTZ with IR</p>
               </div>
               <div>
-                <div class="text-3xl font-bold text-indigo-700">95%</div>
-                <p class="text-gray-700">Prosecution rate</p>
+                <div class="text-3xl font-bold text-indigo-700">24/7</div>
+                <p class="text-gray-700">Self-monitoring with instant alerts</p>
               </div>
               <div>
-                <div class="text-3xl font-bold text-indigo-700">100%</div>
-                <p class="text-gray-700">Insurance approval</p>
+                <div class="text-3xl font-bold text-indigo-700">2 Weeks</div>
+                <p class="text-gray-700">Default video retention, extendable</p>
               </div>
             </div>
           </div>
@@ -584,17 +582,17 @@ const faqSchema = JSON.stringify({
         <div class="max-w-3xl mx-auto space-y-6">
           <div class="bg-white rounded-lg p-6 shadow">
             <h3 class="font-bold text-lg mb-2">How much does vandalism cost construction projects?</h3>
-            <p class="text-gray-700">Average vandalism incident costs $25,000-50,000 including repairs, cleanup, delays, and increased insurance. Graffiti removal alone averages $5,000-15,000 per incident.</p>
+            <p class="text-gray-700">It varies widely with the type of damage. A single incident can mean repairs, cleanup, schedule delays, and higher insurance costs, and graffiti on large surfaces often means repainting whole walls.</p>
           </div>
 
           <div class="bg-white rounded-lg p-6 shadow">
             <h3 class="font-bold text-lg mb-2">What types of vandalism affect construction sites?</h3>
-            <p class="text-gray-700">Common vandalism includes graffiti/tagging, equipment damage, window breaking, arson attempts, dumping, fence cutting, and destruction of completed work. Weekend vandalism is most common.</p>
+            <p class="text-gray-700">Common vandalism includes graffiti/tagging, equipment damage, window breaking, arson attempts, dumping, fence cutting, and destruction of completed work. Weekends, when sites sit empty, are a high-risk time.</p>
           </div>
 
           <div class="bg-white rounded-lg p-6 shadow">
             <h3 class="font-bold text-lg mb-2">How effective is surveillance at preventing vandalism?</h3>
-            <p class="text-gray-700">Sites with visible surveillance experience 75-90% reduction in vandalism. Real-time alerts and motion-triggered audio warnings stop most vandals immediately, and the recorded video gives police evidence for prosecution.</p>
+            <p class="text-gray-700">Visible surveillance discourages a lot of opportunistic vandalism. Real-time alerts and motion-triggered audio warnings send many vandals running, and the recorded video gives police evidence for prosecution.</p>
           </div>
 
           <div class="bg-white rounded-lg p-6 shadow">
@@ -604,7 +602,7 @@ const faqSchema = JSON.stringify({
 
           <div class="bg-white rounded-lg p-6 shadow">
             <h3 class="font-bold text-lg mb-2">What happens when vandals are detected?</h3>
-            <p class="text-gray-700">Motion detection automatically triggers on-unit audio warnings, strobes, and sirens and sends an instant alert to your phone or computer. You view the live feed and call police with video evidence in hand. Most vandals flee within 10 seconds of warning.</p>
+            <p class="text-gray-700">Motion detection automatically triggers on-unit audio warnings, strobes, and sirens and sends an instant alert to your phone or computer. You view the live feed and call police with video evidence in hand. Many vandals leave as soon as the warning starts.</p>
           </div>
         </div>
       </div>
@@ -669,13 +667,13 @@ const faqSchema = JSON.stringify({
         level = "MODERATE RISK";
         colorClass = "text-yellow-600";
         bgClass = "bg-yellow-50 border-2 border-yellow-200";
-        description = "Your site faces significant vandalism risk. Statistics show 40% chance of incident without protection.";
+        description = "Your site faces significant vandalism risk. Without protection, an incident is a real possibility.";
         action = "<strong>Recommended:</strong> 2 surveillance trailers with 24/7 self-monitoring and audio deterrents.";
       } else if (totalRisk <= 16) {
         level = "HIGH RISK";
         colorClass = "text-orange-600";
         bgClass = "bg-orange-50 border-2 border-orange-200";
-        description = "Your site is a prime vandalism target. 70% probability of attack, especially on weekends.";
+        description = "Your site is a prime vandalism target, especially on weekends.";
         action = "<strong>Urgent:</strong> Deploy 2-3 surveillance trailers immediately with 24/7 self-monitoring and automated deterrents.";
       } else {
         level = "CRITICAL RISK";

@@ -75,7 +75,7 @@ const relatedPages = [
           stats={[
             { value: "365", label: "Days Operation", subtext: "Year-round capability", color: "green" },
             { value: "72hr", label: "Battery Backup", subtext: "Cloudy weather operation", color: "blue" },
-            { value: "$0", label: "Power Costs", subtext: "100% solar powered", color: "purple" },
+            { value: "2.4kW", label: "Solar Array", subtext: "Up to 4.8 kW on request", color: "purple" },
             { value: "25yr", label: "Panel Lifespan", subtext: "Warranty coverage", color: "orange" }
           ]}
         />
@@ -154,14 +154,14 @@ const relatedPages = [
           rows={[
             { feature: "Initial Setup Cost", values: [{ text: "Solar power included with rental", highlight: true }, "$5,000-15,000", "$3,000-5,000"] },
             { feature: "Monthly Operating Cost", values: [{ text: "$0", highlight: true }, "$300-500", "$1,500-2,500"] },
-            { feature: "Deployment Time", values: [{ text: "2-4 hours", highlight: true }, "2-4 weeks", "4-6 hours"] },
+            { feature: "Deployment Time", values: [{ text: "20-30 min setup", highlight: true }, "2-4 weeks", "4-6 hours"] },
             { feature: "Location Flexibility", values: [{ text: "Anywhere", highlight: true }, "Near power lines", "Anywhere (with fuel)"] },
-            { feature: "Reliability", values: [{ text: "99.9%", highlight: true }, "99.5%", "95%"] },
+            { feature: "Reliability", values: [{ text: "Battery-buffered", highlight: true }, "Subject to grid outages", "Subject to fuel supply"] },
             { feature: "Maintenance", values: [{ text: "Annual cleaning", highlight: true }, "Minimal", "Weekly refueling"] },
             { feature: "Environmental Impact", values: [{ text: "Zero emissions", highlight: true }, "Grid dependent", "High emissions"] },
             { feature: "Noise Level", values: [{ text: "Silent", highlight: true }, "Silent", "65-75 dB"] },
             { feature: "Weather Resilience", values: [{ text: "72hr battery backup", highlight: true }, "Grid dependent", "Fuel dependent"] },
-            { feature: "Long-term ROI", values: [{ text: "Highest (3-6 months)", highlight: true }, "Medium", "Lowest"] }
+            { feature: "Long-term ROI", values: [{ text: "Highest", highlight: true }, "Medium", "Lowest"] }
           ]}
         />
       </div>
@@ -218,7 +218,7 @@ const relatedPages = [
             </div>
             <h3 class="text-xl font-bold mb-3">Auto-Tracking System</h3>
             <p class="text-gray-600">
-              Optional solar panel tracking increases energy harvest by 30%, following the sun's path throughout the day.
+              Optional solar panel tracking follows the sun's path throughout the day to increase energy harvest.
             </p>
           </div>
 
@@ -345,8 +345,8 @@ const relatedPages = [
           <h3 class="text-2xl font-bold mb-6 text-center">Environmental Impact Benefits</h3>
           <div class="grid md:grid-cols-4 gap-6 text-center">
             <div>
-              <div class="text-3xl font-bold text-green-600">12 tons</div>
-              <p class="text-sm text-gray-600">CO2 saved annually</p>
+              <div class="text-3xl font-bold text-green-600">Off-grid</div>
+              <p class="text-sm text-gray-600">No power hookup or trenching</p>
             </div>
             <div>
               <div class="text-3xl font-bold text-green-600">0 gallons</div>
@@ -391,10 +391,6 @@ const relatedPages = [
               <li class="flex items-start">
                 <span class="text-green-600 font-bold mr-2">-</span>
                 <span><strong>Tacoma</strong> averages ~4.1 peak sun hours daily (annual average)</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-600 font-bold mr-2">-</span>
-                <span><strong>US national average</strong> is ~4.5 peak sun hours, so the PNW is only 10-15% lower</span>
               </li>
               <li class="flex items-start">
                 <span class="text-green-600 font-bold mr-2">-</span>
@@ -674,18 +670,18 @@ const relatedPages = [
               </h3>
               <div>
                 <p class="text-gray-600">
-                  Solar panels generate power even on cloudy days (at 10-25% capacity), and the 72-96 hour battery backup keeps the system running through extended cloudy periods. The system automatically manages power consumption to prioritize essential functions. For the most demanding PNW winter deployments, our <a href="/trailer-standalone-hybrid-power-architecture" class="text-blue-600 hover:text-blue-800 underline">hybrid backup power system</a> provides an additional safety net with automatic generator failover.
+                  Solar panels still generate power on cloudy days, at reduced output, and the 72-96 hour battery backup keeps the system running through extended cloudy periods. The system automatically manages power consumption to prioritize essential functions. For the most demanding PNW winter deployments, our <a href="/trailer-standalone-hybrid-power-architecture" class="text-blue-600 hover:text-blue-800 underline">hybrid backup power system</a> provides an additional safety net with automatic generator failover.
                 </p>
               </div>
             </div>
 
             <div class="bg-white p-6 rounded-lg shadow">
               <h3 class="font-bold text-lg mb-2">
-                What's the payback period for solar vs generator power?
+                How does solar compare to generator power on operating cost?
               </h3>
               <div>
                 <p class="text-gray-600">
-                  Solar systems typically pay for themselves in 3-6 months compared to generator operations. With zero fuel costs and minimal maintenance, solar saves $1,500-2,500 monthly vs generators, plus eliminates refueling logistics.
+                  Solar has no fuel cost and needs little maintenance. Running a site on a generator can cost roughly $1,500-2,500 a month in fuel and upkeep, and it adds refueling logistics that solar avoids.
                 </p>
               </div>
             </div>
@@ -718,7 +714,7 @@ const relatedPages = [
               </h3>
               <div>
                 <p class="text-gray-600">
-                  Our systems include optional backup connections for emergency generator or grid power. The system automatically switches to backup power if batteries drop below 20%, then returns to solar when conditions improve. Most units never need backup power.
+                  Our systems include optional backup connections for emergency generator or grid power. The system automatically switches to backup power if batteries drop below 20%, then returns to solar when conditions improve.
                 </p>
               </div>
             </div>
@@ -852,15 +848,15 @@ const relatedPages = [
         "name": "How do solar security trailers work in cloudy weather?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Solar panels generate power even on cloudy days (at 10-25% capacity), and the 72-96 hour battery backup keeps the system running through extended cloudy periods. The system automatically manages power consumption to prioritize essential functions. For the most demanding PNW winter deployments, our hybrid backup power system provides an additional safety net with automatic generator failover."
+          "text": "Solar panels still generate power on cloudy days, at reduced output, and the 72-96 hour battery backup keeps the system running through extended cloudy periods. The system automatically manages power consumption to prioritize essential functions. For the most demanding PNW winter deployments, our hybrid backup power system provides an additional safety net with automatic generator failover."
         }
       },
       {
         "@type": "Question",
-        "name": "What's the payback period for solar vs generator power?",
+        "name": "How does solar compare to generator power on operating cost?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Solar systems typically pay for themselves in 3-6 months compared to generator operations. With zero fuel costs and minimal maintenance, solar saves $1,500-2,500 monthly vs generators, plus eliminates refueling logistics."
+          "text": "Solar has no fuel cost and needs little maintenance. Running a site on a generator can cost roughly $1,500-2,500 a month in fuel and upkeep, and it adds refueling logistics that solar avoids."
         }
       },
       {
@@ -884,7 +880,7 @@ const relatedPages = [
         "name": "What happens if the batteries run out during an extended storm?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Our systems include optional backup connections for emergency generator or grid power. The system automatically switches to backup power if batteries drop below 20%, then returns to solar when conditions improve. Most units never need backup power."
+          "text": "Our systems include optional backup connections for emergency generator or grid power. The system automatically switches to backup power if batteries drop below 20%, then returns to solar when conditions improve."
         }
       }
     ]

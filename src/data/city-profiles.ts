@@ -208,7 +208,7 @@ const kentProfile: CityProfile = {
   storyAnchor: {
     h2: 'Why Kent Valley Has a Different Security Problem',
     paragraphsHtml: [
-      "Kent Valley is the warehouse capital of the Pacific Northwest - more than 70 million square feet of distribution, fulfillment, and light-manufacturing footprint sandwiched between the Green River and SR-167. The corridor stretches from Boeing's longest-tenured supplier ecosystem in the north (Renton/Tukwila edge) down through the REI distribution hub off South 212th, the BNSF intermodal yard, and out toward Auburn's Green River Valley industrial parks.",
+      "Kent Valley is the warehouse capital of the Pacific Northwest, a dense stretch of distribution, fulfillment, and light-manufacturing buildings sandwiched between the Green River and SR-167. The corridor stretches from Boeing's longest-tenured supplier ecosystem in the north (Renton/Tukwila edge) down through the REI distribution hub off South 212th, the BNSF intermodal yard, and out toward Auburn's Green River Valley industrial parks.",
       "That density brings security problems most cities never deal with. Many sites are <strong>multi-acre lots with thousands of feet of perimeter fencing</strong>. Entire campuses sit unattended during single-shift weekend gaps, while high-value freight (electronics, sporting goods, automotive parts, aerospace components) moves through the I-5/SR-167 corridor day and night. A fixed CCTV install on a property like this can run six figures, with months of permitting and conduit work before a single camera goes live.",
       "A mobile surveillance trailer goes up in a single afternoon and covers the most active perimeter of a 200,000+ sq ft facility from one elevated pole. When the threat profile shifts with a new construction phase, a seasonal inventory peak, or hardening after an incident, we move it. That flexibility matters most to property managers running several Kent Valley buildings.",
     ],
@@ -322,7 +322,7 @@ const kentProfile: CityProfile = {
       {
         icon: "⏰",
         title: 'Skip the Permits and Conduit Work',
-        body: 'A fixed CCTV install at a Kent Valley facility is a 90+ day project. A trailer is deployed in an afternoon and pulled back the same way.',
+        body: 'A fixed CCTV install at a Kent Valley facility can easily run 90+ days. A trailer is deployed in an afternoon and pulled back the same way.',
       },
     ],
   },

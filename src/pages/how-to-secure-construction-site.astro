@@ -80,7 +80,7 @@ const breadcrumbItems = [
 
 const quickAnswerData = {
   question: "What's the most effective way to secure a construction site?",
-  answer: "Deploy a mobile surveillance trailer with 24/7 self-monitoring (real-time alerts to your phone or computer), establish controlled access points, secure equipment in centralized locations, and implement motion-activated deterrents. Studies show this approach reduces theft by up to 85%.",
+  answer: "Deploy a mobile surveillance trailer with 24/7 self-monitoring (real-time alerts to your phone or computer), establish controlled access points, secure equipment in centralized locations, and implement motion-activated deterrents.",
   callToAction: {
     text: "Get Professional Security",
     href: "tel:2536832288"
@@ -88,16 +88,16 @@ const quickAnswerData = {
 };
 
 const statBoxData = [
-  { value: "$1B+", label: "Annual Construction Theft" },
-  { value: "85%", label: "Theft Reduction Rate" },
+  { value: "4", label: "Cameras per Trailer" },
+  { value: "Same-Day", label: "Delivery Available" },
   { value: "24/7", label: "Self-Monitoring" },
-  { value: "30min", label: "Setup Time" }
+  { value: "20-30 min", label: "Setup Time" }
 ];
 ---
 
 <Layout
   title="How to Secure a Construction Site | Complete Security Guide 2025"
-  description="Step-by-step guide to securing construction sites from theft, from surveillance placement to access control, with proven methods that reduce losses by 85%.">
+  description="Step-by-step guide to securing construction sites from theft, from surveillance placement and lighting to access control and a response plan.">
 
   <HowToSchema {...howToData} />
   <BreadcrumbSchema items={breadcrumbItems} />
@@ -141,9 +141,8 @@ const statBoxData = [
           <h2 class="text-3xl font-bold mb-8">Why Construction Sites Are Vulnerable</h2>
           <div class="prose prose-lg max-w-none text-gray-600">
             <p class="mb-4">
-              Construction sites are prime targets for theft and vandalism. With over $1 billion in equipment and
-              materials stolen annually, proper security is essential if you want to protect your margin and stay
-              on schedule.
+              Construction sites are prime targets for theft and vandalism. Stolen equipment and materials eat into
+              your margin and push back the schedule, so proper security is essential.
             </p>
             <ul class="mb-6 space-y-2">
               <li>Remote locations with limited natural surveillance</li>
@@ -232,7 +231,7 @@ const statBoxData = [
                 <tr class="border-b">
                   <td class="p-4 font-semibold">Setup Time</td>
                   <td class="p-4">2-3 days</td>
-                  <td class="p-4 text-green-600 font-semibold">30 minutes</td>
+                  <td class="p-4 text-green-600 font-semibold">20-30 minutes</td>
                 </tr>
                 <tr class="border-b bg-gray-50">
                   <td class="p-4 font-semibold">Coverage Area</td>
@@ -317,11 +316,11 @@ const statBoxData = [
           <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-8">
             <div class="grid md:grid-cols-3 gap-4">
               <div>
-                <div class="text-3xl font-bold text-yellow-400">85%</div>
-                <div>Theft Reduction</div>
+                <div class="text-3xl font-bold text-yellow-400">4</div>
+                <div>Cameras per Trailer</div>
               </div>
               <div>
-                <div class="text-3xl font-bold text-yellow-400">30min</div>
+                <div class="text-3xl font-bold text-yellow-400">20-30 min</div>
                 <div>Setup Time</div>
               </div>
               <div>

@@ -16,7 +16,7 @@ import LazyImage from '../components/LazyImage.astro';
 // Schema data for the auto dealer security service
 const serviceSchemaData = {
   serviceName: "Auto Dealership Security Trailer Rental - Tacoma",
-  description: "Mobile surveillance trailer rentals for auto dealerships in Tacoma and South Tacoma Way. Protect inventory from vehicle theft with 24/7 self-monitoring. 1 in 34 vehicles stolen in Tacoma - protect your lot today.",
+  description: "Mobile surveillance trailer rentals for auto dealerships in Tacoma and South Tacoma Way. Protect inventory from vehicle theft with 24/7 self-monitoring.",
   areaServed: [
     { type: "City" as const, name: "Tacoma" },
     { type: "City" as const, name: "Fife" },
@@ -74,7 +74,7 @@ const relatedPages = [
 
 <Layout
   title="Auto Dealership Security Tacoma | South Tacoma Way Vehicle Theft Prevention"
-  description="Protect your dealership from Tacoma's 1 in 34 vehicle theft rate. Mobile surveillance for South Tacoma Way dealers. 24/7 self-monitoring, same-day setup. (253) 683-2288">
+  description="Protect your dealership from Tacoma vehicle theft. Mobile surveillance for South Tacoma Way dealers. 24/7 self-monitoring, same-day setup. (253) 683-2288">
 
   <!-- Structured Data Schemas -->
   <ServiceSchema {...serviceSchemaData} />
@@ -101,7 +101,7 @@ const relatedPages = [
       <div class="container mx-auto px-4 relative z-10">
         <div class="max-w-4xl">
           <h1 class="text-4xl md:text-5xl font-bold mb-4">Tacoma Auto Dealership Security Solutions</h1>
-          <p class="text-xl mb-6">Protect Your Inventory from Tacoma's High Vehicle Theft Rate - 1 in 34 Vehicles Stolen</p>
+          <p class="text-xl mb-6">Protect Your Inventory from Tacoma's High Vehicle Theft Rate</p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="tel:2536832288" class="bg-white text-blue-900 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block text-center">
               📞 Call Now: (253) 683-2288
@@ -131,11 +131,10 @@ const relatedPages = [
               source: { text: "Tacoma Police Department" }
             },
             {
-              value: "1 in 34",
-              label: "Chance of Vehicle Theft",
-              icon: "⚠️",
-              highlight: true,
-              source: { text: "Tacoma Crime Statistics" }
+              value: "24/7",
+              label: "Self-Monitoring With Motion Alerts",
+              icon: "🌙",
+              highlight: true
             },
             {
               value: "South Tacoma",
@@ -145,9 +144,9 @@ const relatedPages = [
               source: { text: "NeighborhoodScout 2024" }
             },
             {
-              value: "$45,000+",
-              label: "Average Inventory Loss Per Incident",
-              icon: "💰",
+              value: "Same-day",
+              label: "Emergency Deployment After a Theft",
+              icon: "🚨",
               highlight: true
             }
           ]}
@@ -183,12 +182,12 @@ const relatedPages = [
           <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
             <div class="text-4xl mb-4">🚙</div>
             <h3 class="text-xl font-bold mb-3">High-Value Inventory Exposure</h3>
-            <p class="text-gray-600">$2M+ in vehicles sitting on open lots. South Tacoma Way dealerships are prime targets with easy highway access for quick getaways.</p>
+            <p class="text-gray-600">Lots full of high-value vehicles sit in the open. South Tacoma Way dealerships are prime targets with easy highway access for quick getaways.</p>
           </div>
           <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
             <div class="text-4xl mb-4">🌙</div>
             <h3 class="text-xl font-bold mb-3">After-Hours Vulnerability</h3>
-            <p class="text-gray-600">76% of vehicle thefts occur overnight and on weekends when dealerships are closed and unmonitored.</p>
+            <p class="text-gray-600">Overnight hours and weekends leave lots exposed while dealerships are closed and unmonitored.</p>
           </div>
           <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
             <div class="text-4xl mb-4">📋</div>
@@ -235,15 +234,15 @@ const relatedPages = [
             <div class="space-y-4">
               <div>
                 <h4 class="font-semibold mb-2 text-blue-600">Vehicle Theft</h4>
-                <p class="text-gray-600">Entire vehicles stolen from lot - average loss $30,000-$80,000 per vehicle. High-end trucks and SUVs are primary targets.</p>
+                <p class="text-gray-600">Entire vehicles stolen from the lot, often worth $30,000-$80,000 each. High-end trucks and SUVs are primary targets.</p>
               </div>
               <div>
                 <h4 class="font-semibold mb-2 text-blue-600">Parts & Catalytic Converters</h4>
-                <p class="text-gray-600">Organized theft rings targeting catalytic converters ($1,500 replacement each) and wheels/rims from luxury vehicles.</p>
+                <p class="text-gray-600">Organized theft rings targeting catalytic converters (often around $1,500 each to replace) and wheels/rims from luxury vehicles.</p>
               </div>
               <div>
                 <h4 class="font-semibold mb-2 text-blue-600">Vandalism & Joyriding</h4>
-                <p class="text-gray-600">Broken windows, damaged interiors, and unauthorized test drives result in $5,000-$15,000 repair costs per incident.</p>
+                <p class="text-gray-600">Broken windows, damaged interiors, and unauthorized test drives can run $5,000-$15,000 in repairs per incident.</p>
               </div>
               <div>
                 <h4 class="font-semibold mb-2 text-blue-600">Customer Safety Concerns</h4>
@@ -307,7 +306,7 @@ const relatedPages = [
               <li class="flex items-start">
                 <span class="text-blue-600 mr-3">💰</span>
                 <div>
-                  <strong>Insurance Premium Reductions:</strong> Many insurers offer 10-15% discounts for active surveillance systems
+                  <strong>Insurance Premium Reductions:</strong> Some insurers offer discounts for active surveillance systems, so ask your carrier
                 </div>
               </li>
               <li class="flex items-start">
@@ -356,10 +355,10 @@ const relatedPages = [
 
         <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto mb-12">
           <div class="bg-white rounded-lg p-8 shadow-lg">
-            <h3 class="text-2xl font-bold mb-6 text-red-600">Cost of ONE Theft Incident</h3>
+            <h3 class="text-2xl font-bold mb-6 text-red-600">Example: Cost of One Theft Incident</h3>
             <div class="space-y-3">
               <div class="flex justify-between pb-2 border-b">
-                <span class="text-gray-700">Average vehicle value stolen:</span>
+                <span class="text-gray-700">Vehicle value stolen:</span>
                 <span class="font-bold text-red-600">$45,000</span>
               </div>
               <div class="flex justify-between pb-2 border-b">
@@ -379,7 +378,7 @@ const relatedPages = [
                 <span class="font-bold text-red-600">$2,000</span>
               </div>
               <div class="flex justify-between pt-3 text-lg">
-                <span class="font-bold">TOTAL IMPACT:</span>
+                <span class="font-bold">EXAMPLE TOTAL IMPACT:</span>
                 <span class="font-bold text-red-600 text-xl">$70,000+</span>
               </div>
             </div>
@@ -421,10 +420,9 @@ const relatedPages = [
         </div>
 
         <div class="bg-blue-600 text-white rounded-lg p-8 max-w-4xl mx-auto text-center">
-          <h3 class="text-3xl font-bold mb-4">One Theft Incident: $70,000+ in Total Impact</h3>
+          <h3 class="text-3xl font-bold mb-4">One Theft Incident Can Run $70,000+ in Total Impact</h3>
           <p class="text-xl mb-4">Pricing depends on rental length, lot size, and configuration - get a quote and compare it to the cost of a single theft.</p>
           <a href="tel:2536832288" class="text-2xl font-bold bg-white text-blue-600 inline-block px-6 py-3 rounded-lg">Call for a Quote: (253) 683-2288</a>
-          <p class="text-sm mt-4 text-blue-100">Most dealers prevent 2-3 theft attempts per year with visible surveillance</p>
         </div>
       </div>
     </section>
@@ -529,20 +527,20 @@ const relatedPages = [
         <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <div class="bg-white border rounded-lg p-6 shadow-lg">
             <h3 class="font-bold text-lg mb-3">South Tacoma Way Toyota Dealer</h3>
-            <p class="text-gray-600 mb-4">After two truck thefts in 2023 ($120,000 total loss), installed mobile surveillance. Zero incidents in 14 months of coverage.</p>
-            <p class="text-green-600 font-bold">Result: $120,000 in prevented losses</p>
-            <p class="text-sm text-gray-500 mt-2">Coverage: 14 months, zero incidents</p>
+            <p class="text-gray-600 mb-4">After two truck thefts in 2023, the dealer brought in mobile surveillance. Theft attempts dropped off after the trailer went up.</p>
+            <p class="text-green-600 font-bold">Result: the lot stayed under camera coverage around the clock</p>
+            <p class="text-sm text-gray-500 mt-2">Coverage: 14 months</p>
           </div>
           <div class="bg-white border rounded-lg p-6 shadow-lg">
             <h3 class="font-bold text-lg mb-3">Fife Used Car Dealership</h3>
-            <p class="text-gray-600 mb-4">Frequent catalytic converter thefts costing $18,000 annually. Surveillance trailer eliminated all theft attempts.</p>
-            <p class="text-green-600 font-bold">Result: 15% insurance premium reduction</p>
+            <p class="text-gray-600 mb-4">Frequent catalytic converter thefts. Converter theft attempts dropped off after the surveillance trailer went up.</p>
+            <p class="text-green-600 font-bold">Result: video evidence on file for police and insurance</p>
             <p class="text-sm text-gray-500 mt-2">Additional benefit: Customer safety marketing</p>
           </div>
           <div class="bg-white border rounded-lg p-6 shadow-lg">
             <h3 class="font-bold text-lg mb-3">Puyallup Luxury Car Dealer</h3>
-            <p class="text-gray-600 mb-4">High-end inventory ($3M lot value) required premium security. Mobile trailer provided visible deterrence and remote live viewing.</p>
-            <p class="text-green-600 font-bold">Result: Zero losses with a leaner guard schedule</p>
+            <p class="text-gray-600 mb-4">High-end inventory required premium security. Mobile trailer provided visible deterrence and remote live viewing.</p>
+            <p class="text-green-600 font-bold">Result: a leaner guard schedule with the trailer covering the lot</p>
             <p class="text-sm text-gray-500 mt-2">Upgraded from 2 guards to 1 guard + trailer</p>
           </div>
         </div>
@@ -648,7 +646,7 @@ const relatedPages = [
           </div>
           <div class="bg-white rounded-lg shadow p-6">
             <h3 class="font-bold text-lg mb-3">Will this help reduce my insurance premiums?</h3>
-            <p class="text-gray-600">Most auto dealership insurers offer 10-15% premium discounts for active surveillance systems. We provide documentation for your insurance company.</p>
+            <p class="text-gray-600">Some auto dealership insurers offer premium discounts for active surveillance systems, so check with your carrier. We provide documentation for your insurance company.</p>
           </div>
           <div class="bg-white rounded-lg shadow p-6">
             <h3 class="font-bold text-lg mb-3">How quickly can you deploy after a theft incident?</h3>
@@ -673,7 +671,7 @@ const relatedPages = [
     <!-- CTA Section -->
     <CTASection
       title="Stop Vehicle Theft Before It Happens"
-      description="Join Tacoma auto dealers who've eliminated theft with mobile surveillance"
+      description="Join Tacoma auto dealers protecting their lots with mobile surveillance"
       phoneText="📞 24/7 Dealer Hotline: (253) 683-2288"
       quoteText="Protect Your Inventory Now >"
       quoteLink="#dealer-quote"

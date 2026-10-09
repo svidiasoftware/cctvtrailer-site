@@ -72,13 +72,12 @@ const breadcrumbItems = [
   { name: "Everett Mobile Security Trailer" }
 ];
 
-// Everett crime & context stats - Snohomish County / Everett PD directional
-// figures. Numbers shift year-over-year; use for context, not citation.
+// Everett at-a-glance service facts (no unsourced crime or context figures)
 const crimeStats = [
-  { value: "58%", label: "Property crime above national avg.", highlight: true },
-  { value: "+9%", label: "Commercial burglary YoY", highlight: true },
-  { value: "~30K", label: "Boeing Paine Field workforce" },
-  { value: "Top 5", label: "WA cargo theft hot zone (I-5)" }
+  { value: "Same-Day", label: "Delivery up I-5", highlight: true },
+  { value: "4 Cameras", label: "1 Fisheye + 3 PTZ with IR", highlight: true },
+  { value: "20-30 Min", label: "On-Site Setup" },
+  { value: "24/7", label: "Technical Support" }
 ];
 
 const relatedPages = [
@@ -169,7 +168,7 @@ const relatedPages = [
           <StatBox stats={crimeStats} layout="grid" />
           <div class="mt-8 bg-white rounded-lg p-6 border-l-4 border-slate-700">
             <p class="text-gray-700 font-semibold">
-              Everett has two of Washington's highest-pressure security environments side by side. The Paine Field aerospace cluster has tens of thousands of shift workers and billions in tooling, and the I-5 corridor is one of the busiest cargo-theft routes on the West Coast. Commercial burglary has been rising in the downtown core, I-5 warehouses deal with organized cargo theft, and parking and lot operators along Evergreen Way regularly report spikes in catalytic converter theft and vehicle prowls. A mobile surveillance trailer gives each of these sites a 24/7 recorded perimeter and an active deterrent that doesn't wait for a patrol to arrive.
+              Everett has two demanding security environments side by side: the Paine Field aerospace cluster, with large shift workforces and expensive tooling, and the I-5 freight corridor. Downtown businesses deal with commercial burglary and I-5 warehouses deal with cargo theft, while parking and lot operators along Evergreen Way contend with catalytic converter theft and vehicle prowls. A mobile surveillance trailer gives each of these sites a 24/7 recorded perimeter and an active deterrent that doesn't wait for a patrol to arrive.
             </p>
           </div>
         </div>
@@ -278,7 +277,7 @@ const relatedPages = [
         <div class="mt-12 bg-slate-100 rounded-lg p-8">
           <h3 class="font-bold text-xl mb-4">Why Everett Logistics &amp; Contractors Call Us</h3>
           <p class="text-gray-700 mb-4">
-            I-5 warehouses run on narrow margins and can't absorb organized cargo theft, and Boeing contractors can't afford to have specialty tools walk off between shifts. On downtown builds, a copper theft can mean replacing tens of thousands of feet of wire. A mobile surveillance trailer gives each of these sites a 24/7 recorded perimeter, active deterrent lighting, cellular-connected video, and real-time alerts to your phone so you can call Everett PD or the Snohomish County Sheriff with video evidence before the window closes. Each unit is solar-powered with a cellular uplink, and we deliver same day up I-5.
+            I-5 warehouses run on narrow margins and can't absorb organized cargo theft, and Boeing contractors can't afford to have specialty tools walk off between shifts. On downtown builds, a copper theft can mean pulling and replacing long runs of wire. A mobile surveillance trailer gives each of these sites a 24/7 recorded perimeter, active deterrent lighting, cellular-connected video, and real-time alerts to your phone so you can call Everett PD or the Snohomish County Sheriff with video evidence before the window closes. Each unit is solar-powered with a cellular uplink, and we deliver same day up I-5.
           </p>
           <div class="grid md:grid-cols-3 gap-4 text-center">
             <div>
@@ -338,15 +337,15 @@ const relatedPages = [
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="bg-white border-l-4 border-slate-700 p-6 shadow-sm">
             <h3 class="font-bold text-lg mb-3 text-slate-700">I-5 Cargo Theft</h3>
-            <p class="text-gray-600">The I-5 corridor between Everett and the Canadian border is one of the West Coast's most active organized cargo-theft zones. Yards that leave even one lane of trailers unwatched overnight tend to pay for it, and a mobile unit can cover that lane.</p>
+            <p class="text-gray-600">Organized cargo theft is a real risk along the I-5 corridor between Everett and the Canadian border. Yards that leave even one lane of trailers unwatched overnight tend to pay for it, and a mobile unit can cover that lane.</p>
           </div>
           <div class="bg-white border-l-4 border-blue-500 p-6 shadow-sm">
             <h3 class="font-bold text-lg mb-3 text-blue-600">Aerospace Tooling Loss</h3>
-            <p class="text-gray-600">Paine Field contractors run specialty tooling worth tens of thousands per cart. Between-shift windows are the main loss vector - an active deterrent trailer on the yard resolves most of it.</p>
+            <p class="text-gray-600">Paine Field contractors run expensive specialty tooling. Between-shift windows are the main loss vector, and an active deterrent trailer on the yard helps cover them.</p>
           </div>
           <div class="bg-white border-l-4 border-red-500 p-6 shadow-sm">
             <h3 class="font-bold text-lg mb-3 text-red-600">Downtown Commercial Burglary</h3>
-            <p class="text-gray-600">Commercial burglary reports in Everett's downtown core have trended upward since 2022. Retail and food-service operators use a visible mobile unit to break the pattern around back-of-house loading zones.</p>
+            <p class="text-gray-600">Commercial burglary is a recurring problem in Everett's downtown core. Retail and food-service operators use a visible mobile unit to break the pattern around back-of-house loading zones.</p>
           </div>
           <div class="bg-white border-l-4 border-green-500 p-6 shadow-sm">
             <h3 class="font-bold text-lg mb-3 text-green-600">Port &amp; Maritime Perimeter</h3>
@@ -364,7 +363,7 @@ const relatedPages = [
           <div class="bg-white rounded-lg shadow-lg p-6">
             <div class="text-slate-700 font-semibold mb-2">I-5 Warehouse Yard</div>
             <h3 class="font-bold text-lg mb-3">Cross-Dock Perimeter Recovery</h3>
-            <p class="text-gray-600 mb-4">Deployed 4 solar mobile units along the back line of an I-5 cross-dock yard that had experienced three trailer-cargo thefts inside a single quarter. Zero incidents during the six months of deployment; insurance premium hold resumed the following renewal.</p>
+            <p class="text-gray-600 mb-4">Deployed 4 solar mobile units along the back line of an I-5 cross-dock yard that had been hit by a string of trailer-cargo thefts. The units stayed on site for six months, and theft attempts dropped off after they went up.</p>
             <div class="text-sm text-gray-500">
               <span class="font-semibold">Challenge:</span> Long open perimeter, overnight unmanned, night-only theft pattern
             </div>
@@ -375,7 +374,7 @@ const relatedPages = [
           <div class="bg-white rounded-lg shadow-lg p-6">
             <div class="text-blue-600 font-semibold mb-2">Paine Field Contractor</div>
             <h3 class="font-bold text-lg mb-3">Aerospace Tooling Yard</h3>
-            <p class="text-gray-600 mb-4">Stationed 2 units across a Boeing-adjacent tooling yard through a multi-month program. Between-shift tool loss dropped essentially to zero; the archived video also supported one insurance claim that would have been unrecoverable otherwise.</p>
+            <p class="text-gray-600 mb-4">Stationed 2 units across a Boeing-adjacent tooling yard through a multi-month program. Between-shift tool loss dropped off, and the archived video also supported an insurance claim.</p>
             <div class="text-sm text-gray-500">
               <span class="font-semibold">Challenge:</span> Between-shift gaps, high-value portable tooling
             </div>
@@ -386,7 +385,7 @@ const relatedPages = [
           <div class="bg-white rounded-lg shadow-lg p-6">
             <div class="text-green-600 font-semibold mb-2">Downtown Redevelopment</div>
             <h3 class="font-bold text-lg mb-3">Mixed-Use Build, Port Gardner</h3>
-            <p class="text-gray-600 mb-4">Trailer rotated between three active quadrants of a downtown Everett mixed-use construction site over an 11-month window. Over that run, the GC logged zero copper-wire theft incidents - neighboring sites lost multiple five-figure incidents during the same period.</p>
+            <p class="text-gray-600 mb-4">Trailer rotated between three active quadrants of a downtown Everett mixed-use construction site over an 11-month window. Copper-wire theft stayed under control on the site over that run.</p>
             <div class="text-sm text-gray-500">
               <span class="font-semibold">Challenge:</span> Vertical construction phase, shifting perimeter, active-street access
             </div>
@@ -435,7 +434,7 @@ const relatedPages = [
                   </div>
                   <div class="bg-blue-50 p-4 rounded-lg">
                     <div class="font-semibold text-blue-600">Paine Field Contractors</div>
-                    <p class="text-gray-600 text-sm">Between-shift tool loss drops to near zero with an on-site active-deterrent unit and on-unit archive.</p>
+                    <p class="text-gray-600 text-sm">An on-site active-deterrent unit and on-unit archive help cut between-shift tool loss.</p>
                   </div>
                   <div class="bg-green-50 p-4 rounded-lg">
                     <div class="font-semibold text-green-600">Downtown Redevelopment</div>
@@ -445,25 +444,25 @@ const relatedPages = [
               </div>
             </div>
 
-            <!-- Everett Statistics -->
+            <!-- Everett Service Facts -->
             <div class="border-t border-gray-200 pt-8">
-              <h4 class="font-bold text-lg mb-4 text-center">Everett by the Numbers</h4>
+              <h4 class="font-bold text-lg mb-4 text-center">Everett Service at a Glance</h4>
               <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 <div class="bg-gray-50 p-4 rounded-lg">
-                  <div class="text-2xl font-bold text-slate-700">~112K</div>
-                  <div class="text-sm text-gray-600">Population (2024)</div>
+                  <div class="text-2xl font-bold text-slate-700">Since 2009</div>
+                  <div class="text-sm text-gray-600">Serving Puget Sound sites</div>
                 </div>
                 <div class="bg-gray-50 p-4 rounded-lg">
-                  <div class="text-2xl font-bold text-blue-600">#1</div>
-                  <div class="text-sm text-gray-600">Largest city in Snohomish Co.</div>
+                  <div class="text-2xl font-bold text-blue-600">Same-Day</div>
+                  <div class="text-sm text-gray-600">Delivery up I-5</div>
                 </div>
                 <div class="bg-gray-50 p-4 rounded-lg">
-                  <div class="text-2xl font-bold text-orange-600">~30K</div>
-                  <div class="text-sm text-gray-600">Boeing Paine Field workforce</div>
+                  <div class="text-2xl font-bold text-orange-600">20-30 Min</div>
+                  <div class="text-sm text-gray-600">On-site setup</div>
                 </div>
                 <div class="bg-gray-50 p-4 rounded-lg">
-                  <div class="text-2xl font-bold text-red-600">Top 5</div>
-                  <div class="text-sm text-gray-600">WA cargo theft hot zone</div>
+                  <div class="text-2xl font-bold text-red-600">2 Weeks</div>
+                  <div class="text-sm text-gray-600">Default on-site archive</div>
                 </div>
               </div>
             </div>

@@ -39,7 +39,7 @@ const description = "Compare mobile surveillance trailers vs security guards for
             Real Cost Comparison for Washington Construction Sites
           </h2>
           <p class="text-xl text-gray-600">
-            Based on actual 2024-2025 market rates in Seattle-Tacoma area
+            Estimates based on typical 2024-2025 market rates in the Seattle-Tacoma area
           </p>
         </div>
 
@@ -47,8 +47,8 @@ const description = "Compare mobile surveillance trailers vs security guards for
           stats={[
             { value: "20-30 min", label: "Setup Time", subtext: "No installation required", color: "green" },
             { value: "24/7", label: "Self-Monitoring", subtext: "Real-time alerts to your phone", color: "blue" },
-            { value: "$20,800", label: "Monthly Guard Cost", subtext: "2 guards, 24/7", color: "red" },
-            { value: "85%", label: "Crime Prevention", subtext: "With surveillance", color: "purple" }
+            { value: "$36,000+", label: "Monthly Guard Cost", subtext: "Estimate: 2 guards on post 24/7 at ~$20/hr plus overhead", color: "red" },
+            { value: "Same-day", label: "Delivery", subtext: "Trailer arrives ready to run", color: "purple" }
           ]}
         />
 
@@ -96,8 +96,8 @@ const description = "Compare mobile surveillance trailers vs security guards for
             <div class="grid md:grid-cols-3 gap-4">
               <div>
                 <p class="text-sm text-gray-600">Security Guards Cost</p>
-                <p class="text-2xl font-bold text-red-600" id="guardsCost">$20,800/mo</p>
-                <p class="text-xs text-gray-500">2 guards @ $20/hr</p>
+                <p class="text-2xl font-bold text-red-600" id="guardsCost">$37,440/mo</p>
+                <p class="text-xs text-gray-500">2 guards @ $20/hr + overhead</p>
               </div>
               <div>
                 <p class="text-sm text-gray-600">Surveillance Trailer Cost</p>
@@ -127,14 +127,14 @@ const description = "Compare mobile surveillance trailers vs security guards for
         <ComparisonTable
           headers={["Security Guards", "Mobile Surveillance Trailer"]}
           rows={[
-            { feature: "Monthly Cost (24/7)", values: ["$20,800 (2 guards)", { text: "Typically a fraction of guard costs (call for a quote)", highlight: true }] },
+            { feature: "Monthly Cost (24/7)", values: ["$36,000+ (2 guards, estimate)", { text: "Typically a fraction of guard costs (call for a quote)", highlight: true }] },
             { feature: "Coverage Area", values: ["Limited patrol radius", { text: "360° complete coverage", highlight: true }] },
             { feature: "Response Time", values: ["Varies by location", { text: "Instant AI detection", highlight: true }] },
             { feature: "Weather Impact", values: ["Reduced effectiveness", { text: "All-weather operation", highlight: true }] },
             { feature: "Recording Capability", values: ["Body cam only", { text: "2-week archive (extendable)", highlight: true }] },
-            { feature: "False Alarms", values: ["Human error prone", { text: "AI reduces by 95%", highlight: true }] },
-            { feature: "Insurance Discount", values: ["0-5%", { text: "10-20% reduction", highlight: true }] },
-            { feature: "Deployment Time", values: ["24-48 hours", { text: "2-4 hours", highlight: true }] },
+            { feature: "False Alarms", values: ["Human error prone", { text: "AI filtering cuts nuisance alerts", highlight: true }] },
+            { feature: "Insurance Discount", values: ["Varies by insurer", { text: "Ask your carrier about camera discounts", highlight: true }] },
+            { feature: "Deployment Time", values: ["Depends on staffing availability", { text: "Same-day delivery, 20-30 min setup", highlight: true }] },
             { feature: "Scalability", values: ["Requires more guards", { text: "Single unit covers more", highlight: true }] },
             { feature: "Evidence Quality", values: ["Witness testimony", { text: "4K video evidence", highlight: true }] }
           ]}
@@ -149,7 +149,7 @@ const description = "Compare mobile surveillance trailers vs security guards for
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
                 </svg>
                 <div>
-                  <strong>Overtime & Holiday Pay:</strong> +50% on holidays
+                  <strong>Overtime & Holiday Pay:</strong> Often time-and-a-half on holidays
                 </div>
               </li>
               <li class="flex items-start">
@@ -157,7 +157,7 @@ const description = "Compare mobile surveillance trailers vs security guards for
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
                 </svg>
                 <div>
-                  <strong>Training & Turnover:</strong> Average 200% annual turnover
+                  <strong>Training & Turnover:</strong> High turnover means constant retraining
                 </div>
               </li>
               <li class="flex items-start">
@@ -165,7 +165,7 @@ const description = "Compare mobile surveillance trailers vs security guards for
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
                 </svg>
                 <div>
-                  <strong>Liability Insurance:</strong> $2-5 million required
+                  <strong>Liability Insurance:</strong> Often $2-5 million in coverage required
                 </div>
               </li>
               <li class="flex items-start">
@@ -173,7 +173,7 @@ const description = "Compare mobile surveillance trailers vs security guards for
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
                 </svg>
                 <div>
-                  <strong>Break Coverage:</strong> 3rd guard needed for 24/7
+                  <strong>Break Coverage:</strong> A 3rd guard is often needed for true 24/7
                 </div>
               </li>
             </ul>
@@ -223,7 +223,7 @@ const description = "Compare mobile surveillance trailers vs security guards for
     <section class="py-16 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-center mb-12">
-          ROI Analysis: Real Numbers from Washington Projects
+          Cost Analysis: Estimates for a Washington Project
         </h2>
 
         <div class="bg-gray-50 p-8 rounded-lg mb-8">
@@ -234,7 +234,7 @@ const description = "Compare mobile surveillance trailers vs security guards for
               <ul class="space-y-2">
                 <li class="flex justify-between">
                   <span>2 Guards (24/7 coverage)</span>
-                  <span class="font-semibold">$20,800/mo</span>
+                  <span class="font-semibold">$28,800/mo</span>
                 </li>
                 <li class="flex justify-between">
                   <span>Supervisor/Management</span>
@@ -242,7 +242,7 @@ const description = "Compare mobile surveillance trailers vs security guards for
                 </li>
                 <li class="flex justify-between">
                   <span>Holiday/Overtime Premium</span>
-                  <span class="font-semibold">$3,120/mo</span>
+                  <span class="font-semibold">$4,320/mo</span>
                 </li>
                 <li class="flex justify-between">
                   <span>Insurance & Liability</span>
@@ -250,11 +250,11 @@ const description = "Compare mobile surveillance trailers vs security guards for
                 </li>
                 <li class="border-t pt-2 flex justify-between font-bold">
                   <span>Monthly Total</span>
-                  <span>$27,420</span>
+                  <span>$36,620</span>
                 </li>
                 <li class="flex justify-between font-bold text-red-600">
                   <span>6-Month Project Cost</span>
-                  <span>$164,520</span>
+                  <span>$219,720</span>
                 </li>
               </ul>
             </div>
@@ -290,25 +290,25 @@ const description = "Compare mobile surveillance trailers vs security guards for
           </div>
           <div class="mt-6 p-4 bg-green-100 rounded-lg text-center">
             <p class="text-2xl font-bold">Typically a fraction of the $164,520 guard cost. Call (253) 683-2288 for a quote.</p>
-            <p class="text-gray-600 mt-2">Plus 10-20% insurance premium reduction worth $3,000-$6,000</p>
+            <p class="text-gray-600 mt-2">Some insurers also adjust premiums for sites with video surveillance, so ask your carrier.</p>
           </div>
         </div>
 
         <div class="grid md:grid-cols-3 gap-6">
           <div class="bg-blue-50 p-6 rounded-lg text-center">
             <h4 class="font-bold mb-2">Break-Even Point</h4>
-            <p class="text-3xl font-bold text-blue-600">Fast</p>
-            <p class="text-sm text-gray-600">Trailer pays for itself in prevented theft</p>
+            <p class="text-3xl font-bold text-blue-600">Your numbers</p>
+            <p class="text-sm text-gray-600">Compare one avoided theft to your trailer quote</p>
           </div>
           <div class="bg-green-50 p-6 rounded-lg text-center">
-            <h4 class="font-bold mb-2">Theft Prevention Rate</h4>
-            <p class="text-3xl font-bold text-green-600">85%</p>
-            <p class="text-sm text-gray-600">Documented crime reduction</p>
+            <h4 class="font-bold mb-2">Video Retention</h4>
+            <p class="text-3xl font-bold text-green-600">2 weeks</p>
+            <p class="text-sm text-gray-600">Default archive, extendable</p>
           </div>
           <div class="bg-purple-50 p-6 rounded-lg text-center">
-            <h4 class="font-bold mb-2">Average Theft Loss</h4>
-            <p class="text-3xl font-bold text-purple-600">$30,000</p>
-            <p class="text-sm text-gray-600">Per incident in Washington</p>
+            <h4 class="font-bold mb-2">Cameras</h4>
+            <p class="text-3xl font-bold text-purple-600">4</p>
+            <p class="text-sm text-gray-600">1 fixed fisheye + 3 PTZ (25x zoom, IR)</p>
           </div>
         </div>
       </div>
@@ -328,7 +328,7 @@ const description = "Compare mobile surveillance trailers vs security guards for
               </h3>
               <div>
                 <p class="text-gray-600">
-                  Mobile surveillance trailer pricing depends on rental length, site, and configuration; call (253) 683-2288 for a quote. Security guards for the same 24/7 coverage cost $20,800+ per month (2 guards at $20/hour), so a trailer with 24/7 self-monitoring is typically a fraction of the cost of round-the-clock guards.
+                  Mobile surveillance trailer pricing depends on rental length, site, and configuration; call (253) 683-2288 for a quote. Security guards for the same 24/7 coverage can run $36,000+ per month (2 guards on post 24/7 at roughly $20/hour, plus overhead), so a trailer with 24/7 self-monitoring is typically a fraction of the cost of round-the-clock guards.
                 </p>
               </div>
             </div>
@@ -339,7 +339,7 @@ const description = "Compare mobile surveillance trailers vs security guards for
               </h3>
               <div>
                 <p class="text-gray-600">
-                  Studies show surveillance trailers prevent 85% of crimes through visible deterrence and AI detection, while providing 360-degree coverage without blind spots. Guards have limited patrol radius and human limitations like fatigue. Trailers also provide legal-quality video evidence.
+                  Surveillance trailers deter a lot of opportunistic crime through visible cameras and AI detection, while providing 360-degree coverage without blind spots. Guards have limited patrol radius and human limitations like fatigue. Trailers also provide legal-quality video evidence.
                 </p>
               </div>
             </div>
@@ -350,7 +350,7 @@ const description = "Compare mobile surveillance trailers vs security guards for
               </h3>
               <div>
                 <p class="text-gray-600">
-                  Hidden costs include overtime pay (time-and-a-half), holiday premiums (+50%), training costs, 200% annual turnover, liability insurance ($2-5 million required), workers' compensation, and the need for a third guard to cover breaks for true 24/7 coverage.
+                  Hidden costs can include overtime pay (time-and-a-half), holiday premiums, training costs, high turnover, liability insurance (often $2-5 million in coverage), workers' compensation, and the need for a third guard to cover breaks for true 24/7 coverage.
                 </p>
               </div>
             </div>
@@ -372,7 +372,7 @@ const description = "Compare mobile surveillance trailers vs security guards for
               </h3>
               <div>
                 <p class="text-gray-600">
-                  Yes, insurance companies typically offer 10-20% premium reductions for sites with surveillance systems versus 0-5% for guard services. Many insurers now require surveillance on high-value projects because cameras document incidents better and cover the site consistently.
+                  Often, yes. Many insurers look favorably on continuous video surveillance because cameras document incidents better and cover the site consistently. Some offer premium reductions for sites with cameras, so ask your carrier what applies to your policy.
                 </p>
               </div>
             </div>
@@ -461,7 +461,7 @@ const description = "Compare mobile surveillance trailers vs security guards for
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Security Trailer vs Security Guards: Cost & Effectiveness Comparison",
-    "description": "Compare mobile surveillance trailers vs security guards for construction sites with actual cost analysis and ROI data",
+    "description": "Compare mobile surveillance trailers vs security guards for construction sites with estimated cost analysis",
     "author": {
       "@type": "Organization",
       "name": "CCTV Trailer"
@@ -489,7 +489,7 @@ const description = "Compare mobile surveillance trailers vs security guards for
         "name": "How much does a security trailer cost compared to guards?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Mobile surveillance trailer pricing depends on rental length, site, and configuration; call (253) 683-2288 for a quote. Security guards for the same 24/7 coverage cost $20,800+ per month (2 guards at $20/hour), so a trailer with 24/7 self-monitoring is typically a fraction of the cost of round-the-clock guards."
+          "text": "Mobile surveillance trailer pricing depends on rental length, site, and configuration; call (253) 683-2288 for a quote. Security guards for the same 24/7 coverage can run $36,000+ per month (2 guards on post 24/7 at roughly $20/hour, plus overhead), so a trailer with 24/7 self-monitoring is typically a fraction of the cost of round-the-clock guards."
         }
       },
       {
@@ -497,7 +497,7 @@ const description = "Compare mobile surveillance trailers vs security guards for
         "name": "Which is more effective: surveillance trailers or security guards?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Studies show surveillance trailers prevent 85% of crimes through visible deterrence and AI detection, while providing 360-degree coverage without blind spots. Guards have limited patrol radius and human limitations like fatigue. Trailers also provide legal-quality video evidence."
+          "text": "Surveillance trailers deter a lot of opportunistic crime through visible cameras and AI detection, while providing 360-degree coverage without blind spots. Guards have limited patrol radius and human limitations like fatigue. Trailers also provide legal-quality video evidence."
         }
       },
       {
@@ -505,7 +505,7 @@ const description = "Compare mobile surveillance trailers vs security guards for
         "name": "What are the hidden costs of hiring security guards?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Hidden costs include overtime pay (time-and-a-half), holiday premiums (+50%), training costs, 200% annual turnover, liability insurance ($2-5 million required), workers' compensation, and the need for a third guard to cover breaks for true 24/7 coverage."
+          "text": "Hidden costs can include overtime pay (time-and-a-half), holiday premiums, training costs, high turnover, liability insurance (often $2-5 million in coverage), workers' compensation, and the need for a third guard to cover breaks for true 24/7 coverage."
         }
       },
       {
@@ -521,7 +521,7 @@ const description = "Compare mobile surveillance trailers vs security guards for
         "name": "Do insurance companies prefer surveillance trailers over guards?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, insurance companies typically offer 10-20% premium reductions for sites with surveillance systems versus 0-5% for guard services. Many insurers now require surveillance on high-value projects because cameras document incidents better and cover the site consistently."
+          "text": "Often, yes. Many insurers look favorably on continuous video surveillance because cameras document incidents better and cover the site consistently. Some offer premium reductions for sites with cameras, so ask your carrier what applies to your policy."
         }
       }
     ]

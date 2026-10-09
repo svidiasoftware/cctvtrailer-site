@@ -19,7 +19,7 @@ const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "Security Success Stories & Case Studies",
-  "description": "Real-world case studies showing how mobile surveillance prevented theft and cut insurance and guard costs, with detailed savings analysis from construction, events, and commercial projects.",
+  "description": "Real-world case studies of mobile surveillance trailers on construction, port, housing, and solar projects in the Puget Sound area: the challenge, the setup, and how each deployment went.",
   "mainEntity": {
     "@type": "ItemList",
     "itemListElement": [
@@ -29,7 +29,7 @@ const schema = JSON.stringify({
         "item": {
           "@type": "Case",
           "name": "Tacoma Mall Redevelopment",
-          "description": "$552K in total savings preventing equipment theft"
+          "description": "Commercial construction protected by 3 surveillance trailers over 18 months"
         }
       },
       {
@@ -38,7 +38,7 @@ const schema = JSON.stringify({
         "item": {
           "@type": "Case",
           "name": "Port of Tacoma Expansion",
-          "description": "$827K in total savings with 24/7 surveillance"
+          "description": "Marine construction protected by 5 surveillance trailers over 24 months"
         }
       },
       {
@@ -47,7 +47,7 @@ const schema = JSON.stringify({
         "item": {
           "@type": "Case",
           "name": "Seattle Housing Development",
-          "description": "$294K in total savings replacing security guards"
+          "description": "Residential construction where 2 surveillance trailers replaced security guards over 14 months"
         }
       },
       {
@@ -56,7 +56,7 @@ const schema = JSON.stringify({
         "item": {
           "@type": "Case",
           "name": "Puyallup Solar Farm",
-          "description": "$413K in total savings preventing copper theft"
+          "description": "Off-grid solar farm build protected by 3 solar-powered trailers over 8 months"
         }
       }
     ]
@@ -71,8 +71,8 @@ const breadcrumbItems = [
 ---
 
 <Layout
-  title="Security Case Studies | Real ROI Success Stories | CCTV Trailer"
-  description="See how Puget Sound projects prevented theft and cut security costs with mobile surveillance. Real case studies with savings analysis and theft prevention metrics for each project."
+  title="Security Case Studies | Real Success Stories | CCTV Trailer"
+  description="See how Puget Sound construction, port, housing, and solar projects used mobile surveillance trailers. Each case study covers the challenge, the setup, and how the deployment went."
   schema={schema}>
 
   <BreadcrumbSchema items={breadcrumbItems} />
@@ -92,7 +92,7 @@ const breadcrumbItems = [
         <div class="hero-text-wrapper">
           <h1 class="hero-heading">Proven Security Success Stories</h1>
           <p class="hero-paragraph">
-            Real-world case studies demonstrating <strong>$2.4M in losses prevented</strong> with mobile surveillance
+            Real-world case studies of mobile surveillance on <strong>Puget Sound projects</strong>
           </p>
           <div class="hero-buttons">
             <a href="/roi-calculator" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg inline-block">
@@ -110,8 +110,8 @@ const breadcrumbItems = [
     <section class="py-12 bg-white">
       <div class="container mx-auto px-4">
         <StatBox
-          title="Aggregate Results from Our Case Studies"
-          description="Combined metrics from 50+ successful deployments"
+          title="What Every Deployment Includes"
+          description="The same core setup behind each project below"
           layout="grid"
           stats={[
             {
@@ -121,14 +121,14 @@ const breadcrumbItems = [
               highlight: true
             },
             {
-              value: "$2.4M",
-              label: "Total Losses Prevented",
-              icon: "💰",
+              value: "4",
+              label: "Cameras per Trailer",
+              icon: "📷",
               highlight: true
             },
             {
-              value: "92%",
-              label: "Theft Reduction Rate",
+              value: "24/7",
+              label: "Technical Support",
               icon: "🛡️",
               highlight: false
             },
@@ -158,8 +158,8 @@ const breadcrumbItems = [
                   <p class="opacity-90">Commercial Construction | 18-Month Project</p>
                 </div>
                 <div class="text-right">
-                  <div class="text-4xl font-bold">$552K</div>
-                  <div class="text-sm opacity-90">Total Savings</div>
+                  <div class="text-4xl font-bold">3</div>
+                  <div class="text-sm opacity-90">Trailers Deployed</div>
                 </div>
               </div>
             </div>
@@ -175,7 +175,7 @@ const breadcrumbItems = [
                     </li>
                     <li class="flex items-start">
                       <span class="text-red-600 mr-2 mt-1">•</span>
-                      <span>Previous project lost $280,000 to theft</span>
+                      <span>Previous project was hit hard by theft</span>
                     </li>
                     <li class="flex items-start">
                       <span class="text-red-600 mr-2 mt-1">•</span>
@@ -183,7 +183,7 @@ const breadcrumbItems = [
                     </li>
                     <li class="flex items-start">
                       <span class="text-red-600 mr-2 mt-1">•</span>
-                      <span>Insurance threatening 40% premium increase</span>
+                      <span>Insurer threatening a premium increase</span>
                     </li>
                   </ul>
                 </div>
@@ -212,7 +212,7 @@ const breadcrumbItems = [
               </div>
 
               <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-6 mb-8">
-                <h4 class="font-semibold text-lg mb-4">Financial Results</h4>
+                <h4 class="font-semibold text-lg mb-4">Deployment at a Glance</h4>
                 <div class="grid md:grid-cols-3 gap-6">
                   <div>
                     <div class="text-sm text-gray-600 mb-1">Deployment</div>
@@ -220,34 +220,31 @@ const breadcrumbItems = [
                     <div class="text-sm text-gray-500">18-month project</div>
                   </div>
                   <div>
-                    <div class="text-sm text-gray-600 mb-1">Total Savings</div>
-                    <div class="text-2xl font-bold text-green-600">$552,000</div>
-                    <div class="text-sm text-gray-500">Theft + Insurance + Guards</div>
+                    <div class="text-sm text-gray-600 mb-1">Monitoring</div>
+                    <div class="text-2xl font-bold text-green-600">24/7</div>
+                    <div class="text-sm text-gray-500">Self-monitoring with AI alerts</div>
                   </div>
                   <div>
-                    <div class="text-sm text-gray-600 mb-1">Successful Thefts</div>
-                    <div class="text-2xl font-bold text-blue-600">0</div>
-                    <div class="text-sm text-gray-500">vs. 12 on previous project</div>
+                    <div class="text-sm text-gray-600 mb-1">Placement</div>
+                    <div class="text-2xl font-bold text-blue-600">Every access point</div>
+                    <div class="text-sm text-gray-500">Strategic trailer positioning</div>
                   </div>
                 </div>
               </div>
 
               <div class="grid md:grid-cols-2 gap-6 results">
                 <div class="bg-gray-50 rounded-lg p-4">
-                  <h5 class="font-semibold mb-3">Theft Prevention</h5>
+                  <h5 class="font-semibold mb-3">How It Went</h5>
                   <ul class="space-y-1 text-sm text-gray-700">
-                    <li>• 7 attempted thefts deterred</li>
-                    <li>• 0 successful thefts (vs. 12 previous)</li>
-                    <li>• $280,000 in losses prevented</li>
-                    <li>• 3 arrests with video evidence</li>
+                    <li>• Theft attempts dropped off after the trailers went up</li>
+                    <li>• Video evidence shared with local police</li>
                   </ul>
                 </div>
                 <div class="bg-gray-50 rounded-lg p-4">
                   <h5 class="font-semibold mb-3">Additional Benefits</h5>
                   <ul class="space-y-1 text-sm text-gray-700">
-                    <li>• 20% insurance premium reduction</li>
-                    <li>• Eliminated $15,000/mo guard costs</li>
-                    <li>• Zero project delays from theft</li>
+                    <li>• Video records to support the insurance conversation</li>
+                    <li>• Less reliance on overnight guards</li>
                     <li>• Time-lapse for marketing use</li>
                   </ul>
                 </div>
@@ -269,8 +266,8 @@ const breadcrumbItems = [
                   <p class="opacity-90">Marine Construction | 24-Month Project</p>
                 </div>
                 <div class="text-right">
-                  <div class="text-4xl font-bold">$827K</div>
-                  <div class="text-sm opacity-90">Total Savings</div>
+                  <div class="text-4xl font-bold">5</div>
+                  <div class="text-sm opacity-90">Trailers Deployed</div>
                 </div>
               </div>
             </div>
@@ -323,7 +320,7 @@ const breadcrumbItems = [
               </div>
 
               <div class="bg-gradient-to-r from-green-50 to-purple-50 rounded-lg p-6 mb-8">
-                <h4 class="font-semibold text-lg mb-4">Financial Results</h4>
+                <h4 class="font-semibold text-lg mb-4">Deployment at a Glance</h4>
                 <div class="grid md:grid-cols-3 gap-6">
                   <div>
                     <div class="text-sm text-gray-600 mb-1">Deployment</div>
@@ -331,33 +328,30 @@ const breadcrumbItems = [
                     <div class="text-sm text-gray-500">24-month project</div>
                   </div>
                   <div>
-                    <div class="text-sm text-gray-600 mb-1">Total Savings</div>
-                    <div class="text-2xl font-bold text-green-600">$827,000</div>
-                    <div class="text-sm text-gray-500">Comprehensive protection</div>
+                    <div class="text-sm text-gray-600 mb-1">Imaging</div>
+                    <div class="text-2xl font-bold text-green-600">Thermal</div>
+                    <div class="text-sm text-gray-500">Night detection on the waterfront</div>
                   </div>
                   <div>
-                    <div class="text-sm text-gray-600 mb-1">Intrusions Stopped</div>
-                    <div class="text-2xl font-bold text-purple-600">15</div>
-                    <div class="text-sm text-gray-500">5 prosecutions with evidence</div>
+                    <div class="text-sm text-gray-600 mb-1">Alerts</div>
+                    <div class="text-2xl font-bold text-purple-600">Automated</div>
+                    <div class="text-sm text-gray-500">Sent straight to port security</div>
                   </div>
                 </div>
               </div>
 
               <div class="grid md:grid-cols-2 gap-6 results">
                 <div class="bg-gray-50 rounded-lg p-4">
-                  <h5 class="font-semibold mb-3">Theft Prevention</h5>
+                  <h5 class="font-semibold mb-3">How It Went</h5>
                   <ul class="space-y-1 text-sm text-gray-700">
-                    <li>• 15 intrusion attempts stopped</li>
-                    <li>• $450,000 copper theft prevented</li>
-                    <li>• $180,000 equipment theft prevented</li>
-                    <li>• 5 prosecutions with evidence</li>
+                    <li>• Intrusion attempts flagged as they happened</li>
+                    <li>• Video evidence available for prosecution</li>
                   </ul>
                 </div>
                 <div class="bg-gray-50 rounded-lg p-4">
                   <h5 class="font-semibold mb-3">Operational Benefits</h5>
                   <ul class="space-y-1 text-sm text-gray-700">
-                    <li>• No project delays from theft</li>
-                    <li>• 15% insurance premium reduction</li>
+                    <li>• Fewer theft-related disruptions</li>
                     <li>• Compliance documentation</li>
                     <li>• Safety incident monitoring</li>
                   </ul>
@@ -380,8 +374,8 @@ const breadcrumbItems = [
                   <p class="opacity-90">Residential Construction | 14-Month Project</p>
                 </div>
                 <div class="text-right">
-                  <div class="text-4xl font-bold">$294K</div>
-                  <div class="text-sm opacity-90">Total Savings</div>
+                  <div class="text-4xl font-bold">2</div>
+                  <div class="text-sm opacity-90">Trailers Deployed</div>
                 </div>
               </div>
             </div>
@@ -401,7 +395,7 @@ const breadcrumbItems = [
                     </li>
                     <li class="flex items-start">
                       <span class="text-red-600 mr-2 mt-1">•</span>
-                      <span>$180,000/year for security guards</span>
+                      <span>Costly security guard contract</span>
                     </li>
                     <li class="flex items-start">
                       <span class="text-red-600 mr-2 mt-1">•</span>
@@ -434,7 +428,7 @@ const breadcrumbItems = [
               </div>
 
               <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-6 mb-8">
-                <h4 class="font-semibold text-lg mb-4">Financial Results</h4>
+                <h4 class="font-semibold text-lg mb-4">Deployment at a Glance</h4>
                 <div class="grid md:grid-cols-3 gap-6">
                   <div>
                     <div class="text-sm text-gray-600 mb-1">Deployment</div>
@@ -442,35 +436,32 @@ const breadcrumbItems = [
                     <div class="text-sm text-gray-500">14-month project</div>
                   </div>
                   <div>
-                    <div class="text-sm text-gray-600 mb-1">Total Savings</div>
-                    <div class="text-2xl font-bold text-green-600">$294,000</div>
-                    <div class="text-sm text-gray-500">Guards + Theft + Vandalism</div>
+                    <div class="text-sm text-gray-600 mb-1">Coverage</div>
+                    <div class="text-2xl font-bold text-green-600">24/7</div>
+                    <div class="text-sm text-gray-500">In place of part-day guards</div>
                   </div>
                   <div>
-                    <div class="text-sm text-gray-600 mb-1">Incident Reduction</div>
-                    <div class="text-2xl font-bold text-green-600">95%</div>
-                    <div class="text-sm text-gray-500">8 arrests with video evidence</div>
+                    <div class="text-sm text-gray-600 mb-1">Deterrence</div>
+                    <div class="text-2xl font-bold text-green-600">Two-way audio</div>
+                    <div class="text-sm text-gray-500">Warn off trespassers live</div>
                   </div>
                 </div>
               </div>
 
               <div class="grid md:grid-cols-2 gap-6 results">
                 <div class="bg-gray-50 rounded-lg p-4">
-                  <h5 class="font-semibold mb-3">Cost Savings</h5>
+                  <h5 class="font-semibold mb-3">Cost Picture</h5>
                   <ul class="space-y-1 text-sm text-gray-700">
-                    <li>• Eliminated $15,000/mo guard costs</li>
-                    <li>• $45,000 material theft prevented</li>
-                    <li>• $30,000 vandalism prevented</li>
-                    <li>• $24,000 tool theft prevented</li>
+                    <li>• Guard contract replaced by trailer rental</li>
+                    <li>• Materials, tools, and finished work under camera</li>
                   </ul>
                 </div>
                 <div class="bg-gray-50 rounded-lg p-4">
-                  <h5 class="font-semibold mb-3">Performance Metrics</h5>
+                  <h5 class="font-semibold mb-3">How It Went</h5>
                   <ul class="space-y-1 text-sm text-gray-700">
-                    <li>• 95% reduction in incidents</li>
-                    <li>• 24/7 coverage vs 16hr guards</li>
-                    <li>• 8 arrests with video evidence</li>
-                    <li>• Zero false alarm callouts</li>
+                    <li>• Vandalism and theft dropped off after the trailers went up</li>
+                    <li>• 24/7 coverage in place of 16-hour guard shifts</li>
+                    <li>• Video evidence shared with police</li>
                   </ul>
                 </div>
               </div>
@@ -491,8 +482,8 @@ const breadcrumbItems = [
                   <p class="opacity-90">Renewable Energy | 8-Month Project</p>
                 </div>
                 <div class="text-right">
-                  <div class="text-4xl font-bold">$413K</div>
-                  <div class="text-sm opacity-90">Total Savings</div>
+                  <div class="text-4xl font-bold">3</div>
+                  <div class="text-sm opacity-90">Trailers Deployed</div>
                 </div>
               </div>
             </div>
@@ -545,7 +536,7 @@ const breadcrumbItems = [
               </div>
 
               <div class="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg p-6 mb-8">
-                <h4 class="font-semibold text-lg mb-4">Financial Results</h4>
+                <h4 class="font-semibold text-lg mb-4">Deployment at a Glance</h4>
                 <div class="grid md:grid-cols-3 gap-6">
                   <div>
                     <div class="text-sm text-gray-600 mb-1">Deployment</div>
@@ -553,34 +544,32 @@ const breadcrumbItems = [
                     <div class="text-sm text-gray-500">8-month project</div>
                   </div>
                   <div>
-                    <div class="text-sm text-gray-600 mb-1">Total Savings</div>
-                    <div class="text-2xl font-bold text-green-600">$413,000</div>
-                    <div class="text-sm text-gray-500">Copper + Equipment + Delays</div>
+                    <div class="text-sm text-gray-600 mb-1">Power</div>
+                    <div class="text-2xl font-bold text-green-600">Solar</div>
+                    <div class="text-sm text-gray-500">Fully off-grid</div>
                   </div>
                   <div>
-                    <div class="text-sm text-gray-600 mb-1">Intrusions Detected</div>
-                    <div class="text-2xl font-bold text-orange-600">12</div>
-                    <div class="text-sm text-gray-500">6 arrests made</div>
+                    <div class="text-sm text-gray-600 mb-1">Connectivity</div>
+                    <div class="text-2xl font-bold text-orange-600">4G LTE</div>
+                    <div class="text-sm text-gray-500">No site internet needed</div>
                   </div>
                 </div>
               </div>
 
               <div class="grid md:grid-cols-2 gap-6 results">
                 <div class="bg-gray-50 rounded-lg p-4">
-                  <h5 class="font-semibold mb-3">Critical Saves</h5>
+                  <h5 class="font-semibold mb-3">What Was Protected</h5>
                   <ul class="space-y-1 text-sm text-gray-700">
-                    <li>• $250,000 copper theft prevented</li>
-                    <li>• $75,000 panel theft prevented</li>
-                    <li>• $50,000 inverter theft prevented</li>
-                    <li>• 2-week delay avoided ($38,000)</li>
+                    <li>• Copper wire</li>
+                    <li>• Solar panels</li>
+                    <li>• Inverters</li>
+                    <li>• The project schedule</li>
                   </ul>
                 </div>
                 <div class="bg-gray-50 rounded-lg p-4">
-                  <h5 class="font-semibold mb-3">Detection Success</h5>
+                  <h5 class="font-semibold mb-3">How It Went</h5>
                   <ul class="space-y-1 text-sm text-gray-700">
-                    <li>• 12 intrusions detected/stopped</li>
-                    <li>• 6 arrests made</li>
-                    <li>• 100% theft prevention rate</li>
+                    <li>• Night-time intrusions picked up by thermal cameras</li>
                     <li>• Police called with live video in hand</li>
                   </ul>
                 </div>
@@ -597,7 +586,7 @@ const breadcrumbItems = [
           <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-8 text-white text-center">
             <h3 class="text-2xl font-bold mb-4">Ready to Achieve Similar Results?</h3>
             <p class="text-lg mb-6 opacity-95">
-              Our clients see results like these again and again, cutting theft losses along with insurance and guard costs.
+              Every site is different. Tell us about yours and we'll put together a setup that fits it.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/roi-calculator" class="bg-white text-blue-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg inline-block">
